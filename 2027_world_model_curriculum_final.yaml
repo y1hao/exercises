@@ -1,0 +1,3342 @@
+title: 2027 世界模型训练 · 精简年度课程
+year: 2027
+timezone: Pacific/Auckland
+curriculum_version: 2026-10-25-curated-v1
+principle: 提前规划案例分布与训练重点；每次训练由独立 session 当场查找来源、验证事实、动态提问和复盘。这里的历史来源为研究入口，不是预先认证的完整证据包。
+schedule:
+  monday_wednesday_friday: 工程历史案例
+  tuesday_thursday: 产品历史案例
+  saturday: 投资与创业历史案例
+  sunday: 微设计
+  session_minutes_target: 20
+counts:
+  engineering_history: 157
+  product_history: 104
+  investing_history: 52
+  micro_design: 52
+training_guidance: >-
+  每次只取当日条目。历史案例从案例背景与训练重点出发，先核实基本事件和历史决策时点，再由用户先判断、教练逐轮检索真实证据、最后复盘实际结果及未知；不把缺少精确原始数据视为自动弃题，也不虚构数据。微设计以明确合成场景开场，由用户先提出方案，再针对方案给出合理扰动与评价。
+revision_review:
+- id: PRO-001
+  decision: restore
+  reason: Notion 早期重做存在创始人及投资者回顾；原先要求同期细粒度用户证据过严。恢复原主题并明确技术可靠性与定位的不确定性。
+- id: PRO-013
+  decision: restore_with_caveat
+  reason: Craigslist 相关分发实践有多方历史材料，但对 Airbnb 增长贡献大小有争议；作为渠道与归因题而非确定增长奇迹。
+- id: ENG-054
+  decision: correct_original
+  reason: 没有可靠依据称 Google 自身在2012年遭该 Linux 闰秒故障；改为 Google 有官方材料的 leap smear 预防设计。
+- id: PRO-059
+  decision: restore
+  reason: Zappos 创始人对早期鞋店拍照与履约实验有一手回顾；无需当时完整运营指标也能训练实验设计。
+- id: INV-034
+  decision: keep_replacement
+  reason: Superhuman 融资题与已有产品 PMF 调查高度重叠且缺独立投资信息；Chegg 的 AI 替代冲击更能增加全年机制覆盖。
+- id: ENG-117
+  decision: keep_replacement
+  reason: 原 ZippyDB SSD 单次优化节点模糊；RocksDB Ribbon Filter 有更可定位的技术机制且不重复其它题。
+- id: PRO-082
+  decision: restore
+  reason: Twitter/X 更名与定位转变是真实且高价值的战略决策；无法精确识别品牌的独立因果效应不构成弃题理由。
+- id: PRO-093
+  decision: restore
+  reason: Clubhouse 邀请准入和增长阶段有公开资料，适合训练增长与留存机制辨析；不预设稀缺导致留存。
+- id: ENG-157
+  decision: keep_replacement
+  reason: 原 Blaze 2015 与 ENG-080 构建依赖题重复；Rust 1.52.1 是独立且有一手材料的发布/安全取舍。
+exercises:
+- id: ENG-001
+  date: '2027-01-01'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Google Spanner（2012）
+  briefing: 面对跨地区事务与外部一致性需求，判断 TrueTime 的时钟不确定性如何影响提交等待。
+  focus: 因果机制推演
+  research_hint: 'Spanner: Google’s Globally-Distributed Database (OSDI 2012)'
+- id: INV-001
+  date: '2027-01-02'
+  kind: historical
+  domain: investing
+  subdomain: valuation_terms
+  case: Arm 2023 IPO 估值
+  briefing: 高度依赖芯片授权和版税的商业模式，如何评估增长、客户集中与价格。
+  focus: 约束下的决策取舍
+  research_hint: Arm 2023 F-1
+- id: DES-001
+  date: '2027-01-03'
+  kind: micro_design
+  domain: engineering
+  subdomain: api_sdk
+  case: 平台资源 API 的抽象边界
+  briefing: 一家拥有 80 个服务团队的公司准备提供自助申请数据库和消息队列的内部平台；底层云服务会更换，团队不应编写基础设施配置。
+  focus: 设计一版面向应用开发者的最小资源 API：选定 2–3 个核心对象、声明哪些细节可见，并解释哪些能力明确不做。
+  optional_pressure_test: 安全团队要求每次资源权限变更都可独立审核，而服务团队要求一次声明即可完成部署。
+- id: ENG-002
+  date: '2027-01-04'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Docker 分层构建与缓存边界（2019）
+  briefing: >-
+    Dockerfile 通过逐层构建与复用缓存提高开发迭代效率。以 Docker 官方2019年的多阶段构建教程为具体锚点，比较依赖声明、源码和编译产物在不同改动下的重建范围，再推演缓存正确性与构建效率之间的取舍。
+  focus: 条件预测与反事实
+  research_hint: Docker official 2019 Dockerfile best practices tutorial
+- id: PRO-001
+  date: '2027-01-05'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Notion 2015–2016 产品与技术重做
+  briefing: Notion 早期尝试把可组合的计算能力带入通用工作工具，却遭遇技术稳定性、产品定位和有限现金等约束。站在决定削减团队、重新开发产品之前，评估是继续修补还是重构，以及应该用哪些用户与技术证据区分问题。
+  focus: 问题诊断与战略取舍：区分用户需求、交互复杂度和实现可靠性，不把后来的成功当作事前必然。
+  research_hint: First Round Notion founding story; Ivan Zhao interviews about 2015 rewrite
+- id: ENG-003
+  date: '2027-01-06'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Slack 2021 年 1 月服务中断
+  briefing: 新年首个工作日请求增长伴随后台资源问题；在有限指标下排列调查优先级。
+  focus: 高信息价值证据选择
+  research_hint: Slack January 4 2021 incident postmortem
+- id: PRO-002
+  date: '2027-01-07'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Pinterest Pin It 浏览器按钮（2010s）
+  briefing: 用户在浏览网页时随手收藏内容，比较流程内捕获与回到应用再搜索的激活成本。
+  focus: 数量级估计与模型校准
+  research_hint: Pinterest original Pin It button product history
+- id: ENG-004
+  date: '2027-01-08'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: Terraform Provider 协议演进（2016—2023）
+  briefing: 当工具接入大量异构 API，分析 provider 边界和状态差异引起的契约问题。
+  focus: 适用边界与迁移
+  research_hint: HashiCorp Terraform plugin protocol documentation
+- id: INV-002
+  date: '2027-01-09'
+  kind: historical
+  domain: investing
+  subdomain: unit_economics
+  case: Instacart 2020—2023 融资/上市
+  briefing: 在线生鲜订单客单价高但履约昂贵，估算广告业务与订单贡献利润的关系。
+  focus: 因果机制推演
+  research_hint: Maplebear Instacart S-1
+- id: DES-002
+  date: '2027-01-10'
+  kind: micro_design
+  domain: product
+  subdomain: activation_ux
+  case: 移动端即时记录的第一分钟
+  briefing: 一款面向繁忙家长的手机应用希望用户在想到事情时快速记录，但新用户第一次打开时还没有数据；只能做三个首屏步骤。
+  focus: 设计首次使用路径与第一份可感知的价值；解释哪些信息延后收集，以及如何验证是否真的解决了问题。
+  optional_pressure_test: 用户往往只有单手操作的十秒钟，并且会在离线时打开应用。
+- id: ENG-005
+  date: '2027-01-11'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Java ZGC 上线（2018—2023）
+  briefing: 大型堆低延迟目标下，评估并发 relocation 的成本与适用场景。
+  focus: 约束下的决策取舍
+  research_hint: JEP 333 ZGC and later JEPs
+- id: PRO-003
+  date: '2027-01-12'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: Adobe Creative Suite 转订阅 CC（2013）
+  briefing: 从永久授权转为订阅，估计现金流、用户接受度和升级节奏变化。
+  focus: 条件预测与反事实
+  research_hint: Adobe Creative Cloud subscription transition
+- id: ENG-006
+  date: '2027-01-13'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: Figma Multiplayer 属性级并发更新（2019）
+  briefing: Figma 的多人编辑需要让不同客户端及时合并同一文档中的变化。围绕其公开的属性级并发处理模型，推演两个用户同时修改不同属性或同一属性时的状态结果，并讨论实时同步与持久化是否具有相同保证。
+  focus: 竞争假说与证据区分
+  research_hint: Figma Engineering multiplayer technology blog 2019
+- id: PRO-004
+  date: '2027-01-14'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: Strava Segment 排行榜与行为反馈
+  briefing: Strava 将个人运动记录转化为共享路段上的可比较成绩，为记录行为加入局部竞争与社区反馈。比较排行榜何时形成持续参与的价值、何时反而受到作弊、选择偏差或用户目标差异的影响；不要预设留存改善已被因果证明。
+  focus: 高信息价值证据选择
+  research_hint: Strava Segments product history and company documentation
+- id: ENG-007
+  date: '2027-01-15'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: SolarWinds Orion 供应链攻击（2020）
+  briefing: 可信构建产物成为攻击载体；设计发布链鉴别与横向传播防线。
+  focus: 因果机制推演
+  research_hint: CISA SolarWinds compromise advisory
+- id: INV-003
+  date: '2027-01-16'
+  kind: historical
+  domain: investing
+  subdomain: pmf_traction
+  case: Fiverr 2011 Series A
+  briefing: 低价标准化自由职业服务存在质量疑虑，判断交易重复和供需匹配是否可扩张。
+  focus: 数量级估计与模型校准
+  research_hint: BVP original Fiverr memo 2011
+- id: DES-003
+  date: '2027-01-17'
+  kind: micro_design
+  domain: engineering
+  subdomain: workflow_control_plane
+  case: 可恢复的异步 Workflow
+  briefing: 团队需要让用户提交最多十步的异步工作流；步骤会失败，执行者可随时重启，用户只需要查进度和重试。
+  focus: 设计最少的状态、持久化边界与用户 API，并说明同一个步骤重复执行时的语义。
+  optional_pressure_test: 其中一个步骤会向外部供应商发起不可安全重试的扣款。
+- id: ENG-008
+  date: '2027-01-18'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: Discord Go 垃圾回收瓶颈（2019）
+  briefing: 服务响应出现周期性抖动时，用 GC 暂停与堆规模评估迁移到 Rust 的价值。
+  focus: 适用边界与迁移
+  research_hint: Discord Engineering Why Discord is switching from Go to Rust
+- id: PRO-005
+  date: '2027-01-19'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: Dropbox 推荐好友送空间（2008—2010）
+  briefing: 双边奖励和实际使用价值绑定，判断激励如何影响增长质量和滥用风险。
+  focus: 约束下的决策取舍
+  research_hint: Dropbox referral program early growth account
+- id: ENG-009
+  date: '2027-01-20'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Raft 论文（2014）
+  briefing: 以领导者崩溃与日志冲突为场景，推演选举限制、日志匹配与安全性边界。
+  focus: 条件预测与反事实
+  research_hint: In Search of an Understandable Consensus Algorithm (2014)
+- id: PRO-006
+  date: '2027-01-21'
+  kind: historical
+  domain: product
+  subdomain: strategy_pivot
+  case: Nintendo Switch 混合主机（2017）
+  briefing: 吸取 Wii U 时期产品定位问题，比较便携与客厅体验结合的目标用户。
+  focus: 竞争假说与证据区分
+  research_hint: Nintendo Switch launch and Iwata/Nintendo interviews
+- id: ENG-010
+  date: '2027-01-22'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Go Modules 引入（2018）
+  briefing: 取代 GOPATH 版本管理时，分析 minimal version selection 如何影响依赖解析和兼容性。
+  focus: 因果机制推演
+  research_hint: Go Modules reference and design
+- id: INV-004
+  date: '2027-01-23'
+  kind: historical
+  domain: investing
+  subdomain: market_timing
+  case: Shopify 2010 Series A
+  briefing: 小商家网上开店仍有技术门槛时，判断 SaaS 电商平台市场何时成熟、是否值得下注。
+  focus: 高信息价值证据选择
+  research_hint: BVP original Shopify investment memo 2010
+- id: DES-004
+  date: '2027-01-24'
+  kind: micro_design
+  domain: investing
+  subdomain: wedge_market_entry
+  case: 从一个垂直行业切入的 SaaS
+  briefing: 两名创始人懂软件，但没有行业销售网络；他们发现本地小型物业管理公司仍用邮件和表格协调维修，预算有限。
+  focus: 定义一个可以在六周内验证的最小切入点，包括目标用户、付费者、首个工作流及第一条获客渠道。
+  optional_pressure_test: 早期访谈发现付费者和每天操作软件的人不是同一类人。
+- id: ENG-011
+  date: '2027-01-25'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Cloudflare PDX01 双路供电失效（2024）
+  briefing: >-
+    Cloudflare 2024年3月一次独立的数据中心供电事件暴露了双路供电和故障域之间的关系。站在事件初期判断冗余设计应该如何验证、哪些依赖可能共享故障条件，以及恢复优先级应如何确定；与2023年其他数据中心事件分开。
+  focus: 约束下的决策取舍
+  research_hint: Cloudflare March 2024 PDX01 power incident postmortem
+- id: PRO-007
+  date: '2027-01-26'
+  kind: historical
+  domain: product
+  subdomain: network_marketplaces
+  case: Airbnb Split Stays 与真实可预订供给（2022）
+  briefing: >-
+    Airbnb 2022年推出 Split Stays，以组合不同住宿提升长时间段出行的可订选择。分析为什么平台上房源数量增加不等于特定地区、日期和行程的有效匹配增加，并思考怎样验证供给可用性与实际完成订单之间的关系。
+  focus: 数量级估计与模型校准
+  research_hint: Airbnb 2022 Summer Release Split Stays
+- id: ENG-012
+  date: '2027-01-27'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: Protocol Buffers 字段演进与兼容边界
+  briefing: Protocol Buffers 依赖稳定的字段编号和明确的兼容规则，使新旧客户端能够独立演进。围绕删字段、复用编号和增加取值等修改，预测线格式与使用者语义层可能出现的不同破坏，并核实适用的规范版本。
+  focus: 条件预测与反事实
+  research_hint: Protocol Buffers language guide and proto2/proto3 compatibility
+- id: PRO-008
+  date: '2027-01-28'
+  kind: historical
+  domain: product
+  subdomain: b2b_adoption
+  case: Slack 早期企业内部扩散（2013—2015）
+  briefing: 团队成员先自发采用，再扩展到公司采购；判断哪类用量信号可预测付费。
+  focus: 适用边界与迁移
+  research_hint: Slack S-1 and founder interviews
+- id: ENG-013
+  date: '2027-01-29'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: JVM Double-Checked Locking 语义修订（2004）
+  briefing: 用 Java 内存模型重审惰性单例初始化，辨别排序与可见性保证。
+  focus: 竞争假说与证据区分
+  research_hint: JSR-133 Java Memory Model FAQ
+- id: INV-005
+  date: '2027-01-30'
+  kind: historical
+  domain: investing
+  subdomain: moat_competition
+  case: Yelp 2005 年早期风险投资
+  briefing: >-
+    Yelp 早期围绕本地评论和商家发现构建产品，投资者需要区分可复制的商家目录、用户贡献内容以及可能形成的局部网络效应。站在2005年前后真实融资窗口，判断内容供给与消费需求能否形成可扩张的公司；不预设融资轮次标签。
+  focus: 因果机制推演
+  research_hint: Bessemer Venture Partners early Yelp investment memo
+- id: DES-005
+  date: '2027-01-31'
+  kind: micro_design
+  domain: product
+  subdomain: collaboration_adoption
+  case: 团队日历的真正协作价值
+  briefing: 一个日程产品希望从个人用户扩展到 5–30 人团队，但团队已经使用成熟的日历工具，不愿整体迁移。
+  focus: 设计一个无需团队全员迁移就能体现协作价值的功能和采用路径；明确关键行为及验证指标。
+  optional_pressure_test: 核心用户可以邀请同事，但公司 IT 禁止外部工具读取企业日历。
+- id: ENG-014
+  date: '2027-02-01'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: RocksDB Universal Compaction（2013—）
+  briefing: 写密集系统选择 compaction 策略时，比较写放大、空间峰值与查询延迟。
+  focus: 约束下的决策取舍
+  research_hint: RocksDB compaction wiki
+- id: PRO-009
+  date: '2027-02-02'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Netflix DVD 邮寄方案（1997—1999）
+  briefing: DVD 体积和邮寄成本改变租赁体验，判断用户原先的核心摩擦是什么。
+  focus: 条件预测与反事实
+  research_hint: Netflix founding history and SEC filings
+- id: ENG-015
+  date: '2027-02-03'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: Cloudflare 2023 会话令牌事件与权限隔离
+  briefing: Cloudflare 2023 年的一次安全事件涉及支持系统会话凭据与后续访问风险。分析凭据暴露、令牌轮换、权限边界和事后横向影响之间的不同因果环节，避免将独立阶段混成单个未证实的攻击过程。
+  focus: 因果机制推演
+  research_hint: Cloudflare 2023 incident report and follow-up
+- id: PRO-010
+  date: '2027-02-04'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Duolingo 连续学习 Streak 早期设计（2010s）
+  briefing: 每日连胜激励提高打开频率时，区分任务价值与行为诱导。
+  focus: 竞争假说与证据区分
+  research_hint: Duolingo official streak history
+- id: ENG-016
+  date: '2027-02-05'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: Uber H3 地理索引（2018）
+  briefing: 全球位置聚合需要一致网格时，权衡层级六角网格和地理精度。
+  focus: 高信息价值证据选择
+  research_hint: Uber Engineering H3 Hexagonal Hierarchical Spatial Index
+- id: INV-006
+  date: '2027-02-06'
+  kind: historical
+  domain: investing
+  subdomain: funding_survival_exit
+  case: Tesla 2008 融资危机
+  briefing: 产品尚未规模化、现金压力巨大时，分析追加资本与经营里程碑的决策。
+  focus: 数量级估计与模型校准
+  research_hint: Tesla 2008 financing history SEC records
+- id: DES-006
+  date: '2027-02-07'
+  kind: micro_design
+  domain: engineering
+  subdomain: observability_data
+  case: 遥测 SDK 的默认安全性
+  briefing: 公司要为不同语言的服务提供统一 tracing SDK，目标是让开发者几行代码即可接入，生产环境请求量相差一千倍。
+  focus: 设计最小初始化与采样接口，并说明成本、性能、上下文传播分别由谁负责。
+  optional_pressure_test: 一次合规审查要求禁止默认收集任何可能包含个人身份信息的 attribute。
+- id: ENG-017
+  date: '2027-02-08'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Redis Cluster 槽位迁移（2015）
+  briefing: 迁移 hash slots 时如何处理重定向、并发写和暂时不一致，检验客户端模型。
+  focus: 适用边界与迁移
+  research_hint: Redis Cluster specification
+- id: PRO-011
+  date: '2027-02-09'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: Figma 协作者席位与付费升级
+  briefing: Figma 允许设计文件在团队间分享和协作，但不同角色对编辑权限的需求与支付意愿不同。站在其席位政策演进的具体公开阶段，设计能区分免费采用价值、偶然付费升级与企业采购需求的判断方法。
+  focus: 因果机制推演
+  research_hint: Figma pricing, seat permissions and product changes
+- id: ENG-018
+  date: '2027-02-10'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: CircleCI Dynamic Config（2021）
+  briefing: 大型 CI 流水线需按变更选择任务时，权衡静态配置与生成配置的可测试性。
+  focus: 约束下的决策取舍
+  research_hint: CircleCI dynamic configuration docs
+- id: PRO-012
+  date: '2027-02-11'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: GitHub Pull Request Review（2016）
+  briefing: 代码托管延伸到审查和团队流程，判断产品何时从工具变成协作系统。
+  focus: 条件预测与反事实
+  research_hint: GitHub code review feature announcement 2016
+- id: ENG-019
+  date: '2027-02-12'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Cloudflare 2025 年 8 月 AWS 互联拥塞
+  briefing: Cloudflare 与 AWS us-east-1 间链路拥塞；从地域与链路视角定位非全球性故障。
+  focus: 竞争假说与证据区分
+  research_hint: Cloudflare incident August 21 2025
+- id: INV-007
+  date: '2027-02-13'
+  kind: historical
+  domain: investing
+  subdomain: founder_execution
+  case: Theranos 2004—2015 融资
+  briefing: 科学能力、产品验证和治理信息不透明时，投资者如何要求能够推翻主张的证据。
+  focus: 高信息价值证据选择
+  research_hint: SEC Theranos fraud complaint and investigative reporting
+- id: DES-007
+  date: '2027-02-14'
+  kind: micro_design
+  domain: product
+  subdomain: pricing_packaging
+  case: 开发者 API 的计费单位
+  briefing: 一个向软件团队提供文档解析 API 的产品按请求量收费，但不同请求的大小和计算成本相差很大；部分客户无法预测账单。
+  focus: 设计用户可理解、成本基本可控的定价计量方式，说明它如何影响客户行为和产品边界。
+  optional_pressure_test: 最大的企业客户要求月度预算上限，达到上限后不能突然中断业务。
+- id: ENG-020
+  date: '2027-02-15'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: Android Jetpack Compose（2021）
+  briefing: 从命令式 UI 转向声明式 UI，检查状态单向流动对组件边界的影响。
+  focus: 因果机制推演
+  research_hint: Android Developers Jetpack Compose architecture
+- id: PRO-013
+  date: '2027-02-16'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: Airbnb 早期 Craigslist 分发实践与争议（约2009–2010）
+  briefing: Airbnb 早期尝试利用 Craigslist 等已有租房流量触达用户。分析跨平台导流可能怎样带来早期供需两侧用户、受到哪些平台规则与声誉约束，并评估这条渠道究竟有多重要；不能预设它是增长的主要原因。
+  focus: 渠道机制与因果归因：验证渠道贡献，比较短期流量、规则风险和可持续自有分发。
+  research_hint: Boston University historical case; Y Combinator Gustaf Alströmer growth AMA
+- id: ENG-021
+  date: '2027-02-17'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Python GIL 争论与 PEP 703（2023）
+  briefing: 多线程 CPU 工作负载受限时，比较去 GIL 与对象模型兼容性代价。
+  focus: 适用边界与迁移
+  research_hint: PEP 703 Making the GIL Optional
+- id: PRO-014
+  date: '2027-02-18'
+  kind: historical
+  domain: product
+  subdomain: strategy_pivot
+  case: Nintendo Wii 体感大众化战略（2006）
+  briefing: 游戏机竞争者比算力时选择非核心玩家，判断差异化用户价值。
+  focus: 约束下的决策取舍
+  research_hint: Nintendo Iwata Asks Wii strategy
+- id: ENG-022
+  date: '2027-02-19'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: Google LSM-tree LevelDB（2011）
+  briefing: 随机写密集场景使用 LSM 后，预测 compaction、读放大与空间放大的变化。
+  focus: 条件预测与反事实
+  research_hint: LevelDB implementation notes
+- id: INV-008
+  date: '2027-02-20'
+  kind: historical
+  domain: investing
+  subdomain: valuation_terms
+  case: Coinbase 2021 直接上市
+  briefing: 交易所利润高度依赖加密资产周期，估值时如何区分周期高点和长期现金流。
+  focus: 竞争假说与证据区分
+  research_hint: Coinbase 2021 S-1 and direct listing documents
+- id: DES-008
+  date: '2027-02-21'
+  kind: micro_design
+  domain: engineering
+  subdomain: distributed_messaging
+  case: 至少一次任务执行的对外契约
+  briefing: 平台向第三方 worker 分发后台任务，网络会中断，执行耗时未知；客户端希望任务不会静默丢失。
+  focus: 设计接收、确认、超时、重投递的最小协议，并写出能保证和不能保证的性质。
+  optional_pressure_test: worker 在完成真实业务操作后、发回确认前崩溃。
+- id: ENG-023
+  date: '2027-02-22'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: GitHub Actions pwn requests 风险（2020—）
+  briefing: Pull Request 工作流使用高权限 token 时，推演不可信代码如何影响仓库 Secrets。
+  focus: 因果机制推演
+  research_hint: GitHub Security Lab pwn requests article
+- id: PRO-015
+  date: '2027-02-23'
+  kind: historical
+  domain: product
+  subdomain: network_marketplaces
+  case: Etsy 手作卖家社区（2005—）
+  briefing: 垂直供给吸引特色买家，判断差异化选择对供需匹配的价值。
+  focus: 约束下的决策取舍
+  research_hint: Etsy IPO S-1
+- id: ENG-024
+  date: '2027-02-24'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Amazon Aurora 共享存储（2017）
+  briefing: 面对数据库实例故障与日志持久化，重建计算节点与分布式存储的恢复契约。
+  focus: 高信息价值证据选择
+  research_hint: 'Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational
+    Databases (SIGMOD 2017)'
+- id: PRO-016
+  date: '2027-02-25'
+  kind: historical
+  domain: product
+  subdomain: b2b_adoption
+  case: MongoDB Atlas 自服务云产品（2016）
+  briefing: 开源数据库从下载自管到云端托管，分析用户身份、渠道和销售方式的变化。
+  focus: 条件预测与反事实
+  research_hint: MongoDB Atlas 2016 announcement / S-1
+- id: ENG-025
+  date: '2027-02-26'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Nix 可重现构建（2004—）
+  briefing: 基于 derivation 的构建如何隔离环境依赖，识别名义可复现与现实非确定性的差距。
+  focus: 竞争假说与证据区分
+  research_hint: Nix thesis and manual
+- id: INV-009
+  date: '2027-02-27'
+  kind: historical
+  domain: investing
+  subdomain: unit_economics
+  case: Lyft 2017—2019 IPO 前融资
+  briefing: 司机激励和乘客补贴竞争激烈，评估规模增长是否会改善单次出行经济性。
+  focus: 数量级估计与模型校准
+  research_hint: Lyft S-1
+- id: DES-009
+  date: '2027-02-28'
+  kind: micro_design
+  domain: investing
+  subdomain: distribution_gtm
+  case: 开源开发工具如何进入企业
+  briefing: 一款开源代码审查 CLI 获得大量个人开发者试用，但尚无付费客户，创始团队只有三人且无专职销售。
+  focus: 设计从个人使用到企业付费的最短转化路径，明确付费理由与必须验证的采购假设。
+  optional_pressure_test: 技术负责人喜欢产品，但安全部门禁止将源代码传到第三方服务器。
+- id: ENG-026
+  date: '2027-03-01'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Cloudflare 2023 年 10 月 Workers KV 部署问题
+  briefing: 新部署工具导致 KV 权限错误；如何通过状态码、部署时间与依赖图锁定问题。
+  focus: 因果机制推演
+  research_hint: Cloudflare incident October 30 2023
+- id: PRO-017
+  date: '2027-03-02'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Slack 从游戏内聊天转型（2012—2013）
+  briefing: Glitch 团队识别内部沟通工具的外部需求；判断内部 dogfooding 何时可迁移到市场。
+  focus: 适用边界与迁移
+  research_hint: Stewart Butterfield Slack origin interviews
+- id: ENG-027
+  date: '2027-03-03'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: SQLite WAL 模式引入（2010）
+  briefing: 读写并发需求改变时，评估 write-ahead log 相比 rollback journal 的可见性与恢复权衡。
+  focus: 约束下的决策取舍
+  research_hint: SQLite Write-Ahead Logging documentation
+- id: PRO-018
+  date: '2027-03-04'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Snapchat 阅后即焚机制（2011—2012）
+  briefing: 消息默认短暂存在改变发送心理，预测用户何时会增加非正式沟通。
+  focus: 条件预测与反事实
+  research_hint: Snapchat founders product history
+- id: ENG-028
+  date: '2027-03-05'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: Google Dapper 采样追踪（2010）
+  briefing: 完整分布式追踪开销过大时，估计采样率对诊断价值和成本的影响。
+  focus: 因果机制推演
+  research_hint: Dapper a Large-Scale Distributed Systems Tracing Infrastructure
+- id: INV-010
+  date: '2027-03-06'
+  kind: historical
+  domain: investing
+  subdomain: pmf_traction
+  case: Figma 2015—2016 融资
+  briefing: 浏览器设计工具尚未替代桌面软件时，区分早期设计师热情与团队采购信号。
+  focus: 竞争假说与证据区分
+  research_hint: Figma funding announcements and founder interviews
+- id: DES-010
+  date: '2027-03-07'
+  kind: micro_design
+  domain: product
+  subdomain: retention_jobs
+  case: 一个不依赖每日打卡的留存机制
+  briefing: 一款帮助用户比较家庭重大购买决策的应用一年可能只被使用两三次，传统 DAU/连续签到不适用。
+  focus: 设计价值交付、回访触发点和衡量留存或复用的指标；不能靠人为推送制造使用频率。
+  optional_pressure_test: 用户作出决策后通常不需要再打开应用半年。
+- id: ENG-029
+  date: '2027-03-08'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Rust Ownership 与 Borrow Checker（2015）
+  briefing: 一个引用跨线程共享数据时，分析编译期约束如何预防数据竞争以及带来的设计成本。
+  focus: 高信息价值证据选择
+  research_hint: Rust book Ownership and Fearless Concurrency
+- id: PRO-019
+  date: '2027-03-09'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: AWS Lambda 按调用与执行时间计费（2014）
+  briefing: 无服务器按使用量计价，判断成本风险从运维端转移到了谁。
+  focus: 数量级估计与模型校准
+  research_hint: AWS Lambda launch and pricing
+- id: ENG-030
+  date: '2027-03-10'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: Snowflake 分离存储和计算（2016）
+  briefing: 工作负载隔离和弹性扩容需求下，分析虚拟仓库如何改变资源竞争。
+  focus: 适用边界与迁移
+  research_hint: The Snowflake Elastic Data Warehouse (SIGMOD 2016)
+- id: PRO-020
+  date: '2027-03-11'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: Slack 可搜索团队消息历史（2013—）
+  briefing: 即时沟通叠加历史知识搜索后，判断团队迁移成本如何随使用时间上升。
+  focus: 约束下的决策取舍
+  research_hint: Slack early product and search materials
+- id: ENG-031
+  date: '2027-03-12'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: MongoDB 副本集选主（2016—2020）
+  briefing: 从 majority write concern 和 rollback 机制判断 acknowledged 写入的持久性条件。
+  focus: 因果机制推演
+  research_hint: MongoDB replication documentation
+- id: INV-011
+  date: '2027-03-13'
+  kind: historical
+  domain: investing
+  subdomain: market_timing
+  case: SpaceX 2002—2008 早期资本
+  briefing: 商业航天成本结构与政府采购模式变化时，判断技术突破何时可能形成新市场。
+  focus: 条件预测与反事实
+  research_hint: SpaceX early financing history and NASA COTS records
+- id: DES-011
+  date: '2027-03-14'
+  kind: micro_design
+  domain: engineering
+  subdomain: agent_devtools
+  case: Coding Agent 的最小权限模型
+  briefing: 企业要让 coding agent 自动修改代码、运行测试并创建 PR，但不允许其直接访问生产凭据。
+  focus: 设计权限申请与执行边界：哪些操作默认允许、哪些需确认、哪些即使用户允许也不能做。
+  optional_pressure_test: 测试命令通过脚本间接调用云账号，且脚本本身可能来自未经审查的 PR。
+- id: ENG-032
+  date: '2027-03-15'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Guix 构建隔离（2013）
+  briefing: 包管理工具通过隔离环境提供可重现性时，识别供应链信任和引导问题。
+  focus: 竞争假说与证据区分
+  research_hint: GNU Guix paper and manual
+- id: PRO-021
+  date: '2027-03-16'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: PayPal eBay 买卖双方扩散（1999—2002）
+  briefing: 交易双方主动邀请支付工具，推断分发如何嵌入必要工作流。
+  focus: 高信息价值证据选择
+  research_hint: PayPal early growth history
+- id: ENG-033
+  date: '2027-03-17'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: AWS S3 2017 年 us-east-1 中断
+  briefing: 维护操作误影响存储子系统容量；从控制指令到跨服务后果重建故障传播。
+  focus: 因果机制推演
+  research_hint: AWS S3 Service Disruption post-event summary Feb 2017
+- id: PRO-022
+  date: '2027-03-18'
+  kind: historical
+  domain: product
+  subdomain: strategy_pivot
+  case: Basecamp Hey 邮件产品发布（2020）
+  briefing: 以隐私和邮件工作流差异化进入成熟市场，判断反主流定位的可持续市场规模。
+  focus: 约束下的决策取舍
+  research_hint: HEY launch Basecamp 2020
+- id: ENG-034
+  date: '2027-03-19'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: Meltdown（2018）
+  briefing: 内核映射及乱序执行导致数据泄漏；比较 KPTI 隔离收益与成本。
+  focus: 数量级估计与模型校准
+  research_hint: Meltdown 2018 original paper
+- id: INV-012
+  date: '2027-03-20'
+  kind: historical
+  domain: investing
+  subdomain: moat_competition
+  case: SendGrid 2011 Series B
+  briefing: 邮件发送 API 市场既有供应商众多，分析投递信誉与开发者体验哪项更难复制。
+  focus: 条件预测与反事实
+  research_hint: BVP original SendGrid memo 2011
+- id: DES-012
+  date: '2027-03-21'
+  kind: micro_design
+  domain: engineering
+  subdomain: build_tools
+  case: 增量 CI 的依赖判断
+  briefing: 一个 500 个 package 的 Monorepo 每次 PR 都跑全量测试，耗时 50 分钟；团队希望按代码变更选择测试。
+  focus: 设计一种最低复杂度的受影响测试选择机制，说明保守回退条件和正确性评价方式。
+  optional_pressure_test: 部分测试依赖运行时配置和外部服务，静态依赖图并不完整。
+- id: ENG-035
+  date: '2027-03-22'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: GraphQL 在 Facebook 的起源（2012—2015）
+  briefing: 移动端数据需求快速分化时，比较固定 REST endpoint 与客户端声明式查询的边界。
+  focus: 适用边界与迁移
+  research_hint: GraphQL history official announcement
+- id: PRO-023
+  date: '2027-03-23'
+  kind: historical
+  domain: product
+  subdomain: network_marketplaces
+  case: OpenTable 餐厅端库存系统（1998—2000）
+  briefing: 从餐厅预订软件开始累积实时席位供给，分析先做 SaaS 再做 marketplace 的策略。
+  focus: 竞争假说与证据区分
+  research_hint: OpenTable history and S-1
+- id: ENG-036
+  date: '2027-03-24'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Linux CFS 调度器（2007）
+  briefing: 负载不均的 CPU 任务争用下，推导 vruntime 如何影响公平与延迟。
+  focus: 因果机制推演
+  research_hint: Linux kernel CFS scheduler docs
+- id: PRO-024
+  date: '2027-03-25'
+  kind: historical
+  domain: product
+  subdomain: b2b_adoption
+  case: Sentry Developer Monitoring 商业化（2015—2021）
+  briefing: 错误监控工具由工程师自助安装，评估哪些企业管理功能决定规模化付费。
+  focus: 约束下的决策取舍
+  research_hint: Sentry pricing and enterprise history
+- id: ENG-037
+  date: '2027-03-26'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Redis Sentinel 自动故障转移（2013）
+  briefing: 根据主从延迟和故障检测事件，预测 promote 后的数据丢失窗口和脑裂可能性。
+  focus: 条件预测与反事实
+  research_hint: Redis Sentinel design and documentation
+- id: INV-013
+  date: '2027-03-27'
+  kind: historical
+  domain: investing
+  subdomain: funding_survival_exit
+  case: Airbnb 2009 Seed 生存融资
+  briefing: 订房需求尚不稳定且资金吃紧时，判断短期收入试验与继续融资的选择。
+  focus: 高信息价值证据选择
+  research_hint: Airbnb founders cereal boxes history and early fundraising
+- id: DES-013
+  date: '2027-03-28'
+  kind: micro_design
+  domain: investing
+  subdomain: marketplace_liquidity
+  case: 双边服务市场的冷启动
+  briefing: 两人团队想连接独立维修技师与家庭用户；技师关心稳定订单，用户关心响应速度和可靠性。初期只能覆盖一个城区。
+  focus: 设计最窄的供需切入策略及交易闭环，说明先获取哪一侧、怎样验证流动性。
+  optional_pressure_test: 每周订单波动很大，优质技师不愿为了零星订单保持空闲。
+- id: ENG-038
+  date: '2027-03-29'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Go 1.21 Toolchain 管理（2023）
+  briefing: 语言版本与构建工具版本不一致时，比较自动下载工具链与固定环境的运维成本。
+  focus: 竞争假说与证据区分
+  research_hint: Go toolchain management documentation
+- id: PRO-025
+  date: '2027-03-30'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: YouTube 2005 年早期产品定位与用途扩展
+  briefing: YouTube 早期围绕视频上传和发现探索定位，后来面向广泛视频内容发展。分析产品冷启动时应根据哪些真实上传与观看行为调整定位，并注意关于早期“视频约会”的流行叙事可能存在回顾偏差。
+  focus: 因果机制推演
+  research_hint: YouTube founding interviews and 2005 archived product materials
+- id: ENG-039
+  date: '2027-03-31'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: Cloudflare Pingora 替换 NGINX（2022—2024）
+  briefing: 大流量代理为何迁移至 Rust 自研框架，估算连接复用与内存效率收益。
+  focus: 数量级估计与模型校准
+  research_hint: Cloudflare blog Pingora proxy
+- id: PRO-026
+  date: '2027-04-01'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Apple iPhone 首代触控键盘（2007）
+  briefing: 放弃物理键盘，靠软件预测和触控反馈改善输入；评估创新体验与学习成本。
+  focus: 适用边界与迁移
+  research_hint: Apple iPhone 2007 launch presentation
+- id: ENG-040
+  date: '2027-04-02'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Cloudflare 2023 年 11 月控制面中断
+  briefing: 数据中心供电故障令控制面不可用而部分数据面仍工作；判断故障域与依赖分层。
+  focus: 约束下的决策取舍
+  research_hint: Cloudflare post mortem Nov 2 2023
+- id: INV-014
+  date: '2027-04-03'
+  kind: historical
+  domain: investing
+  subdomain: valuation_terms
+  case: Box 2014 延期 IPO 与融资
+  briefing: 现金消耗高而估值较高时，判断延迟上市融资如何改变旧股东回报分布。
+  focus: 条件预测与反事实
+  research_hint: Box S-1 and 2014 financing history
+- id: DES-014
+  date: '2027-04-04'
+  kind: micro_design
+  domain: engineering
+  subdomain: data_api_evolution
+  case: 在线数据库 Schema 演进
+  briefing: 一个线上服务有持续流量，数据库表新增字段后需要逐步迁移历史数据，应用部署不能同时完成。
+  focus: 设计兼容新旧应用版本的迁移阶段和可回滚边界；用一项不变量说明何时可以删除旧字段。
+  optional_pressure_test: 迁移过程中出现一次回滚，部分新版本实例仍在写新字段。
+- id: ENG-041
+  date: '2027-04-05'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: Google Bigtable（2006）
+  briefing: 大规模稀疏宽表如何实现有序键扫描，分析 tablet 切分与单点热点。
+  focus: 因果机制推演
+  research_hint: 'Bigtable: A Distributed Storage System for Structured Data'
+- id: PRO-027
+  date: '2027-04-06'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: GitHub Private Repositories 免费开放（2019）
+  briefing: 从私有仓库付费转向更开放的免费层，判断开发者平台采用和收入结构。
+  focus: 竞争假说与证据区分
+  research_hint: GitHub free private repositories 2019 announcement
+- id: ENG-042
+  date: '2027-04-07'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: Kubernetes CRD 与 Aggregated API（2016—2018）
+  briefing: 扩展平台数据模型时，判断何时用 CRD、何时需要自建 API Server。
+  focus: 高信息价值证据选择
+  research_hint: Kubernetes API extension comparison
+- id: PRO-028
+  date: '2027-04-08'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: Figma 评论与设计协作（2017—）
+  briefing: 设计文件成为跨职能沟通媒介，判断非设计师加入如何增强产品粘性。
+  focus: 约束下的决策取舍
+  research_hint: Figma comments product release
+- id: ENG-043
+  date: '2027-04-09'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: Spectre（2018）
+  briefing: CPU 推测执行让访问检查与微架构侧信道脱节；检验权限模型的隐含假设。
+  focus: 数量级估计与模型校准
+  research_hint: Spectre 2018 original paper
+- id: INV-015
+  date: '2027-04-10'
+  kind: historical
+  domain: investing
+  subdomain: unit_economics
+  case: Uber 2015—2019 私募融资
+  briefing: 订单快速扩张却依赖补贴时，计算城市密度改善能否使贡献利润转正。
+  focus: 适用边界与迁移
+  research_hint: Uber S-1 historical segment data
+- id: DES-015
+  date: '2027-04-11'
+  kind: micro_design
+  domain: product
+  subdomain: activation_ux
+  case: 记账产品的第一份有效反馈
+  briefing: 一个个人现金流管理产品需要导入交易后才有价值，但用户对银行授权十分谨慎，手动录入又很烦。
+  focus: 设计不依赖完整银行授权的首次价值体验，确定第一周真正需要验证的行为。
+  optional_pressure_test: 部分用户现金收入占很大比例，银行交易记录并不完整。
+- id: ENG-044
+  date: '2027-04-12'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Facebook TAO（2013）
+  briefing: 研究社交图读多写少场景中，缓存层与主存储的更新传播及一致性取舍。
+  focus: 因果机制推演
+  research_hint: 'TAO: Facebook’s Distributed Data Store for the Social Graph (USENIX 2013)'
+- id: PRO-029
+  date: '2027-04-13'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: LinkedIn 邀请联系人网络（2003—）
+  briefing: 在专业身份网络冷启动时，预测联系人导入对网络密度和信任的影响。
+  focus: 条件预测与反事实
+  research_hint: LinkedIn early growth interviews
+- id: ENG-045
+  date: '2027-04-14'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Rust Cargo Features 设计（2013—）
+  briefing: 依赖包特性组合导致构建行为变化，推导 feature unification 与可复现性的权衡。
+  focus: 竞争假说与证据区分
+  research_hint: Cargo features reference
+- id: PRO-030
+  date: '2027-04-15'
+  kind: historical
+  domain: product
+  subdomain: strategy_pivot
+  case: Microsoft Windows Phone 停止投入（2017）
+  briefing: 移动 OS 生态无法追赶时，判断何时终止平台战争并重新配置资源。
+  focus: 约束下的决策取舍
+  research_hint: Microsoft Windows phone 2017 public statements
+- id: ENG-046
+  date: '2027-04-16'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: .NET ThreadPool Hill Climbing（2000s—）
+  briefing: 线程数增加导致吞吐下降或饥饿时，用测量而非直觉判断 worker 注入。
+  focus: 高信息价值证据选择
+  research_hint: .NET ThreadPool docs and performance investigation
+- id: INV-016
+  date: '2027-04-17'
+  kind: historical
+  domain: investing
+  subdomain: pmf_traction
+  case: Pinterest 2011 Series A
+  briefing: 社交收藏流量增长但变现模式不清楚时，如何把用户行为和留存转为投资判断。
+  focus: 因果机制推演
+  research_hint: BVP original Pinterest memo 2011
+- id: DES-016
+  date: '2027-04-18'
+  kind: micro_design
+  domain: investing
+  subdomain: portfolio_allocation
+  case: 早期基金的后续投资储备
+  briefing: 一家规模 8000 万美元的早期基金，剩余可投资金 1800 万美元，已投企业中有三家分别处于高增长、高风险及融资困难状态。
+  focus: 设计新投资与跟投之间的资本配置原则，明确什么情况下追加、放弃或暂缓投资，而不必精算最佳收益率。
+  optional_pressure_test: 其中一家快速增长企业提出高估值跟投，但另一家核心持仓同时需要桥接融资。
+- id: ENG-047
+  date: '2027-04-19'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Fastly 2021 年 6 月大面积故障
+  briefing: 潜伏软件缺陷被客户配置触发；评估配置有效性与底层实现之间的责任边界。
+  focus: 条件预测与反事实
+  research_hint: Fastly June 8 2021 outage summary
+- id: PRO-031
+  date: '2027-04-20'
+  kind: historical
+  domain: product
+  subdomain: network_marketplaces
+  case: Tinder Swipe 匹配（2012）
+  briefing: 用对称喜欢的动作简化双边互动，评估匹配数量和有效关系的差异。
+  focus: 数量级估计与模型校准
+  research_hint: Tinder early launch interviews
+- id: ENG-048
+  date: '2027-04-21'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: SQLite NGQP 查询规划回归与修复（2013）
+  briefing: >-
+    SQLite 引入新一代 Query Planner 后，Fossil 的某类查询暴露了性能回归。面对查询计划与实际负载不符的情况，分析优化器如何比较候选计划、为什么局部成本估计可能误导整体结果，以及应如何验证修复。
+  focus: 适用边界与迁移
+  research_hint: SQLite NGQP documentation and Fossil case study
+- id: PRO-032
+  date: '2027-04-22'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Dropbox 早期 Demo 视频（2007）
+  briefing: 产品未大规模可用时，公开视频获得需求信号；判断兴趣、注册与真实留存的差异。
+  focus: 竞争假说与证据区分
+  research_hint: Drew Houston Dropbox demo and early traction interviews
+- id: ENG-049
+  date: '2027-04-23'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: Kubernetes API 对象与控制器分离（2014—）
+  briefing: 从 Deployment、ReplicaSet、Pod 分层理解声明式 API 如何分配状态和所有权。
+  focus: 因果机制推演
+  research_hint: Kubernetes API conventions and Deployment docs
+- id: INV-017
+  date: '2027-04-24'
+  kind: historical
+  domain: investing
+  subdomain: market_timing
+  case: Twilio 2009 Seed
+  briefing: 云通信 API 尚属新事物时，评估开发者自助集成是否足以重塑传统电信价值链。
+  focus: 约束下的决策取舍
+  research_hint: BVP original Twilio seed memo 2009
+- id: DES-017
+  date: '2027-04-25'
+  kind: micro_design
+  domain: product
+  subdomain: b2b_adoption
+  case: 跨部门 B2B 产品的引导路径
+  briefing: 一个面向法务和销售的合同协作产品，销售希望立即发起审批，法务则要求规则和模板统一。
+  focus: 设计首次导入团队的角色分工与最低启动流程，不要求一次性迁移全部历史合同。
+  optional_pressure_test: 一线销售已经试用，但正式购买权在采购与合规团队。
+- id: ENG-050
+  date: '2027-04-26'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: LinkedIn Kafka 日志存储（2011）
+  briefing: 事件摄取规模扩大时，判断顺序写、批处理和零拷贝怎样改变吞吐与延迟。
+  focus: 条件预测与反事实
+  research_hint: Kafka a Distributed Messaging System for Log Processing
+- id: PRO-033
+  date: '2027-04-27'
+  kind: historical
+  domain: product
+  subdomain: b2b_adoption
+  case: Snowflake Consumption Model（2014—2019）
+  briefing: 企业先低承诺试用，再随数据和工作负载增加付费；区分采购阻力与成本治理。
+  focus: 高信息价值证据选择
+  research_hint: Snowflake S-1
+- id: ENG-051
+  date: '2027-04-28'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: Log4Shell（2021）
+  briefing: 日志字符串最终触发 JNDI 远程查找；在数据到控制的路径上定位信任边界。
+  focus: 竞争假说与证据区分
+  research_hint: Apache Log4j CVE-2021-44228 security page
+- id: PRO-034
+  date: '2027-04-29'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Spotify 早期即时播放体验（2008）
+  briefing: 相比下载音乐的等待，流式播放快速启动如何影响感知价值。
+  focus: 因果机制推演
+  research_hint: Spotify early engineering/product launch history
+- id: ENG-052
+  date: '2027-04-30'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Amazon Dynamo（2007）
+  briefing: 在购物车服务需要持续可写时，权衡一致性、可用性和版本冲突；预测网络分区下读写结果。
+  focus: 数量级估计与模型校准
+  research_hint: 'Dynamo: Amazon’s Highly Available Key-value Store (SOSP 2007)'
+- id: INV-018
+  date: '2027-05-01'
+  kind: historical
+  domain: investing
+  subdomain: moat_competition
+  case: Toast 2015 Series B
+  briefing: 餐饮 POS 与支付深度绑定，评估垂直工作流能否建立高切换成本。
+  focus: 适用边界与迁移
+  research_hint: BVP original Toast memo 2015
+- id: DES-018
+  date: '2027-05-02'
+  kind: micro_design
+  domain: engineering
+  subdomain: reliability_platform
+  case: 渐进发布与紧急停止
+  briefing: 一个平台服务每周有数十次部署，影响多个客户，团队希望自动逐步放量且能对部分租户止损。
+  focus: 设计发布状态机、停止条件和回滚责任边界；明确哪些信号不能单独证明安全。
+  optional_pressure_test: 新版本修改了持久数据格式，代码回滚不再意味着数据自动恢复。
+- id: ENG-053
+  date: '2027-05-03'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Nx Affected Builds（2020—）
+  briefing: 在 Monorepo 中按依赖图选择受影响任务，分析图不完整时的漏构建风险。
+  focus: 约束下的决策取舍
+  research_hint: Nx affected command documentation
+- id: PRO-035
+  date: '2027-05-04'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: Dropbox Freemium 存储配额（2008—）
+  briefing: 提供免费容量吸引用户，判断何时足以触发付费扩容。
+  focus: 条件预测与反事实
+  research_hint: Dropbox early freemium and referral model
+- id: ENG-054
+  date: '2027-05-05'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Google 闰秒 Leap Smear 方案（2011–2012）
+  briefing: >-
+    Google 为避免闰秒造成机器时钟突然跳变，在2011年前后公开了逐渐调整时间的 leap smear 方法，并在2012年继续使用。分析时间同步对分布式软件的隐含假设、平滑时钟与精确
+    UTC 之间的取舍，以及如何验证这项防御措施；不要将它称为 Google 在2012年的已证实故障。
+  focus: 因果机制与边界判断：时钟假设、同步策略和避免事故的工程取舍。
+  research_hint: 'Google Official Blog: Time, technology and leaping seconds (2011); Google Developers
+    Leap Smear'
+- id: PRO-036
+  date: '2027-05-06'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: Spotify Discover Weekly（2015）
+  briefing: 每周定期个性化歌单塑造回访习惯，区分算法命中率与周期性价值。
+  focus: 竞争假说与证据区分
+  research_hint: Spotify Discover Weekly launch 2015
+- id: ENG-055
+  date: '2027-05-07'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Go 1.14 异步抢占（2020）
+  briefing: CPU 密集循环使 goroutine 难调度时，分析异步抢占能消除哪类延迟。
+  focus: 高信息价值证据选择
+  research_hint: Go 1.14 release notes
+- id: INV-019
+  date: '2027-05-08'
+  kind: historical
+  domain: investing
+  subdomain: founder_execution
+  case: Stripe 2010—2011 Seed
+  briefing: 年轻创始团队想改造复杂支付集成，怎样判断技术执行能力与金融合规缺口。
+  focus: 约束下的决策取舍
+  research_hint: Stripe founders interviews and early fundraising
+- id: DES-019
+  date: '2027-05-09'
+  kind: micro_design
+  domain: product
+  subdomain: trust_behavior
+  case: 有用而克制的通知系统
+  briefing: 一款工作协作产品希望提醒用户真正需要回应的事项，但用户已经抱怨通知太多、无法区分紧急程度。
+  focus: 设计通知优先级和默认规则，给出衡量信息价值而非点击率的方式。
+  optional_pressure_test: 一个团队要求管理员强制全部成员开启所有提醒。
+- id: ENG-056
+  date: '2027-05-10'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: GitHub REST 到 GraphQL API v4（2016）
+  briefing: 面对复杂资源关系和请求数量，判断引入 GraphQL 是否真正减轻客户端成本。
+  focus: 数量级估计与模型校准
+  research_hint: GitHub GraphQL API announcement 2016
+- id: PRO-037
+  date: '2027-05-11'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: Hotmail 邮件签名增长（1996—1997）
+  briefing: 在免费邮件底部植入注册链接，推演传播系数与网络外部性。
+  focus: 条件预测与反事实
+  research_hint: Hotmail growth history founder interviews
+- id: ENG-057
+  date: '2027-05-12'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: Amazon Redshift 列式分析（2012）
+  briefing: 大量扫描与聚合请求时，判断压缩、排序键和数据分布对于性能的影响。
+  focus: 因果机制推演
+  research_hint: Amazon Redshift system overview docs
+- id: PRO-038
+  date: '2027-05-13'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Instagram 从 Burbn 缩减功能（2010）
+  briefing: 移动社交应用早期功能复杂，团队聚焦照片分享；推断真正满足的高频用户任务。
+  focus: 适用边界与迁移
+  research_hint: Kevin Systrom Instagram Burbn origin interviews
+- id: ENG-058
+  date: '2027-05-14'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Kafka 复制协议（2012—2013）
+  briefing: 研究 ISR 与 leader 选举规则，在 broker 故障下区分可用性与消息丢失风险。
+  focus: 竞争假说与证据区分
+  research_hint: Kafka design documentation on replication
+- id: INV-020
+  date: '2027-05-15'
+  kind: historical
+  domain: investing
+  subdomain: valuation_terms
+  case: Nubank 2021 IPO 估值
+  briefing: 拉美数字银行用户增长强劲时，判断每客户经济性和信贷风险是否被价格反映。
+  focus: 约束下的决策取舍
+  research_hint: Nu Holdings 2021 F-1
+- id: DES-020
+  date: '2027-05-16'
+  kind: micro_design
+  domain: engineering
+  subdomain: observability_data
+  case: 高基数追踪数据怎样付得起
+  briefing: 一个 APM 产品需要按 trace、service、用户请求路径检索数据，但某些客户每秒产生数百万 spans，存储预算有限。
+  focus: 选择最小可行的数据组织、采样或索引策略，并说明何种诊断查询会因这些取舍而失效。
+  optional_pressure_test: 客户开始要求分析一天前极低频出现的异常调用链。
+- id: ENG-059
+  date: '2027-05-17'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Bazel Remote Execution API（2018—）
+  briefing: 把编译步骤移到远端时，什么必须进入 action key，哪些环境差异会破坏缓存正确性。
+  focus: 高信息价值证据选择
+  research_hint: Remote Execution API specification
+- id: PRO-039
+  date: '2027-05-18'
+  kind: historical
+  domain: product
+  subdomain: strategy_pivot
+  case: Microsoft Teams 与 Slack 竞争（2017—2020）
+  briefing: 既有 Office 分发如何改变新协作产品的采用难度，区分产品优势与渠道优势。
+  focus: 因果机制推演
+  research_hint: Microsoft Teams launch and Slack competition filings
+- id: ENG-060
+  date: '2027-05-19'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: Heartbleed OpenSSL（2014）
+  briefing: TLS heartbeat 输入长度校验缺失导致内存泄漏；推演信任边界和测试覆盖盲点。
+  focus: 条件预测与反事实
+  research_hint: Heartbleed CVE-2014-0160 advisory
+- id: PRO-040
+  date: '2027-05-20'
+  kind: historical
+  domain: product
+  subdomain: network_marketplaces
+  case: DoorDash 郊区餐饮配送起点（2013）
+  briefing: 竞争对手重视市中心时，从低密度市场出发验证运力与订单经济性。
+  focus: 数量级估计与模型校准
+  research_hint: DoorDash S-1 and founding interviews
+- id: ENG-061
+  date: '2027-05-21'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Cloudflare 2024 年 6 月 DDoS 规则事故
+  briefing: 保护规则引入误伤和延迟；区分恶意流量、防护策略和回源问题。
+  focus: 竞争假说与证据区分
+  research_hint: Cloudflare incident June 20 2024
+- id: INV-021
+  date: '2027-05-22'
+  kind: historical
+  domain: investing
+  subdomain: unit_economics
+  case: Spotify 2016—2018 上市前投资
+  briefing: 订阅增长与音乐版权成本相互绑定，估算边际毛利和谈判力。
+  focus: 适用边界与迁移
+  research_hint: Spotify F-1 2018
+- id: DES-021
+  date: '2027-05-23'
+  kind: micro_design
+  domain: investing
+  subdomain: validation_experiment
+  case: 缺少渠道优势时怎样验证付费
+  briefing: 创始人想做一款供独立会计师使用的 AI 文档整理工具，预算只够四周访谈与一个小原型。
+  focus: 设计一组按信息价值排序的验证活动，明确什么证据足以继续、调整或停止开发。
+  optional_pressure_test: 受访者普遍表示喜欢产品，但无人愿意预付或连接真实客户文件。
+- id: ENG-062
+  date: '2027-05-24'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: Netflix 自适应码率播放（2010s）
+  briefing: 在网络带宽波动下选择画质与卡顿的权衡，判断优化目标为何不是最高码率。
+  focus: 约束下的决策取舍
+  research_hint: Netflix TechBlog adaptive streaming
+- id: PRO-041
+  date: '2027-05-25'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Grammarly 浏览器实时纠错（2015—）
+  briefing: 把写作反馈嵌入用户现有表单，分析安装后第一分钟如何展示价值。
+  focus: 因果机制推演
+  research_hint: Grammarly extension launch history
+- id: ENG-063
+  date: '2027-05-26'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Rust async/await 稳定（2019）
+  briefing: Future 的惰性执行与任务轮询不同于线程时，预测取消与资源释放边界。
+  focus: 条件预测与反事实
+  research_hint: Rust async/await stable announcement
+- id: PRO-042
+  date: '2027-05-27'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: Unity Runtime Fee 争议与撤回（2023—2024）
+  briefing: 修改游戏引擎收费指标引发信任危机，分析计费可预测性与平台依赖风险。
+  focus: 高信息价值证据选择
+  research_hint: Unity Runtime Fee 2023 announcement and reversal
+- id: ENG-064
+  date: '2027-05-28'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: Docker Image OCI 标准化（2015—2017）
+  briefing: 容器构建与运行时解耦时，判断镜像格式规范能解决什么互操作问题。
+  focus: 竞争假说与证据区分
+  research_hint: OCI Image Specification history
+- id: INV-022
+  date: '2027-05-29'
+  kind: historical
+  domain: investing
+  subdomain: pmf_traction
+  case: LinkedIn 2006 Series C
+  briefing: 专业人脉图已经增长时，判断网络密度与商业化路径是否足以支持继续投资。
+  focus: 因果机制推演
+  research_hint: BVP original LinkedIn memo 2006
+- id: DES-022
+  date: '2027-05-30'
+  kind: micro_design
+  domain: product
+  subdomain: marketplace_trust
+  case: 评价体系如何建立可信的 Marketplace
+  briefing: 一个连接家庭与短期护理服务者的市场上线后，用户希望凭评价判断服务质量，而供给方担心差评伤害收入。
+  focus: 设计一次交易后的评价与争议处理机制，兼顾信息可信度和被滥用风险。
+  optional_pressure_test: 平台发现部分用户以差评威胁服务者私下退款。
+- id: ENG-065
+  date: '2027-05-31'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Google Megastore（2011）
+  briefing: 在 entity group 内外选择一致性边界，判断事务范围扩大对延迟和可用性的影响。
+  focus: 约束下的决策取舍
+  research_hint: 'Megastore: Providing Scalable, Highly Available Storage for Interactive Services'
+- id: PRO-043
+  date: '2027-06-01'
+  kind: historical
+  domain: product
+  subdomain: b2b_adoption
+  case: Atlassian Jira 自助购买（2000s）
+  briefing: 较少高接触销售却进入团队流程，研究自助采用在何种组织规模失效。
+  focus: 数量级估计与模型校准
+  research_hint: Atlassian F-1 and founder interviews
+- id: ENG-066
+  date: '2027-06-02'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: VS Code Remote Development（2019）
+  briefing: 编辑器 UI 与执行环境分离时，重建扩展在本地/远端运行的职责边界。
+  focus: 适用边界与迁移
+  research_hint: VS Code Remote Development announcement
+- id: PRO-044
+  date: '2027-06-03'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: Duolingo Leagues（2018）
+  briefing: 排行榜竞争提高回访但可能影响学习目标，判断 engagement 与 learning 的因果关系。
+  focus: 条件预测与反事实
+  research_hint: Duolingo Leagues launch
+- id: ENG-067
+  date: '2027-06-04'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: PostgreSQL MVCC VACUUM（2000s—）
+  briefing: 长事务导致版本滞留和表膨胀时，从可见性机制推导回收困境。
+  focus: 因果机制推演
+  research_hint: PostgreSQL MVCC and routine vacuuming docs
+- id: INV-023
+  date: '2027-06-05'
+  kind: historical
+  domain: investing
+  subdomain: funding_survival_exit
+  case: WeWork 2019 撤回 IPO 与救助
+  briefing: 上市失败导致流动性危机，判断融资缺口、控制权和债权人保护的优先顺序。
+  focus: 竞争假说与证据区分
+  research_hint: WeWork 2019 IPO withdrawal and SoftBank transaction
+- id: DES-023
+  date: '2027-06-06'
+  kind: micro_design
+  domain: engineering
+  subdomain: api_sdk
+  case: 插件 SDK 的稳定扩展点
+  briefing: 一个开发工具希望开放插件能力：插件可增加命令、读取项目结构并展示结果，但核心每两周迭代。
+  focus: 设计最小插件契约及版本兼容策略，说明为何不直接暴露内部对象。
+  optional_pressure_test: 社区要求插件可以执行构建过程的任意阶段钩子。
+- id: ENG-068
+  date: '2027-06-07'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: AWS us-east-1 2021 年 12 月网络事件
+  briefing: 控制平面与内部网络拥塞导致连锁影响；评估监控和恢复操作的可达性。
+  focus: 约束下的决策取舍
+  research_hint: AWS December 7 2021 event summary
+- id: PRO-045
+  date: '2027-06-08'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: Pinterest Waitlist 邀请制（2010—2011）
+  briefing: 从小范围爱好者社区向外扩散，分析邀请机制的稀缺感和真实使用价值。
+  focus: 高信息价值证据选择
+  research_hint: Pinterest founding growth history
+- id: ENG-069
+  date: '2027-06-09'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: Capital One 云环境泄露（2019）
+  briefing: 从 SSRF 到云凭据和对象存储访问，分析最小权限与网络过滤的边界。
+  focus: 条件预测与反事实
+  research_hint: US DOJ Capital One data breach complaint
+- id: PRO-046
+  date: '2027-06-10'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Airbnb 早期纽约房源摄影（2009）
+  briefing: 创始人发现房源展示影响预订意愿；判断关键用户障碍究竟是供应量还是信息可信度。
+  focus: 因果机制推演
+  research_hint: Airbnb founder interviews on New York photography
+- id: ENG-070
+  date: '2027-06-11'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Go 1.1 调度器 G-M-P 模型（2013）
+  briefing: Go 调度器通过 G、M、P 把 goroutine、操作系统线程和执行资源分离。以2013年前后的调度模型为背景，推演系统调用阻塞、可运行任务增多及工作窃取时的状态转移，讨论吞吐、公平和复杂性的取舍。
+  focus: 数量级估计与模型校准
+  research_hint: Go scheduler design notes, Go 1.1
+- id: INV-024
+  date: '2027-06-12'
+  kind: historical
+  domain: investing
+  subdomain: market_timing
+  case: Mistral AI 2023 Seed
+  briefing: 基础模型训练资本强度迅速上升时，评估欧洲开源/主权模型定位能否形成需求。
+  focus: 适用边界与迁移
+  research_hint: Mistral AI 2023 strategic memo and seed announcements
+- id: DES-024
+  date: '2027-06-13'
+  kind: micro_design
+  domain: investing
+  subdomain: oss_business_model
+  case: 开源与托管服务的商业边界
+  briefing: 一个开源 Workflow Engine 已有活跃社区，却需要收入支持全职维护者；用户既有个人开发者也有企业。
+  focus: 设计开源核心与付费服务的边界，并提出验证付费意愿的方法，避免破坏社区信任。
+  optional_pressure_test: 一家大客户要求私有部署，并拒绝支付持续 SaaS 费用。
+- id: ENG-071
+  date: '2027-06-14'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: Crossplane Compositions（2020—2023）
+  briefing: 内部平台暴露自助资源时，比较直接泄露云对象与提供稳定平台抽象。
+  focus: 竞争假说与证据区分
+  research_hint: Crossplane Composition design docs
+- id: PRO-047
+  date: '2027-06-15'
+  kind: historical
+  domain: product
+  subdomain: strategy_pivot
+  case: Netflix 从 DVD 转向流媒体（2007）
+  briefing: 原有盈利模式仍有价值时，判断新分发技术何时值得主动蚕食旧业务。
+  focus: 约束下的决策取舍
+  research_hint: Netflix 2007 streaming launch and letters
+- id: ENG-072
+  date: '2027-06-16'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: LinkedIn Venice 多区域数据（2022）
+  briefing: 研究面向在线服务的读多写少数据层，评估异步复制与应用可见的新鲜度。
+  focus: 高信息价值证据选择
+  research_hint: 'LinkedIn Engineering: Venice'
+- id: PRO-048
+  date: '2027-06-17'
+  kind: historical
+  domain: product
+  subdomain: network_marketplaces
+  case: Steam Workshop 创作者市场（2011—）
+  briefing: 用户内容创作与平台分成结合，分析供给激励如何形成内容生态。
+  focus: 因果机制推演
+  research_hint: Valve Steam Workshop launch history
+- id: ENG-073
+  date: '2027-06-18'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Meta Sapling 版本控制（2022）
+  briefing: 大型仓库提交和历史操作变慢时，重新设计 VCS 用户体验与后端之间的边界。
+  focus: 条件预测与反事实
+  research_hint: Meta Engineering Sapling source-control announcement
+- id: INV-025
+  date: '2027-06-19'
+  kind: historical
+  domain: investing
+  subdomain: moat_competition
+  case: Datadog 2015—2019 融资
+  briefing: 可观测性厂商功能重叠严重时，判断集成广度和使用数据是否构成护城河。
+  focus: 竞争假说与证据区分
+  research_hint: Datadog S-1
+- id: DES-025
+  date: '2027-06-20'
+  kind: micro_design
+  domain: product
+  subdomain: retention_jobs
+  case: 取消订阅也要维护长期信任
+  briefing: 一款团队软件的用户频繁在项目结束后取消订阅，企业希望减少流失，却不想用暗黑模式阻止退出。
+  focus: 设计取消、暂停、导出和回访机制，说明怎样判断问题是价值不足还是自然周期。
+  optional_pressure_test: 财务希望提前锁定一年合同，但客户只在旺季使用。
+- id: ENG-074
+  date: '2027-06-21'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: Google Borg 集群超售（2015）
+  briefing: 混合在线与批处理工作负载时，评估资源预留、优先级和实际利用率。
+  focus: 约束下的决策取舍
+  research_hint: Large-scale cluster management at Google with Borg
+- id: PRO-049
+  date: '2027-06-22'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Superhuman 人工一对一 Onboarding（2017—）
+  briefing: 高价邮件客户端用人工培训提高使用成功率，计算人力投入与激活质量的取舍。
+  focus: 数量级估计与模型校准
+  research_hint: First Round Review Superhuman onboarding
+- id: ENG-075
+  date: '2027-06-23'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: PostgreSQL B-tree Deduplication（2020）
+  briefing: 高重复键索引膨胀时，判断去重对写放大与查询性能的作用。
+  focus: 适用边界与迁移
+  research_hint: PostgreSQL 13 B-tree deduplication release
+- id: PRO-050
+  date: '2027-06-24'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: Zoom 免费会议 40 分钟限制（2013—）
+  briefing: 按时长划分免费与付费，在病毒传播和企业付费之间寻找界限。
+  focus: 因果机制推演
+  research_hint: Zoom pricing history and IPO S-1
+- id: ENG-076
+  date: '2027-06-25'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Atlassian 2022 年云服务恢复事故
+  briefing: 维护脚本错误移除站点资源且恢复耗时；判断数据恢复与重新供应的不同边界。
+  focus: 条件预测与反事实
+  research_hint: Atlassian April 2022 cloud outage post incident review
+- id: INV-026
+  date: '2027-06-26'
+  kind: historical
+  domain: investing
+  subdomain: valuation_terms
+  case: Roblox 2021 直接上市
+  briefing: 虚拟经济平台使用 bookings 和收入递延指标，如何在直接上市时解释估值。
+  focus: 高信息价值证据选择
+  research_hint: Roblox S-1 and 2021 direct listing materials
+- id: DES-026
+  date: '2027-06-27'
+  kind: micro_design
+  domain: engineering
+  subdomain: developer_environment
+  case: 可快速启动的远程开发环境
+  briefing: 开发者希望临时启动隔离云端 workspace，既要尽量复用构建缓存，又不能泄露团队间的源代码和凭据。
+  focus: 设计一个最小生命周期、缓存边界与启动优化方案，明确成本的计费责任。
+  optional_pressure_test: 部分 workspace 中断后需要数小时内恢复未提交的本地修改。
+- id: ENG-077
+  date: '2027-06-28'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: Kubernetes CVE-2018-1002105
+  briefing: 分析 API Server 权限提升链条，区分认证、授权与升级连接协议的信任边界。
+  focus: 竞争假说与证据区分
+  research_hint: Kubernetes CVE-2018-1002105 advisory
+- id: PRO-051
+  date: '2027-06-29'
+  kind: historical
+  domain: product
+  subdomain: b2b_adoption
+  case: HashiCorp Terraform Enterprise（2014—2021）
+  briefing: 从开源工具进入企业治理采购，判断 SSO、审计与协作功能的付费驱动。
+  focus: 约束下的决策取舍
+  research_hint: HashiCorp S-1
+- id: ENG-078
+  date: '2027-06-30'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Go GC Concurrent Mark Sweep（2015）
+  briefing: 从 stop-the-world 转向并发标记时，推理 write barrier 对暂停与吞吐的影响。
+  focus: 因果机制推演
+  research_hint: Go GC guide and talks
+- id: PRO-052
+  date: '2027-07-01'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Duolingo 免费语言学习定位（2011—2012）
+  briefing: 面对昂贵语言教育与大众用户，判断免费模式解决的真实障碍和潜在成本。
+  focus: 数量级估计与模型校准
+  research_hint: Duolingo launch interviews Luis von Ahn
+- id: ENG-079
+  date: '2027-07-02'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Kubernetes EndpointSlice 传播（2019—2021）
+  briefing: 面对服务 endpoint 快速变化，推演控制面事件与数据面生效之间的时序差。
+  focus: 条件预测与反事实
+  research_hint: Kubernetes EndpointSlice KEP and docs
+- id: INV-027
+  date: '2027-07-03'
+  kind: historical
+  domain: investing
+  subdomain: unit_economics
+  case: HelloFresh 2015—2017 融资
+  briefing: 订阅餐盒物流和营销成本高，判断高频下单能否覆盖 CAC 与损耗。
+  focus: 适用边界与迁移
+  research_hint: HelloFresh IPO prospectus
+- id: DES-027
+  date: '2027-07-04'
+  kind: micro_design
+  domain: engineering
+  subdomain: workflow_control_plane
+  case: 跨区域配置变更的生效语义
+  briefing: 一个多区域平台有数千个客户端读取动态配置，网络分区和节点离线经常发生，控制台仍要显示发布进度。
+  focus: 设计发布版本、确认、生效与回滚的最小模型，说明何时可以声称“发布成功”。
+  optional_pressure_test: 某个区域离线数小时，旧版本配置会造成安全风险。
+- id: ENG-080
+  date: '2027-07-05'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Bazel 2015 公开发布与增量构建模型
+  briefing: Bazel 将大型代码仓库中的构建表达为有依赖关系的动作，并通过对输入和执行环境建模支持增量复用。分析怎样界定正确的依赖图、如何避免不确定性污染缓存，以及公开发布时已经实现的能力与未来计划的区别。
+  focus: 因果机制推演
+  research_hint: Bazel public beta announcement 2015
+- id: PRO-053
+  date: '2027-07-06'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: WhatsApp 群聊上线（2011）
+  briefing: 一对一消息扩展为群体协作时，判断用户关系图怎样影响继续使用的概率。
+  focus: 约束下的决策取舍
+  research_hint: WhatsApp group chat product timeline
+- id: ENG-081
+  date: '2027-07-07'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: AWS Lambda Extensions API（2020）
+  briefing: 监控和安全代理需要介入 serverless 生命周期时，怎样设计最小扩展点。
+  focus: 竞争假说与证据区分
+  research_hint: AWS Lambda Extensions API launch
+- id: PRO-054
+  date: '2027-07-08'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: GitHub Student Developer Pack（2014）
+  briefing: 通过学生生态进入开发者职业早期，判断长周期渠道投入的价值。
+  focus: 高信息价值证据选择
+  research_hint: GitHub Student Developer Pack launch
+- id: ENG-082
+  date: '2027-07-09'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Cloudflare 2025 年 6 月 Workers KV 故障
+  briefing: 底层存储依赖失效波及多个产品；画出依赖图并寻找可切断的级联路径。
+  focus: 条件预测与反事实
+  research_hint: Cloudflare service outage June 12 2025
+- id: INV-028
+  date: '2027-07-10'
+  kind: historical
+  domain: investing
+  subdomain: pmf_traction
+  case: Twitch 2012 Series B
+  briefing: 游戏直播从 Justin.tv 分化，评估观看时长、内容供给与主播留存是否构成 PMF。
+  focus: 因果机制推演
+  research_hint: BVP original Twitch memo 2012
+- id: DES-028
+  date: '2027-07-11'
+  kind: micro_design
+  domain: investing
+  subdomain: regulated_enterprise_gtm
+  case: 受监管行业 AI 创业的可信起点
+  briefing: 一个小团队要面向诊所行政人员提供 AI 表单处理服务；最初没有医疗机构销售经验，也不能承诺零错误。
+  focus: 设计最小的可销售服务范围、人工审查边界与合规验证顺序。
+  optional_pressure_test: 试点客户要求全自动写入正式病历系统，否则不愿付费。
+- id: ENG-083
+  date: '2027-07-12'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: Notion 数据库分片（2021）
+  briefing: 工作区数量增长造成存储瓶颈时，评估分片策略与租户数据位置的选择。
+  focus: 数量级估计与模型校准
+  research_hint: Notion engineering sharding Postgres
+- id: PRO-055
+  date: '2027-07-13'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Twitter 初期字数约束（2006）
+  briefing: SMS 时代的短消息约束成为产品交互模型；判断强约束对创作与传播的作用。
+  focus: 适用边界与迁移
+  research_hint: Twitter early 140-character history
+- id: ENG-084
+  date: '2027-07-14'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: Netflix Open Connect CDN（2012）
+  briefing: 跨公网交付视频成本升高时，评估自建边缘缓存的流量经济学。
+  focus: 约束下的决策取舍
+  research_hint: Netflix Open Connect announcement
+- id: PRO-056
+  date: '2027-07-15'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: Slack 按活跃成员计费（2013—）
+  briefing: 团队软件只向活跃使用者收费的选择，分析计费公平感与收入波动。
+  focus: 竞争假说与证据区分
+  research_hint: Slack Fair Billing Policy history
+- id: ENG-085
+  date: '2027-07-16'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: CockroachDB 分布式事务（2016—2020）
+  briefing: 在跨节点读写与冲突重试中预测时间戳推进和串行化失败的边界。
+  focus: 条件预测与反事实
+  research_hint: CockroachDB engineering docs on transaction retries
+- id: INV-029
+  date: '2027-07-17'
+  kind: historical
+  domain: investing
+  subdomain: market_timing
+  case: Coinbase 2012—2013 Seed/Series A
+  briefing: 加密资产交易尚不成熟且监管未知时，如何定价市场机会与生存风险。
+  focus: 因果机制推演
+  research_hint: Coinbase S-1 and 2013 fundraising reports
+- id: DES-029
+  date: '2027-07-18'
+  kind: micro_design
+  domain: product
+  subdomain: collaboration_ux
+  case: 多人编辑时的冲突可见性
+  briefing: 一个用于共同起草投标材料的产品允许多人异步编辑；用户需要知道哪些改动会覆盖他人工作，但又不想学习版本控制。
+  focus: 设计冲突展示与合并交互的最小方案，说明用户何时需要主动决策。
+  optional_pressure_test: 团队开始从不同设备离线编辑同一个重要段落。
+- id: ENG-086
+  date: '2027-07-19'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Google Piper 单体仓库（2016）
+  briefing: 研究集中代码管理与多仓库对依赖治理、代码发现、发布自治的不同影响。
+  focus: 高信息价值证据选择
+  research_hint: Why Google Stores Billions of Lines of Code in a Single Repository
+- id: PRO-057
+  date: '2027-07-20'
+  kind: historical
+  domain: product
+  subdomain: strategy_pivot
+  case: BlackBerry 从硬件转向软件服务（2016）
+  briefing: 手机竞争优势消退后，评估企业能力能否迁移到安全软件市场。
+  focus: 约束下的决策取舍
+  research_hint: BlackBerry device business transition history
+- id: ENG-087
+  date: '2027-07-21'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: React Server Components（2020—2023）
+  briefing: 划分客户端与服务端组件的职责，分析传输、缓存和组件组合的约束。
+  focus: 竞争假说与证据区分
+  research_hint: React Server Components RFC
+- id: PRO-058
+  date: '2027-07-22'
+  kind: historical
+  domain: product
+  subdomain: network_marketplaces
+  case: Uber 城市级供需冷启动（2010—2012）
+  briefing: 在新城市先拉司机还是乘客，预测等待时间、价格和供给密度的反馈。
+  focus: 数量级估计与模型校准
+  research_hint: Uber S-1 marketplace history
+- id: ENG-088
+  date: '2027-07-23'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Linux io_uring（2019）
+  briefing: 高并发 IO 使用 ring buffer 提交与完成时，判断减少系统调用的收益与安全边界。
+  focus: 适用边界与迁移
+  research_hint: io_uring kernel documentation
+- id: INV-030
+  date: '2027-07-24'
+  kind: historical
+  domain: investing
+  subdomain: funding_survival_exit
+  case: Convoy 2023 关闭
+  briefing: 数字货运平台在融资环境收紧时无法继续经营，分析现金周期与资本市场依赖。
+  focus: 因果机制推演
+  research_hint: Convoy 2023 shutdown memo and reporting
+- id: DES-030
+  date: '2027-07-25'
+  kind: micro_design
+  domain: engineering
+  subdomain: security_multitenancy
+  case: 共享平台里的租户资源隔离
+  briefing: 一个多租户批处理服务同时服务小客户和头部客户；部分任务会占满 CPU 与队列，租户之间不应互相影响。
+  focus: 设计最小调度与配额模型，并解释哪些隔离承诺能够成立，哪些需要独立资源池。
+  optional_pressure_test: 一家头部客户要求保证延迟 SLA，同时希望允许短时突发超过常规配额。
+- id: ENG-089
+  date: '2027-07-26'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: Rowhammer（2014）
+  briefing: 高频内存访问可扰动邻近位，识别软件访问权限与物理效应之间的边界。
+  focus: 条件预测与反事实
+  research_hint: Rowhammer original 2014 paper
+- id: PRO-059
+  date: '2027-07-27'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Zappos 早期本地鞋店代发实验（1999）
+  briefing: Nick Swinmurn 在自建仓储前拍摄当地鞋店的商品并挂到网站上，产生真实订单后再去店里采购。站在最初实验的视角，判断这个低成本操作究竟验证了哪些付费行为，以及它没有验证的库存、履约和规模经济问题。
+  focus: 实验设计与证据选择：真实付费比意向调查能证明什么，又有哪些商业假设尚未通过测试。
+  research_hint: Nick Swinmurn interview in Fortune 2012; Eric Ries The Lean Startup
+- id: ENG-090
+  date: '2027-07-28'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: GitLab 2017 年生产数据库误删除
+  briefing: 恢复备份发现多层缺陷；根据恢复演练证据决定止损与重建路线。
+  focus: 约束下的决策取舍
+  research_hint: GitLab.com database incident 2017 postmortem
+- id: PRO-060
+  date: '2027-07-29'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: Todoist Recurring Tasks（2010s）
+  briefing: 重复任务和每日工作流结合时，分析频率、任务完成和留存的关系。
+  focus: 竞争假说与证据区分
+  research_hint: Todoist recurring due dates product docs/history
+- id: ENG-091
+  date: '2027-07-30'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: Vitess 分片治理（2010—）
+  briefing: MySQL 单节点无法承载写入增长时，如何选择分片键并处理跨 shard 查询。
+  focus: 因果机制推演
+  research_hint: Vitess architecture design docs
+- id: INV-031
+  date: '2027-07-31'
+  kind: historical
+  domain: investing
+  subdomain: founder_execution
+  case: Atlassian 2002—2005 自举期
+  briefing: 创始团队以低销售投入扩展软件工具，评估这种执行模式何时可行、何时成为限制。
+  focus: 条件预测与反事实
+  research_hint: Atlassian S-1 and founders history
+- id: DES-031
+  date: '2027-08-01'
+  kind: micro_design
+  domain: product
+  subdomain: discovery_content
+  case: 探索型内容产品怎样衡量好推荐
+  briefing: 一款帮助用户发现当地兴趣活动的产品，推荐列表点击率不错，但用户实际报名和到场比例不高。
+  focus: 设计排序目标、用户反馈和评价指标，避免只奖励易点击却不适合的活动。
+  optional_pressure_test: 最受欢迎的活动名额有限，新用户总是被推荐已经满员的活动。
+- id: ENG-092
+  date: '2027-08-02'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: ZooKeeper Zab（2011）
+  briefing: 面对 leader 切换与未提交提议，推演广播恢复阶段为何不能只依靠多数响应。
+  focus: 数量级估计与模型校准
+  research_hint: 'Zab: High-performance broadcast for primary-backup systems'
+- id: PRO-061
+  date: '2027-08-03'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: Robinhood Referral 免费股票（2015—）
+  briefing: 金融开户流程使用奖励拉新，讨论奖励费用与有效资金账户之间的差异。
+  focus: 适用边界与迁移
+  research_hint: Robinhood early referrals and S-1
+- id: ENG-093
+  date: '2027-08-04'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: GitHub Codespaces 发布（2021）
+  briefing: 从本地环境转向云端开发，判断开发环境可重现性与网络依赖的取舍。
+  focus: 约束下的决策取舍
+  research_hint: GitHub Codespaces GA announcement
+- id: PRO-062
+  date: '2027-08-05'
+  kind: historical
+  domain: product
+  subdomain: b2b_adoption
+  case: Datadog 免费试用到企业监控（2010—2019）
+  briefing: 开发者自助接入之后，如何通过用量增长和跨团队采用发展大客户。
+  focus: 因果机制推演
+  research_hint: Datadog S-1
+- id: ENG-094
+  date: '2027-08-06'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: gRPC Streaming API 设计（2015）
+  briefing: 用一项需增量返回和流量控制的业务分析 unary 与 streaming 对错误语义的影响。
+  focus: 竞争假说与证据区分
+  research_hint: gRPC core concepts and original design
+- id: INV-032
+  date: '2027-08-07'
+  kind: historical
+  domain: investing
+  subdomain: valuation_terms
+  case: Reddit 2024 IPO 定价
+  briefing: 增长中的社区平台依赖广告和内容贡献时，依据招股书估值讨论商业化风险与定价。
+  focus: 高信息价值证据选择
+  research_hint: Reddit 2024 S-1 and final IPO prospectus
+- id: DES-032
+  date: '2027-08-08'
+  kind: micro_design
+  domain: engineering
+  subdomain: runtime_performance
+  case: 减少内存占用而不破坏延迟
+  briefing: 一个 Go 常驻服务处理突发请求，内存开销高；团队在缓存、对象生命周期和 GC 参数之间犹豫。
+  focus: 定义最小性能模型、诊断实验与优化顺序；说明什么情况会让降低内存反而伤害尾延迟。
+  optional_pressure_test: 服务部署在内存紧张的节点上，OOM 比平均延迟更影响可用性。
+- id: ENG-095
+  date: '2027-08-09'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Java G1 GC 默认化（2017）
+  briefing: 在吞吐和暂停时间冲突下，解释区域化回收与预测暂停模型。
+  focus: 条件预测与反事实
+  research_hint: JEP 248 Make G1 the Default Garbage Collector
+- id: PRO-063
+  date: '2027-08-10'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Google Maps 移动端导航上线（2009）
+  briefing: 从查询路线到实时转向指引，分析端到端任务完成感如何改变留存。
+  focus: 因果机制推演
+  research_hint: Google Maps Navigation 2009 launch blog
+- id: ENG-096
+  date: '2027-08-11'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: Twitter 2012—2014 时间线扇出
+  briefing: 明星账号写入放大导致负载失衡时，比较 fanout-on-write 与 fanout-on-read。
+  focus: 约束下的决策取舍
+  research_hint: Twitter Engineering timeline architecture
+- id: PRO-064
+  date: '2027-08-12'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: Spotify 广告免费与 Premium 并存（2008—）
+  briefing: 免费层扩大覆盖却有授权成本；分析转化率和广告收入如何支撑分层定价。
+  focus: 数量级估计与模型校准
+  research_hint: Spotify IPO F-1 business model
+- id: ENG-097
+  date: '2027-08-13'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Google 2020 年身份验证故障
+  briefing: 共享身份服务资源问题导致多产品失效；寻找能区分控制面与业务服务的观测。
+  focus: 竞争假说与证据区分
+  research_hint: Google Cloud 2020 authentication outage incident report
+- id: INV-033
+  date: '2027-08-14'
+  kind: historical
+  domain: investing
+  subdomain: unit_economics
+  case: Blue Apron 2015—2017 融资/上市
+  briefing: 快速获客但高 churn 的餐盒业务，区分收入增长与 cohort 经济质量。
+  focus: 适用边界与迁移
+  research_hint: Blue Apron S-1
+- id: DES-033
+  date: '2027-08-15'
+  kind: micro_design
+  domain: investing
+  subdomain: geographic_expansion
+  case: 小市场 2C 创业如何越过分发限制
+  briefing: 一款面向新西兰户外运动爱好者的手机应用有忠实早期用户，但本地市场规模有限，创始人只有少量营销预算。
+  focus: 设计一个低成本可检验的增长路线：加强本地密度、拓展海外或改变目标客户，明确比较标准。
+  optional_pressure_test: 海外用户使用场景不同，本地网络效应无法直接复制。
+- id: ENG-098
+  date: '2027-08-16'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: runC 容器逃逸 CVE-2019-5736
+  briefing: 恶意容器覆写运行时二进制的条件是什么；重建容器边界失败链。
+  focus: 条件预测与反事实
+  research_hint: runC CVE-2019-5736 security advisory
+- id: PRO-065
+  date: '2027-08-17'
+  kind: historical
+  domain: product
+  subdomain: strategy_pivot
+  case: Google Reader 关闭（2013）
+  briefing: 拥有忠实用户但优先级下降的产品如何做取舍，分析价值对用户与公司的不同含义。
+  focus: 因果机制推演
+  research_hint: Google Reader spring cleaning 2013 announcement
+- id: ENG-099
+  date: '2027-08-18'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: FoundationDB 事务层（2013）
+  briefing: 分析 optimistic concurrency、read version 与 commit proxy，在高冲突下预测吞吐下降。
+  focus: 高信息价值证据选择
+  research_hint: FoundationDB paper (SIGMOD 2021)
+- id: PRO-066
+  date: '2027-08-19'
+  kind: historical
+  domain: product
+  subdomain: network_marketplaces
+  case: Apple App Store 上线（2008）
+  briefing: 建立第三方应用分发与审查体系，判断开发者和用户之间的双边激励。
+  focus: 约束下的决策取舍
+  research_hint: Apple App Store 2008 launch
+- id: ENG-100
+  date: '2027-08-20'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Microsoft TypeScript 增量构建（2018—2020）
+  briefing: 类型依赖和项目引用增长后，判断增量编译应重新检查哪些模块。
+  focus: 竞争假说与证据区分
+  research_hint: TypeScript project references / incremental build docs
+- id: INV-034
+  date: '2027-08-21'
+  kind: historical
+  domain: investing
+  subdomain: pmf_traction
+  case: Chegg 2023 年生成式 AI 冲击与经营拐点
+  briefing: >-
+    生成式 AI 工具开始改变学生获取作业辅导和答案的方式，Chegg 在2023年披露了需求增长受到影响的迹象。站在投资者视角，判断传统学习订阅产品受到的是周期性波动、渠道变化还是长期替代，并选择最能区分这些机制的后续经营信号。
+  focus: 结构性变化与投资判断：区分暂时需求波动、可替代性与持续现金流损害。
+  research_hint: Chegg 2023 Q1 earnings release and management commentary
+- id: DES-034
+  date: '2027-08-22'
+  kind: micro_design
+  domain: product
+  subdomain: workflow_automation
+  case: 自动化产品如何保留用户控制权
+  briefing: 一款面向运营人员的自动化工具能根据自然语言创建跨系统工作流；错误执行可能修改真实客户数据。
+  focus: 设计从意图、预览、授权到执行反馈的交互闭环，明确可撤销与不可撤销操作。
+  optional_pressure_test: 用户希望定时无人值守执行，而外部系统不支持事务回滚。
+- id: ENG-101
+  date: '2027-08-23'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: Uber Schemaless（2016）
+  briefing: 从高度异构实体读写负载出发，评估弱 schema KV 与关系型模型的演进代价。
+  focus: 因果机制推演
+  research_hint: Uber Engineering Schemaless
+- id: PRO-067
+  date: '2027-08-24'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Twitch 从 Justin.tv 拆分（2011）
+  briefing: 观察直播用户的游戏内容集中度，决定是否把垂直行为做成独立产品。
+  focus: 条件预测与反事实
+  research_hint: Twitch and Justin.tv founder histories
+- id: ENG-102
+  date: '2027-08-25'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: Git LFS 的外置大文件模型（2015）
+  briefing: 当版本控制面对二进制文件膨胀时，推演指针对象和远端存储改变了什么契约。
+  focus: 适用边界与迁移
+  research_hint: Git LFS project design/specification
+- id: PRO-068
+  date: '2027-08-26'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: GitHub Dependabot 集成（2019）
+  briefing: 依赖更新直接进入 PR 工作流，判断把风险治理嵌入开发循环的长期价值。
+  focus: 约束下的决策取舍
+  research_hint: GitHub Dependabot acquisition and native integration
+- id: ENG-103
+  date: '2027-08-27'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Python asyncio 引入（2014）
+  briefing: IO 并发很多而线程上下文成本较高时，预测协作式调度在阻塞代码下的失败模式。
+  focus: 高信息价值证据选择
+  research_hint: PEP 3156 asyncio
+- id: INV-035
+  date: '2027-08-28'
+  kind: historical
+  domain: investing
+  subdomain: moat_competition
+  case: MongoDB 2015—2017 融资
+  briefing: 开源数据库流行但云厂商可提供托管替代，评估开源品牌与商业捕获能力。
+  focus: 竞争假说与证据区分
+  research_hint: MongoDB S-1
+- id: DES-035
+  date: '2027-08-29'
+  kind: micro_design
+  domain: engineering
+  subdomain: agent_devtools
+  case: Agent Eval 作为日常开发工作流
+  briefing: 一家软件团队频繁修改 coding agent 的提示词和工具列表，却无法解释为什么某次调整让真实任务更差。
+  focus: 设计最小的 eval 任务单元、回归门槛和失败分型流程，尽量避免维护庞大的人工基准。
+  optional_pressure_test: 模型供应商版本更新，导致同一评测波动增加而平均分暂时提高。
+- id: ENG-104
+  date: '2027-08-30'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Cloudflare 2025 年 11 月 Bot Management 故障
+  briefing: 特征文件生成问题影响请求处理；追问为何数据配置变更能造成网络级连锁故障。
+  focus: 因果机制推演
+  research_hint: Cloudflare outage November 18 2025
+- id: PRO-069
+  date: '2027-08-31'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: TikTok 收购 Musical.ly（2017—2018）
+  briefing: 通过收购取得用户群和创作者网络，判断分发协同能否转化为产品整合。
+  focus: 条件预测与反事实
+  research_hint: ByteDance Musical.ly acquisition history
+- id: ENG-105
+  date: '2027-09-01'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Google Chubby 锁服务（2006）
+  briefing: 面对 lease、故障和客户端缓存，判断分布式锁能保证哪些性质、不能保证哪些性质。
+  focus: 约束下的决策取舍
+  research_hint: The Chubby lock service (OSDI 2006)
+- id: PRO-070
+  date: '2027-09-02'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Figma 多人光标（2016—）
+  briefing: 实时展示其他设计者位置，判断社交临场感是否减少协作沟通成本。
+  focus: 数量级估计与模型校准
+  research_hint: Figma multiplayer product launch accounts
+- id: ENG-106
+  date: '2027-09-03'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Language Server Protocol（2016）
+  briefing: 一套语言能力服务多个编辑器，评估标准化协议对创新与扩展能力的影响。
+  focus: 适用边界与迁移
+  research_hint: LSP original announcement and specification
+- id: INV-036
+  date: '2027-09-04'
+  kind: historical
+  domain: investing
+  subdomain: market_timing
+  case: Snowflake 2012—2014 早期融资
+  briefing: 云数仓在传统数仓和 Hadoop 之间出现时，识别云原生弹性是否构成独立市场。
+  focus: 因果机制推演
+  research_hint: Snowflake S-1 and founders early funding history
+- id: DES-036
+  date: '2027-09-05'
+  kind: micro_design
+  domain: product
+  subdomain: pricing_packaging
+  case: 协作产品的套餐边界
+  briefing: 一款在线协作白板拥有个人、自由职业团队和大型企业三类客户；若按座席收费，小团队会抵制邀请协作者。
+  focus: 设计免费与付费套餐、计量单位及升级触发点，说明会导致什么用户激励。
+  optional_pressure_test: 企业客户要求只对编辑者付费，但审阅者占总用户的九成。
+- id: ENG-107
+  date: '2027-09-06'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: Equifax Apache Struts 漏洞（2017）
+  briefing: 已知漏洞、补丁和资产清单脱节；判断组织层面的可利用窗口与防线优先级。
+  focus: 竞争假说与证据区分
+  research_hint: US House Equifax breach report
+- id: PRO-071
+  date: '2027-09-07'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: Netflix 从单次租赁转向订阅（1999）
+  briefing: 无限租借订阅改变需求频率与库存周转；判断定价指标如何匹配真实用户价值。
+  focus: 高信息价值证据选择
+  research_hint: Netflix history subscription introduction
+- id: ENG-108
+  date: '2027-09-08'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: Google Tail at Scale（2013）
+  briefing: P99 延迟由少量慢副本主导时，分析 hedged requests、资源浪费和长尾改善。
+  focus: 条件预测与反事实
+  research_hint: The Tail at Scale (CACM 2013)
+- id: PRO-072
+  date: '2027-09-09'
+  kind: historical
+  domain: product
+  subdomain: b2b_adoption
+  case: Notion Enterprise 安全功能（2020—）
+  briefing: 个人知识工具进入大型企业，判断管理权限、数据保护和采购的先后顺序。
+  focus: 约束下的决策取舍
+  research_hint: Notion enterprise plan release notes
+- id: ENG-109
+  date: '2027-09-10'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: OpenTelemetry 规范统一（2019）
+  briefing: 从 OpenTracing/OpenCensus 合并的背景判断跨语言遥测 API 如何减少锁定。
+  focus: 因果机制推演
+  research_hint: OpenTelemetry project history and specification
+- id: INV-037
+  date: '2027-09-11'
+  kind: historical
+  domain: investing
+  subdomain: valuation_terms
+  case: Rivian 2021 IPO 估值
+  briefing: 汽车交付尚处早期且资本开支庞大，构建产能达成与股权估值的情景。
+  focus: 竞争假说与证据区分
+  research_hint: Rivian 2021 S-1
+- id: DES-037
+  date: '2027-09-12'
+  kind: micro_design
+  domain: engineering
+  subdomain: distributed_sync
+  case: 离线编辑与跨设备恢复
+  briefing: 一个轻量笔记客户端需支持离线修改后自动同步；用户常用手机和笔记本，不想理解同步协议。
+  focus: 设计对象版本、冲突发现与恢复体验，并说明哪些情况不能静默合并。
+  optional_pressure_test: 两台设备在离线时同时删除与修改同一条笔记。
+- id: ENG-110
+  date: '2027-09-13'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: Discord 消息存储迁移（2017—2023）
+  briefing: 消息量增长时从 MongoDB/Cassandra 到 ScyllaDB 的抉择，估算热点与迁移成本。
+  focus: 数量级估计与模型校准
+  research_hint: Discord Engineering storing trillions of messages
+- id: PRO-073
+  date: '2027-09-14'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Pinterest 从 Tote 演化（2009—2010）
+  briefing: 观察用户收藏而非购买行为，推断视觉收集是否比移动购物更有价值。
+  focus: 适用边界与迁移
+  research_hint: BVP Pinterest 2011 investment memo
+- id: ENG-111
+  date: '2027-09-15'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Cloudflare 2026 年 2 月 BYOIP 路由撤销
+  briefing: 自动化变更意外撤销客户 BGP 前缀；从控制面操作推断外部网络症状。
+  focus: 条件预测与反事实
+  research_hint: Cloudflare outage February 20 2026
+- id: PRO-074
+  date: '2027-09-16'
+  kind: historical
+  domain: product
+  subdomain: strategy_pivot
+  case: Adobe 收购 Figma 失败（2022—2023）
+  briefing: 大型软件平台尝试收购新兴竞争者受阻，分析产品整合机会与监管/战略风险。
+  focus: 因果机制推演
+  research_hint: Adobe Figma merger announcement and termination
+- id: ENG-112
+  date: '2027-09-17'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Node.js libuv 事件循环（2009—）
+  briefing: 针对异步文件与网络请求，追踪 event loop、thread pool 与回调延迟的关系。
+  focus: 高信息价值证据选择
+  research_hint: Node.js event loop design documentation
+- id: INV-038
+  date: '2027-09-18'
+  kind: historical
+  domain: investing
+  subdomain: unit_economics
+  case: Peloton 2018—2019 Pre-IPO
+  briefing: 硬件低复购与订阅高留存组合，评估硬件获客策略的回本周期。
+  focus: 约束下的决策取舍
+  research_hint: Peloton S-1
+- id: DES-038
+  date: '2027-09-19'
+  kind: micro_design
+  domain: investing
+  subdomain: investment_diligence
+  case: 投资尽调的最小信息集
+  briefing: 你是小型早期基金的投资人，只有三天评估一款收入增长快、客户集中度高的 Developer Tool SaaS；完整数据室尚未开放。
+  focus: 设计一份优先级明确的尽调清单与投资委员会记录模板，说明哪些证据会改变估值或拒投决定。
+  optional_pressure_test: 创始人只能提供聚合 ARR，拒绝开放 cohort 和客户级合同信息。
+- id: ENG-113
+  date: '2027-09-20'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: etcd Raft 故障恢复（2015—2018）
+  briefing: 模拟 quorum 丧失和成员替换，区分正常成员变更与灾难恢复中的一致性风险。
+  focus: 竞争假说与证据区分
+  research_hint: 'etcd operations guide: disaster recovery and runtime reconfiguration'
+- id: PRO-075
+  date: '2027-09-21'
+  kind: historical
+  domain: product
+  subdomain: network_marketplaces
+  case: Upwork Elance 与 oDesk 合并（2013—2015）
+  briefing: 自由职业服务两大市场整合后，分析多归属与流动性改变。
+  focus: 条件预测与反事实
+  research_hint: Upwork S-1 company history
+- id: ENG-114
+  date: '2027-09-22'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Gitpod 工作区快照（2020—）
+  briefing: 新 workspace 启动慢时，评估预构建与状态复用如何影响成本、隔离和新鲜度。
+  focus: 因果机制推演
+  research_hint: Gitpod prebuilds documentation
+- id: PRO-076
+  date: '2027-09-23'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: Notion 数据库视图与关联（2018—）
+  briefing: 个人笔记扩展到复杂团队工作流时，分析可组合对象对留存与学习成本的双重影响。
+  focus: 数量级估计与模型校准
+  research_hint: Notion databases product history
+- id: ENG-115
+  date: '2027-09-24'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: XZ Utils 后门事件（2024）
+  briefing: 开源维护与构建脚本被渗透；从源码审查到发布工件判断可检测点。
+  focus: 适用边界与迁移
+  research_hint: Openwall oss-security XZ backdoor 2024
+- id: INV-039
+  date: '2027-09-25'
+  kind: historical
+  domain: investing
+  subdomain: pmf_traction
+  case: Canva 2013—2015 早期融资
+  briefing: 模板化设计工具增长时，判断非设计师需求的广度与付费转化机会。
+  focus: 约束下的决策取舍
+  research_hint: Canva founder interviews and investment history
+- id: DES-039
+  date: '2027-09-26'
+  kind: micro_design
+  domain: engineering
+  subdomain: security_audit
+  case: 默认安全的审计事件模型
+  briefing: 一个支持多租户管理操作的平台要保存审计日志，方便合规调查和客户自助查询，但部分操作包含敏感字段。
+  focus: 设计最小审计事件结构、访问控制与保留策略，并说明它与普通应用日志的区别。
+  optional_pressure_test: 客户要求能删除个人信息，合规团队又要求关键管理员操作不可抵赖。
+- id: ENG-116
+  date: '2027-09-27'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: Envoy xDS 动态配置（2017—）
+  briefing: 面对频繁流量规则变更，比较静态配置发布与控制面推送的数据面契约。
+  focus: 高信息价值证据选择
+  research_hint: Envoy xDS protocol documentation
+- id: PRO-077
+  date: '2027-09-28'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: Duolingo App Store 排名驱动（2010s）
+  briefing: 免费工具早期移动分发依赖应用商店，辨别自然增长与渠道平台风险。
+  focus: 竞争假说与证据区分
+  research_hint: Duolingo founder early mobile growth interviews
+- id: ENG-117
+  date: '2027-09-29'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: RocksDB Ribbon Filter 的内存与 CPU 取舍（2021）
+  briefing: RocksDB 团队提出 Ribbon Filter 等过滤器优化，以减少过滤器所需空间，但构建和查询开销、工作负载分布可能改变收益。分析内存、CPU、误报与缓存命中之间的代价，判断哪些负载值得采用新方案。
+  focus: 性能成本模型：根据系统负载比较空间节约与计算代价，而不是只比较单一指标。
+  research_hint: RocksDB Ribbon Filter design and engineering documentation (2021)
+- id: PRO-078
+  date: '2027-09-30'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Instagram Stories 发布（2016）
+  briefing: 在永久主页照片之外引入临时内容，预测用户创作频率及表达压力变化。
+  focus: 条件预测与反事实
+  research_hint: Instagram Stories 2016 launch announcement
+- id: ENG-118
+  date: '2027-10-01'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Knight Capital 2012 年部署事故
+  briefing: 部分服务器部署状态不一致触发异常交易；判断 release 原子性与 Kill Switch 的作用。
+  focus: 约束下的决策取舍
+  research_hint: SEC Knight Capital 2012 investigation
+- id: INV-040
+  date: '2027-10-02'
+  kind: historical
+  domain: investing
+  subdomain: funding_survival_exit
+  case: Quibi 2020 关闭
+  briefing: 获得巨额早期资金但用户采用未达预期，研究何时停止继续投入、怎样控制沉没成本。
+  focus: 数量级估计与模型校准
+  research_hint: Quibi shutdown statement and investor reports
+- id: DES-040
+  date: '2027-10-03'
+  kind: micro_design
+  domain: product
+  subdomain: roadmap_strategy
+  case: B2B 客户要求功能时如何取舍
+  briefing: 一家 25 人 SaaS 公司服务大客户和中小团队，头部客户愿意签大单，但要求开发深度定制且会影响通用产品路线。
+  focus: 设计需求判断与决策机制，说明什么条件下接受、拒绝或采用可扩展方式满足。
+  optional_pressure_test: 销售已经提前向客户口头承诺了交付时间。
+- id: ENG-119
+  date: '2027-10-04'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: Google F1 数据库（2013）
+  briefing: 应用既想跨数据中心一致又需要 SQL 时，评估 Spanner 上层查询与事务开销。
+  focus: 适用边界与迁移
+  research_hint: 'F1: A Distributed SQL Database That Scales'
+- id: PRO-079
+  date: '2027-10-05'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: Netflix 取消邮寄 DVD 与流媒体捆绑（2011）
+  briefing: Qwikster 方案引发反弹，评估价格调整、品牌与用户心智的相互影响。
+  focus: 因果机制推演
+  research_hint: Netflix Qwikster announcement and reversal
+- id: ENG-120
+  date: '2027-10-06'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: NATS JetStream 持久流（2020）
+  briefing: 以 consumer ack、重试和 stream replicas 为背景，区分至少一次投递与业务 exactly-once 效果。
+  focus: 竞争假说与证据区分
+  research_hint: NATS JetStream design documentation
+- id: PRO-080
+  date: '2027-10-07'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Superhuman PMF 调查（2017—2018）
+  briefing: 利用“失去产品会多失望”调查细分用户，讨论问卷信号如何指导路线图。
+  focus: 高信息价值证据选择
+  research_hint: First Round Review Rahul Vohra Superhuman PMF
+- id: ENG-121
+  date: '2027-10-08'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Pants v2 构建系统（2020—）
+  briefing: 从手写 BUILD 文件转为自动推导依赖，权衡开发便利与可预测性。
+  focus: 条件预测与反事实
+  research_hint: Pants v2 design documentation
+- id: INV-041
+  date: '2027-10-09'
+  kind: historical
+  domain: investing
+  subdomain: moat_competition
+  case: Cloudflare 2014—2019 融资
+  briefing: CDN、安全与边缘网络竞争激烈，判断网络规模、免费层与开发者生态的复合优势。
+  focus: 约束下的决策取舍
+  research_hint: Cloudflare S-1
+- id: DES-041
+  date: '2027-10-10'
+  kind: micro_design
+  domain: engineering
+  subdomain: data_streaming
+  case: Streaming Pipeline 的背压契约
+  briefing: 一个事件采集服务连接多个上游和慢速下游，消息大小变化很大；突发流量会耗尽内存，不能无限缓存。
+  focus: 设计入口限流、缓冲和丢弃或重试语义，明确哪些数据不能丢。
+  optional_pressure_test: 部分上游不支持重试，而下游可能持续不可用一天。
+- id: ENG-122
+  date: '2027-10-11'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Akka Actor 系统（2010s）
+  briefing: 消息异步交付、actor 重启与状态持久化交织时，分析顺序保证边界。
+  focus: 因果机制推演
+  research_hint: Akka actors documentation
+- id: PRO-081
+  date: '2027-10-12'
+  kind: historical
+  domain: product
+  subdomain: b2b_adoption
+  case: Twilio Developer-first API（2008—2016）
+  briefing: 工程师先集成 SMS/Voice API，再推动采购；识别开发者体验带来的销售杠杆。
+  focus: 竞争假说与证据区分
+  research_hint: Twilio S-1 and BVP memo
+- id: ENG-123
+  date: '2027-10-13'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: OpenAPI 3.0 规格演进（2017）
+  briefing: 跨团队 API 文档、客户端生成与验证的成本冲突，评估契约优先的收益与盲点。
+  focus: 数量级估计与模型校准
+  research_hint: OpenAPI Initiative 3.0 release
+- id: PRO-082
+  date: '2027-10-14'
+  kind: historical
+  domain: product
+  subdomain: strategy_pivot
+  case: Twitter → X 品牌与产品定位重塑（2023）
+  briefing: 2023年 Twitter 更名为 X，并尝试把成熟社交产品的品牌与未来产品愿景重新对齐。站在重塑初期，预测对既有用户习惯、品牌识别和广告客户的潜在影响，并区分可观察的后续变化与难以单独识别的品牌因果效应。
+  focus: 品牌与竞争决策：兼顾新定位机会、既有网络资产、信任和归因不确定性。
+  research_hint: Twitter/X 2023 rebranding public announcements; contemporaneous reporting
+- id: ENG-124
+  date: '2027-10-15'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: Kubernetes CVE-2019-11253
+  briefing: 通过 YAML/JSON 解码路径引发资源耗尽，分析 API 输入验证与控制面 DoS 风险。
+  focus: 适用边界与迁移
+  research_hint: Kubernetes CVE-2019-11253 advisory
+- id: INV-042
+  date: '2027-10-16'
+  kind: historical
+  domain: investing
+  subdomain: market_timing
+  case: Zoom 2013—2015 融资
+  briefing: 企业视频会议已有成熟巨头，判断移动网络与产品体验变化是否产生新进入窗口。
+  focus: 约束下的决策取舍
+  research_hint: Zoom S-1 and early investment histories
+- id: DES-042
+  date: '2027-10-17'
+  kind: micro_design
+  domain: investing
+  subdomain: hardware_business_model
+  case: 硬件加软件业务的现金流边界
+  briefing: 初创公司向农场提供传感器硬件及订阅软件；客户希望先免费部署硬件，收入在数月后逐步实现。
+  focus: 设计最小可持续的销售与融资方案，说明硬件库存、安装和坏账怎样影响扩张速度。
+  optional_pressure_test: 大客户愿意签多年订阅，但要求公司先垫付全部设备和现场安装成本。
+- id: ENG-125
+  date: '2027-10-18'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Cloudflare 2019 年 WAF 正则事故
+  briefing: 新规则使 CPU 使用急剧上升；区分部署、回滚与性能预验证机制。
+  focus: 因果机制推演
+  research_hint: Cloudflare details of the Cloudflare outage July 2 2019
+- id: PRO-083
+  date: '2027-10-19'
+  kind: historical
+  domain: product
+  subdomain: network_marketplaces
+  case: GitHub 开源贡献网络（2008—）
+  briefing: 个人仓库和 Pull Request 形成贡献者生态，讨论协作网络是否构成可防守优势。
+  focus: 高信息价值证据选择
+  research_hint: GitHub early open source network history
+- id: ENG-126
+  date: '2027-10-20'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: TiDB Percolator 模型（2016）
+  briefing: 用 primary lock 与二阶段提交场景，判断跨 shard 事务何时会阻塞或需要清理锁。
+  focus: 竞争假说与证据区分
+  research_hint: TiDB transaction model documentation
+- id: PRO-084
+  date: '2027-10-21'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: Adobe Creative Cloud Libraries（2014—）
+  briefing: 跨多个创作工具共享素材和样式，推断整套工作流集成如何改变续费动机。
+  focus: 条件预测与反事实
+  research_hint: Adobe Creative Cloud Libraries launch
+- id: ENG-127
+  date: '2027-10-22'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Buck2 引入 Dice 增量引擎（2023）
+  briefing: Meta 重写构建工具时，研究细粒度依赖追踪如何改变增量计算与正确性。
+  focus: 因果机制推演
+  research_hint: Buck2 announcement and DICE papers
+- id: INV-043
+  date: '2027-10-23'
+  kind: historical
+  domain: investing
+  subdomain: valuation_terms
+  case: Klarna 2021—2022 估值重定价
+  briefing: 金融科技增长预期快速变化时，分析新融资价格、优先股条款与旧股权价值。
+  focus: 约束下的决策取舍
+  research_hint: Klarna funding announcements 2021 2022
+- id: DES-043
+  date: '2027-10-24'
+  kind: micro_design
+  domain: product
+  subdomain: habitless_workflow
+  case: 低频高价值工具如何被记住
+  briefing: 一个帮助创始人准备年度融资材料的工具一年可能只用两次，但使用时任务复杂且价值高。
+  focus: 设计首次交付、数据保留与下次使用的重新进入体验，不依赖每日活跃度。
+  optional_pressure_test: 核心文件通常属于财务顾问而非创始人本人，顾问可能在下次融资时已更换。
+- id: ENG-128
+  date: '2027-10-25'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: TimescaleDB Hypertables（2017）
+  briefing: 持续写入时间序列时，用 chunk、索引和保留策略分析查询性能与存储成本。
+  focus: 数量级估计与模型校准
+  research_hint: TimescaleDB architecture and hypertables docs
+- id: PRO-085
+  date: '2027-10-26'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: Zoom 会议邀请链接传播（2013—2020）
+  briefing: 每次使用天然带来未注册的参与者，评估被动产品曝光如何转成主动采用。
+  focus: 适用边界与迁移
+  research_hint: Zoom product-led growth IPO materials
+- id: ENG-129
+  date: '2027-10-27'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: JavaScript Promise 微任务队列（2015）
+  briefing: 给定 Promise、timer 和同步任务交织，预测回调执行顺序及 starvation 条件。
+  focus: 高信息价值证据选择
+  research_hint: ECMAScript Promise Jobs spec
+- id: PRO-086
+  date: '2027-10-28'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: TikTok For You 默认推荐流（2018—2020）
+  briefing: 无需先关注账号也可消费内容，判断首日价值和推荐冷启动的关系。
+  focus: 竞争假说与证据区分
+  research_hint: TikTok official recommendation system explainer
+- id: ENG-130
+  date: '2027-10-29'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: YouTube 视频转码队列（2010s）
+  briefing: 转码工作负载突发且规格异质，判断批处理、调度和成本预算的关系。
+  focus: 因果机制推演
+  research_hint: Google/YouTube infrastructure papers on video processing
+- id: INV-044
+  date: '2027-10-30'
+  kind: historical
+  domain: investing
+  subdomain: unit_economics
+  case: DoorDash 2019—2020 IPO 前融资
+  briefing: 配送交易价值、平台收入和履约成本差异很大，判断 margin 变化来自什么机制。
+  focus: 条件预测与反事实
+  research_hint: DoorDash S-1
+- id: DES-044
+  date: '2027-10-31'
+  kind: micro_design
+  domain: engineering
+  subdomain: api_sdk
+  case: 跨团队事件契约的版本演进
+  briefing: 多个服务通过异步事件交换订单状态；发布节奏不同，新旧 consumer 会长期共存。
+  focus: 设计事件契约与版本迁移策略，明确字段删除、语义改变和失败重试的边界。
+  optional_pressure_test: 某个下游团队四个月内无法更新代码，却必须继续消费事件。
+- id: ENG-131
+  date: '2027-11-01'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: Bazel Starlark 扩展接口（2017—2020）
+  briefing: 比较内建规则与用户可扩展构建规则，决定稳定性和自定义能力的分界。
+  focus: 约束下的决策取舍
+  research_hint: Bazel Starlark rules design docs
+- id: PRO-087
+  date: '2027-11-02'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: Cloudflare Workers 定价演进（2017—2023）
+  briefing: 边缘运行时按请求计费时，判断计价单位是否符合开发者对成本的直觉。
+  focus: 数量级估计与模型校准
+  research_hint: Cloudflare Workers pricing announcements
+- id: ENG-132
+  date: '2027-11-03'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: GitHub 2018 年 10 月数据库故障
+  briefing: 网络分区导致数据库复制与服务状态异常；在数据完整性与恢复速度间作取舍。
+  focus: 因果机制推演
+  research_hint: GitHub October 21 2018 incident report
+- id: PRO-088
+  date: '2027-11-04'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Figma 浏览器协作编辑定位（2012—2016）
+  briefing: 当设计软件普遍是桌面单机时，判断多人协作是不是值得长期投入的核心工作。
+  focus: 适用边界与迁移
+  research_hint: Dylan Field Figma founding and launch interviews
+- id: ENG-133
+  date: '2027-11-05'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Cassandra 无主写入（2010—2015）
+  briefing: 在 hinted handoff、read repair、quorum 配置组合下判断实际一致性保证。
+  focus: 竞争假说与证据区分
+  research_hint: Apache Cassandra architecture and consistency documentation
+- id: INV-045
+  date: '2027-11-06'
+  kind: historical
+  domain: investing
+  subdomain: pmf_traction
+  case: DoorDash 2013—2014 Seed/Series A
+  briefing: 局部区域订单增长能否复制到多城市，评估局部网络密度是否误导规模预期。
+  focus: 条件预测与反事实
+  research_hint: DoorDash S-1 and early financing memo accounts
+- id: DES-045
+  date: '2027-11-07'
+  kind: micro_design
+  domain: product
+  subdomain: marketplace_trust
+  case: 双边预约产品的公平分配
+  briefing: 一个平台让用户预约紧缺的线下专业服务；优质服务者希望高利润订单，平台又希望新用户不会长期抢不到名额。
+  focus: 设计订单曝光、候补与取消机制，说明对用户和服务者激励的影响。
+  optional_pressure_test: 部分服务者尝试引导客户绕过平台直接成交。
+- id: ENG-134
+  date: '2027-11-08'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Gradle Configuration Cache（2020—）
+  briefing: 大型 JVM 构建反复配置耗时，判断缓存配置阶段需满足哪些副作用限制。
+  focus: 高信息价值证据选择
+  research_hint: Gradle Configuration Cache user guide
+- id: PRO-089
+  date: '2027-11-09'
+  kind: historical
+  domain: product
+  subdomain: b2b_adoption
+  case: GitLab 从开源到企业平台（2011—2021）
+  briefing: 代码协作工具从个人团队使用向集团采购扩张，分析产品广度与部署选项。
+  focus: 约束下的决策取舍
+  research_hint: GitLab S-1
+- id: ENG-135
+  date: '2027-11-10'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: npm event-stream 依赖劫持（2018）
+  briefing: 维护者交接导致恶意依赖代码进入发布链；如何界定依赖信任和审查成本。
+  focus: 因果机制推演
+  research_hint: event-stream npm security incident 2018
+- id: PRO-090
+  date: '2027-11-11'
+  kind: historical
+  domain: product
+  subdomain: strategy_pivot
+  case: Google Stadia 关闭（2022—2023）
+  briefing: 云游戏技术可运行却缺少足够用户采用时，区分技术可行性与商业 PMF。
+  focus: 竞争假说与证据区分
+  research_hint: Google Stadia winding down announcement
+- id: ENG-136
+  date: '2027-11-12'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: Apache Druid 实时摄取（2011—）
+  briefing: 日志分析场景既要求新鲜度又要求聚合性能，比较 segment 构建和查询路径。
+  focus: 条件预测与反事实
+  research_hint: Apache Druid architecture docs
+- id: INV-046
+  date: '2027-11-13'
+  kind: historical
+  domain: investing
+  subdomain: founder_execution
+  case: FTX 2021—2022 风险融资
+  briefing: 快速扩张的平台估值很高，但治理与关联交易复杂；如何识别管理和托管风险。
+  focus: 约束下的决策取舍
+  research_hint: FTX bankruptcy examiner reports and court filings
+- id: DES-046
+  date: '2027-11-14'
+  kind: micro_design
+  domain: engineering
+  subdomain: workflow_control_plane
+  case: Webhook 平台的交付保障
+  briefing: 一款 SaaS 通过 webhook 向客户发送事件；客户 endpoint 经常超时、返回 5xx，且无法保证消息按顺序到达。
+  focus: 设计事件 ID、重试、死信处理和可观测性的最小契约，并说明何时不应继续重试。
+  optional_pressure_test: 同一客户有多个 endpoint，只有一个长期失败，且请求可能具有不可重复的业务副作用。
+- id: ENG-137
+  date: '2027-11-15'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Linux epoll（2002）
+  briefing: 高连接数下比较 select、poll、epoll 的事件通知成本以及 ET 模式漏读风险。
+  focus: 数量级估计与模型校准
+  research_hint: epoll(7) manual page
+- id: PRO-091
+  date: '2027-11-16'
+  kind: historical
+  domain: product
+  subdomain: network_marketplaces
+  case: Substack 推荐网络上线（2022）
+  briefing: 创作者之间互相推荐读者，判断内容平台从工具向网络转变的边界。
+  focus: 适用边界与迁移
+  research_hint: Substack recommendations product launch
+- id: ENG-138
+  date: '2027-11-17'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: Stripe Idempotency-Key API 设计（2017）
+  briefing: 支付请求超时但服务端可能成功；判断重试语义应该由哪一侧承担、如何设计稳定契约。
+  focus: 因果机制推演
+  research_hint: Stripe Designing robust and predictable APIs with idempotency
+- id: PRO-092
+  date: '2027-11-18'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: Google Photos 无限高质量备份（2015）
+  briefing: 自动备份照片建立长期存储习惯，评估数据积累后的退出成本。
+  focus: 高信息价值证据选择
+  research_hint: Google Photos 2015 launch announcement
+- id: ENG-139
+  date: '2027-11-19'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Cloudflare 2022 年 6 月网络中断
+  briefing: 一次路由配置变更影响多个机房；依据流量路径识别 blast radius 与回滚优先级。
+  focus: 竞争假说与证据区分
+  research_hint: Cloudflare outage June 21 2022
+- id: INV-047
+  date: '2027-11-20'
+  kind: historical
+  domain: investing
+  subdomain: funding_survival_exit
+  case: Better.com 2021—2023 SPAC 延期
+  briefing: 房地产周期与交易融资高度相关时，讨论续命融资与等待退出可能产生的稀释。
+  focus: 条件预测与反事实
+  research_hint: Better Home & Finance merger filings
+- id: DES-047
+  date: '2027-11-21'
+  kind: micro_design
+  domain: investing
+  subdomain: pricing_validation
+  case: 没有历史数据时如何设计定价实验
+  briefing: 一款新 B2B 分析工具已有五家试点客户，但尚无固定标价；不同客户请求的数据规模差异很大。
+  focus: 设计低样本下仍有信息价值的定价访谈、付费试点和报价迭代流程，并界定何时停止试探。
+  optional_pressure_test: 第一位大客户愿意付高价，但要求长期独家价格与产品路线影响权。
+- id: ENG-140
+  date: '2027-11-22'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Consul 多数据中心架构（2015）
+  briefing: 比较单数据中心 Raft 与跨数据中心 WAN gossip 的角色边界，判断跨区写入的限制。
+  focus: 约束下的决策取舍
+  research_hint: Consul architecture documentation
+- id: PRO-093
+  date: '2027-11-23'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: Clubhouse 邀请制增长与留存问题（2020–2021）
+  briefing: Clubhouse 在音频社交爆发期采用邀请码准入，关注度与用户进入速度迅速提高。分析稀缺邀请、供需匹配和社交关系可能怎样影响早期增长；设计能够区分短暂热度与真实持续使用的证据，而不是假设邀请码直接造成留存。
+  focus: 假说辨别与留存：区分获客机制、网络价值和用户真实重复参与。
+  research_hint: Clubhouse 2020–2021 invitation-only rollout and 2021 opening announcements
+- id: ENG-141
+  date: '2027-11-24'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Tree-sitter 增量解析（2018）
+  briefing: 编辑器实时反馈需要低延迟解析时，推演增量语法树更新和错误恢复。
+  focus: 数量级估计与模型校准
+  research_hint: Tree-sitter documentation and paper
+- id: PRO-094
+  date: '2027-11-25'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Zoom 一键加入会议设计（2013—）
+  briefing: 受邀者并非付费者，比较下载/注册要求对会议采用的阻力。
+  focus: 适用边界与迁移
+  research_hint: Eric Yuan Zoom early product interviews
+- id: ENG-142
+  date: '2027-11-26'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: Cloudflare Workers 隔离与启动性能（2017—）
+  briefing: 用 V8 Isolate 承载边缘代码，对比容器方案的启动延迟与租户隔离成本。
+  focus: 高信息价值证据选择
+  research_hint: Cloudflare Workers technology blog
+- id: INV-048
+  date: '2027-11-27'
+  kind: historical
+  domain: investing
+  subdomain: moat_competition
+  case: Palantir 2015—2020 资本评估
+  briefing: 高度定制项目和平台化产品同时存在，判断数据与组织嵌入是否可持续扩张。
+  focus: 竞争假说与证据区分
+  research_hint: Palantir S-1
+- id: DES-048
+  date: '2027-11-28'
+  kind: micro_design
+  domain: product
+  subdomain: b2b_adoption
+  case: 从旧工具迁移到新 B2B 产品
+  briefing: 一款新项目协作软件功能并不比竞品全面，但对某个细分团队的工作流明显更合适；切换成本来自数据与组织习惯。
+  focus: 设计一个可逐步采用的迁移路径，明确哪些信息必须导入，哪些行为可以暂时双轨运行。
+  optional_pressure_test: 有一位关键协作者始终留在旧系统，导致重要决策信息仍然分散。
+- id: ENG-143
+  date: '2027-11-29'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: Okta 2023 客户支持系统事件
+  briefing: 支持文件中的身份数据被利用；判断日志、会话 token 与第三方信任风险。
+  focus: 因果机制推演
+  research_hint: Okta 2023 security incident updates
+- id: PRO-095
+  date: '2027-11-30'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: Apple App Store 订阅分成规则（2016）
+  briefing: 长期订阅第二年分成变化，分析平台与开发者之间的激励分配。
+  focus: 条件预测与反事实
+  research_hint: Apple 2016 subscription policy announcement
+- id: ENG-144
+  date: '2027-12-01'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: ClickHouse MergeTree（2016—）
+  briefing: 面向分析的列式表需要高吞吐写入和查询，判断分区、排序键和后台 merge 的权衡。
+  focus: 约束下的决策取舍
+  research_hint: ClickHouse MergeTree docs
+- id: PRO-096
+  date: '2027-12-02'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Calendly 链接式预约（2013）
+  briefing: 对方无需注册即可选时间，推断双边协调任务里最该消除哪方摩擦。
+  focus: 因果机制推演
+  research_hint: Calendly founder interviews and original product
+- id: ENG-145
+  date: '2027-12-03'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: C++11 std::atomic 内存序（2011）
+  briefing: 在 lock-free 发布订阅场景中区分 relaxed、release/acquire 的最小正确约束。
+  focus: 竞争假说与证据区分
+  research_hint: C++ memory model standard reference
+- id: INV-049
+  date: '2027-12-04'
+  kind: historical
+  domain: investing
+  subdomain: market_timing
+  case: Wix 2007—2008 Seed
+  briefing: DIY 建站需求存在但免费服务普遍，判断 SMB 自服务网站市场的可支付规模。
+  focus: 数量级估计与模型校准
+  research_hint: BVP original Wix seed memo
+- id: DES-049
+  date: '2027-12-05'
+  kind: micro_design
+  domain: engineering
+  subdomain: platform_cost
+  case: 配额控制与账单系统的边界
+  briefing: 一个多租户 API 平台按使用量收费，必须限制恶意或误用流量，但请求执行时间与成本不完全可预测。
+  focus: 设计预留、扣费、超额和最终结算的最小状态模型；说明怎样处理重试和重复事件。
+  optional_pressure_test: 客户希望共享团队预算，同时允许不同项目设独立软上限。
+- id: ENG-146
+  date: '2027-12-06'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: React Hooks 发布（2019）
+  briefing: 组件复用逻辑从类生命周期转向函数闭包；预测新抽象可能暴露的状态错误。
+  focus: 条件预测与反事实
+  research_hint: React Hooks announcement and RFC
+- id: PRO-097
+  date: '2027-12-07'
+  kind: historical
+  domain: product
+  subdomain: b2b_adoption
+  case: Figma 从设计师向组织扩散（2016—2022）
+  briefing: 产品协作吸引工程师和 PM，分析使用者与预算持有者不一致时的采购过程。
+  focus: 适用边界与迁移
+  research_hint: Figma S-1 draft/Adobe acquisition materials
+- id: ENG-147
+  date: '2027-12-08'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Facebook 2021 年 10 月全球中断
+  briefing: 骨干网配置使服务及运维访问受损；讨论恢复能力对自身依赖的风险。
+  focus: 约束下的决策取舍
+  research_hint: Meta Engineering more details about October 4 outage
+- id: PRO-098
+  date: '2027-12-09'
+  kind: historical
+  domain: product
+  subdomain: strategy_pivot
+  case: Meta Horizon Workrooms 方向调整（2021—2024）
+  briefing: VR 会议从概念推向办公场景时，检验硬件摩擦与真实任务价值。
+  focus: 高信息价值证据选择
+  research_hint: Meta Horizon Workrooms launch and product updates
+- id: ENG-148
+  date: '2027-12-10'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Uber Ringpop 一致性散列（2016）
+  briefing: 在节点变更与 gossip 传播下预测路由视图暂时分歧造成的请求问题。
+  focus: 因果机制推演
+  research_hint: 'Uber Engineering: Ringpop'
+- id: INV-050
+  date: '2027-12-11'
+  kind: historical
+  domain: investing
+  subdomain: valuation_terms
+  case: Airbnb 2020 IPO 前融资
+  briefing: 疫情造成旅行收入骤降时，判断低价融资、债务条款与复苏情景的风险。
+  focus: 竞争假说与证据区分
+  research_hint: Airbnb S-1 and 2020 debt financing announcements
+- id: DES-050
+  date: '2027-12-12'
+  kind: micro_design
+  domain: product
+  subdomain: trust_behavior
+  case: AI 助手的隐私透明度
+  briefing: 一款会议 AI 助手可以在会后生成摘要与行动项，但参与者不一定同意录音，而且摘要可能泄露敏感信息。
+  focus: 设计用户告知、同意、编辑、删除和分享的最小交互流程，并给出衡量信任的指标。
+  optional_pressure_test: 会议主办人要求自动开始录音，但其中有外部访客。
+- id: ENG-149
+  date: '2027-12-13'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: GitHub Actions 缓存服务设计（2019—）
+  briefing: CI job 无状态时，判断跨作业缓存键、失效与信任边界。
+  focus: 条件预测与反事实
+  research_hint: GitHub Actions dependency caching docs
+- id: PRO-099
+  date: '2027-12-14'
+  kind: historical
+  domain: product
+  subdomain: network_marketplaces
+  case: eBay 买家与卖家信誉体系（1995—2000）
+  briefing: 陌生人交易缺乏信任，判断用户评价如何改变交易完成率。
+  focus: 约束下的决策取舍
+  research_hint: eBay original feedback forum history
+- id: ENG-150
+  date: '2027-12-15'
+  kind: historical
+  domain: engineering
+  subdomain: performance_cost
+  case: Dropbox Magic Pocket（2016）
+  briefing: 对象规模增长后从 S3 转向自有存储，计算运维复杂度是否抵消长期成本节省。
+  focus: 数量级估计与模型校准
+  research_hint: Dropbox Engineering Magic Pocket
+- id: PRO-100
+  date: '2027-12-16'
+  kind: historical
+  domain: product
+  subdomain: retention_workflow
+  case: Shopify App Store（2009）
+  briefing: 商家日常运营与第三方插件绑定时，分析平台扩展性对留存的影响。
+  focus: 适用边界与迁移
+  research_hint: Shopify App Store launch history
+- id: ENG-151
+  date: '2027-12-17'
+  kind: historical
+  domain: engineering
+  subdomain: security_isolation
+  case: LastPass 2022 备份窃取
+  briefing: 凭据保护与加密备份被获取后，分析离线破解和密钥管理风险。
+  focus: 因果机制推演
+  research_hint: LastPass 2022 security incident notices
+- id: INV-051
+  date: '2027-12-18'
+  kind: historical
+  domain: investing
+  subdomain: unit_economics
+  case: Dropbox 2015—2018 上市前投资
+  briefing: 存储成本、付费账户增长与团队套餐并存时，拆解毛利改善与定价杠杆。
+  focus: 高信息价值证据选择
+  research_hint: Dropbox S-1
+- id: DES-051
+  date: '2027-12-19'
+  kind: micro_design
+  domain: investing
+  subdomain: competitive_positioning
+  case: 巨头进入后小型平台如何选择位置
+  briefing: 一家 15 人的 Developer Tooling 公司提供跨云调试能力，大型云厂商新上线相似功能且能免费捆绑销售。
+  focus: 设计接下来两季的产品与分发选择，比较垂直聚焦、开放标准、集成合作和被收购四条路径。
+  optional_pressure_test: 主要客户中有三成高度依赖这家大型云厂商的其他服务。
+- id: ENG-152
+  date: '2027-12-20'
+  kind: historical
+  domain: engineering
+  subdomain: data_storage
+  case: Elasticsearch 倒排索引（2010—）
+  briefing: 文本检索场景从关系表扫描转为倒排索引，分析写入刷新与搜索可见性。
+  focus: 竞争假说与证据区分
+  research_hint: Elasticsearch near-real-time search guide
+- id: PRO-101
+  date: '2027-12-21'
+  kind: historical
+  domain: product
+  subdomain: distribution_growth
+  case: Canva Education 免费供给（2019）
+  briefing: 通过教师和课堂拓展产品采用，分析教育渠道与未来商业转化的关系。
+  focus: 条件预测与反事实
+  research_hint: Canva for Education launch 2019
+- id: ENG-153
+  date: '2027-12-22'
+  kind: historical
+  domain: engineering
+  subdomain: runtime_concurrency
+  case: Erlang OTP Supervision（1990s—）
+  briefing: 进程失败后由 supervisor 决定重启策略，检验隔离和恢复机制能否替代防错。
+  focus: 约束下的决策取舍
+  research_hint: Erlang OTP Design Principles
+- id: PRO-102
+  date: '2027-12-23'
+  kind: historical
+  domain: product
+  subdomain: ux_activation
+  case: Dropbox 文件夹同步交互（2008）
+  briefing: 无需显式上传下载的桌面文件夹设计，判断如何让用户快速感知同步价值。
+  focus: 因果机制推演
+  research_hint: Dropbox product history and launch demo
+- id: ENG-154
+  date: '2027-12-24'
+  kind: historical
+  domain: engineering
+  subdomain: architecture_api
+  case: GitHub Actions 可复用工作流（2021）
+  briefing: 大量仓库共享 CI 逻辑时，推演模板复制与可复用工作流的版本治理差异。
+  focus: 数量级估计与模型校准
+  research_hint: GitHub reusable workflows docs and changelog
+- id: INV-052
+  date: '2027-12-25'
+  kind: historical
+  domain: investing
+  subdomain: pmf_traction
+  case: GitLab 2015—2017 融资
+  briefing: 开源 DevOps 工具早期用户规模很大时，区别免费社区活动与企业付费需求。
+  focus: 适用边界与迁移
+  research_hint: GitLab S-1 historical operating metrics
+- id: DES-052
+  date: '2027-12-26'
+  kind: micro_design
+  domain: engineering
+  subdomain: security_multitenancy
+  case: 细粒度权限系统的可理解性
+  briefing: 一家 B2B 平台从管理员与普通用户两种角色，发展到项目、团队、外部协作者及临时权限；客户希望自行管理。
+  focus: 设计最小的资源、主体与权限关系模型，解释如何在可理解性和细粒度表达之间取舍。
+  optional_pressure_test: 一家企业希望任何人都不能审批自己提出的高风险操作。
+- id: ENG-155
+  date: '2027-12-27'
+  kind: historical
+  domain: engineering
+  subdomain: reliability_diagnosis
+  case: Cloudflare 2025 年 12 月解析逻辑故障
+  briefing: 安全规则相关代码变更触发部分流量错误；设计灰度与故障隔离验证。
+  focus: 高信息价值证据选择
+  research_hint: Cloudflare outage December 5 2025
+- id: PRO-103
+  date: '2027-12-28'
+  kind: historical
+  domain: product
+  subdomain: pricing_monetization
+  case: Atlassian Jira Cloud 分层定价（2019—2020）
+  briefing: 云产品引入免费用户档，研究低端进入是否推动团队扩展与升级。
+  focus: 竞争假说与证据区分
+  research_hint: Atlassian Jira free tier 2020 launch
+- id: ENG-156
+  date: '2027-12-29'
+  kind: historical
+  domain: engineering
+  subdomain: distributed_consistency
+  case: Kubernetes 控制器协调循环（2014—2016）
+  briefing: 研究 desired state 与 observed state 的偏差，推演重复 reconcile 的幂等和收敛条件。
+  focus: 条件预测与反事实
+  research_hint: Kubernetes controllers documentation and design proposals
+- id: PRO-104
+  date: '2027-12-30'
+  kind: historical
+  domain: product
+  subdomain: user_research_value
+  case: Canva 在线设计模板化（2013）
+  briefing: 非设计师完成海报等任务的复杂性高，判断模板、素材与可视化编辑哪部分创造主要价值。
+  focus: 约束下的决策取舍
+  research_hint: Canva founders early product interviews
+- id: ENG-157
+  date: '2027-12-31'
+  kind: historical
+  domain: engineering
+  subdomain: developer_tooling_build
+  case: Rust 1.52.1 增量编译问题与保守回退（2021）
+  briefing: Rust 1.52 发布时更严格的验证暴露了增量编译缓存一致性问题，也揭示之前版本中潜在的错误编译风险。站在编译器团队的视角，比较保持增量速度、默认禁用增量与修复发布之间的安全性和用户成本。
+  focus: 发布取舍与故障机制：缓存正确性、编译性能和修复时的可逆性。
+  research_hint: 'Rust Blog: Announcing Rust 1.52.1 (2021-05-10)'
