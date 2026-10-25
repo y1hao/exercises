@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-14
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Zoom 的单一受邀者设备与加入路径
+    anchor_status: unverified_research_target
+    main_question: 下载或注册要求在这个加入任务中是否构成关键阻力？
+    expected_output: 一个摩擦边界判断
+    evidence_to_verify:
+    - 当时该设备流程
+    - 身份和安装要求
+    - 会议任务
+    out_of_scope: 不重复受邀者成为发起者的增长预测

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 2018 候选 ZGC 发布窗口，具体 JDK 与实现待核
+    anchor_status: unverified_research_target
+    main_question: 对有明确暂停目标的一类大堆服务，是否应试用这版 ZGC？
+    expected_output: 一项采用决定及能推翻它的工作负载条件
+    evidence_to_verify:
+    - 该版本 GC 机制
+    - 同口径暂停与吞吐观测
+    - 服务约束
+    out_of_scope: 不混入分代 ZGC 或比较全部 JVM 回收器

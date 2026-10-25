@@ -24,6 +24,7 @@
 .venv/bin/python scripts/validate_curriculum.py
 .venv/bin/python scripts/report_coverage.py --output reports/coverage.json
 .venv/bin/python scripts/audit_curriculum.py
+.venv/bin/python scripts/revise_curriculum.py
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/python -m compileall -q scripts tests
 git diff --check
@@ -31,5 +32,8 @@ git diff --check
 
 - 比对 `reports/phase1-input-snapshot.json` 的原始输入哈希，保护输入和用户已有修改。
 - Phase 2 审核输入见 `reports/phase2-review-notes.tsv`、复用簇与周内复核 YAML；改动后显式执行 `scripts/audit_curriculum.py --apply` 重建报告。默认执行为只读复现检查。`review_status` 不是训练状态，replace 建议不代表已经换题。
+- 本轮规划输入位于 `curriculum/revision-plans-2027.tsv`、`design-revisions-2027.yaml`、`quantitative-requirements-2027.tsv` 和 `planning-policy.yaml`；通过 `scripts/revise_curriculum.py --apply` 同步索引 revision_state、规划汇总与 Brief 的 planning，再重建 audit。核源与制作 Brief 应遵守 planned_exercise 的单一范围，candidate_material 只用于追溯。
+- 历史主线的数字必须可追溯且事前可知。输入不足时优先采用逐题列明的定性或证据问题并记录动作映射，不自动补合成值；合成数字只属于明确切换的反事实附加题。微设计参数应显式标合成。
+- ENG-157 保留为待核源替换槽位；ENG-011、INV-034、ENG-117 的独立材料不满足条件时才进入替换队列，不为了调比例编造事件。
 - 涉及事实内容、证据或状态晋级时，额外逐条核实相关来源；结构校验不能替代来源验证、剧透检查或对话试验。仅结构改动应在报告中说明没有新增核源结论。
 - 更新 `reports/progress.md` 的准确状态数量、检查结果、阻塞和剩余工作；不以文件数量或模拟结果冒充完整验收。

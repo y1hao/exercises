@@ -20,3 +20,17 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: retained
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  quantitative_plan:
+    mainline_measure: 产能达成约束的价值范围
+    required_inputs:
+    - IPO 前价格、股本、产能与资本开支
+    - 可证公开假设
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 哪项产能或稀释证据最能推翻当前价格隐含的假设？
+    fallback_applied: false
+    input_verification: not_started

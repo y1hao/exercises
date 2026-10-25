@@ -20,3 +20,30 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: ZippyDB 一次可定位的 SSD 单位成本优化，事件待定位
+    anchor_status: unverified_research_target
+    main_question: 对一类 KV 工作量，哪项成本变化足以解释单位成本下降？
+    expected_output: 一项成本拆分与可核实数量关系
+    evidence_to_verify:
+    - 具体文章或论文
+    - 同口径负载
+    - SSD 与缓存或路由数据
+    out_of_scope: 未找到独立优化材料则列入替换；不泛谈存储成本
+  quantitative_plan:
+    mainline_measure: 单位 KV 工作的可证成本变化
+    required_inputs:
+    - 独立优化材料
+    - 单位工作量
+    - 可归属 SSD 或缓存成本
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 哪项同负载成本证据能区分 SSD、缓存与路由解释？
+    fallback_applied: false
+    input_verification: not_started
+  source_identity_condition: 只接受可定位的单次 SSD 单位成本优化材料；只能找到泛介绍则进入替换队列。

@@ -21,3 +21,7 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: uncertainty_and_diagnosis
   example_source_url: https://www.bvp.com/memos/twilio
+planning:
+  revision_state: retained
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []

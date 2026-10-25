@@ -22,3 +22,7 @@ candidate_material:
   status: candidate_needs_review
   case_stage: curriculum_idea_not_ready
   duration_minutes: 20
+planning:
+  revision_state: retained
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Druid 中的一次实时 segment 转换
+    anchor_status: unverified_research_target
+    main_question: 一条新事件何时进入可查询结果，转换会牺牲什么？
+    expected_output: 一个新鲜度预测及聚合边界
+    evidence_to_verify:
+    - 版本
+    - 摄取与 segment 状态
+    - 查询可见性
+    out_of_scope: 不综述完整实时分析架构

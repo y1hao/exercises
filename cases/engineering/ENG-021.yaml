@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: PEP 703 的 2023 提案评估窗口，具体修订待核
+    anchor_status: unverified_research_target
+    main_question: 对一类 CPU 多线程负载，兼容代价是否足以推迟采用？
+    expected_output: 一个采用决定与一条改变决定的兼容证据
+    evidence_to_verify:
+    - 提案版本
+    - 对象兼容约束
+    - 同口径工作负载观测
+    out_of_scope: 不引用后续落地成绩作为当时已知

@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-05
+  planned_exercise:
+    planning_only: true
+    anchor_request: CockroachDB 候选范围内一版两事务冲突时序
+    anchor_status: unverified_research_target
+    main_question: 这两笔事务中，哪一笔可能需要重试？
+    expected_output: 一条时间戳与冲突预测
+    evidence_to_verify:
+    - 具体版本
+    - 读写集合
+    - 串行化与重试条件
+    out_of_scope: 不跨版本拼接实现细节

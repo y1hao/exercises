@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Airbnb 2009 一个融资前生存节点
+    anchor_status: unverified_research_target
+    main_question: 下一段时间应优先经营现金试验还是继续融资？
+    expected_output: 一个行动选择及会改变选择的信号
+    evidence_to_verify:
+    - 节点与现金约束
+    - 当时需求试验
+    - 可用融资选项
+    out_of_scope: 不借后来增长计算精确种子回报

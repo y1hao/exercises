@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-16
+  planned_exercise:
+    planning_only: true
+    anchor_request: GitLab 一次明确的集团采购节点
+    anchor_status: unverified_research_target
+    main_question: 该购买更应优先满足部署控制还是平台广度？
+    expected_output: 一个产品投入选择及反证
+    evidence_to_verify:
+    - 当时部署选项
+    - 采购角色
+    - 流程与功能约束
+    out_of_scope: 不总结十年全部企业化路线

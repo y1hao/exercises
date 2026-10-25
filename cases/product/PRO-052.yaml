@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Duolingo 早期免费定位的一类学习者
+    anchor_status: unverified_research_target
+    main_question: 免费是否真正消除了这个用户的主要学习障碍？
+    expected_output: 一个定位决定及成本边界
+    evidence_to_verify:
+    - 早期定位材料
+    - 用户支付与任务障碍
+    - 当时商业约束
+    out_of_scope: 不提前借后来的广告模式解释选择

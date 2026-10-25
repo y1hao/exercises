@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 MergeTree 的单类分析查询
+    anchor_status: unverified_research_target
+    main_question: 应怎样选择排序键才能服务这一类查询？
+    expected_output: 一个排序键选择及不适用查询
+    evidence_to_verify:
+    - 版本
+    - 写入和查询模式
+    - 排序与裁剪规则
+    out_of_scope: 固定分区和保留策略，不同时优化全部表参数

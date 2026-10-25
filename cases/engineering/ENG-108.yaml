@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: retained
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  quantitative_plan:
+    mainline_measure: 尾延迟与重复工作量的关系
+    required_inputs:
+    - 来源支持的延迟分布
+    - fanout 规模
+    - 额外请求工作量
+    missing_input_fallback:
+      focus: prediction-counterfactual
+      question: 副本变慢相关而非独立时，hedging 的收益会怎样变化？
+    fallback_applied: false
+    input_verification: not_started

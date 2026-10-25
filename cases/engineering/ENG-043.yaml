@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: uncertainty_and_diagnosis
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-20
+  planned_exercise:
+    planning_only: true
+    anchor_request: Spectre 2018 候选披露中的一条观察路径
+    anchor_status: unverified_research_target
+    main_question: 架构层访问被拒绝后，为什么仍需检验可观察信息边界？
+    expected_output: 指出一项架构保证与它未覆盖的观察
+    evidence_to_verify:
+    - 该变体的触发前提
+    - 可观察量
+    - 缓解边界
+    out_of_scope: 不估无数据成本或把漏洞与 Meltdown 混同

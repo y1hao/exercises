@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: uncertainty_and_diagnosis
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一次 Snowflake 低承诺试用到用量付费的候选节点
+    anchor_status: unverified_research_target
+    main_question: 账单上升更像采用成功，还是客户成本治理失效？
+    expected_output: 两个解释及优先区分证据
+    evidence_to_verify:
+    - 当时计费规则
+    - 同一客户用量路径
+    - 预算约束
+    out_of_scope: 不把消费增长无条件解释为 PMF

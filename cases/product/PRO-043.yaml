@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 早期 Jira 自助购买的一种组织采购条件
+    anchor_status: unverified_research_target
+    main_question: 当出现这一采购约束，自助购买还是否足够？
+    expected_output: 一个模式边界及必要协作角色
+    evidence_to_verify:
+    - 当时购买流程
+    - 审批和安全要求
+    - 组织条件
+    out_of_scope: 不估无来源销售成本或评价全部销售策略

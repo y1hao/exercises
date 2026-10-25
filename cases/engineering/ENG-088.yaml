@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: io_uring 2019 候选接口的一类 IO 负载
+    anchor_status: unverified_research_target
+    main_question: 减少调用次数的收益是否足以支持采用该接口？
+    expected_output: 一个采用决定及隔离前提
+    evidence_to_verify:
+    - 该版本调用路径
+    - 可比负载证据
+    - 安全边界
+    out_of_scope: 不以接口存在直接证明收益或充分安全

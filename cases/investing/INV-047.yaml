@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 SPAC 延期期间最后一轮可定位的续命融资
+    anchor_status: unverified_research_target
+    main_question: 等待退出期间新增资本会怎样改变旧股权风险？
+    expected_output: 一个有合同支撑的稀释预测
+    evidence_to_verify:
+    - 实际合同与时点
+    - 股本
+    - 现金跑道
+    - 融资顺位
+    out_of_scope: 缺合同转证据选择，不补造延期交易条款

@@ -20,3 +20,26 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: uncertainty_and_diagnosis
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Tinder 早期的一次喜欢到对话漏斗
+    anchor_status: unverified_research_target
+    main_question: 增加匹配数能推出有效对话同比增加吗？
+    expected_output: 一个分母一致的漏斗判断
+    evidence_to_verify:
+    - 同窗口喜欢、匹配、对话口径和数量
+    - 功能规则
+    out_of_scope: 缺数字改查证据，不编造关系质量指标
+  quantitative_plan:
+    mainline_measure: 匹配到有效对话的漏斗关系
+    required_inputs:
+    - 同窗口喜欢、匹配、有效对话的数量和定义
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 下一项什么行为证据能区分更多匹配与更多有效关系？
+    fallback_applied: false
+    input_verification: not_started

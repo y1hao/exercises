@@ -22,3 +22,20 @@ candidate_material:
   status: candidate_needs_review
   case_stage: curriculum_idea_not_ready
   duration_minutes: 20
+planning:
+  revision_state: revised
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    synthetic: true
+    title: 远程 workspace 的中断恢复边界
+    main_question: 临时 workspace 中断后，如何保留并恢复未提交修改？
+    expected_output: 一个包含创建、暂停、恢复、销毁的最小生命周期和明确的数据归属。
+    scenario: 将首要问题改为中断恢复；基础镜像、计算配额和计价方式固定为外部给定条件。
+    planning_assumptions:
+    - 只允许在同一团队的隔离存储内恢复 workspace 数据。
+    - 不共享凭据；仅把已存在的无凭据构建缓存当作输入，不设计缓存优化。
+    - 可以暂停计算并保留用户修改；保留期限和恢复目标需要方案明确声明。
+    scoped_change: 任务结束后用户要求立即销毁 workspace，仍须明确哪些修改会随之丢失。
+    out_of_scope: 不同时优化启动、设计缓存系统或制定计费模型。

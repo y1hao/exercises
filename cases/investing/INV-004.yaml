@@ -21,3 +21,7 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
   example_source_url: https://www.bvp.com/memos/shopify
+planning:
+  revision_state: retained
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []

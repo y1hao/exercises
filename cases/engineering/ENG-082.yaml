@@ -21,3 +21,8 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
   example_source_url: https://blog.cloudflare.com/cloudflare-service-outage-june-12-2025/
+planning:
+  revision_state: retained
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-21

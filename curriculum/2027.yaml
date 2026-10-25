@@ -11,6 +11,7 @@ entries:
   brief_path: cases/engineering/ENG-001.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-02'
   id: INV-001
   kind: historical
@@ -21,6 +22,7 @@ entries:
   brief_path: cases/investing/INV-001.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-03'
   id: DES-001
   kind: micro_design
@@ -31,6 +33,7 @@ entries:
   brief_path: designs/DES-001.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-04'
   id: ENG-002
   kind: historical
@@ -41,6 +44,7 @@ entries:
   brief_path: cases/engineering/ENG-002.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-05'
   id: PRO-001
   kind: historical
@@ -51,6 +55,7 @@ entries:
   brief_path: cases/product/PRO-001.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-06'
   id: ENG-003
   kind: historical
@@ -61,6 +66,7 @@ entries:
   brief_path: cases/engineering/ENG-003.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-07'
   id: PRO-002
   kind: historical
@@ -71,6 +77,7 @@ entries:
   brief_path: cases/product/PRO-002.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-08'
   id: ENG-004
   kind: historical
@@ -81,6 +88,7 @@ entries:
   brief_path: cases/engineering/ENG-004.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-09'
   id: INV-002
   kind: historical
@@ -91,6 +99,7 @@ entries:
   brief_path: cases/investing/INV-002.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-10'
   id: DES-002
   kind: micro_design
@@ -101,6 +110,7 @@ entries:
   brief_path: designs/DES-002.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-11'
   id: ENG-005
   kind: historical
@@ -111,6 +121,7 @@ entries:
   brief_path: cases/engineering/ENG-005.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-12'
   id: PRO-003
   kind: historical
@@ -121,6 +132,7 @@ entries:
   brief_path: cases/product/PRO-003.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-13'
   id: ENG-006
   kind: historical
@@ -131,6 +143,7 @@ entries:
   brief_path: cases/engineering/ENG-006.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-14'
   id: PRO-004
   kind: historical
@@ -141,6 +154,7 @@ entries:
   brief_path: cases/product/PRO-004.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-15'
   id: ENG-007
   kind: historical
@@ -151,6 +165,7 @@ entries:
   brief_path: cases/engineering/ENG-007.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-16'
   id: INV-003
   kind: historical
@@ -161,6 +176,7 @@ entries:
   brief_path: cases/investing/INV-003.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-17'
   id: DES-003
   kind: micro_design
@@ -171,6 +187,7 @@ entries:
   brief_path: designs/DES-003.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-18'
   id: ENG-008
   kind: historical
@@ -181,6 +198,7 @@ entries:
   brief_path: cases/engineering/ENG-008.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-19'
   id: PRO-005
   kind: historical
@@ -191,6 +209,7 @@ entries:
   brief_path: cases/product/PRO-005.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-20'
   id: ENG-009
   kind: historical
@@ -201,6 +220,7 @@ entries:
   brief_path: cases/engineering/ENG-009.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-21'
   id: PRO-006
   kind: historical
@@ -211,6 +231,7 @@ entries:
   brief_path: cases/product/PRO-006.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-22'
   id: ENG-010
   kind: historical
@@ -221,6 +242,7 @@ entries:
   brief_path: cases/engineering/ENG-010.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-23'
   id: INV-004
   kind: historical
@@ -231,6 +253,7 @@ entries:
   brief_path: cases/investing/INV-004.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-24'
   id: DES-004
   kind: micro_design
@@ -241,6 +264,7 @@ entries:
   brief_path: designs/DES-004.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-25'
   id: ENG-011
   kind: historical
@@ -251,6 +275,7 @@ entries:
   brief_path: cases/engineering/ENG-011.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-26'
   id: PRO-007
   kind: historical
@@ -261,6 +286,7 @@ entries:
   brief_path: cases/product/PRO-007.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-27'
   id: ENG-012
   kind: historical
@@ -271,6 +297,7 @@ entries:
   brief_path: cases/engineering/ENG-012.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-28'
   id: PRO-008
   kind: historical
@@ -281,6 +308,7 @@ entries:
   brief_path: cases/product/PRO-008.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-29'
   id: ENG-013
   kind: historical
@@ -291,6 +319,7 @@ entries:
   brief_path: cases/engineering/ENG-013.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-01-30'
   id: INV-005
   kind: historical
@@ -301,6 +330,7 @@ entries:
   brief_path: cases/investing/INV-005.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-01-31'
   id: DES-005
   kind: micro_design
@@ -311,6 +341,7 @@ entries:
   brief_path: designs/DES-005.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-01'
   id: ENG-014
   kind: historical
@@ -321,6 +352,7 @@ entries:
   brief_path: cases/engineering/ENG-014.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-02'
   id: PRO-009
   kind: historical
@@ -331,6 +363,7 @@ entries:
   brief_path: cases/product/PRO-009.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-03'
   id: ENG-015
   kind: historical
@@ -341,6 +374,7 @@ entries:
   brief_path: cases/engineering/ENG-015.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-04'
   id: PRO-010
   kind: historical
@@ -351,6 +385,7 @@ entries:
   brief_path: cases/product/PRO-010.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-05'
   id: ENG-016
   kind: historical
@@ -361,6 +396,7 @@ entries:
   brief_path: cases/engineering/ENG-016.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-06'
   id: INV-006
   kind: historical
@@ -371,6 +407,7 @@ entries:
   brief_path: cases/investing/INV-006.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-07'
   id: DES-006
   kind: micro_design
@@ -381,6 +418,7 @@ entries:
   brief_path: designs/DES-006.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-08'
   id: ENG-017
   kind: historical
@@ -391,6 +429,7 @@ entries:
   brief_path: cases/engineering/ENG-017.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-09'
   id: PRO-011
   kind: historical
@@ -401,6 +440,7 @@ entries:
   brief_path: cases/product/PRO-011.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-10'
   id: ENG-018
   kind: historical
@@ -411,6 +451,7 @@ entries:
   brief_path: cases/engineering/ENG-018.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-11'
   id: PRO-012
   kind: historical
@@ -421,6 +462,7 @@ entries:
   brief_path: cases/product/PRO-012.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-12'
   id: ENG-019
   kind: historical
@@ -431,6 +473,7 @@ entries:
   brief_path: cases/engineering/ENG-019.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-13'
   id: INV-007
   kind: historical
@@ -441,6 +484,7 @@ entries:
   brief_path: cases/investing/INV-007.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-14'
   id: DES-007
   kind: micro_design
@@ -451,6 +495,7 @@ entries:
   brief_path: designs/DES-007.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-15'
   id: ENG-020
   kind: historical
@@ -461,6 +506,7 @@ entries:
   brief_path: cases/engineering/ENG-020.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-16'
   id: PRO-013
   kind: historical
@@ -471,6 +517,7 @@ entries:
   brief_path: cases/product/PRO-013.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-17'
   id: ENG-021
   kind: historical
@@ -481,6 +528,7 @@ entries:
   brief_path: cases/engineering/ENG-021.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-18'
   id: PRO-014
   kind: historical
@@ -491,6 +539,7 @@ entries:
   brief_path: cases/product/PRO-014.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-19'
   id: ENG-022
   kind: historical
@@ -501,6 +550,7 @@ entries:
   brief_path: cases/engineering/ENG-022.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-20'
   id: INV-008
   kind: historical
@@ -511,6 +561,7 @@ entries:
   brief_path: cases/investing/INV-008.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-21'
   id: DES-008
   kind: micro_design
@@ -521,6 +572,7 @@ entries:
   brief_path: designs/DES-008.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-22'
   id: ENG-023
   kind: historical
@@ -531,6 +583,7 @@ entries:
   brief_path: cases/engineering/ENG-023.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-23'
   id: PRO-015
   kind: historical
@@ -541,6 +594,7 @@ entries:
   brief_path: cases/product/PRO-015.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-24'
   id: ENG-024
   kind: historical
@@ -551,6 +605,7 @@ entries:
   brief_path: cases/engineering/ENG-024.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-25'
   id: PRO-016
   kind: historical
@@ -561,6 +616,7 @@ entries:
   brief_path: cases/product/PRO-016.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-02-26'
   id: ENG-025
   kind: historical
@@ -571,6 +627,7 @@ entries:
   brief_path: cases/engineering/ENG-025.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-27'
   id: INV-009
   kind: historical
@@ -581,6 +638,7 @@ entries:
   brief_path: cases/investing/INV-009.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-02-28'
   id: DES-009
   kind: micro_design
@@ -591,6 +649,7 @@ entries:
   brief_path: designs/DES-009.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-01'
   id: ENG-026
   kind: historical
@@ -601,6 +660,7 @@ entries:
   brief_path: cases/engineering/ENG-026.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-02'
   id: PRO-017
   kind: historical
@@ -611,6 +671,7 @@ entries:
   brief_path: cases/product/PRO-017.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-03'
   id: ENG-027
   kind: historical
@@ -621,6 +682,7 @@ entries:
   brief_path: cases/engineering/ENG-027.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-04'
   id: PRO-018
   kind: historical
@@ -631,6 +693,7 @@ entries:
   brief_path: cases/product/PRO-018.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-05'
   id: ENG-028
   kind: historical
@@ -641,6 +704,7 @@ entries:
   brief_path: cases/engineering/ENG-028.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-06'
   id: INV-010
   kind: historical
@@ -651,6 +715,7 @@ entries:
   brief_path: cases/investing/INV-010.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-07'
   id: DES-010
   kind: micro_design
@@ -661,6 +726,7 @@ entries:
   brief_path: designs/DES-010.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-08'
   id: ENG-029
   kind: historical
@@ -671,6 +737,7 @@ entries:
   brief_path: cases/engineering/ENG-029.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-09'
   id: PRO-019
   kind: historical
@@ -681,6 +748,7 @@ entries:
   brief_path: cases/product/PRO-019.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-10'
   id: ENG-030
   kind: historical
@@ -691,6 +759,7 @@ entries:
   brief_path: cases/engineering/ENG-030.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-11'
   id: PRO-020
   kind: historical
@@ -701,6 +770,7 @@ entries:
   brief_path: cases/product/PRO-020.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-12'
   id: ENG-031
   kind: historical
@@ -711,6 +781,7 @@ entries:
   brief_path: cases/engineering/ENG-031.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-13'
   id: INV-011
   kind: historical
@@ -721,6 +792,7 @@ entries:
   brief_path: cases/investing/INV-011.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-14'
   id: DES-011
   kind: micro_design
@@ -731,6 +803,7 @@ entries:
   brief_path: designs/DES-011.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-15'
   id: ENG-032
   kind: historical
@@ -741,6 +814,7 @@ entries:
   brief_path: cases/engineering/ENG-032.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-16'
   id: PRO-021
   kind: historical
@@ -751,6 +825,7 @@ entries:
   brief_path: cases/product/PRO-021.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-17'
   id: ENG-033
   kind: historical
@@ -761,6 +836,7 @@ entries:
   brief_path: cases/engineering/ENG-033.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-18'
   id: PRO-022
   kind: historical
@@ -771,6 +847,7 @@ entries:
   brief_path: cases/product/PRO-022.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-19'
   id: ENG-034
   kind: historical
@@ -781,6 +858,7 @@ entries:
   brief_path: cases/engineering/ENG-034.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-20'
   id: INV-012
   kind: historical
@@ -791,6 +869,7 @@ entries:
   brief_path: cases/investing/INV-012.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-21'
   id: DES-012
   kind: micro_design
@@ -801,6 +880,7 @@ entries:
   brief_path: designs/DES-012.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-22'
   id: ENG-035
   kind: historical
@@ -811,6 +891,7 @@ entries:
   brief_path: cases/engineering/ENG-035.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-23'
   id: PRO-023
   kind: historical
@@ -821,6 +902,7 @@ entries:
   brief_path: cases/product/PRO-023.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-24'
   id: ENG-036
   kind: historical
@@ -831,6 +913,7 @@ entries:
   brief_path: cases/engineering/ENG-036.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-25'
   id: PRO-024
   kind: historical
@@ -841,6 +924,7 @@ entries:
   brief_path: cases/product/PRO-024.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-26'
   id: ENG-037
   kind: historical
@@ -851,6 +935,7 @@ entries:
   brief_path: cases/engineering/ENG-037.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-27'
   id: INV-013
   kind: historical
@@ -861,6 +946,7 @@ entries:
   brief_path: cases/investing/INV-013.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-28'
   id: DES-013
   kind: micro_design
@@ -871,6 +957,7 @@ entries:
   brief_path: designs/DES-013.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-03-29'
   id: ENG-038
   kind: historical
@@ -881,6 +968,7 @@ entries:
   brief_path: cases/engineering/ENG-038.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-30'
   id: PRO-025
   kind: historical
@@ -891,6 +979,7 @@ entries:
   brief_path: cases/product/PRO-025.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-03-31'
   id: ENG-039
   kind: historical
@@ -901,6 +990,7 @@ entries:
   brief_path: cases/engineering/ENG-039.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-01'
   id: PRO-026
   kind: historical
@@ -911,6 +1001,7 @@ entries:
   brief_path: cases/product/PRO-026.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-02'
   id: ENG-040
   kind: historical
@@ -921,6 +1012,7 @@ entries:
   brief_path: cases/engineering/ENG-040.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-03'
   id: INV-014
   kind: historical
@@ -931,6 +1023,7 @@ entries:
   brief_path: cases/investing/INV-014.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-04'
   id: DES-014
   kind: micro_design
@@ -941,6 +1034,7 @@ entries:
   brief_path: designs/DES-014.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-05'
   id: ENG-041
   kind: historical
@@ -951,6 +1045,7 @@ entries:
   brief_path: cases/engineering/ENG-041.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-06'
   id: PRO-027
   kind: historical
@@ -961,6 +1056,7 @@ entries:
   brief_path: cases/product/PRO-027.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-07'
   id: ENG-042
   kind: historical
@@ -971,6 +1067,7 @@ entries:
   brief_path: cases/engineering/ENG-042.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-08'
   id: PRO-028
   kind: historical
@@ -981,6 +1078,7 @@ entries:
   brief_path: cases/product/PRO-028.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-09'
   id: ENG-043
   kind: historical
@@ -991,6 +1089,7 @@ entries:
   brief_path: cases/engineering/ENG-043.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-10'
   id: INV-015
   kind: historical
@@ -1001,6 +1100,7 @@ entries:
   brief_path: cases/investing/INV-015.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-11'
   id: DES-015
   kind: micro_design
@@ -1011,6 +1111,7 @@ entries:
   brief_path: designs/DES-015.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-12'
   id: ENG-044
   kind: historical
@@ -1021,6 +1122,7 @@ entries:
   brief_path: cases/engineering/ENG-044.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-13'
   id: PRO-029
   kind: historical
@@ -1031,6 +1133,7 @@ entries:
   brief_path: cases/product/PRO-029.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-14'
   id: ENG-045
   kind: historical
@@ -1041,6 +1144,7 @@ entries:
   brief_path: cases/engineering/ENG-045.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-15'
   id: PRO-030
   kind: historical
@@ -1051,6 +1155,7 @@ entries:
   brief_path: cases/product/PRO-030.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-16'
   id: ENG-046
   kind: historical
@@ -1061,6 +1166,7 @@ entries:
   brief_path: cases/engineering/ENG-046.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-17'
   id: INV-016
   kind: historical
@@ -1071,6 +1177,7 @@ entries:
   brief_path: cases/investing/INV-016.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-18'
   id: DES-016
   kind: micro_design
@@ -1081,6 +1188,7 @@ entries:
   brief_path: designs/DES-016.yaml
   protocol_path: protocols/micro-design.md
   review_status: revise
+  revision_state: revised
 - date: '2027-04-19'
   id: ENG-047
   kind: historical
@@ -1091,6 +1199,7 @@ entries:
   brief_path: cases/engineering/ENG-047.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-20'
   id: PRO-031
   kind: historical
@@ -1101,6 +1210,7 @@ entries:
   brief_path: cases/product/PRO-031.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-21'
   id: ENG-048
   kind: historical
@@ -1111,6 +1221,7 @@ entries:
   brief_path: cases/engineering/ENG-048.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-22'
   id: PRO-032
   kind: historical
@@ -1121,6 +1232,7 @@ entries:
   brief_path: cases/product/PRO-032.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-23'
   id: ENG-049
   kind: historical
@@ -1131,6 +1243,7 @@ entries:
   brief_path: cases/engineering/ENG-049.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-24'
   id: INV-017
   kind: historical
@@ -1141,6 +1254,7 @@ entries:
   brief_path: cases/investing/INV-017.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-25'
   id: DES-017
   kind: micro_design
@@ -1151,6 +1265,7 @@ entries:
   brief_path: designs/DES-017.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-26'
   id: ENG-050
   kind: historical
@@ -1161,6 +1276,7 @@ entries:
   brief_path: cases/engineering/ENG-050.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-27'
   id: PRO-033
   kind: historical
@@ -1171,6 +1287,7 @@ entries:
   brief_path: cases/product/PRO-033.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-04-28'
   id: ENG-051
   kind: historical
@@ -1181,6 +1298,7 @@ entries:
   brief_path: cases/engineering/ENG-051.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-29'
   id: PRO-034
   kind: historical
@@ -1191,6 +1309,7 @@ entries:
   brief_path: cases/product/PRO-034.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-04-30'
   id: ENG-052
   kind: historical
@@ -1201,6 +1320,7 @@ entries:
   brief_path: cases/engineering/ENG-052.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-01'
   id: INV-018
   kind: historical
@@ -1211,6 +1331,7 @@ entries:
   brief_path: cases/investing/INV-018.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-02'
   id: DES-018
   kind: micro_design
@@ -1221,6 +1342,7 @@ entries:
   brief_path: designs/DES-018.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-03'
   id: ENG-053
   kind: historical
@@ -1231,6 +1353,7 @@ entries:
   brief_path: cases/engineering/ENG-053.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-04'
   id: PRO-035
   kind: historical
@@ -1241,6 +1364,7 @@ entries:
   brief_path: cases/product/PRO-035.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-05'
   id: ENG-054
   kind: historical
@@ -1251,6 +1375,7 @@ entries:
   brief_path: cases/engineering/ENG-054.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-06'
   id: PRO-036
   kind: historical
@@ -1261,6 +1386,7 @@ entries:
   brief_path: cases/product/PRO-036.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-07'
   id: ENG-055
   kind: historical
@@ -1271,6 +1397,7 @@ entries:
   brief_path: cases/engineering/ENG-055.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-08'
   id: INV-019
   kind: historical
@@ -1281,6 +1408,7 @@ entries:
   brief_path: cases/investing/INV-019.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-09'
   id: DES-019
   kind: micro_design
@@ -1291,6 +1419,7 @@ entries:
   brief_path: designs/DES-019.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-10'
   id: ENG-056
   kind: historical
@@ -1301,6 +1430,7 @@ entries:
   brief_path: cases/engineering/ENG-056.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-11'
   id: PRO-037
   kind: historical
@@ -1311,6 +1441,7 @@ entries:
   brief_path: cases/product/PRO-037.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-12'
   id: ENG-057
   kind: historical
@@ -1321,6 +1452,7 @@ entries:
   brief_path: cases/engineering/ENG-057.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-13'
   id: PRO-038
   kind: historical
@@ -1331,6 +1463,7 @@ entries:
   brief_path: cases/product/PRO-038.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-14'
   id: ENG-058
   kind: historical
@@ -1341,6 +1474,7 @@ entries:
   brief_path: cases/engineering/ENG-058.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-15'
   id: INV-020
   kind: historical
@@ -1351,6 +1485,7 @@ entries:
   brief_path: cases/investing/INV-020.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-16'
   id: DES-020
   kind: micro_design
@@ -1361,6 +1496,7 @@ entries:
   brief_path: designs/DES-020.yaml
   protocol_path: protocols/micro-design.md
   review_status: revise
+  revision_state: revised
 - date: '2027-05-17'
   id: ENG-059
   kind: historical
@@ -1371,6 +1507,7 @@ entries:
   brief_path: cases/engineering/ENG-059.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-18'
   id: PRO-039
   kind: historical
@@ -1381,6 +1518,7 @@ entries:
   brief_path: cases/product/PRO-039.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-19'
   id: ENG-060
   kind: historical
@@ -1391,6 +1529,7 @@ entries:
   brief_path: cases/engineering/ENG-060.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-20'
   id: PRO-040
   kind: historical
@@ -1401,6 +1540,7 @@ entries:
   brief_path: cases/product/PRO-040.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-21'
   id: ENG-061
   kind: historical
@@ -1411,6 +1551,7 @@ entries:
   brief_path: cases/engineering/ENG-061.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-22'
   id: INV-021
   kind: historical
@@ -1421,6 +1562,7 @@ entries:
   brief_path: cases/investing/INV-021.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-23'
   id: DES-021
   kind: micro_design
@@ -1431,6 +1573,7 @@ entries:
   brief_path: designs/DES-021.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-24'
   id: ENG-062
   kind: historical
@@ -1441,6 +1584,7 @@ entries:
   brief_path: cases/engineering/ENG-062.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-25'
   id: PRO-041
   kind: historical
@@ -1451,6 +1595,7 @@ entries:
   brief_path: cases/product/PRO-041.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-26'
   id: ENG-063
   kind: historical
@@ -1461,6 +1606,7 @@ entries:
   brief_path: cases/engineering/ENG-063.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-27'
   id: PRO-042
   kind: historical
@@ -1471,6 +1617,7 @@ entries:
   brief_path: cases/product/PRO-042.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-28'
   id: ENG-064
   kind: historical
@@ -1481,6 +1628,7 @@ entries:
   brief_path: cases/engineering/ENG-064.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-29'
   id: INV-022
   kind: historical
@@ -1491,6 +1639,7 @@ entries:
   brief_path: cases/investing/INV-022.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-05-30'
   id: DES-022
   kind: micro_design
@@ -1501,6 +1650,7 @@ entries:
   brief_path: designs/DES-022.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-05-31'
   id: ENG-065
   kind: historical
@@ -1511,6 +1661,7 @@ entries:
   brief_path: cases/engineering/ENG-065.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-01'
   id: PRO-043
   kind: historical
@@ -1521,6 +1672,7 @@ entries:
   brief_path: cases/product/PRO-043.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-02'
   id: ENG-066
   kind: historical
@@ -1531,6 +1683,7 @@ entries:
   brief_path: cases/engineering/ENG-066.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-03'
   id: PRO-044
   kind: historical
@@ -1541,6 +1694,7 @@ entries:
   brief_path: cases/product/PRO-044.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-04'
   id: ENG-067
   kind: historical
@@ -1551,6 +1705,7 @@ entries:
   brief_path: cases/engineering/ENG-067.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-05'
   id: INV-023
   kind: historical
@@ -1561,6 +1716,7 @@ entries:
   brief_path: cases/investing/INV-023.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-06'
   id: DES-023
   kind: micro_design
@@ -1571,6 +1727,7 @@ entries:
   brief_path: designs/DES-023.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-07'
   id: ENG-068
   kind: historical
@@ -1581,6 +1738,7 @@ entries:
   brief_path: cases/engineering/ENG-068.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-08'
   id: PRO-045
   kind: historical
@@ -1591,6 +1749,7 @@ entries:
   brief_path: cases/product/PRO-045.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-09'
   id: ENG-069
   kind: historical
@@ -1601,6 +1760,7 @@ entries:
   brief_path: cases/engineering/ENG-069.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-10'
   id: PRO-046
   kind: historical
@@ -1611,6 +1771,7 @@ entries:
   brief_path: cases/product/PRO-046.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-11'
   id: ENG-070
   kind: historical
@@ -1621,6 +1782,7 @@ entries:
   brief_path: cases/engineering/ENG-070.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-12'
   id: INV-024
   kind: historical
@@ -1631,6 +1793,7 @@ entries:
   brief_path: cases/investing/INV-024.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-13'
   id: DES-024
   kind: micro_design
@@ -1641,6 +1804,7 @@ entries:
   brief_path: designs/DES-024.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-14'
   id: ENG-071
   kind: historical
@@ -1651,6 +1815,7 @@ entries:
   brief_path: cases/engineering/ENG-071.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-15'
   id: PRO-047
   kind: historical
@@ -1661,6 +1826,7 @@ entries:
   brief_path: cases/product/PRO-047.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-16'
   id: ENG-072
   kind: historical
@@ -1671,6 +1837,7 @@ entries:
   brief_path: cases/engineering/ENG-072.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-17'
   id: PRO-048
   kind: historical
@@ -1681,6 +1848,7 @@ entries:
   brief_path: cases/product/PRO-048.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-18'
   id: ENG-073
   kind: historical
@@ -1691,6 +1859,7 @@ entries:
   brief_path: cases/engineering/ENG-073.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-19'
   id: INV-025
   kind: historical
@@ -1701,6 +1870,7 @@ entries:
   brief_path: cases/investing/INV-025.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-20'
   id: DES-025
   kind: micro_design
@@ -1711,6 +1881,7 @@ entries:
   brief_path: designs/DES-025.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-21'
   id: ENG-074
   kind: historical
@@ -1721,6 +1892,7 @@ entries:
   brief_path: cases/engineering/ENG-074.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-22'
   id: PRO-049
   kind: historical
@@ -1731,6 +1903,7 @@ entries:
   brief_path: cases/product/PRO-049.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-23'
   id: ENG-075
   kind: historical
@@ -1741,6 +1914,7 @@ entries:
   brief_path: cases/engineering/ENG-075.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-24'
   id: PRO-050
   kind: historical
@@ -1751,6 +1925,7 @@ entries:
   brief_path: cases/product/PRO-050.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-25'
   id: ENG-076
   kind: historical
@@ -1761,6 +1936,7 @@ entries:
   brief_path: cases/engineering/ENG-076.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-26'
   id: INV-026
   kind: historical
@@ -1771,6 +1947,7 @@ entries:
   brief_path: cases/investing/INV-026.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-27'
   id: DES-026
   kind: micro_design
@@ -1781,6 +1958,7 @@ entries:
   brief_path: designs/DES-026.yaml
   protocol_path: protocols/micro-design.md
   review_status: revise
+  revision_state: revised
 - date: '2027-06-28'
   id: ENG-077
   kind: historical
@@ -1791,6 +1969,7 @@ entries:
   brief_path: cases/engineering/ENG-077.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-06-29'
   id: PRO-051
   kind: historical
@@ -1801,6 +1980,7 @@ entries:
   brief_path: cases/product/PRO-051.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-06-30'
   id: ENG-078
   kind: historical
@@ -1811,6 +1991,7 @@ entries:
   brief_path: cases/engineering/ENG-078.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-01'
   id: PRO-052
   kind: historical
@@ -1821,6 +2002,7 @@ entries:
   brief_path: cases/product/PRO-052.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-02'
   id: ENG-079
   kind: historical
@@ -1831,6 +2013,7 @@ entries:
   brief_path: cases/engineering/ENG-079.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-03'
   id: INV-027
   kind: historical
@@ -1841,6 +2024,7 @@ entries:
   brief_path: cases/investing/INV-027.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-04'
   id: DES-027
   kind: micro_design
@@ -1851,6 +2035,7 @@ entries:
   brief_path: designs/DES-027.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-05'
   id: ENG-080
   kind: historical
@@ -1861,6 +2046,7 @@ entries:
   brief_path: cases/engineering/ENG-080.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-06'
   id: PRO-053
   kind: historical
@@ -1871,6 +2057,7 @@ entries:
   brief_path: cases/product/PRO-053.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-07'
   id: ENG-081
   kind: historical
@@ -1881,6 +2068,7 @@ entries:
   brief_path: cases/engineering/ENG-081.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-08'
   id: PRO-054
   kind: historical
@@ -1891,6 +2079,7 @@ entries:
   brief_path: cases/product/PRO-054.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-09'
   id: ENG-082
   kind: historical
@@ -1901,6 +2090,7 @@ entries:
   brief_path: cases/engineering/ENG-082.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-10'
   id: INV-028
   kind: historical
@@ -1911,6 +2101,7 @@ entries:
   brief_path: cases/investing/INV-028.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-11'
   id: DES-028
   kind: micro_design
@@ -1921,6 +2112,7 @@ entries:
   brief_path: designs/DES-028.yaml
   protocol_path: protocols/micro-design.md
   review_status: revise
+  revision_state: revised
 - date: '2027-07-12'
   id: ENG-083
   kind: historical
@@ -1931,6 +2123,7 @@ entries:
   brief_path: cases/engineering/ENG-083.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-13'
   id: PRO-055
   kind: historical
@@ -1941,6 +2134,7 @@ entries:
   brief_path: cases/product/PRO-055.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-14'
   id: ENG-084
   kind: historical
@@ -1951,6 +2145,7 @@ entries:
   brief_path: cases/engineering/ENG-084.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-15'
   id: PRO-056
   kind: historical
@@ -1961,6 +2156,7 @@ entries:
   brief_path: cases/product/PRO-056.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-16'
   id: ENG-085
   kind: historical
@@ -1971,6 +2167,7 @@ entries:
   brief_path: cases/engineering/ENG-085.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-17'
   id: INV-029
   kind: historical
@@ -1981,6 +2178,7 @@ entries:
   brief_path: cases/investing/INV-029.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-18'
   id: DES-029
   kind: micro_design
@@ -1991,6 +2189,7 @@ entries:
   brief_path: designs/DES-029.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-19'
   id: ENG-086
   kind: historical
@@ -2001,6 +2200,7 @@ entries:
   brief_path: cases/engineering/ENG-086.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-20'
   id: PRO-057
   kind: historical
@@ -2011,6 +2211,7 @@ entries:
   brief_path: cases/product/PRO-057.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-21'
   id: ENG-087
   kind: historical
@@ -2021,6 +2222,7 @@ entries:
   brief_path: cases/engineering/ENG-087.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-22'
   id: PRO-058
   kind: historical
@@ -2031,6 +2233,7 @@ entries:
   brief_path: cases/product/PRO-058.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-23'
   id: ENG-088
   kind: historical
@@ -2041,6 +2244,7 @@ entries:
   brief_path: cases/engineering/ENG-088.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-24'
   id: INV-030
   kind: historical
@@ -2051,6 +2255,7 @@ entries:
   brief_path: cases/investing/INV-030.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-25'
   id: DES-030
   kind: micro_design
@@ -2061,6 +2266,7 @@ entries:
   brief_path: designs/DES-030.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-26'
   id: ENG-089
   kind: historical
@@ -2071,6 +2277,7 @@ entries:
   brief_path: cases/engineering/ENG-089.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-27'
   id: PRO-059
   kind: historical
@@ -2081,6 +2288,7 @@ entries:
   brief_path: cases/product/PRO-059.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-28'
   id: ENG-090
   kind: historical
@@ -2091,6 +2299,7 @@ entries:
   brief_path: cases/engineering/ENG-090.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-07-29'
   id: PRO-060
   kind: historical
@@ -2101,6 +2310,7 @@ entries:
   brief_path: cases/product/PRO-060.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-30'
   id: ENG-091
   kind: historical
@@ -2111,6 +2321,7 @@ entries:
   brief_path: cases/engineering/ENG-091.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-07-31'
   id: INV-031
   kind: historical
@@ -2121,6 +2332,7 @@ entries:
   brief_path: cases/investing/INV-031.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-01'
   id: DES-031
   kind: micro_design
@@ -2131,6 +2343,7 @@ entries:
   brief_path: designs/DES-031.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-02'
   id: ENG-092
   kind: historical
@@ -2141,6 +2354,7 @@ entries:
   brief_path: cases/engineering/ENG-092.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-03'
   id: PRO-061
   kind: historical
@@ -2151,6 +2365,7 @@ entries:
   brief_path: cases/product/PRO-061.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-04'
   id: ENG-093
   kind: historical
@@ -2161,6 +2376,7 @@ entries:
   brief_path: cases/engineering/ENG-093.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-05'
   id: PRO-062
   kind: historical
@@ -2171,6 +2387,7 @@ entries:
   brief_path: cases/product/PRO-062.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-06'
   id: ENG-094
   kind: historical
@@ -2181,6 +2398,7 @@ entries:
   brief_path: cases/engineering/ENG-094.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-07'
   id: INV-032
   kind: historical
@@ -2191,6 +2409,7 @@ entries:
   brief_path: cases/investing/INV-032.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-08'
   id: DES-032
   kind: micro_design
@@ -2201,6 +2420,7 @@ entries:
   brief_path: designs/DES-032.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-09'
   id: ENG-095
   kind: historical
@@ -2211,6 +2431,7 @@ entries:
   brief_path: cases/engineering/ENG-095.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-10'
   id: PRO-063
   kind: historical
@@ -2221,6 +2442,7 @@ entries:
   brief_path: cases/product/PRO-063.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-11'
   id: ENG-096
   kind: historical
@@ -2231,6 +2453,7 @@ entries:
   brief_path: cases/engineering/ENG-096.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-12'
   id: PRO-064
   kind: historical
@@ -2241,6 +2464,7 @@ entries:
   brief_path: cases/product/PRO-064.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-13'
   id: ENG-097
   kind: historical
@@ -2251,6 +2475,7 @@ entries:
   brief_path: cases/engineering/ENG-097.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-14'
   id: INV-033
   kind: historical
@@ -2261,6 +2486,7 @@ entries:
   brief_path: cases/investing/INV-033.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-15'
   id: DES-033
   kind: micro_design
@@ -2271,6 +2497,7 @@ entries:
   brief_path: designs/DES-033.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-16'
   id: ENG-098
   kind: historical
@@ -2281,6 +2508,7 @@ entries:
   brief_path: cases/engineering/ENG-098.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-17'
   id: PRO-065
   kind: historical
@@ -2291,6 +2519,7 @@ entries:
   brief_path: cases/product/PRO-065.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-18'
   id: ENG-099
   kind: historical
@@ -2301,6 +2530,7 @@ entries:
   brief_path: cases/engineering/ENG-099.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-19'
   id: PRO-066
   kind: historical
@@ -2311,6 +2541,7 @@ entries:
   brief_path: cases/product/PRO-066.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-20'
   id: ENG-100
   kind: historical
@@ -2321,6 +2552,7 @@ entries:
   brief_path: cases/engineering/ENG-100.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-21'
   id: INV-034
   kind: historical
@@ -2331,6 +2563,7 @@ entries:
   brief_path: cases/investing/INV-034.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-22'
   id: DES-034
   kind: micro_design
@@ -2341,6 +2574,7 @@ entries:
   brief_path: designs/DES-034.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-23'
   id: ENG-101
   kind: historical
@@ -2351,6 +2585,7 @@ entries:
   brief_path: cases/engineering/ENG-101.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-24'
   id: PRO-067
   kind: historical
@@ -2361,6 +2596,7 @@ entries:
   brief_path: cases/product/PRO-067.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-25'
   id: ENG-102
   kind: historical
@@ -2371,6 +2607,7 @@ entries:
   brief_path: cases/engineering/ENG-102.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-26'
   id: PRO-068
   kind: historical
@@ -2381,6 +2618,7 @@ entries:
   brief_path: cases/product/PRO-068.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-08-27'
   id: ENG-103
   kind: historical
@@ -2391,6 +2629,7 @@ entries:
   brief_path: cases/engineering/ENG-103.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-28'
   id: INV-035
   kind: historical
@@ -2401,6 +2640,7 @@ entries:
   brief_path: cases/investing/INV-035.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-29'
   id: DES-035
   kind: micro_design
@@ -2411,6 +2651,7 @@ entries:
   brief_path: designs/DES-035.yaml
   protocol_path: protocols/micro-design.md
   review_status: revise
+  revision_state: revised
 - date: '2027-08-30'
   id: ENG-104
   kind: historical
@@ -2421,6 +2662,7 @@ entries:
   brief_path: cases/engineering/ENG-104.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-08-31'
   id: PRO-069
   kind: historical
@@ -2431,6 +2673,7 @@ entries:
   brief_path: cases/product/PRO-069.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-01'
   id: ENG-105
   kind: historical
@@ -2441,6 +2684,7 @@ entries:
   brief_path: cases/engineering/ENG-105.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-09-02'
   id: PRO-070
   kind: historical
@@ -2451,6 +2695,7 @@ entries:
   brief_path: cases/product/PRO-070.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-03'
   id: ENG-106
   kind: historical
@@ -2461,6 +2706,7 @@ entries:
   brief_path: cases/engineering/ENG-106.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-09-04'
   id: INV-036
   kind: historical
@@ -2471,6 +2717,7 @@ entries:
   brief_path: cases/investing/INV-036.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-05'
   id: DES-036
   kind: micro_design
@@ -2481,6 +2728,7 @@ entries:
   brief_path: designs/DES-036.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-09-06'
   id: ENG-107
   kind: historical
@@ -2491,6 +2739,7 @@ entries:
   brief_path: cases/engineering/ENG-107.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-09-07'
   id: PRO-071
   kind: historical
@@ -2501,6 +2750,7 @@ entries:
   brief_path: cases/product/PRO-071.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-09-08'
   id: ENG-108
   kind: historical
@@ -2511,6 +2761,7 @@ entries:
   brief_path: cases/engineering/ENG-108.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-09-09'
   id: PRO-072
   kind: historical
@@ -2521,6 +2772,7 @@ entries:
   brief_path: cases/product/PRO-072.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-10'
   id: ENG-109
   kind: historical
@@ -2531,6 +2783,7 @@ entries:
   brief_path: cases/engineering/ENG-109.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-11'
   id: INV-037
   kind: historical
@@ -2541,6 +2794,7 @@ entries:
   brief_path: cases/investing/INV-037.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-09-12'
   id: DES-037
   kind: micro_design
@@ -2551,6 +2805,7 @@ entries:
   brief_path: designs/DES-037.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-09-13'
   id: ENG-110
   kind: historical
@@ -2561,6 +2816,7 @@ entries:
   brief_path: cases/engineering/ENG-110.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-14'
   id: PRO-073
   kind: historical
@@ -2571,6 +2827,7 @@ entries:
   brief_path: cases/product/PRO-073.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-15'
   id: ENG-111
   kind: historical
@@ -2581,6 +2838,7 @@ entries:
   brief_path: cases/engineering/ENG-111.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-16'
   id: PRO-074
   kind: historical
@@ -2591,6 +2849,7 @@ entries:
   brief_path: cases/product/PRO-074.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-17'
   id: ENG-112
   kind: historical
@@ -2601,6 +2860,7 @@ entries:
   brief_path: cases/engineering/ENG-112.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-18'
   id: INV-038
   kind: historical
@@ -2611,6 +2871,7 @@ entries:
   brief_path: cases/investing/INV-038.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-19'
   id: DES-038
   kind: micro_design
@@ -2621,6 +2882,7 @@ entries:
   brief_path: designs/DES-038.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-09-20'
   id: ENG-113
   kind: historical
@@ -2631,6 +2893,7 @@ entries:
   brief_path: cases/engineering/ENG-113.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-21'
   id: PRO-075
   kind: historical
@@ -2641,6 +2904,7 @@ entries:
   brief_path: cases/product/PRO-075.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-22'
   id: ENG-114
   kind: historical
@@ -2651,6 +2915,7 @@ entries:
   brief_path: cases/engineering/ENG-114.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-23'
   id: PRO-076
   kind: historical
@@ -2661,6 +2926,7 @@ entries:
   brief_path: cases/product/PRO-076.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-24'
   id: ENG-115
   kind: historical
@@ -2671,6 +2937,7 @@ entries:
   brief_path: cases/engineering/ENG-115.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-09-25'
   id: INV-039
   kind: historical
@@ -2681,6 +2948,7 @@ entries:
   brief_path: cases/investing/INV-039.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-26'
   id: DES-039
   kind: micro_design
@@ -2691,6 +2959,7 @@ entries:
   brief_path: designs/DES-039.yaml
   protocol_path: protocols/micro-design.md
   review_status: revise
+  revision_state: revised
 - date: '2027-09-27'
   id: ENG-116
   kind: historical
@@ -2701,6 +2970,7 @@ entries:
   brief_path: cases/engineering/ENG-116.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-28'
   id: PRO-077
   kind: historical
@@ -2711,6 +2981,7 @@ entries:
   brief_path: cases/product/PRO-077.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-29'
   id: ENG-117
   kind: historical
@@ -2721,6 +2992,7 @@ entries:
   brief_path: cases/engineering/ENG-117.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-09-30'
   id: PRO-078
   kind: historical
@@ -2731,6 +3003,7 @@ entries:
   brief_path: cases/product/PRO-078.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-01'
   id: ENG-118
   kind: historical
@@ -2741,6 +3014,7 @@ entries:
   brief_path: cases/engineering/ENG-118.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-02'
   id: INV-040
   kind: historical
@@ -2751,6 +3025,7 @@ entries:
   brief_path: cases/investing/INV-040.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-03'
   id: DES-040
   kind: micro_design
@@ -2761,6 +3036,7 @@ entries:
   brief_path: designs/DES-040.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-04'
   id: ENG-119
   kind: historical
@@ -2771,6 +3047,7 @@ entries:
   brief_path: cases/engineering/ENG-119.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-05'
   id: PRO-079
   kind: historical
@@ -2781,6 +3058,7 @@ entries:
   brief_path: cases/product/PRO-079.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-06'
   id: ENG-120
   kind: historical
@@ -2791,6 +3069,7 @@ entries:
   brief_path: cases/engineering/ENG-120.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-07'
   id: PRO-080
   kind: historical
@@ -2801,6 +3080,7 @@ entries:
   brief_path: cases/product/PRO-080.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-08'
   id: ENG-121
   kind: historical
@@ -2811,6 +3091,7 @@ entries:
   brief_path: cases/engineering/ENG-121.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-09'
   id: INV-041
   kind: historical
@@ -2821,6 +3102,7 @@ entries:
   brief_path: cases/investing/INV-041.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-10'
   id: DES-041
   kind: micro_design
@@ -2831,6 +3113,7 @@ entries:
   brief_path: designs/DES-041.yaml
   protocol_path: protocols/micro-design.md
   review_status: revise
+  revision_state: revised
 - date: '2027-10-11'
   id: ENG-122
   kind: historical
@@ -2841,6 +3124,7 @@ entries:
   brief_path: cases/engineering/ENG-122.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-12'
   id: PRO-081
   kind: historical
@@ -2851,6 +3135,7 @@ entries:
   brief_path: cases/product/PRO-081.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-13'
   id: ENG-123
   kind: historical
@@ -2861,6 +3146,7 @@ entries:
   brief_path: cases/engineering/ENG-123.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-14'
   id: PRO-082
   kind: historical
@@ -2871,6 +3157,7 @@ entries:
   brief_path: cases/product/PRO-082.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-15'
   id: ENG-124
   kind: historical
@@ -2881,6 +3168,7 @@ entries:
   brief_path: cases/engineering/ENG-124.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-16'
   id: INV-042
   kind: historical
@@ -2891,6 +3179,7 @@ entries:
   brief_path: cases/investing/INV-042.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-17'
   id: DES-042
   kind: micro_design
@@ -2901,6 +3190,7 @@ entries:
   brief_path: designs/DES-042.yaml
   protocol_path: protocols/micro-design.md
   review_status: revise
+  revision_state: revised
 - date: '2027-10-18'
   id: ENG-125
   kind: historical
@@ -2911,6 +3201,7 @@ entries:
   brief_path: cases/engineering/ENG-125.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-19'
   id: PRO-083
   kind: historical
@@ -2921,6 +3212,7 @@ entries:
   brief_path: cases/product/PRO-083.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-20'
   id: ENG-126
   kind: historical
@@ -2931,6 +3223,7 @@ entries:
   brief_path: cases/engineering/ENG-126.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-21'
   id: PRO-084
   kind: historical
@@ -2941,6 +3234,7 @@ entries:
   brief_path: cases/product/PRO-084.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-22'
   id: ENG-127
   kind: historical
@@ -2951,6 +3245,7 @@ entries:
   brief_path: cases/engineering/ENG-127.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-23'
   id: INV-043
   kind: historical
@@ -2961,6 +3256,7 @@ entries:
   brief_path: cases/investing/INV-043.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-24'
   id: DES-043
   kind: micro_design
@@ -2971,6 +3267,7 @@ entries:
   brief_path: designs/DES-043.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-10-25'
   id: ENG-128
   kind: historical
@@ -2981,6 +3278,7 @@ entries:
   brief_path: cases/engineering/ENG-128.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-26'
   id: PRO-085
   kind: historical
@@ -2991,6 +3289,7 @@ entries:
   brief_path: cases/product/PRO-085.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-27'
   id: ENG-129
   kind: historical
@@ -3001,6 +3300,7 @@ entries:
   brief_path: cases/engineering/ENG-129.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-28'
   id: PRO-086
   kind: historical
@@ -3011,6 +3311,7 @@ entries:
   brief_path: cases/product/PRO-086.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-29'
   id: ENG-130
   kind: historical
@@ -3021,6 +3322,7 @@ entries:
   brief_path: cases/engineering/ENG-130.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-30'
   id: INV-044
   kind: historical
@@ -3031,6 +3333,7 @@ entries:
   brief_path: cases/investing/INV-044.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-10-31'
   id: DES-044
   kind: micro_design
@@ -3041,6 +3344,7 @@ entries:
   brief_path: designs/DES-044.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-11-01'
   id: ENG-131
   kind: historical
@@ -3051,6 +3355,7 @@ entries:
   brief_path: cases/engineering/ENG-131.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-02'
   id: PRO-087
   kind: historical
@@ -3061,6 +3366,7 @@ entries:
   brief_path: cases/product/PRO-087.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-03'
   id: ENG-132
   kind: historical
@@ -3071,6 +3377,7 @@ entries:
   brief_path: cases/engineering/ENG-132.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-11-04'
   id: PRO-088
   kind: historical
@@ -3081,6 +3388,7 @@ entries:
   brief_path: cases/product/PRO-088.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-05'
   id: ENG-133
   kind: historical
@@ -3091,6 +3399,7 @@ entries:
   brief_path: cases/engineering/ENG-133.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-06'
   id: INV-045
   kind: historical
@@ -3101,6 +3410,7 @@ entries:
   brief_path: cases/investing/INV-045.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-07'
   id: DES-045
   kind: micro_design
@@ -3111,6 +3421,7 @@ entries:
   brief_path: designs/DES-045.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-11-08'
   id: ENG-134
   kind: historical
@@ -3121,6 +3432,7 @@ entries:
   brief_path: cases/engineering/ENG-134.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-09'
   id: PRO-089
   kind: historical
@@ -3131,6 +3443,7 @@ entries:
   brief_path: cases/product/PRO-089.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-10'
   id: ENG-135
   kind: historical
@@ -3141,6 +3454,7 @@ entries:
   brief_path: cases/engineering/ENG-135.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-11-11'
   id: PRO-090
   kind: historical
@@ -3151,6 +3465,7 @@ entries:
   brief_path: cases/product/PRO-090.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-11-12'
   id: ENG-136
   kind: historical
@@ -3161,6 +3476,7 @@ entries:
   brief_path: cases/engineering/ENG-136.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-13'
   id: INV-046
   kind: historical
@@ -3171,6 +3487,7 @@ entries:
   brief_path: cases/investing/INV-046.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-14'
   id: DES-046
   kind: micro_design
@@ -3181,6 +3498,7 @@ entries:
   brief_path: designs/DES-046.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-11-15'
   id: ENG-137
   kind: historical
@@ -3191,6 +3509,7 @@ entries:
   brief_path: cases/engineering/ENG-137.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-16'
   id: PRO-091
   kind: historical
@@ -3201,6 +3520,7 @@ entries:
   brief_path: cases/product/PRO-091.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-11-17'
   id: ENG-138
   kind: historical
@@ -3211,6 +3531,7 @@ entries:
   brief_path: cases/engineering/ENG-138.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-18'
   id: PRO-092
   kind: historical
@@ -3221,6 +3542,7 @@ entries:
   brief_path: cases/product/PRO-092.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-19'
   id: ENG-139
   kind: historical
@@ -3231,6 +3553,7 @@ entries:
   brief_path: cases/engineering/ENG-139.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-11-20'
   id: INV-047
   kind: historical
@@ -3241,6 +3564,7 @@ entries:
   brief_path: cases/investing/INV-047.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-21'
   id: DES-047
   kind: micro_design
@@ -3251,6 +3575,7 @@ entries:
   brief_path: designs/DES-047.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-11-22'
   id: ENG-140
   kind: historical
@@ -3261,6 +3586,7 @@ entries:
   brief_path: cases/engineering/ENG-140.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-23'
   id: PRO-093
   kind: historical
@@ -3271,6 +3597,7 @@ entries:
   brief_path: cases/product/PRO-093.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-11-24'
   id: ENG-141
   kind: historical
@@ -3281,6 +3608,7 @@ entries:
   brief_path: cases/engineering/ENG-141.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-25'
   id: PRO-094
   kind: historical
@@ -3291,6 +3619,7 @@ entries:
   brief_path: cases/product/PRO-094.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-26'
   id: ENG-142
   kind: historical
@@ -3301,6 +3630,7 @@ entries:
   brief_path: cases/engineering/ENG-142.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-27'
   id: INV-048
   kind: historical
@@ -3311,6 +3641,7 @@ entries:
   brief_path: cases/investing/INV-048.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-11-28'
   id: DES-048
   kind: micro_design
@@ -3321,6 +3652,7 @@ entries:
   brief_path: designs/DES-048.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-11-29'
   id: ENG-143
   kind: historical
@@ -3331,6 +3663,7 @@ entries:
   brief_path: cases/engineering/ENG-143.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-11-30'
   id: PRO-095
   kind: historical
@@ -3341,6 +3674,7 @@ entries:
   brief_path: cases/product/PRO-095.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-01'
   id: ENG-144
   kind: historical
@@ -3351,6 +3685,7 @@ entries:
   brief_path: cases/engineering/ENG-144.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-02'
   id: PRO-096
   kind: historical
@@ -3361,6 +3696,7 @@ entries:
   brief_path: cases/product/PRO-096.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-03'
   id: ENG-145
   kind: historical
@@ -3371,6 +3707,7 @@ entries:
   brief_path: cases/engineering/ENG-145.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-04'
   id: INV-049
   kind: historical
@@ -3381,6 +3718,7 @@ entries:
   brief_path: cases/investing/INV-049.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-05'
   id: DES-049
   kind: micro_design
@@ -3391,6 +3729,7 @@ entries:
   brief_path: designs/DES-049.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-06'
   id: ENG-146
   kind: historical
@@ -3401,6 +3740,7 @@ entries:
   brief_path: cases/engineering/ENG-146.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-07'
   id: PRO-097
   kind: historical
@@ -3411,6 +3751,7 @@ entries:
   brief_path: cases/product/PRO-097.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-08'
   id: ENG-147
   kind: historical
@@ -3421,6 +3762,7 @@ entries:
   brief_path: cases/engineering/ENG-147.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-09'
   id: PRO-098
   kind: historical
@@ -3431,6 +3773,7 @@ entries:
   brief_path: cases/product/PRO-098.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-10'
   id: ENG-148
   kind: historical
@@ -3441,6 +3784,7 @@ entries:
   brief_path: cases/engineering/ENG-148.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-11'
   id: INV-050
   kind: historical
@@ -3451,6 +3795,7 @@ entries:
   brief_path: cases/investing/INV-050.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-12'
   id: DES-050
   kind: micro_design
@@ -3461,6 +3806,7 @@ entries:
   brief_path: designs/DES-050.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-13'
   id: ENG-149
   kind: historical
@@ -3471,6 +3817,7 @@ entries:
   brief_path: cases/engineering/ENG-149.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-14'
   id: PRO-099
   kind: historical
@@ -3481,6 +3828,7 @@ entries:
   brief_path: cases/product/PRO-099.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-15'
   id: ENG-150
   kind: historical
@@ -3491,6 +3839,7 @@ entries:
   brief_path: cases/engineering/ENG-150.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-16'
   id: PRO-100
   kind: historical
@@ -3501,6 +3850,7 @@ entries:
   brief_path: cases/product/PRO-100.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-17'
   id: ENG-151
   kind: historical
@@ -3511,6 +3861,7 @@ entries:
   brief_path: cases/engineering/ENG-151.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-18'
   id: INV-051
   kind: historical
@@ -3521,6 +3872,7 @@ entries:
   brief_path: cases/investing/INV-051.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-19'
   id: DES-051
   kind: micro_design
@@ -3531,6 +3883,7 @@ entries:
   brief_path: designs/DES-051.yaml
   protocol_path: protocols/micro-design.md
   review_status: revise
+  revision_state: revised
 - date: '2027-12-20'
   id: ENG-152
   kind: historical
@@ -3541,6 +3894,7 @@ entries:
   brief_path: cases/engineering/ENG-152.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-21'
   id: PRO-101
   kind: historical
@@ -3551,6 +3905,7 @@ entries:
   brief_path: cases/product/PRO-101.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-22'
   id: ENG-153
   kind: historical
@@ -3561,6 +3916,7 @@ entries:
   brief_path: cases/engineering/ENG-153.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-23'
   id: PRO-102
   kind: historical
@@ -3571,6 +3927,7 @@ entries:
   brief_path: cases/product/PRO-102.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-24'
   id: ENG-154
   kind: historical
@@ -3581,6 +3938,7 @@ entries:
   brief_path: cases/engineering/ENG-154.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-25'
   id: INV-052
   kind: historical
@@ -3591,6 +3949,7 @@ entries:
   brief_path: cases/investing/INV-052.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-26'
   id: DES-052
   kind: micro_design
@@ -3601,6 +3960,7 @@ entries:
   brief_path: designs/DES-052.yaml
   protocol_path: protocols/micro-design.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-27'
   id: ENG-155
   kind: historical
@@ -3611,6 +3971,7 @@ entries:
   brief_path: cases/engineering/ENG-155.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-28'
   id: PRO-103
   kind: historical
@@ -3621,6 +3982,7 @@ entries:
   brief_path: cases/product/PRO-103.yaml
   protocol_path: protocols/historical.md
   review_status: revise
+  revision_state: awaiting_source
 - date: '2027-12-29'
   id: ENG-156
   kind: historical
@@ -3631,6 +3993,7 @@ entries:
   brief_path: cases/engineering/ENG-156.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-30'
   id: PRO-104
   kind: historical
@@ -3641,6 +4004,7 @@ entries:
   brief_path: cases/product/PRO-104.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
+  revision_state: retained
 - date: '2027-12-31'
   id: ENG-157
   kind: historical
@@ -3651,3 +4015,4 @@ entries:
   brief_path: cases/engineering/ENG-157.yaml
   protocol_path: protocols/historical.md
   review_status: replace
+  revision_state: awaiting_replacement

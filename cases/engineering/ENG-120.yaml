@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-08
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 JetStream 最早相关发布契约，日期版本待核
+    anchor_status: unverified_research_target
+    main_question: ack 丢失后的再次投递，能否保证业务副作用只发生一次？
+    expected_output: 一个投递保证与业务效果边界
+    evidence_to_verify:
+    - 发布记录
+    - ack 与重投递语义
+    - 当时去重能力
+    out_of_scope: 不提前加入后续版本功能

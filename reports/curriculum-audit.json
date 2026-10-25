@@ -3334,5 +3334,11 @@
   },
   "weekly_flag_limitations": "仅用于定位密度风险，不等于重复事件；部分首尾 ISO 周不足七天。",
   "verified_historical_outcomes": 0,
-  "date_id_or_topic_replacements_applied": 0
+  "date_id_or_topic_replacements_applied": 0,
+  "revision_progress": {
+    "awaiting_replacement": 1,
+    "awaiting_source": 191,
+    "retained": 164,
+    "revised": 9
+  }
 }

@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-02
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Gradle 配置缓存中的单个副作用
+    anchor_status: unverified_research_target
+    main_question: 什么检查最能证明该配置结果不适合复用？
+    expected_output: 一个检查动作与可反驳的缓存假说
+    evidence_to_verify:
+    - 版本
+    - 配置片段
+    - 副作用与缓存输入边界
+    out_of_scope: 不混同配置缓存和任务输出缓存

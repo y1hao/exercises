@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 Cloudflare 2014 一轮融资，身份待核
+    anchor_status: unverified_research_target
+    main_question: 免费流量与网络规模在哪种条件下才构成防守优势？
+    expected_output: 一个壁垒判断及失效条件
+    evidence_to_verify:
+    - 该轮业务范围
+    - 网络与客户口径
+    - 价值捕获证据
+    out_of_scope: 不混入后来六年的全部安全与开发者产品

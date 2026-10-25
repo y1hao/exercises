@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Mistral AI 2023 种子窗口
+    anchor_status: unverified_research_target
+    main_question: 现有资本应先验证哪个需求里程碑才值得继续投入？
+    expected_output: 一个里程碑选择与可存活前提
+    evidence_to_verify:
+    - 当轮资本约束
+    - 当时产品状态
+    - 客户验证机会
+    out_of_scope: 不使用后来模型成绩或当前估值

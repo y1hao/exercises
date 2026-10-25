@@ -20,3 +20,31 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: optionality_and_irreversibility
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - EV-03
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 Superhuman 2019 一轮融资，身份待核
+    anchor_status: unverified_research_target
+    main_question: 除 PMF 调查外，付费 cohort 是否支持可持续商业质量？
+    expected_output: 一个独立 cohort 质量估计或拒绝精算的判断
+    evidence_to_verify:
+    - 当轮独立融资材料
+    - 付费留存
+    - 服务成本与收入口径
+    out_of_scope: 不得复用 PRO-080 问卷作主要材料；缺独立数据则换题
+  quantitative_plan:
+    mainline_measure: 商业质量的单项数量关系
+    required_inputs:
+    - 独立于 PMF 问卷的付费 cohort
+    - 收入与服务成本
+    - 融资时点
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 除 PMF 问卷外，最应索取哪项付费或成本证据？
+    fallback_applied: false
+    input_verification: not_started
+  source_identity_condition: 只研究拟选 2019 融资时的独立付费 cohort 和商业质量；仅有 PRO-080 问卷材料就进入替换队列。

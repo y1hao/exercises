@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: retained
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  quantitative_plan:
+    mainline_measure: 每客户经济性支持的估值范围
+    required_inputs:
+    - IPO 前价格与股本
+    - 每客户收入
+    - 同口径风险成本
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 下一项哪种风险或客户质量证据最可能推翻增长估值？
+    fallback_applied: false
+    input_verification: not_started

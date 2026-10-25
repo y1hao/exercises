@@ -20,3 +20,29 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: GitHub API v4 候选发布时的单一资源关系查询
+    anchor_status: unverified_research_target
+    main_question: 完成同一份客户端结果，REST 与 GraphQL 分别需要多少请求？
+    expected_output: 同结果口径的请求计数及一个服务端代价
+    evidence_to_verify:
+    - 当时 endpoint 或 schema
+    - 分页规则
+    - 请求示例
+    out_of_scope: 不凭 API 名称估算全面性能提升
+  quantitative_plan:
+    mainline_measure: 完成同一结果的请求次数
+    required_inputs:
+    - 同期 endpoint 和 schema
+    - 分页规则
+    - 同一目标结果
+    missing_input_fallback:
+      focus: boundary-transfer
+      question: 声明式查询减少了哪种客户端工作，又把什么复杂性转给服务端？
+    fallback_applied: false
+    input_verification: not_started

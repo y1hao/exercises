@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Canva Education 2019 候选的一类教师采用任务
+    anchor_status: unverified_research_target
+    main_question: 教师采用能在什么条件下迁移为未来独立使用？
+    expected_output: 一个采用预测及无法迁移的反例
+    evidence_to_verify:
+    - 教育供给条件
+    - 课堂任务
+    - 身份与后续使用路径
+    out_of_scope: 不把学生人数计成未来付费收入

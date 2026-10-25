@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Go 1.21 候选工具链机制在离线构建中的采用节点
+    anchor_status: unverified_research_target
+    main_question: 离线环境应允许自动选取工具链，还是显式固定它？
+    expected_output: 一个策略及其失败回退条件
+    evidence_to_verify:
+    - 该版本工具链选择规则
+    - 下载行为
+    - 离线约束
+    out_of_scope: 不同时设计完整供应链管理方案

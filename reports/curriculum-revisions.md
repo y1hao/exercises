@@ -1,7 +1,7 @@
 # Phase 2 canonical 索引变更映射
 
 
-相对 Phase 1 导入基线：仅改 focus 并新增 review_status。所有日期、ID、kind、domain、subdomain、status 和路径保持原值；原始课程与候选 Brief 不改。replace 是规划建议，未实施换题。
+本表记录初审相对 Phase 1 的 focus/review_status 映射；后续 revision_state 和候选 planning 范围详见 phase2-revision-results.md。日期、ID、kind、domain、subdomain、status、路径和原始候选素材保持原值。replace 是规划建议，未实施换题。
 
 
 | 日期 | ID | 原 focus | 校准后 focus | 审核动作 |

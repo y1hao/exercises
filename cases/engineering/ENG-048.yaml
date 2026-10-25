@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: uncertainty_and_diagnosis
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一个 SQLite 查询计划和统计信息快照
+    anchor_status: unverified_research_target
+    main_question: 慢查询更可能来自缺索引还是基数估计偏差？
+    expected_output: 两个假说及一项区分实验
+    evidence_to_verify:
+    - 同一 SQL
+    - 索引定义
+    - 统计与计划输出
+    - 版本
+    out_of_scope: 不泛讲查询优化器或编造运行日志

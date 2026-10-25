@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-01
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Actions 缓存的一次跨信任域复用
+    anchor_status: unverified_research_target
+    main_question: 哪项检查能发现不应复用的缓存产物？
+    expected_output: 一个核验动作与污染反例
+    evidence_to_verify:
+    - 服务快照
+    - key 范围
+    - 读写权限及失效规则
+    out_of_scope: 不重复 Docker 层缓存或泛设计 CI 平台

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一次 Slack 自发团队采用转采购的候选节点
+    anchor_status: unverified_research_target
+    main_question: 下一项什么信号最能说明团队使用能转为组织付费？
+    expected_output: 一个优先验证信号
+    evidence_to_verify:
+    - 当时套餐
+    - 采用团队角色
+    - 购买权与实际用量证据
+    out_of_scope: 不概括三年全部企业扩散史

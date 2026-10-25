@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: optionality_and_irreversibility
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-05
+  planned_exercise:
+    planning_only: true
+    anchor_request: FoundationDB 2013 候选设计的一组冲突事务
+    anchor_status: unverified_research_target
+    main_question: 哪些读写重叠会导致重试并降低有效吞吐？
+    expected_output: 一组冲突预测和一个不冲突对照
+    evidence_to_verify:
+    - 设计版本
+    - read version
+    - 读写冲突集合
+    out_of_scope: 不同时展开所有事务层组件

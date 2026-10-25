@@ -22,3 +22,20 @@ candidate_material:
   status: candidate_needs_review
   case_stage: curriculum_idea_not_ready
   duration_minutes: 20
+planning:
+  revision_state: revised
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    synthetic: true
+    title: 有限容量下的事件接收承诺
+    main_question: 下游不可用时，入口应在什么条件下拒绝接收新事件？
+    expected_output: 一条接收确认边界、有限缓冲策略和无解条件。
+    scenario: 只处理入口到一个下游的事件交付，内存和持久化容量都有限。
+    planning_assumptions:
+    - 可以在正式接受事件前返回明确拒绝；上游无法重试时，端到端不丢失可能无法保证。
+    - 确认接受后的事件有明确持久化责任，不允许以静默丢弃冒充已交付。
+    - 允许方案证明在给定资源和持续输入下要求不可同时满足。
+    scoped_change: 下游连续一天不可用，上游仍持续发送且不能安全重试。
+    out_of_scope: 不引入无限磁盘，不要求在矛盾条件下保证所有数据永不丢失。

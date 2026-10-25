@@ -21,3 +21,19 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
   example_source_url: https://blog.cloudflare.com/5-december-2025-outage/
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-21
+  planned_exercise:
+    planning_only: true
+    anchor_request: 2025 年 12 月解析候选事件，身份待核
+    anchor_status: unverified_research_target
+    main_question: 什么灰度观测最能提前区分解析错误与流量变化？
+    expected_output: 一个观测选择及可停止发布的证据
+    evidence_to_verify:
+    - 独立复盘
+    - 解析改动
+    - 灰度覆盖和错误口径
+    out_of_scope: 不复用 Bot Management 的根因或时间线

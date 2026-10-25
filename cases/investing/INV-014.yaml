@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: uncertainty_and_diagnosis
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Box 2014 延期窗口的一次实际融资决策
+    anchor_status: unverified_research_target
+    main_question: 新资本会怎样改变旧股权的风险分布？
+    expected_output: 一个有合同依据的稀释或顺位预测
+    evidence_to_verify:
+    - 节点
+    - 可见股本
+    - 公开条款
+    - 现金需求
+    out_of_scope: 条款缺失改证据选择，不补造优先权

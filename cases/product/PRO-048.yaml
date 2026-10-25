@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Workshop 的单类内容贡献规则
+    anchor_status: unverified_research_target
+    main_question: 这个回报机制会怎样影响创作者持续供给？
+    expected_output: 一条贡献到回报的机制及反向激励
+    evidence_to_verify:
+    - 实际功能版本
+    - 贡献与回报规则
+    - 参与权限
+    out_of_scope: 不混同 Workshop 与独立有偿市场

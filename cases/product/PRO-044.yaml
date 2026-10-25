@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一次可核实的 Leagues 上线或规则改动
+    anchor_status: unverified_research_target
+    main_question: 榜单后的回访能否区分竞争激励与学习收益？
+    expected_output: 两个假说及一项区别证据
+    evidence_to_verify:
+    - 真实发布时点
+    - 榜单规则
+    - 学习和参与口径
+    out_of_scope: 不把候选年份认作已确认或用回访替代学习

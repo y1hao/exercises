@@ -22,3 +22,19 @@ candidate_material:
   status: candidate_needs_review
   case_stage: curriculum_idea_not_ready
   duration_minutes: 20
+planning:
+  revision_state: revised
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    synthetic: true
+    title: 行政表单草稿的人工确认边界
+    main_question: 在明确的试点规则下，AI 表单服务应把自动化停在哪个边界？
+    expected_output: 一个可销售的行政任务范围和人工确认节点。
+    scenario: 仅处理诊所行政表单草稿，不作诊断、治疗或真实合规法律判断。
+    planning_assumptions:
+    - 这是合成试点政策：系统不得自动写入正式病历，获授权人员必须确认提交。
+    - 试点仅允许已获授权的数据进入受控环境，不推断任何司法辖区的实际法规。
+    scoped_change: 客户把自动写入正式病历作为付款条件；政策保持不变，允许拒绝或重新界定服务。
+    out_of_scope: 不要求用户猜法律、承诺零错误或设计完整医疗信息系统。

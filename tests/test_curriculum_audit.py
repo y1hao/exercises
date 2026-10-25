@@ -39,7 +39,7 @@ class CurriculumAuditTests(unittest.TestCase):
         self.assertEqual([e["status"] for e in rebuilt["entries"]], [e["status"] for e in self.index])
         for entry in self.index:
             with self.subTest(id=entry["id"]):
-                unchanged = {k: v for k, v in entry.items() if k not in {"focus", "review_status", "status"}}
+                unchanged = {k: v for k, v in entry.items() if k not in {"focus", "review_status", "status", "revision_state"}}
                 original = {k: v for k, v in by_id[entry["id"]].items() if k not in {"focus", "status"}}
                 self.assertEqual(unchanged, original)
 

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: BlackBerry 2016 候选退出节点的一项安全能力
+    anchor_status: unverified_research_target
+    main_question: 这项能力能否迁移为软件客户愿意购买的价值？
+    expected_output: 一个资源投入选择及不可迁移部分
+    evidence_to_verify:
+    - 退出前可知能力
+    - 软件客户需求
+    - 组织约束
+    out_of_scope: 不评价整个转型结果或猜内部意图

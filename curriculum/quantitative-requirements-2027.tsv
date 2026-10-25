@@ -1,0 +1,40 @@
+id	required_inputs	mainline_measure	fallback_focus	fallback_question
+INV-001	事前价格区间；股本；授权和版税同口径数据	价格隐含的业务价值区间	evidence-selection	缺少哪项价格或股本信息会使投资判断最不可靠？
+INV-002	同窗口订单与广告收入；可归属履约和广告成本	订单与广告的毛利贡献拆分	boundary-transfer	哪些披露口径不足以区分订单规模和广告盈利？
+PRO-007	同一地区日期的需求；可用房源；有效匹配定义	本地有效匹配数量级	evidence-selection	下一项什么供需数据最能区分总量增长和有效流动性？
+INV-009	同窗口补贴、收入和履约成本；城市或 cohort 定义	单位贡献和回本条件	boundary-transfer	哪个成本口径让规模增长仍不能证明单位经济改善？
+ENG-028	请求与故障频率；采样单位；同口径采样规则	稀有事件漏采数量级	evidence-selection	应先核验采样独立性还是故障发生分布，才能判断诊断价值？
+PRO-019	历史计价规则；同一有来源工作负载的次数与执行时间	账单的主导用量与敏感性	boundary-transfer	按调用收费把哪种费用风险转给了客户？
+ENG-039	同口径连接复用和资源观测；基准负载范围	资源变化中可归因的范围	evidence-selection	哪项对照最能区分连接复用收益与负载结构变化？
+INV-015	进入时点；同城市收入、补贴、履约成本与密度	局部贡献利润转正阈值	evidence-selection	哪项城市数据最能检验规模是否降低了单位履约成本？
+PRO-031	同窗口喜欢、匹配、有效对话的数量和定义	匹配到有效对话的漏斗关系	evidence-selection	下一项什么行为证据能区分更多匹配与更多有效关系？
+ENG-050	消息与批大小；同口径调用或存储工作量	批量变化的工作量与等待边界	prediction-counterfactual	批量增大时吞吐和等待会朝什么方向变化，哪个前提可能失效？
+ENG-056	同期 endpoint 和 schema；分页规则；同一目标结果	完成同一结果的请求次数	boundary-transfer	声明式查询减少了哪种客户端工作，又把什么复杂性转给服务端？
+PRO-037	同窗口发送、曝光、注册与再发送口径和数量	有效用户的传播系数	evidence-selection	缺少哪一个漏斗分母会让传播系数失去意义？
+INV-020	IPO 前价格与股本；每客户收入；同口径风险成本	每客户经济性支持的估值范围	evidence-selection	下一项哪种风险或客户质量证据最可能推翻增长估值？
+PRO-040	同区订单、路线、等待；可归属配送成本	单区增量履约阈值	constrained-decision	在订单稀疏和等待时间约束下，应先收窄区域还是增加供给？
+INV-021	同窗口订阅收入与用户；公开授权成本和可归属成本	订阅边际毛利及其可证区间	boundary-transfer	哪些成本披露不足以把新增订阅视为高毛利增长？
+PRO-049	人工时长和成本；激活定义；同窗口可追溯收益	人工引导所需的收益阈值	evidence-selection	下一项什么激活或留存证据才足以支持继续人工引导？
+ENG-075	重复键分布；页面或索引尺寸；对应版本机制	索引体积变化数量级	prediction-counterfactual	重复键变少后，去重对空间的作用将如何变化？
+INV-026	上市前可见价格和股本；bookings、递延收入与现金口径	同口径价值判断的范围	boundary-transfer	bookings 增长能支持什么判断，又不能证明什么盈利质量？
+INV-027	同 cohort 获客成本、留存、订单贡献与损耗；回收窗口	CAC 回本与留存阈值	evidence-selection	下一项哪种 cohort 证据能区分高频收入与可持续回本？
+ENG-084	同地区流量、命中率、交付与部署成本	边缘缓存的成本阈值	constrained-decision	哪些负载条件下自建缓存不值得增加运维责任？
+PRO-058	同城时段供需、等待、价格与交易量	局部密度和等待的数量关系	prediction-counterfactual	局部新增供给在什么条件下不会缩短用户等待？
+PRO-061	活动奖励支出；有效开户、入金与持续账户定义	有效获客成本的分母	evidence-selection	先核验入金还是账户持续行为，才能区分奖励拉新和有效需求？
+INV-032	IPO 前价格和股本；广告收入与成本；用户口径	价格对应的商业化情景	evidence-selection	内容供给和广告依赖中，哪项证据最值得用于检验估值？
+PRO-064	同窗口免费与付费收入；公开授权成本；转化口径	免费层的收入或转化阈值	boundary-transfer	免费覆盖何时不能转为可持续的付费经济性？
+INV-033	同 cohort 留存、CAC 和订单贡献；回收窗口	增长与 cohort 回本的差异	evidence-selection	收入增长外还需哪项 cohort 证据才能判断获客质量？
+INV-034	独立于 PMF 问卷的付费 cohort；收入与服务成本；融资时点	商业质量的单项数量关系	evidence-selection	除 PMF 问卷外，最应索取哪项付费或成本证据？
+ENG-108	来源支持的延迟分布；fanout 规模；额外请求工作量	尾延迟与重复工作量的关系	prediction-counterfactual	副本变慢相关而非独立时，hedging 的收益会怎样变化？
+INV-037	IPO 前价格、股本、产能与资本开支；可证公开假设	产能达成约束的价值范围	evidence-selection	哪项产能或稀释证据最能推翻当前价格隐含的假设？
+ENG-110	一次迁移的同口径热点、延迟、资源与迁移工作量	该次迁移的成本边界	constrained-decision	哪些热点证据足以支持继续迁移，而不是先改变访问路径？
+INV-038	硬件毛利、获取成本、订阅贡献与同 cohort 留存	硬件获客的回本窗口	evidence-selection	缺哪项硬件或订阅成本会让回本判断方向错误？
+ENG-117	独立优化材料；单位工作量；可归属 SSD 或缓存成本	单位 KV 工作的可证成本变化	evidence-selection	哪项同负载成本证据能区分 SSD、缓存与路由解释？
+INV-043	两轮实际价格和股本；公开股权权利；稀释口径	headline 估值与旧股经济价值差异	boundary-transfer	为什么缺少股权权利时，不能从融资估值比例推出旧股价值变化？
+ENG-128	同窗口时间与数据分布；chunk 和索引规则	一次范围查询涉及的数据数量级	prediction-counterfactual	查询窗口跨过更多 chunk 后，扫描路径会怎样变化？
+INV-044	同报表窗口 GTV、收入、履约成本与归属定义	平台利润桥	boundary-transfer	交易额增长与净利润改善之间还隔着哪些责任和成本口径？
+PRO-087	两版实际价格；同一有来源请求与执行量；政策范围	同负载前后账单变化	boundary-transfer	计量单位改变后，开发者哪种成本直觉不再可靠？
+ENG-137	连接数、就绪事件数；接口版本和工作量模型	通知路径的数量级	prediction-counterfactual	就绪连接占比变大时，通知机制的相对收益会怎样变化？
+INV-049	当时可服务客群；支付价格或意愿；市场范围	可支付市场数量级	evidence-selection	什么客群或支付证据最能反驳把免费用户当市场规模？
+ENG-150	同口径存储规模、利用率、采购与运维成本	自建存储的盈亏边界	constrained-decision	在哪些利用率与运维条件下，继续托管比自建更合理？
+INV-051	上市前报表；个人与团队收入口径；可归属成本	客户与套餐变化的毛利贡献	evidence-selection	除自建存储成本外，哪项套餐或客户结构数据最能解释毛利变化？

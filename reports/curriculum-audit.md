@@ -76,7 +76,7 @@
 
 原始动作标签呈轮换式分布（根据候选序列观察），且部分与题意不符。PRO-002 无漏斗数字却标数量估计，改为捕获流程的因果机制；ENG-092 推演 proposal 恢复，改为预测；ENG-129 预测微任务次序，改为预测；ENG-043 检验权限模型边界，改为边界迁移。
 
-数量估计保留在确实需要计数或情景计算的题，但数字的来源和口径仍待核实。估计题若无法取得必要数字，应显式构造合成参数，或修订练习动作，不得杜撰历史数据。
+数量题的主线输入必须可追溯且事前可知，允许注明方法的推导；无法取得必要数字则采用预设的方向、边界或证据选择问题，不能自动填合成参数。合成数字只属于明确切换的反事实附加练习。39 条输入要求和备用问题见 quantitative-requirements-2027.tsv；核源前不自动改动作。
 
 规范化后的类别分布不追求机械均匀。52 个设计都以主动构造为主，细分对象仍保留在原始认知动作与 subdomain 中；不能把共同的设计动作误判为 52 个重复案例。
 
@@ -164,6 +164,8 @@
 
 ENG-157 是唯一 replace 建议，尚未确定替代事件；日期和 ID 保持原状，状态仍为 candidate。ENG-011、INV-034、ENG-117 等在无法获得独立材料时可能进入后续替换队列，此处不提前认定事实错误。
 
-本阶段只更新 canonical 索引的 focus 和 review_status。所有 old/new focus 与审核动作在 `curriculum-revisions.md`，没有实际换题、改号、挪日期或升级训练状态。
+初审校准 focus 和 review_status，映射见 `curriculum-revisions.md`；后续范围修订另以 revision_state 追踪，具体问题、证据要求、合成约束和数量题规则见 `phase2-revision-results.md` 及 `curriculum/planning-2027.yaml`。没有实际换题、改号、挪日期或升级训练状态。
+
+当前修订进度：awaiting_replacement 1、awaiting_source 191、retained 164、revised 9。原始 revise/replace 标签保留作为审核历史，不代表仍只有备注未落实。
 
 Phase 2 完成后停止，待用户同意再进入 Phase 3 来源验证；不提前制作 ready Brief、完整协议或声称训练对话验收通过。

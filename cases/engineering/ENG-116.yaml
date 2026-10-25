@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Envoy xDS 的一次资源更新 ACK
+    anchor_status: unverified_research_target
+    main_question: 收到 ACK 后，控制面能够对流量生效作什么承诺？
+    expected_output: 一个确认语义边界及所需额外观测
+    evidence_to_verify:
+    - 协议版本
+    - 资源生效过程
+    - ACK/NACK 说明
+    out_of_scope: 不把接收配置等同端到端业务成功

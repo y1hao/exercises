@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: optionality_and_irreversibility
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-02
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 TypeScript project references 的单个接口变更
+    anchor_status: unverified_research_target
+    main_question: 哪些下游项目需要重新检查，哪些不必？
+    expected_output: 一张受影响项目集合
+    evidence_to_verify:
+    - 版本
+    - 项目引用图
+    - 签名与增量失效规则
+    out_of_scope: 不混用不同年份的增量实现

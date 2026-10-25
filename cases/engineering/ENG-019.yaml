@@ -21,3 +21,18 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
   example_source_url: https://blog.cloudflare.com/cloudflare-incident-on-august-21-2025/
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 2025 年 8 月互联拥塞候选事件，身份待核
+    anchor_status: unverified_research_target
+    main_question: 哪项地域对照最能区分链路问题与应用自身故障？
+    expected_output: 两个假说与一项区分性观测
+    evidence_to_verify:
+    - 事件复盘
+    - 地域影响范围
+    - 链路与应用观测时序
+    out_of_scope: 不假定全球故障或预先确认拥塞根因

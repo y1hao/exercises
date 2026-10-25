@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 2015—2016 的一轮 Notion 重做节点
+    anchor_status: unverified_research_target
+    main_question: 哪项用户行为最能区分可编程性不足与上手成本过高？
+    expected_output: 两个假说和一项区分证据
+    evidence_to_verify:
+    - 当轮产品形态
+    - 同期用户材料
+    - 回顾访谈的时间边界
+    out_of_scope: 不替创始人编造动机或评判全部重做策略

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Discord 2019 候选迁移决策前的一类延迟抖动
+    anchor_status: unverified_research_target
+    main_question: 下一项观测如何区分 GC 暂停与非 GC 的等待？
+    expected_output: 列出两个竞争解释并选择区分它们的一项观测
+    evidence_to_verify:
+    - 当时运行时版本
+    - 暂停与分配观测
+    - 延迟口径
+    out_of_scope: 不把迁移 Rust 当作预定结论

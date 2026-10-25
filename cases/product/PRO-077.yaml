@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一次可定位的 Duolingo 应用商店活动
+    anchor_status: unverified_research_target
+    main_question: 什么证据最能区分自然需求增长与排名带来的曝光？
+    expected_output: 一个证据选择及渠道失效条件
+    evidence_to_verify:
+    - 实际活动材料
+    - 曝光与行为时序
+    - 排名变化口径
+    out_of_scope: 不把标题中的排名归因当已证实原因

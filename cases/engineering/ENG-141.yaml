@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-02
+  planned_exercise:
+    planning_only: true
+    anchor_request: Tree-sitter 2018 候选的一次含语法错误的局部编辑
+    anchor_status: unverified_research_target
+    main_question: 哪些语法树范围需要更新，错误会不会阻止局部恢复？
+    expected_output: 一个更新范围预测
+    evidence_to_verify:
+    - 版本
+    - 编辑前后片段
+    - 树复用与恢复规则
+    out_of_scope: 不做没有字符或节点输入的性能精算

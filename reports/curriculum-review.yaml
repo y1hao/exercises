@@ -17,6 +17,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-001
   date: '2027-01-02'
   kind: historical
@@ -33,6 +35,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-001
   date: '2027-01-03'
   kind: micro_design
@@ -50,6 +54,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-03
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-002
   date: '2027-01-04'
   kind: historical
@@ -67,6 +73,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-01
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-001
   date: '2027-01-05'
   kind: historical
@@ -83,6 +91,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-003
   date: '2027-01-06'
   kind: historical
@@ -99,6 +109,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-002
   date: '2027-01-07'
   kind: historical
@@ -115,6 +127,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-004
   date: '2027-01-08'
   kind: historical
@@ -132,6 +146,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-03
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-002
   date: '2027-01-09'
   kind: historical
@@ -148,6 +164,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-002
   date: '2027-01-10'
   kind: micro_design
@@ -164,6 +182,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-005
   date: '2027-01-11'
   kind: historical
@@ -180,6 +200,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-003
   date: '2027-01-12'
   kind: historical
@@ -196,6 +218,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-006
   date: '2027-01-13'
   kind: historical
@@ -213,6 +237,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-10
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-004
   date: '2027-01-14'
   kind: historical
@@ -229,6 +255,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-007
   date: '2027-01-15'
   kind: historical
@@ -245,6 +273,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-003
   date: '2027-01-16'
   kind: historical
@@ -261,6 +291,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-003
   date: '2027-01-17'
   kind: micro_design
@@ -278,6 +310,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-08
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-008
   date: '2027-01-18'
   kind: historical
@@ -294,6 +328,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-005
   date: '2027-01-19'
   kind: historical
@@ -311,6 +347,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-11
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-009
   date: '2027-01-20'
   kind: historical
@@ -328,6 +366,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-04
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-006
   date: '2027-01-21'
   kind: historical
@@ -344,6 +384,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-010
   date: '2027-01-22'
   kind: historical
@@ -360,6 +402,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-004
   date: '2027-01-23'
   kind: historical
@@ -376,6 +420,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-004
   date: '2027-01-24'
   kind: micro_design
@@ -392,6 +438,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-011
   date: '2027-01-25'
   kind: historical
@@ -409,6 +457,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - EV-02
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-007
   date: '2027-01-26'
   kind: historical
@@ -425,6 +475,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-012
   date: '2027-01-27'
   kind: historical
@@ -442,6 +494,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-07
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-008
   date: '2027-01-28'
   kind: historical
@@ -458,6 +512,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-013
   date: '2027-01-29'
   kind: historical
@@ -474,6 +530,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-005
   date: '2027-01-30'
   kind: historical
@@ -490,6 +548,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-005
   date: '2027-01-31'
   kind: micro_design
@@ -506,6 +566,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-014
   date: '2027-02-01'
   kind: historical
@@ -522,6 +584,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-009
   date: '2027-02-02'
   kind: historical
@@ -539,6 +603,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-13
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-015
   date: '2027-02-03'
   kind: historical
@@ -556,6 +622,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - EV-04
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-010
   date: '2027-02-04'
   kind: historical
@@ -572,6 +640,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-016
   date: '2027-02-05'
   kind: historical
@@ -588,6 +658,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-006
   date: '2027-02-06'
   kind: historical
@@ -604,6 +676,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-006
   date: '2027-02-07'
   kind: micro_design
@@ -620,6 +694,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-017
   date: '2027-02-08'
   kind: historical
@@ -636,6 +712,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-011
   date: '2027-02-09'
   kind: historical
@@ -653,6 +731,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-10
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-018
   date: '2027-02-10'
   kind: historical
@@ -669,6 +749,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-012
   date: '2027-02-11'
   kind: historical
@@ -685,6 +767,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-019
   date: '2027-02-12'
   kind: historical
@@ -701,6 +785,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-007
   date: '2027-02-13'
   kind: historical
@@ -717,6 +803,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-007
   date: '2027-02-14'
   kind: micro_design
@@ -733,6 +821,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-020
   date: '2027-02-15'
   kind: historical
@@ -749,6 +839,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-013
   date: '2027-02-16'
   kind: historical
@@ -765,6 +857,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-021
   date: '2027-02-17'
   kind: historical
@@ -781,6 +875,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-014
   date: '2027-02-18'
   kind: historical
@@ -797,6 +893,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-022
   date: '2027-02-19'
   kind: historical
@@ -813,6 +911,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-008
   date: '2027-02-20'
   kind: historical
@@ -829,6 +929,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-008
   date: '2027-02-21'
   kind: micro_design
@@ -846,6 +948,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-08
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-023
   date: '2027-02-22'
   kind: historical
@@ -862,6 +966,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-015
   date: '2027-02-23'
   kind: historical
@@ -878,6 +984,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-024
   date: '2027-02-24'
   kind: historical
@@ -894,6 +1002,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-016
   date: '2027-02-25'
   kind: historical
@@ -911,6 +1021,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-16
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-025
   date: '2027-02-26'
   kind: historical
@@ -928,6 +1040,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-01
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-009
   date: '2027-02-27'
   kind: historical
@@ -944,6 +1058,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-009
   date: '2027-02-28'
   kind: micro_design
@@ -961,6 +1077,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-16
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-026
   date: '2027-03-01'
   kind: historical
@@ -978,6 +1096,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-21
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-017
   date: '2027-03-02'
   kind: historical
@@ -994,6 +1114,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-027
   date: '2027-03-03'
   kind: historical
@@ -1010,6 +1132,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-018
   date: '2027-03-04'
   kind: historical
@@ -1027,6 +1151,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-15
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-028
   date: '2027-03-05'
   kind: historical
@@ -1038,11 +1164,13 @@ entries:
   secondary_cognitive_moves: []
   original_cognitive_move: causal_mechanism
   review_status: revise
-  scope_and_rationale: 若保留采样成本估计，需给可核实的请求量或明确合成参数，区分稀有故障漏采概率与平均成本。
+  scope_and_rationale: 只估稀有故障漏采风险；历史主线必须查到请求、故障与采样口径，缺失则改证据选择，合成分布仅限明确切换的反事实附加题。
   candidate_narrative_frame: technical
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-010
   date: '2027-03-06'
   kind: historical
@@ -1060,6 +1188,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-10
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-010
   date: '2027-03-07'
   kind: micro_design
@@ -1077,6 +1207,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-17
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-029
   date: '2027-03-08'
   kind: historical
@@ -1093,6 +1225,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-019
   date: '2027-03-09'
   kind: historical
@@ -1104,11 +1238,13 @@ entries:
   secondary_cognitive_moves: []
   original_cognitive_move: quantitative_estimation
   review_status: revise
-  scope_and_rationale: 固定一类调用的用量分布比较费用风险；缺失真实账单时用显式合成数值，不把按调用收费等同于更便宜。
+  scope_and_rationale: 固定一类有来源调用分布比较费用风险；缺真实用量则改风险边界判断，不用合成账单补主线或默认按调用更便宜。
   candidate_narrative_frame: opportunity
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-030
   date: '2027-03-10'
   kind: historical
@@ -1125,6 +1261,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-020
   date: '2027-03-11'
   kind: historical
@@ -1141,6 +1279,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-031
   date: '2027-03-12'
   kind: historical
@@ -1158,6 +1298,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-05
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-011
   date: '2027-03-13'
   kind: historical
@@ -1174,6 +1316,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-011
   date: '2027-03-14'
   kind: micro_design
@@ -1190,6 +1334,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-032
   date: '2027-03-15'
   kind: historical
@@ -1207,6 +1353,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-01
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-021
   date: '2027-03-16'
   kind: historical
@@ -1223,6 +1371,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-033
   date: '2027-03-17'
   kind: historical
@@ -1239,6 +1389,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-022
   date: '2027-03-18'
   kind: historical
@@ -1255,6 +1407,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-034
   date: '2027-03-19'
   kind: historical
@@ -1272,6 +1426,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-20
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-012
   date: '2027-03-20'
   kind: historical
@@ -1288,6 +1444,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-012
   date: '2027-03-21'
   kind: micro_design
@@ -1305,6 +1463,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-02
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-035
   date: '2027-03-22'
   kind: historical
@@ -1321,6 +1481,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-023
   date: '2027-03-23'
   kind: historical
@@ -1337,6 +1499,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-036
   date: '2027-03-24'
   kind: historical
@@ -1353,6 +1517,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-024
   date: '2027-03-25'
   kind: historical
@@ -1369,6 +1535,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-037
   date: '2027-03-26'
   kind: historical
@@ -1386,6 +1554,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-05
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-013
   date: '2027-03-27'
   kind: historical
@@ -1402,6 +1572,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-013
   date: '2027-03-28'
   kind: micro_design
@@ -1418,6 +1590,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-038
   date: '2027-03-29'
   kind: historical
@@ -1434,6 +1608,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-025
   date: '2027-03-30'
   kind: historical
@@ -1450,6 +1626,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-039
   date: '2027-03-31'
   kind: historical
@@ -1466,6 +1644,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-026
   date: '2027-04-01'
   kind: historical
@@ -1482,6 +1662,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-040
   date: '2027-04-02'
   kind: historical
@@ -1499,6 +1681,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - EV-02
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-014
   date: '2027-04-03'
   kind: historical
@@ -1510,11 +1694,13 @@ entries:
   secondary_cognitive_moves: []
   original_cognitive_move: counterfactual_prediction
   review_status: revise
-  scope_and_rationale: 先固定延期 IPO 的一次融资节点，预测新增资本对旧股权分布的影响；条款缺失只能给显式假设情景。
+  scope_and_rationale: 固定延期 IPO 的一次融资节点，以实际合同预测旧股风险；条款缺失改证据选择，不把假设优先权回填真实融资。
   candidate_narrative_frame: contested
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-014
   date: '2027-04-04'
   kind: micro_design
@@ -1532,6 +1718,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-07
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-041
   date: '2027-04-05'
   kind: historical
@@ -1548,6 +1736,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-027
   date: '2027-04-06'
   kind: historical
@@ -1564,6 +1754,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-042
   date: '2027-04-07'
   kind: historical
@@ -1580,6 +1772,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-028
   date: '2027-04-08'
   kind: historical
@@ -1597,6 +1791,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-10
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-043
   date: '2027-04-09'
   kind: historical
@@ -1614,6 +1810,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-20
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-015
   date: '2027-04-10'
   kind: historical
@@ -1630,6 +1828,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-015
   date: '2027-04-11'
   kind: micro_design
@@ -1646,6 +1846,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-044
   date: '2027-04-12'
   kind: historical
@@ -1662,6 +1864,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-029
   date: '2027-04-13'
   kind: historical
@@ -1678,6 +1882,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-045
   date: '2027-04-14'
   kind: historical
@@ -1694,6 +1900,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-030
   date: '2027-04-15'
   kind: historical
@@ -1710,6 +1918,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-046
   date: '2027-04-16'
   kind: historical
@@ -1726,6 +1936,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-016
   date: '2027-04-17'
   kind: historical
@@ -1742,6 +1954,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-016
   date: '2027-04-18'
   kind: micro_design
@@ -1758,6 +1972,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: revised
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-047
   date: '2027-04-19'
   kind: historical
@@ -1774,6 +1990,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-031
   date: '2027-04-20'
   kind: historical
@@ -1785,11 +2003,13 @@ entries:
   secondary_cognitive_moves: []
   original_cognitive_move: quantitative_estimation
   review_status: revise
-  scope_and_rationale: 需要把喜欢、匹配和有效对话的漏斗分开，给可核实或明确合成的数值；不能用匹配总量推断关系质量。
+  scope_and_rationale: 将喜欢、匹配、有效对话分开，仅用同口径可追溯数字；缺输入则改证据选择，不能用合成漏斗或匹配总量证明关系质量。
   candidate_narrative_frame: opportunity
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-048
   date: '2027-04-21'
   kind: historical
@@ -1806,6 +2026,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-032
   date: '2027-04-22'
   kind: historical
@@ -1823,6 +2045,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-11
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-049
   date: '2027-04-23'
   kind: historical
@@ -1840,6 +2064,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-09
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-017
   date: '2027-04-24'
   kind: historical
@@ -1856,6 +2082,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-017
   date: '2027-04-25'
   kind: micro_design
@@ -1872,6 +2100,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-050
   date: '2027-04-26'
   kind: historical
@@ -1888,6 +2118,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-033
   date: '2027-04-27'
   kind: historical
@@ -1904,6 +2136,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-051
   date: '2027-04-28'
   kind: historical
@@ -1920,6 +2154,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-034
   date: '2027-04-29'
   kind: historical
@@ -1936,6 +2172,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-052
   date: '2027-04-30'
   kind: historical
@@ -1952,6 +2190,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-018
   date: '2027-05-01'
   kind: historical
@@ -1968,6 +2208,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-018
   date: '2027-05-02'
   kind: micro_design
@@ -1984,6 +2226,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-053
   date: '2027-05-03'
   kind: historical
@@ -2001,6 +2245,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-02
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-035
   date: '2027-05-04'
   kind: historical
@@ -2018,6 +2264,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-11
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-054
   date: '2027-05-05'
   kind: historical
@@ -2034,6 +2282,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-036
   date: '2027-05-06'
   kind: historical
@@ -2050,6 +2300,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-055
   date: '2027-05-07'
   kind: historical
@@ -2066,6 +2318,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-019
   date: '2027-05-08'
   kind: historical
@@ -2082,6 +2336,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-019
   date: '2027-05-09'
   kind: micro_design
@@ -2098,6 +2354,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-056
   date: '2027-05-10'
   kind: historical
@@ -2114,6 +2372,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-037
   date: '2027-05-11'
   kind: historical
@@ -2130,6 +2390,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-057
   date: '2027-05-12'
   kind: historical
@@ -2146,6 +2408,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-038
   date: '2027-05-13'
   kind: historical
@@ -2162,6 +2426,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-058
   date: '2027-05-14'
   kind: historical
@@ -2179,6 +2445,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-04
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-020
   date: '2027-05-15'
   kind: historical
@@ -2195,6 +2463,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-020
   date: '2027-05-16'
   kind: micro_design
@@ -2211,6 +2481,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: revised
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-059
   date: '2027-05-17'
   kind: historical
@@ -2228,6 +2500,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-01
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-039
   date: '2027-05-18'
   kind: historical
@@ -2244,6 +2518,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-060
   date: '2027-05-19'
   kind: historical
@@ -2260,6 +2536,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-040
   date: '2027-05-20'
   kind: historical
@@ -2277,6 +2555,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-12
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-061
   date: '2027-05-21'
   kind: historical
@@ -2294,6 +2574,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-21
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-021
   date: '2027-05-22'
   kind: historical
@@ -2310,6 +2592,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-021
   date: '2027-05-23'
   kind: micro_design
@@ -2326,6 +2610,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-062
   date: '2027-05-24'
   kind: historical
@@ -2342,6 +2628,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-041
   date: '2027-05-25'
   kind: historical
@@ -2358,6 +2646,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-063
   date: '2027-05-26'
   kind: historical
@@ -2375,6 +2665,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-06
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-042
   date: '2027-05-27'
   kind: historical
@@ -2391,6 +2683,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-064
   date: '2027-05-28'
   kind: historical
@@ -2407,6 +2701,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-022
   date: '2027-05-29'
   kind: historical
@@ -2423,6 +2719,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-022
   date: '2027-05-30'
   kind: micro_design
@@ -2440,6 +2738,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-19
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-065
   date: '2027-05-31'
   kind: historical
@@ -2456,6 +2756,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-043
   date: '2027-06-01'
   kind: historical
@@ -2472,6 +2774,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-066
   date: '2027-06-02'
   kind: historical
@@ -2488,6 +2792,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-044
   date: '2027-06-03'
   kind: historical
@@ -2504,6 +2810,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-067
   date: '2027-06-04'
   kind: historical
@@ -2520,6 +2828,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-023
   date: '2027-06-05'
   kind: historical
@@ -2536,6 +2846,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-023
   date: '2027-06-06'
   kind: micro_design
@@ -2552,6 +2864,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-068
   date: '2027-06-07'
   kind: historical
@@ -2568,6 +2882,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-045
   date: '2027-06-08'
   kind: historical
@@ -2584,6 +2900,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-069
   date: '2027-06-09'
   kind: historical
@@ -2600,6 +2918,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-046
   date: '2027-06-10'
   kind: historical
@@ -2616,6 +2936,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-070
   date: '2027-06-11'
   kind: historical
@@ -2632,6 +2954,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-024
   date: '2027-06-12'
   kind: historical
@@ -2648,6 +2972,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-024
   date: '2027-06-13'
   kind: micro_design
@@ -2665,6 +2991,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-16
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-071
   date: '2027-06-14'
   kind: historical
@@ -2682,6 +3010,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-03
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-047
   date: '2027-06-15'
   kind: historical
@@ -2699,6 +3029,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-13
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-072
   date: '2027-06-16'
   kind: historical
@@ -2715,6 +3047,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-048
   date: '2027-06-17'
   kind: historical
@@ -2731,6 +3065,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-073
   date: '2027-06-18'
   kind: historical
@@ -2747,6 +3083,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-025
   date: '2027-06-19'
   kind: historical
@@ -2763,6 +3101,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-025
   date: '2027-06-20'
   kind: micro_design
@@ -2780,6 +3120,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-17
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-074
   date: '2027-06-21'
   kind: historical
@@ -2796,6 +3138,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-049
   date: '2027-06-22'
   kind: historical
@@ -2807,11 +3151,13 @@ entries:
   secondary_cognitive_moves: []
   original_cognitive_move: quantitative_estimation
   review_status: revise
-  scope_and_rationale: 只算一次人工 onboarding 的成本与激活价值，时间和留存参数须可追溯或标合成；避免与 PMF 调查案例重叠。
+  scope_and_rationale: 只算一次人工 onboarding 的成本阈值，时间与收益须可追溯；缺参数则改证据选择，不以合成留存补主线或复用 PMF 问卷。
   candidate_narrative_frame: opportunity
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-075
   date: '2027-06-23'
   kind: historical
@@ -2828,6 +3174,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-050
   date: '2027-06-24'
   kind: historical
@@ -2844,6 +3192,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-076
   date: '2027-06-25'
   kind: historical
@@ -2860,6 +3210,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-026
   date: '2027-06-26'
   kind: historical
@@ -2876,6 +3228,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-026
   date: '2027-06-27'
   kind: micro_design
@@ -2892,6 +3246,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: revised
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-077
   date: '2027-06-28'
   kind: historical
@@ -2908,6 +3264,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-051
   date: '2027-06-29'
   kind: historical
@@ -2925,6 +3283,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-16
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-078
   date: '2027-06-30'
   kind: historical
@@ -2941,6 +3301,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-052
   date: '2027-07-01'
   kind: historical
@@ -2957,6 +3319,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-079
   date: '2027-07-02'
   kind: historical
@@ -2973,6 +3337,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-027
   date: '2027-07-03'
   kind: historical
@@ -2990,6 +3356,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-18
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-027
   date: '2027-07-04'
   kind: micro_design
@@ -3007,6 +3375,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-09
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-080
   date: '2027-07-05'
   kind: historical
@@ -3025,6 +3395,8 @@ entries:
   overlap_clusters:
   - EV-01
   - ME-01
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-053
   date: '2027-07-06'
   kind: historical
@@ -3041,6 +3413,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-081
   date: '2027-07-07'
   kind: historical
@@ -3057,6 +3431,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-054
   date: '2027-07-08'
   kind: historical
@@ -3073,6 +3449,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-082
   date: '2027-07-09'
   kind: historical
@@ -3090,6 +3468,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-21
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-028
   date: '2027-07-10'
   kind: historical
@@ -3106,6 +3486,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-028
   date: '2027-07-11'
   kind: micro_design
@@ -3122,6 +3504,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: revised
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-083
   date: '2027-07-12'
   kind: historical
@@ -3138,6 +3522,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-055
   date: '2027-07-13'
   kind: historical
@@ -3154,6 +3540,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-084
   date: '2027-07-14'
   kind: historical
@@ -3165,11 +3553,13 @@ entries:
   secondary_cognitive_moves: []
   original_cognitive_move: decision_tradeoffs
   review_status: accepted
-  scope_and_rationale: 围绕一个地区流量与缓存命中率估算自建 CDN 的盈亏边界，无法核实的成本明确做合成敏感性参数。
+  scope_and_rationale: 围绕一个地区流量与命中率估自建 CDN 阈值；主线成本需可追溯，缺失则改采用条件判断，不以合成成本补历史。
   candidate_narrative_frame: technical
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-056
   date: '2027-07-15'
   kind: historical
@@ -3186,6 +3576,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-085
   date: '2027-07-16'
   kind: historical
@@ -3203,6 +3595,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-05
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-029
   date: '2027-07-17'
   kind: historical
@@ -3219,6 +3613,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-029
   date: '2027-07-18'
   kind: micro_design
@@ -3235,6 +3631,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-086
   date: '2027-07-19'
   kind: historical
@@ -3251,6 +3649,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-057
   date: '2027-07-20'
   kind: historical
@@ -3267,6 +3667,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-087
   date: '2027-07-21'
   kind: historical
@@ -3283,6 +3685,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-058
   date: '2027-07-22'
   kind: historical
@@ -3299,6 +3703,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-088
   date: '2027-07-23'
   kind: historical
@@ -3315,6 +3721,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-030
   date: '2027-07-24'
   kind: historical
@@ -3331,6 +3739,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-030
   date: '2027-07-25'
   kind: micro_design
@@ -3347,6 +3757,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-089
   date: '2027-07-26'
   kind: historical
@@ -3363,6 +3775,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-059
   date: '2027-07-27'
   kind: historical
@@ -3379,6 +3793,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-090
   date: '2027-07-28'
   kind: historical
@@ -3395,6 +3811,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-060
   date: '2027-07-29'
   kind: historical
@@ -3411,6 +3829,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-091
   date: '2027-07-30'
   kind: historical
@@ -3427,6 +3847,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-031
   date: '2027-07-31'
   kind: historical
@@ -3443,6 +3865,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-031
   date: '2027-08-01'
   kind: micro_design
@@ -3459,6 +3883,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-092
   date: '2027-08-02'
   kind: historical
@@ -3476,6 +3902,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-04
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-061
   date: '2027-08-03'
   kind: historical
@@ -3492,6 +3920,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-093
   date: '2027-08-04'
   kind: historical
@@ -3508,6 +3938,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-062
   date: '2027-08-05'
   kind: historical
@@ -3524,6 +3956,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-094
   date: '2027-08-06'
   kind: historical
@@ -3540,6 +3974,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-032
   date: '2027-08-07'
   kind: historical
@@ -3556,6 +3992,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-032
   date: '2027-08-08'
   kind: micro_design
@@ -3572,6 +4010,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-095
   date: '2027-08-09'
   kind: historical
@@ -3588,6 +4028,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-063
   date: '2027-08-10'
   kind: historical
@@ -3604,6 +4046,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-096
   date: '2027-08-11'
   kind: historical
@@ -3620,6 +4064,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-064
   date: '2027-08-12'
   kind: historical
@@ -3631,11 +4077,13 @@ entries:
   secondary_cognitive_moves: []
   original_cognitive_move: quantitative_estimation
   review_status: revise
-  scope_and_rationale: 固定免费层、广告收入和版税的一组口径，做单个转化阈值估计；未知合同成本用显式情景参数。
+  scope_and_rationale: 固定免费层、广告与授权成本的同窗口口径，估一个转化阈值；未知合同成本则改经济性边界判断，不补造主线参数。
   candidate_narrative_frame: opportunity
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-097
   date: '2027-08-13'
   kind: historical
@@ -3652,6 +4100,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-033
   date: '2027-08-14'
   kind: historical
@@ -3669,6 +4119,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-18
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-033
   date: '2027-08-15'
   kind: micro_design
@@ -3685,6 +4137,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-098
   date: '2027-08-16'
   kind: historical
@@ -3701,6 +4155,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-065
   date: '2027-08-17'
   kind: historical
@@ -3717,6 +4173,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-099
   date: '2027-08-18'
   kind: historical
@@ -3734,6 +4192,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-05
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-066
   date: '2027-08-19'
   kind: historical
@@ -3750,6 +4210,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-100
   date: '2027-08-20'
   kind: historical
@@ -3767,6 +4229,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-02
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-034
   date: '2027-08-21'
   kind: historical
@@ -3784,6 +4248,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - EV-03
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-034
   date: '2027-08-22'
   kind: micro_design
@@ -3800,6 +4266,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-101
   date: '2027-08-23'
   kind: historical
@@ -3816,6 +4284,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-067
   date: '2027-08-24'
   kind: historical
@@ -3832,6 +4302,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-102
   date: '2027-08-25'
   kind: historical
@@ -3848,6 +4320,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-068
   date: '2027-08-26'
   kind: historical
@@ -3864,6 +4338,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-103
   date: '2027-08-27'
   kind: historical
@@ -3881,6 +4357,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-06
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-035
   date: '2027-08-28'
   kind: historical
@@ -3898,6 +4376,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-16
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-035
   date: '2027-08-29'
   kind: micro_design
@@ -3914,6 +4394,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: revised
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-104
   date: '2027-08-30'
   kind: historical
@@ -3931,6 +4413,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-21
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-069
   date: '2027-08-31'
   kind: historical
@@ -3947,6 +4431,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-105
   date: '2027-09-01'
   kind: historical
@@ -3963,6 +4449,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-070
   date: '2027-09-02'
   kind: historical
@@ -3980,6 +4468,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-10
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-106
   date: '2027-09-03'
   kind: historical
@@ -3996,6 +4486,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-036
   date: '2027-09-04'
   kind: historical
@@ -4012,6 +4504,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-036
   date: '2027-09-05'
   kind: micro_design
@@ -4029,6 +4523,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-10
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-107
   date: '2027-09-06'
   kind: historical
@@ -4045,6 +4541,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-071
   date: '2027-09-07'
   kind: historical
@@ -4062,6 +4560,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-13
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-108
   date: '2027-09-08'
   kind: historical
@@ -4073,11 +4573,13 @@ entries:
   secondary_cognitive_moves: []
   original_cognitive_move: counterfactual_prediction
   review_status: accepted
-  scope_and_rationale: 用已声明的慢副本比例估一次 fanout 长尾风险，再比较 hedging 的额外工作量；合成分布必须标注。
+  scope_and_rationale: 用来源支持的延迟分布估一次 fanout 长尾风险；缺分布则预测相关慢副本下的边界，合成分布只作反事实附加题。
   candidate_narrative_frame: technical
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-072
   date: '2027-09-09'
   kind: historical
@@ -4094,6 +4596,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-109
   date: '2027-09-10'
   kind: historical
@@ -4110,6 +4614,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-037
   date: '2027-09-11'
   kind: historical
@@ -4126,6 +4632,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-037
   date: '2027-09-12'
   kind: micro_design
@@ -4142,6 +4650,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-110
   date: '2027-09-13'
   kind: historical
@@ -4158,6 +4668,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-073
   date: '2027-09-14'
   kind: historical
@@ -4174,6 +4686,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-111
   date: '2027-09-15'
   kind: historical
@@ -4190,6 +4704,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-074
   date: '2027-09-16'
   kind: historical
@@ -4206,6 +4722,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-112
   date: '2027-09-17'
   kind: historical
@@ -4223,6 +4741,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-06
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-038
   date: '2027-09-18'
   kind: historical
@@ -4239,6 +4759,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-038
   date: '2027-09-19'
   kind: micro_design
@@ -4255,6 +4777,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-113
   date: '2027-09-20'
   kind: historical
@@ -4272,6 +4796,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-04
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-075
   date: '2027-09-21'
   kind: historical
@@ -4288,6 +4814,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-114
   date: '2027-09-22'
   kind: historical
@@ -4304,6 +4832,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-076
   date: '2027-09-23'
   kind: historical
@@ -4320,6 +4850,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-115
   date: '2027-09-24'
   kind: historical
@@ -4336,6 +4868,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-039
   date: '2027-09-25'
   kind: historical
@@ -4352,6 +4886,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-039
   date: '2027-09-26'
   kind: micro_design
@@ -4368,6 +4904,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: revised
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-116
   date: '2027-09-27'
   kind: historical
@@ -4384,6 +4922,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-077
   date: '2027-09-28'
   kind: historical
@@ -4400,6 +4940,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-117
   date: '2027-09-29'
   kind: historical
@@ -4416,6 +4958,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-078
   date: '2027-09-30'
   kind: historical
@@ -4433,6 +4977,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-15
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-118
   date: '2027-10-01'
   kind: historical
@@ -4449,6 +4995,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-040
   date: '2027-10-02'
   kind: historical
@@ -4465,6 +5013,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-040
   date: '2027-10-03'
   kind: micro_design
@@ -4481,6 +5031,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-119
   date: '2027-10-04'
   kind: historical
@@ -4497,6 +5049,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-079
   date: '2027-10-05'
   kind: historical
@@ -4514,6 +5068,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-13
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-120
   date: '2027-10-06'
   kind: historical
@@ -4531,6 +5087,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-08
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-080
   date: '2027-10-07'
   kind: historical
@@ -4548,6 +5106,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - EV-03
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-121
   date: '2027-10-08'
   kind: historical
@@ -4565,6 +5125,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-02
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-041
   date: '2027-10-09'
   kind: historical
@@ -4581,6 +5143,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-041
   date: '2027-10-10'
   kind: micro_design
@@ -4597,6 +5161,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: revised
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-122
   date: '2027-10-11'
   kind: historical
@@ -4613,6 +5179,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-081
   date: '2027-10-12'
   kind: historical
@@ -4629,6 +5197,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-123
   date: '2027-10-13'
   kind: historical
@@ -4645,6 +5215,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-082
   date: '2027-10-14'
   kind: historical
@@ -4661,6 +5233,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-124
   date: '2027-10-15'
   kind: historical
@@ -4677,6 +5251,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-042
   date: '2027-10-16'
   kind: historical
@@ -4693,6 +5269,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-042
   date: '2027-10-17'
   kind: micro_design
@@ -4709,6 +5287,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: revised
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-125
   date: '2027-10-18'
   kind: historical
@@ -4726,6 +5306,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-21
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-083
   date: '2027-10-19'
   kind: historical
@@ -4742,6 +5324,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-126
   date: '2027-10-20'
   kind: historical
@@ -4759,6 +5343,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-05
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-084
   date: '2027-10-21'
   kind: historical
@@ -4775,6 +5361,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-127
   date: '2027-10-22'
   kind: historical
@@ -4792,6 +5380,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-01
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-043
   date: '2027-10-23'
   kind: historical
@@ -4808,6 +5398,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-043
   date: '2027-10-24'
   kind: micro_design
@@ -4825,6 +5417,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-17
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-128
   date: '2027-10-25'
   kind: historical
@@ -4836,11 +5430,13 @@ entries:
   secondary_cognitive_moves: []
   original_cognitive_move: quantitative_estimation
   review_status: revise
-  scope_and_rationale: 固定一类时间范围查询和保留窗口，估 chunk 数或索引成本；历史版本和合成规模须分别标明。
+  scope_and_rationale: 固定一类时间范围查询与保留窗口，使用有来源分布估 chunk 或索引成本；缺规模改方向预测，不为主线发明负载。
   candidate_narrative_frame: technical
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-085
   date: '2027-10-26'
   kind: historical
@@ -4858,6 +5454,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-14
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-129
   date: '2027-10-27'
   kind: historical
@@ -4875,6 +5473,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-06
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-086
   date: '2027-10-28'
   kind: historical
@@ -4891,6 +5491,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-130
   date: '2027-10-29'
   kind: historical
@@ -4907,6 +5509,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-044
   date: '2027-10-30'
   kind: historical
@@ -4924,6 +5528,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-12
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-044
   date: '2027-10-31'
   kind: micro_design
@@ -4941,6 +5547,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-07
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-131
   date: '2027-11-01'
   kind: historical
@@ -4957,6 +5565,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-087
   date: '2027-11-02'
   kind: historical
@@ -4973,6 +5583,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-132
   date: '2027-11-03'
   kind: historical
@@ -4989,6 +5601,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-088
   date: '2027-11-04'
   kind: historical
@@ -5006,6 +5620,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-10
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-133
   date: '2027-11-05'
   kind: historical
@@ -5023,6 +5639,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-05
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-045
   date: '2027-11-06'
   kind: historical
@@ -5040,6 +5658,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-12
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-045
   date: '2027-11-07'
   kind: micro_design
@@ -5057,6 +5677,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-19
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-134
   date: '2027-11-08'
   kind: historical
@@ -5074,6 +5696,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-02
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-089
   date: '2027-11-09'
   kind: historical
@@ -5091,6 +5715,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-16
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-135
   date: '2027-11-10'
   kind: historical
@@ -5107,6 +5733,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-090
   date: '2027-11-11'
   kind: historical
@@ -5123,6 +5751,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-136
   date: '2027-11-12'
   kind: historical
@@ -5139,6 +5769,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-046
   date: '2027-11-13'
   kind: historical
@@ -5155,6 +5787,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-046
   date: '2027-11-14'
   kind: micro_design
@@ -5172,6 +5806,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-08
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-137
   date: '2027-11-15'
   kind: historical
@@ -5188,6 +5824,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-091
   date: '2027-11-16'
   kind: historical
@@ -5204,6 +5842,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-138
   date: '2027-11-17'
   kind: historical
@@ -5221,6 +5861,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-08
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-092
   date: '2027-11-18'
   kind: historical
@@ -5237,6 +5879,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-139
   date: '2027-11-19'
   kind: historical
@@ -5253,6 +5897,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-047
   date: '2027-11-20'
   kind: historical
@@ -5264,11 +5910,13 @@ entries:
   secondary_cognitive_moves: []
   original_cognitive_move: counterfactual_prediction
   review_status: revise
-  scope_and_rationale: 三年 SPAC 延期包含多次资本变更，选一个续命融资时点推演稀释；真实合同未知时只做标明的情景分析。
+  scope_and_rationale: 只选延期期间一轮续命融资，用实际合同推演稀释；缺合同改证据选择，不补造主线条款，合成情景仅限反事实附加题。
   candidate_narrative_frame: stress
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-047
   date: '2027-11-21'
   kind: micro_design
@@ -5285,6 +5933,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-140
   date: '2027-11-22'
   kind: historical
@@ -5301,6 +5951,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-093
   date: '2027-11-23'
   kind: historical
@@ -5317,6 +5969,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-141
   date: '2027-11-24'
   kind: historical
@@ -5334,6 +5988,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-02
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-094
   date: '2027-11-25'
   kind: historical
@@ -5351,6 +6007,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-14
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-142
   date: '2027-11-26'
   kind: historical
@@ -5367,6 +6025,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-048
   date: '2027-11-27'
   kind: historical
@@ -5383,6 +6043,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-048
   date: '2027-11-28'
   kind: micro_design
@@ -5399,6 +6061,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-143
   date: '2027-11-29'
   kind: historical
@@ -5416,6 +6080,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - EV-04
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-095
   date: '2027-11-30'
   kind: historical
@@ -5432,6 +6098,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-144
   date: '2027-12-01'
   kind: historical
@@ -5448,6 +6116,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-096
   date: '2027-12-02'
   kind: historical
@@ -5465,6 +6135,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-14
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-145
   date: '2027-12-03'
   kind: historical
@@ -5481,6 +6153,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-049
   date: '2027-12-04'
   kind: historical
@@ -5497,6 +6171,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-049
   date: '2027-12-05'
   kind: micro_design
@@ -5513,6 +6189,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-146
   date: '2027-12-06'
   kind: historical
@@ -5529,6 +6207,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-097
   date: '2027-12-07'
   kind: historical
@@ -5546,6 +6226,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-10
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-147
   date: '2027-12-08'
   kind: historical
@@ -5562,6 +6244,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-098
   date: '2027-12-09'
   kind: historical
@@ -5578,6 +6262,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-148
   date: '2027-12-10'
   kind: historical
@@ -5594,6 +6280,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-050
   date: '2027-12-11'
   kind: historical
@@ -5610,6 +6298,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-050
   date: '2027-12-12'
   kind: micro_design
@@ -5626,6 +6316,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-149
   date: '2027-12-13'
   kind: historical
@@ -5643,6 +6335,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-01
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-099
   date: '2027-12-14'
   kind: historical
@@ -5660,6 +6354,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-19
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-150
   date: '2027-12-15'
   kind: historical
@@ -5671,12 +6367,14 @@ entries:
   secondary_cognitive_moves: []
   original_cognitive_move: quantitative_estimation
   review_status: accepted
-  scope_and_rationale: 以对象存储的一项成本与利用率假设估自建阈值，公开数据不足的参数必须作为情景而非真实账单。
+  scope_and_rationale: 以可追溯的对象存储成本与利用率估自建阈值；缺必要参数改采用条件判断，合成情景不回填真实账单。
   candidate_narrative_frame: technical
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-11
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-100
   date: '2027-12-16'
   kind: historical
@@ -5693,6 +6391,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-151
   date: '2027-12-17'
   kind: historical
@@ -5709,6 +6409,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-051
   date: '2027-12-18'
   kind: historical
@@ -5726,6 +6428,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-11
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-051
   date: '2027-12-19'
   kind: micro_design
@@ -5742,6 +6446,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: revised
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-152
   date: '2027-12-20'
   kind: historical
@@ -5758,6 +6464,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-101
   date: '2027-12-21'
   kind: historical
@@ -5774,6 +6482,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-153
   date: '2027-12-22'
   kind: historical
@@ -5790,6 +6500,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-102
   date: '2027-12-23'
   kind: historical
@@ -5807,6 +6519,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-11
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-154
   date: '2027-12-24'
   kind: historical
@@ -5823,6 +6537,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: INV-052
   date: '2027-12-25'
   kind: historical
@@ -5840,6 +6556,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-16
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: DES-052
   date: '2027-12-26'
   kind: micro_design
@@ -5856,6 +6574,8 @@ entries:
   observed_outcome: not_applicable_synthetic
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-155
   date: '2027-12-27'
   kind: historical
@@ -5873,6 +6593,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-21
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-103
   date: '2027-12-28'
   kind: historical
@@ -5889,6 +6611,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: awaiting_source
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-156
   date: '2027-12-29'
   kind: historical
@@ -5906,6 +6630,8 @@ entries:
   source_verification: not_performed_in_phase2
   overlap_clusters:
   - ME-09
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: PRO-104
   date: '2027-12-30'
   kind: historical
@@ -5922,6 +6648,8 @@ entries:
   observed_outcome: unverified
   source_verification: not_performed_in_phase2
   overlap_clusters: []
+  revision_state: retained
+  planning_path: curriculum/planning-2027.yaml
 - id: ENG-157
   date: '2027-12-31'
   kind: historical
@@ -5940,3 +6668,5 @@ entries:
   overlap_clusters:
   - EV-01
   - ME-01
+  revision_state: awaiting_replacement
+  planning_path: curriculum/planning-2027.yaml

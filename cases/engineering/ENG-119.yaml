@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: F1 2013 候选的一项 SQL 查询需求
+    anchor_status: unverified_research_target
+    main_question: 这项查询责任落在 F1 哪层，底层事务保证又到哪里？
+    expected_output: 一个查询与事务责任边界
+    evidence_to_verify:
+    - 论文快照
+    - 查询需求
+    - F1 与 Spanner 分层
+    out_of_scope: 不重复 TrueTime 提交等待推导

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: uncertainty_and_diagnosis
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Cargo resolver 下的一个菱形依赖特性组合
+    anchor_status: unverified_research_target
+    main_question: 增加一条依赖后，现有包会启用哪些额外特性？
+    expected_output: 一张变更前后特性集合对照
+    evidence_to_verify:
+    - resolver 版本
+    - 依赖图
+    - feature 合并规则
+    out_of_scope: 不把 feature 合并直接等同于不可复现

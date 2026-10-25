@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-14
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Zoom 邀请路径中的受邀者首次发起会议
+    anchor_status: unverified_research_target
+    main_question: 受邀体验会让这个人更可能自己发起会议吗？
+    expected_output: 一个传播转化预测及反证信号
+    evidence_to_verify:
+    - 加入到发起路径
+    - 身份要求
+    - 同期采用材料
+    out_of_scope: 不重复 PRO-094 的下载注册摩擦判断

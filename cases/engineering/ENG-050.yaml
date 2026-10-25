@@ -20,3 +20,28 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: uncertainty_and_diagnosis
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Kafka 2011 候选存储设计的一段批量写入路径
+    anchor_status: unverified_research_target
+    main_question: 增大批量会怎样改变单位写入工作量和等待？
+    expected_output: 一个吞吐与等待的数量级权衡
+    evidence_to_verify:
+    - 消息大小
+    - 批大小
+    - 同口径磁盘或调用观测
+    out_of_scope: 不同时证明零拷贝、顺序写和全部吞吐收益
+  quantitative_plan:
+    mainline_measure: 批量变化的工作量与等待边界
+    required_inputs:
+    - 消息与批大小
+    - 同口径调用或存储工作量
+    missing_input_fallback:
+      focus: prediction-counterfactual
+      question: 批量增大时吞吐和等待会朝什么方向变化，哪个前提可能失效？
+    fallback_applied: false
+    input_verification: not_started

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 Datadog 2015 一轮融资，身份待核
+    anchor_status: unverified_research_target
+    main_question: 集成广度在这个阶段能否转化为难迁移的价值？
+    expected_output: 一个壁垒条件及可复制部分
+    evidence_to_verify:
+    - 当轮功能与客户
+    - 迁移成本
+    - 竞争替代材料
+    out_of_scope: 不讲四年整体增长或把集成数当壁垒

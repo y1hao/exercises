@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-10
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Figma 编辑者与审阅者的收费规则
+    anchor_status: unverified_research_target
+    main_question: 只向编辑者收费会怎样改变一次团队邀请行为？
+    expected_output: 一条收费到协作扩散的机制预测
+    evidence_to_verify:
+    - 当时席位定义
+    - 邀请权限
+    - 收费与审阅边界
+    out_of_scope: 不混用六年套餐或直接推出企业采购成功

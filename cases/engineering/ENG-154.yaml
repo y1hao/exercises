@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Actions 2021 候选的一个跨仓复用工作流
+    anchor_status: unverified_research_target
+    main_question: 该团队应怎样固定复用版本以兼顾升级与可追溯？
+    expected_output: 一个版本策略及责任边界
+    evidence_to_verify:
+    - 当时引用语法
+    - 版本固定能力
+    - 跨仓变更责任
+    out_of_scope: 不估算无来源的维护工时

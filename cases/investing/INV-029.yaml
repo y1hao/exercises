@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 Coinbase 2013 一轮 Series A，轮次待核
+    anchor_status: unverified_research_target
+    main_question: 监管与运营未知下，应继续哪项验证才值得推进？
+    expected_output: 一个条件式继续决定
+    evidence_to_verify:
+    - 该轮时点
+    - 当时可知监管边界
+    - 运营和需求证据
+    out_of_scope: 不拼接 seed 和 A 轮或精确量化无报价机会

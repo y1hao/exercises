@@ -21,3 +21,18 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: uncertainty_and_diagnosis
   example_source_url: https://www.bvp.com/memos/pinterest
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Pinterest 候选 2011 融资轮
+    anchor_status: unverified_research_target
+    main_question: 下一项什么证据最能区别收藏热情与长期付费机会？
+    expected_output: 一个分群或商业意向检查
+    evidence_to_verify:
+    - 实际轮次
+    - 当时留存口径
+    - 商业意向材料
+    out_of_scope: 不因后来上市而默认应当投资

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 OTP 的一次子进程重启
+    anchor_status: unverified_research_target
+    main_question: 重启策略可以恢复哪种能力，又不能恢复哪种业务正确性？
+    expected_output: 一个恢复边界与未恢复状态
+    evidence_to_verify:
+    - 版本
+    - 监督策略
+    - 进程状态与持久化前提
+    out_of_scope: 不宣称重启可以替代全部防错

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 Stripe 2011 一轮种子融资，身份待核
+    anchor_status: unverified_research_target
+    main_question: 下一项最该核验的是技术执行还是合规运营能力？
+    expected_output: 一个尽调优先选择及反证条件
+    evidence_to_verify:
+    - 真实轮次
+    - 可用产品
+    - 当时可知金融责任和团队证据
+    out_of_scope: 不以创始人后来声望替代当时验证

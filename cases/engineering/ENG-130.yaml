@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: YouTube 一次有公开说明的转码突发调度节点
+    anchor_status: unverified_research_target
+    main_question: 面对这一类积压，应优先降低等待还是控制计算成本？
+    expected_output: 一个队列策略选择与停止条件
+    evidence_to_verify:
+    - 实际设计说明
+    - 任务异质性
+    - 延迟与预算目标
+    out_of_scope: 不设计整个视频处理平台

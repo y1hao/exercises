@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Lambda Extensions 2020 候选 API 的一次代理生命周期
+    anchor_status: unverified_research_target
+    main_question: 扩展观察到调用结束，能否认为整个执行环境已经结束？
+    expected_output: 一项生命周期保证及超出保证的需求
+    evidence_to_verify:
+    - API 快照
+    - 扩展事件
+    - 环境关闭边界
+    out_of_scope: 不自由设计新 API 或混入后来能力

@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-12
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 DoorDash 2014 一轮 A 轮，身份待核
+    anchor_status: unverified_research_target
+    main_question: 这个城区的流动性可以在什么条件下外推到新城？
+    expected_output: 一个外推边界与反证信号
+    evidence_to_verify:
+    - 真实轮次
+    - 不同城市需求和供给材料
+    - 进入成本
+    out_of_scope: 没有独立城市材料则只做证据选择

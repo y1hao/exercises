@@ -20,3 +20,25 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Hotmail 早期单一邮件传播窗口
+    anchor_status: unverified_research_target
+    main_question: 每个有效新用户能带来多少下一代有效用户？
+    expected_output: 一个口径明确的传播系数或不可计算判断
+    evidence_to_verify:
+    - 发送、曝光、注册、再发送的同窗口数据
+    out_of_scope: 缺输入则选择证据，不用敏感性参数冒充历史
+  quantitative_plan:
+    mainline_measure: 有效用户的传播系数
+    required_inputs:
+    - 同窗口发送、曝光、注册与再发送口径和数量
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 缺少哪一个漏斗分母会让传播系数失去意义？
+    fallback_applied: false
+    input_verification: not_started

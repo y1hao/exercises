@@ -20,3 +20,20 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-05
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Cassandra 的一次读写失效
+    anchor_status: unverified_research_target
+    main_question: 在这组 quorum 配置下，读取可能得到哪个版本？
+    expected_output: 一条写入与读取时序预测
+    evidence_to_verify:
+    - 版本
+    - 副本状态
+    - 读写配置
+    - 修复语义
+    out_of_scope: 不将 hinted handoff 自动当作强一致

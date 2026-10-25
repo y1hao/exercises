@@ -22,3 +22,20 @@ candidate_material:
   status: candidate_needs_review
   case_stage: curriculum_idea_not_ready
   duration_minutes: 20
+planning:
+  revision_state: revised
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    synthetic: true
+    title: 一笔硬件订单的现金缺口
+    main_question: 一笔先垫付设备的订单会在什么时候耗尽可用现金？
+    expected_output: 一个最小现金时序和一项订单接受条件。
+    scenario: 只比较一笔农场客户订单，不为整个公司设计资本结构。
+    planning_assumptions:
+    - 以下均为合成练习参数：可用现金 12 万元，订单硬件及安装须在第 0 月支付 8 万元。
+    - 客户从第 3 月开始每月支付 1 万元，每月相关服务现金成本 2000 元；不计其他收入或费用。
+    - 多年合同不自动等于可用现金，能否取得预付款或融资只是待谈条件。
+    scoped_change: 客户要求设备安装成本在第 0 月额外增加 5 万元，付款节奏不变。
+    out_of_scope: 不计算企业估值或假定贷款一定获批；本题参数不得迁移为真实公司的历史事实。

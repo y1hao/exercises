@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Shopify App Store 2009 候选的单项商家插件需求
+    anchor_status: unverified_research_target
+    main_question: 平台扩展满足这项需求后，商家的依赖边界如何变化？
+    expected_output: 一个扩展性边界及可替代条件
+    evidence_to_verify:
+    - 早期功能
+    - 插件权限和数据
+    - 收费或分发约定
+    out_of_scope: 不把全部插件数量解释为留存因果

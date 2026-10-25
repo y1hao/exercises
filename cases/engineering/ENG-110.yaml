@@ -20,3 +20,28 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 Discord 消息存储的一次 Cassandra 到 ScyllaDB 决策，身份待核
+    anchor_status: unverified_research_target
+    main_question: 在一个热点读取负载下，迁移成本是否值得承担？
+    expected_output: 一个成本边界估计及必要测量
+    evidence_to_verify:
+    - 该次迁移时点
+    - 热点分布
+    - 可比延迟与资源
+    - 迁移工作量
+    out_of_scope: 不合并 MongoDB 的更早迁移为同一事件
+  quantitative_plan:
+    mainline_measure: 该次迁移的成本边界
+    required_inputs:
+    - 一次迁移的同口径热点、延迟、资源与迁移工作量
+    missing_input_fallback:
+      focus: constrained-decision
+      question: 哪些热点证据足以支持继续迁移，而不是先改变访问路径？
+    fallback_applied: false
+    input_verification: not_started

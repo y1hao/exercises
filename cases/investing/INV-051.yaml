@@ -20,3 +20,30 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-11
+  planned_exercise:
+    planning_only: true
+    anchor_request: Dropbox 2018 上市前公开报表窗口
+    anchor_status: unverified_research_target
+    main_question: 毛利变化中，客户与套餐结构能解释多少？
+    expected_output: 一个独立于自建存储阈值的利润拆分
+    evidence_to_verify:
+    - 报表
+    - 付费个人与团队口径
+    - 收入成本归属
+    out_of_scope: 不能只复用 ENG-150 的存储成本数字；缺独立口径改证据选择
+  quantitative_plan:
+    mainline_measure: 客户与套餐变化的毛利贡献
+    required_inputs:
+    - 上市前报表
+    - 个人与团队收入口径
+    - 可归属成本
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 除自建存储成本外，哪项套餐或客户结构数据最能解释毛利变化？
+    fallback_applied: false
+    input_verification: not_started

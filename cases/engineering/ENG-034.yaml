@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-20
+  planned_exercise:
+    planning_only: true
+    anchor_request: Meltdown 2018 候选缓解决策中的一类负载
+    anchor_status: unverified_research_target
+    main_question: 对这类负载，是否接受所需隔离的性能代价？
+    expected_output: 一项缓解决定及边界负载
+    evidence_to_verify:
+    - 攻击前提
+    - 缓解范围
+    - 同口径性能观察
+    out_of_scope: 不精算无来源成本或混用 Spectre 条件

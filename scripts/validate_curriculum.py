@@ -190,6 +190,14 @@ def validate(root=ROOT, index_path=None):
                 errors.append(f"{label}: requires {field}")
         if "review_status" in entry and entry["review_status"] not in ("accepted", "revise", "replace"):
             errors.append(f"{label}: invalid review_status")
+        if "revision_state" in entry:
+            expected_revision = (
+                "retained" if entry.get("review_status") == "accepted" else
+                "awaiting_replacement" if entry.get("review_status") == "replace" else
+                "revised" if kind == "micro_design" else "awaiting_source"
+            )
+            if entry["revision_state"] != expected_revision:
+                errors.append(f"{label}: revision_state does not match review/type")
         try:
             day = iso_date(entry.get("date"))
             dates.append(day)
@@ -225,6 +233,10 @@ def validate(root=ROOT, index_path=None):
         for field in ("id", "kind", "domain", "status"):
             if brief.get(field) != entry.get(field):
                 errors.append(f"{label}: Brief/index {field} mismatch")
+        if "revision_state" in entry:
+            planning = brief.get("planning")
+            if not isinstance(planning, dict) or planning.get("revision_state") != entry["revision_state"]:
+                errors.append(f"{label}: Brief/index revision_state mismatch")
         if status == "ready":
             errors.extend(f"{label}: {issue}" for issue in ready_errors(brief))
             for path in (runner, paths.get("protocol_path")):

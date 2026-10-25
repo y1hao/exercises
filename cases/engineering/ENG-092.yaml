@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: optionality_and_irreversibility
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-04
+  planned_exercise:
+    planning_only: true
+    anchor_request: Zab 2011 候选协议的一次 leader 切换
+    anchor_status: unverified_research_target
+    main_question: 旧 leader 的未提交 proposal 在恢复后会怎样处理？
+    expected_output: 一条 proposal 命运预测及安全依据
+    evidence_to_verify:
+    - 协议快照
+    - 接受与提交状态
+    - 恢复阶段规则
+    out_of_scope: 不把多数响应简单等同安全提交

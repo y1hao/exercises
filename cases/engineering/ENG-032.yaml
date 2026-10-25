@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-01
+  planned_exercise:
+    planning_only: true
+    anchor_request: Guix 2013 候选引导链的一次可信性检查
+    anchor_status: unverified_research_target
+    main_question: 重建产物一致之后，还需要什么证据检验引导链可信？
+    expected_output: 一项检查及其仍不能证明的性质
+    evidence_to_verify:
+    - 引导依赖
+    - 可重建范围
+    - 信任根说明
+    out_of_scope: 不重复 Nix 未声明环境输入的诊断

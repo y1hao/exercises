@@ -21,3 +21,18 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
   example_source_url: https://www.bvp.com/memos/fiverr
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Fiverr 候选 2011 融资轮，轮次待核
+    anchor_status: unverified_research_target
+    main_question: 下一项什么证据最能检验重复交易能否支撑扩张？
+    expected_output: 一个尽调优先项及拒绝条件
+    evidence_to_verify:
+    - 真实轮次
+    - 当时可见交易复用与履约质量
+    - 取数能力
+    out_of_scope: 不以后来上市数据代替当轮证据

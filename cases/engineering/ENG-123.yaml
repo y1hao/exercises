@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: OpenAPI 3.0 候选发布窗口的一项跨团队接口变更
+    anchor_status: unverified_research_target
+    main_question: 先写契约能否减少这次变更的接口分歧？
+    expected_output: 一个协作选择及仍需运行验证的部分
+    evidence_to_verify:
+    - 规范版本
+    - 接口变更
+    - 生成与验证责任
+    out_of_scope: 不计算无来源的人力节省

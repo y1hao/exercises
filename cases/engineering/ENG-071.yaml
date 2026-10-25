@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-03
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Crossplane Composition 的一个输入输出契约
+    anchor_status: unverified_research_target
+    main_question: 底层云对象变化后，平台使用方哪些字段仍应稳定？
+    expected_output: 一个稳定接口边界与不可隐藏的条件
+    evidence_to_verify:
+    - 版本
+    - composition 示例
+    - 暴露字段与底层映射
+    out_of_scope: 不重新设计 DES-001 的完整资源 API

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Todoist recurring task 的单个用户工作流
+    anchor_status: unverified_research_target
+    main_question: 功能使用与留存相关，是否足以说明功能提高了留存？
+    expected_output: 一个自选择解释及区分方法
+    evidence_to_verify:
+    - 功能快照
+    - 任务频率
+    - 分群或干预材料
+    out_of_scope: 不声称存在未核实的独立上线事件

@@ -20,3 +20,20 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - EV-04
+  planned_exercise:
+    planning_only: true
+    anchor_request: 凭据泄露后、后续入侵结果未知的一个轮换节点
+    anchor_status: unverified_research_target
+    main_question: 当前只能先核验一类凭据，应按什么暴露路径排序？
+    expected_output: 一个优先对象及可改变排序的证据
+    evidence_to_verify:
+    - 事件身份和时间线
+    - 泄露凭据类别
+    - 权限与轮换状态
+    out_of_scope: 不提前给后续入侵结果或借用 Okta 案例事实
+  source_identity_condition: 必须分别标清泄露、轮换、后续入侵时点，与 ENG-143 各自独立取证，不能借另一条材料补足。

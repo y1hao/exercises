@@ -21,3 +21,18 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
   example_source_url: https://www.bvp.com/memos/twitch
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Twitch 候选 2012 轮次，身份待核
+    anchor_status: unverified_research_target
+    main_question: 主播留存还是观看规模更值得作为下一项需求证据？
+    expected_output: 一项优先检查及能推翻 PMF 的条件
+    evidence_to_verify:
+    - 当轮产品与融资
+    - 主播与观众口径
+    - 可得行为材料
+    out_of_scope: 不重演 2011 拆分决策或借未来规模

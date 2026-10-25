@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: GitHub 一次跨项目贡献闭环
+    anchor_status: unverified_research_target
+    main_question: 协作工具的使用何时能形成难以迁移的贡献网络？
+    expected_output: 一个网络边界判断与反例
+    evidence_to_verify:
+    - 当时协作功能
+    - 贡献关系
+    - 发现和复用路径
+    out_of_scope: 不把开源人气或仓库数当护城河

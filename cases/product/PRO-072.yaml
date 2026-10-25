@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Notion Enterprise 的单项采购阻碍
+    anchor_status: unverified_research_target
+    main_question: 下一步先验证哪个安全要求才最可能推进采购？
+    expected_output: 一个验证顺序及不必要功能
+    evidence_to_verify:
+    - 当时企业功能
+    - 购买角色
+    - 真实阻碍材料
+    out_of_scope: 不列完整大型企业安全清单

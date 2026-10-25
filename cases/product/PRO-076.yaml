@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Notion 中的单个关联数据库工作流
+    anchor_status: unverified_research_target
+    main_question: 新增关联怎样同时增加任务价值与学习成本？
+    expected_output: 一条可组合性机制及过度复杂反例
+    evidence_to_verify:
+    - 版本
+    - 该任务对象关系
+    - 上手路径
+    out_of_scope: 不估没有数据的留存提升

@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-05
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选原候选范围内的一版 MongoDB 选举语义
+    anchor_status: unverified_research_target
+    main_question: 一次已确认写入在给定选举时序后是否仍可读取？
+    expected_output: 逐步标出写确认、选举和可见性的关系
+    evidence_to_verify:
+    - 具体版本
+    - write concern
+    - 副本时序与回滚规则
+    out_of_scope: 不跨版本混用 majority 的含义

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Atlassian 早期自举的一次经营扩张选择
+    anchor_status: unverified_research_target
+    main_question: 低销售投入在哪种采购条件下会成为增长限制？
+    expected_output: 一个经营模式适用边界
+    evidence_to_verify:
+    - 真实自举节点
+    - 购买流程
+    - 支持与销售责任
+    out_of_scope: 不虚构外部投资交易或算投资回报

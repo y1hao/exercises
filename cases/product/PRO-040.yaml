@@ -20,3 +20,30 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-12
+  planned_exercise:
+    planning_only: true
+    anchor_request: DoorDash 2013 候选的单一郊区配送区
+    anchor_status: unverified_research_target
+    main_question: 这一时段的订单密度能否覆盖一次配送的增量成本？
+    expected_output: 一个区域经济阈值
+    evidence_to_verify:
+    - 订单与路线口径
+    - 等待时间
+    - 履约成本
+    - 地区范围
+    out_of_scope: 不外推公司净利润或多个城市扩张
+  quantitative_plan:
+    mainline_measure: 单区增量履约阈值
+    required_inputs:
+    - 同区订单、路线、等待
+    - 可归属配送成本
+    missing_input_fallback:
+      focus: constrained-decision
+      question: 在订单稀疏和等待时间约束下，应先收窄区域还是增加供给？
+    fallback_applied: false
+    input_verification: not_started

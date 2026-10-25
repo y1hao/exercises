@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Airbnb 2020 疫情应急融资的一次决策
+    anchor_status: unverified_research_target
+    main_question: 当时应接受这项融资，还是承担继续等待的风险？
+    expected_output: 一个现金与条款选择及可改变条件
+    evidence_to_verify:
+    - 融资前现金压力
+    - 公开条款
+    - 当时复苏不确定性
+    out_of_scope: 不借 IPO 价格兜底或混用两次交易

@@ -22,3 +22,19 @@ candidate_material:
   status: candidate_needs_review
   case_stage: curriculum_idea_not_ready
   duration_minutes: 20
+planning:
+  revision_state: revised
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    synthetic: true
+    title: 小型缺陷修复的 agent 回归门槛
+    main_question: 如何判断一次 agent 提示词修改是否损害了修复小型缺陷的能力？
+    expected_output: 一个可重复任务单元、一条回归门槛和一种失败分型。
+    scenario: 仅评估带已有失败测试的小型单仓库缺陷修复，不评所有 coding agent 能力。
+    planning_assumptions:
+    - 任务输入、工具权限、可见测试和执行预算需要固定。
+    - 模型重复运行有波动，单次得分不自动代表能力变化。
+    scoped_change: 供应商版本变化使同一任务结果更不稳定，但平均成功率暂时提高。
+    out_of_scope: 不设计全能 benchmark，不要求维护庞大人工题库或实际运行实验。

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Slack 中新成员寻找旧决策的单次任务
+    anchor_status: unverified_research_target
+    main_question: 可搜索历史怎样改变这项任务的价值和迁移成本？
+    expected_output: 一条检索到复用的机制
+    evidence_to_verify:
+    - 当时搜索与历史保留规则
+    - 访问权限
+    - 任务路径
+    out_of_scope: 不泛论所有团队知识和长期粘性

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Twilio 一个早期 API 集成到采购环节
+    anchor_status: unverified_research_target
+    main_question: 开发者体验在哪一步减少了组织购买的阻力？
+    expected_output: 一条技术采用到采购的机制
+    evidence_to_verify:
+    - 当时具体 API
+    - 集成流程
+    - 采购角色与交接
+    out_of_scope: 不总结八年 developer-first 战略

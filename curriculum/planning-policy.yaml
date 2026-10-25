@@ -1,0 +1,35 @@
+version: 1
+phase: 2
+training_status_unchanged: true
+revision_states:
+  retained: 初审保留，未要求本轮范围改写；仍须后续核源或设计 QA。
+  awaiting_source: 范围已改写，事件、版本、日期和所需数据等待 Phase 3 核实，不是未处理备注。
+  revised: 合成设计的范围与假设已改写，尚未扩写 Brief 或通过训练 QA。
+  awaiting_replacement: 已明确替换目标和准入条件，尚无经过核源的替代事件。
+historical_numbers:
+  mainline_inputs: 仅允许来源可追溯且在事前可知范围内的输入；允许标明计算方法的推导，不以假定值冒充历史值。
+  missing_inputs: 优先改为方向判断、边界判断或证据选择；缺数字不能自动填合成数字。
+  counterfactual: 合成数值只允许在明确切换并标记的反事实附加练习中使用，不回填真实事件主线或冒充真实条款。
+  fallback_application: 每题预先记录降级问题与认知动作；只有核源确认输入不足后才手动采用并记录映射，不在 Phase 2 提前认定缺失。
+  valuation_limits: 价格、股本或权利不清时不要求精确仓位和实现收益；事后交易价格不是事前已知输入。
+distinctness:
+  rule: 同一机制可复习，但每条必须有不同关键条件、可观察判断或输出；换公司名称本身不算区分。
+  cloudflare_priority: 若需要新替代事件，优先选非 Cloudflare 且机制不同的失败、恢复或回退节点；不为配额虚构事件。
+  unchanged_calendar: 本轮不挪日期、不改 ID、不实际换题；所有替换请求必须保留原始候选并记录核源后的决定。
+replacement_requests:
+  ENG-157:
+    state: awaiting_replacement
+    replaces_original_candidate: Google Blaze 构建缓存（2015）
+    domain: engineering
+    subdomain: developer-tooling-build
+    desired_topic: 一次构建工具发布、兼容升级或回退决策中的真实失败或恢复事件。
+    acceptance_conditions:
+      - 独立于 ENG-080 的 2015 Blaze/Bazel 依赖与缓存材料。
+      - 不重复远端 action 缓存、特性合并或不完整 affected 图的已有主问题。
+      - 有直接来源支持单一决策节点、事前条件和结果，约 20 分钟可讨论。
+    fallback_if_no_source: 保持原日期与待替换状态，明确不能消费，不用新编事件填空。
+conditional_requests:
+  ENG-011: 只研究拟选 2024 独立供电事件的冗余验证决策；不能证明与 ENG-040 独立就进入替换队列，优先补非 Cloudflare 故障机制。
+  INV-034: 只研究拟选 2019 融资时的独立付费 cohort 和商业质量；仅有 PRO-080 问卷材料就进入替换队列。
+  ENG-117: 只接受可定位的单次 SSD 单位成本优化材料；只能找到泛介绍则进入替换队列。
+  ENG-015: 必须分别标清泄露、轮换、后续入侵时点，与 ENG-143 各自独立取证，不能借另一条材料补足。

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 2019—2020 内一次 Jira Cloud 免费档发布
+    anchor_status: unverified_research_target
+    main_question: 这一免费边界会怎样改变小团队采用和升级？
+    expected_output: 一个升级路径预测及不升级条件
+    evidence_to_verify:
+    - 该次发布价格
+    - 人数与功能限制
+    - 迁移规则
+    out_of_scope: 不混用两年不同套餐上限

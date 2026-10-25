@@ -20,3 +20,28 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Pingora 候选迁移说明中的单一连接复用瓶颈
+    anchor_status: unverified_research_target
+    main_question: 连接复用变化能解释多少资源占用差异？
+    expected_output: 一个来源范围内的资源收益估计
+    evidence_to_verify:
+    - 可比负载
+    - 连接与内存口径
+    - 公开测量的适用范围
+    out_of_scope: 不把单项基准外推为全网收益
+  quantitative_plan:
+    mainline_measure: 资源变化中可归因的范围
+    required_inputs:
+    - 同口径连接复用和资源观测
+    - 基准负载范围
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 哪项对照最能区分连接复用收益与负载结构变化？
+    fallback_applied: false
+    input_verification: not_started

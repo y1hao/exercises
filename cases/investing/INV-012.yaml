@@ -21,3 +21,18 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
   example_source_url: https://www.bvp.com/memos/sendgrid
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: SendGrid 候选 2011 融资轮，轮次待核
+    anchor_status: unverified_research_target
+    main_question: 投递信誉与接口体验中，哪项优势更难被复制？
+    expected_output: 一个壁垒边界及反证
+    evidence_to_verify:
+    - 当轮客户材料
+    - 信誉形成成本
+    - 竞争替代条件
+    out_of_scope: 不倒灌上市后财务和品牌

@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-03
+  planned_exercise:
+    planning_only: true
+    anchor_request: Terraform 一次 provider 状态升级的协议快照，版本待核
+    anchor_status: unverified_research_target
+    main_question: 旧状态交给新 provider 时，谁必须承担兼容转换？
+    expected_output: 画出一条状态升级责任边界并指出一个拒绝条件
+    evidence_to_verify:
+    - 旧新状态表示
+    - 协议升级约定
+    - 错误处理说明
+    out_of_scope: 不综述七年插件协议或设计新平台

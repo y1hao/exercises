@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Venice 2022 候选说明的一次区域复制读取
+    anchor_status: unverified_research_target
+    main_question: 写入在一区完成后，另一区的读取最多能推断什么？
+    expected_output: 一个新鲜度边界预测和必要确认点
+    evidence_to_verify:
+    - 设计快照
+    - 写完成定义
+    - 复制与读取可见性
+    out_of_scope: 不擅自承诺强一致或精确复制延迟

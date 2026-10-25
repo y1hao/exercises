@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一次可定位的早期 streak 改动
+    anchor_status: unverified_research_target
+    main_question: 连续打开能否支持“学习价值提高”这个判断？
+    expected_output: 一个竞争解释及所需学习结果证据
+    evidence_to_verify:
+    - 改动前后规则
+    - 参与分群
+    - 学习结果口径
+    out_of_scope: 不把签到或打开次数作为学习成效

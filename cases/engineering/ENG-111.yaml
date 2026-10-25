@@ -21,3 +21,18 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
   example_source_url: https://blog.cloudflare.com/cloudflare-outage-february-20-2026/
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 2026 年 2 月 BYOIP 撤销候选，身份待核
+    anchor_status: unverified_research_target
+    main_question: 若一项前缀被撤销，不同外部观察点会呈现什么症状？
+    expected_output: 一条控制面操作到外部症状的预测
+    evidence_to_verify:
+    - 独立复盘
+    - 路由操作时序
+    - 前缀与观察点范围
+    out_of_scope: 不借别的 BGP 事故补造日志

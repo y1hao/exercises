@@ -20,3 +20,25 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Uber 一个早期城市的单一供需时段
+    anchor_status: unverified_research_target
+    main_question: 在这项本地密度下，新增供给会怎样改变等待和交易？
+    expected_output: 一个局部数量关系及外推边界
+    evidence_to_verify:
+    - 同城市时段的供需、等待和价格口径
+    out_of_scope: 不从全平台交易额推断本地流动性
+  quantitative_plan:
+    mainline_measure: 局部密度和等待的数量关系
+    required_inputs:
+    - 同城时段供需、等待、价格与交易量
+    missing_input_fallback:
+      focus: prediction-counterfactual
+      question: 局部新增供给在什么条件下不会缩短用户等待？
+    fallback_applied: false
+    input_verification: not_started

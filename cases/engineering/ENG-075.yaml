@@ -20,3 +20,29 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: PostgreSQL 2020 候选去重版本的一组重复键
+    anchor_status: unverified_research_target
+    main_question: 这组重复键的索引空间会减少到什么数量级？
+    expected_output: 一个范围估计及其不适用分布
+    evidence_to_verify:
+    - 版本
+    - 重复键分布
+    - 页面或索引尺寸口径
+    out_of_scope: 不把索引缩小直接等同查询更快
+  quantitative_plan:
+    mainline_measure: 索引体积变化数量级
+    required_inputs:
+    - 重复键分布
+    - 页面或索引尺寸
+    - 对应版本机制
+    missing_input_fallback:
+      focus: prediction-counterfactual
+      question: 重复键变少后，去重对空间的作用将如何变化？
+    fallback_applied: false
+    input_verification: not_started

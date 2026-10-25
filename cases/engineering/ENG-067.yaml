@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 PostgreSQL 中长事务与清理重叠的时序
+    anchor_status: unverified_research_target
+    main_question: 为何删除已经提交，旧版本占用仍不能立即释放？
+    expected_output: 一条可见性到回收受阻的因果链
+    evidence_to_verify:
+    - 版本
+    - 事务快照
+    - 清理可回收条件
+    out_of_scope: 不将所有表膨胀都归因于同一个长事务

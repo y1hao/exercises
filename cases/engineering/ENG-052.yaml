@@ -21,3 +21,18 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: uncertainty_and_diagnosis
   example_source_url: https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Dynamo 2007 候选设计的一次网络分区
+    anchor_status: unverified_research_target
+    main_question: 在这一组读写配置下，请求会失败还是返回多个版本？
+    expected_output: 一条分区时序预测及冲突条件
+    evidence_to_verify:
+    - 该设计版本
+    - 副本与读写配置
+    - 冲突处理规则
+    out_of_scope: 不设计整个购物车系统或做无数字的精算

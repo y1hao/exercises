@@ -21,3 +21,18 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
   example_source_url: https://www.bvp.com/memos/toast
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Toast 候选 2015 融资轮
+    anchor_status: unverified_research_target
+    main_question: POS 与支付绑定在哪种客户条件下形成切换成本？
+    expected_output: 一个壁垒条件及可替代反例
+    evidence_to_verify:
+    - 轮次与当时产品
+    - 数据和支付迁移责任
+    - 客户材料
+    out_of_scope: 不使用后来的规模倒推当时防守性

@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-21
+  planned_exercise:
+    planning_only: true
+    anchor_request: 2024 年 6 月 DDoS 规则候选，事件身份待核
+    anchor_status: unverified_research_target
+    main_question: 下一项什么观测能区分恶意流量、误伤与回源故障？
+    expected_output: 选择一项可同时区分三种解释的观测
+    evidence_to_verify:
+    - 独立复盘
+    - 规则生效时序
+    - 受影响请求范围
+    out_of_scope: 不预先把保护误伤当作真实原因

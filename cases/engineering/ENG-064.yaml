@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: OCI 候选标准的一版镜像互操作契约
+    anchor_status: unverified_research_target
+    main_question: 镜像格式符合规范，是否就能推断应用在另一运行时正常工作？
+    expected_output: 一个格式保证与一个未保证行为
+    evidence_to_verify:
+    - 具体规范版本
+    - 镜像内容边界
+    - 运行时前提
+    out_of_scope: 不综述标准化历史或把格式兼容等同环境兼容

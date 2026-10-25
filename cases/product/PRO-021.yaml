@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一次 eBay 交易中的买方或卖方支付邀请
+    anchor_status: unverified_research_target
+    main_question: 哪一方的任务使邀请支付工具成为自然步骤？
+    expected_output: 一条交易到邀请的传播闭环
+    evidence_to_verify:
+    - 同期交易与支付流程
+    - 邀请机制
+    - 实际参与方
+    out_of_scope: 不以后来支付份额代替初期机制证据

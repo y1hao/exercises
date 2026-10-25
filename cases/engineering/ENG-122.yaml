@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Akka 中的一种持久化 actor 重启
+    anchor_status: unverified_research_target
+    main_question: 重启后下一条消息能否观察到上一次业务状态？
+    expected_output: 一条消息与状态恢复时序
+    evidence_to_verify:
+    - 具体 actor 模式
+    - 持久化确认
+    - 重启及投递规则
+    out_of_scope: 不合并不同模式的顺序与持久性保证

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 YouTube 2005 一个可核实的定位调整节点
+    anchor_status: unverified_research_target
+    main_question: 什么用户行为足以推翻原有垂直场景假说？
+    expected_output: 一个假说更新及仍不确定的部分
+    evidence_to_verify:
+    - 原始产品定位材料
+    - 同期使用行为
+    - 调整时序
+    out_of_scope: 不把后来的创始人口述当同期日志

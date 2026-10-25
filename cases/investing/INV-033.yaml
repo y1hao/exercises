@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: optionality_and_irreversibility
+planning:
+  revision_state: retained
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-18
+  quantitative_plan:
+    mainline_measure: 增长与 cohort 回本的差异
+    required_inputs:
+    - 同 cohort 留存、CAC 和订单贡献
+    - 回收窗口
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 收入增长外还需哪项 cohort 证据才能判断获客质量？
+    fallback_applied: false
+    input_verification: not_started

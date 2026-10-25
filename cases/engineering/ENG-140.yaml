@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Consul 2015 候选的一次跨区发现或写入
+    anchor_status: unverified_research_target
+    main_question: WAN gossip 已传播，能否说明另一区接受了强一致写入？
+    expected_output: 一个跨区保证边界
+    evidence_to_verify:
+    - 版本
+    - Raft 与 gossip 角色
+    - 单次请求路径
+    out_of_scope: 不把成员发现和数据共识当同一承诺

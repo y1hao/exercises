@@ -20,3 +20,20 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-04
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 2012—2013 内的一版 Kafka 复制规则
+    anchor_status: unverified_research_target
+    main_question: 一个 broker 失效后，这条消息还能否被安全确认？
+    expected_output: 一条 ISR 与选举状态变化预测
+    evidence_to_verify:
+    - 版本
+    - ack 配置
+    - ISR 状态
+    - 选举规则
+    out_of_scope: 不混用后来默认值或回到通用 Raft 日志题

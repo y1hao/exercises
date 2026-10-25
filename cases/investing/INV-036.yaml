@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 Snowflake 2014 早期融资，身份待核
+    anchor_status: unverified_research_target
+    main_question: 哪项客户证据能区分新市场需求与单纯技术升级？
+    expected_output: 一个优先验证项及拒绝条件
+    evidence_to_verify:
+    - 真实轮次
+    - 当时产品
+    - 既有数仓替代与采购任务
+    out_of_scope: 不泛谈云转型或使用后来的市场规模

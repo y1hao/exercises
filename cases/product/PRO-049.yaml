@@ -20,3 +20,29 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Superhuman 一轮人工 onboarding 的单次服务
+    anchor_status: unverified_research_target
+    main_question: 该投入需要多大激活价值才值得持续？
+    expected_output: 一个成本阈值与同口径收益判断
+    evidence_to_verify:
+    - 人工时长与成本
+    - 激活定义
+    - 可追溯留存或收益
+    out_of_scope: 不与 PMF 调查复用材料或补造历史参数
+  quantitative_plan:
+    mainline_measure: 人工引导所需的收益阈值
+    required_inputs:
+    - 人工时长和成本
+    - 激活定义
+    - 同窗口可追溯收益
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 下一项什么激活或留存证据才足以支持继续人工引导？
+    fallback_applied: false
+    input_verification: not_started

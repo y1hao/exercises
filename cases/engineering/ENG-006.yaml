@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-10
+  planned_exercise:
+    planning_only: true
+    anchor_request: Figma 2019 候选说明中的一次并发对象更新
+    anchor_status: unverified_research_target
+    main_question: 一个编辑已同步到另一客户端，能否据此断言它已持久保存？
+    expected_output: 区分两个确认点并给出一个失败边界
+    evidence_to_verify:
+    - 对象更新传播说明
+    - 持久化确认语义
+    - 断联行为
+    out_of_scope: 不设计完整多人同步算法

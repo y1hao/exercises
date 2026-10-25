@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 Canva 2015 一轮融资，身份待核
+    anchor_status: unverified_research_target
+    main_question: 下一项什么证据能说明非设计师需求具有付费广度？
+    expected_output: 一个分群尽调选择
+    evidence_to_verify:
+    - 轮次
+    - 当时产品
+    - 非设计师留存与合同或支付信号
+    out_of_scope: 不重复产品题的模板价值假说

@@ -20,3 +20,27 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Lyft IPO 前一份可比较的经营口径
+    anchor_status: unverified_research_target
+    main_question: 补贴变化与规模密度分别怎样影响单位经济？
+    expected_output: 一个贡献口径对照和回本条件
+    evidence_to_verify:
+    - 同窗口补贴、履约与收入
+    - cohort 或城市范围
+    out_of_scope: 不混用 EBITDA、贡献利润和净利润
+  quantitative_plan:
+    mainline_measure: 单位贡献和回本条件
+    required_inputs:
+    - 同窗口补贴、收入和履约成本
+    - 城市或 cohort 定义
+    missing_input_fallback:
+      focus: boundary-transfer
+      question: 哪个成本口径让规模增长仍不能证明单位经济改善？
+    fallback_applied: false
+    input_verification: not_started

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-01
+  planned_exercise:
+    planning_only: true
+    anchor_request: BuildKit 2018 候选窗口的一份多阶段 Dockerfile，具体版本待核
+    anchor_status: unverified_research_target
+    main_question: 只修改依赖清单后，哪一层起需要重建？
+    expected_output: 标出缓存失效起点及一次可验证预测
+    evidence_to_verify:
+    - 当时 Dockerfile 示例
+    - 层输入与缓存键语义
+    out_of_scope: 不同时估镜像体积或重写整个构建流程

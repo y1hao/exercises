@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: uncertainty_and_diagnosis
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-10
+  planned_exercise:
+    planning_only: true
+    anchor_request: Figma 一次非设计师参与评论的交接任务
+    anchor_status: unverified_research_target
+    main_question: 评论怎样改变这一次设计交接的等待和理解？
+    expected_output: 一条交接反馈机制
+    evidence_to_verify:
+    - 该版评论能力
+    - 参与角色
+    - 交接任务证据
+    out_of_scope: 不把评论使用直接等同于组织采购或长期留存

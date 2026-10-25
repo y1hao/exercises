@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 2008 生存窗口的一次公开资本决策
+    anchor_status: unverified_research_target
+    main_question: 剩余资本应支持到哪个技术或采购验证点？
+    expected_output: 一个继续验证或停止的判断
+    evidence_to_verify:
+    - 该节点资金约束
+    - 当时技术状态
+    - 可验证采购里程碑
+    out_of_scope: 不估整个商业航天市场或跨六年合并下注

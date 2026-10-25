@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: optionality_and_irreversibility
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-16
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 MongoDB 2017 资本窗口
+    anchor_status: unverified_research_target
+    main_question: 开源采用在哪些条件下不能由公司捕获付费价值？
+    expected_output: 一个价值捕获边界及竞争反例
+    evidence_to_verify:
+    - 当时托管和部署规则
+    - 替代者
+    - 客户付费材料
+    out_of_scope: 不把后续许可变化当当时竞争前提

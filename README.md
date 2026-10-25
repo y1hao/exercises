@@ -2,7 +2,7 @@
 
 全年课程用于约 20 分钟的中文预测、诊断、决策与微设计练习。课程索引决定日期，Brief 保存事实或合成约束，Protocol 约束教练，新对话据此自适应互动。
 
-**Phase 1 基础结构和 Phase 2 课程审核已完成，365 条仍均是 candidate，尚无可运行的训练。** 审核动作是 164 accepted、200 revise、1 replace；它们与训练就绪状态独立。原始选题中的陈述、URL 和来源提示均未核实。Protocol 文件只是明确标记的草稿入口，完整规则在 Phase 5 实施。不要从候选摘要生成正常 Starter Prompt。
+**Phase 1、Phase 2 初审和本轮范围修订已完成，365 条仍均是 candidate，尚无可运行的训练。** 初审为 164 accepted、200 revise、1 replace；本轮已落实 191 条历史训练范围、9 条合成设计修订，另有 1 个待核源替换槽位。审核动作、修订进度与训练就绪状态独立。原始选题中的陈述、URL 和来源提示均未核实。Protocol 文件仍为草稿，完整规则在 Phase 5 实施。
 
 ## 本地运行
 
@@ -14,6 +14,7 @@ python3 -m venv .venv
 .venv/bin/python scripts/validate_curriculum.py
 .venv/bin/python scripts/report_coverage.py --output reports/coverage.json
 .venv/bin/python scripts/audit_curriculum.py
+.venv/bin/python scripts/revise_curriculum.py
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/python -m compileall -q scripts tests
 git diff --check
@@ -40,6 +41,12 @@ git diff --check
 | `reports/curriculum-review.yaml` | 每条的内容领域、主要认知动作、审核动作和复用关联 |
 | `reports/phase2-overlap-review.yaml` / `phase2-weekly-review.yaml` | 25 个复用审查簇、16 个周片段的具体复核 |
 | `reports/curriculum-revisions.md` | Phase 1 到 Phase 2 的全部 focus / 审核动作映射 |
+| `curriculum/planning-2027.yaml` | 365 条修订进度；200 个明确任务、39 个用数与备用问题计划 |
+| `curriculum/revision-plans-2027.tsv` | 191 条历史修改项的研究节点、主要问题、输出、证据与排除范围 |
+| `curriculum/design-revisions-2027.yaml` | 9 个设计题的具体范围、合成假设和相关变化 |
+| `curriculum/quantitative-requirements-2027.tsv` | 39 个数量题的输入要求和缺数字时的具体备用问题 |
+| `curriculum/planning-policy.yaml` | 用数规则、修订进度含义、替换目标与条件 |
+| `reports/phase2-revision-results.md` | 本轮修订总览、逐题问题和各复用簇的范围分工 |
 | `reports/progress.md` | 分阶段进度与验收结果 |
 
 ### 索引
@@ -55,6 +62,7 @@ git diff --check
 | `subdomain` / `focus` | 子领域；Phase 2 将主要认知动作统一为下述八类，原始动作另存审核记录 |
 | `status` | `candidate`、`sourced`、`ready`、`blocked`、`rejected` |
 | `review_status` | `accepted`、`revise`、`replace`，仅课程审核动作，不表示来源或训练通过 |
+| `revision_state` | `retained`、`awaiting_source`、`revised`、`awaiting_replacement`，记录本轮修改落实进度 |
 | `brief_path` | 同仓库相对路径，必须存在且身份、状态一致 |
 | `protocol_path` | `protocols/historical.md` 或 `protocols/micro-design.md` |
 
@@ -63,6 +71,30 @@ git diff --check
 主要认知动作八类为 `causal-modeling`、`prediction-counterfactual`、`hypothesis-diagnosis`、`constrained-decision`、`evidence-selection`、`quantitative-calibration`、`boundary-transfer`、`constructive-design`。每条一个主要动作，最多两个次要动作（本轮未分配）。设计题统一主动构造，具体设计对象仍见 subdomain 与原始动作。
 
 `scripts/audit_curriculum.py` 默认只读核对审核输入、索引元数据与生成报告是否一致。维护逐条意见、复用簇或周内复核后，用 `--apply` 明确更新报告及索引的 focus/review_status；不会修改日期、身份、候选素材或训练状态。accepted 表示保留选题；replace 表示建议替换，尚未执行换题。不得将这两个词误用为 ready 或 rejected。
+
+### 本轮范围修订怎样生效
+
+后续 Phase 3/4 应以各 Brief 的 `planning.planned_exercise` 为研究与制作范围；`candidate_material` 保存原文用于追溯，不再把其中多年综述直接扩成训练。该规划字段没有历史开场、证据池或真实结果，不能被 Consumer 当作 `opening`。
+
+- 164 条 `retained`：初审保留，仍须核源或设计 QA。
+- 191 条 `awaiting_source`：已明确一个拟研究节点、主要问题、输出、所需证据与排除范围；事件身份、版本和日期尚待核实。
+- 9 条 `revised`：合成设计的范围和假设已改写，尚未完成 Brief 或对话 QA。
+- 1 条 `awaiting_replacement`：ENG-157 的替换目标与准入条件已确定，未找到或指定真实替代事件。
+
+初审 revise/replace 标签保留为历史，不表示仍只有未处理备注。规划中的 anchor_request 仅是拟核查对象，不是已经确认的历史 as-of。所有 Brief 的非 planning 字段及原始候选材料保留不改。
+
+39 条数量题的真实主线仅允许可追溯且事前可知的输入，可透明推导，缺数字不自动补合成值。每题记录具体备用问题和动作；核源确认输入不足后才能手动采用并记录映射。合成参数仅可用于明确切换的反事实附加练习；微设计本来就是合成题，参数须明确声明。
+
+修改规划输入后，显式重建并检查：
+
+```sh
+.venv/bin/python scripts/audit_curriculum.py --apply
+.venv/bin/python scripts/revise_curriculum.py --apply
+.venv/bin/python scripts/audit_curriculum.py --apply
+.venv/bin/python scripts/revise_curriculum.py
+```
+
+第二次 audit 用于同步新修订进度；两个脚本默认均为只读一致性检查。修订脚本只更新规划元数据与报告，不改训练状态，不自动采用备用动作或实际换题。来源验证开始后，后续进度应如实追加，不能把本轮研究目标误称为事实。
 
 ### 从候选到可运行
 
@@ -87,6 +119,6 @@ git diff --check
 
 ## 阶段边界与发布
 
-每阶段完成后向用户汇报并等待同意，才能进入下一阶段。目前停在 Phase 2；Phase 3 来源验证、Phase 4 完整 Brief 和 Phase 5 训练试验尚未开始。Phase 2 的结果多样性按候选文本的叙事框架审核，不是已验证历史结果统计。
+每阶段完成后向用户汇报并等待同意，才能进入下一阶段。用户已撤回此前进入 Phase 3 的指示，要求先落实 Phase 2 修订；本轮结束后停在这里。Phase 3 来源验证、Phase 4 完整 Brief 和 Phase 5 训练试验尚未开始。Phase 2 的结果多样性按候选文本叙事审核，不是已验证历史结果统计。
 
 完整 Brief 将包含隐藏证据与结局；Consumer 只把事前 `opening` 放进 Starter Prompt。新训练对话必须能读取完整公开文件；读取失败应中止，不得编造事实。未来只有 commit/push 后，新增文件才能从公开 GitHub 读取。此次不自动提交、推送或创建定时任务。

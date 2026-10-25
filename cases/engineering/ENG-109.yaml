@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: OpenTelemetry 2019 候选合并窗口的一项跨语言 API
+    anchor_status: unverified_research_target
+    main_question: 统一这项 API 能减少哪种迁移依赖，又不能减少哪种？
+    expected_output: 一个可迁移边界判断
+    evidence_to_verify:
+    - 合并时规范
+    - API 责任
+    - 导出与厂商绑定位置
+    out_of_scope: 不套用后来的所有信号和生态能力

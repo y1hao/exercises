@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Gitpod 的单一预构建快照复用
+    anchor_status: unverified_research_target
+    main_question: 此快照可以复用到哪个信任边界，何时应作废？
+    expected_output: 一个复用决定与新鲜度失效条件
+    evidence_to_verify:
+    - 功能版本
+    - 快照内容
+    - 凭据与工作区隔离约定
+    out_of_scope: 不设计全部远程开发计费和恢复系统

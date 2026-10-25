@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Creative Cloud Libraries 的单份共享素材
+    anchor_status: unverified_research_target
+    main_question: 跨工具复用怎样改变一次交付和退出成本？
+    expected_output: 一条复用机制及不依赖套件的替代条件
+    evidence_to_verify:
+    - 早期功能
+    - 素材权限
+    - 工具间使用路径
+    out_of_scope: 不把全部套件续费都归因于共享素材

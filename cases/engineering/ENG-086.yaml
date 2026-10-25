@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Piper 2016 候选说明的一次跨团队依赖变更
+    anchor_status: unverified_research_target
+    main_question: 该变更应该集中治理还是允许各仓独立升级？
+    expected_output: 一个治理决定与自治成本
+    evidence_to_verify:
+    - 实际协作路径
+    - 依赖变更约束
+    - 发布权限
+    out_of_scope: 不做单仓多仓的全面辩论

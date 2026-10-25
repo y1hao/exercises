@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-10
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Figma 多人光标的一次远程评审
+    anchor_status: unverified_research_target
+    main_question: 看到他人位置怎样改变这次评审的协调？
+    expected_output: 一条临场感到协调行为的机制
+    evidence_to_verify:
+    - 功能快照
+    - 参与者任务
+    - 可观察交互
+    out_of_scope: 不估没有来源的沟通工时或转到企业采购

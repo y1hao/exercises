@@ -22,3 +22,19 @@ candidate_material:
   status: candidate_needs_review
   case_stage: curriculum_idea_not_ready
   duration_minutes: 20
+planning:
+  revision_state: revised
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    synthetic: true
+    title: 稀有错误追踪的保留取舍
+    main_question: 预算有限时，如何保留排查服务错误所需的 trace 数据？
+    expected_output: 一项保留或采样策略、一个可回答查询和一个无法回答查询。
+    scenario: 只处理最近一天的按服务错误请求追踪，不覆盖任意用户路径和全部 APM 查询。
+    planning_assumptions:
+    - 流量数量级沿用原合成场景，不作为任何公司的实际数据。
+    - 可在采样、保留窗口与索引范围间取舍，不要求同时保留全部原始 spans。
+    scoped_change: 用户要求找出一天前一次极少发生的错误调用链。
+    out_of_scope: 不设计完整 APM 存储平台，不要求固定预算下保证找回任意稀有请求。

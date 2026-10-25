@@ -22,3 +22,19 @@ candidate_material:
   status: candidate_needs_review
   case_stage: curriculum_idea_not_ready
   duration_minutes: 20
+planning:
+  revision_state: revised
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    synthetic: true
+    title: 权限变更审计的身份与保留边界
+    main_question: 租户管理员变更权限时，审计事件该记录什么并向谁开放？
+    expected_output: 一个最小事件结构和一条删除或保留边界。
+    scenario: 仅审计管理员修改成员权限的动作，不包含普通应用日志。
+    planning_assumptions:
+    - 合成保留政策要求保留动作、时间、结果和可关联的操作者标识，不要求永久保存原始个人资料。
+    - 身份映射与事件内容可采用不同存储和权限；记录完整性并不等同于法律不可抵赖结论。
+    scoped_change: 客户要求删除成员可识别资料，但保留权限变更事件的完整性。
+    out_of_scope: 不判断实际法定期限，不让删除个人信息被预设为必然破坏所有审计能力。

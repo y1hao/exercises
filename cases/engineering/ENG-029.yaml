@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Rust 2015 候选版本的一段跨线程共享引用示例
+    anchor_status: unverified_research_target
+    main_question: 这段共享引用能否通过编译检查，检查的保证到哪里为止？
+    expected_output: 一个边界判断及不受保证的业务竞态例子
+    evidence_to_verify:
+    - 版本对应的引用规则
+    - 最小示例
+    - 线程共享约束
+    out_of_scope: 不讲完整 ownership 教程或宣称消除所有并发错误

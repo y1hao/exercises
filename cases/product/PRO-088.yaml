@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-10
+  planned_exercise:
+    planning_only: true
+    anchor_request: Figma 早期一次浏览器协作投入节点
+    anchor_status: unverified_research_target
+    main_question: 哪项需求证据最能支持继续投入浏览器协作？
+    expected_output: 一个优先验证信号及可拒绝条件
+    evidence_to_verify:
+    - 当时可用产品
+    - 设计协作任务
+    - 同期需求材料
+    out_of_scope: 不复用融资论点或多人数据模型机制

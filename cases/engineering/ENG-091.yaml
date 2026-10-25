@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Vitess 一次有公开材料的分片迁移
+    anchor_status: unverified_research_target
+    main_question: 为这一类写入和查询，所选 shard key 的代价是否可接受？
+    expected_output: 一个键选择及跨 shard 反例
+    evidence_to_verify:
+    - 迁移时点
+    - 查询模式
+    - 键分布
+    - 迁移限制
+    out_of_scope: 不综述十多年分片产品能力

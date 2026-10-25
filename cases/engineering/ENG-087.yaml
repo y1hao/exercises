@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: RSC 候选的一版服务端到客户端组件边界
+    anchor_status: unverified_research_target
+    main_question: 这项数据或行为可以跨过组件边界传递吗？
+    expected_output: 一个可传输性判断及无法保留的能力
+    evidence_to_verify:
+    - 版本
+    - 最小组件关系
+    - 序列化与组合规则
+    out_of_scope: 不混入后续缓存实现和全部 React 架构

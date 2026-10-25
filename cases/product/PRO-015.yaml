@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 早期 Etsy 的单一手作交易类别
+    anchor_status: unverified_research_target
+    main_question: 特色供给为什么可能比更多通用商品更有匹配价值？
+    expected_output: 一条供给差异到有效交易的机制
+    evidence_to_verify:
+    - 当时品类与买方任务
+    - 供给约束
+    - 交易闭环
+    out_of_scope: 不把垂直社区本身当作护城河证明

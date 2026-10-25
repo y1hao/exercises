@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-19
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版早期 eBay 交易后信誉规则
+    anchor_status: unverified_research_target
+    main_question: 这条评价规则怎样改变陌生人的交易判断？
+    expected_output: 一条信任机制及滥用边界
+    evidence_to_verify:
+    - 当时评价规则
+    - 交易流程
+    - 买卖角色权限
+    out_of_scope: 不混入后续双向评价政策

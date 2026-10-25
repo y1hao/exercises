@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Notion 2021 候选的一轮工作区分片选择
+    anchor_status: unverified_research_target
+    main_question: 对这一类租户分布，应如何选择数据放置键？
+    expected_output: 一个放置决定及热点反例
+    evidence_to_verify:
+    - 实际迁移节点
+    - 租户访问分布
+    - 分片约束
+    out_of_scope: 不精算无来源容量或覆盖整个迁移项目

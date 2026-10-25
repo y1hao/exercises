@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-01
+  planned_exercise:
+    planning_only: true
+    anchor_request: Remote Execution API 的一项 action 请求
+    anchor_status: unverified_research_target
+    main_question: 检查什么输入最能暴露错误的远端缓存复用？
+    expected_output: 一个核验项与可推翻正确性的例子
+    evidence_to_verify:
+    - API 版本
+    - action 输入
+    - 环境和摘要范围
+    out_of_scope: 不重新讲整个 Bazel 依赖图

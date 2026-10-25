@@ -26,7 +26,7 @@ ENG-024	accepted	c	technical	只解释数据库实例故障后日志和共享存
 ENG-025	revise	h	technical	以一个未声明环境输入诊断不可复现构建，固定 Nix 版本与实验材料；勿把全部历史当作单个事件。
 ENG-026	revise	h	stress	用部署时序、权限错误和依赖范围比较原因，开场去掉“新部署工具导致”的结论；事件细节待核源。
 ENG-027	accepted	d	technical	以读写并发需求决定是否启用 WAL；让恢复、checkpoint 和读者约束进入同一微观取舍。
-ENG-028	revise	q	technical	若保留采样成本估计，需给可核实的请求量或明确合成参数，区分稀有故障漏采概率与平均成本。
+ENG-028	revise	q	technical	只估稀有故障漏采风险；历史主线必须查到请求、故障与采样口径，缺失则改证据选择，合成分布仅限明确切换的反事实附加题。
 ENG-029	revise	b	technical	当前是在检验编译期保证的边界而非选证据；限定一个跨线程引用例子，区分数据竞争和业务竞态。
 ENG-030	accepted	c	technical	围绕两个查询争资源解释计算隔离如何生效；不把计算弹性等同于所有成本都随负载线性变化。
 ENG-031	revise	p	technical	固定 MongoDB 版本、write concern 与选举场景，预测一次 acknowledged 写入能否保留，避免跨四年混用语义。
@@ -82,7 +82,7 @@ ENG-080	accepted	c	technical	以一条依赖边变化解释可缓存 action 的�
 ENG-081	revise	b	technical	历史题应检验既有 Extensions API 在一项代理需求下的生命周期边界，避免变成没有史实支撑的自由设计。
 ENG-082	accepted	p	stress	只预测存储依赖失效如何沿两个产品传播，再检查可切断路径；不预先把整个级联图全部揭示。
 ENG-083	revise	d	technical	固定一轮 Notion 分片决策与工作区分布，选择一个租户放置策略；目前没有可做容量精算的数据。
-ENG-084	accepted	q	technical	围绕一个地区流量与缓存命中率估算自建 CDN 的盈亏边界，无法核实的成本明确做合成敏感性参数。
+ENG-084	accepted	q	technical	围绕一个地区流量与命中率估自建 CDN 阈值；主线成本需可追溯，缺失则改采用条件判断，不以合成成本补历史。
 ENG-085	revise	p	technical	固定 CockroachDB 版本与两笔冲突事务，推演重试边界；四年实现差异不能作为同一事实快照。
 ENG-086	revise	d	technical	只为一个跨团队依赖变更选择集中或多仓治理方式；Piper 案例不能扩成单仓与多仓的通用辩论。
 ENG-087	revise	b	technical	固定一种 RSC 发布版本和服务端到客户端的传输需求，界定可组合与不可传输对象，避免混入后续缓存语义。
@@ -106,7 +106,7 @@ ENG-104	revise	c	stress	只重建特征配置到请求处理的失效路径；20
 ENG-105	accepted	b	technical	用一次 lease 过期和旧客户端动作检验锁服务承诺，区分持锁视图和外部资源 fencing。
 ENG-106	accepted	b	technical	对一个编辑器扩展需求检验协议标准化的范围，保留语言特有能力无法完全通用化的边界。
 ENG-107	accepted	e	stress	只在补丁状态、资产清单和可利用性之间选下一项核验，避免用事后泄露规模替代事前修补优先级。
-ENG-108	accepted	q	technical	用已声明的慢副本比例估一次 fanout 长尾风险，再比较 hedging 的额外工作量；合成分布必须标注。
+ENG-108	accepted	q	technical	用来源支持的延迟分布估一次 fanout 长尾风险；缺分布则预测相关慢副本下的边界，合成分布只作反事实附加题。
 ENG-109	revise	b	technical	固定合并时的一项跨语言 API 需求，检验规范统一能减少哪种锁定；不等同于后来的全部遥测信号标准。
 ENG-110	revise	q	technical	MongoDB、Cassandra、ScyllaDB 是多次迁移；只选一次热点或迁移成本决策，其余作为背景而非同一事件。
 ENG-111	revise	p	stress	先核实 2026 年 2 月 BYOIP 事件及操作时间线，再预测一项前缀撤销的症状；没有来源不能借同类事故补足。
@@ -126,7 +126,7 @@ ENG-124	accepted	c	stress	沿单个输入解析路径解释资源耗尽，区分
 ENG-125	accepted	e	stress	在 CPU 异常后选最能区分规则与回源问题的观测；WAF 正则根因只在复盘披露，避免开场答案化。
 ENG-126	accepted	p	technical	以一次 primary lock 残留预测跨 shard 事务等待与清理路径，固定 TiDB 版本及失败时序。
 ENG-127	accepted	c	technical	选一个计算节点失效传播例子解释 Dice 的依赖追踪；与 action 缓存案例区分为增量计算失效机制。
-ENG-128	revise	q	technical	固定一类时间范围查询和保留窗口，估 chunk 数或索引成本；历史版本和合成规模须分别标明。
+ENG-128	revise	q	technical	固定一类时间范围查询与保留窗口，使用有来源分布估 chunk 或索引成本；缺规模改方向预测，不为主线发明负载。
 ENG-129	revise	p	technical	提供一个最小 Promise/timer 片段预测回调顺序，明确宿主环境；这属于预测而非证据选择。
 ENG-130	revise	d	technical	2010s 转码队列缺少实际决策节点；选一份调度设计中的一种突发负载，决定延迟与预算取舍。
 ENG-131	revise	b	technical	选一项 Starlark 扩展规则需求检验稳定接口边界；固定版本，和 ENG-080 的缓存输入机制区分。
@@ -148,7 +148,7 @@ ENG-146	accepted	p	technical	给一个闭包捕获状态的更新例子预测行
 ENG-147	accepted	d	stress	在运维访问同受损时选择可用的恢复路径，检验恢复能力是否依赖已失效的骨干与身份服务。
 ENG-148	accepted	p	technical	限定一次成员变化，预测两个 gossip 视图不同步时的请求路由；与数据库一致性保证明确分开。
 ENG-149	revise	e	technical	选最能暴露缓存污染或错误复用的检查，固定一个缓存 key 和信任边界；需要具体 Actions 设计快照。
-ENG-150	accepted	q	technical	以对象存储的一项成本与利用率假设估自建阈值，公开数据不足的参数必须作为情景而非真实账单。
+ENG-150	accepted	q	technical	以可追溯的对象存储成本与利用率估自建阈值；缺必要参数改采用条件判断，合成情景不回填真实账单。
 ENG-151	accepted	b	stress	检验加密备份被取得后哪些资产仍受保护、哪些支持离线攻击；不假设公开材料没有给出的主密码强度。
 ENG-152	revise	c	technical	选一次写入到 refresh 后可检索的过程解释可见性；固定 Elasticsearch 版本，不把倒排索引设计当独立事故。
 ENG-153	revise	b	technical	用一个 supervisor 重启子进程场景检验恢复与数据正确性的边界，指定 OTP 版本，避免宣称“让它崩溃”万能。
@@ -174,7 +174,7 @@ PRO-015	revise	c	opportunity	固定一个手作类别的交易双方，解释特
 PRO-016	accepted	p	opportunity	只预测一个开源自管用户迁移托管服务后的购买人与运维责任变化，不将整个销售转型压入一次练习。
 PRO-017	accepted	b	opportunity	检验内部沟通工具的价值能否迁移到外部团队，要求一个能推翻 dogfooding 推论的条件。
 PRO-018	accepted	p	opportunity	只预测默认短暂消息对一次发送决策的影响；不得把阅后即焚等同于无法留存或隐私保证。
-PRO-019	revise	q	opportunity	固定一类调用的用量分布比较费用风险；缺失真实账单时用显式合成数值，不把按调用收费等同于更便宜。
+PRO-019	revise	q	opportunity	固定一类有来源调用分布比较费用风险；缺真实用量则改风险边界判断，不用合成账单补主线或默认按调用更便宜。
 PRO-020	revise	c	opportunity	选择一次新成员找历史决策的任务，解释可搜索历史如何产生价值或迁移成本，固定产品功能快照。
 PRO-021	revise	c	opportunity	只追踪一次买方或卖方邀请支付工具的闭环；核实同期传播路径，不能用后来的市场份额证明初期机制。
 PRO-022	revise	d	contested	缩为面向一种邮件用户的定位决策；价格、隐私承诺和发布争议分别核实，不评估整个成熟邮箱市场。
@@ -186,7 +186,7 @@ PRO-027	accepted	p	opportunity	固定 2019 年免费私有仓库规则，预测�
 PRO-028	revise	c	opportunity	限定一次非设计师评论如何改变交接，而非泛论协作粘性；与 PRO-097 的组织采购角色区分。
 PRO-029	accepted	p	opportunity	只预测联系人导入对冷启动的一项收益和一项信任成本，避免默认邀请量等同于有效关系。
 PRO-030	accepted	d	stress	在停止继续投入前选择是否退出，历史停止结果只用于复盘；当时的生态信号需足够支持两种合理决策。
-PRO-031	revise	q	opportunity	需要把喜欢、匹配和有效对话的漏斗分开，给可核实或明确合成的数值；不能用匹配总量推断关系质量。
+PRO-031	revise	q	opportunity	将喜欢、匹配、有效对话分开，仅用同口径可追溯数字；缺输入则改证据选择，不能用合成漏斗或匹配总量证明关系质量。
 PRO-032	accepted	e	opportunity	选最能区分兴趣注册与实际使用需求的后续证据，demo 传播量不等同于留存，保留一个主假说。
 PRO-033	revise	h	opportunity	缩为采购承诺低但账单增长的一种客户情境，区分采用阻力与成本治理；固定当时 consumption 计价规则。
 PRO-034	accepted	c	opportunity	以一次开始播放的等待解释即时反馈与价值感知，不由早期体验直接推断长期留存。
@@ -204,7 +204,7 @@ PRO-045	revise	e	opportunity	固定一轮邀请制增长阶段，选能区分稀
 PRO-046	accepted	h	opportunity	以摄影干预区分供给不足和展示可信度障碍；创始人观察可做证据但不足以自动推出净因果效应。
 PRO-047	accepted	d	contested	在 DVD 仍有价值时选择一项流媒体投入，分别讨论用户替代与组织蚕食，不让未来胜出成为题目提示。
 PRO-048	revise	c	opportunity	限定一类内容贡献与回报规则，核实 Workshop 和有偿市场的不同机制；不可把二者视为同一年同一功能。
-PRO-049	revise	q	opportunity	只算一次人工 onboarding 的成本与激活价值，时间和留存参数须可追溯或标合成；避免与 PMF 调查案例重叠。
+PRO-049	revise	q	opportunity	只算一次人工 onboarding 的成本阈值，时间与收益须可追溯；缺参数则改证据选择，不以合成留存补主线或复用 PMF 问卷。
 PRO-050	revise	d	opportunity	固定早期免费会议规则和一个团队使用场景，判断时长边界；不能把后来套餐政策提前带入。
 PRO-051	revise	e	opportunity	挑一个 Terraform 企业治理需求来验证付费理由，固定版本与部署方式；与其他开源商业化题区分产品细节。
 PRO-052	revise	d	opportunity	早期免费定位没有足够数字供估算；限定学习者支付障碍和一种商业约束，避免借后来的广告模式解释初创选择。
@@ -219,7 +219,7 @@ PRO-060	revise	h	opportunity	固定 recurring task 的具体版本和用户任�
 PRO-061	revise	q	contested	将开户奖励、有效入金和持续账户价值的成本分开，核实历史活动规则；不涉及当前金融产品推荐。
 PRO-062	revise	e	opportunity	2010—2019 跨越太多扩张节点；只选一次自助试用转跨团队付费的信号和决策。
 PRO-063	accepted	c	opportunity	以从查路线到途中执行的一个任务闭环解释导航价值；避免把后来的整个地图产品功能当首发条件。
-PRO-064	revise	q	opportunity	固定免费层、广告收入和版税的一组口径，做单个转化阈值估计；未知合同成本用显式情景参数。
+PRO-064	revise	q	opportunity	固定免费层、广告与授权成本的同窗口口径，估一个转化阈值；未知合同成本则改经济性边界判断，不补造主线参数。
 PRO-065	accepted	d	stress	站在关闭前比较忠实用户价值和公司资源机会成本，不编造未公开的内部优先级会议。
 PRO-066	accepted	d	opportunity	只为一项第三方应用准入规则权衡开发者与用户激励，避免设计或评价整个 App Store 制度。
 PRO-067	accepted	e	opportunity	选择能确认游戏直播是否值得独立聚焦的用户信号，与 INV-028 的后续融资窗口分开。
@@ -273,7 +273,7 @@ INV-010	revise	e	opportunity	明确是 2015 还是 2016 的融资和产品可用
 INV-011	revise	d	contested	2002—2008 涉及多次技术与生存决策；选一次发射或采购里程碑前的续投判断，不评估整个商业航天市场。
 INV-012	revise	b	opportunity	只检验投递信誉相对开发者体验的可复制边界，固定当轮竞争与客户材料；不把上市后财务倒灌入 2011。
 INV-013	revise	d	stress	限定 2009 一个生存节点，区分经营现金试验和融资选择；实际 seed 价格、条款未知时不算精确投资收益。
-INV-014	revise	p	contested	先固定延期 IPO 的一次融资节点，预测新增资本对旧股权分布的影响；条款缺失只能给显式假设情景。
+INV-014	revise	p	contested	固定延期 IPO 的一次融资节点，以实际合同预测旧股风险；条款缺失改证据选择，不把假设优先权回填真实融资。
 INV-015	revise	q	contested	只选一个融资时点和城市密度数据，估贡献利润转正条件；2015—2019 多轮估值不能拼成同一投资。
 INV-016	revise	e	opportunity	选当轮可观察的分群留存或商业意向，区分兴趣流量与付费需求；不因后来上市成功评价事前选择。
 INV-017	accepted	b	opportunity	检验开发者自助通信 API 能在哪类客户替代传统采购，保留合规与运营约束，条款未知时只做投前判断。
@@ -306,7 +306,7 @@ INV-043	accepted	q	stress	对比两轮价格与股权条款，区分融资 headl
 INV-044	revise	q	contested	只选 IPO 前一份报表拆交易额、收入和履约成本，不能混用单城贡献与公司净利润；和 PRO-040 区分范围。
 INV-045	revise	b	opportunity	限定一轮 seed 或 A 轮，检验局部流动性可否外推到新城市；没有独立城市数据时不要以增长速度代替证明。
 INV-046	revise	e	stress	需锁定一轮融资及当时可索取的托管和关联交易证据；后来调查事实不能预先送给投资者，也不猜完整交易条款。
-INV-047	revise	p	stress	三年 SPAC 延期包含多次资本变更，选一个续命融资时点推演稀释；真实合同未知时只做标明的情景分析。
+INV-047	revise	p	stress	只选延期期间一轮续命融资，用实际合同推演稀释；缺合同改证据选择，不补造主线条款，合成情景仅限反事实附加题。
 INV-048	revise	h	contested	固定一次融资或上市前窗口，用项目交付与标准化采用证据区分服务业务和平台，避免五年企业总结。
 INV-049	revise	q	opportunity	需核实 seed 年份与可知材料，选一个 SMB 客群做可支付市场估计；不把所有免费网站用户算作潜在付费。
 INV-050	revise	d	stress	将疫情应急融资与 IPO 定价分开，只选前者的现金和条款决策；避免用 IPO 复苏价格替当时未知兜底。

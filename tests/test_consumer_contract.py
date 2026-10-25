@@ -192,6 +192,14 @@ class ValidationTests(unittest.TestCase):
         self.data["entries"][0]["review_status"] = "ready"
         self.rejects("invalid review_status")
 
+    def test_revision_state_cannot_claim_readiness(self):
+        self.data["entries"][0].update(review_status="accepted", revision_state="ready")
+        self.rejects("revision_state does not match")
+
+    def test_revision_state_must_match_brief(self):
+        self.data["entries"][0].update(review_status="accepted", revision_state="retained")
+        self.rejects("Brief/index revision_state mismatch")
+
     def test_malformed_types_report_errors(self):
         self.data["entries"][0].update({"status": [], "domain": {}, "kind": [], "id": [], "date": False})
         errors = self.check()

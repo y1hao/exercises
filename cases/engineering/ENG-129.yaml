@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-06
+  planned_exercise:
+    planning_only: true
+    anchor_request: 明确宿主的一段 Promise 与 timer 最小程序
+    anchor_status: unverified_research_target
+    main_question: 这些同步任务、微任务和 timer 回调按什么次序执行？
+    expected_output: 一条执行序列及饥饿边界
+    evidence_to_verify:
+    - 宿主与规范快照
+    - 最小片段
+    - 调度规则
+    out_of_scope: 不混用浏览器与 Node 的特有队列

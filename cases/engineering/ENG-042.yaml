@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: uncertainty_and_diagnosis
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Kubernetes 扩展机制下的自定义查询需求
+    anchor_status: unverified_research_target
+    main_question: 该需求用 CRD 能否满足，还是必须扩展 API 服务？
+    expected_output: 一个选择及最小不可满足条件
+    evidence_to_verify:
+    - 同版本 CRD 能力
+    - 所需查询行为
+    - 聚合 API 契约
+    out_of_scope: 不泛列所有扩展方式优缺点

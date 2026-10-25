@@ -20,3 +20,30 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Arm 2023 IPO 最终定价前公开材料窗口
+    anchor_status: unverified_research_target
+    main_question: 公开价格与股本对应的价值需要哪些业务假设才能支持？
+    expected_output: 一个价值区间或价格不支持的判断
+    evidence_to_verify:
+    - 定价前文件
+    - 可得价格区间
+    - 股本
+    - 授权与版税口径
+    out_of_scope: 不从好公司直接推出好投资或精确仓位
+  quantitative_plan:
+    mainline_measure: 价格隐含的业务价值区间
+    required_inputs:
+    - 事前价格区间
+    - 股本
+    - 授权和版税同口径数据
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 缺少哪项价格或股本信息会使投资判断最不可靠？
+    fallback_applied: false
+    input_verification: not_started

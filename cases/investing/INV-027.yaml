@@ -20,3 +20,30 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-18
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 HelloFresh 2017 资本窗口的一份 cohort
+    anchor_status: unverified_research_target
+    main_question: 这一组客户的复购能否覆盖获客与履约损耗？
+    expected_output: 一个回本阈值及留存边界
+    evidence_to_verify:
+    - 该时点 cohort
+    - CAC
+    - 订单贡献
+    - 损耗与回收窗口
+    out_of_scope: 不借 Blue Apron 的数字替换缺失数据
+  quantitative_plan:
+    mainline_measure: CAC 回本与留存阈值
+    required_inputs:
+    - 同 cohort 获客成本、留存、订单贡献与损耗
+    - 回收窗口
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 下一项哪种 cohort 证据能区分高频收入与可持续回本？
+    fallback_applied: false
+    input_verification: not_started

@@ -20,3 +20,29 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 早期 Airbnb 单一地区与日期窗口
+    anchor_status: unverified_research_target
+    main_question: 这组房源和日期需求能支持多少有效匹配？
+    expected_output: 一个本地流动性估计及不可外推条件
+    evidence_to_verify:
+    - 同窗口供需分布
+    - 房源可用日期
+    - 匹配口径
+    out_of_scope: 不从房源总量直接推导交易质量
+  quantitative_plan:
+    mainline_measure: 本地有效匹配数量级
+    required_inputs:
+    - 同一地区日期的需求
+    - 可用房源
+    - 有效匹配定义
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 下一项什么供需数据最能区分总量增长和有效流动性？
+    fallback_applied: false
+    input_verification: not_started

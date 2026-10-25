@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Elasticsearch 中的一次写入与 refresh
+    anchor_status: unverified_research_target
+    main_question: 写入已确认但查不到，缺少的是哪一个可见性步骤？
+    expected_output: 一条写确认到检索可见的因果链
+    evidence_to_verify:
+    - 版本
+    - 写入确认
+    - refresh 与搜索路径
+    out_of_scope: 不把索引机制叙述成未核实的历史事故

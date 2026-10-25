@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选一次有一手记录的 Craigslist 导流动作
+    anchor_status: unverified_research_target
+    main_question: 该获客动作值得依赖到什么程度？
+    expected_output: 一个渠道投入选择及失去渠道后的边界
+    evidence_to_verify:
+    - 实际动作记录
+    - 平台许可与控制范围
+    - 流量转化口径
+    out_of_scope: 没有一手材料就保留换题条件，不复述传闻

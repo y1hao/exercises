@@ -20,3 +20,27 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Peloton 2019 上市前一份硬件加订阅 cohort
+    anchor_status: unverified_research_target
+    main_question: 硬件带来的订阅收入需要多久覆盖获客投入？
+    expected_output: 一个口径一致的回本边界
+    evidence_to_verify:
+    - 硬件毛利
+    - 获取成本
+    - 订阅贡献与留存窗口
+    out_of_scope: 不把硬件收入和订阅收入重复计为收益
+  quantitative_plan:
+    mainline_measure: 硬件获客的回本窗口
+    required_inputs:
+    - 硬件毛利、获取成本、订阅贡献与同 cohort 留存
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 缺哪项硬件或订阅成本会让回本判断方向错误？
+    fallback_applied: false
+    input_verification: not_started

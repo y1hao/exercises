@@ -20,3 +20,28 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: epoll 2002 候选机制的一次通知工作量比较
+    anchor_status: unverified_research_target
+    main_question: 在同口径连接与就绪事件数下，三类通知路径的工作量怎样变化？
+    expected_output: 一个数量级比较及一个失效边界
+    evidence_to_verify:
+    - 版本
+    - 连接与就绪数量
+    - 对应接口成本模型
+    out_of_scope: ET 漏读只作边界，不再成为第二主任务
+  quantitative_plan:
+    mainline_measure: 通知路径的数量级
+    required_inputs:
+    - 连接数、就绪事件数
+    - 接口版本和工作量模型
+    missing_input_fallback:
+      focus: prediction-counterfactual
+      question: 就绪连接占比变大时，通知机制的相对收益会怎样变化？
+    fallback_applied: false
+    input_verification: not_started

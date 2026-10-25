@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Tesla 2008 危机中的一个续资节点
+    anchor_status: unverified_research_target
+    main_question: 是否继续支持到下一个可验证里程碑？
+    expected_output: 一个续资判断和所需现金条件
+    evidence_to_verify:
+    - 节点与现金跑道
+    - 经营里程碑
+    - 已公开融资约束
+    out_of_scope: 条款未知不算持仓收益或最优仓位

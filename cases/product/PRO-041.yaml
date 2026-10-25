@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Grammarly 一版浏览器扩展的首次表单写作
+    anchor_status: unverified_research_target
+    main_question: 实时反馈在哪一步让用户首次感知价值？
+    expected_output: 一条任务闭环和一项行为预测
+    evidence_to_verify:
+    - 发布快照
+    - 安装到反馈路径
+    - 用户任务
+    out_of_scope: 不总结全部写作产品或预设反馈必然有用

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Go 1.14 候选抢占规则下的一段 CPU 忙循环
+    anchor_status: unverified_research_target
+    main_question: 另一个可运行 goroutine 何时才有机会执行？
+    expected_output: 一项前后行为预测及仍可能停顿的边界
+    evidence_to_verify:
+    - 具体运行时
+    - 循环片段
+    - 抢占可达条件
+    out_of_scope: 不把调度改进等同于消除所有暂停

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Workers 的一个边缘租户负载
+    anchor_status: unverified_research_target
+    main_question: 启动需求和隔离要求下，isolate 是否适合该负载？
+    expected_output: 一个执行容器选择与必须核验的隔离条件
+    evidence_to_verify:
+    - 该版本生命周期
+    - 启动观测
+    - 租户边界
+    out_of_scope: 不把 V8 名称当作安全证明

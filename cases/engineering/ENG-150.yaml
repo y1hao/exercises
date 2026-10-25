@@ -20,3 +20,17 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: retained
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-11
+  quantitative_plan:
+    mainline_measure: 自建存储的盈亏边界
+    required_inputs:
+    - 同口径存储规模、利用率、采购与运维成本
+    missing_input_fallback:
+      focus: constrained-decision
+      question: 在哪些利用率与运维条件下，继续托管比自建更合理？
+    fallback_applied: false
+    input_verification: not_started

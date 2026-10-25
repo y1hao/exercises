@@ -21,3 +21,18 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
   example_source_url: https://www.bvp.com/memos/yelp
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Yelp 候选 2005 轮次，身份待核
+    anchor_status: unverified_research_target
+    main_question: 这类本地评论供给的复制边界在哪里？
+    expected_output: 一个竞争壁垒判断及可推翻条件
+    evidence_to_verify:
+    - 轮次与当时产品
+    - 供给质量
+    - 本地密度材料
+    out_of_scope: 不以当前品牌和规模证明早期壁垒

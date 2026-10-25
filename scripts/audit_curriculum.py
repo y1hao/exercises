@@ -152,6 +152,9 @@ def build(root):
             "source_verification": "not_performed_in_phase2",
             "overlap_clusters": cluster_by_id[identifier],
         })
+        if "revision_state" in entry:
+            reviews[-1]["revision_state"] = entry["revision_state"]
+            reviews[-1]["planning_path"] = "curriculum/planning-2027.yaml"
         revisions.append({
             "id": identifier, "date": str(entry["date"]),
             "old_focus": original_focus.replace("_", "-"), "new_focus": family,
@@ -217,6 +220,7 @@ def build(root):
         "weekly_followup_thresholds": {"same_textual_entity": 2, "same_primary_move": 3, "same_overlap_cluster": 2},
         "weekly_flag_limitations": "仅用于定位密度风险，不等于重复事件；部分首尾 ISO 周不足七天。",
         "verified_historical_outcomes": 0, "date_id_or_topic_replacements_applied": 0,
+        "revision_progress": counts(e.get("revision_state", "identified") for e in index["entries"]),
     }
     audit = {"basis": summary["scope"], "status_semantics": "accepted 仅表示保留选题，不是事实、Brief 或 ready 验收", "entries": reviews}
     return index, audit, summary, revisions
@@ -252,7 +256,7 @@ def render_report(summary):
         table(["主要认知动作", "全年", "历史"], [[label, summary["cognitive_moves"].get(key, 0), summary["historical_cognitive_moves"].get(key, 0)] for key, label in FOCUS_LABELS.items()]),
         "\n每条只保留一个主要动作；本阶段未额外分配次要动作（列表为空，后续如需增加最多两项）。",
         "原始动作标签呈轮换式分布（根据候选序列观察），且部分与题意不符。PRO-002 无漏斗数字却标数量估计，改为捕获流程的因果机制；ENG-092 推演 proposal 恢复，改为预测；ENG-129 预测微任务次序，改为预测；ENG-043 检验权限模型边界，改为边界迁移。",
-        "数量估计保留在确实需要计数或情景计算的题，但数字的来源和口径仍待核实。估计题若无法取得必要数字，应显式构造合成参数，或修订练习动作，不得杜撰历史数据。",
+        "数量题的主线输入必须可追溯且事前可知，允许注明方法的推导；无法取得必要数字则采用预设的方向、边界或证据选择问题，不能自动填合成参数。合成数字只属于明确切换的反事实附加练习。39 条输入要求和备用问题见 quantitative-requirements-2027.tsv；核源前不自动改动作。",
         "规范化后的类别分布不追求机械均匀。52 个设计都以主动构造为主，细分对象仍保留在原始认知动作与 subdomain 中；不能把共同的设计动作误判为 52 个重复案例。\n",
         "## 事件和机制重复\n",
         f"人工记录 {len(summary['overlap_clusters'])} 个复用审查簇；事件身份风险与机制相邻、同公司不同节点分开列于 `phase2-overlap-review.yaml`。",
@@ -279,7 +283,8 @@ def render_report(summary):
         f"{actions.get('accepted', 0)} 条 accepted 保留其单一微观题意，仍需后续核源和完整 Brief。{actions.get('revise', 0)} 条 revise 已逐条指出应收窄的功能、时间、指标或假说；常见问题是多年综述、无数据精算、提前归因和多个主任务。",
         f"{design_revise} 个设计题需要额外收窄或明确合成约束，涵盖基金储备、APM、远端环境、受监管服务、eval、审计、背压、硬件现金流和巨头竞争；名单见逐条记录。",
         "ENG-157 是唯一 replace 建议，尚未确定替代事件；日期和 ID 保持原状，状态仍为 candidate。ENG-011、INV-034、ENG-117 等在无法获得独立材料时可能进入后续替换队列，此处不提前认定事实错误。",
-        "本阶段只更新 canonical 索引的 focus 和 review_status。所有 old/new focus 与审核动作在 `curriculum-revisions.md`，没有实际换题、改号、挪日期或升级训练状态。",
+        "初审校准 focus 和 review_status，映射见 `curriculum-revisions.md`；后续范围修订另以 revision_state 追踪，具体问题、证据要求、合成约束和数量题规则见 `phase2-revision-results.md` 及 `curriculum/planning-2027.yaml`。没有实际换题、改号、挪日期或升级训练状态。",
+        "当前修订进度：" + "、".join(f"{key} {value}" for key, value in summary["revision_progress"].items()) + "。原始 revise/replace 标签保留作为审核历史，不代表仍只有备注未落实。",
         "Phase 2 完成后停止，待用户同意再进入 Phase 3 来源验证；不提前制作 ready Brief、完整协议或声称训练对话验收通过。\n",
     ])
     return "\n\n".join(section.strip() for section in sections if section.strip()) + "\n"
@@ -287,7 +292,7 @@ def render_report(summary):
 
 def render_revisions(revisions):
     lines = ["# Phase 2 canonical 索引变更映射\n",
-             "相对 Phase 1 导入基线：仅改 focus 并新增 review_status。所有日期、ID、kind、domain、subdomain、status 和路径保持原值；原始课程与候选 Brief 不改。replace 是规划建议，未实施换题。\n",
+             "本表记录初审相对 Phase 1 的 focus/review_status 映射；后续 revision_state 和候选 planning 范围详见 phase2-revision-results.md。日期、ID、kind、domain、subdomain、status、路径和原始候选素材保持原值。replace 是规划建议，未实施换题。\n",
              table(["日期", "ID", "原 focus", "校准后 focus", "审核动作"],
                    [[r[k] for k in ("date", "id", "old_focus", "new_focus", "review_status")] for r in revisions])]
     return "\n\n".join(lines) + "\n"

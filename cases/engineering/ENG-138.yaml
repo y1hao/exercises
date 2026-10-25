@@ -21,3 +21,19 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
   example_source_url: https://stripe.com/blog/idempotency
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-08
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一次可定位的 Stripe 幂等请求契约快照
+    anchor_status: unverified_research_target
+    main_question: 请求超时后，用同一个 key 重试可以期待什么结果？
+    expected_output: 一条重试结果预测及 key 的边界
+    evidence_to_verify:
+    - 文档与 API 可用时间
+    - key 生命周期
+    - 结果复用规则
+    out_of_scope: 不把文章年份直接当 API 首发年份

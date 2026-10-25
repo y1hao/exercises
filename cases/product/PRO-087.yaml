@@ -20,3 +20,29 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Workers 一次计价指标调整的前后窗口
+    anchor_status: unverified_research_target
+    main_question: 同一有来源工作负载的账单会怎样变化？
+    expected_output: 一个账单对照及高敏感用量项
+    evidence_to_verify:
+    - 两版价格规则
+    - 同口径请求和执行量
+    - 适用范围
+    out_of_scope: 不混用六年政策或发明真实负载
+  quantitative_plan:
+    mainline_measure: 同负载前后账单变化
+    required_inputs:
+    - 两版实际价格
+    - 同一有来源请求与执行量
+    - 政策范围
+    missing_input_fallback:
+      focus: boundary-transfer
+      question: 计量单位改变后，开发者哪种成本直觉不再可靠？
+    fallback_applied: false
+    input_verification: not_started

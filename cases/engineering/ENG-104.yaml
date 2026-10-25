@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: optionality_and_irreversibility
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-21
+  planned_exercise:
+    planning_only: true
+    anchor_request: 2025 年 11 月 Bot Management 候选事件，身份待核
+    anchor_status: unverified_research_target
+    main_question: 一项配置数据变化可能通过哪条依赖路径影响请求？
+    expected_output: 一条待证实的传播链及最弱证据环节
+    evidence_to_verify:
+    - 独立复盘
+    - 数据生成与分发路径
+    - 请求处理依赖
+    out_of_scope: 开场不先给实际根因或套用其他规则事故

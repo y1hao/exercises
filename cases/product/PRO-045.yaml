@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Pinterest 一轮早期邀请制开放
+    anchor_status: unverified_research_target
+    main_question: 下一项什么信号能区分稀缺关注和内容本身的价值？
+    expected_output: 一个证据选择及相反预测
+    evidence_to_verify:
+    - 该轮邀请规则
+    - 受邀后任务
+    - 回访或内容行为
+    out_of_scope: 不以邀请数和排队长度直接证明 PMF

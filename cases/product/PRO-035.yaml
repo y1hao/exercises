@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-11
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版早期 Dropbox 免费容量边界
+    anchor_status: unverified_research_target
+    main_question: 哪类使用增长最可能触发这个用户升级？
+    expected_output: 一项升级行为预测及不会升级的反例
+    evidence_to_verify:
+    - 当时免费配额
+    - 用户存储任务
+    - 付费边界
+    out_of_scope: 不混入推荐奖励或后续团队套餐

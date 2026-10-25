@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选原范围内最晚一轮可定位的融资前窗口
+    anchor_status: unverified_research_target
+    main_question: 哪项技术或治理验证缺失足以停止继续尽调？
+    expected_output: 一项可证伪要求及暂停条件
+    evidence_to_verify:
+    - 真实轮次
+    - 当时可索取材料
+    - 技术验证能力和权限
+    out_of_scope: 不把后来调查事实提前交给投资者

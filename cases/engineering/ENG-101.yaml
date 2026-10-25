@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: optionality_and_irreversibility
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Schemaless 2016 候选说明的一次字段演进
+    anchor_status: unverified_research_target
+    main_question: 这类字段变化更适合弱 schema 存储还是关系约束？
+    expected_output: 一个模型选择与迁移代价
+    evidence_to_verify:
+    - 实际实体形态
+    - 访问路径
+    - schema 演进责任
+    out_of_scope: 不总结 Uber 整个存储技术栈

@@ -20,3 +20,28 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 Instacart 2023 IPO 前报表窗口
+    anchor_status: unverified_research_target
+    main_question: 订单履约与广告分别怎样贡献这一口径的毛利？
+    expected_output: 一个同窗口贡献拆分
+    evidence_to_verify:
+    - 当时报表
+    - 订单与收入定义
+    - 广告成本与毛利口径
+    out_of_scope: 不拼接 2020 私募估值与 2023 上市数据
+  quantitative_plan:
+    mainline_measure: 订单与广告的毛利贡献拆分
+    required_inputs:
+    - 同窗口订单与广告收入
+    - 可归属履约和广告成本
+    missing_input_fallback:
+      focus: boundary-transfer
+      question: 哪些披露口径不足以区分订单规模和广告盈利？
+    fallback_applied: false
+    input_verification: not_started

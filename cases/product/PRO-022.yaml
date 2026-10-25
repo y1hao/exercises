@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: HEY 2020 候选发布时的一类邮件用户
+    anchor_status: unverified_research_target
+    main_question: 这个定位值得优先服务哪种邮件任务？
+    expected_output: 一个目标用户选择及放弃的需求
+    evidence_to_verify:
+    - 发布时价格和承诺
+    - 工作流
+    - 替代产品条件
+    out_of_scope: 不评估整个邮箱市场或把争议当需求证明

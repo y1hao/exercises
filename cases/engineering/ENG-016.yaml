@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: H3 2018 候选设计中的单一位置聚合需求
+    anchor_status: unverified_research_target
+    main_question: 面对这个查询和允许误差，是否应选层级六角网格？
+    expected_output: 一个索引选择及其不适用条件
+    evidence_to_verify:
+    - 当时 H3 精度与层级说明
+    - 一种查询
+    - 误差需求
+    out_of_scope: 不同时设计全球位置平台和全部空间查询

@@ -20,3 +20,28 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-12
+  planned_exercise:
+    planning_only: true
+    anchor_request: DoorDash 2020 IPO 前一份报表窗口
+    anchor_status: unverified_research_target
+    main_question: 交易额、平台收入与履约成本间的差额如何分解？
+    expected_output: 一个同口径利润桥
+    evidence_to_verify:
+    - 公开报表
+    - GTV 与收入定义
+    - 成本归属
+    out_of_scope: 不使用单城区数据替代公司财务口径
+  quantitative_plan:
+    mainline_measure: 平台利润桥
+    required_inputs:
+    - 同报表窗口 GTV、收入、履约成本与归属定义
+    missing_input_fallback:
+      focus: boundary-transfer
+      question: 交易额增长与净利润改善之间还隔着哪些责任和成本口径？
+    fallback_applied: false
+    input_verification: not_started

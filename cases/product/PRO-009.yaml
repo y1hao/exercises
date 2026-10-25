@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-13
+  planned_exercise:
+    planning_only: true
+    anchor_request: 订阅转型之前的一次早期 DVD 邮寄方案选择
+    anchor_status: unverified_research_target
+    main_question: 该方案最主要减少了用户哪一种租赁摩擦？
+    expected_output: 一条用户任务因果链及剩余成本
+    evidence_to_verify:
+    - 当时租赁规则
+    - 邮寄路径
+    - 门店替代体验
+    out_of_scope: 不提前使用后续订阅或流媒体结果

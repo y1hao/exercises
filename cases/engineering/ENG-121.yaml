@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-02
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Pants v2 的一个无法推导依赖
+    anchor_status: unverified_research_target
+    main_question: 自动推导漏掉这项依赖时，应怎样退回显式声明？
+    expected_output: 一个回退决定及正确性判据
+    evidence_to_verify:
+    - 版本
+    - 依赖推导范围
+    - 显式声明和失败处理
+    out_of_scope: 不把便利性当作完备依赖证明

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: feedback_loops
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 EndpointSlice 中的一次 endpoint 删除
+    anchor_status: unverified_research_target
+    main_question: 控制面确认删除后，一条旧请求路径是否还可能被使用？
+    expected_output: 一个传播时序与能证明生效的观察点
+    evidence_to_verify:
+    - 版本
+    - 控制面确认语义
+    - 数据面刷新路径
+    out_of_scope: 不把多组件异步传播写成全局即时生效

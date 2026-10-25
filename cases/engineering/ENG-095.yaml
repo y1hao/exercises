@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: optionality_and_irreversibility
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 JDK 9 候选 G1 默认化窗口
+    anchor_status: unverified_research_target
+    main_question: 暂停预算改变后，回收选择可能怎样变化？
+    expected_output: 一个区域回收预测及吞吐边界
+    evidence_to_verify:
+    - 版本
+    - 回收目标
+    - 该版本区域选择说明
+    out_of_scope: 不把暂停目标当作硬实时保证

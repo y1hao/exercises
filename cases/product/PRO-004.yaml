@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版早期 Segment 的单次活动回访
+    anchor_status: unverified_research_target
+    main_question: 回访更可能来自竞技反馈，还是原本活跃用户的自选择？
+    expected_output: 两个解释及一项能区分的观察
+    evidence_to_verify:
+    - 当时排行榜机制
+    - 分群或干预材料
+    - 回访口径
+    out_of_scope: 不从打开频率直接推断产品创造了留存

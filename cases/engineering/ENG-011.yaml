@@ -20,3 +20,20 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - EV-02
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 2024 独立供电事件；身份及与 2023 事件的差异待核
+    anchor_status: unverified_research_target
+    main_question: 两路电源还可能共享什么失效点，下一步应验证哪一处？
+    expected_output: 一项冗余验证决策及其共同原因假说
+    evidence_to_verify:
+    - 独立事件复盘
+    - 两路供电依赖
+    - 当时测试或处置记录
+    out_of_scope: 不合并两年事故；找不到独立事件则申请换题
+  source_identity_condition: 只研究拟选 2024 独立供电事件的冗余验证决策；不能证明与 ENG-040 独立就进入替换队列，优先补非 Cloudflare 故障机制。

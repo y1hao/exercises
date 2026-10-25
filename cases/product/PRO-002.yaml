@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版早期 Pin It 的单次网页收藏路径
+    anchor_status: unverified_research_target
+    main_question: 流程内捕获比回到应用搜索，具体减少了哪一步摩擦？
+    expected_output: 一条任务路径与一项行为预测
+    evidence_to_verify:
+    - 按钮发布快照
+    - 前后操作步骤
+    - 用户所需上下文
+    out_of_scope: 不计算没有漏斗数据的激活提升

@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: synthesis_and_transfer
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-10
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一次 Figma 从设计团队转组织采购的候选节点
+    anchor_status: unverified_research_target
+    main_question: 哪个信号最能证明使用者价值已传到预算持有人？
+    expected_output: 一个采购验证项
+    evidence_to_verify:
+    - 当时套餐
+    - 参与角色
+    - 预算和治理阻碍
+    out_of_scope: 不重复评论价值、多人光标或席位激励

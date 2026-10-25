@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Google Photos 2015 候选的一次自动备份任务
+    anchor_status: unverified_research_target
+    main_question: 自动备份怎样让数据积累变成继续使用的价值？
+    expected_output: 一条备份到复用的机制及退出边界
+    evidence_to_verify:
+    - 当时套餐
+    - 上传与检索能力
+    - 导出条件
+    out_of_scope: 不提前引入后来收费或无限备份取消

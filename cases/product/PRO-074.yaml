@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Adobe/Figma 交易未定案时的一项整合取舍
+    anchor_status: unverified_research_target
+    main_question: 这项产品整合选择面临什么不可忽略的风险？
+    expected_output: 一个决策及能改变它的条件
+    evidence_to_verify:
+    - 当时公开交易材料
+    - 产品重叠
+    - 已知审查条件
+    out_of_scope: 不先揭晓交易结果或把受阻归为产品失败

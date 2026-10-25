@@ -20,3 +20,28 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: abstraction_and_boundaries
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Spotify 2018 上市前一份公开报表窗口
+    anchor_status: unverified_research_target
+    main_question: 增加一个订阅客户的边际收益受什么成本口径限制？
+    expected_output: 一个来源支持的边际毛利判断
+    evidence_to_verify:
+    - 同窗口用户与收入
+    - 公开版税口径
+    - 可归属成本
+    out_of_scope: 合同成本未知则改边界判断，不发明区间
+  quantitative_plan:
+    mainline_measure: 订阅边际毛利及其可证区间
+    required_inputs:
+    - 同窗口订阅收入与用户
+    - 公开授权成本和可归属成本
+    missing_input_fallback:
+      focus: boundary-transfer
+      question: 哪些成本披露不足以把新增订阅视为高毛利增长？
+    fallback_applied: false
+    input_verification: not_started

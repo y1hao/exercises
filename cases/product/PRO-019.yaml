@@ -20,3 +20,28 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Lambda 2014 候选计价的一类调用
+    anchor_status: unverified_research_target
+    main_question: 这组调用的费用风险由什么用量项主导？
+    expected_output: 一个同口径账单敏感性判断
+    evidence_to_verify:
+    - 当时计价规则
+    - 有来源的调用次数和执行时间
+    - 比较口径
+    out_of_scope: 不发明真实账单或断言按调用必然便宜
+  quantitative_plan:
+    mainline_measure: 账单的主导用量与敏感性
+    required_inputs:
+    - 历史计价规则
+    - 同一有来源工作负载的次数与执行时间
+    missing_input_fallback:
+      focus: boundary-transfer
+      question: 按调用收费把哪种费用风险转给了客户？
+    fallback_applied: false
+    input_verification: not_started

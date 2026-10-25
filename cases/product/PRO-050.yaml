@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一版 Zoom 免费会议时长规则
+    anchor_status: unverified_research_target
+    main_question: 这项限制对一个团队的传播和升级哪个更有影响？
+    expected_output: 一个收费边界选择及用户反例
+    evidence_to_verify:
+    - 当时免费规则
+    - 实际使用任务
+    - 升级触发
+    out_of_scope: 不混入后来套餐或默认所有会议都超过时限

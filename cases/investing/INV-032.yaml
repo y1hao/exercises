@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: optionality_and_irreversibility
+planning:
+  revision_state: retained
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  quantitative_plan:
+    mainline_measure: 价格对应的商业化情景
+    required_inputs:
+    - IPO 前价格和股本
+    - 广告收入与成本
+    - 用户口径
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 内容供给和广告依赖中，哪项证据最值得用于检验估值？
+    fallback_applied: false
+    input_verification: not_started

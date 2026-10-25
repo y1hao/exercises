@@ -21,3 +21,19 @@ candidate_material:
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
   example_source_url: https://blog.cloudflare.com/cloudflare-incident-on-october-30-2023/
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-21
+  planned_exercise:
+    planning_only: true
+    anchor_request: 2023 年 10 月 KV 候选部署窗口，身份待核
+    anchor_status: unverified_research_target
+    main_question: 从部署相关性出发，下一项什么证据能区分权限与存储问题？
+    expected_output: 一个诊断优先项及两个预期观测差异
+    evidence_to_verify:
+    - 部署时间线
+    - 状态码口径
+    - 权限和存储依赖范围
+    out_of_scope: 开场不先断言部署工具就是原因

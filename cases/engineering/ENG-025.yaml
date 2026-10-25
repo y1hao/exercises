@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-01
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一份 Nix derivation 及一次非确定构建的实现快照
+    anchor_status: unverified_research_target
+    main_question: 两次相同声明却得到不同产物，最先检查哪项隐含输入？
+    expected_output: 一个可证伪的环境输入假说
+    evidence_to_verify:
+    - derivation 内容
+    - 实际输入边界
+    - 对应版本说明
+    out_of_scope: 不讲完整包管理史或重新证明引导信任

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: competition_and_substitution
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 合并公告窗口内的一类自由职业服务
+    anchor_status: unverified_research_target
+    main_question: 合并供需后，这一品类的流动性会怎样变化？
+    expected_output: 一个匹配预测及多归属反例
+    evidence_to_verify:
+    - 公告时点
+    - 品类供需
+    - 账户和迁移规则
+    out_of_scope: 不评价两年全部整合或全部服务市场

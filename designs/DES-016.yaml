@@ -22,3 +22,20 @@ candidate_material:
   status: candidate_needs_review
   case_stage: curriculum_idea_not_ready
   duration_minutes: 20
+planning:
+  revision_state: revised
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    synthetic: true
+    title: 跟投与桥接的资本优先级
+    main_question: 剩余可投资金应按什么顺序在新投资与两类跟投之间作决策？
+    expected_output: 一份有停止条件的资本优先级规则，不给最优仓位。
+    scenario: 基金规模与剩余资金沿用原合成题，只比较高估值跟投和桥接融资两个待选动作。
+    planning_assumptions:
+    - 1800 万美元是扣除管理费用及已签承诺后的可部署余额。
+    - 两项待选交易均无强制跟投义务，没有未披露的担保或杠杆。
+    - 交易具体价格和权利未提供，应指出它们如何改变优先级，不能自行补数字。
+    scoped_change: 高增长公司要求本轮跟投，同时另一核心持仓请求桥接资金。
+    out_of_scope: 不精算基金最佳收益率，不比较所有已投企业或设计完整基金策略。

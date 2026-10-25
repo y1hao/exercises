@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: state_and_dynamics
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: SolarWinds 2020 候选事件的发布工件核验节点
+    anchor_status: unverified_research_target
+    main_question: 在签名仍可信的条件下，下一项什么检查最能检验工件来源？
+    expected_output: 选择一项证据并解释它可排除的假说
+    evidence_to_verify:
+    - 构建到签名的链路
+    - 可知工件信息
+    - 公开检查能力
+    out_of_scope: 不设计横向传播防御体系或复现攻击

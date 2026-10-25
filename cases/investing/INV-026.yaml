@@ -20,3 +20,28 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Roblox 2021 直接上市前披露窗口
+    anchor_status: unverified_research_target
+    main_question: bookings 与递延收入分别支持什么价值判断？
+    expected_output: 一个口径一致的估值区间或不可估判断
+    evidence_to_verify:
+    - 上市前文件
+    - 股本与可见价格
+    - 收入递延和现金流定义
+    out_of_scope: 不提前给交易后价格或使用无来源折现参数
+  quantitative_plan:
+    mainline_measure: 同口径价值判断的范围
+    required_inputs:
+    - 上市前可见价格和股本
+    - bookings、递延收入与现金口径
+    missing_input_fallback:
+      focus: boundary-transfer
+      question: bookings 增长能支持什么判断，又不能证明什么盈利质量？
+    fallback_applied: false
+    input_verification: not_started

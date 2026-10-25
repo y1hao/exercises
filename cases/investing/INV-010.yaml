@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-10
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 2016 的一轮 Figma 融资，存在与轮次待核
+    anchor_status: unverified_research_target
+    main_question: 什么团队采购信号能区别兴趣试用与可付费需求？
+    expected_output: 一个优先尽调证据
+    evidence_to_verify:
+    - 该轮时点
+    - 可用产品
+    - 设计师与预算角色材料
+    out_of_scope: 不提前使用后来的多人协作成绩

@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: signals_and_experiments
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 拟选 Palantir 2020 上市前公开窗口
+    anchor_status: unverified_research_target
+    main_question: 哪项证据最能区分高接触项目交付与可复制平台？
+    expected_output: 两个经营假说及一项区别证据
+    evidence_to_verify:
+    - 当时披露
+    - 客户交付与扩展口径
+    - 标准产品材料
+    out_of_scope: 不总结五年全部资本或把客户嵌入等同规模化

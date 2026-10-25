@@ -20,3 +20,29 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: incentives_and_behavior
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: Dapper 2010 候选说明中的单一采样策略
+    anchor_status: unverified_research_target
+    main_question: 在有来源的请求量与采样口径下，稀有故障漏采风险如何变化？
+    expected_output: 一个漏采数量级判断及其适用假设
+    evidence_to_verify:
+    - 请求与故障频率
+    - 采样单位
+    - 来源支持的采样规则
+    out_of_scope: 不估整个追踪系统成本；缺输入则改证据选择
+  quantitative_plan:
+    mainline_measure: 稀有事件漏采数量级
+    required_inputs:
+    - 请求与故障频率
+    - 采样单位
+    - 同口径采样规则
+    missing_input_fallback:
+      focus: evidence-selection
+      question: 应先核验采样独立性还是故障发生分布，才能判断诊断价值？
+    fallback_applied: false
+    input_verification: not_started

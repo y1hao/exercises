@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: failure_and_resilience
+planning:
+  revision_state: retained
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  quantitative_plan:
+    mainline_measure: headline 估值与旧股经济价值差异
+    required_inputs:
+    - 两轮实际价格和股本
+    - 公开股权权利
+    - 稀释口径
+    missing_input_fallback:
+      focus: boundary-transfer
+      question: 为什么缺少股权权利时，不能从融资估值比例推出旧股价值变化？
+    fallback_applied: false
+    input_verification: not_started

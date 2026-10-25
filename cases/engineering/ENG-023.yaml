@@ -20,3 +20,18 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: bottlenecks_constraints
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters: []
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一次 pwn requests 风险的公开披露或公告窗口
+    anchor_status: unverified_research_target
+    main_question: 不可信 PR 的哪条执行路径会跨入高权限上下文？
+    expected_output: 画出一条数据到执行的信任跨越
+    evidence_to_verify:
+    - 当时工作流示例
+    - token 权限
+    - 公告中的触发条件
+    out_of_scope: 不把风险类别假装成未核实的独立入侵事故

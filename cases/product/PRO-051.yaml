@@ -20,3 +20,19 @@ candidate_material:
   status: candidate_needs_verification
   case_stage: curriculum_idea_not_case_brief
   monthly_lens_optional: growth_and_scale
+planning:
+  revision_state: awaiting_source
+  policy_path: curriculum/planning-policy.yaml
+  distinctness_clusters:
+  - ME-16
+  planned_exercise:
+    planning_only: true
+    anchor_request: 一次 Terraform Enterprise 治理采购节点
+    anchor_status: unverified_research_target
+    main_question: 哪项证据能证明这项企业需求不能由开源自管轻易替代？
+    expected_output: 一个优先验证项及付费边界
+    evidence_to_verify:
+    - 版本和部署选项
+    - 治理责任
+    - 购买角色材料
+    out_of_scope: 不套用其他开源工具案例的功能清单
