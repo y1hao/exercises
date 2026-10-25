@@ -88,7 +88,7 @@ class PhaseThreeIntegrationTests(unittest.TestCase):
                 self.assertEqual(entry['status'], 'candidate')
             self.assertNotEqual(entry['status'], 'ready')
 
-    def test_migration_preserves_candidate_planning_without_training_material(self):
+    def test_migration_preserves_candidate_planning_and_existing_production_content(self):
         for entry in self.entries:
             if entry['kind'] != 'historical':
                 self.assertNotIn(entry['brief_path'], self.outputs)
@@ -96,8 +96,11 @@ class PhaseThreeIntegrationTests(unittest.TestCase):
             current = read_yaml(ROOT / entry['brief_path'])
             generated = yaml.safe_load(self.outputs[entry['brief_path']])
             self.assertEqual(current, generated)
-            self.assertNotIn('opening', generated)
-            self.assertNotIn('resolution', generated)
+            for field in ('opening', 'resolution', 'evidence_pool', 'production'):
+                if field in current:
+                    self.assertEqual(generated[field], current[field])
+                else:
+                    self.assertNotIn(field, generated)
             self.assertEqual(generated['research'], self.records[entry['id']])
             original_material = generated['candidate_material']
             self.assertTrue(original_material)

@@ -194,11 +194,13 @@ def prepare(root=ROOT):
         # Preserve original material, calendar, title, focus and Phase 2 snapshot.
         brief['research'] = deepcopy(record)
         brief['status'] = entry['status'] = record['status']
-        brief['readiness_note'] = {
+        phase3_note = {
             'sourced': '已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。',
             'blocked': '已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。',
             'rejected': '原选题不适合继续制作，理由与替换提案见 research；尚未换题，不可用于训练。',
         }[record['status']]
+        if brief.get('production', {}).get('phase') != 4:
+            brief['readiness_note'] = phase3_note
         outputs[entry['brief_path']] = yaml_text(brief)
         rows.append(dict(id=identifier, domain=entry['domain'], status=record['status'],
                          brief_path=entry['brief_path'], record_path=record['record_path'],
@@ -241,7 +243,7 @@ def prepare(root=ROOT):
     if active:
         report = [
             '# Phase 3 来源验证（正式整改后）',
-            '初轮核源后按用户要求补源、正式改题与换题。全部365个日期已通过制作前准入；尚未进入Phase4，0 ready。原始输入、ID和日期保留；旧研究笔记与source-decisions是初轮历史记录。',
+            '初轮核源后按用户要求补源、正式改题与换题。全部365个日期已通过制作前准入；本表仅记录来源状态，制作进度见progress.md。原始输入、ID和日期保留；旧研究笔记与source-decisions是初轮历史记录。',
             table(['领域', 'sourced', 'blocked', 'rejected'], totals),
             '当前单题范围以各Brief的active_scope为准；planning仍为Phase2历史快照。正式改题、动作迁移和替换的逐条理由见 [phase3-revisions.md](phase3-revisions.md)，365题准入见 [phase3-admission.md](phase3-admission.md)。',
             'sourced和制作前eligible均不表示训练ready；尚须Phase4完整材料、时点/剧透与Case QA以及Phase5协议验收。解释、公司自报和作者模型不能写成独立证实的因果或未披露历史事实。',

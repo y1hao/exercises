@@ -3,7 +3,7 @@ kind: historical
 domain: engineering
 status: sourced
 scenario_title: Docker 多阶段构建缓存教程（2019-07-02）
-readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
+readiness_note: Phase 4审核草稿已生成，供用户审阅；尚未完成协议与端到端验收，未标ready，不可由每日Consumer调度。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-002
@@ -124,3 +124,75 @@ phase4_admission:
   state: eligible
   reason: 该范围可直接用现有来源材料制作：仅 pom.xml 改动时，缓存失效从哪个步骤传播到哪些后续步骤？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
   report_path: reports/phase3-admission.md
+historical_as_of: '2019-07-02'
+as_of_basis: 使用当日Docker官方Maven教程的步骤与顺序；不是2018 BuildKit具体实现或某次生产构建事故。
+objective: 根据步骤输入及顺序预测缓存失效传播，并区分步骤重跑与产物实际改变。
+opening: 你在评审2019年一篇Docker官方教程里的Java构建流程，Maven用pom.xml声明依赖，src目录保存源码。构建阶段按顺序执行：①复制pom.xml；②获取依赖；③复制src；④打包应用；最后另一个阶段复制构建产物供运行。这里的缓存指复用上次构建步骤的结果；本次比较明确固定基础镜像、构建命令和其他环境，并保留上次成功构建的缓存。现在只修改pom.xml内容，src完全不变。请沿构建阶段的四个步骤预测缓存命中与重跑的边界，并说明你的判断依据。
+opening_source_ids:
+- S1
+evidence_pool:
+- id: E1
+  availability: on_request
+  historical_availability: pre_decision
+  fact: 教程说明COPY涉及的文件变化会使该步失去缓存；在该示例的顺序构建中，此后的步骤缓存也会失效。
+  source_ids:
+  - S1
+  release_trigger: 用户认为src未变就能让后面的COPY直接沿用，或主动询问缓存键与前序步骤关系时。
+  locator: 'Tip #1；Tip #2'
+- id: E2
+  availability: after_commitment
+  historical_availability: pre_decision
+  fact: 作者把依赖获取放到复制pom.xml与复制src之间，是为了让源码独改时，前面的依赖步骤仍能复用。
+  source_ids:
+  - S1
+  release_trigger: 用户已经预测pom.xml变化后，再要求给源码独改的对照；不在首轮先讲出优化收益。
+  locator: 'Tip #10'
+- id: E3
+  availability: on_request
+  historical_availability: pre_decision
+  fact: 多阶段构建把构建依赖留在builder，运行阶段只复制产物。教程没有给本次改动后的产物内容或散列。
+  source_ids:
+  - S1
+  release_trigger: 用户把构建步骤重跑推成最终文件必变或所有运行阶段指令必重跑时。
+  locator: 'Tip #11'
+resolution:
+  observed: 2019教程实际将依赖获取置于pom.xml与src的两次复制之间，并用独立运行阶段取出产物；文中说明源码独改可以复用依赖步骤。
+  source_ids:
+  - S1
+  interpretation: 按来源给定的顺序缓存规则和题设固定条件，pom.xml内容变化首先使步骤①失去缓存，随后②③④需要重跑，即使③自己的源码输入没变。源码独改的对照则保留①②，从③开始重跑。这是维护者据教程规则作的条件推演，不是执行过的构建日志；步骤重跑也不必然意味着生成文件内容改变。
+  unknowns:
+  - 没有真实改动内容、产物散列和执行日志，不能报告构建耗时、下载量或命中率。
+  - 不能仅凭打包重跑判断最终产物一定变化；不外推到所有BuildKit版本、缓存挂载或并行图优化。
+boundaries:
+  forbidden_assumptions:
+  - 不得补写Dockerfile、依赖名称、版本、日志或性能数字并称来自原教程。
+  - 开场的编号流程是对原教程的概括，不是可执行Dockerfile；若用户要逐行原文，只提供来源中已核对的内容。
+  - 不把“不走Docker层缓存”说成“每个依赖一定重新从互联网下载”。
+  exercise_assumptions:
+  - 只比较文件内容改动，其他步骤和基础镜像保持不变，已有可用旧缓存，不使用强制禁用缓存选项；这些是隔离变量的练习条件。
+sources:
+- id: S1
+  url: https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/
+  publisher: Docker / Tibor Vass
+  published_at: '2019-07-02'
+  source_type: primary
+  checked_at: '2026-10-25'
+  supports:
+  - opening
+  - E1
+  - E2
+  - E3
+  - resolution.observed
+  locator: 'Tip #1、#2、#9—#11；正文及对应示例步骤。'
+coach_notes:
+  evidence_policy: 先收集四步预测，再补一个与错误模型有关的缓存规则；不要一上来把所有命中答案列出。
+  evaluation_focus:
+  - 能沿输入和前序状态传播，而不是按“这一步自己的文件没变”逐步孤立判断。
+  - 能区分Docker步骤缓存、依赖管理器缓存和最终文件内容。
+  optional_followup: 若用户判断正确，给出明确反事实：pom.xml只改注释而依赖集合不变；这是否足以让Docker自动理解其语义并复用该COPY？不假装这就是原例发生过的改动。
+production:
+  phase: 4
+  state: review_draft
+  batch: first-5
+  reviewed_at: '2026-10-25'
+  review_report: reports/phase4-first-5.md

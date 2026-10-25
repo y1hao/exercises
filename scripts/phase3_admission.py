@@ -91,7 +91,7 @@ def report_outputs(rows, complete):
     counts = Counter(r['state'] for r in rows)
     text = [
         '# Phase 3 制作前准入',
-        '本轮按用户要求先解决补源、改题和换题。没有进入 Phase 4，不生成 opening、完整 evidence_pool 或 ready 状态。',
+        '本表记录补源、改题和换题后的制作前准入；本命令不生成opening、evidence_pool或ready状态。当前制作进度见progress.md。',
         f"逐题准入：{dict(counts)}。全部可进入制作：{'是' if complete else '否'}；未通过者不能因文件存在或初轮 sourced 而略过。",
         'eligible 表示当前单题范围有可制作的事实/约束基础；不是完整训练 QA，也不表示历史结果能证明唯一正确选择。pending 是已记录但待复核，unassessed 是未写本轮判断，invalid 表示记录未通过引用或素材检查。',
         table(['ID', '日期', '准入', '动作', '当前题目', '缺口 / 复核理由'], [[r['id'], r['date'], r['state'], r['decision'] or '', r['title'] or '', '; '.join(r['errors']) or r['reason']] for r in rows]),
@@ -106,7 +106,7 @@ def prepare(root=ROOT, progress=False):
     complete = len(rows) == 365 and all(r['state'] == 'eligible' for r in rows)
     outputs = report_outputs(rows, complete)
     if progress:
-        return outputs, False
+        return outputs, complete
     if not complete:
         raise ValueError(f'Cannot activate Phase 4 preparation: {dict(Counter(r["state"] for r in rows))}')
     original_notes = load_notes(root)
@@ -126,6 +126,7 @@ def prepare(root=ROOT, progress=False):
         brief['scenario_title'] = row['scenario_title']
         brief['active_scope'] = scope_record(row)
         brief['phase4_admission'] = dict(state='eligible', reason=row['admission_reason'], report_path=REPORT)
+        production_note = brief.get('readiness_note') if brief.get('production', {}).get('phase') == 4 else None
         if entry['kind'] == 'historical':
             brief['research'] = research[entry['id']]
             brief['status'] = entry['status'] = 'sourced'
@@ -133,6 +134,8 @@ def prepare(root=ROOT, progress=False):
         else:
             brief['status'] = entry['status'] = 'candidate'
             brief['readiness_note'] = '合成题的范围、约束与可评价性已通过制作前准入；尚未制作完整 Brief 或通过 Case QA，不可训练。'
+        if production_note is not None:
+            brief['readiness_note'] = production_note
         outputs[entry['brief_path']] = yaml_text(brief)
     apply_current_scopes(index, root, resolutions)
     outputs['curriculum/2027.yaml'] = yaml_text(index)
@@ -161,7 +164,7 @@ def main():
             raise ValueError(f'Admission outputs out of sync: {stale}')
     except (ValueError, OSError, yaml.YAMLError) as exc:
         parser.exit(1, f'FAIL: {exc}\n')
-    print('All 365 admissions eligible; Phase 4 NOT started.' if complete else 'Progress only; incomplete admission, no active curriculum changes.')
+    print('All 365 admissions eligible; this command does not generate Phase 4 content.' if complete else 'Progress only; incomplete admission, no active curriculum changes.')
 
 
 if __name__ == '__main__':

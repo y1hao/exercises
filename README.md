@@ -2,7 +2,7 @@
 
 全年课程用于约 20 分钟的中文预测、诊断、决策与微设计练习。课程索引决定日期，Brief 保存事实或合成约束，Protocol 约束教练，新对话据此自适应互动。
 
-**Phase 3 整改已完成，等待进入 Phase 4 的同意。** 初轮的125道blocked和1道rejected均已处理：116道修订范围、9道实际换题、1道补核后保留。当前313道历史题均为sourced，52道微设计为candidate；365题具备后续制作基础，0 ready。具体变更见 [phase3-revisions.md](reports/phase3-revisions.md)，检查结果见 [progress.md](reports/progress.md)。
+**Phase 4 首批5题已生成，等待用户审阅。** 按全年顺序制作2027-01-01至01-05的4道历史题和1道微设计，[开场预览](reports/phase4-first-5.md)可直接阅读。新增内容为review_draft；仍有313道历史题sourced、52道微设计candidate、0 ready，尚未进行完整协议/对话验收。Phase3整改已提交为`aac70fc`，365题的来源与范围基础保留；本轮只制作这5题。
 
 ## 本地运行
 
@@ -135,6 +135,6 @@ git diff --check
 
 ## 阶段边界与发布
 
-每阶段完成后向用户汇报并等待同意，才能进入下一阶段。当前仍停在Phase 3，尚未制作完整Brief。用户已授权先 commit、再进入 Phase 3；Phase 2 修订已本地提交为 `072cda3`，未 push。本轮结束于 Phase 3；Phase 4 完整 Brief 和 Phase 5 训练试验各自仍须获得阶段授权。Phase 2 结果多样性是候选叙事审核，不是已验证历史结果统计。
+每阶段完成后向用户汇报并等待同意，才能进入下一阶段。当前仍停在Phase 3，尚未制作完整Brief。用户已授权先 commit、再进入 Phase 3；Phase 2 修订已本地提交为 `072cda3`，未 push。Phase3整改已提交`aac70fc`。当前仅获授权制作Phase4首批5题；后续批次等待用户审阅，Phase5训练试验尚未授权。Phase 2 结果多样性是候选叙事审核，不是已验证历史结果统计。
 
 完整 Brief 将包含隐藏证据与结局；Consumer 只把事前 `opening` 放进 Starter Prompt。新训练对话必须能读取完整公开文件；读取失败应中止，不得编造事实。未来只有 commit/push 后，新增文件才能从公开 GitHub 读取。Phase 3 成果按用户要求保存为独立本地提交（提交号见 Git 历史）；未推送，未创建定时任务。

@@ -47,4 +47,4 @@ git diff --check
 - 用户最新要求：Phase3不能只以313条都有状态就结束，必须先处理补源/改题/换题，使365题全部通过制作前准入，再汇报并等待Phase4授权。本轮来源与范围输入见`reports/remediation-*.md`、52设计前置审查见`curriculum/design-admission-2027.yaml`。`scripts/phase3_admission.py --progress`只写诚实进度；`--apply`在全365 eligible前必须拒绝，不设置ready。
 - 原Phase2 planning与初轮source-decisions保留为历史。正式改题后用active_scope和phase4_admission判断实际制作范围，保留日期/ID/candidate_material及逐条映射。不能让老生成器恢复已正式取消的缺数字要求或覆写新focus。
 
-- 用户要求收敛工作：后续只处理未通过项或明确发现的事实错误，不再把补题扩大为新一轮全量复核或继续扩建检查框架。当前126个初轮失败项已处理，尚未获Phase4授权。
+- 用户要求收敛工作：后续只处理未通过项或明确发现的事实错误，不再把补题扩大为新一轮全量复核或继续扩建检查框架。当前126个初轮失败项已处理。用户最新仅授权Phase4先生成全年顺序的前5题，供其审阅后再决定后续；不得扩展到第6题或Phase5。

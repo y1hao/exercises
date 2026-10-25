@@ -1,6 +1,6 @@
 # Phase 3 制作前准入
 
-本轮按用户要求先解决补源、改题和换题。没有进入 Phase 4，不生成 opening、完整 evidence_pool 或 ready 状态。
+本表记录补源、改题和换题后的制作前准入；本命令不生成opening、evidence_pool或ready状态。当前制作进度见progress.md。
 
 逐题准入：{'eligible': 365}。全部可进入制作：是；未通过者不能因文件存在或初轮 sourced 而略过。
 

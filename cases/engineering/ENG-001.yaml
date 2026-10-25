@@ -3,7 +3,7 @@ kind: historical
 domain: engineering
 status: sourced
 scenario_title: Google Spanner（2012）
-readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
+readiness_note: Phase 4审核草稿已生成，供用户审阅；尚未完成协议与端到端验收，未标ready，不可由每日Consumer调度。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-001
@@ -100,3 +100,75 @@ phase4_admission:
   state: eligible
   reason: 该范围可直接用现有来源材料制作：面对跨地区事务与外部一致性需求，判断 TrueTime 的时钟不确定性如何影响提交等待。；结果已有原始来源，所列未知不作为完成主问题的必需输入。
   report_path: reports/phase3-admission.md
+historical_as_of: '2012-10-31'
+as_of_basis: 以2012年10月公开的OSDI论文为版本边界，取月末为资料截止日；题目是公开设计机制评审，不声称某次内部决策发生在这一天。
+objective: 建立时钟不确定性、事务时间戳与可见顺序之间的因果链，并区分安全等待与端到端延迟。
+opening: 你正在评审一套2012年公开的跨数据中心数据库设计，数据需要在多地同步复制。它要求：如果事务A已经向调用者确认提交，事务B才开始，系统给出的事务顺序也必须是A在B之前。机器间时钟无法完全同步，因此时间接口返回一个保证包含真实时间的区间，而不是一个精确时刻。目前先不提供提交算法的细节。假如这个时间区间变宽，你预计它会通过什么机制影响写事务的提交延迟？请先给出一条因果假说，并指出最需要查看的提交步骤。
+opening_source_ids:
+- S1
+evidence_pool:
+- id: E1
+  availability: on_request
+  historical_availability: pre_decision
+  fact: 协调者选提交时间戳s时，必须满足各参与者prepare时间戳等约束，并且不早于提交请求到达后取得的TT.now().latest。
+  source_ids:
+  - S1
+  release_trigger: 用户询问时间戳如何选择，或需要检验“取时钟中点即可”的假说时。
+  locator: §4.1.2 Start；§4.2.1 Read-Write Transactions
+- id: E2
+  availability: after_commitment
+  historical_availability: pre_decision
+  fact: 协调者允许提交记录应用之前，等待TT.after(s)为真，即确认真实时间已经越过s；之后才向客户端发送提交时间戳。
+  source_ids:
+  - S1
+  release_trigger: 用户已提出时间戳与真实时间的关系，并预测提前确认的后果后。
+  locator: §4.1.2 Commit Wait；§4.2.1
+- id: E3
+  availability: on_request
+  historical_availability: pre_decision
+  fact: 论文说明commit-wait通常与Paxos通信重叠；重叠关系使额外安全等待不能简单逐毫秒等同端到端新增延迟。
+  source_ids:
+  - S1
+  release_trigger: 用户把等待变化直接等同总延迟变化，或已经解释核心机制、需要检验边界时。
+  locator: §4.2.1末段
+resolution:
+  observed: Spanner 2012论文给出时间戳选择与commit-wait两条规则，并据此论证外部一致性；这是论文记载的系统设计与论证，未在本练习独立复现。
+  source_ids:
+  - S1
+  interpretation: 论文作者的机制是先为时间戳建立真实时间边界，再延迟确认以保持跨事务的先后关系。维护者据此推演：更大的不确定性可能增加安全等待；总延迟还取决于通信重叠和其他时间戳约束，不能从区间宽度单独算出。
+  unknowns:
+  - 没有逐次时钟采样、网络时延或具体事务日志，不能计算这次提交要等多少毫秒。
+  - 不讨论后续Cloud Spanner版本；没有证据支持“任意时钟异常都能被原保证吸收”。
+boundaries:
+  forbidden_assumptions:
+  - 不得编造时钟值、事务日志、吞吐量或等待毫秒数。
+  - 不得把外部一致性仅归结为同步复制或“机器时钟很准”。
+  - 不把论文设计论证说成这里实际执行的生产实验。
+  exercise_assumptions:
+  - 机制推演以TrueTime给出的区间确实覆盖真实时间为条件；超出该契约不沿用同一保证。
+sources:
+- id: S1
+  url: https://www.usenix.org/system/files/conference/osdi12/osdi12-final-16.pdf
+  publisher: Corbett et al. / Google / USENIX
+  published_at: 2012-10
+  source_type: primary
+  checked_at: '2026-10-25'
+  supports:
+  - opening
+  - E1
+  - E2
+  - E3
+  - resolution.observed
+  locator: §3；§4.1.2；§4.2.1。原Google托管地址本次重定向不可读，改读会议原文。
+coach_notes:
+  evidence_policy: 只按当前假说释放一项相关证据；核心机制未讨论前不提前给出commit-wait结论。
+  evaluation_focus:
+  - 能把时间不确定性接到提交可见性，而不只背诵TrueTime名称。
+  - 能区分安全约束、算法选择与观测到的延迟，并说明预测条件。
+  optional_followup: 若用户已给出正确机制，追问：通信等待已经更长时，增加时钟不确定性是否一定等量增加总延迟？这是条件推演，不是新的历史观测。
+production:
+  phase: 4
+  state: review_draft
+  batch: first-5
+  reviewed_at: '2026-10-25'
+  review_report: reports/phase4-first-5.md

@@ -3,7 +3,7 @@ kind: historical
 domain: investing
 status: sourced
 scenario_title: Arm 2023 IPO：公开价格区间与基本股本
-readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
+readiness_note: Phase 4审核草稿已生成，供用户审阅；尚未完成协议与端到端验收，未标ready，不可由每日Consumer调度。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-001
@@ -146,3 +146,95 @@ phase4_admission:
   state: eligible
   reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
   report_path: reports/phase3-admission.md
+historical_as_of: '2023-09-05'
+as_of_basis: Arm路演公告公开后；只使用此前公开F-1和当日价格区间，最终定价留到复盘。
+objective: 用一致的每份权益与基本股数计算条件性权益价值，识别出售规模、完全稀释股本和内在价值的区别。
+opening: 时间是2023年9月5日，你正在阅读一家芯片设计公司的IPO材料。路演公告给出的价格区间为每份ADS 47—51美元；招股文件说明，每份ADS代表一股普通股。文件披露截至6月30日有1,025,234,000股已发行普通股。本次先固定使用这份基本股数，不调整之后可能发生的股份变化；未来增长和潜在新增股份暂不提供。请以美元为单位，给出这个价格区间对应的基本权益价值范围，并为计算结果写一句准确的口径说明。
+opening_source_ids:
+- S1
+- S2
+evidence_pool:
+- id: E1
+  availability: on_request
+  historical_availability: pre_decision
+  fact: 路演公告中拟出售的是SoftBank全资主体持有的95,500,000份ADS；F-1说明Arm不取得该出售所得。出售数量不是全公司基本股数。
+  source_ids:
+  - S1
+  - S2
+  release_trigger: 用户把本次出售金额当全公司价值，或询问这笔钱是否进入公司时。
+  locator: F-1封面及The Offering；路演公告首两段
+- id: E2
+  availability: on_request
+  historical_availability: pre_decision
+  fact: F-1另列股权激励和潜在股份安排；已发行基本股数不是一份完整的发行后完全稀释股本计算。
+  source_ids:
+  - S1
+  release_trigger: 用户把固定基本股数结果当成完全稀释价值，或主动检查股本口径时。
+  locator: Description of Share Capital；Equity Incentive Plans
+- id: E3
+  availability: after_commitment
+  historical_availability: post_decision
+  fact: 9月13日正文日期的定价公告确定每份ADS为51美元；页面新闻标签是9月14日。公告列预期交易和交割时间，并未宣称未来投资回报。
+  source_ids:
+  - S3
+  release_trigger: 仅在用户完成计算与口径判断、进入最终复盘时提供；不得倒填为9月5日已知。
+  locator: 定价公告正文首两段
+resolution:
+  observed: Arm定价公告正文日期为2023-09-13，最终价格51美元，初始出售95,500,000份ADS；该公告不等于交割已完成或投资已获利。
+  source_ids:
+  - S3
+  interpretation: 按题设固定基本股数，47×1,025,234,000=48,185,998,000美元，51×1,025,234,000=52,286,934,000美元，即约481.86亿—522.87亿美元的条件性基本权益价值。维护者计算不把这一范围当成完全稀释价值、企业价值或内在价值；最终定价处于上限也不能证明事前估值合理。
+  unknowns:
+  - 没有完整计算发行后潜在股份或净债务调整，不能给完全稀释价值或企业价值。
+  - 未设定增长、利润、折现率、个人分配或持仓条件，不要求买卖建议或精确仓位。
+boundaries:
+  forbidden_assumptions:
+  - 不得把95,500,000份出售ADS加到全部基本股数上当作新发行股份。
+  - 不得把未来的51美元最终价格、首日交易表现或后续业务结果放入开场。
+  - 不得把基本股数与加权平均稀释每股收益分母直接混用。
+  exercise_assumptions:
+  - 使用2023-06-30披露的普通股数作固定分母，只做公开信息的条件性比较；并非断言这是最终上市后全部股本。
+sources:
+- id: S1
+  url: https://investors.arm.com/static-files/7c8dbdc5-414a-4092-8ca3-69858726618e
+  publisher: Arm / SEC
+  published_at: '2023-08-21'
+  source_type: primary
+  checked_at: '2026-10-25'
+  supports:
+  - opening
+  - E1
+  - E2
+  locator: PDF封面ADS比例；PDF第94页/印刷页84 Capitalization；The Offering和Share Capital。
+- id: S2
+  url: https://newsroom.arm.com/news/arm-announces-launch-of-ipo-roadshow
+  publisher: Arm
+  published_at: '2023-09-05'
+  source_type: primary
+  checked_at: '2026-10-25'
+  supports:
+  - opening
+  - E1
+  locator: 正文首两段：价格区间、出售方及ADS数量。
+- id: S3
+  url: https://newsroom.arm.com/news/arm-announces-pricing-of-initial-public-offering
+  publisher: Arm
+  published_at: '2023-09-14'
+  source_type: primary
+  checked_at: '2026-10-25'
+  supports:
+  - E3
+  - resolution.observed
+  locator: 正文日期2023-09-13；网页新闻标签2023-09-14。只支持定价与预期安排。
+coach_notes:
+  evidence_policy: 先让用户选择分母并计算，再按其判断选择出售规模或潜在股份证据；只在最终阶段公布定价。
+  evaluation_focus:
+  - 单位、数量级和股数口径一致。
+  - 能解释“按这个价格给整体权益定多少价”与“它值不值这个价”之间还缺什么。
+  optional_followup: 若计算正确，询问：市场只出售约9550万份ADS，为什么仍用全部基本股数讨论整体权益价值？
+production:
+  phase: 4
+  state: review_draft
+  batch: first-5
+  reviewed_at: '2026-10-25'
+  review_report: reports/phase4-first-5.md
