@@ -86,4 +86,20 @@ research:
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
   phase2_conditions: 区分实际记载的分享/策展与候选所说收藏不购买；不虚构零购买事实。
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 2011原始投资备忘录回述Tote的alpha行为与访谈，支持任务假说辨别；没有购买转化数据，不把分享当作零购买的测量。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 收藏而不购买更支持哪一种用户任务解释？
+  expected_output: 两个假说与一个区分证据
+  out_of_scope: 不将创始人回忆称为当时日志
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

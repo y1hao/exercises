@@ -103,4 +103,20 @@ research:
     - token 权限
     - 公告中的触发条件
     out_of_scope: 不把风险类别假装成未核实的独立入侵事故
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: GitHub Security Lab披露基于其报告过的实际workflow漏洞，具有可读危险例子。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 不可信 PR 的哪条执行路径会跨入高权限上下文？
+  expected_output: 画出一条数据到执行的信任跨越
+  out_of_scope: 不把风险类别假装成未核实的独立入侵事故
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留GitHub Actions pwn requests 风险（2020—）的单一范围；不要求生产仓库名称与实际被窃信息未给出；不补造。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：不可信 PR 的哪条执行路径会跨入高权限上下文？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

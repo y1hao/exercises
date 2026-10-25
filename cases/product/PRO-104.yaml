@@ -2,7 +2,7 @@ id: PRO-104
 kind: historical
 domain: product
 status: sourced
-scenario_title: Canva 在线设计模板化（2013）
+scenario_title: Canva 2013-08-26 首次限量推出在线拖拽设计平台
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -77,4 +77,20 @@ research:
   phase2_conditions:
   - 只比较 2013 非设计师的单类任务；观察/合成使用任务必须显式分开。
   - 不以融资金额或后来用户规模代替组件价值证据。
-  record_path: reports/research-product-b.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+    record_path: reports/research-product-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 在非设计师完成一张海报的任务中，怎样区分素材寻找与排版操作两个价值假说？
+  expected_output: 两个任务假说；不声称已识别组件最大贡献
+  out_of_scope: 不以发布、用户总量或事后成功代替因果证据
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

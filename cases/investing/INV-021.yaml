@@ -1,9 +1,9 @@
 id: INV-021
 kind: historical
 domain: investing
-status: blocked
-scenario_title: Spotify 2016—2018 上市前投资
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Spotify 2018披露：平均毛利与新增订户
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-021
@@ -47,50 +47,80 @@ planning:
     input_verification: not_started
 research:
   id: INV-021
-  status: blocked
-  reason: 历史平均毛利不能代替新增订户边际版税；合同输入不足。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Spotify 2018 上市前版税与边际毛利
-  cutoff: 2018-02-28 F-1 发布后
-  initial_facts: []
+  status: sourced
+  reason: 正式收窄为分部历史平均毛利，保留实数而不假设保密版税合同。
+  event: Spotify 2018披露：平均毛利与新增订户
+  cutoff: 2018-02-28 F-1已公开后的平均与边际比较。
+  initial_facts:
+  - id: F1
+    text: F-1公开2015—2017 Premium分部毛利率。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 分部平均毛利并非多一位客户的边际毛利。
+    source_ids:
+    - S1
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 2017 Premium 毛利率为 22%；这不是新增一位订阅者的边际毛利。
+    text: Premium毛利率2015为15%、2016为16%、2017为22%。
     source_ids:
     - S1
     availability: pre_decision
   - id: E2
-    text: 公司将毛利改善部分归于 2017 新授权协议；部分合同细节保密。
+    text: 公司将改善部分归于2017新授权协议；部分合同保密，不能唯一分离增量客户成本。
     source_ids:
     - S1
     availability: pre_decision
   outcome:
-    text: 披露的 Premium 毛利率由 2015 年 15% 变为 2017 年 22%，不能由此确认单客边际成本。
+    text: 公司披露Premium平均毛利改善，不证明每个新增客户边际回报相同。
     source_ids:
     - S1
-  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+  interpretation: 来源披露、当事人解释与维护者推论区分；不以事后结果裁定唯一正确选择。
   unknowns:
-  - 边际版税、最低保证与客户归属成本未知。
+  - 完整内部判断及反事实结果未知；不计算未披露的价格、成本或实现回报。
   sources:
   - id: S1
     url: https://www.sec.gov/Archives/edgar/data/1639920/000119312518063434/d494294df1.htm
-    publisher: Spotify via SEC
+    publisher: Spotify / SEC
     published_at: '2018-02-28'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
+    - F1
+    - F2
     - E1
     - E2
     - outcome
   attempts:
-  - 实际打开并阅读上述来源正文；按 Phase 2 单一范围筛选。
-  phase2_conditions: 建议使用预列边界判断备用题；未自动更改主动作。
-  record_path: reports/research-investing.md
-  scope_decision:
-    id: INV-021
-    input_status: insufficient_this_round
-    reason: 历史平均毛利不能代替新增订户边际版税；合同输入不足。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: blocked
-  source_assessment_reason: 招股书支持历史平均毛利，但未取得足以分离单个新增客户边际版税的合同输入。
+  - 复用并逐项阅读初轮保存的一手材料摘录与引用，按本轮正式修订的问题和披露时点核对；未宣称重新获取完整合同。
+  phase2_conditions: 本轮正式修订单题范围；原候选和Phase2规划另保留，制作时使用本条新范围。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 历史平均毛利不能代替新增订户边际版税；合同输入不足。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: Premium毛利率从15%到22%的改善如何表达；它对新增订户的边际版税证明了多少？
+  expected_output: 百分点及相对增幅复算，指出平均量到边际量的缺口
+  out_of_scope: 不推定未披露交易条款、内部现金跑道、同cohort成本或因果贡献；公开披露时点不是原私募投资时点。
+  reason: 正式收窄为分部历史平均毛利，保留实数而不假设保密版税合同。
+  record_path: reports/remediation-investing.md
+  quantitative_inputs:
+  - name: 2015_Premium_margin
+    value: 15
+    unit: percent
+    source_ids:
+    - S1
+  - name: 2017_Premium_margin
+    value: 22
+    unit: percent
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 明确单一节点与可回答的问题，至少2项事前事实、2项实质证据和直接支持的观察结果；准入不等于ready。
+  report_path: reports/phase3-admission.md

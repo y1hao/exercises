@@ -1,9 +1,9 @@
 id: ENG-039
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Cloudflare Pingora 替换 NGINX（2022—2024）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Pingora 同负载迁移与连接复用比例（2022）
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-039
@@ -47,50 +47,50 @@ planning:
     input_verification: not_started
 research:
   id: ENG-039
-  status: blocked
-  reason: 有总连接与资源测量，但缺连接占用成本分解，不能估连接复用的独立贡献。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Cloudflare Pingora 替换 NGINX（2022—2024）
-  cutoff: 2022说明中的NGINX连接池瓶颈诊断；收益测量在提交预测后揭示。
+  status: sourced
+  reason: 正式缩小数量主线到来源中同客户复用率的可计算比例；保留数量训练，撤掉独立CPU/内存归因要求。
+  event: Pingora 同负载迁移与连接复用比例（2022）
+  cutoff: 2022-09-14发布的迁移测量工件，按给定同客户口径计算前
   initial_facts:
   - id: F1
-    text: NGINX连接池按worker隔离。
+    text: 旧NGINX连接池局限于worker。
     source_ids:
     - S1
     availability: pre_decision
   - id: F2
-    text: 扩worker使连接分散，降低跨请求复用机会。
+    text: Pingora可在线程间共享连接。
     source_ids:
     - S1
     availability: pre_decision
   evidence:
   - id: E1
-    text: Pingora采用多线程共享连接池；全客户新建连接约为旧方案三分之一。
+    text: 一位主要客户的连接复用率由87.1%升至99.92%。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   - id: E2
-    text: 作者报告同流量下CPU约少70%、内存约少67%，同时列有语言与其他架构原因。
+    text: 同负载全生产服务CPU少约70%、内存少约67%，原文列多个来源因素而非单一连接成本。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   outcome:
     id: O1
-    text: 实际迁移后连接复用和资源使用改善；单一客户87.1%到99.92%不可外推全客户。
+    text: 按请求口径推导未复用比例12.9%/0.08%约161.25；与作者约160倍新连接下降相符，不能据此把全服务资源收益归给单一因素。
     source_ids:
     - S1
     availability: post_decision
   interpretation:
-    text: 不能由总资源降幅识别连接复用的独立因果贡献；数字问需回退至可解释范围。
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 缺连接占用成本分解，因此不精算连接复用解释了多少内存。
+  - 客户身份、每连接资源成本及单因素对照未知；推导仅在同请求口径成立。
   sources:
   - id: S1
     url: https://blog.cloudflare.com/how-we-built-pingora-the-proxy-that-connects-cloudflare-to-the-internet/
-    publisher: Cloudflare
-    published_at: null
+    publisher: Cloudflare / Pingora team
+    published_at: '2022-09-14'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -102,34 +102,57 @@ research:
   attempts:
   - url: https://blog.cloudflare.com/how-we-built-pingora-the-proxy-that-connects-cloudflare-to-the-internet/
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://blog.cloudflare.com/how-we-built-pingora-the-proxy-that-connects-cloudflare-to-the-internet/
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    planning_only: true
-    anchor_request: Pingora 候选迁移说明中的单一连接复用瓶颈
-    anchor_status: unverified_research_target
-    main_question: 连接复用变化能解释多少资源占用差异？
-    expected_output: 一个来源范围内的资源收益估计
-    evidence_to_verify:
-    - 可比负载
-    - 连接与内存口径
-    - 公开测量的适用范围
-    out_of_scope: 不把单项基准外推为全网收益
-    quantitative_plan:
-      mainline_measure: 资源变化中可归因的范围
-      required_inputs:
-      - 同口径连接复用和资源观测
-      - 基准负载范围
-      missing_input_fallback:
-        focus: evidence-selection
-        question: 哪项对照最能区分连接复用收益与负载结构变化？
-      fallback_applied: false
-      input_verification: partial_source_check_see_unknowns
-  record_path: reports/research-engineering-a.md
-  scope_decision:
-    id: ENG-039
-    input_status: insufficient_this_round
-    reason: 有总连接与资源测量，但缺连接占用成本分解，不能估连接复用的独立贡献。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: sourced
-  source_assessment_reason: Pingora官方2022复盘含同流量CPU/内存与连接复用观测；只能估可支持范围，不能归因全部收益于连接。
+    original:
+      planning_only: true
+      anchor_request: Pingora 候选迁移说明中的单一连接复用瓶颈
+      anchor_status: unverified_research_target
+      main_question: 连接复用变化能解释多少资源占用差异？
+      expected_output: 一个来源范围内的资源收益估计
+      evidence_to_verify:
+      - 可比负载
+      - 连接与内存口径
+      - 公开测量的适用范围
+      out_of_scope: 不把单项基准外推为全网收益
+      quantitative_plan:
+        mainline_measure: 资源变化中可归因的范围
+        required_inputs:
+        - 同口径连接复用和资源观测
+        - 基准负载范围
+        missing_input_fallback:
+          focus: evidence-selection
+          question: 哪项对照最能区分连接复用收益与负载结构变化？
+        fallback_applied: false
+        input_verification: partial_source_check_see_unknowns
+    remediation_applied: true
+    scope_change: 正式缩小数量主线到来源中同客户复用率的可计算比例；保留数量训练，撤掉独立CPU/内存归因要求。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: blocked
+    reason: 有总连接与资源测量，但缺连接占用成本分解，不能估连接复用的独立贡献。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 同一客户连接复用率由87.1%变为99.92%，对应每个请求新建连接比例减少多少倍，能否用它解释全部资源收益？
+  expected_output: 按未复用比例计算约161倍差异，并把客户指标与全网资源归因分开
+  out_of_scope: 不推算没有连接成本分解的内存字节或财务节省
+  reason: 正式缩小数量主线到来源中同客户复用率的可计算比例；保留数量训练，撤掉独立CPU/内存归因要求。
+  record_path: reports/remediation-engineering-a.md
+  quantitative_inputs:
+  - name: 旧连接复用率
+    value: 87.1
+    unit: percent
+    source_ids:
+    - S1
+  - name: 新连接复用率
+    value: 99.92
+    unit: percent
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：同一客户连接复用率由87.1%变为99.92%，对应每个请求新建连接比例减少多少倍，能否用它解释全部资源收益？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

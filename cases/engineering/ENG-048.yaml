@@ -1,9 +1,9 @@
 id: ENG-048
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: SQLite Query Planner（2010s）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: SQLite NGQP 导致 Fossil 查询回归（2013）
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-048
@@ -38,49 +38,50 @@ planning:
     out_of_scope: 不泛讲查询优化器或编造运行日志
 research:
   id: ENG-048
-  status: blocked
-  reason: SQLite官方查询规划教程有SQL/索引及ANALYZE推理，但无版本化真实慢查询计划与统计快照。
-  event: SQLite Query Planner（2010s）
-  cutoff: 规划要求的同SQL实际计划变慢节点未取得。
+  status: sourced
+  reason: 找到官方NGQP文档第5.1—5.2真实Fossil回归，替换无实际快照的普通教程；有SQL、索引、选择率与修复对照。
+  event: SQLite NGQP 导致 Fossil 查询回归（2013）
+  cutoff: SQLite3.8.0时期Fossil timeline回归，已知升级后慢、尚未执行ANALYZE修复
   initial_facts:
   - id: F1
-    text: SQL描述结果，planner选择执行算法。
+    text: Fossil用SQLite存储版本记录，升级NGQP后timeline由毫秒级变为接近10秒。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: 可选索引影响访问路径。
+    text: 子查询连接plink与tagxref；两者均已有相关索引。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 教程用fruit='Orange'说明个别值与平均选择性不同。
+    text: 一个check-in通常只有很少子项，trunk标签却命中成千记录。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: E2
-    text: ANALYZE统计使planner在多个索引间估计，未运行时选择可能任意。
+    text: 没有统计时NGQP按索引同等选择性估计，实际可比较先按父项或先按标签的两种连接顺序。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   outcome:
     id: O1
-    text: ''
-    source_ids: []
-    availability: post_decision
-  interpretation:
-    text: 可保留题意，但需锁定可复现工件或改为规范例子并记录。
+    text: 官方记录运行ANALYZE立即修复性能；随后CROSS JOIN固定顺序，但作者也说明不同数据分布可反转优劣。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 版本、EXPLAIN计划输出、同数据分布及实际慢查询观测。
+  - 只用文档具体历史案例节；不补造EXPLAIN输出、统计表行或精确速度倍数。
   sources:
   - id: S1
-    url: https://www.sqlite.org/queryplanner.html
-    publisher: SQLite project
-    published_at: null
+    url: https://www.sqlite.org/queryplanner-ng.html
+    publisher: SQLite / D. Richard Hipp et al.
+    published_at: '2013'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -88,19 +89,41 @@ research:
     - F2
     - E1
     - E2
+    - O1
   attempts:
   - url: https://www.sqlite.org/queryplanner.html
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://www.sqlite.org/queryplanner-ng.html
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    planning_only: true
-    anchor_request: 一个 SQLite 查询计划和统计信息快照
-    anchor_status: unverified_research_target
-    main_question: 慢查询更可能来自缺索引还是基数估计偏差？
-    expected_output: 两个假说及一项区分实验
-    evidence_to_verify:
-    - 同一 SQL
-    - 索引定义
-    - 统计与计划输出
-    - 版本
-    out_of_scope: 不泛讲查询优化器或编造运行日志
-  record_path: reports/research-engineering-a.md
+    original:
+      planning_only: true
+      anchor_request: 一个 SQLite 查询计划和统计信息快照
+      anchor_status: unverified_research_target
+      main_question: 慢查询更可能来自缺索引还是基数估计偏差？
+      expected_output: 两个假说及一项区分实验
+      evidence_to_verify:
+      - 同一 SQL
+      - 索引定义
+      - 统计与计划输出
+      - 版本
+      out_of_scope: 不泛讲查询优化器或编造运行日志
+    remediation_applied: true
+    scope_change: 找到官方NGQP文档第5.1—5.2真实Fossil回归，替换无实际快照的普通教程；有SQL、索引、选择率与修复对照。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: blocked
+    reason: SQLite官方查询规划教程有SQL/索引及ANALYZE推理，但无版本化真实慢查询计划与统计快照。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 索引已经存在但升级后查询变慢，应先补索引还是检验选择率估计？
+  expected_output: 用两条可用连接次序与数据选择率证据区分缺索引和统计缺口
+  out_of_scope: 只取NGQP首次升级案例，不混入2017后改进或2025星形查询启发式
+  reason: 找到官方NGQP文档第5.1—5.2真实Fossil回归，替换无实际快照的普通教程；有SQL、索引、选择率与修复对照。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：索引已经存在但升级后查询变慢，应先补索引还是检验选择率估计？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

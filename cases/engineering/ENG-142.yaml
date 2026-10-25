@@ -38,7 +38,7 @@ planning:
 research:
   id: ENG-142
   status: sourced
-  reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
   event: Workers2018 isolate执行环境设计
   cutoff: 2018-11-09设计对比；不是2017首发全部承诺
   initial_facts:
@@ -85,6 +85,23 @@ research:
     - outcome
   attempts:
   - 打开当时官方技术文章隔离与部署背景。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 不得把V8名称当安全证明；具体攻击模型和基准仍待Case QA。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 启动需求和隔离要求下，isolate 是否适合该负载？
+  expected_output: 一个执行容器选择与必须核验的隔离条件
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

@@ -2,7 +2,7 @@ id: PRO-099
 kind: historical
 domain: product
 status: sourced
-scenario_title: eBay 买家与卖家信誉体系（1995—2000）
+scenario_title: eBay 1999 年报记录的交易后 Feedback Forum 规则
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -88,4 +88,20 @@ research:
   phase2_conditions:
   - 只讨论一个早期已生效规则版本；后续买卖权限变化不得混入。
   - 不把公司“降低不确定性”归因升级为实测完成率提高。
-  record_path: reports/research-product-b.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+    record_path: reports/research-product-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 只许交易伙伴评价且同一对账户最多影响一分，怎样改变陌生交易判断？
+  expected_output: 一条信誉机制及串谋/履约边界
+  out_of_scope: 不混入后续双向评价政策
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

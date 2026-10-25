@@ -2,7 +2,7 @@ id: INV-001
 kind: historical
 domain: investing
 status: sourced
-scenario_title: Arm 2023 IPO 估值
+scenario_title: Arm 2023 IPO：公开价格区间与基本股本
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -50,8 +50,8 @@ planning:
 research:
   id: INV-001
   status: sourced
-  reason: 已读取官方 F-1、路演与定价公告，能区分价格区间、业务数据与最终发行价。
-  event: Arm 2023 IPO 定价前的业务和股本评估
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  event: Arm 2023 IPO：公开价格区间与基本股本
   cutoff: 2023-09-05 路演公告之后、9 月 13 日最终定价公告之前；最终价不得开场给出。
   initial_facts:
   - id: F1
@@ -111,11 +111,38 @@ research:
     - outcome
   attempts:
   - 官方 HTML 大文档读取失败，改用已打开的官方 PDF；另读取路演及定价正文。
-  phase2_conditions: 计算只使用公开价格、股本与已披露业务口径；不补造估值参数。
-  record_path: reports/research-investing.md
-  scope_decision:
-    id: INV-001
-    input_status: sufficient_for_scoped_comparison
-    reason: 已读取公开事前价格区间、股本和业务分项；只能做有明确口径的区间比较，不推定折现率。
-    fallback_applied: false
-    decision_path: curriculum/source-decisions-2027.yaml
+  - 本轮复核初轮逐项保存的来源摘录、引用和未知；正式缩小问题范围，不新增没有依据的史实。
+  phase2_conditions: 本轮正式采用本条新问题与认知动作；原数量门槛仅存历史，不再要求未披露输入。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: sourced
+    reason: 已读取官方 F-1、路演与定价公告，能区分价格区间、业务数据与最终发行价。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 47—51美元区间与已披露基本股数对应怎样的价值范围，为什么不能直接当完全稀释内在价值？
+  expected_output: 一项条件性基本市值比较及业务/股本限制
+  out_of_scope: 限定已披露基本股数和价格区间的条件性比较；不当作完全稀释市值、最终发行价预测或内在价值。
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  record_path: reports/remediation-investing.md
+  quantitative_inputs:
+  - name: preliminary_price_low
+    value: 47
+    unit: USD per ADS
+    source_ids:
+    - S2
+  - name: preliminary_price_high
+    value: 51
+    unit: USD per ADS
+    source_ids:
+    - S2
+  - name: basic_ordinary_shares
+    value: 1025234000
+    unit: shares, not fully diluted
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
+  report_path: reports/phase3-admission.md

@@ -2,7 +2,7 @@ id: INV-003
 kind: historical
 domain: investing
 status: sourced
-scenario_title: Fiverr 2011 Series A
+scenario_title: Fiverr 2011投资备忘录：交易热度与重复需求
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -39,8 +39,8 @@ planning:
 research:
   id: INV-003
   status: sourced
-  reason: 已读取 Bessemer 2011-01-10 原始投资建议正文；适合检查交易质量证据，不推断后续回报。
-  event: Fiverr 2011 年 Bessemer 投资建议
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  event: Fiverr 2011投资备忘录：交易热度与重复需求
   cutoff: 2011-01-10 投资建议窗口，以投资方当时记录为限。
   initial_facts:
   - id: F1
@@ -60,10 +60,10 @@ research:
     - S1
     availability: pre_decision
   - id: E2
-    text: 公司 2012 年转载报道提及此前早期融资，但不是 2011 年可知材料或直接轮次证明。
+    text: 备忘录记载2010年12月每月约六万笔5美元交易、没有营销支出；不能由交易数推出独立客户留存。
     source_ids:
-    - S2
-    availability: post_decision
+    - S1
+    availability: pre_decision
   outcome:
     text: 原始文件提出投资建议；不能据此确认实际交割价格或实现回报。
     source_ids:
@@ -82,16 +82,27 @@ research:
     - F1
     - F2
     - E1
-    - outcome
-  - id: S2
-    url: https://www.fiverr.com/news/the-next-web
-    publisher: Fiverr转载The Next Web
-    published_at: '2012-05-03'
-    source_type: secondary
-    checked_at: '2026-10-25'
-    supports:
     - E2
+    - outcome
   attempts:
   - 打开 BVP 原始备忘录及公司转载新闻；不以转载当原始轮次合同。
-  phase2_conditions: 以备忘录证据选择为训练范围，不要求无依据的精确仓位。
-  record_path: reports/research-investing.md
+  - 本轮复核初轮逐项保存的来源摘录、引用和未知；正式缩小问题范围，不新增没有依据的史实。
+  - 本轮重新打开Fiverr memo Overview及Service段，核对六万笔/月与未营销的披露。
+  phase2_conditions: 本轮正式采用本条新问题与认知动作；原数量门槛仅存历史，不再要求未披露输入。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: sourced
+    reason: 已读取 Bessemer 2011-01-10 原始投资建议正文；适合检查交易质量证据，不推断后续回报。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 六万笔月交易和自然增长已知时，下一项重复交易证据应怎样检验需求质量？
+  expected_output: 一个分群证据选择及反证条件
+  out_of_scope: 不外推未披露cohort、边际成本、股本权利或因果贡献；不把公司披露或投资建议当成已实现投资回报。
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
+  report_path: reports/phase3-admission.md

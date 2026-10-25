@@ -1,9 +1,9 @@
 id: PRO-092
 kind: historical
 domain: product
-status: blocked
-scenario_title: Google Photos 无限高质量备份（2015）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Google Photos 2015：备份到检索的复用价值
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-092
@@ -37,9 +37,9 @@ planning:
     out_of_scope: 不提前引入后来收费或无限备份取消
 research:
   id: PRO-092
-  status: blocked
-  reason: 备份到检索复用机制已核，但规划要求的同版导出和退出边界缺直接材料。
-  event: Google Photos 2015-05-28 自动备份任务
+  status: sourced
+  reason: 保留同版可读的核心机制，取消没有材料的2015导出/退出规则。
+  event: Google Photos 2015：备份到检索的复用价值
   cutoff: 2015-05-28 上线后、用户选择自动备份前
   initial_facts:
   - id: I1
@@ -61,8 +61,9 @@ research:
     source_ids: *id001
     availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
+    text: 2015-05-28发布自动备份、搜索组织与链接分享；不能据此宣称留存提升或无法导出。
+    source_ids:
+    - S1
   interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
   unknowns:
   - 2015 年该版批量导出、元数据完整性和退出条件未取得同期直接说明；现行 Takeout 不能倒推。
@@ -78,9 +79,26 @@ research:
     - I2
     - E1
     - E2
+    - outcome
   attempts:
   - 打开首发公告核对套餐、自动上传、搜索和分享。
   - 检索 2015 Google Photos Takeout / export，结果多为当前第三方迁移教程，未将其作为当时导出条件。
-  phase2_conditions:
-  - 在补足同期导出条件前保持 blocked；不提前引入后来收费或无限备份取消。
-  record_path: reports/research-product-b.md
+  - 本轮复用并阅读初轮逐项记录的一手来源内容；按新问题与公开材料时点核对，不宣称新发现内部实验。
+  phase2_conditions: 正式使用本条新范围与认知动作，Phase2原题留作历史。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 备份到检索复用机制已核，但规划要求的同版导出和退出边界缺直接材料。
+    record_path: reports/research-product-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 自动备份怎样通过检索和跨设备复用产生继续使用的价值，哪些价值无需假定退出受阻？
+  expected_output: 一条备份—组织—复用的机制链及其失效条件
+  out_of_scope: 不推定未披露用户实验、留存因果、合同或完整历史版本；不把功能交付等同商业成功。
+  reason: 保留同版可读的核心机制，取消没有材料的2015导出/退出规则。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 复用已读来源并正式修订为材料可支撑的单题范围；缺失的内部数据不再是完成题目的必要输入。
+  report_path: reports/phase3-admission.md

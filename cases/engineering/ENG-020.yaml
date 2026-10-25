@@ -2,7 +2,7 @@ id: ENG-020
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: Android Jetpack Compose（2021）
+scenario_title: Compose UI 1.4.3 TextField 同步状态反馈工件
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -27,49 +27,49 @@ planning:
 research:
   id: ENG-020
   status: sourced
-  reason: 官方Compose架构页提供明确状态/事件数据流及TextField例子；训练锚定规范设计快照。
-  event: Android Jetpack Compose（2021）
-  cutoff: Compose声明式UI状态设计，TextField回调触发之前。
+  reason: 原2021锚点未锁定，正式改为Android Developers作者明确标明Compose UI1.4.3的真实故障演示工件，替代泛泛单向流讲解。
+  event: Compose UI 1.4.3 TextField 同步状态反馈工件
+  cutoff: Compose UI1.4.3的文中示例工件，观察异步校验导致异常之前
   initial_facts:
   - id: F1
-    text: Composable接收state并暴露event回调。
+    text: 示例TextField以value显示状态、用onValueChange回传编辑。
     source_ids:
     - S1
     availability: pre_decision
   - id: F2
-    text: 已绘制UI通过state变化触发重组。
+    text: 用户名需要异步业务校验，示例把状态放入ViewModel。
     source_ids:
     - S1
     availability: pre_decision
   evidence:
   - id: E1
-    text: 状态向下流、事件向上传到state holder。
+    text: 作者明确该版本有IME、用户state holder、内部controller三份需要同步的状态。
     source_ids:
     - S1
     availability: pre_decision
   - id: E2
-    text: onValueChange请求修改值，实际显示依赖value更新。
+    text: 示例在更新state前延后，旧异步结果可覆盖新输入；即使默认dispatcher的flow收集也有延迟边界。
     source_ids:
     - S1
     availability: pre_decision
   outcome:
     id: O1
-    text: 状态持有者负责改变状态，显示组件从状态重新构造UI。
+    text: 作者演示丢字、重复与光标问题，并把TextField状态同步立即更新，异步校验另行调度；这是指定旧版示例，不是所有响应式状态都错误。
     source_ids:
     - S1
     availability: post_decision
   interpretation:
-    text: 测试/一致性收益为官方架构理由，非量化生产结果。
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 该现行页面不可证明全部示例在2021逐字存在；不填历史上线指标。
+  - 文章后更新明确写1.4.3但该段修订日未知；不把所有现文都声称2022首发已知，排除2025新API结论。
   sources:
   - id: S1
-    url: https://developer.android.com/develop/ui/compose/architecture
-    publisher: Android Developers
-    published_at: null
+    url: https://medium.com/androiddevelopers/effective-state-management-for-textfield-in-compose-d6e5b070fbe5
+    publisher: Android Developers / Alejandra Stamato
+    published_at: '2022-09-14'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -81,6 +81,27 @@ research:
   attempts:
   - url: https://developer.android.com/develop/ui/compose/architecture
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://medium.com/androiddevelopers/effective-state-management-for-textfield-in-compose-d6e5b070fbe5
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    scope: 从命令式 UI 转向声明式 UI，检查状态单向流动对组件边界的影响。
-  record_path: reports/research-engineering-a.md
+    original:
+      scope: 从命令式 UI 转向声明式 UI，检查状态单向流动对组件边界的影响。
+    remediation_applied: true
+    scope_change: 原2021锚点未锁定，正式改为Android Developers作者明确标明Compose UI1.4.3的真实故障演示工件，替代泛泛单向流讲解。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: 官方Compose架构页提供明确状态/事件数据流及TextField例子；训练锚定规范设计快照。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 在onValueChange里先等异步用户名校验再更新value，为何可能出现丢字与光标错乱？
+  expected_output: 重建输入、状态持有者和内部控制器反馈链，指出应移动的异步边界
+  out_of_scope: 不将旧value-based API规则外推到后来TextFieldState接口，不设计整个UI框架
+  reason: 原2021锚点未锁定，正式改为Android Developers作者明确标明Compose UI1.4.3的真实故障演示工件，替代泛泛单向流讲解。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：在onValueChange里先等异步用户名校验再更新value，为何可能出现丢字与光标错乱？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

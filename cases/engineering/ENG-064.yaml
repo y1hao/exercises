@@ -1,9 +1,9 @@
 id: ENG-064
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Docker Image OCI 标准化（2015—2017）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: OCI Image Specification v1.0.0 的运行边界（2017）
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-064
@@ -37,68 +37,102 @@ planning:
     out_of_scope: 不综述标准化历史或把格式兼容等同环境兼容
 research:
   id: ENG-064
-  status: blocked
-  reason: 2017 OCI原发布公告已读；v1.0镜像规范正文尝试未取得，未完成格式保证与运行时前提的逐条核对。
-  event: Docker Image OCI 标准化（2015—2017）
-  cutoff: 2017 v1.0发布窗口；页面正文新闻稿日期另为7月19日，保留差异。
+  status: sourced
+  reason: 已实际读v1.0.0固定tag spec.md与config.md，消除原规范正文缺口。
+  event: OCI Image Specification v1.0.0 的运行边界（2017）
+  cutoff: OCI image-spec v1.0.0，检查另一平台运行前
   initial_facts:
   - id: F1
-    text: OCI分别发布Runtime和Image Format规范。
+    text: 镜像由manifest、filesystem layers和configuration组成。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: Runtime规范处理生命周期，Image规范处理镜像格式。
+    text: 规范目标是构建、传输和准备运行的工具互操作。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 公告将二者描述为最小、开放标准及可移植性基础。
+    text: 配置要求architecture与os字段，声明二进制适用平台。
     source_ids:
-    - S1
-    availability: unknown
+    - S2
+    availability: pre_decision
   - id: E2
-    text: 认证计划当时尚待推出，非公告即所有实现已通过认证。
+    text: 层内容摘要与配置确定镜像身份；这些数据还需转成runtime bundle由运行时执行。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   outcome:
     id: O1
-    text: ''
-    source_ids: []
-    availability: post_decision
-  interpretation:
-    text: 运行兼容边界需规范正文，不能以营销可移植宣称覆盖环境差异。
+    text: v1.0.0标准化可交换镜像工件与配置，平台字段仍是必要选择条件；符合格式不能逻辑推出任意平台执行成功。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - https://raw.githubusercontent.com/opencontainers/image-spec/v1.0.0/README.md读取cache miss；需版本化正文。
+  - 运行时内核能力、外部依赖与应用正确性不由格式合规单独证明。
   sources:
   - id: S1
-    url: https://opencontainers.org/posts/announcements/2017-07-17-open-container-initiative-oci-releases-v1-0-of-container-standards/
-    publisher: Open Container Initiative
+    url: https://raw.githubusercontent.com/opencontainers/image-spec/v1.0.0/spec.md
+    publisher: Open Container Initiative maintainers
     published_at: '2017-07-17'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
     - F1
     - F2
+    - E2
+    - O1
+  - id: S2
+    url: https://raw.githubusercontent.com/opencontainers/image-spec/v1.0.0/config.md
+    publisher: Open Container Initiative maintainers
+    published_at: '2017-07-17'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
     - E1
     - E2
+    - O1
   attempts:
   - url: https://opencontainers.org/posts/announcements/2017-07-17-open-container-initiative-oci-releases-v1-0-of-container-standards/
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://raw.githubusercontent.com/opencontainers/image-spec/v1.0.0/spec.md
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
+  - url: https://raw.githubusercontent.com/opencontainers/image-spec/v1.0.0/config.md
+    result: 本轮实际打开并读到architecture/os与ImageID规则。
   phase2_conditions:
-    planning_only: true
-    anchor_request: OCI 候选标准的一版镜像互操作契约
-    anchor_status: unverified_research_target
-    main_question: 镜像格式符合规范，是否就能推断应用在另一运行时正常工作？
-    expected_output: 一个格式保证与一个未保证行为
-    evidence_to_verify:
-    - 具体规范版本
-    - 镜像内容边界
-    - 运行时前提
-    out_of_scope: 不综述标准化历史或把格式兼容等同环境兼容
-  record_path: reports/research-engineering-a.md
+    original:
+      planning_only: true
+      anchor_request: OCI 候选标准的一版镜像互操作契约
+      anchor_status: unverified_research_target
+      main_question: 镜像格式符合规范，是否就能推断应用在另一运行时正常工作？
+      expected_output: 一个格式保证与一个未保证行为
+      evidence_to_verify:
+      - 具体规范版本
+      - 镜像内容边界
+      - 运行时前提
+      out_of_scope: 不综述标准化历史或把格式兼容等同环境兼容
+    remediation_applied: true
+    scope_change: 已实际读v1.0.0固定tag spec.md与config.md，消除原规范正文缺口。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: blocked
+    reason: 2017 OCI原发布公告已读；v1.0镜像规范正文尝试未取得，未完成格式保证与运行时前提的逐条核对。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 镜像符合v1.0.0格式，是否足以断言它能在另一CPU架构正常运行？
+  expected_output: 指出内容寻址/层配置保证，并据os、architecture指出运行兼容的必要前提
+  out_of_scope: 不把格式互操作等同内核、CPU、应用行为或安全保证
+  reason: 已实际读v1.0.0固定tag spec.md与config.md，消除原规范正文缺口。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：镜像符合v1.0.0格式，是否足以断言它能在另一CPU架构正常运行？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

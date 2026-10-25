@@ -1,9 +1,9 @@
 id: ENG-030
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Snowflake 分离存储和计算（2016）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Snowflake 共享数据与虚拟仓库隔离（SIGMOD 2016）
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-030
@@ -26,30 +26,84 @@ planning:
   distinctness_clusters: []
 research:
   id: ENG-030
-  status: blocked
-  reason: 尝试Snowflake2016官方PDF与ACM DOI均未取得正文，不凭标题核实架构细节。
-  event: Snowflake 分离存储和计算（2016）
-  cutoff: 2016论文设计快照待取。
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 已通过官方2019目录中托管的2016原论文取得正文，消除原访问阻塞；训练只用2016模型。
+  event: Snowflake 共享数据与虚拟仓库隔离（SIGMOD 2016）
+  cutoff: SIGMOD2016论文架构快照，一次VW停机/扩容操作前
+  initial_facts:
+  - id: F1
+    text: 表数据存于共享S3层，VW由EC2工作节点构成。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 每条查询只在一个VW内执行。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 创建或销毁VW不改变数据库状态；不同VW访问同一共享表而无需复制。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 工作节点具有本地表数据缓存，resize后不立即搬移缓存，靠后续访问与LRU调整。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
     id: O1
-    text: ''
-    source_ids: []
+    text: 2016设计允许独立伸缩计算而保留共享持久表；节点缓存生命周期随worker，扩容不等于持久数据重分片。
+    source_ids:
+    - S1
     availability: post_decision
   interpretation:
-    text: 不能从候选摘要宣称已验证虚拟仓库隔离。
-    source_ids: []
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 尝试 https://www.snowflake.com/wp-content/uploads/2016/06/Snowflake_SIGMOD.pdf 不可达；https://dl.acm.org/doi/pdf/10.1145/2882903.2903741
-    403。
-  sources: []
+  - 不承诺S3吞吐/网络完全隔离；论文未提供任意负载扩容延迟。
+  sources:
+  - id: S1
+    url: https://www.snowflake.com/wp-content/uploads/2019/06/Snowflake_SIGMOD.pdf?_fsi=7hkSrLqs
+    publisher: Snowflake Computing / Dageville et al.
+    published_at: '2016'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
   attempts:
   - url: https://www.snowflake.com/wp-content/uploads/2016/06/Snowflake_SIGMOD.pdf
     result: 不可达，未读到正文
   - url: https://dl.acm.org/doi/pdf/10.1145/2882903.2903741
     result: 403，未读到正文
+  - url: https://www.snowflake.com/wp-content/uploads/2019/06/Snowflake_SIGMOD.pdf?_fsi=7hkSrLqs
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    scope: 工作负载隔离和弹性扩容需求下，分析虚拟仓库如何改变资源竞争。
-  record_path: reports/research-engineering-a.md
+    original:
+      scope: 工作负载隔离和弹性扩容需求下，分析虚拟仓库如何改变资源竞争。
+    remediation_applied: true
+    scope_change: 已通过官方2019目录中托管的2016原论文取得正文，消除原访问阻塞；训练只用2016模型。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: blocked
+    reason: 尝试Snowflake2016官方PDF与ACM DOI均未取得正文，不凭标题核实架构细节。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 停掉或扩容一个VW，会改变共享表的持久性或另一VW的数据副本吗？
+  expected_output: 划分共享持久层、私有计算与本地缓存三条责任并给出一次扩容预测
+  out_of_scope: 不混用后来版本，不把共享存储误称完全没有性能耦合
+  reason: 已通过官方2019目录中托管的2016原论文取得正文，消除原访问阻塞；训练只用2016模型。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：停掉或扩容一个VW，会改变共享表的持久性或另一VW的数据副本吗？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

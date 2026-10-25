@@ -2,7 +2,7 @@ id: ENG-057
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: Amazon Redshift 列式分析（2012）
+scenario_title: Amazon Redshift 2015 列块跳过与分布工件
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -27,49 +27,49 @@ planning:
 research:
   id: ENG-057
   status: sourced
-  reason: Redshift官方存储说明直接支持只读所需列与同类型压缩；作为架构工件而非2012实测事件。
-  event: Amazon Redshift 列式分析（2012）
-  cutoff: 列式分析存储布局选择；候选2012首发日期不由此现行页证实。
+  reason: 补得SIGMOD2015 AWS作者原论文，明确晚于2012 preview；用同一设计快照替代现行文档追溯早期实现。
+  event: Amazon Redshift 2015 列块跳过与分布工件
+  cutoff: SIGMOD2015架构工件，决定一类列投影/范围过滤查询的数据读取路径前
   initial_facts:
   - id: F1
-    text: 分析查询常只读少数列。
+    text: 每个slice按列把值存入固定尺寸数据块链。
     source_ids:
     - S1
     availability: pre_decision
   - id: F2
-    text: 列式块保存同一列多个记录的值。
+    text: 分析查询可以只投影部分列，而不是整行。
     source_ids:
     - S1
     availability: pre_decision
   evidence:
   - id: E1
-    text: 只读取查询所需列可减少磁盘与内存加载。
+    text: 论文说明per-column compression与columnar layout。
     source_ids:
     - S1
     availability: pre_decision
   - id: E2
-    text: 同类型值可选择特定压缩编码。
+    text: Redshift以顺序扫描及内存中的块值范围跳过无关column blocks，不采用传统索引。
     source_ids:
     - S1
     availability: pre_decision
   outcome:
     id: O1
-    text: 文档展示列式布局可减少I/O；其中三倍示意是简化例子而非真实基准。
+    text: 论文所述实现结合列选择、压缩及范围块跳过降低扫描工作；布局带来的工作量变化与特定查询实际速度仍应分开。
     source_ids:
     - S1
     availability: post_decision
   interpretation:
-    text: 排序键与分布需另外来源；不能从此页独立断言全部性能原因。
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 不外推简化示例倍数；2012版本快照未锁定。
+  - 不引用论文业务采用解释为独立因果证据；无可比查询输入不能给速度倍数。
   sources:
   - id: S1
-    url: https://docs.aws.amazon.com/redshift/latest/dg/c_columnar_storage_disk_mem_mgmnt.html
-    publisher: Amazon Web Services
-    published_at: null
+    url: https://cdn.amazon.science/df/5f/9251d6f9403c99b070e11be88e38/amazon-redshift-and-the-case-for-simpler-data-warehouses.pdf
+    publisher: AWS / Anurag Gupta et al.
+    published_at: '2015'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -81,6 +81,27 @@ research:
   attempts:
   - url: https://docs.aws.amazon.com/redshift/latest/dg/c_columnar_storage_disk_mem_mgmnt.html
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://cdn.amazon.science/df/5f/9251d6f9403c99b070e11be88e38/amazon-redshift-and-the-case-for-simpler-data-warehouses.pdf
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    scope: 大量扫描与聚合请求时，判断压缩、排序键和数据分布对于性能的影响。
-  record_path: reports/research-engineering-a.md
+    original:
+      scope: 大量扫描与聚合请求时，判断压缩、排序键和数据分布对于性能的影响。
+    remediation_applied: true
+    scope_change: 补得SIGMOD2015 AWS作者原论文，明确晚于2012 preview；用同一设计快照替代现行文档追溯早期实现。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: Redshift官方存储说明直接支持只读所需列与同类型压缩；作为架构工件而非2012实测事件。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 查询只需少数列并按已排序值过滤时，列布局与块范围信息分别怎样减少读取？
+  expected_output: 区分读列、跳块与分布键减少跨节点传输三种机制，只重建前两项主链
+  out_of_scope: 不使用无负载的倍数收益，不将2015文档写作2012实测
+  reason: 补得SIGMOD2015 AWS作者原论文，明确晚于2012 preview；用同一设计快照替代现行文档追溯早期实现。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：查询只需少数列并按已排序值过滤时，列布局与块范围信息分别怎样减少读取？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

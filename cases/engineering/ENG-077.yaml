@@ -83,4 +83,20 @@ research:
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
   phase2_conditions:
     scope: 分析 API Server 权限提升链条，区分认证、授权与升级连接协议的信任边界。
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: Kubernetes官方CVE issue提供升级连接绕过认证授权、受影响路径与修复版本。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 分析 API Server 权限提升链条，区分认证、授权与升级连接协议的信任边界。
+  expected_output: 一项可检验的主判断及其适用边界
+  out_of_scope: 不外推为未核实的其他版本或生产负载
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留Kubernetes CVE-2018-1002105的单一范围；不要求不能声称已有实际利用；公告明确没有简单审计检测方法。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：分析 API Server 权限提升链条，区分认证、授权与升级连接协议的信任边界。；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

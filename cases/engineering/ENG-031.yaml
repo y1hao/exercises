@@ -104,4 +104,20 @@ research:
     - write concern
     - 副本时序与回滚规则
     out_of_scope: 不跨版本混用 majority 的含义
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: MongoDB4.4归档文档锁定候选年份范围内版本，明确write concern/journal/read语义。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 一次已确认写入在给定选举时序后是否仍可读取？
+  expected_output: 逐步标出写确认、选举和可见性的关系
+  out_of_scope: 不跨版本混用 majority 的含义
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留MongoDB 副本集选主（2016—2020）的单一范围；不要求具体历史生产副本时序没有；如编排状态推演需明确为规范条件而非事故日志。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：一次已确认写入在给定选举时序后是否仍可读取？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

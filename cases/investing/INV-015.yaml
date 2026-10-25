@@ -1,9 +1,9 @@
 id: INV-015
 kind: historical
 domain: investing
-status: blocked
-scenario_title: Uber 2015—2019 私募融资
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Uber 2019Q4：Gross Bookings、收入与ANR
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-015
@@ -46,36 +46,85 @@ planning:
     input_verification: not_started
 research:
   id: INV-015
-  status: blocked
-  reason: 未核定对应融资进入时点及同城市收入、补贴、履约成本。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Uber 上市前最近私募窗口与局部单位经济
-  cutoff: 2019 上市前；最近融资窗口尚未核定
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 改用2020披露的2019Q4实际数值，不再要求IPO前城市密度或补贴数据。
+  event: Uber 2019Q4：Gross Bookings、收入与ANR
+  cutoff: 2020-02-06结果已公开后，比较2019Q4指标。
+  initial_facts:
+  - id: F1
+    text: 公司2020-02-06披露2019Q4经营结果。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: Gross Bookings、GAAP收入与Adjusted Net Revenue是三个不同口径。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 当季Gross Bookings18131、GAAP收入4069、ANR3730，均为百万美元。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 当季净亏损1096百万美元；收入或ANR相对Bookings的比率不是净利润率。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+    text: 公司披露当季收入与ANR均为正但净亏损；不能从比率识别某城市是否盈利。
+    source_ids:
+    - S1
+  interpretation: 来源披露、当事人解释与维护者推论区分；不以事后结果裁定唯一正确选择。
   unknowns:
-  - 最近一轮的实际进入日期与局部 cohort 数据不足。
+  - 完整内部判断及反事实结果未知；不计算未披露的价格、成本或实现回报。
   sources:
   - id: S1
-    url: https://www.sec.gov/Archives/edgar/data/1543151/000119312519120759/d647752ds1a.htm
-    publisher: Uber via SEC
-    published_at: '2019-04-26'
+    url: https://investor.uber.com/news-events/news/press-release-details/2020/Uber-Announces-Results-for-Fourth-Quarter-and-Full-Year-2019/default.aspx
+    publisher: Uber
+    published_at: '2020-02-06'
     source_type: primary
     checked_at: '2026-10-25'
-    supports: []
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
   attempts:
-  - 检索 Uber 2019 S-1/A；只定位到公开申报入口，尚未完成正文和城市输入核验，未据此升级。
-  phase2_conditions: 不得拼接不同轮估值或以公司亏损代替城市贡献口径。
-  record_path: reports/research-investing.md
-  scope_decision:
-    id: INV-015
-    input_status: insufficient_this_round
-    reason: 未核定对应融资进入时点及同城市收入、补贴、履约成本。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: blocked
-  source_assessment_reason: 未取得匹配实际私募轮次的城市收入、补贴、成本，不能拿全公司报表替代局部计算。
+  - 实际打开并阅读所列一手材料；本轮按修改后的单一问题核对，不以搜索摘要补事实。
+  phase2_conditions: 本轮正式修订单题范围；原候选和Phase2规划另保留，制作时使用本条新范围。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 未核定对应融资进入时点及同城市收入、补贴、履约成本。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 同季GAAP收入和ANR分别占Gross Bookings多少，为什么两种比率都不是平台利润率？
+  expected_output: 两个同口径比率及不等于利润的成本边界
+  out_of_scope: 不推定未披露交易条款、内部现金跑道、同cohort成本或因果贡献；公开披露时点不是原私募投资时点。
+  reason: 改用2020披露的2019Q4实际数值，不再要求IPO前城市密度或补贴数据。
+  record_path: reports/remediation-investing.md
+  quantitative_inputs:
+  - name: gross_bookings
+    value: 18131
+    unit: USD million
+    source_ids:
+    - S1
+  - name: GAAP_revenue
+    value: 4069
+    unit: USD million
+    source_ids:
+    - S1
+  - name: ANR
+    value: 3730
+    unit: USD million
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 明确单一节点与可回答的问题，至少2项事前事实、2项实质证据和直接支持的观察结果；准入不等于ready。
+  report_path: reports/phase3-admission.md

@@ -2,7 +2,7 @@ id: ENG-012
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: Google Protocol Buffers 兼容策略（2008—）
+scenario_title: Protocol Buffers proto2 字段号复用边界（2026固定规范）
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -28,49 +28,49 @@ planning:
 research:
   id: ENG-012
   status: sourced
-  reason: proto2 官方指南直接给出字段更新兼容规则；锚定已读规范快照，非2008特定发布事件。
-  event: Google Protocol Buffers 兼容策略（2008—）
-  cutoff: proto2 二进制消息 schema 更新前；仅规范行为，不声称当前文本于2008已完全相同。
+  reason: 现行proto2说明已核实但不能追溯为2008；正式固定2026-10-19文档commit d056cc7的真实SearchRequest/删除字段工件。
+  event: Protocol Buffers proto2 字段号复用边界（2026固定规范）
+  cutoff: 文档commit d056cc774b257d185b39400a8e4c90f6ca330297的proto2契约，变更schema之前
   initial_facts:
   - id: F1
-    text: 消息字段有稳定数字编号。
+    text: 规范SearchRequest示例含optional int32 page_number=2。
     source_ids:
     - S1
     availability: pre_decision
   - id: F2
-    text: 旧读者可能与新写者同时存在。
+    text: 字段号标识wire格式中的字段，不能随在用schema任意重编号。
     source_ids:
     - S1
     availability: pre_decision
   evidence:
   - id: E1
-    text: 删除非required字段后不得复用字段号。
+    text: 删除非required字段后应保留其编号，编译器拒绝复用reserved编号。
     source_ids:
     - S1
     availability: pre_decision
   - id: E2
-    text: 新增enum值属于二进制wire安全更新；JSON/TextFormat有不同边界。
+    text: 字段名在JSON/TextFormat有独立兼容意义；二进制wire-safe也可能破坏语言层exhaustive enum switch。
     source_ids:
     - S1
     availability: pre_decision
   outcome:
     id: O1
-    text: 规范允许部分 schema 演进，但字段号复用破坏兼容。
+    text: 该固定规范要求分清wire解析、源码编译及文本编码边界；删除后复用旧号不是安全演进。
     source_ids:
     - S1
     availability: post_decision
   interpretation:
-    text: 规范保证与业务语义相容不是同一性质。
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 发布日未知；不以规范快照证明特定2008部署。
+  - 这是有日期的真实规范修订，不是虚构2008事故；不制造真实客户端升级日志。
   sources:
   - id: S1
-    url: https://protobuf.dev/programming-guides/proto2/
-    publisher: Protocol Buffers project
-    published_at: null
+    url: https://raw.githubusercontent.com/protocolbuffers/protocolbuffers.github.io/d056cc774b257d185b39400a8e4c90f6ca330297/content/programming-guides/proto2.md
+    publisher: Protocol Buffers maintainers
+    published_at: '2026-10-19'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -82,6 +82,27 @@ research:
   attempts:
   - url: https://protobuf.dev/programming-guides/proto2/
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://raw.githubusercontent.com/protocolbuffers/protocolbuffers.github.io/d056cc774b257d185b39400a8e4c90f6ca330297/content/programming-guides/proto2.md
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    scope: 客户端与服务器独立演进时，预测删除字段、改变编号、增加枚举值造成的兼容性风险。
-  record_path: reports/research-engineering-a.md
+    original:
+      scope: 客户端与服务器独立演进时，预测删除字段、改变编号、增加枚举值造成的兼容性风险。
+    remediation_applied: true
+    scope_change: 现行proto2说明已核实但不能追溯为2008；正式固定2026-10-19文档commit d056cc7的真实SearchRequest/删除字段工件。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: proto2 官方指南直接给出字段更新兼容规则；锚定已读规范快照，非2008特定发布事件。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 删掉SearchRequest中的可选page_number字段后，把其编号2给另一含义的字段会怎样影响新旧读写者？
+  expected_output: 预测旧消息/旧读者的错读风险，并选择字段号或字段名reservation的适用边界
+  out_of_scope: 不声称是2008特定部署，不混合二进制与JSON/TextFormat保证
+  reason: 现行proto2说明已核实但不能追溯为2008；正式固定2026-10-19文档commit d056cc7的真实SearchRequest/删除字段工件。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：删掉SearchRequest中的可选page_number字段后，把其编号2给另一含义的字段会怎样影响新旧读写者？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

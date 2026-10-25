@@ -2,7 +2,7 @@ id: INV-023
 kind: historical
 domain: investing
 status: sourced
-scenario_title: WeWork 2019 撤回 IPO 与救助
+scenario_title: WeWork 2019救助公告：公司现金与老股流动性
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -27,8 +27,8 @@ planning:
 research:
   id: INV-023
   status: sourced
-  reason: 当事方公告区分新融资、旧股收购和原承诺加速；可训练不把名义总额等同公司现金。
-  event: WeWork 2019 年救助融资的现金与控制分离
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  event: WeWork 2019救助公告：公司现金与老股流动性
   cutoff: 2019-10-22 公告后，后续执行前
   initial_facts:
   - id: F1
@@ -74,5 +74,22 @@ research:
     - outcome
   attempts:
   - 实际打开并阅读上述来源正文；按 Phase 2 单一范围筛选。
-  phase2_conditions: 训练解释救助结构；若要求执行结果或现金 runway，须补资料。
-  record_path: reports/research-investing.md
+  - 本轮复核初轮逐项保存的来源摘录、引用和未知；正式缩小问题范围，不新增没有依据的史实。
+  phase2_conditions: 本轮正式采用本条新问题与认知动作；原数量门槛仅存历史，不再要求未披露输入。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: sourced
+    reason: 当事方公告区分新融资、旧股收购和原承诺加速；可训练不把名义总额等同公司现金。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 名义融资总额中，哪些部分支持公司经营，哪些只改变旧股流动性与控制安排？
+  expected_output: 一份现金/权益/控制的口径拆分
+  out_of_scope: 不外推未披露cohort、边际成本、股本权利或因果贡献；不把公司披露或投资建议当成已实现投资回报。
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
+  report_path: reports/phase3-admission.md

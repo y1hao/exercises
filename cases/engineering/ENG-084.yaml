@@ -1,9 +1,9 @@
 id: ENG-084
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Netflix Open Connect CDN（2012）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Open Connect 2012：接入条件与扩展边界
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-084
@@ -35,9 +35,9 @@ planning:
     input_verification: not_started
 research:
   id: ENG-084
-  status: blocked
-  reason: Open Connect 发布可核，缺同地区命中率及交付、部署完整成本。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Netflix 2012 Open Connect 发布
+  status: sourced
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  event: Open Connect 2012：接入条件与扩展边界
   cutoff: 2012-06-04 网络扩展决策；首批试点已存在
   initial_facts:
   - id: I1
@@ -83,15 +83,23 @@ research:
     - outcome
   attempts:
   - 检索并打开当日发布公告。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 没有同地区命中率和完整成本表；数量主线改用 planning 的 constrained-decision 备用问题。
-  record_path: reports/research-engineering-b.md
-  scope_decision:
-    id: ENG-084
-    input_status: insufficient_this_round
-    reason: Open Connect 发布可核，缺同地区命中率及交付、部署完整成本。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: sourced
-  source_assessment_reason: 直接一手材料支持事件或版本行为；完整 Case QA 尚未执行。
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: blocked
+    reason: Open Connect 发布可核，缺同地区命中率及交付、部署完整成本。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 首批仅承载约5%流量、支持ISP及交换点交付时，应怎样限定下一批试点的采用条件？
+  expected_output: 一个试点准入与退回商业CDN的条件
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

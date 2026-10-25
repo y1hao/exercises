@@ -1,9 +1,9 @@
 id: PRO-014
 kind: historical
 domain: product
-status: blocked
-scenario_title: Nintendo Wii 体感大众化战略（2006）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Nintendo Wii 2006：用直觉操作扩大游戏人口
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-014
@@ -26,20 +26,89 @@ planning:
   distinctness_clusters: []
 research:
   id: PRO-014
-  status: blocked
-  reason: 官方 Iwata Asks 主站 502，英国迁移 URL 只返回导航；尚未实际读到策略正文。
-  event: Nintendo Wii 体感大众化战略（2006）
-  cutoff: 2006 发布前策略点待核
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 用2006年报的事前目标与2007财报的真实推出结果替代不可访问的Iwata Asks访谈。
+  event: Nintendo Wii 2006：用直觉操作扩大游戏人口
+  cutoff: 2006 Wii发布前；2007销量后置
+  initial_facts:
+  - id: F1
+    text: 2006年报明确提出跨年龄、性别与文化扩大游戏人口。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 公司此前已用DS触控、语音和Touch Generations面向较少玩传统游戏的人。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 年报将Wii Remote的直觉操作作为全家可玩的差异化方向，而不是只描述画面竞争。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 既有DS实践支持降低操作门槛的可行性；它不能独立证明新家用机市场一定同样接受。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    id: O1
+    text: 2007-04-26财报确认Wii已推出，首五个月硬件销售584万台；公司对扩大用户的解释仍是当事人归因。
+    source_ids:
+    - S2
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
-  sources: []
+  - 销量不能隔离控制器、价格、游戏内容、渠道的独立作用。
+  sources:
+  - id: S1
+    url: https://www.nintendo.co.jp/kessan/annual0603e.pdf
+    publisher: Nintendo
+    published_at: '2006'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  - id: S2
+    url: https://www.nintendo.co.jp/ir/pdf/2007/070426e.pdf
+    publisher: Nintendo
+    published_at: '2007-04-26'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - O1
   attempts:
   - 检索 Iwata Asks Wii Hardware；原始 iwataasks.nintendo.com 返回 502；Nintendo UK Introduction 页面实际正文仅导航，未冒充读到访谈。
-  phase2_conditions: 需恢复官方访谈或可靠原始存档。
-  record_path: reports/research-product.md
+  - url: https://www.nintendo.co.jp/kessan/annual0603e.pdf
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
+  - url: https://www.nintendo.co.jp/ir/pdf/2007/070426e.pdf
+    result: 实际打开并阅读PDF第3页Wii推出与584万台销售条目。
+  phase2_conditions:
+    original: 需恢复官方访谈或可靠原始存档。
+    remediation_applied: true
+    scope_change: 用2006年报的事前目标与2007财报的真实推出结果替代不可访问的Iwata Asks访谈。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 官方 Iwata Asks 主站 502，英国迁移 URL 只返回导航；尚未实际读到策略正文。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 在已有DS触控尝试和扩大非玩家群体的目标下，Wii应把有限产品差异化投入到传统操作熟练者还是全家可上手的控制方式？选一个并说明牺牲。
+  expected_output: 一个目标用户选择、两个事前约束和一项代价。
+  out_of_scope: 不重建未读到的访谈，不用Wii销量反推2006决策必然正确。
+  reason: 用2006年报的事前目标与2007财报的真实推出结果替代不可访问的Iwata Asks访谈。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 明确冻结单一工件/事件与问题；2条事前事实、2条有效证据、直接来源支持结果齐备。
+  report_path: reports/phase3-admission.md

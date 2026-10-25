@@ -1,9 +1,9 @@
 id: ENG-150
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Dropbox Magic Pocket（2016）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Magic Pocket 2016：自建存储的迁移验证条件
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-150
@@ -36,9 +36,9 @@ planning:
     input_verification: not_started
 research:
   id: ENG-150
-  status: blocked
-  reason: 迁移事实可核，缺同口径采购、运维、利用率与存储总成本。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Dropbox2016披露Magic Pocket迁移
+  status: sourced
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  event: Magic Pocket 2016：自建存储的迁移验证条件
   cutoff: 2013—2015自建存储决策；具体内部决策日未知
   initial_facts:
   - id: I1
@@ -84,15 +84,23 @@ research:
     - outcome
   attempts:
   - 打开2016工程原文，核对dark launch与迁移时间线。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 没有同口径采购/运维/利用率成本，使用constrained-decision备用；2016是披露年不是首次承载年。
-  record_path: reports/research-engineering-b.md
-  scope_decision:
-    id: ENG-150
-    input_status: insufficient_this_round
-    reason: 迁移事实可核，缺同口径采购、运维、利用率与存储总成本。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: sourced
-  source_assessment_reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: blocked
+    reason: 迁移事实可核，缺同口径采购、运维、利用率与存储总成本。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 双写和dark launch之后，哪些已验证条件足以支持扩大切换，哪些总成本条件仍不能推出？
+  expected_output: 一项阶段性迁移条件及不可识别的成本结论
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

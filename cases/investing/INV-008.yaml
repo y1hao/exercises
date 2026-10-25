@@ -2,7 +2,7 @@ id: INV-008
 kind: historical
 domain: investing
 status: sourced
-scenario_title: Coinbase 2021 直接上市
+scenario_title: Coinbase 2021披露：周期盈利与固定费用风险
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -27,8 +27,8 @@ planning:
 research:
   id: INV-008
   status: sourced
-  reason: 上市前 S-1 完整可读，直接披露周期依赖及不同年度盈利，可支持竞争解释训练。
-  event: Coinbase 2021 直接上市前周期盈利判断
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  event: Coinbase 2021披露：周期盈利与固定费用风险
   cutoff: 2021 年 S-1 公开之后、直接上市之前；不采用上市后价格。
   initial_facts:
   - id: F1
@@ -74,5 +74,22 @@ research:
     - outcome
   attempts:
   - 完整打开 S-1 并阅读周期、收入与费用段落。
-  phase2_conditions: 只诊断盈利可持续性的解释，不做没有进入价格的仓位精算。
-  record_path: reports/research-investing.md
+  - 本轮复核初轮逐项保存的来源摘录、引用和未知；正式缩小问题范围，不新增没有依据的史实。
+  phase2_conditions: 本轮正式采用本条新问题与认知动作；原数量门槛仅存历史，不再要求未披露输入。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: sourced
+    reason: 上市前 S-1 完整可读，直接披露周期依赖及不同年度盈利，可支持竞争解释训练。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 2020盈利能否视作正常化盈利，哪项周期和费用证据会改变判断？
+  expected_output: 一项有来源的竞争解释与可验证条件
+  out_of_scope: 不外推未披露cohort、边际成本、股本权利或因果贡献；不把公司披露或投资建议当成已实现投资回报。
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
+  report_path: reports/phase3-admission.md

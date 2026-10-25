@@ -3,7 +3,7 @@ kind: micro_design
 domain: engineering
 status: candidate
 scenario_title: 在线数据库 Schema 演进
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 合成题的范围、约束与可评价性已通过制作前准入；尚未制作完整 Brief 或通过 Case QA，不可训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: DES-014
@@ -27,3 +27,26 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-07
+active_scope:
+  decision: reframe
+  main_question: 新旧应用并存和回滚时，schema迁移何时允许删旧字段？
+  expected_output: 一个分阶段兼容性不变量
+  out_of_scope: 不扩成完整产品/企业/平台设计；不保证全部目标无代价兼得；不预设唯一标准方案。
+  reason: 逐题明确一项输出、可满足或可证明不兼得的约束和有辨识力的变化；保留Phase2已收窄的合成边界。
+  record_path: curriculum/design-admission-2027.yaml
+  design_basis:
+    synthetic: true
+    assumptions:
+    - 合成练习；场景中的组织、用户、金额、规模和政策都是题设，不是已发生事实。
+    - 一个线上服务有持续流量，数据库表新增字段后需要逐步迁移历史数据，应用部署不能同时完成。
+    feasibility_reason: 允许双轨过渡与延迟清理，不要求代码回滚自动撤销已写数据。
+    discriminating_change: 迁移过程中出现一次回滚，部分新版本实例仍在写新字段。
+    evaluation_basis:
+    - 输出是否覆盖当前约束和责任边界
+    - 变化是否揭露原方案关键假设，而不是无关加难
+    - 能说明不满足条件时的失败、拒绝或恢复路径
+    acceptable_tradeoffs: 兼容窗口与维护成本可取舍
+phase4_admission:
+  state: eligible
+  reason: 单一20分钟任务、显式合成假设、可评价约束及非唯一方案均已核对；只准入制作，不是完整Brief或训练QA。
+  report_path: reports/phase3-admission.md

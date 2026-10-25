@@ -1,9 +1,9 @@
 id: INV-038
 kind: historical
 domain: investing
-status: blocked
-scenario_title: Peloton 2018—2019 Pre-IPO
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Peloton 2019：净CAC的硬件毛利抵扣
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-038
@@ -46,9 +46,9 @@ planning:
     input_verification: not_started
 research:
   id: INV-038
-  status: blocked
-  reason: 有公司净 CAC 和贡献定义，缺同 cohort 留存及完整现金成本时序。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Peloton 2018—2019 Pre-IPO
+  status: sourced
+  reason: 正式采用预列边界问题：净CAC已经抵扣硬件毛利，不再求缺完整cohort的回本时间。
+  event: Peloton 2019：净CAC的硬件毛利抵扣
   cutoff: 2019-09-10上市前文件公开后，评估硬件抵扣获客成本的口径。
   initial_facts:
   - id: F1
@@ -102,37 +102,22 @@ research:
   attempts:
   - url: https://www.sec.gov/Archives/edgar/data/1639825/000119312519242158/d738839ds1a.htm
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
-  phase2_conditions:
-    revision_state: awaiting_source
-    policy_path: curriculum/planning-policy.yaml
-    distinctness_clusters: []
-    planned_exercise:
-      planning_only: true
-      anchor_request: Peloton 2019 上市前一份硬件加订阅 cohort
-      anchor_status: unverified_research_target
-      main_question: 硬件带来的订阅收入需要多久覆盖获客投入？
-      expected_output: 一个口径一致的回本边界
-      evidence_to_verify:
-      - 硬件毛利
-      - 获取成本
-      - 订阅贡献与留存窗口
-      out_of_scope: 不把硬件收入和订阅收入重复计为收益
-    quantitative_plan:
-      mainline_measure: 硬件获客的回本窗口
-      required_inputs:
-      - 硬件毛利、获取成本、订阅贡献与同 cohort 留存
-      missing_input_fallback:
-        focus: evidence-selection
-        question: 缺哪项硬件或订阅成本会让回本判断方向错误？
-      fallback_applied: false
-      input_verification: not_started
-  record_path: reports/research-investing-a.md
-  scope_decision:
-    id: INV-038
-    input_status: insufficient_this_round
-    reason: 有公司净 CAC 和贡献定义，缺同 cohort 留存及完整现金成本时序。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: sourced
-  source_assessment_reason: 2019 Peloton原S1/A直接给净CAC计算及贡献口径；缺同cohort完整成本/留存，按既定evidence-selection fallback。
+  - 本轮复核初轮逐项保存的来源摘录、引用和未知；正式缩小问题范围，不新增没有依据的史实。
+  phase2_conditions: 本轮正式采用本条新问题与认知动作；原数量门槛仅存历史，不再要求未披露输入。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 有公司净 CAC 和贡献定义，缺同 cohort 留存及完整现金成本时序。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-investing-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 同一笔硬件毛利在净CAC和订阅回收模型里分别出现时，哪一步会重复抵扣？
+  expected_output: 一份去重后的获取成本到订阅贡献口径图及适用边界
+  out_of_scope: 不外推未披露cohort、边际成本、股本权利或因果贡献；不把公司披露或投资建议当成已实现投资回报。
+  reason: 正式采用预列边界问题：净CAC已经抵扣硬件毛利，不再求缺完整cohort的回本时间。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
+  report_path: reports/phase3-admission.md

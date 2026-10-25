@@ -103,4 +103,20 @@ research:
     - 下载行为
     - 离线约束
     out_of_scope: 不同时设计完整供应链管理方案
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: Go1.21同期设计者文章明确下载/选择规则，适合离线策略取舍。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 离线环境应允许自动选取工具链，还是显式固定它？
+  expected_output: 一个策略及其失败回退条件
+  out_of_scope: 不同时设计完整供应链管理方案
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留Go 1.21 Toolchain 管理（2023）的单一范围；不要求不把推荐策略当唯一答案；离线约束需明确为练习条件。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：离线环境应允许自动选取工具链，还是显式固定它？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

@@ -1,9 +1,9 @@
 id: PRO-056
 kind: historical
 domain: product
-status: blocked
-scenario_title: Slack 按活跃成员计费（2013—）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Slack 2019披露：fair billing的信用额度
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-056
@@ -37,21 +37,21 @@ planning:
     out_of_scope: 不把公平感当已观测数据或混用后续条款
 research:
   id: PRO-056
-  status: blocked
-  reason: 2019 S-1证实fair billing credits，但尚无该版账单活跃定义与触发窗口，不能误用DAU定义。
-  event: Slack 按活跃成员计费（2013—）
-  cutoff: 候选单版billing规则未锁定
+  status: sourced
+  reason: 收窄到S-1已披露credit机制，不要求未核活跃天数，也不混用DAU。
+  event: Slack 2019披露：fair billing的信用额度
+  cutoff: 2019 S-1公开后，按该披露评估邀请风险；不声称2013规则或确切活跃窗口。
   initial_facts:
   - id: F1
     text: S-1称部分付费客户按人数并月/季对账。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
     text: 未用满合同人数时可得信用额度抵后续账单，不是现金退款。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
     text: 风险因素称inactive用户带来fair billing credits。
@@ -64,8 +64,9 @@ research:
     - S1
     availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
+    text: S-1确有未使用席位产生后续抵账credit的机制；未证明实际邀请量的因果变化。
+    source_ids:
+    - S1
   interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
   unknowns:
   - 内部决策材料、反事实与独立效果测量未公开
@@ -81,7 +82,25 @@ research:
     - F2
     - E1
     - E2
+    - outcome
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
-  phase2_conditions: 不把公平感当已观测数据或混用后续条款
-  record_path: reports/research-product.md
+  - 本轮复用并阅读初轮逐项记录的一手来源内容；按新问题与公开材料时点核对，不宣称新发现内部实验。
+  phase2_conditions: 正式使用本条新范围与认知动作，Phase2原题留作历史。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 2019 S-1证实fair billing credits，但尚无该版账单活跃定义与触发窗口，不能误用DAU定义。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 未使用席位产生抵后续账单的credit，会怎样改变管理员邀请成员的成本风险？
+  expected_output: 一条邀请—使用—后续账单的机制链及失效条件
+  out_of_scope: 不推定未披露用户实验、留存因果、合同或完整历史版本；不把功能交付等同商业成功。
+  reason: 收窄到S-1已披露credit机制，不要求未核活跃天数，也不混用DAU。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 复用已读来源并正式修订为材料可支撑的单题范围；缺失的内部数据不再是完成题目的必要输入。
+  report_path: reports/phase3-admission.md

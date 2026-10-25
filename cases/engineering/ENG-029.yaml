@@ -103,4 +103,20 @@ research:
     - 最小示例
     - 线程共享约束
     out_of_scope: 不讲完整 ownership 教程或宣称消除所有并发错误
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: 2015 Rust官方并发文章含实际共享/所有权示例和编译拒绝边界。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 这段共享引用能否通过编译检查，检查的保证到哪里为止？
+  expected_output: 一个边界判断及不受保证的业务竞态例子
+  out_of_scope: 不讲完整 ownership 教程或宣称消除所有并发错误
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留Rust Ownership 与 Borrow Checker（2015）的单一范围；不要求Phase4需逐字对照原文代码而非改成现代语法后假称2015。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：这段共享引用能否通过编译检查，检查的保证到哪里为止？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

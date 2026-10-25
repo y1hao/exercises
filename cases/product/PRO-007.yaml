@@ -1,9 +1,9 @@
 id: PRO-007
 kind: historical
 domain: product
-status: blocked
-scenario_title: Airbnb 房源与旅客匹配（2008—2011）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Airbnb 2022 Split Stays：长住供给增加与可完成预订
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-007
@@ -48,29 +48,80 @@ planning:
     input_verification: not_started
 research:
   id: PRO-007
-  status: blocked
-  reason: 缺早期同地区日期的有效供需和匹配分布。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Airbnb 房源与旅客匹配（2008—2011）
-  cutoff: 早期本地窗口未确定
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 原 2008–2011 供需数不足；正式采用证据选择备用动作，改为有发布快照的 2022 Split Stays。
+  event: Airbnb 2022 Split Stays：长住供给增加与可完成预订
+  cutoff: 2022-05-11 发布方案评审；实际采用方案与效果陈述后置
+  initial_facts:
+  - id: F1
+    text: 发布说明称此前三个月近一半住宿夜数来自一周及以上行程。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 原本一次搜索只找一套覆盖整个长住日期的房源。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 拆成两套房源后可组合不同日期供给；官方称长住搜索通常能多显示约40%的房源，这是展示口径。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 地图显示两段距离和顺序，旅客仍须一次一套地分别完成两次预订，组合可见性不等于两单完成。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    id: O1
+    text: 2022年夏季发布实际推出Split Stays；40%是公司对可显示房源的描述，未披露对应成交或履约提升。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 地区日期需求、可订房源、转化口径均缺
-  sources: []
+  - 两段同时可订、确认流失及履约率未公开；不构造城市订单表。
+  sources:
+  - id: S1
+    url: https://news.airbnb.com/2022-summer-release
+    publisher: Airbnb
+    published_at: '2022-05-11'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
   attempts:
   - 检索 Airbnb S-1；尝试读取 SEC 2020 S-1/A，返回正文超过 4MB 上限；检索所得 2020 总量不能代替早期本地分布。
-  phase2_conditions: 建议采用预设的证据选择备用问题（尚未改变focus），选择最高价值供需数据；仍需早期具体事件证据，禁止补合成供需表。
-  record_path: reports/research-product.md
-  scope_decision:
-    id: PRO-007
-    input_status: insufficient_this_round
-    reason: 缺早期同地区日期的有效供需和匹配分布。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: blocked
-  source_assessment_reason: 取得 S-1 定位但正文超读取上限；没有 2008—2011 同区域日期的有效供需数据。
+  - url: https://news.airbnb.com/2022-summer-release
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
+  phase2_conditions:
+    original: 建议采用预设的证据选择备用问题（尚未改变focus），选择最高价值供需数据；仍需早期具体事件证据，禁止补合成供需表。
+    remediation_applied: true
+    scope_change: 原 2008–2011 供需数不足；正式采用证据选择备用动作，改为有发布快照的 2022 Split Stays。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 缺早期同地区日期的有效供需和匹配分布。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: Split Stays 展示更多房源，是否就解决了长住匹配？在“结果房源数”与“两段均有可订日期且完成两次确认的行程比例”中选一个主要验证量并说明理由。
+  expected_output: 一段证据取舍与失败条件。
+  out_of_scope: 只看两段长住匹配；不估 2008 年城市供需，不把展示增长当成交增长。
+  reason: 原 2008–2011 供需数不足；正式采用证据选择备用动作，改为有发布快照的 2022 Split Stays。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 明确冻结单一工件/事件与问题；2条事前事实、2条有效证据、直接来源支持结果齐备。
+  report_path: reports/phase3-admission.md

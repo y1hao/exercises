@@ -83,4 +83,20 @@ research:
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
   phase2_conditions:
     scope: 编辑器 UI 与执行环境分离时，重建扩展在本地/远端运行的职责边界。
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: 2019 VS Code原发布说明明确本地UI/远端workspace扩展职责，可运行边界迁移问题。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 编辑器 UI 与执行环境分离时，重建扩展在本地/远端运行的职责边界。
+  expected_output: 一项可检验的主判断及其适用边界
+  out_of_scope: 不外推为未核实的其他版本或生产负载
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留VS Code Remote Development（2019）的单一范围；不要求个别扩展可能不兼容，不能声称全部无需改动。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：编辑器 UI 与执行环境分离时，重建扩展在本地/远端运行的职责边界。；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

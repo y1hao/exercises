@@ -1,9 +1,9 @@
 id: PRO-013
 kind: historical
 domain: product
-status: blocked
-scenario_title: Airbnb 早期 Craigslist 分发（2009—2010）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Airbnb 2014跨端推荐计划重建
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-013
@@ -37,39 +37,70 @@ planning:
     out_of_scope: 没有一手材料就保留换题条件，不复述传闻
 research:
   id: PRO-013
-  status: blocked
-  reason: 核查二手增长史后未找到可独立确认操作、许可和转化的一手记录；不能把流传的 Craigslist hack 当事实。
-  event: 候选 2009—2010 Craigslist 导流；具体日期及操作未确定
-  cutoff: 未确定，禁止将后来的叙述变成同期已知信息
+  status: sourced
+  reason: 正式放弃未核Craigslist hack，保留Airbnb但换为有当事人完整测量记录的独立推荐节点；区别Dropbox空间激励在于跨端路径与旅行完成口径。
+  event: Airbnb 2014跨端推荐计划重建
+  cutoff: 2014推荐计划重建前，既有计划入口与奖励规则可知；不先给A/B胜者
   initial_facts:
   - id: F1
-    text: 2016 年 Boston Hospitality Review 文章叙述跨发房源及供应招募；它是作者整理，并非平台原始记录。
+    text: 旧推荐计划网页难找，移动app中没有该入口。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
+  - id: F2
+    text: 新计划在受邀者完成首旅后向双方给25美元旅行抵扣，不是下载即付现金。
+    source_ids:
+    - S1
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 文章没有给出同窗口曝光、转化和渠道许可的可核数据。
+    text: 重建覆盖web、iOS、Android，并追踪邀请到新guest/host的漏斗而非只数下载。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 同期文案A/B把“自己得25”与“给朋友25”比较，后者全球表现较好，未公开完整分群效应。
     source_ids:
     - S1
     availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 仅有公开自报/文档描述；不把发布、相关性或后来的成功当成因果结论。
+    text: 公司报告重建后部分市场推荐带来的预订增加逾25%，又继续做入口和文案迭代；不是对Craigslist漏洞的证实。
+    source_ids:
+    - S1
+  interpretation: 来源只确认直接记载的规则、行为和结果；因果链为可检验维护者分析，不以历史结果倒判唯一理性选择。
   unknowns:
-  - 是否及何时部署候选操作、许可、真实转化、终止时间
+  - 完整内部决策与反事实结果未公开；公司主张和当事人回忆需单独标明
   sources:
   - id: S1
-    url: https://www.bu.edu/bhr/2016/01/08/the-making-of-airbnb/
-    publisher: Boston Hospitality Review / Morgan Brown
-    published_at: '2016-01-08'
-    source_type: secondary
+    url: https://medium.com/airbnb-engineering/hacking-word-of-mouth-making-referrals-work-for-airbnb-46468e7790a6
+    publisher: Airbnb / Jason Bosinoff
+    published_at: '2014-03-27'
+    source_type: primary
     checked_at: '2026-10-25'
     supports:
     - F1
+    - F2
     - E1
+    - E2
+    - outcome
   attempts:
   - Airbnb 官方域与创始人采访检索；阅读 Boston Hospitality Review 正文；检索结果中的增长故事未当作一手证据。
+  - 本轮重新打开并阅读所列来源正文，按新范围逐条核对；不使用搜索摘要替代。
   phase2_conditions: 保持换题条件；不可据二手叙事自动晋级或替换。
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 核查二手增长史后未找到可独立确认操作、许可和转化的一手记录；不能把流传的 Craigslist hack 当事实。
+    record_path: reports/research-product.md
+  remediation_decision: replace
+active_scope:
+  decision: replace
+  main_question: 能同时修复移动端邀请缺口与改进邀请文案时，应把渠道控制投入在哪个可测环节？
+  expected_output: 一个可核对的判断、来源支持的机制及能推翻它的条件
+  out_of_scope: 不把公告、相关性或回顾等同已识别的采用/留存因果；不补造指标、条款或任务日志
+  reason: 正式放弃未核Craigslist hack，保留Airbnb但换为有当事人完整测量记录的独立推荐节点；区别Dropbox空间激励在于跨端路径与旅行完成口径。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 至少2条事前事实、2条实质证据和直接来源支持的真实交付/观察结局已具备；准入制作并非ready。
+  report_path: reports/phase3-admission.md

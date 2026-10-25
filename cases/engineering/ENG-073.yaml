@@ -2,7 +2,7 @@ id: ENG-073
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: Meta Sapling 版本控制（2022）
+scenario_title: Sapling 2022 专用后端的 clone 与历史下载
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -38,8 +38,8 @@ planning:
 research:
   id: ENG-073
   status: sourced
-  reason: Meta2022发布说明提供lazy history下载、分段changelog与Git后端限制，足以单一历史操作责任分析。
-  event: Meta Sapling 版本控制（2022）
+  reason: 固定2022-11-15发布工件及专用后端，选择初始clone/后续历史查询的一条路径，不外推Git兼容后端。
+  event: Sapling 2022 专用后端的 clone 与历史下载
   cutoff: 2022发布工件中的Sapling专用后端查询，用户尚未下载所需历史时。
   initial_facts:
   - id: F1
@@ -103,4 +103,21 @@ research:
     - 该操作数据路径
     - 缓存与服务端约定
     out_of_scope: 不重新设计整个版本控制系统
-  record_path: reports/research-engineering-a.md
+    remediation_scope: 固定2022-11-15发布工件及专用后端，选择初始clone/后续历史查询的一条路径，不外推Git兼容后端。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: Meta2022发布说明提供lazy history下载、分段changelog与Git后端限制，足以单一历史操作责任分析。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 初次clone没有取回大部分历史时，随后访问未缓存历史的等待分别由本地和专用后端承担什么？
+  expected_output: 一张操作责任划分及一个离线边界
+  out_of_scope: 不重新设计整个版本控制系统
+  reason: 固定2022-11-15发布工件及专用后端，选择初始clone/后续历史查询的一条路径，不外推Git兼容后端。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：初次clone没有取回大部分历史时，随后访问未缓存历史的等待分别由本地和专用后端承担什么？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

@@ -2,7 +2,7 @@ id: PRO-091
 kind: historical
 domain: product
 status: sourced
-scenario_title: Substack 推荐网络上线（2022）
+scenario_title: Substack 2022-04-12 recommendations beta
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -83,4 +83,20 @@ research:
   - 打开发布与一个月更新全文，区分作者控制、通知机制和事后推广指标。
   phase2_conditions:
   - 只锚定 2022 首发；不把 2024 app+recommendations 合并贡献倒填首发结果。
-  record_path: reports/research-product-b.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+    record_path: reports/research-product-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 作者控制的推荐与回荐在什么条件下形成有效传播，又何时只是互相循环？
+  expected_output: 一个网络边界与净新增不能识别的反例
+  out_of_scope: 不以发布、用户总量或事后成功代替因果证据
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

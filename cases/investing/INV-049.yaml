@@ -1,9 +1,9 @@
 id: INV-049
 kind: historical
 domain: investing
-status: blocked
-scenario_title: Wix 2007—2008 Seed
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Wix 2007：市场总量与付费需求的论证缺口
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-049
@@ -49,9 +49,9 @@ planning:
     input_verification: not_started
 research:
   id: INV-049
-  status: blocked
-  reason: 网站总量或作者市场愿景不能等同可服务付费客群和支付意愿。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Wix 2007-10-19 BVP 第二轮 seed 投资建议 memo
+  status: sourced
+  reason: 正式采用预列证据选择备用题，取消无付款数据的SMB可服务市场精算；memo本身是可检验的真实投资论证。
+  event: Wix 2007：市场总量与付费需求的论证缺口
   cutoff: 2007-10-19 memo 建议作出之前；memo 内估计和建议条款须标归属
   initial_facts:
   - id: I1
@@ -66,11 +66,12 @@ research:
   evidence:
   - id: E1
     text: memo 把小企业网站列为目标用途，并讨论订阅、模板、广告等商业化选择；没有给出已观测的 Wix SMB 付费意愿。
-    source_ids: *id001
+    source_ids: &id002
+    - S1
     availability: pre_decision
   - id: E2
     text: memo 的网站数量和小企业数量是作者引用的市场断言；列举的 5.95 美元到数百美元月费是外部网站托管背景，不是 Wix 实测价格。
-    source_ids: *id001
+    source_ids: *id002
     availability: pre_decision
   outcome:
     text: 原始 memo 在承认商业模式不确定的同时推荐投资；能支持分析其论证缺口，不能凭其 TAM 断言形成独立市场验证。
@@ -95,17 +96,22 @@ research:
     - outcome
   attempts:
   - 阅读 BVP 原始 memo 的日期、deal、business model 与网站市场段落，区分推荐、估计和观察；网页重刊日期未知，published_at 使用原文日期。
-  phase2_conditions:
-  - 身份修正为 2007-10-19 第二轮 seed memo，不能写成泛 2008 seed。
-  - 数量输入不足，按规划应改为 evidence-selection，尚未修改 canonical focus；不得以 memo 市场断言冒充独立实测。
-  record_path: reports/research-investing-b.md
-  scope_decision:
-    id: INV-049
-    input_status: insufficient_this_round
-    reason: 网站总量或作者市场愿景不能等同可服务付费客群和支付意愿。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: blocked
-  source_assessment_reason: 原始 seed memo 已确认，但可服务 SMB 分母、独立支付证据和服务范围不足；quantitative 主线仍未满足，evidence-selection
-    尚未正式应用。
+  - 本轮复核初轮逐项保存的来源摘录、引用和未知；正式缩小问题范围，不新增没有依据的史实。
+  phase2_conditions: 本轮正式采用本条新问题与认知动作；原数量门槛仅存历史，不再要求未披露输入。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 网站总量或作者市场愿景不能等同可服务付费客群和支付意愿。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-investing-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: memo从网站总量推到可付费需求的哪一跳最薄弱，应优先用怎样的付款观察检验？
+  expected_output: 一个论证缺口、最高信息价值验证及停止外推的条件
+  out_of_scope: 不外推未披露cohort、边际成本、股本权利或因果贡献；不把公司披露或投资建议当成已实现投资回报。
+  reason: 正式采用预列证据选择备用题，取消无付款数据的SMB可服务市场精算；memo本身是可检验的真实投资论证。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
+  report_path: reports/phase3-admission.md

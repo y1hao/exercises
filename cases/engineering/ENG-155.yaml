@@ -40,7 +40,7 @@ planning:
 research:
   id: ENG-155
   status: sourced
-  reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
   event: Cloudflare2025-12-05 FL1/WAF解析改动事故
   cutoff: 2025-12-05 08:47 UTC配置传播后
   initial_facts:
@@ -87,6 +87,23 @@ research:
     - outcome
   attempts:
   - 打开12月5日独立复盘，核查两步变更与具体Lua异常。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 与11月重复feature文件事故不同；灰度应覆盖配置路径与FL1/规则组合，不提供无来源检测率。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 什么灰度观测最能提前区分解析错误与流量变化？
+  expected_output: 一个观测选择及可停止发布的证据
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

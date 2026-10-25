@@ -1,9 +1,9 @@
 id: PRO-011
 kind: historical
 domain: product
-status: blocked
-scenario_title: Figma 免费协作者与编辑席位（2016—2022）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Figma 2025 席位审批：把意外升级的控制点提前
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-011
@@ -38,43 +38,51 @@ planning:
     out_of_scope: 不混用六年套餐或直接推出企业采购成功
 research:
   id: PRO-011
-  status: blocked
-  reason: 当前官方定价可核免费 viewers，但缺 2016—2022 特定历史版收费及权限快照。
-  event: Figma 免费协作者与编辑席位（2016—2022）
-  cutoff: 2016—2022 版本未锁定
+  status: sourced
+  reason: 旧范围过宽且缺历史套餐版本；冻结2024-12-10公告中的审批与单人席位机制，不依赖后来补入的临时权限细节。
+  event: Figma 2025 席位审批：把意外升级的控制点提前
+  cutoff: 2024-12-10 新计费安排公布时
   initial_facts:
   - id: F1
-    text: 当前官方定价允许免费无限 viewers 查看评论。
+    text: 旧流程允许用户驱动升级，再由管理员于账单前审核。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: 编辑席位和查看能力有区分；当前页面包含后来的产品包。
+    text: 公司宣布2025-03-11起改变席位和计费安排，付费权限的管理员控制是明确问题。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 当前页面允许链接分享并控制查看/编辑。
+    text: 新默认流程要求会产生费用的升级先经管理员批准。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   - id: E2
-    text: 不能把当前价格与后来的席位类型回填到早期。
+    text: 旧按产品分开席位改为每位用户一个席位类型，将权限选择与账单归属合并；审批摩擦仍可能影响实际协作。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 公告确定2025-03-11实施新安排；这是公布的产品政策，不是已证实的采购转化或成本降低。
     source_ids:
     - S1
     availability: post_decision
-  outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
+  - 页面说明后续补充过临时席位信息；本题不将该细节回填到2024-12-10首版。
+  - 未披露审批对协作速度或续费的实验结果。
   sources:
   - id: S1
-    url: https://www.figma.com/pricing/
-    publisher: Figma
-    published_at: null
+    url: https://www.figma.com/blog/billing-experience-update-2025/
+    publisher: Figma / Ben Stern
+    published_at: '2024-12-10'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -82,7 +90,29 @@ research:
     - F2
     - E1
     - E2
+    - O1
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
-  phase2_conditions: 不混用六年套餐或直接推出企业采购成功
-  record_path: reports/research-product.md
+  - url: https://www.figma.com/blog/billing-experience-update-2025/
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
+  phase2_conditions:
+    original: 不混用六年套餐或直接推出企业采购成功
+    remediation_applied: true
+    scope_change: 旧范围过宽且缺历史套餐版本；冻结2024-12-10公告中的审批与单人席位机制，不依赖后来补入的临时权限细节。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 当前官方定价可核免费 viewers，但缺 2016—2022 特定历史版收费及权限快照。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 在既有“用户先升级、管理员账前审核”与新“付费权限先审批”之间，画出意外增席账单如何产生，并判断提前审批最直接改变哪个因果环节。
+  expected_output: 一条升级→审批→计费的因果链与一个代价。
+  out_of_scope: 只看2024年公告中的2025席位转换；不拼接2016年以来套餐或声称采购已成功。
+  reason: 旧范围过宽且缺历史套餐版本；冻结2024-12-10公告中的审批与单人席位机制，不依赖后来补入的临时权限细节。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 明确冻结单一工件/事件与问题；2条事前事实、2条有效证据、直接来源支持结果齐备。
+  report_path: reports/phase3-admission.md

@@ -2,7 +2,7 @@ id: ENG-116
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: Envoy xDS 动态配置（2017—）
+scenario_title: Envoy xDS 协议：ACK与实际生效
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -38,9 +38,9 @@ planning:
 research:
   id: ENG-116
   status: sourced
-  reason: 直接材料支持事件或artifact行为，完整训练未验收。
-  event: Envoy xDS当前文档ACK语义
-  cutoff: 2026-10-25文档快照；不是2017语义断言
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  event: Envoy xDS 协议：ACK与实际生效
+  cutoff: 2026-10-25本轮已读取的公开工件快照，评估其明确契约；不声称候选首发年份即含这些语义。
   initial_facts:
   - id: I1
     text: 控制面通过DiscoveryResponse传送资源
@@ -85,6 +85,23 @@ research:
     - outcome
   attempts:
   - 尝试v1.12和v1.17归档均失败；读取最新文档ACK/NACK摘要。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 开放年代候选可锚当前artifact；Phase4须锁commit，不能混称为2017原版。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 直接材料支持事件或artifact行为，完整训练未验收。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 客户端ACK一项配置后，控制面对已应用和业务健康分别能承诺什么？
+  expected_output: 一项ACK语义及仍须观察的生效条件
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

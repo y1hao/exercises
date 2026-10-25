@@ -1,9 +1,9 @@
 id: PRO-060
 kind: historical
 domain: product
-status: blocked
-scenario_title: Todoist Recurring Tasks（2010s）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Todoist 2026规则快照：固定周期与完成后周期
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-060
@@ -37,20 +37,69 @@ planning:
     out_of_scope: 不声称存在未核实的独立上线事件
 research:
   id: PRO-060
-  status: blocked
-  reason: 未找到2010s单次recurring功能快照与分群/干预；当前帮助页读取失败，不能建立留存归因。
-  event: Todoist Recurring Tasks（2010s）
-  cutoff: 2010s版本未锁定
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 用已读官方规则快照取代未核2010s留存研究；允许推演文档例子，不虚构真实用户实验。
+  event: Todoist 2026规则快照：固定周期与完成后周期
+  cutoff: 以2026-10-25读取的官方规则为快照；不推定2010s已有同版行为。
+  initial_facts:
+  - id: F1
+    text: 官方文档区分按原计划日期重复的every和按完成时间重复的every!。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 例子中周一到期的任务可能在周二完成。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: every week完成后安排下周一，every! week则安排下周二。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 规则只安排未来日期；逾期任务的下一次安排不能被当成用户留存的直接证据。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    text: 官方规则工件明确两种日期行为；文档例子是说明性输入，不是用户实测。
+    source_ids:
+    - S1
+  interpretation: 产品交付或规则是可观察工件；对用户心理、采用与因果的解释属于待检验假说。
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
-  sources: []
+  - 内部决策、完整行为数据及反事实未知，不作为本题必需输入。
+  sources:
+  - id: S1
+    url: https://www.todoist.com/help/todoist/features/introduction-to-recurring-dates-YUYVJJAV
+    publisher: Todoist
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
   attempts:
-  - 检索Todoist recurring retention和2015版本；当前官方帮助页无法读取，搜索结果中的员工留任与用户留存无关。
-  phase2_conditions: 不声称存在未核实的独立上线事件
-  record_path: reports/research-product.md
+  - 实际打开并阅读所列一手来源正文；只提取新范围所需事实，未把搜索摘要当作验证。
+  phase2_conditions: 正式采用新问题；保留原候选和旧规划以便追溯。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 未找到2010s单次recurring功能快照与分群/干预；当前帮助页读取失败，不能建立留存归因。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 一项迟做的周任务再次排到周二，是调度规则还是留存机制；哪项观察最能区分？
+  expected_output: 一项规则诊断与独立留存验证
+  out_of_scope: 不编造内部实验、未公开用户数或历史版本，不将发布方解释当独立测量。
+  reason: 用已读官方规则快照取代未核2010s留存研究；允许推演文档例子，不虚构真实用户实验。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 单一产品节点、两项背景与两项证据及直接支持的交付/观察结果已核对；准入不等于ready。
+  report_path: reports/phase3-admission.md

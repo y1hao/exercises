@@ -2,8 +2,8 @@ id: DES-020
 kind: micro_design
 domain: engineering
 status: candidate
-scenario_title: 高基数追踪数据怎样付得起
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+scenario_title: 稀有错误追踪的保留取舍
+readiness_note: 合成题的范围、约束与可评价性已通过制作前准入；尚未制作完整 Brief 或通过 Case QA，不可训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: DES-020
@@ -38,3 +38,28 @@ planning:
     - 可在采样、保留窗口与索引范围间取舍，不要求同时保留全部原始 spans。
     scoped_change: 用户要求找出一天前一次极少发生的错误调用链。
     out_of_scope: 不设计完整 APM 存储平台，不要求固定预算下保证找回任意稀有请求。
+active_scope:
+  decision: reframe
+  main_question: 预算内追踪如何支持排查罕见历史错误？
+  expected_output: 一个保留策略与不可恢复边界
+  out_of_scope: 不扩成完整产品/企业/平台设计；不保证全部目标无代价兼得；不预设唯一标准方案。
+  reason: 逐题明确一项输出、可满足或可证明不兼得的约束和有辨识力的变化；保留Phase2已收窄的合成边界。
+  record_path: curriculum/design-admission-2027.yaml
+  design_basis:
+    synthetic: true
+    assumptions:
+    - 合成练习；场景中的组织、用户、金额、规模和政策都是题设，不是已发生事实。
+    - 只处理最近一天的按服务错误请求追踪，不覆盖任意用户路径和全部 APM 查询。
+    - 流量数量级沿用原合成场景，不作为任何公司的实际数据。
+    - 可在采样、保留窗口与索引范围间取舍，不要求同时保留全部原始 spans。
+    feasibility_reason: 有限存储不保证事后找回所有未采集span；允许明确覆盖与缺失。
+    discriminating_change: 用户要求找出一天前一次极少发生的错误调用链。
+    evaluation_basis:
+    - 输出是否覆盖当前约束和责任边界
+    - 变化是否揭露原方案关键假设，而不是无关加难
+    - 能说明不满足条件时的失败、拒绝或恢复路径
+    acceptable_tradeoffs: 保留重点与均匀覆盖均可比较
+phase4_admission:
+  state: eligible
+  reason: 单一20分钟任务、显式合成假设、可评价约束及非唯一方案均已核对；只准入制作，不是完整Brief或训练QA。
+  report_path: reports/phase3-admission.md

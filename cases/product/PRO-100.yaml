@@ -1,9 +1,9 @@
 id: PRO-100
 kind: historical
 domain: product
-status: blocked
-scenario_title: Shopify App Store（2009）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Shopify 2009 App Store首发：BaseSync扩展边界
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-100
@@ -37,9 +37,9 @@ planning:
     out_of_scope: 不把全部插件数量解释为留存因果
 research:
   id: PRO-100
-  status: blocked
-  reason: 首发身份与单项插件用途已核，但规划需要的早期权限、数据及替代边界材料不足。
-  event: Shopify 2009-06-02 App Store 首发：BaseSync 商品同步需求
+  status: sourced
+  reason: 只讨论首发可核产品边界，不再要求未取得的2009完整数据权限或退出合同。
+  event: Shopify 2009 App Store首发：BaseSync扩展边界
   cutoff: 2009-06-02 首发后、商家选择 BaseSync 外部扩展前
   initial_facts:
   - id: I1
@@ -61,8 +61,9 @@ research:
     source_ids: *id001
     availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
+    text: Shopify实际首发API/App Store并列BaseSync商品同步功能；公告不证明留存因果或完整数据权利。
+    source_ids:
+    - S1
   interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
   unknowns:
   - 未取得 2009 BaseSync 的数据授权范围、撤销权限、数据可迁出条件和实际收费协议。
@@ -79,10 +80,26 @@ research:
     - I2
     - E1
     - E2
+    - outcome
   attempts:
   - 打开 2009 原始发布稿，核对 API beta、具体首发 app、交易管理与分发约定。
   - 检索首发 app 历史，当前开发文档不能闭合 2009 插件数据/权限条件。
-  phase2_conditions:
-  - 保留单项 BaseSync 任务；补当时插件权限及退出数据前保持 blocked。
-  - 不得用全部插件数量或厂商动机直接推出留存因果。
-  record_path: reports/research-product-b.md
+  - 本轮复用并阅读初轮逐项记录的一手来源内容；按新问题与公开材料时点核对，不宣称新发现内部实验。
+  phase2_conditions: 正式使用本条新范围与认知动作，Phase2原题留作历史。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 首发身份与单项插件用途已核，但规划需要的早期权限、数据及替代边界材料不足。
+    record_path: reports/research-product-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 商品同步需求由外部BaseSync满足，怎样改变核心产品与扩展的责任边界，什么时候应停止外推？
+  expected_output: 一条需求—扩展—依赖关系及不能假定的权限边界
+  out_of_scope: 不推定未披露用户实验、留存因果、合同或完整历史版本；不把功能交付等同商业成功。
+  reason: 只讨论首发可核产品边界，不再要求未取得的2009完整数据权限或退出合同。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 复用已读来源并正式修订为材料可支撑的单题范围；缺失的内部数据不再是完成题目的必要输入。
+  report_path: reports/phase3-admission.md

@@ -1,9 +1,9 @@
 id: PRO-103
 kind: historical
 domain: product
-status: blocked
-scenario_title: Atlassian Jira Cloud 分层定价（2019—2020）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Jira Cloud 2020免费档：十人边界与团队增长
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-103
@@ -37,9 +37,9 @@ planning:
     out_of_scope: 不混用两年不同套餐上限
 research:
   id: PRO-103
-  status: blocked
-  reason: 免费发布日期和人数限制可核，但同版功能与迁移规则未闭合，无法完成完整采用/升级边界。
-  event: Atlassian 2020-03-18 Jira Cloud 免费档全面推出
+  status: sourced
+  reason: 只使用2020-03-18公告明确的免费人数及长期供给，不要求未核迁移细则或价格精算。
+  event: Jira Cloud 2020免费档：十人边界与团队增长
   cutoff: 2020-03-18 公告后、小团队选择 Free 或升级前
   initial_facts:
   - id: I1
@@ -62,8 +62,9 @@ research:
     source_ids: *id001
     availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
+    text: 3月18日官方宣布至多十人免费且非限时优惠；本题不混入9月或当前版本的功能、迁移细则。
+    source_ids:
+    - S1
   interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
   unknowns:
   - 2020-03-18 Free 的完整存储、权限、支持与迁移限制未取得冻结版。
@@ -79,6 +80,7 @@ research:
     - I1
     - I2
     - E2
+    - outcome
   - id: S2
     url: https://www.atlassian.com/licensing/cloud
     publisher: Atlassian
@@ -90,6 +92,22 @@ research:
   attempts:
   - 打开 2020 发布公告和 licensing 页面，核对发布日期与历史 Starter 说明。
   - 检索同期 Free 人数/功能限制；当前页面未证明当时全部套餐与迁移规则。
-  phase2_conditions:
-  - 先补同版功能、价格和迁移规则再给升级预测；保持一次 2020-03-18 节点。
-  record_path: reports/research-product-b.md
+  - 本轮复用并阅读初轮逐项记录的一手来源内容；按新问题与公开材料时点核对，不宣称新发现内部实验。
+  phase2_conditions: 正式使用本条新范围与认知动作，Phase2原题留作历史。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 免费发布日期和人数限制可核，但同版功能与迁移规则未闭合，无法完成完整采用/升级边界。
+    record_path: reports/research-product-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 十人以内永久免费会怎样改变新团队采用；需求或人数超过边界时，哪种条件使采用预测反转？
+  expected_output: 一个条件预测及增长后付费/替代的边界
+  out_of_scope: 不推定未披露用户实验、留存因果、合同或完整历史版本；不把功能交付等同商业成功。
+  reason: 只使用2020-03-18公告明确的免费人数及长期供给，不要求未核迁移细则或价格精算。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 复用已读来源并正式修订为材料可支撑的单题范围；缺失的内部数据不再是完成题目的必要输入。
+  report_path: reports/phase3-admission.md

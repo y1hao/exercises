@@ -2,7 +2,7 @@ id: PRO-042
 kind: historical
 domain: product
 status: sourced
-scenario_title: Unity Runtime Fee 争议与撤回（2023—2024）
+scenario_title: Unity Runtime Fee 2023修订至2024撤销
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -91,4 +91,20 @@ research:
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
   phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 2023修订信与2024取消公告完整确认收费政策变动；明确没有真实收费账单。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 哪些证据说明收费规则可被理解，哪些才说明开发者愿意继续投入？
+  expected_output: 一个信任验证选择及能推翻的结果
+  out_of_scope: 不以发布、用户总量或事后成功代替因果证据
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

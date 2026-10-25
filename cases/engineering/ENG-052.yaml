@@ -104,4 +104,20 @@ research:
     - 副本与读写配置
     - 冲突处理规则
     out_of_scope: 不设计整个购物车系统或做无数字的精算
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: Dynamo2007原论文支持N/R/W、版本冲突和sloppy quorum边界。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 在这一组读写配置下，请求会失败还是返回多个版本？
+  expected_output: 一条分区时序预测及冲突条件
+  out_of_scope: 不设计整个购物车系统或做无数字的精算
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留Amazon Dynamo（2007）的单一范围；不要求需指定可达节点与时序，否则请求失败还是多版本无法唯一确定。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：在这一组读写配置下，请求会失败还是返回多个版本？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

@@ -1,9 +1,9 @@
 id: ENG-007
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: SolarWinds Orion 供应链攻击（2020）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: SolarWinds SUNSPOT 构建注入取证（2021-01披露）
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-007
@@ -37,48 +37,49 @@ planning:
     out_of_scope: 不设计横向传播防御体系或复现攻击
 research:
   id: ENG-007
-  status: blocked
-  reason: SolarWinds 当事人调查已读，确认构建注入；发布工件签名与来源核验的可操作证据链仍不足。
-  event: SolarWinds Orion 供应链攻击（2020）
-  cutoff: 2020 已签名发布工件的鉴别节点尚未锁定。
+  status: sourced
+  reason: 签名验证不能直接证明源代码未被临时替换；将问题收窄为调查方实际分析工件上的构建期证据，避免未核独立重建。
+  event: SolarWinds SUNSPOT 构建注入取证（2021-01披露）
+  cutoff: 2021-01-11调查报告材料快照，在根据构建样本判断注入路径前
   initial_facts:
   - id: F1
-    text: Orion 构建过程成为调查对象。
+    text: 调查针对Orion构建环境中的恶意工具SUNSPOT。
     source_ids:
     - S1
     availability: pre_decision
   - id: F2
-    text: SolarWinds 与外部调查者分析构建注入。
+    text: 正常编译任务由MsBuild.exe执行。
     source_ids:
     - S1
     availability: pre_decision
   evidence:
   - id: E1
-    text: 厂商称发现用于向 Orion 构建插入 SUNBURST 的恶意代码源。
+    text: 样本监测MsBuild命令行中的Orion解决方案路径。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   - id: E2
-    text: 厂商当时未独立核实攻击者身份。
+    text: 分析显示源文件先被备份/替换，编译结束后再恢复。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   outcome:
     id: O1
-    text: ''
-    source_ids: []
-    availability: post_decision
-  interpretation:
-    text: 恶意代码注入及复杂性评价属厂商归因。
+    text: CrowdStrike在其受托调查中判定SUNSPOT临时替换InventoryManager.cs，使标准编译产物含SUNBURST；这是调查归因而非本项目独立复现。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 当时签名检查输入与独立重建可行性；CISA 原URL返回403。
+  - 攻击者全部初始入口未知；未证实客户能在当时自行独立复现构建。
   sources:
   - id: S1
-    url: https://www.solarwinds.com/blog/new-findings-from-our-investigation-of-sunburst
-    publisher: SolarWinds / Sudhakar Ramakrishna
+    url: https://www.crowdstrike.com/en-us/blog/sunspot-malware-technical-analysis/
+    publisher: CrowdStrike Intelligence Team
     published_at: '2021-01-11'
     source_type: primary
     checked_at: '2026-10-25'
@@ -87,18 +88,40 @@ research:
     - F2
     - E1
     - E2
+    - O1
   attempts:
   - url: https://www.solarwinds.com/blog/new-findings-from-our-investigation-of-sunburst
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://www.crowdstrike.com/en-us/blog/sunspot-malware-technical-analysis/
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    planning_only: true
-    anchor_request: SolarWinds 2020 候选事件的发布工件核验节点
-    anchor_status: unverified_research_target
-    main_question: 在签名仍可信的条件下，下一项什么检查最能检验工件来源？
-    expected_output: 选择一项证据并解释它可排除的假说
-    evidence_to_verify:
-    - 构建到签名的链路
-    - 可知工件信息
-    - 公开检查能力
-    out_of_scope: 不设计横向传播防御体系或复现攻击
-  record_path: reports/research-engineering-a.md
+    original:
+      planning_only: true
+      anchor_request: SolarWinds 2020 候选事件的发布工件核验节点
+      anchor_status: unverified_research_target
+      main_question: 在签名仍可信的条件下，下一项什么检查最能检验工件来源？
+      expected_output: 选择一项证据并解释它可排除的假说
+      evidence_to_verify:
+      - 构建到签名的链路
+      - 可知工件信息
+      - 公开检查能力
+      out_of_scope: 不设计横向传播防御体系或复现攻击
+    remediation_applied: true
+    scope_change: 签名验证不能直接证明源代码未被临时替换；将问题收窄为调查方实际分析工件上的构建期证据，避免未核独立重建。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: blocked
+    reason: SolarWinds 当事人调查已读，确认构建注入；发布工件签名与来源核验的可操作证据链仍不足。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 仓库检出的源码正常时，应比较哪一处构建过程证据才能检验编译期注入？
+  expected_output: 选择编译输入与构建前后文件的一项对照，写明能区分的两个假说
+  out_of_scope: 不提供攻击操作教程，不假定独立重建当时可用，不讨论横向移动
+  reason: 签名验证不能直接证明源代码未被临时替换；将问题收窄为调查方实际分析工件上的构建期证据，避免未核独立重建。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：仓库检出的源码正常时，应比较哪一处构建过程证据才能检验编译期注入？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

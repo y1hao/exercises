@@ -1,9 +1,9 @@
 id: ENG-126
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: TiDB Percolator 模型（2016）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: TiKV Deep Dive：Percolator primary提交后的secondary锁
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-126
@@ -27,19 +27,36 @@ planning:
   - ME-05
 research:
   id: ENG-126
-  status: blocked
-  reason: 官方深度文档可证primary/secondary锁恢复机制，但未证其内容在2016版本的具体状态。
-  event: TiDB2016 Percolator候选
-  cutoff: 2016具体版本尚未核定
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 明确冻结来源版本；不倒推候选初始年份。
+  event: TiKV Deep Dive：Percolator primary提交后的secondary锁
+  cutoff: 2026-10-25读取的官方Percolator教学算法快照；不声明2016所有实现语义
+  initial_facts:
+  - id: I1
+    text: 算法把事务分为prewrite和commit。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: secondary锁记录primary锁所在位置。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: primary提交形成事务提交节点，secondary提交失败不改变已经提交的事务。
+    source_ids: *id001
+    availability: post_decision
+  - id: E2
+    text: 读遇到较早事务的锁时需退避处理；恢复可依据primary的状态决定锁的提交或回滚。
+    source_ids: *id001
+    availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 与真实史实分开标注机制推断；示例不得变成虚构事故。
+    text: 可核对的是官方算法图解中的primary决定和secondary锁处理；不是某次生产故障或现代优化快路径。
+    source_ids:
+    - S1
+  interpretation: 来源所述观察/机制与维护者迁移推论分开；规范示例是工件推演，不宣称真实生产事故。
   unknowns:
-  - 未公开工作量、内部决策过程或具体故障日志未知。
-  - 官方深度文档可证primary/secondary锁恢复机制，但未证其内容在2016版本的具体状态。
+  - 未公开内部决策日、完整负载及业务效果未知；不要求用户据此精算。
   sources:
   - id: S1
     url: https://tikv.github.io/deep-dive-tikv/distributed-transaction/percolator.html
@@ -47,9 +64,32 @@ research:
     published_at: null
     source_type: primary
     checked_at: '2026-10-25'
-    supports: []
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
   attempts:
   - 打开TiKV Percolator文档读完整prewrite/commit/crash章节；2017 PingCAP历史文章读取失败。
+  - 本轮实际打开一手正文，按可读机制/事件重新核查准入。
   phase2_conditions:
-  - 需定位2016代码/文档快照；不将当前或未标日期文档当作2016真实执行。
-  record_path: reports/research-engineering-b.md
+  - 保留原ID和课程日期；候选标题与本次修订建立显式映射。
+  - 结果和隐藏证据不得进入首轮或Starter Prompt。
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: blocked
+    reason: 官方深度文档可证primary/secondary锁恢复机制，但未证其内容在2016版本的具体状态。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: primary已提交而secondary还留锁时，应寻找什么状态区分等待、提交清锁和回滚？
+  expected_output: 围绕单一问题给出可由证据推翻的解释或选择及边界
+  out_of_scope: 不扩写整家公司或系统史，不添加未公开指标、日志和决策者观点
+  reason: 明确冻结来源版本；不倒推候选初始年份。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 2项可知事实、2项实质证据与机制/事件结局齐备；尚未制作完整Brief和QA。
+  report_path: reports/phase3-admission.md

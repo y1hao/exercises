@@ -1,9 +1,9 @@
 id: ENG-120
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: NATS JetStream 持久流（2020）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: NATS 2.2 JetStream：窗口去重与业务效果
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-120
@@ -38,19 +38,36 @@ planning:
     out_of_scope: 不提前加入后续版本功能
 research:
   id: ENG-120
-  status: blocked
-  reason: 官方2.2发布说明可证持久流、至少一次及窗口去重，但不能据此认定是2020发布契约。
-  event: NATS JetStream2020候选
-  cutoff: 2020具体preview语义待核定
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 明确冻结来源版本；不倒推候选初始年份。
+  event: NATS 2.2 JetStream：窗口去重与业务效果
+  cutoff: NATS 2.2发布说明快照；移除未经核实的2020首发时点
+  initial_facts:
+  - id: I1
+    text: JetStream在NATS server内提供流持久化。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 持久流通过consumer投递或重放消息。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 2.2发布说明承诺至少一次投递。
+    source_ids: *id001
+    availability: post_decision
+  - id: E2
+    text: 同一发布说明限定exactly once为within a window，不是任意时长外部业务副作用。
+    source_ids: *id001
+    availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 来源描述与我们的推论分开；不能以当前文档倒推早年版本。
+    text: 可核结果是2.2交付了持久流及有窗口限制的去重契约；外部数据库写入并未被该声明自动纳入。
+    source_ids:
+    - S1
+  interpretation: 来源所述观察/机制与维护者迁移推论分开；规范示例是工件推演，不宣称真实生产事故。
   unknowns:
-  - 精确决策日及未公开观测未知。
-  - 官方2.2发布说明可证持久流、至少一次及窗口去重，但不能据此认定是2020发布契约。
+  - 未公开内部决策日、完整负载及业务效果未知；不要求用户据此精算。
   sources:
   - id: S1
     url: https://github.com/nats-io/nats.docs/blob/master/release_notes/whats_new_22.md
@@ -58,9 +75,32 @@ research:
     published_at: null
     source_type: primary
     checked_at: '2026-10-25'
-    supports: []
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
   attempts:
   - 猜测JetStream发布URL失败；搜索到2.2正式发布资料和2019技术预览，打开官方2.2 release notes。
+  - 本轮实际打开一手正文，按可读机制/事件重新核查准入。
   phase2_conditions:
-  - 需核定2020preview或显式改期映射；不把消息exactly once扩展为业务副作用一次。
-  record_path: reports/research-engineering-b.md
+  - 保留原ID和课程日期；候选标题与本次修订建立显式映射。
+  - 结果和隐藏证据不得进入首轮或Starter Prompt。
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: blocked
+    reason: 官方2.2发布说明可证持久流、至少一次及窗口去重，但不能据此认定是2020发布契约。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 业务处理已完成但ack丢失，2.2的窗口去重声明能否证明外部副作用只发生一次？
+  expected_output: 一个投递保证与业务效果边界
+  out_of_scope: 不提前加入后续版本功能
+  reason: 明确冻结来源版本；不倒推候选初始年份。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 2项可知事实、2项实质证据与机制/事件结局齐备；尚未制作完整Brief和QA。
+  report_path: reports/phase3-admission.md

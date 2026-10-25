@@ -1,9 +1,9 @@
 id: PRO-035
 kind: historical
 domain: product
-status: blocked
-scenario_title: Dropbox Freemium 存储配额（2008—）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Dropbox Pro 2014：容量与共享控制的付费触发
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-035
@@ -38,43 +38,50 @@ planning:
     out_of_scope: 不混入推荐奖励或后续团队套餐
 research:
   id: PRO-035
-  status: blocked
-  reason: 创始人回述2008采用freemium，但2GB来自访谈时套餐讨论，缺2008准确边界与按任务升级证据；不得回填后来容量。
-  event: Dropbox 2008-09 发布 freemium 配额
-  cutoff: 2008 发布套餐已知、某使用任务升级判断前
+  status: sourced
+  reason: 2008免费额度与升级队列不足；改为2014-08-27具体Pro发布政策，对同一付费触发问题做有限反事实。
+  event: Dropbox Pro 2014：容量与共享控制的付费触发
+  cutoff: 2014-08-27 Pro改版方案评审
   initial_facts:
   - id: F1
-    text: Houston 称2008公开发布时已用免费到一定容量、超额收费模式。
+    text: 既有Pro用户已经使用Dropbox保存与分享文件；公司称用户要求更强共享保护。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: 访谈以免费2GB为当时容量边界讨论，非承诺全部后续套餐不变。
+    text: 改版保持每月9.99美元，计划合并为1TB单一Pro方案。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 创始人强调定价需预先考虑，给免费后收回会带来损失感。
+    text: 新方案提供共享链接密码和到期时间；它们解决访问边界而非存储容量。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   - id: E2
-    text: 同篇承认想靠AB testing/分析校准，未给按任务的升级队列。
+    text: 共享文件夹只读权限控制编辑风险，远程擦除用于丢失设备；这些任务不会因容量增加自动完成。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: Dropbox宣布容量与控制功能一同升级，既有Pro用户自动更新；没有公布拆分各功能的升级转化贡献。
     source_ids:
     - S1
     availability: post_decision
-  outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
+  - 缺少各功能独立实验和升级用户动机分布；预测允许被观察否定。
   sources:
   - id: S1
-    url: https://mixergy.com/interviews/drew-houston-dropbox-interview/
-    publisher: Mixergy / Drew Houston
-    published_at: null
+    url: https://blog.dropbox.com/topics/product/introducing-more-powerful-dropbox-pro
+    publisher: Dropbox / Chenli Wang
+    published_at: '2014-08-27'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -82,7 +89,29 @@ research:
     - F2
     - E1
     - E2
+    - O1
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
-  phase2_conditions: 不混入推荐奖励或后续团队套餐
-  record_path: reports/research-product.md
+  - url: https://blog.dropbox.com/topics/product/introducing-more-powerful-dropbox-pro
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
+  phase2_conditions:
+    original: 不混入推荐奖励或后续团队套餐
+    remediation_applied: true
+    scope_change: 2008免费额度与升级队列不足；改为2014-08-27具体Pro发布政策，对同一付费触发问题做有限反事实。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 创始人回述2008采用freemium，但2GB来自访谈时套餐讨论，缺2008准确边界与按任务升级证据；不得回填后来容量。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 若只把Pro容量增加到1TB而不提供共享权限控制，哪些原来因共享风险而考虑升级的任务仍无法满足？预测一类升级动机并给出可推翻它的观察。
+  expected_output: 一个有条件的反事实预测及其反例。
+  out_of_scope: 只看2014 Pro改版；不混入2008发布、推荐奖励或后来团队套餐。
+  reason: 2008免费额度与升级队列不足；改为2014-08-27具体Pro发布政策，对同一付费触发问题做有限反事实。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 明确冻结单一工件/事件与问题；2条事前事实、2条有效证据、直接来源支持结果齐备。
+  report_path: reports/phase3-admission.md

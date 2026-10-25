@@ -1,9 +1,9 @@
 id: INV-002
 kind: historical
 domain: investing
-status: blocked
-scenario_title: Instacart 2020—2023 融资/上市
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Instacart 2023年报：净额收入与毛利边界
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-002
@@ -47,31 +47,85 @@ planning:
     input_verification: not_started
 research:
   id: INV-002
-  status: blocked
-  reason: 招股书正文读取失败，同窗口广告与交易的归属成本未核实。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Instacart 2023 IPO 前订单与广告贡献拆分
-  cutoff: 拟以 2023 上市前公开报表为界，尚未完整核定。
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 改用实际读到的2023年报，取消缺少成本分摊的上市前分部估值。
+  event: Instacart 2023年报：净额收入与毛利边界
+  cutoff: 2024-03-05年报公开后评估已披露经营质量，不模拟2023IPO前获得未来报表。
+  initial_facts:
+  - id: F1
+    text: 年报将收入分为交易收入和广告及其他收入。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 交易收入在支付商品款及shopper报酬后净额列报；并非消费者订单总额。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 2023交易收入2171、广告及其他871、收入成本764，单位均为百万美元。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 报表给出的合并毛利2278；收入成本还有支付处理、保险等，不能把广告收入全算成广告利润。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 搜索检索到广告与交易收入分类，不足以确认各自完整成本口径。
+    text: 年报实际披露3042收入和2278毛利；这是公司合并会计结果，不是各业务独立利润。
+    source_ids:
+    - S1
+  interpretation: 来源披露、当事人解释与维护者推论区分；不以事后结果裁定唯一正确选择。
   unknowns:
-  - 广告与交易成本的可归属范围；同窗口订单利润；完整原文。
-  sources: []
+  - 完整内部判断及反事实结果未知；不计算未披露的价格、成本或实现回报。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1579091/000157909124000027/cart-20231231.htm
+    publisher: Maplebear / SEC
+    published_at: '2024-03-05'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
   attempts:
-  - https://www.sec.gov/Archives/edgar/data/1579091/000119312523221345/d55348ds1.htm：正文超 4MB 抓取限制。
-  - https://investors.instacart.com/static-files/f55982cd-0974-4fbf-ba2a-c1a545971697：官方 PDF 读取错误。
-  - https://instacart.gcs-web.com/static-files/8fe29217-df54-48c5-89a1-387a5220ef0e：官方 PDF 读取错误。
-  phase2_conditions: 不退回 2020 融资混用数据；需重试正文或改用明确的定性备用问题。
-  record_path: reports/research-investing.md
-  scope_decision:
-    id: INV-002
-    input_status: insufficient_this_round
-    reason: 招股书正文读取失败，同窗口广告与交易的归属成本未核实。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: blocked
-  source_assessment_reason: 找到同期 S-1 和官方 PDF，但正文读取渠道因体积或访问错误失败；不能把搜索摘要当成完整利润归属依据。
+  - 实际打开并阅读所列一手材料；本轮按修改后的单一问题核对，不以搜索摘要补事实。
+  phase2_conditions: 本轮正式修订单题范围；原候选和Phase2规划另保留，制作时使用本条新范围。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 招股书正文读取失败，同窗口广告与交易的归属成本未核实。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 交易与广告收入合计能复算多少毛利；为什么不能据此分配两项业务各自的履约利润？
+  expected_output: 一项合并毛利复算与净额列报、成本归属的边界
+  out_of_scope: 不推定未披露交易条款、内部现金跑道、同cohort成本或因果贡献；公开披露时点不是原私募投资时点。
+  reason: 改用实际读到的2023年报，取消缺少成本分摊的上市前分部估值。
+  record_path: reports/remediation-investing.md
+  quantitative_inputs:
+  - name: transaction_revenue
+    value: 2171
+    unit: USD million
+    source_ids:
+    - S1
+  - name: advertising_other
+    value: 871
+    unit: USD million
+    source_ids:
+    - S1
+  - name: cost_of_revenue
+    value: 764
+    unit: USD million
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 明确单一节点与可回答的问题，至少2项事前事实、2项实质证据和直接支持的观察结果；准入不等于ready。
+  report_path: reports/phase3-admission.md

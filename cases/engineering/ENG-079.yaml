@@ -116,4 +116,21 @@ research:
     - 控制面确认语义
     - 数据面刷新路径
     out_of_scope: 不把多组件异步传播写成全局即时生效
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: Kubernetesv1.21.0源码固定tag明确EndpointSlice pending/applied缓存及回调队列，支持非即时生效。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 控制面确认删除后，一条旧请求路径是否还可能被使用？
+  expected_output: 一个传播时序与能证明生效的观察点
+  out_of_scope: 不把多组件异步传播写成全局即时生效
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留Kubernetes EndpointSlice 传播（2019—2021）的单一范围；不要求新请求路由与已有连接需区分；全局所有节点生效需要各节点观测，单次API
+    ACK不足。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：控制面确认删除后，一条旧请求路径是否还可能被使用？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

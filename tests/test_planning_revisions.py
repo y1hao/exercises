@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from common import read_yaml  # noqa: E402
 from revise_curriculum import prepare, tsv_by_id  # noqa: E402
+from audit_curriculum import FOCUS  # noqa: E402
 
 
 class PlanningRevisionTests(unittest.TestCase):
@@ -57,7 +58,8 @@ class PlanningRevisionTests(unittest.TestCase):
                 self.assertNotIn("sources", scope)
 
     def test_all_quantitative_items_have_unapplied_specific_fallbacks(self):
-        quant = {e["id"] for e in self.index if e["focus"] == "quantitative-calibration"}
+        notes = tsv_by_id(ROOT / 'reports/phase2-review-notes.tsv')
+        quant = {identifier for identifier, note in notes.items() if FOCUS[note['focus']] == 'quantitative-calibration'}
         planned = {r["id"] for r in self.planning if "quantitative_plan" in r}
         self.assertEqual(quant, planned)
         self.assertEqual(len(planned), 39)

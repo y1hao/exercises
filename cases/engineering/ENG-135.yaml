@@ -27,7 +27,7 @@ planning:
 research:
   id: ENG-135
   status: sourced
-  reason: 直接来源支持所选artifact或事件，完整Case QA未执行。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
   event: npm event-stream2018依赖劫持
   cutoff: 2018-11-26恶意包告警后的应对
   initial_facts:
@@ -74,6 +74,23 @@ research:
     - outcome
   attempts:
   - 打开npm官方技术分析全文。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 不推断所有安装者都泄露私钥；源中的Copay确认属明确转述。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 直接来源支持所选artifact或事件，完整Case QA未执行。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 维护者交接导致恶意依赖代码进入发布链；如何界定依赖信任和审查成本。
+  expected_output: 围绕单一问题给出可由证据推翻的解释或选择及边界
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

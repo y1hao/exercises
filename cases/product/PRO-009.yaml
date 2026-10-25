@@ -2,7 +2,7 @@ id: PRO-009
 kind: historical
 domain: product
 status: sourced
-scenario_title: Netflix DVD 邮寄方案（1997—1999）
+scenario_title: Netflix 1998-04-14 DVD 邮寄租赁上线
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -87,4 +87,20 @@ research:
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
   phase2_conditions: 不提前使用后续订阅或流媒体结果
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 找到 1998 原始发布，明确按次计价、邮寄与选片路径，不借后续订阅结果。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 该方案最主要减少了用户哪一种租赁摩擦？
+  expected_output: 一条用户任务因果链及剩余成本
+  out_of_scope: 不提前使用后续订阅或流媒体结果
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

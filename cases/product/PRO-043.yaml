@@ -1,9 +1,9 @@
 id: PRO-043
 kind: historical
 domain: product
-status: blocked
-scenario_title: Atlassian Jira 自助购买（2000s）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Atlassian 2015：自助销售把评估责任移到哪里
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-043
@@ -37,20 +37,82 @@ planning:
     out_of_scope: 不估无来源销售成本或评价全部销售策略
 research:
   id: PRO-043
-  status: blocked
-  reason: 定位2015 F-1自助销售披露但原文超读取上限，且不能填补2000s具体审批/安全购买场景。
-  event: Atlassian Jira 自助购买（2000s）
-  cutoff: 2000s 某采购约束尚未锁定
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 原2000年代时间范围过宽；实际下载并提取2015-11-09 F-1，冻结当时自助评估与支持边界。
+  event: Atlassian 2015：自助销售把评估责任移到哪里
+  cutoff: 2015-11-09 F-1公开销售模式快照
+  initial_facts:
+  - id: F1
+    text: 招股书披露公开产品价格、文档与知识库，提供免费且功能完整的试用。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 公司当时不雇用传统佣金制直接销售队伍，购买主要走网页自动流程并支持信用卡或转账。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 免费试用仍包括完整技术和销售支持，客户服务团队继续协助并发现可自动化环节；自助不等于取消服务。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: Atlassian Experts提供部署、定制、本地货币语言和合规采购帮助；客户承担初步评估不代表组织采购与实施全能自助完成。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    id: O1
+    text: F-1报告超过98%交易经网站，但间接渠道约占2015财年收入25%；两种不同分母同时存在，不能把网站交易误读成没有渠道服务。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
-  sources: []
+  - 招股书是公司披露，不是边界转移独立因果评估；具体销售成本、客服满意度和客户实施费用未知。
+  sources:
+  - id: S1
+    url: https://d1lge852tjjqow.cloudfront.net/CIK-0001650372/5a3f92c2-b552-414e-9c41-2b1a17e01f07.pdf
+    publisher: Atlassian / 2015 F-1
+    published_at: '2015-11-09'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
   attempts:
   - 检索 Atlassian 2015 F-1；尝试读取 SEC filename1.htm 返回超4MB；未把搜索摘要的97%网站成交当同期2000s情境。
-  phase2_conditions: 不估无来源销售成本或评价全部销售策略
-  record_path: reports/research-product.md
+  - url: https://d1lge852tjjqow.cloudfront.net/CIK-0001650372/5a3f92c2-b552-414e-9c41-2b1a17e01f07.pdf
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
+  - url: https://d1lge852tjjqow.cloudfront.net/CIK-0001650372/5a3f92c2-b552-414e-9c41-2b1a17e01f07.pdf
+    result: 实际下载公开PDF并用PDFKit提取第7、27、64、112、125页；第125页核读完整试用支持、在线购买与Experts条目。
+  phase2_conditions:
+    original: 不估无来源销售成本或评价全部销售策略
+    remediation_applied: true
+    scope_change: 原2000年代时间范围过宽；实际下载并提取2015-11-09 F-1，冻结当时自助评估与支持边界。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 定位2015 F-1自助销售披露但原文超读取上限，且不能填补2000s具体审批/安全购买场景。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 2015公开自助试用和在线购买模式把哪些评估工作转给客户，又有哪些工作仍由Atlassian与Experts承担？判断“无传统直销”等不等于“无人帮助”。
+  expected_output: 一张客户/产品文档/支持/渠道四方责任边界表。
+  out_of_scope: 不估销售成本，不回填2000年代具体Jira套餐，不把在线交易份额当纯自动化直销份额。
+  reason: 原2000年代时间范围过宽；实际下载并提取2015-11-09 F-1，冻结当时自助评估与支持边界。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 明确冻结单一工件/事件与问题；2条事前事实、2条有效证据、直接来源支持结果齐备。
+  report_path: reports/phase3-admission.md

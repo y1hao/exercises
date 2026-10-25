@@ -2,7 +2,7 @@ id: INV-048
 kind: historical
 domain: investing
 status: sourced
-scenario_title: Palantir 2015—2020 资本评估
+scenario_title: Palantir 2020披露：Scale分群的选择边界
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -38,8 +38,8 @@ planning:
 research:
   id: INV-048
   status: sourced
-  reason: 已阅读直接来源，支持可辨识事件或原始文件及其披露结果；训练数据完整性与 Case QA 尚待完成。
-  event: Palantir 2020-09-21 S-1/A：Acquire / Expand / Scale 交付披露
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  event: Palantir 2020披露：Scale分群的选择边界
   cutoff: 2020-09-21 公开文件之后、直接上市交易之前
   initial_facts:
   - id: I1
@@ -54,11 +54,12 @@ research:
   evidence:
   - id: E1
     text: 2019 Scale 客户收入 5.657 亿美元、贡献毛利率 55%；相同客户 H1 2020 收入 2.963 亿、贡献毛利率 68%。
-    source_ids: *id001
+    source_ids: &id002
+    - S1
     availability: pre_decision
   - id: E2
     text: 2019 Acquire 客户收入 60 万美元、贡献亏损 6540 万；公司披露的是交付分群而非任意全体客户的平台复制率。
-    source_ids: *id001
+    source_ids: *id002
     availability: pre_decision
   outcome:
     text: 公开文件记录相同 Scale 客户的贡献毛利率变化；由于 Scale 本身按正毛利筛选，不能单独证明全平台已可规模化复制。
@@ -82,7 +83,22 @@ research:
     - outcome
   attempts:
   - 打开 S-1/A，核对平台描述、阶段定义及同一 Scale 客户的 2019/H1 2020 披露。
-  phase2_conditions:
-  - 只保留 2020 上市前一个公开窗口和两项经营假说；不归纳此后五年资本或股价。
-  - 贡献毛利为公司定义的非 GAAP 口径，后续 Brief 必须完整说明成本边界。
-  record_path: reports/research-investing-b.md
+  - 本轮复核初轮逐项保存的来源摘录、引用和未知；正式缩小问题范围，不新增没有依据的史实。
+  phase2_conditions: 本轮正式采用本条新问题与认知动作；原数量门槛仅存历史，不再要求未披露输入。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: sourced
+    reason: 已阅读直接来源，支持可辨识事件或原始文件及其披露结果；训练数据完整性与 Case QA 尚待完成。
+    record_path: reports/research-investing-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 正贡献毛利是Scale分类条件时，Scale客户毛利改善能否证明整个交付模式可复制？
+  expected_output: 一个选择偏差诊断与能改变判断的证据
+  out_of_scope: 不外推未披露cohort、边际成本、股本权利或因果贡献；不把公司披露或投资建议当成已实现投资回报。
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
+  report_path: reports/phase3-admission.md

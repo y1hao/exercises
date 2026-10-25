@@ -1,9 +1,9 @@
 id: ENG-096
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Twitter 2012—2014 时间线扇出
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Twitter Timelines at Scale：写扇出与读取合并边界（2012演讲工件）
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-096
@@ -26,29 +26,69 @@ planning:
   distinctness_clusters: []
 research:
   id: ENG-096
-  status: blocked
-  reason: 页面确认当事人演讲存在，但本轮未取得可核查明星账号混合扇出的正文。
-  event: Twitter 2013 Timelines at Scale 演讲
-  cutoff: 2012—2014 候选，待取得讲稿正文
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 取得原幻灯片可读文本；删掉未经直接核实的明星混合方案落地结论，收敛成工件快照上的单次路径取舍。
+  event: Twitter Timelines at Scale：写扇出与读取合并边界（2012演讲工件）
+  cutoff: QCon SF 2012幻灯片架构快照；评估下一类大关注者发布路径
+  initial_facts:
+  - id: I1
+    text: 讲者Raffi Krikorian将home timeline读取列为高频负载。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 幻灯片给出写入扇出到接收者时间线缓存的路径。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 缓存使用Redis原生列表，RPUSHX仅向已缓存的时间线添加。
+    source_ids: *id001
+    availability: post_decision
+  - id: E2
+    text: 幻灯片报告向100万接收者交付的p50约3.5秒；这是该演讲负载观察，不是所有请求保证。
+    source_ids: *id001
+    availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制推演须与来源中的观察和当事人归因分别标记。
+    text: 可揭晓的真实工件是写时预物化并缓存时间线的架构；不宣称已证实明星账号混合扇出已上线。
+    source_ids:
+    - S1
+  interpretation: 来源所述观察/机制与维护者迁移推论分开；规范示例是工件推演，不宣称真实生产事故。
   unknowns:
-  - 未公开的实际决策过程和完整工作量未知。
-  - 页面确认当事人演讲存在，但本轮未取得可核查明星账号混合扇出的正文。
+  - 未公开内部决策日、完整负载及业务效果未知；不要求用户据此精算。
   sources:
   - id: S1
-    url: https://www.infoq.com/presentations/Twitter-Timeline-Scalability/
-    publisher: InfoQ / Raffi Krikorian
-    published_at: '2013-04-03'
+    url: https://speakerdeck.com/angelbotto/raffi-krikorian-twitter-timelines-at-scale
+    publisher: Raffi Krikorian 原演讲幻灯片镜像
+    published_at: null
     source_type: primary
     checked_at: '2026-10-25'
-    supports: []
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
   attempts:
   - 搜索演讲与幻灯片；打开 InfoQ 仅有视频播放器、概要和讲者信息；搜索到转述未当作验证。
+  - 本轮实际打开一手正文，按可读机制/事件重新核查准入。
   phase2_conditions:
-  - 需取得当事人幻灯片/可核对讲稿，确认 fanout-on-read 具体历史边界。
-  record_path: reports/research-engineering-b.md
+  - 保留原ID和课程日期；候选标题与本次修订建立显式映射。
+  - 结果和隐藏证据不得进入首轮或Starter Prompt。
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: blocked
+    reason: 页面确认当事人演讲存在，但本轮未取得可核查明星账号混合扇出的正文。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 面对扇出延迟，应把哪类发布留在写时物化、哪类改成读时合并，必须补看什么负载证据？
+  expected_output: 围绕单一问题给出可由证据推翻的解释或选择及边界
+  out_of_scope: 不扩写整家公司或系统史，不添加未公开指标、日志和决策者观点
+  reason: 取得原幻灯片可读文本；删掉未经直接核实的明星混合方案落地结论，收敛成工件快照上的单次路径取舍。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 2项可知事实、2项实质证据与机制/事件结局齐备；尚未制作完整Brief和QA。
+  report_path: reports/phase3-admission.md

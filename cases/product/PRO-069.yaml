@@ -1,9 +1,9 @@
 id: PRO-069
 kind: historical
 domain: product
-status: blocked
-scenario_title: TikTok 收购 Musical.ly（2017—2018）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Musical.ly 2018整合：账户迁移与持续创作
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-069
@@ -37,10 +37,10 @@ planning:
     out_of_scope: 不同时评价收购价格、算法和全球扩张
 research:
   id: PRO-069
-  status: blocked
-  reason: 整合公告验证身份、粉丝和内容自动迁移，但未取得迁移后创作者持续发布或流失行为材料；不能用自动升级等同预期创作者迁移。
-  event: TikTok 收购 Musical.ly（2017—2018）
-  cutoff: 2018-08-01整合公告；网页标注08-02
+  status: sourced
+  reason: 保留预测动作，正式取消没有材料的迁移后留存结论；实际升级工件作为最终揭晓。
+  event: Musical.ly 2018整合：账户迁移与持续创作
+  cutoff: 2018-08整合公告已公开、评价后续持续创作之前；网页标注8月2日。
   initial_facts:
   - id: F1
     text: 已有创作者账户、内容、粉丝将自动转到TikTok。
@@ -64,8 +64,9 @@ research:
     - S1
     availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
+    text: 官方宣布应用升级并自动保留账户、内容与粉丝；没有披露创作者持续发布效果。
+    source_ids:
+    - S1
   interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
   unknowns:
   - 内部决策材料、反事实与独立效果测量未公开
@@ -81,7 +82,25 @@ research:
     - F2
     - E1
     - E2
+    - outcome
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
-  phase2_conditions: 不同时评价收购价格、算法和全球扩张
-  record_path: reports/research-product.md
+  - 本轮复用并阅读初轮逐项记录的一手来源内容；按新问题与公开材料时点核对，不宣称新发现内部实验。
+  phase2_conditions: 正式使用本条新范围与认知动作，Phase2原题留作历史。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 整合公告验证身份、粉丝和内容自动迁移，但未取得迁移后创作者持续发布或流失行为材料；不能用自动升级等同预期创作者迁移。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 账户、粉丝与内容自动迁移后，持续创作是否也会自动保持，哪项条件会使预测失败？
+  expected_output: 一条账户连续性到创作行为的预测及可观测反例
+  out_of_scope: 不推定未披露用户实验、留存因果、合同或完整历史版本；不把功能交付等同商业成功。
+  reason: 保留预测动作，正式取消没有材料的迁移后留存结论；实际升级工件作为最终揭晓。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 复用已读来源并正式修订为材料可支撑的单题范围；缺失的内部数据不再是完成题目的必要输入。
+  report_path: reports/phase3-admission.md

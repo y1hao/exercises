@@ -223,7 +223,8 @@ def build(root):
         "revision_progress": counts(e.get("revision_state", "identified") for e in index["entries"]),
     }
     audit = {"basis": summary["scope"], "status_semantics": "accepted 仅表示保留选题，不是事实、Brief 或 ready 验收", "entries": reviews}
-    return index, audit, summary, revisions
+    from remediation_data import apply_current_scopes
+    return apply_current_scopes(index, root), audit, summary, revisions
 
 
 def table(headers, rows):

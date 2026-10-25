@@ -1,9 +1,9 @@
 id: PRO-023
 kind: historical
 domain: product
-status: blocked
-scenario_title: OpenTable 餐厅端库存系统（1998—2000）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: OpenTable 2009 ERB与实时席位确认
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-023
@@ -26,38 +26,39 @@ planning:
   distinctness_clusters: []
 research:
   id: PRO-023
-  status: blocked
-  reason: 2009 S-1 说明 ERB 与实时市场如何连接，但未确证 1998—2000 具体版本/先后决策。
-  event: OpenTable 餐厅端库存系统（1998—2000）
-  cutoff: 1998—2000 安装餐厅软件到开放市场的节点未锁定
+  status: sourced
+  reason: 正式收窄/重锚为直接材料可支持的单一任务；保留未知，不要求未公开因果或数字。
+  event: OpenTable 2009 ERB与实时席位确认
+  cutoff: 2009-01-30公开的ERB机制快照，判断线上库存可信前
   initial_facts:
   - id: F1
-    text: 2009 S-1 描述 ERB 替代纸质预订，支持现场运营。
+    text: ERB在餐厅前台记录网上、电话和walk-in预约，而不是只保留网上份额的静态清单。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: 网站连接 ERB 可用库存，线上预约直接写入餐厅系统。
+    text: 2009版食客按地点、日期、时间和人数找实时可订桌位，食客端免费。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 餐厅收费包含安装、月费和每位线上就座客费用，食客免费。
+    text: 餐厅ERB通过互联网实时更新中央网站；库存变化会反映到下一次搜索。
     source_ids:
     - S1
     availability: post_decision
   - id: E2
-    text: 公司称逐家销售餐厅软件建立本地库存临界规模；此描述是 2009 版本。
+    text: 餐厅购买安装、订阅及就座计费服务，前台管理本身也有价值；不是仅靠流量吸引餐厅。
     source_ids:
     - S1
     availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    text: 2009招股书披露网络已有约10000家餐厅，ERB与线上实时确认形成已实施闭环；不回填1998初版，也不把餐厅数当本地流动性。
+    source_ids:
+    - S1
+  interpretation: 来源只确认直接记载的规则、行为和结果；因果链为可检验维护者分析，不以历史结果倒判唯一理性选择。
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
+  - 完整内部决策与反事实结果未公开；公司主张和当事人回忆需单独标明
   sources:
   - id: S1
     url: https://www.sec.gov/Archives/edgar/data/1125914/000104746909000513/a2190140zs-1.htm
@@ -70,7 +71,25 @@ research:
     - F2
     - E1
     - E2
+    - outcome
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  - 本轮重新打开并阅读所列来源正文，按新范围逐条核对；不使用搜索摘要替代。
   phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 2009 S-1 说明 ERB 与实时市场如何连接，但未确证 1998—2000 具体版本/先后决策。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 为什么把电话、到店和网上预约放进同一库存，才可能让线上确认可信？
+  expected_output: 一个可核对的判断、来源支持的机制及能推翻它的条件
+  out_of_scope: 不把公告、相关性或回顾等同已识别的采用/留存因果；不补造指标、条款或任务日志
+  reason: 正式收窄/重锚为直接材料可支持的单一任务；保留未知，不要求未公开因果或数字。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 至少2条事前事实、2条实质证据和直接来源支持的真实交付/观察结局已具备；准入制作并非ready。
+  report_path: reports/phase3-admission.md

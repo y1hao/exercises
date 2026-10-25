@@ -1,9 +1,9 @@
 id: INV-047
 kind: historical
 domain: investing
-status: blocked
-scenario_title: Better.com 2021—2023 SPAC 延期
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Better 2023财务附注：零票息bridge的股权风险
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-047
@@ -38,34 +38,39 @@ planning:
     out_of_scope: 缺合同转证据选择，不补造延期交易条款
 research:
   id: INV-047
-  status: blocked
-  reason: 可确认有多笔 bridge/债务修改，但尚未闭合规划要求的最后一笔续命融资身份，且缺完整合同、股本及同时点跑道。
-  event: Better SPAC 延期期间融资：最后一笔续命融资身份尚未闭合
-  cutoff: 待定位最后一笔续命融资签署前；不能把 2021 bridge 与 2023 债务修改合成一次交易
-  initial_facts: []
+  status: sourced
+  reason: 锁定2021 bridge在2023财务附注的状态，取消未确认最后一笔续命融资与完整估值。
+  event: Better 2023财务附注：零票息bridge的股权风险
+  cutoff: 2023年披露截至6月30日财务附注已公开后，评价已披露bridge条件；不模拟2021投资前资料。
+  initial_facts:
+  - id: F1
+    text: 附注单列2021年12月pre-closing bridge notes。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 票据零票息且不可现金偿还；不等于免费资本或没有股权风险。
+    source_ids:
+    - S1
+    availability: pre_decision
   evidence:
   - id: E1
-    text: SEC 财务附注披露 2021 年 12 月发行 pre-closing bridge notes，零票息、不可现金偿还，2023-06-30 账面 7.5 亿美元。
+    text: 截至2023-06-30账面750m美元，仍未转优先股。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: E2
-    text: 2023 年 2 月信用额度修改将债务分为有担保 AB 和无担保 C；后者还款节奏取决于后续融资承诺。
+    text: 附注说明延期需要同意及章程等步骤；另有2023年2月信用额度修改，不能合并成同一交易。
     source_ids:
     - S1
-    availability: unknown
-  - id: E3
-    text: 截至 2023-06-30 bridge 尚未转优先股，附注说明延长到期需同意、章程法律步骤等障碍。
-    source_ids:
-    - S1
-    availability: post_decision
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 现有材料说明资本顺位与转换条件确实复杂；没有完整合同和确定决策时点，不能给旧股权精确稀释预测。
+    text: 财务附注报告bridge仍未转换的状态及相关条件；不是将未来SPAC完成预先当成确定结果。
+    source_ids:
+    - S1
+  interpretation: 来源披露、当事人解释与维护者推论区分；不以事后结果裁定唯一正确选择。
   unknowns:
-  - 尚未证明规划所指最后一轮续命融资究竟是哪一笔。
-  - 未取得该笔完整签署合同、同日 cap table 与可支配现金跑道；不能将信用额度修改等同新增现金。
+  - 完整内部判断及反事实结果未知；不计算未披露的价格、成本或实现回报。
   sources:
   - id: S1
     url: https://www.sec.gov/Archives/edgar/data/1835856/000162828023030682/exhibit991-super8xkbetterq2.htm
@@ -74,13 +79,28 @@ research:
     source_type: primary
     checked_at: '2026-10-25'
     supports:
+    - F1
+    - F2
     - E1
     - E2
-    - E3
+    - outcome
   attempts:
-  - 搜索并打开 SEC 2023 二季度财务附注与对应 MD&A，逐段检查 bridge、2023 credit facility 及后续事项。
-  - 公司 2023 closing 新闻页返回 404；SEC 2023 年报 PDF 与 IR PDF 抓取失败，未用搜索摘要中的 closing 总融资额代替合同。
-  phase2_conditions:
-  - 保留 INV-047；先定位最后一笔真实交易及完整合同。
-  - 缺合同按规划转 evidence-selection；不补造稀释比例、清算优先权或退出价格。
-  record_path: reports/research-investing-b.md
+  - 复用并逐项阅读初轮保存的一手材料摘录与引用，按本轮正式修订的问题和披露时点核对；未宣称重新获取完整合同。
+  phase2_conditions: 本轮正式修订单题范围；原候选和Phase2规划另保留，制作时使用本条新范围。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 可确认有多笔 bridge/债务修改，但尚未闭合规划要求的最后一笔续命融资身份，且缺完整合同、股本及同时点跑道。
+    record_path: reports/research-investing-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 零票息且不可现金偿还的bridge，为何仍会改变旧股风险，哪些转换条件会改变判断？
+  expected_output: 一条到期—转换—稀释条件链及缺合同处的边界
+  out_of_scope: 不推定未披露交易条款、内部现金跑道、同cohort成本或因果贡献；公开披露时点不是原私募投资时点。
+  reason: 锁定2021 bridge在2023财务附注的状态，取消未确认最后一笔续命融资与完整估值。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 明确单一节点与可回答的问题，至少2项事前事实、2项实质证据和直接支持的观察结果；准入不等于ready。
+  report_path: reports/phase3-admission.md

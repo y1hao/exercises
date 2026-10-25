@@ -1,9 +1,9 @@
 id: PRO-001
 kind: historical
 domain: product
-status: blocked
-scenario_title: Notion 早期产品重做（2015—2016）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Google Wave 2009预览至2010独立产品投入复核
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-001
@@ -37,43 +37,44 @@ planning:
     out_of_scope: 不替创始人编造动机或评判全部重做策略
 research:
   id: PRO-001
-  status: blocked
-  reason: 回顾访谈可确认重做及初版定位，但没有同期用户行为可区分可编程性与上手成本。
-  event: Notion 早期产品重做（2015—2016）
-  cutoff: 2015 重做节点；具体轮次未知
+  status: sourced
+  reason: Notion原重做时间与因果材料不足，真实换为Google Wave的任务价值与技术喝彩判断；保留诊断动作，不声称已经识别失败原因。
+  event: Google Wave 2009预览至2010独立产品投入复核
+  cutoff: 2009开发者预览后、2010-08-04停止独立开发公告前；不把采用不足先放首轮
   initial_facts:
   - id: F1
-    text: Ivan 回顾初版为无需代码的编程应用。
+    text: 2009开发者预览已展示浏览器逐字实时输入、拖拽文件和历史回放。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: 回顾称用户兴趣不足，2015 重新设计。
+    text: 展示时开发者热烈回应；团队当时仍不确定用户会如何使用这种沟通方式。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 访谈称团队探索多种设计。
+    text: Google记录了实时图片共享、上下文拼写检查和第三方机器人等实际用例。
     source_ids:
     - S1
     availability: post_decision
   - id: E2
-    text: 未见当轮任务观察或分群；不能断言复杂导致失败。
+    text: 2010负责人称虽有忠实用户，采用未达预期；该阈值与分群未公开。
     source_ids:
     - S1
     availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    text: 2010-08-04 Google宣布不再把Wave作为独立产品继续开发，并保留开源技术和数据迁出安排。
+    source_ids:
+    - S1
+  interpretation: 来源只确认直接记载的规则、行为和结果；因果链为可检验维护者分析，不以历史结果倒判唯一理性选择。
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
+  - 完整内部决策与反事实结果未公开；公司主张和当事人回忆需单独标明
   sources:
   - id: S1
-    url: https://www.figma.com/blog/design-on-a-deadline-how-notion-pulled-itself-back-from-the-brink-of-failure/
-    publisher: Figma / Ivan Zhao 访谈
-    published_at: null
+    url: https://googleblog.blogspot.com/2010/08/update-on-google-wave.html
+    publisher: Google / Urs Hölzle
+    published_at: '2010-08-04'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -81,7 +82,25 @@ research:
     - F2
     - E1
     - E2
+    - outcome
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  - 本轮重新打开并阅读所列来源正文，按新范围逐条核对；不使用搜索摘要替代。
   phase2_conditions: 不替创始人编造动机或评判全部重做策略
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 回顾访谈可确认重做及初版定位，但没有同期用户行为可区分可编程性与上手成本。
+    record_path: reports/research-product.md
+  remediation_decision: replace
+active_scope:
+  decision: replace
+  main_question: 开发者对实时协作演示叫好，能否区分日常任务价值与技术新鲜感？
+  expected_output: 一个可核对的判断、来源支持的机制及能推翻它的条件
+  out_of_scope: 不把公告、相关性或回顾等同已识别的采用/留存因果；不补造指标、条款或任务日志
+  reason: Notion原重做时间与因果材料不足，真实换为Google Wave的任务价值与技术喝彩判断；保留诊断动作，不声称已经识别失败原因。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 至少2条事前事实、2条实质证据和直接来源支持的真实交付/观察结局已具备；准入制作并非ready。
+  report_path: reports/phase3-admission.md

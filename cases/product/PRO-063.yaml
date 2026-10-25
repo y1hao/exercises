@@ -2,7 +2,7 @@ id: PRO-063
 kind: historical
 domain: product
 status: sourced
-scenario_title: Google Maps 移动端导航上线（2009）
+scenario_title: Google Maps Navigation 2009-10-28 Android2.0 beta
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -75,4 +75,20 @@ research:
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
   phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 2009原始Google发布有任务前后路径和限制，留存因果明确未知。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 语音引导与自动重规划移除了哪一步驾驶任务摩擦，又增加了什么联网边界？
+  expected_output: 一条任务链及离线反例
+  out_of_scope: 不以发布、用户总量或事后成功代替因果证据
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

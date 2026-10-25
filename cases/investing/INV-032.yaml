@@ -1,9 +1,9 @@
 id: INV-032
 kind: historical
 domain: investing
-status: blocked
-scenario_title: Reddit 2024 IPO 定价
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Reddit 2024发行文件：账面稀释与价格
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-032
@@ -37,40 +37,92 @@ planning:
     input_verification: not_started
 research:
   id: INV-032
-  status: blocked
-  reason: 定价结果可核，事前完整财务与稀释股本尚未抽取。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Reddit 2024 IPO 定价
-  cutoff: 2024-03-20 定价前
-  initial_facts: []
-  evidence: []
-  outcome:
-    text: 公司 2024-03-20 宣布每股 34 美元；2200 万发行股中包含老股，公司不取得老股出售所得。
+  status: sourced
+  reason: 使用发行人公开假设计算而非自造价格；保留数量校准，不需要完整未来估值。
+  event: Reddit 2024发行文件：账面稀释与价格
+  cutoff: 2024-03-19 FWP公开后、3月20日最终定价前。
+  initial_facts:
+  - id: F1
+    text: 2024-03-19 FWP列发行方在32.50美元假设发行价下的稀释示例。
     source_ids:
     - S1
-  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+    availability: pre_decision
+  - id: F2
+    text: 这是发行方示例而非已确定最终定价；有形账面价值不等于内在价值。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 示例发行前每股有形净资产8.26美元，发行后10.43美元，新投资人稀释22.07美元。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 3月20日最终宣布34美元，2200万发行股含老股；公司不取得老股出售所得。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    text: 公司3月20日公布实际发行定价；不能把34美元倒填3月19日的计算假设。
+    source_ids:
+    - S2
+  interpretation: 来源披露、当事人解释与维护者推论区分；不以事后结果裁定唯一正确选择。
   unknowns:
-  - 事前完全稀释股本和经营口径尚未逐项核验。
+  - 完整内部判断及反事实结果未知；不计算未披露的价格、成本或实现回报。
   sources:
   - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1713445/000162828024011794/redditfwp31924.htm
+    publisher: Reddit / SEC
+    published_at: '2024-03-19'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+  - id: S2
     url: https://investor.redditinc.com/news-events/news-releases/news-details/2024/Reddit-Announces-Pricing-of-Initial-Public-Offering/default.aspx
     publisher: Reddit
     published_at: '2024-03-20'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
+    - E2
     - outcome
   attempts:
-  - 实际打开公司定价公告正文。
-  - SEC 初始推测 URL 返回404；打开 https://d18rn0p25nwr6d.cloudfront.net/CIK-0001713445/73b1cef0-9111-449a-a74e-057d6e7a45e4.pdf
-    返回读取错误。
-  phase2_conditions: 不能先给最终定价当作待预测输入。
-  record_path: reports/research-investing.md
-  scope_decision:
-    id: INV-032
-    input_status: insufficient_this_round
-    reason: 定价结果可核，事前完整财务与稀释股本尚未抽取。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: blocked
-  source_assessment_reason: 公司定价公告正文可读，但事前招股书 PDF 读取失败，未核准用于原估值题的财务与股本输入。
+  - 实际打开并阅读所列一手材料；本轮按修改后的单一问题核对，不以搜索摘要补事实。
+  phase2_conditions: 本轮正式修订单题范围；原候选和Phase2规划另保留，制作时使用本条新范围。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 定价结果可核，事前完整财务与稀释股本尚未抽取。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 发行方以32.50美元为例列10.43美元每股有形净资产，22.07美元差额是什么，为什么不等于即时经济损失？
+  expected_output: 一项稀释复算及账面值与内在价值的边界
+  out_of_scope: 不混用不同窗口，不捏造交易条款或未来正常利润。
+  reason: 使用发行人公开假设计算而非自造价格；保留数量校准，不需要完整未来估值。
+  record_path: reports/remediation-investing.md
+  quantitative_inputs:
+  - name: issuer_assumed_price
+    value: 32.5
+    unit: USD per share
+    source_ids:
+    - S1
+  - name: postoffering_NTBV
+    value: 10.43
+    unit: USD per share
+    source_ids:
+    - S1
+  - name: preoffering_NTBV
+    value: 8.26
+    unit: USD per share
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 明确单一节点与可回答的问题，至少2项事前事实、2项实质证据和直接支持的观察结果；准入不等于ready。
+  report_path: reports/phase3-admission.md

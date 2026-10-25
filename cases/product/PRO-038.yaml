@@ -75,4 +75,20 @@ research:
   attempts:
   - 早期PDF403；随后通过官方视频页Read Transcript成功打开并实际阅读完整转录的Burbn及问题聚焦段落。
   phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 已实际读到官方完整转录；创始人回顾明确Burbn最受喜爱的是图片分享并聚焦照片问题。回顾不是2010原始日志或因果实验。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 用户最喜欢照片能支持缩减Burbn，还是已证明删功能本身必然带来增长？
+  expected_output: 两个可区分的价值假说及未识别因素
+  out_of_scope: 不以发布、用户总量或事后成功代替因果证据
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

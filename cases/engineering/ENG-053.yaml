@@ -1,9 +1,9 @@
 id: ENG-053
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Nx Affected Builds（2020—）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Nx 2020 Affected 与真实部署基线工件
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-053
@@ -27,49 +27,50 @@ planning:
   - ME-02
 research:
   id: ENG-053
-  status: blocked
-  reason: Nx现行v24 affected机制已经变化为task-based，无法直接用于原候选2020项目依赖图题。
-  event: Nx Affected Builds（2020—）
-  cutoff: 2020候选快照未锁定；本次已读v24页。
+  status: sourced
+  reason: 找到Nx团队成员Rareș Matei同期亲写官方合作教程，明确项目依赖图、改动和输出；不再依赖现行v24行为。
+  event: Nx 2020 Affected 与真实部署基线工件
+  cutoff: 2020-04-21作者示例版本，bike-utils改动、决定哪些部署前
   initial_facts:
   - id: F1
-    text: 现行命令从Git变化文件识别工作。
+    text: 示例有bike-store、car-store两个前端及bike-store-api。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: 当前文档明确与Nx23及之前project-based affected不同。
+    text: bike-store和bike-store-api共同import bike-utils。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 当前按任务inputs及下游输出依赖选择任务。
+    text: 作者示例在bike-utils变更后把依赖方标为affected。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: E2
-    text: 忽略文件与lockfile规则也会改变集合。
+    text: print-affected支持base/head，部署基线使用最后成功部署commit，而非只取HEAD的父提交。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   outcome:
     id: O1
-    text: ''
-    source_ids: []
-    availability: post_decision
-  interpretation:
-    text: 版本差异是具体阻塞；需历史project graph工件。
+    text: 教程说明共享工具变更使bike-store部署而car-store被跳过；仅改Express API则两个前端都可跳过，依赖关系决定影响。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 2020版本文档、依赖图与一次改动集合。
+  - 这是同期公开教学工件，不声称真实生产事故；网页个别解释文字有笔误，采用明确依赖与示例结果，不照抄矛盾语句。
   sources:
   - id: S1
-    url: https://nx.dev/docs/features/ci-features/affected
-    publisher: Nx
-    published_at: null
+    url: https://www.netlify.com/blog/2020/04/21/deploying-nx-monorepos-to-netlify/
+    publisher: Netlify / Nrwl engineer Rareș Matei
+    published_at: '2020-04-21'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -77,9 +78,31 @@ research:
     - F2
     - E1
     - E2
+    - O1
   attempts:
   - url: https://nx.dev/docs/features/ci-features/affected
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://www.netlify.com/blog/2020/04/21/deploying-nx-monorepos-to-netlify/
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    scope: 在 Monorepo 中按依赖图选择受影响任务，分析图不完整时的漏构建风险。
-  record_path: reports/research-engineering-a.md
+    original:
+      scope: 在 Monorepo 中按依赖图选择受影响任务，分析图不完整时的漏构建风险。
+    remediation_applied: true
+    scope_change: 找到Nx团队成员Rareș Matei同期亲写官方合作教程，明确项目依赖图、改动和输出；不再依赖现行v24行为。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: blocked
+    reason: Nx现行v24 affected机制已经变化为task-based，无法直接用于原候选2020项目依赖图题。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 共享bike-utils改动后，只按应用目录git diff决定跳过构建是否安全？
+  expected_output: 给出需重建的应用集合，并指定last-successful-deploy到HEAD的比较基线
+  out_of_scope: 不混入2026 task-based affected，不伪造实际商业部署事故
+  reason: 找到Nx团队成员Rareș Matei同期亲写官方合作教程，明确项目依赖图、改动和输出；不再依赖现行v24行为。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：共享bike-utils改动后，只按应用目录git diff决定跳过构建是否安全？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

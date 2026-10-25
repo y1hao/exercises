@@ -2,7 +2,7 @@ id: INV-037
 kind: historical
 domain: investing
 status: sourced
-scenario_title: Rivian 2021 IPO 估值
+scenario_title: Rivian 2021初步IPO区间：基本股本与产能爬坡
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -37,8 +37,8 @@ planning:
 research:
   id: INV-037
   status: sourced
-  reason: 2021-11-01 S1/A提供事前价格区间、股本、产能、已交付量与capex；最终IPO另有原招股书支持。
-  event: Rivian 2021 IPO 估值
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  event: Rivian 2021初步IPO区间：基本股本与产能爬坡
   cutoff: 2021-11-01公开S1/A，最终IPO定价前；只用57–62美元预估区间，不能提前给78。
   initial_facts:
   - id: F1
@@ -107,24 +107,48 @@ research:
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
   - url: https://www.sec.gov/Archives/edgar/data/1874178/000119312521328239/d157488d424b4.htm
     result: 已打开并读取最终定价与发行数，仅用于揭晓
-  phase2_conditions:
-    revision_state: retained
-    policy_path: curriculum/planning-policy.yaml
-    distinctness_clusters: []
-    quantitative_plan:
-      mainline_measure: 产能达成约束的价值范围
-      required_inputs:
-      - IPO 前价格、股本、产能与资本开支
-      - 可证公开假设
-      missing_input_fallback:
-        focus: evidence-selection
-        question: 哪项产能或稀释证据最能推翻当前价格隐含的假设？
-      fallback_applied: false
-      input_verification: not_started
-  record_path: reports/research-investing-a.md
-  scope_decision:
-    id: INV-037
-    input_status: sufficient_for_scoped_comparison
-    reason: S-1/A 含事前价格区间、股本、交付及资本开支；不得与最终版股数混算。
-    fallback_applied: false
-    decision_path: curriculum/source-decisions-2027.yaml
+  - 本轮复核初轮逐项保存的来源摘录、引用和未知；正式缩小问题范围，不新增没有依据的史实。
+  phase2_conditions: 本轮正式采用本条新问题与认知动作；原数量门槛仅存历史，不再要求未披露输入。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: sourced
+    reason: 2021-11-01 S1/A提供事前价格区间、股本、产能、已交付量与capex；最终IPO另有原招股书支持。
+    record_path: reports/research-investing-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 用57—62美元初步区间作基本市值敏感性比较时，哪些股本和产能条件会使外推失效？
+  expected_output: 一个条件性区间及不能提前使用最终定价的边界
+  out_of_scope: 基本股数为文件假设口径，转换票据/期权可能随价格改变；区间仅为明确固定所报基本股数的算术敏感性，不是最终完全稀释估值或产能预测。
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  record_path: reports/remediation-investing.md
+  quantitative_inputs:
+  - name: price_low
+    value: 57
+    unit: USD preliminary
+    source_ids:
+    - S1
+  - name: price_high
+    value: 62
+    unit: USD preliminary
+    source_ids:
+    - S1
+  - name: assumed_basic_postoffer_shares
+    value: 861995652
+    unit: shares at the prospectus assumption, not fully diluted
+    source_ids:
+    - S1
+  - name: produced_by_Oct31
+    value: 180
+    unit: vehicles
+    source_ids:
+    - S1
+  - name: delivered_by_Oct31
+    value: 156
+    unit: vehicles
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
+  report_path: reports/phase3-admission.md

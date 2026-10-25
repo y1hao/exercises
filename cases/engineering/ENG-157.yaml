@@ -1,9 +1,9 @@
 id: ENG-157
 kind: historical
 domain: engineering
-status: rejected
-scenario_title: Google Blaze 构建缓存（2015）
-readiness_note: 原选题不适合继续制作，理由与替换提案见 research；尚未换题，不可用于训练。
+status: sourced
+scenario_title: Rust 1.52.1：增量编译ICE后的发布选择（2021）
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-157
@@ -39,19 +39,36 @@ planning:
     fallback_if_no_source: 保持原日期与待替换状态，明确不能消费，不用新编事件填空。
 research:
   id: ENG-157
-  status: rejected
-  reason: 原候选按Phase2重复风险拒绝；真实替换提案为Rust1.52.0构建ICE及1.52.1默认禁用增量。
-  event: 原Google Blaze2015候选与ENG080复用；替换提案待决
-  cutoff: 原候选2015；提案Rust2021升级决策另列
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 正式应用Phase2替换槽：原Blaze2015与ENG080事件复用；Rust真实补丁发布的关闭优化/升级/降级选择独立于远端action缓存命中、特性合并和affected图。保留ENG157原日期ID。
+  event: Rust 1.52.1：增量编译ICE后的发布选择（2021）
+  cutoff: 2021-05-10 1.52.1公告已发布、团队尚未决定本地工具链应对方式
+  initial_facts:
+  - id: I1
+    text: 1.52.0新增指纹校验会以unstable fingerprints ICE暴露增量编译不一致。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: release profile默认关闭增量；dev/test等配置可启用，必须先确定本地实际配置。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 官方说明底层增量错误早已存在，旧版本缺校验可能出现静默误编译。
+    source_ids: *id001
+    availability: post_decision
+  - id: E2
+    text: 1.52.1默认停用增量，官方建议升级或显式关闭增量，不建议为此降级。
+    source_ids: *id001
+    availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 已知观察、作者归因与维护者推论必须分开；不承诺未核出的数字。
+    text: 实际发布的1.52.1通过临时默认关闭增量规避风险，并保留显式opt-in；这不是已经修好所有增量错误。
+    source_ids:
+    - S1
+  interpretation: 来源所述观察/机制与维护者迁移推论分开；规范示例是工件推演，不宣称真实生产事故。
   unknowns:
-  - 未公开内部过程与全部版本细节未知。
-  - 原候选按Phase2重复风险拒绝；真实替换提案为Rust1.52.0构建ICE及1.52.1默认禁用增量。
+  - 未公开内部决策日、完整负载及业务效果未知；不要求用户据此精算。
   sources:
   - id: S1
     url: https://blog.rust-lang.org/2021/05/10/Rust-1.52.1/
@@ -59,18 +76,32 @@ research:
     published_at: '2021-05-10'
     source_type: primary
     checked_at: '2026-10-25'
-    supports: []
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
   attempts:
   - 核查ENG080的2015Bazel公告；另打开Rust项目官方1.52.1完整公告。
+  - 本轮实际打开一手正文，按可读机制/事件重新核查准入。
   phase2_conditions:
-  - 仅提案：保留ENG157日期ID，标题须经显式课程修订映射后换为Rust1.52.1。官方证据：1.52.0新指纹校验暴露既有增量错误；降级旧编译器不会修复潜在误编译；1.52.1默认禁用增量。聚焦升级/关闭优化/降级的发布选择，独立于远端action缓存；尚未写canonical。
-  replacement_proposal:
-    title: Rust 1.52.0 构建 ICE 与 1.52.1 禁用增量（2021）
-    decision: 升级到补丁版、停用增量或降级旧版之间如何选择？
-    source_ids:
-    - S1
-    verified_facts:
-    - 新指纹校验暴露早已存在的增量误编译风险。
-    - 1.52.1默认关闭增量，官方不推荐降级旧版本。
-    status: proposal_only_not_canonical_replacement
-  record_path: reports/research-engineering-b.md
+  - 保留原ID和课程日期；候选标题与本次修订建立显式映射。
+  - 结果和隐藏证据不得进入首轮或Starter Prompt。
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: rejected
+    reason: 原候选按Phase2重复风险拒绝；真实替换提案为Rust1.52.0构建ICE及1.52.1默认禁用增量。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: replace
+active_scope:
+  decision: replace
+  main_question: 面对unstable fingerprints，应升级补丁、关闭增量还是降级；什么证据会改变选择？
+  expected_output: 围绕单一问题给出可由证据推翻的解释或选择及边界
+  out_of_scope: 不扩写整家公司或系统史，不添加未公开指标、日志和决策者观点
+  reason: 正式应用Phase2替换槽：原Blaze2015与ENG080事件复用；Rust真实补丁发布的关闭优化/升级/降级选择独立于远端action缓存命中、特性合并和affected图。保留ENG157原日期ID。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 2项可知事实、2项实质证据与机制/事件结局齐备；尚未制作完整Brief和QA。
+  report_path: reports/phase3-admission.md

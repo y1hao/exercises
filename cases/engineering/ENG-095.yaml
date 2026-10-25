@@ -38,7 +38,7 @@ planning:
 research:
   id: ENG-095
   status: sourced
-  reason: 一手材料直接支持 artifact 或事件行为；不是 ready。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
   event: JDK 9 G1 回收器规范
   cutoff: JDK 9 的暂停目标与区域选择
   initial_facts:
@@ -85,6 +85,23 @@ research:
     - outcome
   attempts:
   - JEP248 返回 403；改读 Oracle JDK9 专版指南。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 仅依据 JDK9 行为，不以当前 JDK 默认策略倒推 2017 所有机器。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 一手材料直接支持 artifact 或事件行为；不是 ready。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 暂停预算改变后，回收选择可能怎样变化？
+  expected_output: 一个区域回收预测及吞吐边界
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

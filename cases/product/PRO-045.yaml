@@ -1,9 +1,9 @@
 id: PRO-045
 kind: historical
 domain: product
-status: blocked
-scenario_title: Pinterest Waitlist 邀请制（2010—2011）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Pinterest 2020 Story Pins：曝光还是被尝试的想法
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-045
@@ -37,20 +37,80 @@ planning:
     out_of_scope: 不以邀请数和排队长度直接证明 PMF
 research:
   id: PRO-045
-  status: blocked
-  reason: 尚无2010—2011一轮邀请规则及受邀后行为的一手记录；后续开放注册报道不能替代。
-  event: Pinterest Waitlist 邀请制（2010—2011）
-  cutoff: 2010—2011 邀请窗口未定位
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 原2010候补名单缺可核原始材料；明确换为同品牌2020-09-23 Story Pins发布，有实际内容交互和度量入口，不与2015 Save案例混用。
+  event: Pinterest 2020 Story Pins：曝光还是被尝试的想法
+  cutoff: 2020-09-23 Story Pins beta设计与发布快照
+  initial_facts:
+  - id: F1
+    text: Pinterest服务帮助人发现食谱、DIY等可付诸行动的想法，Story Pins支持视频、旁白、图文。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 创作者可在应用内发布，无需另建网站，也可增加原料或材料详情页。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 内容可保存到看板并持续被发现，不在24小时后消失；保存显示未来意向但不保证已经实践。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 发布说明提供尝试后附图和文字反馈，也提供Pin Stats曝光与互动；前者更接近实际行动，但只覆盖愿意反馈的人。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    id: O1
+    text: 2020-09-23在美国精选创作者中推出Story Pins beta，美国iOS/Android/Web开始可见；并非全球创作者全面开放。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
-  sources: []
+  - 来源是发布机制，未给真实cohort效果；反馈具有自选偏差且可能不代表全部实际尝试。
+  sources:
+  - id: S1
+    url: https://newsroom-archive.pinterest.com/en-gb/introducing-story-pins-and-new-ways-for-creators-to-build-and-grow-with-pinterest
+    publisher: Pinterest
+    published_at: '2020-09-23'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
   attempts:
   - 检索 Pinterest 官方archive/2012开放注册及早期创始人资料；结果以二手报道为主，未取得可读同期邀请规则和回访队列。
-  phase2_conditions: 不以邀请数和排队长度直接证明 PMF
-  record_path: reports/research-product.md
+  - url: https://newsroom-archive.pinterest.com/en-gb/introducing-story-pins-and-new-ways-for-creators-to-build-and-grow-with-pinterest
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
+  phase2_conditions:
+    original: 不以邀请数和排队长度直接证明 PMF
+    remediation_applied: true
+    scope_change: 原2010候补名单缺可核原始材料；明确换为同品牌2020-09-23 Story Pins发布，有实际内容交互和度量入口，不与2015 Save案例混用。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 尚无2010—2011一轮邀请规则及受邀后行为的一手记录；后续开放注册报道不能替代。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: Story Pins希望让创作者的想法可操作；在曝光量、保存量和尝试后附图/文字反馈之间选一个最贴近“内容帮助用户做成事情”的主要证据，并指出其选择偏差。
+  expected_output: 一个主要证据选择、一个补充口径与偏差。
+  out_of_scope: 不以邀请码、排队长度或曝光直接证明PMF；不评价整个短视频市场。
+  reason: 原2010候补名单缺可核原始材料；明确换为同品牌2020-09-23 Story Pins发布，有实际内容交互和度量入口，不与2015 Save案例混用。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 明确冻结单一工件/事件与问题；2条事前事实、2条有效证据、直接来源支持结果齐备。
+  report_path: reports/phase3-admission.md

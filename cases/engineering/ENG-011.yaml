@@ -2,7 +2,7 @@ id: ENG-011
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: Cloudflare 2023—2024 年数据中心双重供电事故
+scenario_title: Cloudflare PDX01 双路供电失效（2024-03-26）
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -40,8 +40,8 @@ planning:
 research:
   id: ENG-011
   status: sourced
-  reason: 已找到并阅读全文：2024-03-26为同设施独立供电事件，非2023复述；原候选将发布月份误作事故月份需纠正。
-  event: Cloudflare 2023—2024 年数据中心双重供电事故
+  reason: 只保留已核实2024独立事件；2023只作当时已知改进背景，与ENG040分开，不把4月发布日写成事故日。
+  event: Cloudflare PDX01 双路供电失效（2024-03-26）
   cutoff: 2024-03-26 PDX01失联后，两个电源路径同时不可用但共同原因未定时；不把4月8日发布日写成事故日。
   initial_facts:
   - id: F1
@@ -114,4 +114,21 @@ research:
     - 两路供电依赖
     - 当时测试或处置记录
     out_of_scope: 不合并两年事故；找不到独立事件则申请换题
-  record_path: reports/research-engineering-a.md
+    remediation_scope: 只保留已核实2024独立事件；2023只作当时已知改进背景，与ENG040分开，不把4月发布日写成事故日。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: 已找到并阅读全文：2024-03-26为同设施独立供电事件，非2023复述；原候选将发布月份误作事故月份需纠正。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 两路电源还可能共享什么失效点，下一步应验证哪一处？
+  expected_output: 一项冗余验证决策及其共同原因假说
+  out_of_scope: 不合并两年事故；找不到独立事件则申请换题
+  reason: 只保留已核实2024独立事件；2023只作当时已知改进背景，与ENG040分开，不把4月发布日写成事故日。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：两路电源还可能共享什么失效点，下一步应验证哪一处？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

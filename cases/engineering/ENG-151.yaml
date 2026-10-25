@@ -27,7 +27,7 @@ planning:
 research:
   id: ENG-151
   status: sourced
-  reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
   event: LastPass2022备份窃取公开更新
   cutoff: 2022-12-22获知备份被复制后的风险判断
   initial_facts:
@@ -74,6 +74,23 @@ research:
     - outcome
   attempts:
   - 打开2022-12-22原始通告，核查备份范围与brute force边界。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - zero knowledge宣传与已确认泄漏分开；不写无来源破解速度或统一PBKDF2设置。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 凭据保护与加密备份被获取后，分析离线破解和密钥管理风险。
+  expected_output: 围绕单一问题给出可由证据推翻的解释或选择及边界
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

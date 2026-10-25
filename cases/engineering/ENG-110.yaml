@@ -1,9 +1,9 @@
 id: ENG-110
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Discord 消息存储迁移（2017—2023）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Discord 2022消息迁移：节点数与原始磁盘容量
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-110
@@ -47,34 +47,34 @@ planning:
     input_verification: not_started
 research:
   id: ENG-110
-  status: blocked
-  reason: 消息迁移机制可核，缺同窗口总成本、资源、工作量和迁移投入。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Discord2022 Cassandra→Scylla 消息迁移
-  cutoff: 2022 messages 迁移前，具体切换日未知
+  status: sourced
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  event: Discord 2022消息迁移：节点数与原始磁盘容量
+  cutoff: 2023-03-06文章发布后的2022年5月迁移结果比较；不将事后改善放入迁移前初始信息。
   initial_facts:
   - id: I1
-    text: 消息按 channel 与时间桶分区
+    text: 旧Cassandra集群有177节点，每节点平均4TB磁盘。
     source_ids:
     - S1
     availability: pre_decision
   - id: I2
-    text: 热点读取影响相同副本上其他请求
+    text: 新ScyllaDB集群有72节点，每节点9TB磁盘。
     source_ids:
     - S1
     availability: pre_decision
   evidence:
   - id: E1
-    text: 数据服务引入 request coalescing 和一致散列路由
+    text: 团队还引入了数据服务、request coalescing与一致散列路由，数据库引擎并非唯一变化。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   - id: E2
-    text: 团队迁移到 ScyllaDB 并改写迁移器
+    text: 历史消息读取p99由40—125ms区间降到15ms；未给出各配置完整硬件及运维成本。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   outcome:
-    text: 文章记录迁移完成与维护、延迟改善；不能把全部收益只归因于替换数据库。
+    text: 作者报告2022年5月迁移完成并在随后生产运行改善延迟和运维；原始容量由708TB到648TB可透明推导，不能当作可用数据量或美元成本。
     source_ids:
     - S1
   interpretation: 观察、当事人归因与维护者机制推断必须分开。
@@ -95,15 +95,45 @@ research:
     - outcome
   attempts:
   - 打开原文热点、数据服务、迁移与结果章节。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
+  - root本轮重新打开Discord全文Several Months Later段，确认177/72节点、4/9TB与p99，原文明确2022年5月切换。
   phase2_conditions:
   - 没有完整同口径总成本和工作量，采用 constrained-decision 备用；限2022消息库一次迁移。
-  record_path: reports/research-engineering-b.md
-  scope_decision:
-    id: ENG-110
-    input_status: insufficient_this_round
-    reason: 消息迁移机制可核，缺同窗口总成本、资源、工作量和迁移投入。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: sourced
-  source_assessment_reason: 一手直接材料可核查事件或发布行为，尚未Case QA。
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: blocked
+    reason: 消息迁移机制可核，缺同窗口总成本、资源、工作量和迁移投入。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 177台平均4TB到72台9TB后，节点数和原始磁盘容量分别变化多少；为什么不是相同百分比的成本节省？
+  expected_output: 两项归一化计算及不能推出的总成本/数据库独立因果贡献
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 原成本问题缺总成本账，正式改成作者公开的节点/原始磁盘容量比较，保留数量训练。
+  record_path: reports/remediation-engineering-b.md
+  quantitative_inputs:
+  - name: old_nodes
+    value: 177
+    unit: nodes
+    source_ids:
+    - S1
+  - name: old_disk_per_node
+    value: 4
+    unit: TB average
+    source_ids:
+    - S1
+  - name: new_nodes
+    value: 72
+    unit: nodes
+    source_ids:
+    - S1
+  - name: new_disk_per_node
+    value: 9
+    unit: TB
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

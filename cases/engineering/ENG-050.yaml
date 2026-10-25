@@ -1,9 +1,9 @@
 id: ENG-050
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: LinkedIn Kafka 日志存储（2011）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Kafka 2011 批量发布实验
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-050
@@ -47,50 +47,50 @@ planning:
     input_verification: not_started
 research:
   id: ENG-050
-  status: blocked
-  reason: 有消息及批次基准，缺等待分布和到达工作量，不能精算延迟代价。 尚未应用备用问题，原数量主线保持 blocked。
-  event: LinkedIn Kafka 日志存储（2011）
-  cutoff: 2011论文producer实验工件，比较batch1与50前；实验结果隐藏。
+  status: sourced
+  reason: 正式改为原论文可追溯批量/吞吐的更小数量题，保留数量动作，不再精算未公开等待分布。
+  event: Kafka 2011 批量发布实验
+  cutoff: NetDB2011 producer experiment工件，在解释批量数据前
   initial_facts:
   - id: F1
-    text: 单producer发送一千万条200-byte消息。
+    text: 实验每条消息200字节，共一千万条。
     source_ids:
     - S1
     availability: pre_decision
   - id: F2
-    text: 同实验配置对比batch1及50，broker异步flush。
+    text: Kafka producer测试采用异步、不等待broker确认。
     source_ids:
     - S1
     availability: pre_decision
   evidence:
   - id: E1
-    text: 论文报告约5万与40万messages/s的平均吞吐。
+    text: batch=1平均发布约50000条/秒；batch=50约400000条/秒。
     source_ids:
     - S1
     availability: pre_decision
   - id: E2
-    text: 作者明确无broker ACK提高吞吐但不能保证每条已收到；批处理摊薄RPC开销。
+    text: 一次publish可含一批消息，作者称批量摊销RPC开销；批量50接近1Gb链路限制。
     source_ids:
     - S1
     availability: pre_decision
   outcome:
     id: O1
-    text: 该实验批50提高吞吐近数量级，但不能据此计算任意低流量批等待。
+    text: 按满批折算请求率从50000次/秒变为8000次/秒，消息吞吐约8倍；缺到达时间与排队分布，不能得出端到端等待改善。
     source_ids:
     - S1
     availability: post_decision
   interpretation:
-    text: 收益受异步确认、网络等多因素影响，不把所有差异归于磁盘顺序写。
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 缺到达分布和等待时间测量；采用prediction-counterfactual备用题，保留未核输入。
+  - 按满批折算为透明算术，非抓包观测；原实验未保证每条发布消息均被broker接收。
   sources:
   - id: S1
     url: https://www.microsoft.com/en-us/research/wp-content/uploads/2017/09/Kafka.pdf
-    publisher: LinkedIn / Kreps, Narkhede, Rao
-    published_at: '2011'
+    publisher: LinkedIn / Jay Kreps, Neha Narkhede, Jun Rao
+    published_at: '2011-06-12'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -102,34 +102,67 @@ research:
   attempts:
   - url: https://www.microsoft.com/en-us/research/wp-content/uploads/2017/09/Kafka.pdf
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://www.microsoft.com/en-us/research/wp-content/uploads/2017/09/Kafka.pdf
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    planning_only: true
-    anchor_request: Kafka 2011 候选存储设计的一段批量写入路径
-    anchor_status: unverified_research_target
-    main_question: 增大批量会怎样改变单位写入工作量和等待？
-    expected_output: 一个吞吐与等待的数量级权衡
-    evidence_to_verify:
-    - 消息大小
-    - 批大小
-    - 同口径磁盘或调用观测
-    out_of_scope: 不同时证明零拷贝、顺序写和全部吞吐收益
-    quantitative_plan:
-      mainline_measure: 批量变化的工作量与等待边界
-      required_inputs:
-      - 消息与批大小
-      - 同口径调用或存储工作量
-      missing_input_fallback:
-        focus: prediction-counterfactual
-        question: 批量增大时吞吐和等待会朝什么方向变化，哪个前提可能失效？
-      fallback_applied: false
-      input_verification: partial_source_check_see_unknowns
-  record_path: reports/research-engineering-a.md
-  scope_decision:
-    id: ENG-050
-    input_status: insufficient_this_round
-    reason: 有消息及批次基准，缺等待分布和到达工作量，不能精算延迟代价。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: sourced
-  source_assessment_reason: Kafka2011原论文提供200-byte消息及batch1/50对照；等待无实测分布，沿既定fallback做方向预测。
+    original:
+      planning_only: true
+      anchor_request: Kafka 2011 候选存储设计的一段批量写入路径
+      anchor_status: unverified_research_target
+      main_question: 增大批量会怎样改变单位写入工作量和等待？
+      expected_output: 一个吞吐与等待的数量级权衡
+      evidence_to_verify:
+      - 消息大小
+      - 批大小
+      - 同口径磁盘或调用观测
+      out_of_scope: 不同时证明零拷贝、顺序写和全部吞吐收益
+      quantitative_plan:
+        mainline_measure: 批量变化的工作量与等待边界
+        required_inputs:
+        - 消息与批大小
+        - 同口径调用或存储工作量
+        missing_input_fallback:
+          focus: prediction-counterfactual
+          question: 批量增大时吞吐和等待会朝什么方向变化，哪个前提可能失效？
+        fallback_applied: false
+        input_verification: partial_source_check_see_unknowns
+    remediation_applied: true
+    scope_change: 正式改为原论文可追溯批量/吞吐的更小数量题，保留数量动作，不再精算未公开等待分布。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: blocked
+    reason: 有消息及批次基准，缺等待分布和到达工作量，不能精算延迟代价。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 同一实验批量从1到50时，消息吞吐和隐含发布请求率各如何变化？
+  expected_output: 算出吞吐约8倍与按满批折算的请求率，并说明为什么仍不能计算等待时间
+  out_of_scope: 不补到达分布，不将异步无ACK结果迁移为强持久事务吞吐
+  reason: 正式改为原论文可追溯批量/吞吐的更小数量题，保留数量动作，不再精算未公开等待分布。
+  record_path: reports/remediation-engineering-a.md
+  quantitative_inputs:
+  - name: 小批大小
+    value: 1
+    unit: messages/request
+    source_ids:
+    - S1
+  - name: 大批大小
+    value: 50
+    unit: messages/request
+    source_ids:
+    - S1
+  - name: 小批吞吐
+    value: 50000
+    unit: messages/s
+    source_ids:
+    - S1
+  - name: 大批吞吐
+    value: 400000
+    unit: messages/s
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：同一实验批量从1到50时，消息吞吐和隐含发布请求率各如何变化？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

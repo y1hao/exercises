@@ -3,7 +3,7 @@ kind: micro_design
 domain: investing
 status: candidate
 scenario_title: 投资尽调的最小信息集
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 合成题的范围、约束与可评价性已通过制作前准入；尚未制作完整 Brief 或通过 Case QA，不可训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: DES-038
@@ -26,3 +26,26 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+active_scope:
+  decision: reframe
+  main_question: 三天且只有聚合ARR时，投资尽调应怎样排序并记录未知？
+  expected_output: 一份最高优先级证据及停止条件
+  out_of_scope: 不扩成完整产品/企业/平台设计；不保证全部目标无代价兼得；不预设唯一标准方案。
+  reason: 逐题明确一项输出、可满足或可证明不兼得的约束和有辨识力的变化；保留Phase2已收窄的合成边界。
+  record_path: curriculum/design-admission-2027.yaml
+  design_basis:
+    synthetic: true
+    assumptions:
+    - 合成练习；场景中的组织、用户、金额、规模和政策都是题设，不是已发生事实。
+    - 你是小型早期基金的投资人，只有三天评估一款收入增长快、客户集中度高的 Developer Tool SaaS；完整数据室尚未开放。
+    feasibility_reason: 允许不投资或延后；不要求数据室不足时仍给精确估值。
+    discriminating_change: 创始人只能提供聚合 ARR，拒绝开放 cohort 和客户级合同信息。
+    evaluation_basis:
+    - 输出是否覆盖当前约束和责任边界
+    - 变化是否揭露原方案关键假设，而不是无关加难
+    - 能说明不满足条件时的失败、拒绝或恢复路径
+    acceptable_tradeoffs: 信息价值与时间成本可取舍
+phase4_admission:
+  state: eligible
+  reason: 单一20分钟任务、显式合成假设、可评价约束及非唯一方案均已核对；只准入制作，不是完整Brief或训练QA。
+  report_path: reports/phase3-admission.md

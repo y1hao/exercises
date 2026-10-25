@@ -2,7 +2,7 @@ id: ENG-049
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: Kubernetes API 对象与控制器分离（2014—）
+scenario_title: Kubernetes 1.18 Job 控制器与执行职责（2020）
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -28,49 +28,49 @@ planning:
 research:
   id: ENG-049
   status: sourced
-  reason: 官方控制器文档可支撑声明状态与执行职责的分离；以设计工件为锚点。
-  event: Kubernetes API 对象与控制器分离（2014—）
-  cutoff: Kubernetes声明对象被创建后、控制器调和之前；不宣称Deployment在2014初版已有。
+  reason: 补读官方release-1.18控制器文档的真实Job示例，固定对象与版本，替代2014泛称。
+  event: Kubernetes 1.18 Job 控制器与执行职责（2020）
+  cutoff: Kubernetes1.18文档Job机制，Job已写入API、检查Pod是否开始前
   initial_facts:
   - id: F1
-    text: 对象spec描述期望状态。
+    text: Job对象声明要完成的任务。
     source_ids:
     - S1
     availability: pre_decision
   - id: F2
-    text: 控制器观察资源并使当前状态接近期望。
+    text: 控制器经API server观察对象并创建或移除Pod。
     source_ids:
     - S1
     availability: pre_decision
   evidence:
   - id: E1
-    text: 控制器一般经API server创建或删除其他对象。
+    text: 官方明确Job controller本身不运行Pod或容器。
     source_ids:
     - S1
     availability: pre_decision
   - id: E2
-    text: 官方Job例子指出controller不亲自运行Pod，其他组件调度/执行。
+    text: Pod调度后由节点kubelet执行，其他控制面组件需先响应新对象。
     source_ids:
     - S1
     availability: pre_decision
   outcome:
     id: O1
-    text: 声明对象、调和与实际执行存在职责和时间边界。
+    text: Job声明、控制器调和与最终执行有职责和时间边界；单个API确认不能证明各阶段已完成。
     source_ids:
     - S1
     availability: post_decision
   interpretation:
-    text: 原候选Deployment/ReplicaSet/Pod层级需配合同期API引用，不泛化为创建即运行。
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 历史版本与Deployment引入日期未核；ready前需固定对象示例版本。
+  - 不提供无来源的生产调度日志；实际失败在哪一段需以对象状态区分。
   sources:
   - id: S1
-    url: https://kubernetes.io/docs/concepts/architecture/controller/
-    publisher: Kubernetes project
-    published_at: null
+    url: https://raw.githubusercontent.com/kubernetes/website/release-1.18/content/en/docs/concepts/architecture/controller.md
+    publisher: Kubernetes documentation maintainers
+    published_at: '2020'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -82,6 +82,27 @@ research:
   attempts:
   - url: https://kubernetes.io/docs/concepts/architecture/controller/
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://raw.githubusercontent.com/kubernetes/website/release-1.18/content/en/docs/concepts/architecture/controller.md
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    scope: 从 Deployment、ReplicaSet、Pod 分层理解声明式 API 如何分配状态和所有权。
-  record_path: reports/research-engineering-a.md
+    original:
+      scope: 从 Deployment、ReplicaSet、Pod 分层理解声明式 API 如何分配状态和所有权。
+    remediation_applied: true
+    scope_change: 补读官方release-1.18控制器文档的真实Job示例，固定对象与版本，替代2014泛称。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: 官方控制器文档可支撑声明状态与执行职责的分离；以设计工件为锚点。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: Job已创建但Pod尚未运行，为什么不能直接认定Job控制器没有履行它的职责？
+  expected_output: 划分期望对象、Pod创建、调度与kubelet执行的链条和一个观测点
+  out_of_scope: 不讲2014未确认的Deployment历史，不把API创建确认当工作完成
+  reason: 补读官方release-1.18控制器文档的真实Job示例，固定对象与版本，替代2014泛称。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：Job已创建但Pod尚未运行，为什么不能直接认定Job控制器没有履行它的职责？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

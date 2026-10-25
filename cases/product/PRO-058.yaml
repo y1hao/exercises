@@ -1,9 +1,9 @@
 id: PRO-058
 kind: historical
 domain: product
-status: blocked
-scenario_title: Uber 城市级供需冷启动（2010—2012）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Uber 2010 Samasource活动：局部供需峰值
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-058
@@ -44,9 +44,9 @@ planning:
     input_verification: not_started
 research:
   id: PRO-058
-  status: blocked
-  reason: 同城时段供需现象可核，缺同口径等待、价格、车辆与交易量。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Uber 2010-11 Samasource活动需求峰值
+  status: sourced
+  reason: 正式采用预测备用题，取消没有数据的每辆车等待效应计算。
+  event: Uber 2010 Samasource活动：局部供需峰值
   cutoff: 活动前配车；当晚7—8点结果隐藏，精确活动日未独立核
   initial_facts:
   - id: F1
@@ -71,7 +71,7 @@ research:
     - S1
     availability: post_decision
   outcome:
-    text: 局部需求峰值导致无可用车；没有公开足够数值预测每辆车的等待效应。
+    text: 同期公司记录当晚增加车辆后7—8点仍未全部满足请求；其余时段较正常。
     source_ids:
     - S1
   interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
@@ -93,14 +93,22 @@ research:
     - outcome
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
-  phase2_conditions: quantitative fallback prediction-counterfactual：局部新增供给在什么条件下不缩短等待；不得补请求/车数/价格。
-  record_path: reports/research-product.md
-  scope_decision:
-    id: PRO-058
-    input_status: insufficient_this_round
-    reason: 同城时段供需现象可核，缺同口径等待、价格、车辆与交易量。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: sourced
-  source_assessment_reason: 2010同期供需故障记录直接支持局部时段与车辆位置边界；缺同口径数量，建议采用预设的预测备用问题，尚未修改focus。
+  - 本轮复用并阅读初轮逐项记录的一手来源内容；按新问题与公开材料时点核对，不宣称新发现内部实验。
+  phase2_conditions: 正式使用本条新范围与认知动作，Phase2原题留作历史。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 同城时段供需现象可核，缺同口径等待、价格、车辆与交易量。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 增加全晚车辆会保证7—8点请求都被满足吗，哪项局部供需条件会使预测反转？
+  expected_output: 一个带时间和位置条件的预测及失败边界
+  out_of_scope: 不推定未披露用户实验、留存因果、合同或完整历史版本；不把功能交付等同商业成功。
+  reason: 正式采用预测备用题，取消没有数据的每辆车等待效应计算。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 复用已读来源并正式修订为材料可支撑的单题范围；缺失的内部数据不再是完成题目的必要输入。
+  report_path: reports/phase3-admission.md

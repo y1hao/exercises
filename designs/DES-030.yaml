@@ -3,7 +3,7 @@ kind: micro_design
 domain: engineering
 status: candidate
 scenario_title: 共享平台里的租户资源隔离
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 合成题的范围、约束与可评价性已通过制作前准入；尚未制作完整 Brief 或通过 Case QA，不可训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: DES-030
@@ -26,3 +26,26 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+active_scope:
+  decision: reframe
+  main_question: 共享资源池怎样承诺隔离并处理突发SLA要求？
+  expected_output: 一个配额/突发/隔离契约
+  out_of_scope: 不扩成完整产品/企业/平台设计；不保证全部目标无代价兼得；不预设唯一标准方案。
+  reason: 逐题明确一项输出、可满足或可证明不兼得的约束和有辨识力的变化；保留Phase2已收窄的合成边界。
+  record_path: curriculum/design-admission-2027.yaml
+  design_basis:
+    synthetic: true
+    assumptions:
+    - 合成练习；场景中的组织、用户、金额、规模和政策都是题设，不是已发生事实。
+    - 一个多租户批处理服务同时服务小客户和头部客户；部分任务会占满 CPU 与队列，租户之间不应互相影响。
+    feasibility_reason: 共享资源有限，允许预留或独立池，不能同时保证无限突发和无干扰。
+    discriminating_change: 一家头部客户要求保证延迟 SLA，同时希望允许短时突发超过常规配额。
+    evaluation_basis:
+    - 输出是否覆盖当前约束和责任边界
+    - 变化是否揭露原方案关键假设，而不是无关加难
+    - 能说明不满足条件时的失败、拒绝或恢复路径
+    acceptable_tradeoffs: 利用率与隔离强度可取舍
+phase4_admission:
+  state: eligible
+  reason: 单一20分钟任务、显式合成假设、可评价约束及非唯一方案均已核对；只准入制作，不是完整Brief或训练QA。
+  report_path: reports/phase3-admission.md

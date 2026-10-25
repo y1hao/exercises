@@ -2,7 +2,7 @@ id: INV-016
 kind: historical
 domain: investing
 status: sourced
-scenario_title: Pinterest 2011 Series A
+scenario_title: Pinterest 2011已签term sheet：兴趣与商业意向
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -39,8 +39,8 @@ planning:
 research:
   id: INV-016
   status: sourced
-  reason: 直接投资记录可用于选择下一项需求证据；不把兴趣活动等同收入。
-  event: Pinterest 2011 投资考察备忘录
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  event: Pinterest 2011已签term sheet：兴趣与商业意向
   cutoff: 2011-04-03 备忘录形成时
   initial_facts:
   - id: F1
@@ -65,7 +65,7 @@ research:
     - S1
     availability: pre_decision
   outcome:
-    text: 投资人已整理考察材料并安排创始人演示；实际交割条款及长期回报未在此记录中核实。
+    text: 2011-04-03备忘录记录已签署领投1000万美元Series A、4000万美元投前并含13%未分配期权池的term sheet；非交割或实现收益证明。
     source_ids:
     - S1
   interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
@@ -86,5 +86,23 @@ research:
     - outcome
   attempts:
   - 实际打开并阅读上述来源正文；按 Phase 2 单一范围筛选。
-  phase2_conditions: 问题是下一项证据选择，不让用户作已知价格的仓位精算。
-  record_path: reports/research-investing.md
+  - 本轮复核初轮逐项保存的来源摘录、引用和未知；正式缩小问题范围，不新增没有依据的史实。
+  - 本轮重新打开Pinterest memo并核对已签term sheet段；明确与最终交割分开。
+  phase2_conditions: 本轮正式采用本条新问题与认知动作；原数量门槛仅存历史，不再要求未披露输入。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: sourced
+    reason: 直接投资记录可用于选择下一项需求证据；不把兴趣活动等同收入。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 收藏和跟随品味者的行为，哪项后续证据最能区别兴趣与商业需求？
+  expected_output: 一个分群验证与不可外推的付费判断
+  out_of_scope: 不外推未披露cohort、边际成本、股本权利或因果贡献；不把公司披露或投资建议当成已实现投资回报。
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
+  report_path: reports/phase3-admission.md

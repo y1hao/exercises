@@ -2,8 +2,8 @@ id: DES-016
 kind: micro_design
 domain: investing
 status: candidate
-scenario_title: 早期基金的后续投资储备
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+scenario_title: 跟投与桥接的资本优先级
+readiness_note: 合成题的范围、约束与可评价性已通过制作前准入；尚未制作完整 Brief 或通过 Case QA，不可训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: DES-016
@@ -39,3 +39,29 @@ planning:
     - 交易具体价格和权利未提供，应指出它们如何改变优先级，不能自行补数字。
     scoped_change: 高增长公司要求本轮跟投，同时另一核心持仓请求桥接资金。
     out_of_scope: 不精算基金最佳收益率，不比较所有已投企业或设计完整基金策略。
+active_scope:
+  decision: reframe
+  main_question: 剩余资本应怎样按顺序在新投资和两类跟投之间承诺？
+  expected_output: 一份按条件分配/暂缓的资本规则
+  out_of_scope: 不扩成完整产品/企业/平台设计；不保证全部目标无代价兼得；不预设唯一标准方案。
+  reason: 逐题明确一项输出、可满足或可证明不兼得的约束和有辨识力的变化；保留Phase2已收窄的合成边界。
+  record_path: curriculum/design-admission-2027.yaml
+  design_basis:
+    synthetic: true
+    assumptions:
+    - 合成练习；场景中的组织、用户、金额、规模和政策都是题设，不是已发生事实。
+    - 基金规模与剩余资金沿用原合成题，只比较高估值跟投和桥接融资两个待选动作。
+    - 1800 万美元是扣除管理费用及已签承诺后的可部署余额。
+    - 两项待选交易均无强制跟投义务，没有未披露的担保或杠杆。
+    - 交易具体价格和权利未提供，应指出它们如何改变优先级，不能自行补数字。
+    feasibility_reason: 沿用Phase2合成金额和有限预算，允许放弃或分期，不要求预测最优回报。
+    discriminating_change: 高增长公司要求本轮跟投，同时另一核心持仓请求桥接资金。
+    evaluation_basis:
+    - 输出是否覆盖当前约束和责任边界
+    - 变化是否揭露原方案关键假设，而不是无关加难
+    - 能说明不满足条件时的失败、拒绝或恢复路径
+    acceptable_tradeoffs: 保留期权与集中支持均可辩护
+phase4_admission:
+  state: eligible
+  reason: 单一20分钟任务、显式合成假设、可评价约束及非唯一方案均已核对；只准入制作，不是完整Brief或训练QA。
+  report_path: reports/phase3-admission.md

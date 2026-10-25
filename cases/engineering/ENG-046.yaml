@@ -1,9 +1,9 @@
 id: ENG-046
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: .NET ThreadPool Hill Climbing（2000s—）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: .NET 6 Hill Climbing 吞吐反馈工件（2021）
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-046
@@ -37,49 +37,50 @@ planning:
     out_of_scope: 不综述 ThreadPool 历史或只凭线程数下结论
 research:
   id: ENG-046
-  status: blocked
-  reason: 已读.NET官方HillClimbing源码，但未锁定历史tag及一个实际worker调整的观测曲线。
-  event: .NET ThreadPool Hill Climbing（2000s—）
-  cutoff: 运行时与负载观测快照待定。
+  status: sourced
+  reason: 固定官方v6.0.0源码而非main；改为该控制器真实使用的反馈选择题，无须未知实际故障曲线。
+  event: .NET 6 Hill Climbing 吞吐反馈工件（2021）
+  cutoff: dotnet/runtime v6.0.0 PortableThreadPool.HillClimbing.cs，选择反馈指标前
   initial_facts:
   - id: F1
-    text: 实现按完成数/采样时间计算吞吐。
+    text: 控制器以完成任务数除以采样时长计算throughput。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: 实现保存线程数及吞吐样本。
+    text: 源码同时记录currentThreadCount与吞吐样本。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 通过线程变化与吞吐变化的波形比较估计调整方向。
+    text: 控制器比较线程波动与吞吐波动的关系。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: E2
-    text: 噪声影响置信度与调整幅度。
+    text: 源码明确反相时后退、90度相位时不判断，并用噪声降低调整信心。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   outcome:
     id: O1
-    text: ''
-    source_ids: []
-    availability: post_decision
-  interpretation:
-    text: 线程增加并非必然提升吞吐。
+    text: 该实现依据吞吐反馈调整线程，不按队列长度或线程数单独判断；输出和事件日志保留新线程数与调整统计。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 历史tag、worker队列、同口径吞吐曲线缺失。
+  - 这是控制器源码工件，线程竞争的具体业务原因仍需实验，不宣称已定位真实事故。
   sources:
   - id: S1
-    url: https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/Threading/PortableThreadPool.HillClimbing.cs
-    publisher: .NET / Microsoft
-    published_at: null
+    url: https://github.com/dotnet/runtime/blob/v6.0.0/src/libraries/System.Private.CoreLib/src/System/Threading/PortableThreadPool.HillClimbing.cs
+    publisher: Microsoft / .NET runtime maintainers
+    published_at: '2021'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -87,18 +88,40 @@ research:
     - F2
     - E1
     - E2
+    - O1
   attempts:
   - url: https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/Threading/PortableThreadPool.HillClimbing.cs
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://github.com/dotnet/runtime/blob/v6.0.0/src/libraries/System.Private.CoreLib/src/System/Threading/PortableThreadPool.HillClimbing.cs
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    planning_only: true
-    anchor_request: 一个 .NET 实现快照下的 worker 注入调整
-    anchor_status: unverified_research_target
-    main_question: 下一项测量怎样区分线程不足与线程竞争？
-    expected_output: 一项观测选择及两种相反预测
-    evidence_to_verify:
-    - 运行时版本
-    - worker 与队列观测
-    - 吞吐曲线口径
-    out_of_scope: 不综述 ThreadPool 历史或只凭线程数下结论
-  record_path: reports/research-engineering-a.md
+    original:
+      planning_only: true
+      anchor_request: 一个 .NET 实现快照下的 worker 注入调整
+      anchor_status: unverified_research_target
+      main_question: 下一项测量怎样区分线程不足与线程竞争？
+      expected_output: 一项观测选择及两种相反预测
+      evidence_to_verify:
+      - 运行时版本
+      - worker 与队列观测
+      - 吞吐曲线口径
+      out_of_scope: 不综述 ThreadPool 历史或只凭线程数下结论
+    remediation_applied: true
+    scope_change: 固定官方v6.0.0源码而非main；改为该控制器真实使用的反馈选择题，无须未知实际故障曲线。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: blocked
+    reason: 已读.NET官方HillClimbing源码，但未锁定历史tag及一个实际worker调整的观测曲线。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: worker数量增加却不能仅凭队列下降判定收益，下一项该记录什么才能区分不足与竞争？
+  expected_output: 选择同采样窗口的完成率与线程变化关系，列正负两种预期
+  out_of_scope: 不伪造生产吞吐曲线，不把总线程数当可用worker数
+  reason: 固定官方v6.0.0源码而非main；改为该控制器真实使用的反馈选择题，无须未知实际故障曲线。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：worker数量增加却不能仅凭队列下降判定收益，下一项该记录什么才能区分不足与竞争？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

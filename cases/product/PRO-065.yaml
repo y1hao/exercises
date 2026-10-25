@@ -75,4 +75,20 @@ research:
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
   phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 当期关闭公告直接给出公司理由与退出安排；无足以量化资源机会成本的公开数据。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 忠实用户与下降使用量同时存在时，是否应停止维护并提供数据迁出？
+  expected_output: 一项取舍及用户价值/资源约束的区别
+  out_of_scope: 不以发布、用户总量或事后成功代替因果证据
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

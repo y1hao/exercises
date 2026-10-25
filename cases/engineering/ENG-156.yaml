@@ -1,9 +1,9 @@
 id: ENG-156
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Kubernetes 控制器协调循环（2014—2016）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Kubernetes Job controller：期望状态与异步控制（文档工件）
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-156
@@ -27,29 +27,69 @@ planning:
   - ME-09
 research:
   id: ENG-156
-  status: blocked
-  reason: 当前官方控制器开发约定可读，但未定位2014—2016版本artifact。
-  event: Kubernetes2014—2016控制器候选
-  cutoff: 历史版本循环语义待原始快照
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 明确冻结来源版本；不倒推候选初始年份。
+  event: Kubernetes Job controller：期望状态与异步控制（文档工件）
+  cutoff: 2026-10-25官方Controllers文档机制快照；不声称2014—2016源码细节
+  initial_facts:
+  - id: I1
+    text: controller观察资源spec中的期望状态。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: Job controller追踪Job资源及为其运行工作的Pod资源。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: Job controller通过API server请求创建/删除Pod，本身不运行容器。
+    source_ids: *id001
+    availability: post_decision
+  - id: E2
+    text: 其它组件再调度运行Pod，Job完成后controller更新完成状态。
+    source_ids: *id001
+    availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 已知观察、作者归因与维护者推论必须分开；不承诺未核出的数字。
+    text: 工件说明控制循环推进状态、结果由多个组件异步达成；单次API请求成功不等于业务已完成，也不保证系统永远静止。
+    source_ids:
+    - S1
+  interpretation: 来源所述观察/机制与维护者迁移推论分开；规范示例是工件推演，不宣称真实生产事故。
   unknowns:
-  - 未公开内部过程与全部版本细节未知。
-  - 当前官方控制器开发约定可读，但未定位2014—2016版本artifact。
+  - 未公开内部决策日、完整负载及业务效果未知；不要求用户据此精算。
   sources:
   - id: S1
-    url: https://github.com/kubernetes/community/blob/main/contributors/devel/sig-api-machinery/controllers.md
+    url: https://kubernetes.io/docs/concepts/architecture/controller/
     publisher: Kubernetes
     published_at: null
     source_type: primary
     checked_at: '2026-10-25'
-    supports: []
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
   attempts:
   - 尝试kubernetes v1.3.0旧设计路径失败；读取community当前文档，含较新队列API不宜倒推2016。
+  - 本轮实际打开一手正文，按可读机制/事件重新核查准入。
   phase2_conditions:
-  - 需历史文档/源码commit证明reconcile与重试规则；保持原日期ID不以新教程冒充旧实现。
-  record_path: reports/research-engineering-b.md
+  - 保留原ID和课程日期；候选标题与本次修订建立显式映射。
+  - 结果和隐藏证据不得进入首轮或Starter Prompt。
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: blocked
+    reason: 当前官方控制器开发约定可读，但未定位2014—2016版本artifact。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 一次创建Pod请求成功后控制器再次观察到旧状态，下一步要依据什么判断是否继续协调而非认为工作完成？
+  expected_output: 围绕单一问题给出可由证据推翻的解释或选择及边界
+  out_of_scope: 不扩写整家公司或系统史，不添加未公开指标、日志和决策者观点
+  reason: 明确冻结来源版本；不倒推候选初始年份。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 2项可知事实、2项实质证据与机制/事件结局齐备；尚未制作完整Brief和QA。
+  report_path: reports/phase3-admission.md

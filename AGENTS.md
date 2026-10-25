@@ -26,6 +26,7 @@
 .venv/bin/python scripts/audit_curriculum.py
 .venv/bin/python scripts/revise_curriculum.py
 .venv/bin/python scripts/verify_sources.py
+.venv/bin/python scripts/phase3_admission.py
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/python -m compileall -q scripts tests
 git diff --check
@@ -35,10 +36,15 @@ git diff --check
 - Phase 2 审核输入见 `reports/phase2-review-notes.tsv`、复用簇与周内复核 YAML；改动后显式执行 `scripts/audit_curriculum.py --apply` 重建报告。默认执行为只读复现检查。`review_status` 不是训练状态，replace 建议不代表已经换题。
 - 本轮规划输入位于 `curriculum/revision-plans-2027.tsv`、`design-revisions-2027.yaml`、`quantitative-requirements-2027.tsv` 和 `planning-policy.yaml`；通过 `scripts/revise_curriculum.py --apply` 同步索引 revision_state、规划汇总与 Brief 的 planning，再重建 audit。核源与制作 Brief 应遵守 planned_exercise 的单一范围，candidate_material 只用于追溯。
 - 历史主线的数字必须可追溯且事前可知。输入不足时优先采用逐题列明的定性或证据问题并记录动作映射，不自动补合成值；合成数字只属于明确切换的反事实附加题。微设计参数应显式标合成。
-- ENG-157 保留为待核源替换槽位；ENG-011、INV-034、ENG-117 的独立材料不满足条件时才进入替换队列，不为了调比例编造事件。
+- Phase2替换条件保留为历史；Phase3已落实ENG-157→Rust 1.52.1、ENG-117→Ribbon Filter、INV-034→Chegg，ENG-011已独立核源。当前制作范围与原题映射见active_scope和phase3-revisions，不恢复旧待替换状态。
 - 涉及事实内容、证据或状态晋级时，额外逐条核实相关来源；结构校验不能替代来源验证、剧透检查或对话试验。仅结构改动应在报告中说明没有新增核源结论。
 - 更新 `reports/progress.md` 的准确状态数量、检查结果、阻塞和剩余工作；不以文件数量或模拟结果冒充完整验收。
 
 - Phase 3 维护输入为 `reports/research-*.md`，数量主线的有效状态复核为 `curriculum/source-decisions-2027.yaml`。核源后显式运行 `scripts/verify_sources.py --apply`，同步 research/status 和 source-verification 报告；默认离线只读检查，不能自动核实网络事实或设 ready。
 - Phase 2 的 planning/revision_state 是历史规划快照，不能用 input_verification:not_started 覆盖当前 research 结论。缺数量输入且备用动作尚未应用时保持 blocked；原核源建议状态可另存 source_assessment_status。
 - 研究中的 availability 只表示历史可知性；unknown/post_decision 不得进入 sourced 的初始事实。工程规范/设计工件须标明版本与机制快照，不能编造成生产事故。融资建议、宣布、交割和实现回报必须区分。
+
+- 用户最新要求：Phase3不能只以313条都有状态就结束，必须先处理补源/改题/换题，使365题全部通过制作前准入，再汇报并等待Phase4授权。本轮来源与范围输入见`reports/remediation-*.md`、52设计前置审查见`curriculum/design-admission-2027.yaml`。`scripts/phase3_admission.py --progress`只写诚实进度；`--apply`在全365 eligible前必须拒绝，不设置ready。
+- 原Phase2 planning与初轮source-decisions保留为历史。正式改题后用active_scope和phase4_admission判断实际制作范围，保留日期/ID/candidate_material及逐条映射。不能让老生成器恢复已正式取消的缺数字要求或覆写新focus。
+
+- 用户要求收敛工作：后续只处理未通过项或明确发现的事实错误，不再把补题扩大为新一轮全量复核或继续扩建检查框架。当前126个初轮失败项已处理，尚未获Phase4授权。

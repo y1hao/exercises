@@ -103,4 +103,20 @@ research:
     - 循环片段
     - 抢占可达条件
     out_of_scope: 不把调度改进等同于消除所有暂停
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: Go1.14官方release notes明确异步抢占语义及平台例外。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 另一个可运行 goroutine 何时才有机会执行？
+  expected_output: 一项前后行为预测及仍可能停顿的边界
+  out_of_scope: 不把调度改进等同于消除所有暂停
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留Go 1.14 异步抢占（2020）的单一范围；不要求原文无具体循环片段，应在Brief明确最小示例为规范推演。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：另一个可运行 goroutine 何时才有机会执行？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

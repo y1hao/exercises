@@ -1,9 +1,9 @@
 id: PRO-076
 kind: historical
 domain: product
-status: blocked
-scenario_title: Notion 数据库视图与关联（2018—）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Notion关系属性2026快照：客户与购买记录
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-076
@@ -37,21 +37,21 @@ planning:
     out_of_scope: 不估没有数据的留存提升
 research:
   id: PRO-076
-  status: blocked
-  reason: 当前帮助文档验证关系与上手路径，但未给历史版本日期，不能将当前默认单向/双向选项回填2018；单工作流仍缺可冻结的历史快照。
-  event: Notion 数据库视图与关联（2018—）
-  cutoff: 2018后某历史版本待核实
+  status: sourced
+  reason: 冻结已读官方文档的2026快照，不把当前关系默认行为回填2018。
+  event: Notion关系属性2026快照：客户与购买记录
+  cutoff: 2026-10-25读取的帮助文档快照；说明性客户/物品例子不是历史真实客户实验。
   initial_facts:
   - id: F1
     text: 当前官方文档以客户表与购买物品表说明关系。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
     text: 当前关系属性让两个数据库的页面相连接。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
     text: 当前路径为新增属性、选Relation、选目标库并添加关系。
@@ -64,8 +64,9 @@ research:
     - S1
     availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
+    text: 官方文档提供建立关系及切换双向关系的实际流程；不证明历史留存提升。
+    source_ids:
+    - S1
   interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
   unknowns:
   - 内部决策材料、反事实与独立效果测量未公开
@@ -81,7 +82,25 @@ research:
     - F2
     - E1
     - E2
+    - outcome
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
-  phase2_conditions: 不估没有数据的留存提升
-  record_path: reports/research-product.md
+  - 本轮复用并阅读初轮逐项记录的一手来源内容；按新问题与公开材料时点核对，不宣称新发现内部实验。
+  phase2_conditions: 正式使用本条新范围与认知动作，Phase2原题留作历史。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 当前帮助文档验证关系与上手路径，但未给历史版本日期，不能将当前默认单向/双向选项回填2018；单工作流仍缺可冻结的历史快照。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 关联客户表和购买记录怎样增加复用价值，单向和双向选项又怎样增加理解与维护成本？
+  expected_output: 一条关系复用机制及复杂性抵消价值的条件
+  out_of_scope: 不推定未披露用户实验、留存因果、合同或完整历史版本；不把功能交付等同商业成功。
+  reason: 冻结已读官方文档的2026快照，不把当前关系默认行为回填2018。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 复用已读来源并正式修订为材料可支撑的单题范围；缺失的内部数据不再是完成题目的必要输入。
+  report_path: reports/phase3-admission.md

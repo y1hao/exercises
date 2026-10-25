@@ -2,7 +2,7 @@ id: PRO-051
 kind: historical
 domain: product
 status: sourced
-scenario_title: HashiCorp Terraform Enterprise（2014—2021）
+scenario_title: Terraform Enterprise 2017-12-12 GA
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -87,4 +87,20 @@ research:
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
   phase2_conditions: 不套用其他开源工具案例的功能清单
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 2017 GA直接比较OSS与Enterprise的工作区及治理功能，可测试自管替代条件。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 面对工作区历史、权限和策略护栏，先验证哪项责任确实不能由当前OSS流程覆盖？
+  expected_output: 一个组织治理验证项及自管替代边界
+  out_of_scope: 不套用其他开源工具案例的功能清单
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

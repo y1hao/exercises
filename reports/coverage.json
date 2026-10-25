@@ -10,10 +10,8 @@
     "micro_design/product": 18
   },
   "by_status": {
-    "blocked": 125,
     "candidate": 52,
-    "rejected": 1,
-    "sourced": 187
+    "sourced": 313
   },
   "by_subdomain": {
     "engineering/agent-devtools": 2,
@@ -79,14 +77,14 @@
     "product/workflow-automation": 1
   },
   "by_focus": {
-    "boundary-transfer": 44,
+    "boundary-transfer": 47,
     "causal-modeling": 49,
-    "constrained-decision": 57,
+    "constrained-decision": 54,
     "constructive-design": 52,
-    "evidence-selection": 41,
-    "hypothesis-diagnosis": 31,
+    "evidence-selection": 49,
+    "hypothesis-diagnosis": 35,
     "prediction-counterfactual": 52,
-    "quantitative-calibration": 39
+    "quantitative-calibration": 27
   },
   "exact_title_duplicate_hints": [],
   "limitations": "未审核真实事件重复、成败多样性、20 分钟可行性或来源真实性；Phase 2 起处理。"

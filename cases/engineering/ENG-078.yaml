@@ -83,4 +83,20 @@ research:
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
   phase2_conditions:
     scope: 从 stop-the-world 转向并发标记时，推理 write barrier 对暂停与吞吐的影响。
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: Go1.5设计者同期文章直接解释三色标记与write barrier不变量。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 从 stop-the-world 转向并发标记时，推理 write barrier 对暂停与吞吐的影响。
+  expected_output: 一项可检验的主判断及其适用边界
+  out_of_scope: 不外推为未核实的其他版本或生产负载
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留Go GC Concurrent Mark Sweep（2015）的单一范围；不要求没有固定工作负载，不能精算吞吐损失。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：从 stop-the-world 转向并发标记时，推理 write barrier 对暂停与吞吐的影响。；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

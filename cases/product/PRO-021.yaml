@@ -2,7 +2,7 @@ id: PRO-021
 kind: historical
 domain: product
 status: sourced
-scenario_title: PayPal eBay 买卖双方扩散（1999—2002）
+scenario_title: PayPal 2001 在线拍卖支付扩散
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -87,4 +87,20 @@ research:
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
   phase2_conditions: 冻结2002-02-11公开快照；2001支付统计当作已发生的证据，不作未来结果。若原题必须锚定2001则仍需同期材料。
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 2002 原始招股书有具体付款/收款流程、未注册收款人路径及拍卖使用比例。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 哪一方的任务使邀请支付工具成为自然步骤？
+  expected_output: 一条交易到邀请的传播闭环
+  out_of_scope: 不以后来支付份额代替初期机制证据
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

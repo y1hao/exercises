@@ -1,9 +1,9 @@
 id: ENG-058
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Kafka 复制协议（2012—2013）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Kafka 0.8.0 ISR 缩减与 ACK 边界（2013）
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-058
@@ -39,47 +39,92 @@ planning:
     out_of_scope: 不混用后来默认值或回到通用 Raft 日志题
 research:
   id: ENG-058
-  status: blocked
-  reason: 尝试Kafka0.8官方归档多种路径仅返回重定向页；取得0.8.0配置源码但选举/ACK全契约仍未读取。
-  event: Kafka 复制协议（2012—2013）
-  cutoff: 原候选2012–2013内0.8.0实现，完整版本规则待核。
-  initial_facts: []
-  evidence: []
-  outcome:
-    id: O1
-    text: ''
-    source_ids: []
-    availability: post_decision
-  interpretation:
-    text: 不能把现代unclean election默认值回填早期。
+  status: sourced
+  reason: 已读0.8.0固定tag Partition.scala正文；收窄到可核ISR缩减/ACK条件，避免缺少选举全契约时做无限故障保证。
+  event: Kafka 0.8.0 ISR 缩减与 ACK 边界（2013）
+  cutoff: Kafka0.8.0 Partition.scala机制快照，执行maybeShrinkIsr/checkEnoughReplicasReachOffset前
+  initial_facts:
+  - id: F1
+    text: 分区分别维护assignedReplicas与inSyncReplicas。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    availability: pre_decision
+  - id: F2
+    text: 落后时间或消息差达到该版条件时可从ISR移出。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: requiredAcks负值要求当前ISR内replicas达到requiredOffset。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: maybeShrinkIsr更新ISR后会重算high watermark，源码明确ISR可缩到1。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 此实现按当前ISR而非所有分配副本判断全确认；若ISR只剩leader，其确认不证明已存在另一个已复制副本。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 尝试 https://kafka.apache.org/081/documentation.html、https://kafka.apache.org/08/documentation.html
-    均为redirect内容。
-  - 仍需ISR状态机、leader选举和producer ack同版本实现。
+  - 这是版本源码推演，不冒充某次broker事故；全体ISR同时失败和unclean election不在已证明保证内。
   sources:
   - id: S1
-    url: https://raw.githubusercontent.com/apache/kafka/0.8.0/core/src/main/scala/kafka/server/KafkaConfig.scala
-    publisher: Apache Kafka
-    published_at: null
+    url: https://raw.githubusercontent.com/apache/kafka/0.8.0/core/src/main/scala/kafka/cluster/Partition.scala
+    publisher: Apache Kafka maintainers
+    published_at: '2013'
     source_type: primary
     checked_at: '2026-10-25'
-    supports: []
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
   attempts:
   - url: https://raw.githubusercontent.com/apache/kafka/0.8.0/core/src/main/scala/kafka/server/KafkaConfig.scala
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://raw.githubusercontent.com/apache/kafka/0.8.0/core/src/main/scala/kafka/cluster/Partition.scala
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    planning_only: true
-    anchor_request: 拟选 2012—2013 内的一版 Kafka 复制规则
-    anchor_status: unverified_research_target
-    main_question: 一个 broker 失效后，这条消息还能否被安全确认？
-    expected_output: 一条 ISR 与选举状态变化预测
-    evidence_to_verify:
-    - 版本
-    - ack 配置
-    - ISR 状态
-    - 选举规则
-    out_of_scope: 不混用后来默认值或回到通用 Raft 日志题
-  record_path: reports/research-engineering-a.md
+    original:
+      planning_only: true
+      anchor_request: 拟选 2012—2013 内的一版 Kafka 复制规则
+      anchor_status: unverified_research_target
+      main_question: 一个 broker 失效后，这条消息还能否被安全确认？
+      expected_output: 一条 ISR 与选举状态变化预测
+      evidence_to_verify:
+      - 版本
+      - ack 配置
+      - ISR 状态
+      - 选举规则
+      out_of_scope: 不混用后来默认值或回到通用 Raft 日志题
+    remediation_applied: true
+    scope_change: 已读0.8.0固定tag Partition.scala正文；收窄到可核ISR缩减/ACK条件，避免缺少选举全契约时做无限故障保证。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: blocked
+    reason: 尝试Kafka0.8官方归档多种路径仅返回重定向页；取得0.8.0配置源码但选举/ACK全契约仍未读取。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: requiredAcks=-1时，一个落后副本被移出ISR，会怎样改变这条消息的确认条件？
+  expected_output: 沿ISR成员与offset条件给出状态预测，并说明它不等于任意故障下不丢消息
+  out_of_scope: 不混用后来的min.insync.replicas默认值，不宣称ACK意味着所有分配副本都有消息
+  reason: 已读0.8.0固定tag Partition.scala正文；收窄到可核ISR缩减/ACK条件，避免缺少选举全契约时做无限故障保证。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：requiredAcks=-1时，一个落后副本被移出ISR，会怎样改变这条消息的确认条件？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

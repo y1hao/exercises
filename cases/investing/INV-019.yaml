@@ -1,9 +1,9 @@
 id: INV-019
 kind: historical
 domain: investing
-status: blocked
-scenario_title: Stripe 2010—2011 Seed
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Stripe早期人工安装：2013当事人回顾
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-019
@@ -37,28 +37,69 @@ planning:
     out_of_scope: 不以创始人后来声望替代当时验证
 research:
   id: INV-019
-  status: blocked
-  reason: 检索主要得到轮次数据库与二手报道，未找到足以支持同期金融责任、团队和实际轮次的直接材料。
-  event: Stripe 2011 种子融资尽调
-  cutoff: 2011 年候选种子轮；确切日与可知材料未核实
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 以Paul Graham当事人回顾为节点，不虚构2011种子轮条款或客户数据。
+  event: Stripe早期人工安装：2013当事人回顾
+  cutoff: 2013-07回顾已公开后评价所述执行证据；不复演具体未核实的2011轮次。
+  initial_facts:
+  - id: F1
+    text: Graham回顾Stripe创始人向YC同批初创公司招募试用。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 答应试用与完成安装是两个步骤。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 当对方同意时，创始人直接要来电脑当场安装。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 作者用这一行为解释早期人工推进；文章未给相应付费留存或金融合规审计。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+    text: 观察者记录实际人工安装行为；不能把观察者解释或文中假设增长算术当成Stripe实测。
+    source_ids:
+    - S1
+  interpretation: 来源披露、当事人解释与维护者推论区分；不以事后结果裁定唯一正确选择。
   unknowns:
-  - 早期轮次、产品上线时间、合规责任分配与运营证据均待核。
+  - 完整内部判断及反事实结果未知；不计算未披露的价格、成本或实现回报。
   sources:
   - id: S1
-    url: https://stripe.com/newsroom
-    publisher: Stripe
-    published_at: null
+    url: https://www.paulgraham.com/ds.html?viewfullsite=1
+    publisher: Paul Graham
+    published_at: 2013-07
     source_type: primary
     checked_at: '2026-10-25'
-    supports: []
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
   attempts:
-  - 检索 site:stripe.com 2011 funding seed；未找到所需同期融资正文。
-  - 检索结果含 https://techcrunch.com/2011/03/28/stealth-payment-startup-stripe-paypal/ ，未把摘要当核验。
-  phase2_conditions: 不以创始人后来的名声替代当时证据。
-  record_path: reports/research-investing.md
+  - 实际打开并阅读所列一手材料；本轮按修改后的单一问题核对，不以搜索摘要补事实。
+  phase2_conditions: 本轮正式修订单题范围；原候选和Phase2规划另保留，制作时使用本条新范围。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 检索主要得到轮次数据库与二手报道，未找到足以支持同期金融责任、团队和实际轮次的直接材料。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 替意向客户当场安装能验证团队执行的哪一步，为什么仍不足以证明付费需求和金融运营能力？
+  expected_output: 一条意向—激活证据链及下一项运营验证
+  out_of_scope: 不推定未披露交易条款、内部现金跑道、同cohort成本或因果贡献；公开披露时点不是原私募投资时点。
+  reason: 以Paul Graham当事人回顾为节点，不虚构2011种子轮条款或客户数据。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 明确单一节点与可回答的问题，至少2项事前事实、2项实质证据和直接支持的观察结果；准入不等于ready。
+  report_path: reports/phase3-admission.md

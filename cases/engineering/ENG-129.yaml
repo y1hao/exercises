@@ -39,7 +39,7 @@ planning:
 research:
   id: ENG-129
   status: sourced
-  reason: 直接资料可证事件或artifact；完整Case QA尚未执行。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
   event: 2015浏览器Promise微任务实验
   cutoff: 2015-08-17文中测试片段运行前
   initial_facts:
@@ -86,6 +86,23 @@ research:
     - outcome
   attempts:
   - 打开作者原始技术演示，核对代码、预期及兼容性差异。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 宿主固定浏览器，区分规范期望和真实实现观察；不混Node nextTick。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 直接资料可证事件或artifact；完整Case QA尚未执行。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 这些同步任务、微任务和 timer 回调按什么次序执行？
+  expected_output: 一条执行序列及饥饿边界
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

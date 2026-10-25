@@ -2,7 +2,7 @@ id: PRO-080
 kind: historical
 domain: product
 status: sourced
-scenario_title: Superhuman PMF 调查（2017—2018）
+scenario_title: Superhuman 2017—2018 PMF 调查与分群路线图
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -77,4 +77,20 @@ research:
   attempts:
   - 阅读创始人文章调查方法、四步骤和结尾结果；仅把数值作为自报调查。
   phase2_conditions: 与 INV-034 同源；本题限问卷分群和产品路线图，投资题需独立投资材料；58% 只在最终揭晓。
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 创始人原文给出调查对象、问题、分群过程及后来问卷分数；足以做调查证据解读，不能据此证明因果 PMF。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 只能再深挖一群问卷受访者，应选谁来确定速度价值的改进路线？
+  expected_output: 一个分群证据选择及抽样偏差边界
+  out_of_scope: 不以发布、用户总量或事后成功代替因果证据
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

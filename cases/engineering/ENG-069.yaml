@@ -1,9 +1,9 @@
 id: ENG-069
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Capital One 云环境泄露（2019）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Capital One 2019 WAF角色凭据与对象权限边界
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-069
@@ -26,49 +26,49 @@ planning:
   distinctness_clusters: []
 research:
   id: ENG-069
-  status: blocked
-  reason: DOJ原发布说明已读，支持Capital One2019事件及WAF配置问题；具体SSRF→凭据→S3链条需可读原complaint，PDF当前仅图片未取得文本。
-  event: Capital One 云环境泄露（2019）
-  cutoff: 2019-07-17外部告知潜在泄露后、完整机制调查前。
+  status: sourced
+  reason: 本轮下载并渲染阅读原complaint第5—6页，补齐WAF-Role凭据、list与sync链条；删除原候选未由该文明确给出的SSRF细节。
+  event: Capital One 2019 WAF角色凭据与对象权限边界
+  cutoff: 2019-07-17收到外部泄露线索后、完整调查结论前
   initial_facts:
   - id: F1
-    text: GitHub用户向Capital One报告潜在数据盗取。
+    text: Capital One用云服务支持业务并存放申请及其他数据。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: Capital One确认入侵后联系FBI。
+    text: 2019-07-17外部报告称GitHub gist可能含其泄露数据。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: DOJ称complaint指控通过配置错误的WAF访问数据。
+    text: 起诉材料引述公司调查称第一条命令取得WAF-Role凭据。
     source_ids:
     - S1
-    availability: unknown
+    availability: post_decision
   - id: E2
-    text: 搜查后发现包含复制数据的存储设备，属于当时执法方陈述。
+    text: 后续命令使用该角色列举bucket，再复制其有权限读取的数据。
     source_ids:
     - S1
-    availability: unknown
+    availability: post_decision
   outcome:
     id: O1
-    text: ''
-    source_ids: []
-    availability: post_decision
-  interpretation:
-    text: 保留指控/观察之别，不以2019公告推定刑事判决。
+    text: 2019-07-29宣誓书记录公司已识别防火墙配置错误、角色凭据与对象权限组成的访问链；此为调查/指控记录，不是独立复现或已裁判认定。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 原complaint PDF https://www.justice.gov/usao-wdwa/press-release/file/1188626/dl?inline= 已打开但无可抽取正文，不能宣称已逐页核实技术链。
-  - 具体IAM权限、SSRF请求及对象访问证据。
+  - 本原文未给全部IAM策略或精确SSRF报文，不能填造；后续司法结论不属于本题已核记录。
   sources:
   - id: S1
-    url: https://www.justice.gov/usao-wdwa/pr/seattle-tech-worker-arrested-data-theft-involving-large-financial-services-company
-    publisher: US Department of Justice
+    url: https://www.justice.gov/usao-wdwa/press-release/file/1188626/dl?inline=
+    publisher: US DOJ / FBI; 2019-07-29 complaint and affidavit
     published_at: '2019-07-29'
     source_type: primary
     checked_at: '2026-10-25'
@@ -77,9 +77,31 @@ research:
     - F2
     - E1
     - E2
+    - O1
   attempts:
   - url: https://www.justice.gov/usao-wdwa/pr/seattle-tech-worker-arrested-data-theft-involving-large-financial-services-company
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://www.justice.gov/usao-wdwa/press-release/file/1188626/dl?inline=
+    result: 本轮下载公开PDF，用PDFKit渲染并实际逐页查看第4—6页；第6页第10—11段明确三条命令与角色权限，网页文本提取失败已由图像正文补核。
   phase2_conditions:
-    scope: 从 SSRF 到云凭据和对象存储访问，分析最小权限与网络过滤的边界。
-  record_path: reports/research-engineering-a.md
+    original:
+      scope: 从 SSRF 到云凭据和对象存储访问，分析最小权限与网络过滤的边界。
+    remediation_applied: true
+    scope_change: 本轮下载并渲染阅读原complaint第5—6页，补齐WAF-Role凭据、list与sync链条；删除原候选未由该文明确给出的SSRF细节。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: blocked
+    reason: DOJ原发布说明已读，支持Capital One2019事件及WAF配置问题；具体SSRF→凭据→S3链条需可读原complaint，PDF当前仅图片未取得文本。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 一处网络入口失守如何扩大为多个对象存储bucket访问，最小权限能在哪段限制后果？
+  expected_output: 画出入口、角色凭据、列举与复制权限的链条，区分阻断入口和限制授权
+  out_of_scope: 不编造原文未披露的SSRF请求或metadata端点，不把起诉指控当法院已认定技术事实
+  reason: 本轮下载并渲染阅读原complaint第5—6页，补齐WAF-Role凭据、list与sync链条；删除原候选未由该文明确给出的SSRF细节。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：一处网络入口失守如何扩大为多个对象存储bucket访问，最小权限能在哪段限制后果？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

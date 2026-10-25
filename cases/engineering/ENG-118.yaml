@@ -27,12 +27,17 @@ planning:
 research:
   id: ENG-118
   status: sourced
-  reason: 直接材料支持事件或artifact行为，完整训练未验收。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
   event: Knight Capital2012部署事故SEC调查
   cutoff: 2012-08-01市场开盘前后的发布检查
   initial_facts:
   - id: I1
     text: SMARS部署到8台服务器
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I3
+    text: SMARS是为客户股权订单提供自动路由的系统。
     source_ids:
     - S1
     availability: pre_decision
@@ -72,8 +77,27 @@ research:
     - E1
     - E2
     - outcome
+    - I3
   attempts:
   - 打开SEC行政处罚原文，核查漏部署、控制缺陷与损失。
+  - root本轮重新打开SEC 34-70694第一页，核对自动路由对象；未把漏部署节点先给开场。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 不能将未部署节点信息当作所有操作者当时已知；初始材料只给发布流程观察。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 直接材料支持事件或artifact行为，完整训练未验收。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 部分服务器部署状态不一致触发异常交易；判断 release 原子性与 Kill Switch 的作用。
+  expected_output: 围绕单一问题给出可由证据推翻的解释或选择及边界
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

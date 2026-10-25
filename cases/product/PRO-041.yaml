@@ -1,9 +1,9 @@
 id: PRO-041
 kind: historical
 domain: product
-status: blocked
-scenario_title: Grammarly 浏览器实时纠错（2015—）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Grammarly 2019：词上即时同义词与首次价值路径
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-041
@@ -37,43 +37,50 @@ planning:
     out_of_scope: 不总结全部写作产品或预设反馈必然有用
 research:
   id: PRO-041
-  status: blocked
-  reason: 官方回顾确认2015免费扩展，但尚缺当时安装到首反馈操作快照，设计师原文无法读取。
-  event: Grammarly 浏览器实时纠错（2015—）
-  cutoff: 2015 扩展上线；具体版本日未知
+  status: sourced
+  reason: 原2015扩展首次价值证据不足；改用2019-11-28官方明确发布的手机键盘交互快照，保留首次价值因果动作。
+  event: Grammarly 2019：词上即时同义词与首次价值路径
+  cutoff: 2019手机同义词交互发布快照
   initial_facts:
   - id: F1
-    text: Grammarly 官方回顾把免费 Chrome 扩展发布置于2015。
+    text: 用户在手机上快速写作，不能由输入速度直接判断表达是否合适。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: 扩展和 freemium 转型同时扩大写作支持入口。
+    text: 2019官方回顾明确Grammarly Keyboard推出同义词建议。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 官方称用户覆盖个人邮件、学生作文和专业写作。
+    text: 写完一个词暂停即可出现建议，不需将全文复制到另一编辑器；之前输入的词也可通过移动光标触发。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   - id: E2
-    text: 回顾未给首反馈步骤、安装漏斗或当时支持网站清单。
+    text: 同义词反馈直接绑定当前词，减少发现建议的操作，但词是否适合上下文仍需写作者判断；发布说明没有给实际接受率。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 官方发布的键盘交互已支持上述词上建议；没有公布本题可用的首次有用建议时间或转化改善实验。
     source_ids:
     - S1
     availability: post_decision
-  outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
+  - 首用耗时、建议采纳与文本质量的因果效果未知；另开编辑器仅是明确的流程反事实，不冒充历史实验。
   sources:
   - id: S1
-    url: https://www.grammarly.com/blog/company/grammarly-12-year-history/
-    publisher: Grammarly
-    published_at: null
+    url: https://www.grammarly.com/blog/product/new-features-2019/
+    publisher: Grammarly / Brittney Ross
+    published_at: '2019-11-28'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -81,7 +88,29 @@ research:
     - F2
     - E1
     - E2
+    - O1
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
-  phase2_conditions: 不总结全部写作产品或预设反馈必然有用
-  record_path: reports/research-product.md
+  - url: https://www.grammarly.com/blog/product/new-features-2019/
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
+  phase2_conditions:
+    original: 不总结全部写作产品或预设反馈必然有用
+    remediation_applied: true
+    scope_change: 原2015扩展首次价值证据不足；改用2019-11-28官方明确发布的手机键盘交互快照，保留首次价值因果动作。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 官方回顾确认2015免费扩展，但尚缺当时安装到首反馈操作快照，设计师原文无法读取。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 把2019手机键盘的“写完一个词后暂停即可看到同义词”与手动另开编辑器比较，画出它缩短首次获得有用措辞建议的路径；哪个环节仍需用户实际评价才能称为价值？
+  expected_output: 一条用户动作因果链及一个未被自动完成的价值判断。
+  out_of_scope: 不补2015浏览器首用转化数据，不概括全部写作功能，不默认建议一定更好。
+  reason: 原2015扩展首次价值证据不足；改用2019-11-28官方明确发布的手机键盘交互快照，保留首次价值因果动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 明确冻结单一工件/事件与问题；2条事前事实、2条有效证据、直接来源支持结果齐备。
+  report_path: reports/phase3-admission.md

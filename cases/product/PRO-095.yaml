@@ -2,7 +2,7 @@ id: PRO-095
 kind: historical
 domain: product
 status: sourced
-scenario_title: Apple App Store 订阅分成规则（2016）
+scenario_title: Apple 2016订阅公告：一年后的分成激励
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -27,8 +27,8 @@ planning:
 research:
   id: PRO-095
   status: sourced
-  reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
-  event: Apple 2016-06-08 宣布订阅资格与一年后分成增强
+  reason: 限定同期公告明确的一年后收入提高，不将当前70/85细则、Small Business或累计规则倒填2016。
+  event: Apple 2016订阅公告：一年后的分成激励
   cutoff: 2016-06-08 公告后、开发者决定是否设计长期订阅前
   initial_facts:
   - id: I1
@@ -51,10 +51,9 @@ research:
     source_ids: *id001
     availability: pre_decision
   outcome:
-    text: 2016 官方公告确有按订阅持续时间改变开发者分配的设计；当前官方文档记录 70/85 这一行为，2016 精确细则仍需原版核对。
+    text: 2016-06-08官方宣布扩展订阅资格并提高满一年后的开发者收入；本题不要求失效旧链接中的精确例外。
     source_ids:
     - S1
-    - S2
   interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
   unknowns:
   - 尚缺 2016 原始完整条文，不能确认当前的恢复天数、group 计算及特殊项目例外均适用于当年。
@@ -79,11 +78,25 @@ research:
     checked_at: '2026-10-25'
     supports:
     - E1
-    - outcome
   attempts:
   - 打开 Apple 2016 Coming Soon 原公告与现行订阅文档；核对当前分配规则并标明版本差异。
   - 原文 What’s New in Subscriptions 链接 404，尝试 WWDC2016 301 两版 URL 均不可访问；未以媒体摘要替代精确历史条文。
-  phase2_conditions:
-  - 可做一年后分成改变的定性反事实预测；涉及 2016 数值账单或例外前必须补原版规则。
-  - 不前置后来的 Small Business Program 或外链付费政策。
-  record_path: reports/research-product-b.md
+  - 本轮复用并阅读初轮逐项记录的一手来源内容；按新问题与公开材料时点核对，不宣称新发现内部实验。
+  phase2_conditions: 正式使用本条新范围与认知动作，Phase2原题留作历史。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+    record_path: reports/research-product-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 提高持续订阅一年后的开发者收入，会怎样改变留存投入，在哪些条件下也可能增加用户退出摩擦？
+  expected_output: 一个有条件的激励预测及负面反例
+  out_of_scope: 不推定未披露用户实验、留存因果、合同或完整历史版本；不把功能交付等同商业成功。
+  reason: 限定同期公告明确的一年后收入提高，不将当前70/85细则、Small Business或累计规则倒填2016。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 复用已读来源并正式修订为材料可支撑的单题范围；缺失的内部数据不再是完成题目的必要输入。
+  report_path: reports/phase3-admission.md

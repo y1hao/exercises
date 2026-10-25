@@ -83,4 +83,20 @@ research:
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
   phase2_conditions:
     scope: 移动端数据需求快速分化时，比较固定 REST endpoint 与客户端声明式查询的边界。
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: GraphQL设计者2015发布说明足以限定移动端层级查询的接口边界。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 移动端数据需求快速分化时，比较固定 REST endpoint 与客户端声明式查询的边界。
+  expected_output: 一项可检验的主判断及其适用边界
+  out_of_scope: 不外推为未核实的其他版本或生产负载
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留GraphQL 在 Facebook 的起源（2012—2015）的单一范围；不要求精确请求计数需要具体资源图，勿借ENG056的GitHub例子。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：移动端数据需求快速分化时，比较固定 REST endpoint 与客户端声明式查询的边界。；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

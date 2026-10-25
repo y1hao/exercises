@@ -84,4 +84,20 @@ research:
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
   phase2_conditions:
     scope: 面对数据库实例故障与日志持久化，重建计算节点与分布式存储的恢复契约。
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: SIGMOD2017原论文经Amazon Science获取正文，支持日志/存储恢复契约。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 面对数据库实例故障与日志持久化，重建计算节点与分布式存储的恢复契约。
+  expected_output: 一项可检验的主判断及其适用边界
+  out_of_scope: 不外推为未核实的其他版本或生产负载
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留Amazon Aurora 共享存储（2017）的单一范围；不要求具体生产故障日志未公开，不编造恢复时长。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：面对数据库实例故障与日志持久化，重建计算节点与分布式存储的恢复契约。；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

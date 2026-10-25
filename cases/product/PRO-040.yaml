@@ -1,9 +1,9 @@
 id: PRO-040
 kind: historical
 domain: product
-status: blocked
-scenario_title: DoorDash 郊区餐饮配送起点（2013）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: DoorDash 2013：创始人配送阶段是否扩大覆盖
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-040
@@ -49,29 +49,80 @@ planning:
     input_verification: not_started
 research:
   id: PRO-040
-  status: blocked
-  reason: 原文访问失败，缺同区路线、等待、订单与配送成本。 尚未应用备用问题，原数量主线保持 blocked。
-  event: DoorDash 郊区餐饮配送起点（2013）
-  cutoff: 2013 郊区初始配送窗口未锁定
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 执行预设constrained-decision fallback；用CEO公开回顾里的真实早期运作约束替代缺失数量输入。
+  event: DoorDash 2013：创始人配送阶段是否扩大覆盖
+  cutoff: 2013年6月正式DoorDash推出前阶段；以2017 CEO回忆重建
+  initial_facts:
+  - id: F1
+    text: 正式命名前称Palo Alto Delivery，唯一配送员是几位联合创始人。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: CEO回忆初期依赖Google Voice、Find My Friends与自己的汽车，没有成熟物流组织。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 宣传主要在宿舍公告板贴传单，获客触达与创始人配送半径绑在本地。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 完成履约要协调订单、餐厅与在路上的有限人手；2017回顾把配送速度与选择范围列为最后一公里取舍，不能由其后规模倒推初期已解决。
+    source_ids:
+    - S1
+    availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    id: O1
+    text: 公司2013年6月正式推出DoorDash，并从创始人配送发展为更大平台；本题不使用2017规模作事前约束或证明最优。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
-  sources: []
+  - 没有可核2013订单、成本、等待分布和精确半径；只做资源约束下范围选择。
+  sources:
+  - id: S1
+    url: https://about.doordash.com/en-ca/news/four-years-in-and-just-getting-started
+    publisher: DoorDash / Tony Xu
+    published_at: '2017-06-22'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
   attempts:
   - 检索 Stanley Tang 2013-11-28 原文；带斜杠和不带斜杠 URL 均500；YC公司页仅当下总览，不足以支持早期密度。
-  phase2_conditions: 不可补订单或成本；fallback constrained-decision 需先取得可核早期路线和等待约束。
-  record_path: reports/research-product.md
-  scope_decision:
-    id: PRO-040
-    input_status: insufficient_this_round
-    reason: 原文访问失败，缺同区路线、等待、订单与配送成本。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: blocked
-  source_assessment_reason: 找到了2013创始人原文入口但连续500，缺实际阅读的地区密度、等待与成本证据。
+  - url: https://about.doordash.com/en-ca/news/four-years-in-and-just-getting-started
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
+  phase2_conditions:
+    original: 不可补订单或成本；fallback constrained-decision 需先取得可核早期路线和等待约束。
+    remediation_applied: true
+    scope_change: 执行预设constrained-decision fallback；用CEO公开回顾里的真实早期运作约束替代缺失数量输入。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 原文访问失败，缺同区路线、等待、订单与配送成本。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 当配送人员只有创始人、调度依赖Google Voice与Find My Friends时，下一步应优先增加可接单地区还是先验证现有地区履约链？依据实际资源作一个范围选择并说明代价。
+  expected_output: 一个扩张范围选择及两条履约约束。
+  out_of_scope: 不计算每单利润或等待时长；不编订单表、路线距离或2013服务承诺。
+  reason: 执行预设constrained-decision fallback；用CEO公开回顾里的真实早期运作约束替代缺失数量输入。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 明确冻结单一工件/事件与问题；2条事前事实、2条有效证据、直接来源支持结果齐备。
+  report_path: reports/phase3-admission.md

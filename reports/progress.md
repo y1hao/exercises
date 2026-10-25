@@ -2,6 +2,44 @@
 
 更新日期：2026-10-25（Pacific/Auckland）。
 
+**Phase 3 整改完成，停在阶段交界，等待用户同意进入 Phase 4。** 本轮未commit/push。
+
+初轮125道blocked与1道rejected均已处理：116道正式收窄/修订问题、9道真实换题、1道补核后保留。没有再要求完成题目所不需要的私有现金跑道、同cohort成本或未披露交易条款；保留27道可追溯实际输入的数量题。完整映射见[phase3-revisions.md](phase3-revisions.md)，逐题来源见remediation笔记。此前已完成的其他复核材料一并保留，本轮后半段收敛处理剩余失败项，没有继续扩展检查框架。
+
+| 类型 | 数量 | 当前状态 |
+|---|---:|---|
+| 工程历史 | 157 | sourced |
+| 产品历史 | 104 | sourced |
+| 创投历史 | 52 | sourced |
+| 微设计 | 52 | candidate；已有范围与合成约束基础 |
+| 合计 | 365 | 制作前eligible；0 blocked、0 rejected、0 ready |
+
+9项实际替换：ENG-054→Cloudflare 2017闰秒；ENG-117→RocksDB Ribbon Filter；ENG-157→Rust 1.52.1；PRO-001→Google Wave；PRO-013→Airbnb 2014推荐重建；PRO-059→Buffer早期验证；PRO-082→Max品牌扩展；PRO-093→Bluesky取消邀请；INV-034→Chegg增长诊断。
+
+所有日期、ID、路径和candidate_material保留。四份根目录原始输入不修改。Phase2 planning及初轮source-decisions保留为历史；后续制作使用各Brief的active_scope及research，不恢复已取消的旧问题。
+
+eligible仅表示已有素材与明确任务足以进入制作；sourced仅表示已读来源支持所选节点。发布政策、技术文档、公司自报、模型与当事人回顾均保留其性质，不当作独立因果证明。完整Brief、剧透检查、Case QA与对话试验尚未执行，属于后续阶段。
+
+## 本轮验收
+
+全部通过：
+
+- 365日期、星期配额、ID、路径、索引/Brief状态结构及覆盖检查。
+- Phase2审核/规划、Phase3核源与整改输出的只读复现检查。
+- 62项测试，包括126个初轮失败项均已正式采用可追溯范围、真实替换与不完整整改拒绝应用。
+- Python编译与Git空白检查。
+- 四份原始输入SHA-256与初始快照一致；365条原始candidate_material及日期/ID/路径一致。
+
+研究记录与范围已完整同步，全部365条制作前检查通过。离线检查验证结构与同步，不冒充网络核查或训练QA。未生成opening、完整evidence_pool或Starter Prompt，未启动Phase4/5。
+
+---
+
+下方为初轮核源时的历史记录；其“已完成”只表示当时逐项初审结束，已被本轮更严格的全题准入要求补充。
+
+# Phase 3 初轮核源完成时的归档记录
+
+更新日期：2026-10-25（Pacific/Auckland）。
+
 **Phase 1–3 已完成，本轮停在 Phase 3；等待用户同意后才进入 Phase 4。** 用户要求的 Phase 2 修订已先提交为本地 commit `072cda3`，随后开展来源验证。Phase 3 成果按用户本轮要求保存为独立本地提交（提交号见 Git 历史），未 push。用户再次指定 Phase 3，未授权进入 Phase 4；当前保留本阶段结果，等待明确后续方向。未创建或修改定时任务。
 
 ## 当前真实状态

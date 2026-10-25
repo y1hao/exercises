@@ -2,7 +2,7 @@ id: PRO-090
 kind: historical
 domain: product
 status: sourced
-scenario_title: Google Stadia 关闭（2022—2023）
+scenario_title: Google 2022-09-29 宣布关闭 Stadia 消费服务
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -75,4 +75,20 @@ research:
   - 打开官方关闭公告正文，核对 traction 归因、游戏可用期、退款范围与技术再利用描述。
   phase2_conditions:
   - 隐藏关闭结果；学员比较技术可行与商业采用假说，不直接把厂商归因当因果证明。
-  record_path: reports/research-product-b.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+    record_path: reports/research-product-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 可运行的流媒体技术是否足以推出消费者服务达到采用要求？
+  expected_output: 技术可行与商业采用两个假说，保留未公开阈值
+  out_of_scope: 不以发布、用户总量或事后成功代替因果证据
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

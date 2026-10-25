@@ -1,9 +1,9 @@
 id: PRO-004
 kind: historical
 domain: product
-status: blocked
-scenario_title: Strava Segment 排行榜（2009—）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Strava 2024年末榜单异常清理与比较信号
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-004
@@ -37,43 +37,44 @@ planning:
     out_of_scope: 不从打开频率直接推断产品创造了留存
 research:
   id: PRO-004
-  status: blocked
-  reason: API 可确认路段比较与排行榜机制，但不能定位早期版本及回访分群/干预。
-  event: Strava Segment 排行榜（2009—）
-  cutoff: 早期活动回访窗口未定位
+  status: sourced
+  reason: 早期回访因果缺数据；正式改为2024榜单比较信号的竞争假说诊断，不再推断排行榜创造留存。
+  event: Strava 2024年末榜单异常清理与比较信号
+  cutoff: 2024-12规则清理前；后发当事人文章明确描述既有规则与此后结果
   initial_facts:
   - id: F1
-    text: 官方 API 把 segment 定义为一段道路。
+    text: Segment榜单按已记录活动比较成绩，并长期接受社区手动标记。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: 运动员用时被比较并生成 leaderboard。
+    text: 此前规则重点标记破世界纪录及异常爬升的骑行，未破纪录的异常仍可漏过。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: API 区分努力次数和独立运动员数量。
+    text: 规则系统2024-12清理掉650万项异常活动，是清理数量而非独立作弊人数。
     source_ids:
     - S1
     availability: post_decision
   - id: E2
-    text: 未给历史回访、未暴露组或实验材料。
+    text: 后续ML会识别车辆、误标跑步的骑行等类型；GPS损坏也能生成异常，不能把异常一律称作弊。
     source_ids:
     - S1
     availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    text: 2024-12规则清理后，2025-05跑步榜又移除445万异常活动；榜单数据质量是持续问题，名次不保证同条件实力。
+    source_ids:
+    - S1
+  interpretation: 来源只确认直接记载的规则、行为和结果；因果链为可检验维护者分析，不以历史结果倒判唯一理性选择。
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
+  - 完整内部决策与反事实结果未公开；公司主张和当事人回忆需单独标明
   sources:
   - id: S1
-    url: https://strava.github.io/api/v3/segments/
-    publisher: Strava
-    published_at: null
+    url: https://stories.strava.com/es/articles/keeping-stravas-segment-leaderboards-fair-an-engineers-perspective
+    publisher: Strava / James Wang
+    published_at: '2026-03-06'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -81,7 +82,25 @@ research:
     - F2
     - E1
     - E2
+    - outcome
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  - 本轮重新打开并阅读所列来源正文，按新范围逐条核对；不使用搜索摘要替代。
   phase2_conditions: 不从打开频率直接推断产品创造了留存
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: API 可确认路段比较与排行榜机制，但不能定位早期版本及回访分群/干预。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 榜单上的异常高名次更支持真实运动表现，还是记录/活动类型污染？
+  expected_output: 一个可核对的判断、来源支持的机制及能推翻它的条件
+  out_of_scope: 不把公告、相关性或回顾等同已识别的采用/留存因果；不补造指标、条款或任务日志
+  reason: 早期回访因果缺数据；正式改为2024榜单比较信号的竞争假说诊断，不再推断排行榜创造留存。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 至少2条事前事实、2条实质证据和直接来源支持的真实交付/观察结局已具备；准入制作并非ready。
+  report_path: reports/phase3-admission.md

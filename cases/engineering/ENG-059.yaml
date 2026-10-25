@@ -2,7 +2,7 @@ id: ENG-059
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: Bazel Remote Execution API（2018—）
+scenario_title: Remote Execution API v2.0.0 Action 缓存键工件
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -39,8 +39,8 @@ planning:
 research:
   id: ENG-059
   status: sourced
-  reason: Remote Execution API v2.0.0原proto固定版本，支持action输入与环境边界核验。
-  event: Bazel Remote Execution API（2018—）
+  reason: 固定原有已核proto tag v2.0.0；不将copyright2018推作tag发布日期。
+  event: Remote Execution API v2.0.0 Action 缓存键工件
   cutoff: v2.0.0 Action/Command契约，决定复用缓存之前。
   initial_facts:
   - id: F1
@@ -104,4 +104,21 @@ research:
     - action 输入
     - 环境和摘要范围
     out_of_scope: 不重新讲整个 Bazel 依赖图
-  record_path: reports/research-engineering-a.md
+    remediation_scope: 固定原有已核proto tag v2.0.0；不将copyright2018推作tag发布日期。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: Remote Execution API v2.0.0原proto固定版本，支持action输入与环境边界核验。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 检查什么输入最能暴露错误的远端缓存复用？
+  expected_output: 一个核验项与可推翻正确性的例子
+  out_of_scope: 不重新讲整个 Bazel 依赖图
+  reason: 固定原有已核proto tag v2.0.0；不将copyright2018推作tag发布日期。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：检查什么输入最能暴露错误的远端缓存复用？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

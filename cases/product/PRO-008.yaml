@@ -1,9 +1,9 @@
 id: PRO-008
 kind: historical
 domain: product
-status: blocked
-scenario_title: Slack 早期企业内部扩散（2013—2015）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Slack 2019披露的自助采用转组织销售
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-008
@@ -37,38 +37,39 @@ planning:
     out_of_scope: 不概括三年全部企业扩散史
 research:
   id: PRO-008
-  status: blocked
-  reason: 2019 S-1 支持免费转付费机制，但不能回填为 2013—2015 的具体采购节点及套餐。
-  event: Slack 早期企业内部扩散（2013—2015）
-  cutoff: 2013—2015 指定团队购买窗口未定位
+  status: sourced
+  reason: 正式收窄/重锚为直接材料可支持的单一任务；保留未知，不要求未公开因果或数字。
+  event: Slack 2019披露的自助采用转组织销售
+  cutoff: 2019-05-13版功能与销售流程披露后，判断组织付费证据前
   initial_facts:
   - id: F1
-    text: 2019 S-1 称组织常由 Free 计划开始。
+    text: 2019版Free允许直接开始使用，无需付款或正式销售互动。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: S-1 把搜索超过 10,000 条与 SSO 列为公司认为的付费原因。
+    text: Free可搜索消息上限10000条，Plus提供SSO；这是该版功能边界。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 文件说明团队深度使用与集成后常升级。
+    text: 披露的销售流程从champion和自助POC进入C-suite与业务负责人；使用者不必拥有预算。
     source_ids:
     - S1
     availability: post_decision
   - id: E2
-    text: 这是公司回顾/2019 定价，缺早期买方权限和预算材料。
+    text: 公司记录FY2018收入约10%来自此前免费、当年转付费的组织，不能当免费用户转化率。
     source_ids:
     - S1
     availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    text: 2019招股书已记录自助与销售互补的实际流程和免费转付费收入；没有单客户合同或因果转化率。
+    source_ids:
+    - S1
+  interpretation: 来源只确认直接记载的规则、行为和结果；因果链为可检验维护者分析，不以历史结果倒判唯一理性选择。
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
+  - 完整内部决策与反事实结果未公开；公司主张和当事人回忆需单独标明
   sources:
   - id: S1
     url: https://www.sec.gov/Archives/edgar/data/1764925/000162828019006616/slacks-1a1.htm
@@ -81,7 +82,25 @@ research:
     - F2
     - E1
     - E2
+    - outcome
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  - 本轮重新打开并阅读所列来源正文，按新范围逐条核对；不使用搜索摘要替代。
   phase2_conditions: 不概括三年全部企业扩散史
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 2019 S-1 支持免费转付费机制，但不能回填为 2013—2015 的具体采购节点及套餐。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 免费团队已在使用时，搜索历史需求与高管采购承诺哪个更接近组织付费证据？
+  expected_output: 一个可核对的判断、来源支持的机制及能推翻它的条件
+  out_of_scope: 不把公告、相关性或回顾等同已识别的采用/留存因果；不补造指标、条款或任务日志
+  reason: 正式收窄/重锚为直接材料可支持的单一任务；保留未知，不要求未公开因果或数字。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 至少2条事前事实、2条实质证据和直接来源支持的真实交付/观察结局已具备；准入制作并非ready。
+  report_path: reports/phase3-admission.md

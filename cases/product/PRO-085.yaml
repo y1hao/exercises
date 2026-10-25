@@ -1,9 +1,9 @@
 id: PRO-085
 kind: historical
 domain: product
-status: blocked
-scenario_title: Zoom 会议邀请链接传播（2013—2020）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Zoom 2019披露：大客户的免费起点
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-085
@@ -38,9 +38,9 @@ planning:
     out_of_scope: 不重复 PRO-094 的下载注册摩擦判断
 research:
   id: PRO-085
-  status: blocked
-  reason: 2019 S-1有受邀者转host的公司叙述及大客户免费起点统计，但未取得同版首次主持身份步骤和受邀转主持行为分母；不能把大客户55%当受邀者转化率。
-  event: Zoom 会议邀请链接传播（2013—2020）
+  status: sourced
+  reason: 保留真实数量训练，取消未取得的首次主持流程与受邀用户分母。
+  event: Zoom 2019披露：大客户的免费起点
   cutoff: 2019-03-22公开2019模式
   initial_facts:
   - id: F1
@@ -65,8 +65,9 @@ research:
     - S1
     availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
+    text: S-1披露既有大客户中55%曾有免费host；不是所有受邀者的转化实验。
+    source_ids:
+    - S1
   interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
   unknowns:
   - 内部决策材料、反事实与独立效果测量未公开
@@ -82,7 +83,36 @@ research:
     - F2
     - E1
     - E2
+    - outcome
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
-  phase2_conditions: 不重复 PRO-094 的下载注册摩擦判断
-  record_path: reports/research-product.md
+  - 本轮复用并阅读初轮逐项记录的一手来源内容；按新问题与公开材料时点核对，不宣称新发现内部实验。
+  phase2_conditions: 正式使用本条新范围与认知动作，Phase2原题留作历史。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 2019 S-1有受邀者转host的公司叙述及大客户免费起点统计，但未取得同版首次主持身份步骤和受邀转主持行为分母；不能把大客户55%当受邀者转化率。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 344个大客户中55%曾有免费host大约对应多少客户，为什么这不是受邀者转付费率？
+  expected_output: 一项数量级复算、条件概率分母与选择偏差说明
+  out_of_scope: 不推定未披露用户实验、留存因果、合同或完整历史版本；不把功能交付等同商业成功。
+  reason: 保留真实数量训练，取消未取得的首次主持流程与受邀用户分母。
+  record_path: reports/remediation-product.md
+  quantitative_inputs:
+  - name: large_customers
+    value: 344
+    unit: customers with annual revenue above USD100000
+    source_ids:
+    - S1
+  - name: prior_free_host_share
+    value: 55
+    unit: percent of those large customers
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 复用已读来源并正式修订为材料可支撑的单题范围；缺失的内部数据不再是完成题目的必要输入。
+  report_path: reports/phase3-admission.md

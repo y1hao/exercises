@@ -27,7 +27,7 @@ planning:
 research:
   id: ENG-098
   status: sourced
-  reason: 一手材料直接支持 artifact 或事件行为；不是 ready。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
   event: runc CVE-2019-5736 维护者通告
   cutoff: 2019-02-11 通告发布时的升级决定
   initial_facts:
@@ -74,6 +74,23 @@ research:
     - outcome
   attempts:
   - 初次误入较新 advisory 后按 CVE 找到维护者原始公开邮件。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 只保留 2019 CVE 链条；不要混入其他 runc FD 漏洞。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 一手材料直接支持 artifact 或事件行为；不是 ready。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 恶意容器覆写运行时二进制的条件是什么；重建容器边界失败链。
+  expected_output: 围绕单一问题给出可由证据推翻的解释或选择及边界
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

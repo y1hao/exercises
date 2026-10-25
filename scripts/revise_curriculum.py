@@ -53,7 +53,7 @@ def prepare(root):
     replacement_targets = {identifier for identifier, row in notes.items() if row["action"] == "replace"}
     if set(history) != historical_targets or set(designs) != design_targets or set(replacements) != replacement_targets:
         raise ValueError("Revision inputs must cover exactly historical/design revise and replace targets")
-    if set(numbers) != {e["id"] for e in entries if e["focus"] == "quantitative-calibration"}:
+    if set(numbers) != {identifier for identifier, note in notes.items() if FOCUS[note["focus"]] == "quantitative-calibration"}:
         raise ValueError("Every quantitative exercise must have exactly one input and fallback plan")
     if set(policy["revision_states"]) != set(REVISION_STATES):
         raise ValueError("Unknown revision states in planning policy")

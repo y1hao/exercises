@@ -1,9 +1,9 @@
 id: ENG-117
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Meta ZippyDB SSD 成本优化（2010s）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: RocksDB Ribbon Filter：内存与构建CPU权衡（2021）
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-117
@@ -49,38 +49,100 @@ planning:
   source_identity_condition: 只接受可定位的单次 SSD 单位成本优化材料；只能找到泛介绍则进入替换队列。
 research:
   id: ENG-117
-  status: blocked
-  reason: 未找到原规划单次 SSD 优化和同负载可归属成本。 尚未应用备用问题，原数量主线保持 blocked。
-  event: ZippyDB SSD单位成本优化候选
-  cutoff: 2010s具体优化未确认
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 原ZippyDB单次SSD成本优化未获独立材料，正式替换为同属性能成本的独立Ribbon机制；全年rg未发现另一Ribbon案例。来源模型参数按作者假设标注，不冒充实测业务成本。
+  event: RocksDB Ribbon Filter：内存与构建CPU权衡（2021）
+  cutoff: 2021-12-29官方文章的相同误报率filter比较；不是ZippyDB生产成本事件
+  initial_facts:
+  - id: I1
+    text: RocksDB 6.15起提供Ribbon作为Bloom的可选替代。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 文章模型在相同误报率下使用Bloom约10、Ribbon约7 bits/key。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 正文报告Ribbon约省30%空间、构建CPU约3至4倍；具体模型给出每key构建32与140ns。
+    source_ids: *id001
+    availability: post_decision
+  - id: E2
+    text: 构建临时内存约230与75 bits/key；冷过滤器不全驻留时，驻留内存收益会变弱。
+    source_ids: *id001
+    availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 来源描述与我们的推论分开；不能以当前文档倒推早年版本。
+    text: 真实工件支持省约3 bits/key和约4.375倍模型构建CPU的比较；这不是SSD或生产总成本下降幅度。
+    source_ids:
+    - S1
+  interpretation: 来源所述观察/机制与维护者迁移推论分开；规范示例是工件推演，不宣称真实生产事故。
   unknowns:
-  - 精确决策日及未公开观测未知。
-  - 已找到ZippyDB真实架构演进文章，但未找到本题所需独立SSD成本优化与同负载成本数据。
+  - 未公开内部决策日、完整负载及业务效果未知；不要求用户据此精算。
   sources:
   - id: S1
-    url: https://engineering.fb.com/2021/08/06/core-infra/zippydb/
-    publisher: Meta
-    published_at: '2021-08-06'
+    url: https://rocksdb.org/blog/2021/12/29/ribbon-filter.html
+    publisher: RocksDB / Peter Dillinger
+    published_at: '2021-12-29'
     source_type: primary
     checked_at: '2026-10-25'
-    supports: []
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
   attempts:
   - 分别检索ZippyDB+SSD+cost、Meta官方ZippyDB；打开2021原文，SSD未命中；2026新闻不作2010s证据。
+  - 本轮实际打开一手正文，按可读机制/事件重新核查准入。
   phase2_conditions:
-  - 独立优化条件未满足；进入待替换审查，不以通用RocksDB/集中容量池文章冒充SSD优化。
-  record_path: reports/research-engineering-b.md
-  scope_decision:
-    id: ENG-117
-    input_status: insufficient_this_round
-    reason: 未找到原规划单次 SSD 优化和同负载可归属成本。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: blocked
-  source_assessment_reason: 已找到ZippyDB真实架构演进文章，但未找到本题所需独立SSD成本优化与同负载成本数据。
+  - 保留原ID和课程日期；候选标题与本次修订建立显式映射。
+  - 结果和隐藏证据不得进入首轮或Starter Prompt。
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: blocked
+    reason: 未找到原规划单次 SSD 优化和同负载可归属成本。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: replace
+active_scope:
+  decision: replace
+  main_question: 在作者相同误报率模型下，每key省多少过滤器内存、增加多少构建CPU；哪些驻留和寿命条件会破坏这项收益？
+  expected_output: 一项成本拆分与可核实数量关系
+  out_of_scope: 只比较作者披露的Ribbon与Bloom空间、构建代价；不泛谈存储成本或宣称已定位SSD优化事故
+  reason: 原ZippyDB单次SSD成本优化未获独立材料，正式替换为同属性能成本的独立Ribbon机制；全年rg未发现另一Ribbon案例。来源模型参数按作者假设标注，不冒充实测业务成本。
+  record_path: reports/remediation-engineering-b.md
+  quantitative_inputs:
+  - name: bloom_filter
+    value: 10
+    unit: bits/key
+    source_ids:
+    - S1
+  - name: ribbon_filter
+    value: 7
+    unit: bits/key
+    source_ids:
+    - S1
+  - name: bloom_construct
+    value: 32
+    unit: ns/key in author model
+    source_ids:
+    - S1
+  - name: ribbon_construct
+    value: 140
+    unit: ns/key in author model
+    source_ids:
+    - S1
+  - name: bloom_temporary
+    value: 75
+    unit: bits/key approximately
+    source_ids:
+    - S1
+  - name: ribbon_temporary
+    value: 230
+    unit: bits/key approximately
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 2项可知事实、2项实质证据与机制/事件结局齐备；尚未制作完整Brief和QA。
+  report_path: reports/phase3-admission.md

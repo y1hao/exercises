@@ -1,9 +1,9 @@
 id: PRO-089
 kind: historical
 domain: product
-status: blocked
-scenario_title: GitLab 从开源到企业平台（2011—2021）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: GitLab Goldman Sachs客户案例：工具链整合任务
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-089
@@ -38,11 +38,21 @@ planning:
     out_of_scope: 不总结十年全部企业化路线
 research:
   id: PRO-089
-  status: blocked
-  reason: 真实企业采用有直接材料，但采购节点时间和部署控制证据未闭合，不能支持规划要求的当时取舍。
-  event: GitLab / Goldman Sachs 企业采用候选，采购时点未闭合
-  cutoff: 待确认一次集团采购决定及日期；不以当前客户页替代历史合同
-  initial_facts: []
+  status: sourced
+  reason: 采用直接客户案例的采购任务，不要求未取得的历史合同签署日和部署控制。
+  event: GitLab Goldman Sachs客户案例：工具链整合任务
+  cutoff: 以2026-10-25读到的客户案例为已公开工件；原采购日期未披露，不设虚构历史决策日。
+  initial_facts:
+  - id: F1
+    text: 客户案例描述Goldman从自建工具链评估git-based产品。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 案例描述需求覆盖代码、评审、构建、测试及部署。
+    source_ids:
+    - S1
+    availability: pre_decision
   evidence:
   - id: E1
     text: GitLab 客户案例称 Goldman 从自建工具链评估 git-based 产品，认为 GitLab CI/CD 最符合需求。
@@ -55,8 +65,9 @@ research:
     - S1
     availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
+    text: 客户案例记载Goldman采用GitLab CI/CD和代码到部署生态；不能据此断言完整采购合同或实际控制权条款。
+    source_ids:
+    - S1
   interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
   unknowns:
   - 客户案例未明确采购日期、当时 SaaS/self-managed 选项、部署控制要求和预算审批链。
@@ -69,10 +80,29 @@ research:
     source_type: primary
     checked_at: '2026-10-25'
     supports:
+    - F1
+    - F2
     - E1
     - E2
+    - outcome
   attempts:
   - 检索集团采购/部署控制候选并打开 Goldman Sachs 客户案例全文，检查采购角色、评估过程和部署说明。
-  phase2_conditions:
-  - 仍需单次采购日期、部署约束及比较选项；不得扩写成十年企业化路线。
-  record_path: reports/research-product-b.md
+  - 本轮复用并阅读初轮逐项记录的一手来源内容；按新问题与公开材料时点核对，不宣称新发现内部实验。
+  phase2_conditions: 正式使用本条新范围与认知动作，Phase2原题留作历史。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 真实企业采用有直接材料，但采购节点时间和部署控制证据未闭合，不能支持规划要求的当时取舍。
+    record_path: reports/research-product-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 从自建工具到GitLab，现有材料最支持哪项购买任务，又不足以证明哪些部署控制取舍？
+  expected_output: 一个有来源的采用理由及不能推出的采购条件
+  out_of_scope: 不推定未披露用户实验、留存因果、合同或完整历史版本；不把功能交付等同商业成功。
+  reason: 采用直接客户案例的采购任务，不要求未取得的历史合同签署日和部署控制。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 复用已读来源并正式修订为材料可支撑的单题范围；缺失的内部数据不再是完成题目的必要输入。
+  report_path: reports/phase3-admission.md

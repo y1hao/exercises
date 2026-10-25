@@ -2,7 +2,7 @@ id: ENG-015
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: Cloudflare OAuth token 泄露与缓解（2023）
+scenario_title: Cloudflare 支持工单会话令牌事件（2023-10-18）
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -40,8 +40,8 @@ planning:
 research:
   id: ENG-015
   status: sourced
-  reason: 2023-10-18事件有独立官方复盘，明确是session/authentication token而非已证实OAuth token；与ENG143后续事件必须分开。
-  event: Cloudflare OAuth token 泄露与缓解（2023）
+  reason: 将OAuth候选纠正为原文session/authentication token；不借用11月后续入侵事件。
+  event: Cloudflare 支持工单会话令牌事件（2023-10-18）
   cutoff: 2023-10-18发现Okta异常访问后、确认影响范围之前；不引入11月后续事件。
   initial_facts:
   - id: F1
@@ -82,7 +82,7 @@ research:
   - id: S1
     url: https://blog.cloudflare.com/how-cloudflare-mitigated-yet-another-okta-compromise/
     publisher: Cloudflare
-    published_at: null
+    published_at: '2023-10-20'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -105,4 +105,21 @@ research:
     - 泄露凭据类别
     - 权限与轮换状态
     out_of_scope: 不提前给后续入侵结果或借用 Okta 案例事实
-  record_path: reports/research-engineering-a.md
+    remediation_scope: 将OAuth候选纠正为原文session/authentication token；不借用11月后续入侵事件。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: 2023-10-18事件有独立官方复盘，明确是session/authentication token而非已证实OAuth token；与ENG143后续事件必须分开。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 当前只能先核验一类凭据，应按什么暴露路径排序？
+  expected_output: 一个优先对象及可改变排序的证据
+  out_of_scope: 不提前给后续入侵结果或借用 Okta 案例事实
+  reason: 将OAuth候选纠正为原文session/authentication token；不借用11月后续入侵事件。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：当前只能先核验一类凭据，应按什么暴露路径排序？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

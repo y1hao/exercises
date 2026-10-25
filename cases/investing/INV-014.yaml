@@ -1,9 +1,9 @@
 id: INV-014
 kind: historical
 domain: investing
-status: blocked
-scenario_title: Box 2014 延期 IPO 与融资
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Box 2014融资：董事席位与未披露权利
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-014
@@ -38,24 +38,39 @@ planning:
     out_of_scope: 条款缺失改证据选择，不补造优先权
 research:
   id: INV-014
-  status: blocked
-  reason: 直接公告确认融资，但条款明确未披露；不足以预测旧股的合同稀释或顺位。
-  event: Box 2014 延期上市窗口融资
-  cutoff: 2014-07-07 融资公告后
-  initial_facts: []
+  status: sourced
+  reason: 采用证据选择备用题，取消没有合同支持的旧股稀释预测。
+  event: Box 2014融资：董事席位与未披露权利
+  cutoff: 2014-07-07公告后评估证据充分性，不假装公告给出全部合同。
+  initial_facts:
+  - id: F1
+    text: 2014-07-07公告TPG Growth及Coatue投资1.5亿美元。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 公告安排TPG董事加入。
+    source_ids:
+    - S1
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 公告披露 TPG Growth 与 Coatue 投资 1.5 亿美元，并安排 TPG 董事。
+    text: 公告明确交易条款未披露。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 已宣布的董事安排不等于完整清算、转换或反稀释权利。
     source_ids:
     - S1
     availability: pre_decision
   outcome:
-    text: 公司公告新增投资；公告并未披露优先权等交易条款。
+    text: 公司宣布新增投资与董事安排；没有公开完整交易条款。
     source_ids:
     - S1
-  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+  interpretation: 来源披露、当事人解释与维护者推论区分；不以事后结果裁定唯一正确选择。
   unknowns:
-  - 估值、清算顺位及完整股本变化未核实。
+  - 完整内部判断及反事实结果未知；不计算未披露的价格、成本或实现回报。
   sources:
   - id: S1
     url: https://www.boxinvestorrelations.com/news-and-media/news/press-release-details/2014/Box-Announces-150-Million-Investment-from-TPG-Growth-and-Coatue/default.aspx
@@ -64,9 +79,28 @@ research:
     source_type: primary
     checked_at: '2026-10-25'
     supports:
+    - F1
+    - F2
     - E1
+    - E2
     - outcome
   attempts:
-  - 实际打开并阅读上述来源正文；按 Phase 2 单一范围筛选。
-  phase2_conditions: 维持 blocked；可审议改为交易条款证据选择，不虚构优先权。
-  record_path: reports/research-investing.md
+  - 复用并逐项阅读初轮保存的一手材料摘录与引用，按本轮正式修订的问题和披露时点核对；未宣称重新获取完整合同。
+  phase2_conditions: 本轮正式修订单题范围；原候选和Phase2规划另保留，制作时使用本条新范围。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 直接公告确认融资，但条款明确未披露；不足以预测旧股的合同稀释或顺位。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 公告给出的融资与董事变动，足以判断旧股经济风险吗；应优先取得哪项合同证据？
+  expected_output: 一个最重要合同验证及控制权/经济权利的边界
+  out_of_scope: 不推定未披露交易条款、内部现金跑道、同cohort成本或因果贡献；公开披露时点不是原私募投资时点。
+  reason: 采用证据选择备用题，取消没有合同支持的旧股稀释预测。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 明确单一节点与可回答的问题，至少2项事前事实、2项实质证据和直接支持的观察结果；准入不等于ready。
+  report_path: reports/phase3-admission.md

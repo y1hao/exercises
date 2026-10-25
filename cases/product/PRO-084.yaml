@@ -86,4 +86,20 @@ research:
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
   phase2_conditions: 不把全部套件续费都归因于共享素材
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 2016具体版本明确跨文档/应用共享与只读权限，可据此判断单素材复用及替代边界；没有退出成本的实际测量。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 跨工具复用怎样改变一次交付和退出成本？
+  expected_output: 一条复用机制及不依赖套件的替代条件
+  out_of_scope: 不把全部套件续费都归因于共享素材
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

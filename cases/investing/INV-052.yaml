@@ -2,7 +2,7 @@ id: INV-052
 kind: historical
 domain: investing
 status: sourced
-scenario_title: GitLab 2015—2017 融资
+scenario_title: GitLab 2017 C轮：企业套餐与支付需求
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -39,8 +39,8 @@ planning:
 research:
   id: INV-052
   status: sourced
-  reason: 已阅读直接来源，支持可辨识事件或原始文件及其披露结果；训练数据完整性与 Case QA 尚待完成。
-  event: GitLab 2017-10-09 GV 领投 2000 万美元 C 轮
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  event: GitLab 2017 C轮：企业套餐与支付需求
   cutoff: 2017 C 轮投资决定前；使用此前已公布的企业套餐能力
   initial_facts:
   - id: I1
@@ -97,7 +97,22 @@ research:
   attempts:
   - 阅读 2017 C 轮新闻稿与 2016 Premium 公告全文，核对日期、价格和产品内容。
   - 阅读 GV IPO 回顾 https://www.gv.com/news/gitlab-ipo，仅作事后身份交叉检查，不前置增长结果。
-  phase2_conditions:
-  - 锁定 2017 C 轮；主动作仍为一项优先尽调及无付费 PMF 的反例。
-  - 补齐合同分群前只做证据选择，不从开源人气推导付费需求。
-  record_path: reports/research-investing-b.md
+  - 本轮复核初轮逐项保存的来源摘录、引用和未知；正式缩小问题范围，不新增没有依据的史实。
+  phase2_conditions: 本轮正式采用本条新问题与认知动作；原数量门槛仅存历史，不再要求未披露输入。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: sourced
+    reason: 已阅读直接来源，支持可辨识事件或原始文件及其披露结果；训练数据完整性与 Case QA 尚待完成。
+    record_path: reports/research-investing-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 企业功能和标价已经存在时，哪项证据才能区分活跃开源社区与真实企业付款？
+  expected_output: 一项付费尽调门槛与不可推出的PMF结论
+  out_of_scope: 不外推未披露cohort、边际成本、股本权利或因果贡献；不把公司披露或投资建议当成已实现投资回报。
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
+  report_path: reports/phase3-admission.md

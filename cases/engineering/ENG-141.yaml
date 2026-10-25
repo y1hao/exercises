@@ -2,7 +2,7 @@ id: ENG-141
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: Tree-sitter 增量解析（2018）
+scenario_title: Tree-sitter 2018：局部编辑与语法结构复用
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -39,8 +39,8 @@ planning:
 research:
   id: ENG-141
   status: sourced
-  reason: 直接来源支持所选artifact或事件，完整Case QA未执行。
-  event: Atom1.32 Tree-sitter发布
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  event: Tree-sitter 2018：局部编辑与语法结构复用
   cutoff: 2018-10-31局部编辑反馈判断
   initial_facts:
   - id: I1
@@ -86,6 +86,23 @@ research:
     - outcome
   attempts:
   - 打开2018官方文章并核对Speed与功能段落。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 主线应为更新范围预测；精确错误恢复和节点复用仍需固定版本代码，不使用虚构性能数。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 直接来源支持所选artifact或事件，完整Case QA未执行。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 局部编辑后增量语法树能改变哪些反馈路径，为什么不能保证完全免于重算？
+  expected_output: 一个复用范围预测和所需观察点
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

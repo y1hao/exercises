@@ -1,9 +1,9 @@
 id: INV-009
 kind: historical
 domain: investing
-status: blocked
-scenario_title: Lyft 2017—2019 IPO 前融资
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Lyft 2019招股披露：贡献率与经营盈利
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-009
@@ -46,48 +46,85 @@ planning:
     input_verification: not_started
 research:
   id: INV-009
-  status: blocked
-  reason: 公司贡献口径不能替代同城市或同 cohort 补贴和履约数据。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Lyft 2019 上市前贡献口径
-  cutoff: 2019-03-18 披露后，定价前
-  initial_facts: []
+  status: sourced
+  reason: 正式收窄为已披露贡献率，不要求城市补贴或同cohort成本。
+  event: Lyft 2019招股披露：贡献率与经营盈利
+  cutoff: 2019-03-18披露后、定价前，评估公开会计口径。
+  initial_facts:
+  - id: F1
+    text: 2019-03-18招股书列2016—2018贡献率。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: Contribution排除部分会计项目，不是EBITDA或净利润。
+    source_ids:
+    - S1
+    availability: pre_decision
   evidence:
   - id: E1
-    text: Contribution 排除部分会计项目，并非 EBITDA 或净利润。
+    text: 2016贡献率23.9%，2018为42.7%。
     source_ids:
     - S1
     availability: pre_decision
   - id: E2
-    text: 2018 年贡献率为 42.7%，调整后 EBITDA 仍为负；两者不能混用。
+    text: 2018调整后EBITDA仍为负943.5百万美元；两指标不能互换。
     source_ids:
     - S1
     availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+    text: 披露贡献率改善与调整后EBITDA亏损并存；不能由公司平均值识别密度贡献。
+    source_ids:
+    - S1
+  interpretation: 来源披露、当事人解释与维护者推论区分；不以事后结果裁定唯一正确选择。
   unknowns:
-  - 城市/cohort 原始输入及回收期未取得。
+  - 完整内部判断及反事实结果未知；不计算未披露的价格、成本或实现回报。
   sources:
   - id: S1
     url: https://investor.lyft.com/financials/sec-filings/content/0001193125-19-077391/d633517ds1a.htm
-    publisher: Lyft via SEC
+    publisher: Lyft / SEC
     published_at: '2019-03-18'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
+    - F1
+    - F2
     - E1
     - E2
+    - outcome
   attempts:
-  - 实际打开并阅读上述来源正文；按 Phase 2 单一范围筛选。
-  phase2_conditions: 可审议口径对照备用题；尚未迁移 focus。
-  record_path: reports/research-investing.md
-  scope_decision:
-    id: INV-009
-    input_status: insufficient_this_round
-    reason: 公司贡献口径不能替代同城市或同 cohort 补贴和履约数据。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: blocked
-  source_assessment_reason: 已读 S-1/A，但未得到拟选城市或 cohort 的同口径补贴与成本，不能开展原数量题。
+  - 复用并逐项阅读初轮保存的一手材料摘录与引用，按本轮正式修订的问题和披露时点核对；未宣称重新获取完整合同。
+  phase2_conditions: 本轮正式修订单题范围；原候选和Phase2规划另保留，制作时使用本条新范围。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 公司贡献口径不能替代同城市或同 cohort 补贴和履约数据。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 贡献率从23.9%到42.7%改善多少；为什么它不等于经营盈利或密度的独立因果效应？
+  expected_output: 百分点复算与贡献口径到盈利结论的边界
+  out_of_scope: 不推定未披露交易条款、内部现金跑道、同cohort成本或因果贡献；公开披露时点不是原私募投资时点。
+  reason: 正式收窄为已披露贡献率，不要求城市补贴或同cohort成本。
+  record_path: reports/remediation-investing.md
+  quantitative_inputs:
+  - name: 2016_contribution_margin
+    value: 23.9
+    unit: percent
+    source_ids:
+    - S1
+  - name: 2018_contribution_margin
+    value: 42.7
+    unit: percent
+    source_ids:
+    - S1
+  - name: 2018_adjusted_EBITDA
+    value: -943.5
+    unit: USD million
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 明确单一节点与可回答的问题，至少2项事前事实、2项实质证据和直接支持的观察结果；准入不等于ready。
+  report_path: reports/phase3-admission.md

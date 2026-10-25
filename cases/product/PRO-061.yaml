@@ -1,9 +1,9 @@
 id: PRO-061
 kind: historical
 domain: product
-status: blocked
-scenario_title: Robinhood Referral 免费股票（2015—）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Robinhood 2021披露：推荐奖励的触发点
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-061
@@ -47,29 +47,69 @@ planning:
     input_verification: not_started
 research:
   id: PRO-061
-  status: blocked
-  reason: 申报入口存在但正文读取失败；奖励支出和有效持续账户尚未逐项核实。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Robinhood Referral 免费股票（2015—）
-  cutoff: 2015—具体奖励轮次尚未锁定
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 正式采用证据题，缺少同cohort收益和奖励成本时不编造CAC回收；使用公司给SEC的真实示例。
+  event: Robinhood 2021披露：推荐奖励的触发点
+  cutoff: 2021公开披露该回复后审查规则；信件原为非公开提交，不假称6月15日已向全部投资人公开。
+  initial_facts:
+  - id: F1
+    text: 公司2021-06-15回复SEC关于推荐奖励会计的询问。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 示例为已有用户分享链接，新用户注册、获批并绑银行账户。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 公司称绑银行账户时才赚得奖励并给推荐者分配具体股票；不是点击或仅注册即触发。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 可在60天内领取，过期未领则不再有该义务；领取也不证明账户持续交易或贡献。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    text: 公司解释将所分配股票在领取时用于结清义务；这是代表性规则示例，不是全部推广活动或用户质量实验。
+    source_ids:
+    - S1
+  interpretation: 产品交付或规则是可观察工件；对用户心理、采用与因果的解释属于待检验假说。
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
-  sources: []
+  - 内部决策、完整行为数据及反事实未知，不作为本题必需输入。
+  sources:
+  - id: S1
+    url: https://investors.robinhood.com/static-files/a427a740-0439-41da-ba14-c0f719358032
+    publisher: Robinhood / SEC correspondence
+    published_at: '2021-06-15'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
   attempts:
-  - 尝试SEC robinhoods-1.htm正文超4MB；投资者优化PDF404；未用二手推广链接填具体历史奖励条款。
-  phase2_conditions: 缺同窗口有效账户与奖励支出，fallback evidence-selection仍需当轮规则核实。
-  record_path: reports/research-product.md
-  scope_decision:
-    id: PRO-061
-    input_status: insufficient_this_round
-    reason: 申报入口存在但正文读取失败；奖励支出和有效持续账户尚未逐项核实。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: blocked
-  source_assessment_reason: 定位2021原始S-1含奖励与funded定义，但HTML超上限、优化PDF404，尚无逐条正文核验。
+  - 实际打开并阅读所列一手来源正文；只提取新范围所需事实，未把搜索摘要当作验证。
+  phase2_conditions: 正式采用新问题；保留原候选和旧规划以便追溯。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 申报入口存在但正文读取失败；奖励支出和有效持续账户尚未逐项核实。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 开户、绑银行账户与领取奖励，哪一步才触发该示例义务；持续有价值的账户还缺什么证据？
+  expected_output: 一项漏斗与义务触发的核对，提出下一项账户质量观察
+  out_of_scope: 不编造内部实验、未公开用户数或历史版本，不将发布方解释当独立测量。
+  reason: 正式采用证据题，缺少同cohort收益和奖励成本时不编造CAC回收；使用公司给SEC的真实示例。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 单一产品节点、两项背景与两项证据及直接支持的交付/观察结果已核对；准入不等于ready。
+  report_path: reports/phase3-admission.md

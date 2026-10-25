@@ -2,7 +2,7 @@ id: PRO-028
 kind: historical
 domain: product
 status: sourced
-scenario_title: Figma 评论与设计协作（2017—）
+scenario_title: Figma 2021-11-16 评论重做
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -87,4 +87,20 @@ research:
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
   phase2_conditions: 不把评论使用直接等同于组织采购或长期留存
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 在 2017— 的候选范围锁定 2021 评论重做，官方有用户研究反馈与交接功能的直接描述。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 评论怎样改变这一次设计交接的等待和理解？
+  expected_output: 一条交接反馈机制
+  out_of_scope: 不把评论使用直接等同于组织采购或长期留存
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

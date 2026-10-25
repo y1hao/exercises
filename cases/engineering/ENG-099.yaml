@@ -1,9 +1,9 @@
 id: ENG-099
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: FoundationDB 事务层（2013）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: FoundationDB 8.0 文档：读写冲突集合
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-099
@@ -38,19 +38,36 @@ planning:
     out_of_scope: 不同时展开所有事务层组件
 research:
   id: ENG-099
-  status: blocked
-  reason: 当前 8.0 指南可证冲突集合语义，不能据此确认 2013 版本。
-  event: FoundationDB 2013 事务层候选
-  cutoff: 2013 版本未找到可读证据
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 明确冻结来源版本；不倒推候选初始年份。
+  event: FoundationDB 8.0 文档：读写冲突集合
+  cutoff: 2026-10-25读取的8.0指南conflict ranges机制快照；不是2013发布行为
+  initial_facts:
+  - id: I1
+    text: 默认事务目标为strict serializability。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 指南说明事务会跟踪读写键范围。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 先提交事务写入后提交事务读取的值时，后者冲突失败并通常重试。
+    source_ids: *id001
+    availability: post_decision
+  - id: E2
+    text: snapshot read不添加read conflict range；atomic operations也不添加普通读冲突范围。
+    source_ids: *id001
+    availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制推演须与来源中的观察和当事人归因分别标记。
+    text: 文档明确的冲突规则可核对一组事务是否重试；不能把snapshot read的低冲突率当作相同隔离保证。
+    source_ids:
+    - S1
+  interpretation: 来源所述观察/机制与维护者迁移推论分开；规范示例是工件推演，不宣称真实生产事故。
   unknowns:
-  - 未公开的实际决策过程和完整工作量未知。
-  - 当前 8.0 指南可证冲突集合语义，不能据此确认 2013 版本。
+  - 未公开内部决策日、完整负载及业务效果未知；不要求用户据此精算。
   sources:
   - id: S1
     url: https://apple.github.io/foundationdb/developer-guide.html
@@ -58,9 +75,32 @@ research:
     published_at: null
     source_type: primary
     checked_at: '2026-10-25'
-    supports: []
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
   attempts:
   - 搜索 2013 事务资料并打开官方指南；看到当前 8.0 标记和 conflict ranges 部分。
+  - 本轮实际打开一手正文，按可读机制/事件重新核查准入。
   phase2_conditions:
-  - 需要旧版文档或当年论文；未获授权前不擅改题名到 8.0。
-  record_path: reports/research-engineering-b.md
+  - 保留原ID和课程日期；候选标题与本次修订建立显式映射。
+  - 结果和隐藏证据不得进入首轮或Starter Prompt。
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: blocked
+    reason: 当前 8.0 指南可证冲突集合语义，不能据此确认 2013 版本。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 给定同一文档的原子计数与reset示例，哪种读写交叠需要显式读冲突范围？
+  expected_output: 一组冲突预测和一个不冲突对照
+  out_of_scope: 不同时展开所有事务层组件
+  reason: 明确冻结来源版本；不倒推候选初始年份。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 2项可知事实、2项实质证据与机制/事件结局齐备；尚未制作完整Brief和QA。
+  report_path: reports/phase3-admission.md

@@ -39,8 +39,8 @@ class CurriculumAuditTests(unittest.TestCase):
         self.assertEqual([e["status"] for e in rebuilt["entries"]], [e["status"] for e in self.index])
         for entry in self.index:
             with self.subTest(id=entry["id"]):
-                unchanged = {k: v for k, v in entry.items() if k not in {"focus", "review_status", "status", "revision_state"}}
-                original = {k: v for k, v in by_id[entry["id"]].items() if k not in {"focus", "status"}}
+                unchanged = {k: v for k, v in entry.items() if k not in {"focus", "subdomain", "review_status", "status", "revision_state"}}
+                original = {k: v for k, v in by_id[entry["id"]].items() if k not in {"focus", "subdomain", "status"}}
                 self.assertEqual(unchanged, original)
 
     def test_accepted_review_never_claims_verified_outcome(self):
@@ -67,7 +67,7 @@ class CurriculumAuditTests(unittest.TestCase):
                 entry = by_id[review["id"]]
                 brief = read_yaml(ROOT / entry["brief_path"])
                 self.assertEqual(brief["status"], entry["status"])
-                self.assertEqual(brief["scenario_title"], review["candidate_title"])
+                self.assertEqual(brief["candidate_material"]["historical_case"], review["candidate_title"])
         self.assertEqual(self.summary["date_id_or_topic_replacements_applied"], 0)
 
     def test_all_weekly_density_signals_have_specific_followup(self):

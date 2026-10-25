@@ -1,9 +1,9 @@
 id: INV-050
 kind: historical
 domain: investing
-status: blocked
-scenario_title: Airbnb 2020 IPO 前融资
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Airbnb 2020借款的年报核对：两笔融资与净到款
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-050
@@ -37,40 +37,39 @@ planning:
     out_of_scope: 不借 IPO 价格兜底或混用两次交易
 research:
   id: INV-050
-  status: blocked
-  reason: 融资身份与借款结果已核，但 4 月 6 日未修订签署合同及融资前现金预测不足，不能完成接受/等待的现金与条款选择。
-  event: Airbnb 2020-04-06 Silver Lake / Sixth Street 10 亿美元融资
-  cutoff: 2020-04-06 此笔融资同意前；后来的 4 月 first-lien 交易与 4 月 17 日修订均不并入首轮
+  status: sourced
+  reason: 把接受/等待的未知现金选择改为2021年报已公开后的融资核对；保留实际数量输入。
+  event: Airbnb 2020借款的年报核对：两笔融资与净到款
+  cutoff: 2021-02-26年报已公开后核对2020借款，不把后来的细节当2020-04-06已知。
   initial_facts:
-  - id: I1
-    text: 当时疫情已影响全球旅行；公司融资公告承认严重旅行环境和恢复不确定性。
-    source_ids: &id001
-    - S1
+  - id: F1
+    text: 2021年报公开2020年4月两笔各10亿美元融资。
+    source_ids:
+    - S2
     availability: pre_decision
-  - id: I2
-    text: 融资拟引入 Silver Lake 和 Sixth Street，公告为 10 亿美元债务与股权证券组合。
-    source_ids: *id001
+  - id: F2
+    text: 同期4月6日公告为Silver Lake与Sixth Street的债务及股权证券组合；不等于两笔借款身份完全相同。
+    source_ids:
+    - S1
     availability: pre_decision
   evidence:
   - id: E1
-    text: 2020 年报确认 4 月存在两笔各 10 亿美元融资；second-lien 净到款 9.675 亿美元，first-lien 净到款 9.614 亿，不能混为同一笔。
+    text: 年报记载second-lien净到款967.5、first-lien净到款961.4，单位百万美元。
     source_ids:
     - S2
-    availability: post_decision
+    availability: pre_decision
   - id: E2
-    text: 年报披露 second-lien 的浮息、PIK 选项、担保及 warrants；这些描述含后续修订，不能全部反推为 4 月 6 日原始条款。
+    text: 年报条款说明包含后续修订，不能全部反推为4月6日初始合同。
     source_ids:
     - S2
-    availability: post_decision
+    availability: pre_decision
   outcome:
-    text: 该轮融资有同期公告，年报确认 second-lien 实际借款；融资成功不自动回答当时接受融资是否优于等待。
+    text: 公司年报确认借款和两项净到款；融资实现不证明当时接受必优于等待。
     source_ids:
-    - S1
     - S2
-  interpretation: 现金与条款的选择只能在同日可知信息下评估；后来的 IPO 定价不属于该决定的兜底。
+  interpretation: 来源披露、当事人解释与维护者推论区分；不以事后结果裁定唯一正确选择。
   unknowns:
-  - 未取得 4 月 6 日时点的完整现金预测与未修订签署合同，不能量算等待跑道。
-  - 4 月 17 日 warrants 修订须单独标时点，不能从 2021 年报回填为最初提议。
+  - 完整内部判断及反事实结果未知；不计算未披露的价格、成本或实现回报。
   sources:
   - id: S1
     url: https://news.airbnb.com/silver-lake-sixth-street-partners-invest-1-billion-in-airbnb
@@ -79,9 +78,7 @@ research:
     source_type: primary
     checked_at: '2026-10-25'
     supports:
-    - I1
-    - I2
-    - outcome
+    - F2
   - id: S2
     url: https://www.sec.gov/Archives/edgar/data/1559720/000155972021000010/airbnb-10k.htm
     publisher: Airbnb / SEC
@@ -89,13 +86,48 @@ research:
     source_type: primary
     checked_at: '2026-10-25'
     supports:
+    - F1
     - E1
     - E2
     - outcome
   attempts:
-  - 阅读 4 月 6 日公告和 2020 年报 Loan Agreements / Term Loans，区分 first 与 second lien。
-  - S-1 过大、S-1/A 与 NYU 镜像抓取失败；年报指向的 4 月 17 日合同修订链接及 SECInfo 镜像抓取失败。
-  phase2_conditions:
-  - 真实融资身份已锁定，现金与初始合同仍是制作门槛；不足时保持 blocked，不给数值化接受/等待答案。
-  - 只用 4 月 6 日一次决定；后续融资、warrants 调整和 IPO 只可作为后置材料。
-  record_path: reports/research-investing-b.md
+  - 复用并逐项阅读初轮保存的一手材料摘录与引用，按本轮正式修订的问题和披露时点核对；未宣称重新获取完整合同。
+  phase2_conditions: 本轮正式修订单题范围；原候选和Phase2规划另保留，制作时使用本条新范围。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 融资身份与借款结果已核，但 4 月 6 日未修订签署合同及融资前现金预测不足，不能完成接受/等待的现金与条款选择。
+    record_path: reports/research-investing-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 两笔各10亿美元借款合计净到款多少，为什么不能把名义金额、净现金和一笔原始合同混成同一口径？
+  expected_output: 一项总额到净现金复算及交易身份边界
+  out_of_scope: 不借 IPO 价格兜底或混用两次交易
+  reason: 把接受/等待的未知现金选择改为2021年报已公开后的融资核对；保留实际数量输入。
+  record_path: reports/remediation-investing.md
+  quantitative_inputs:
+  - name: second_lien_face
+    value: 1000
+    unit: USD million
+    source_ids:
+    - S2
+  - name: first_lien_face
+    value: 1000
+    unit: USD million
+    source_ids:
+    - S2
+  - name: second_lien_net
+    value: 967.5
+    unit: USD million
+    source_ids:
+    - S2
+  - name: first_lien_net
+    value: 961.4
+    unit: USD million
+    source_ids:
+    - S2
+phase4_admission:
+  state: eligible
+  reason: 明确单一节点与可回答的问题，至少2项事前事实、2项实质证据和直接支持的观察结果；准入不等于ready。
+  report_path: reports/phase3-admission.md

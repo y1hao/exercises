@@ -1,9 +1,9 @@
 id: ENG-071
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Crossplane Compositions（2020—2023）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Crossplane Resource Composition Accepted 设计工件（v1.13.0归档）
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-071
@@ -38,49 +38,49 @@ planning:
     out_of_scope: 不重新设计 DES-001 的完整资源 API
 research:
   id: ENG-071
-  status: blocked
-  reason: Crossplane Accepted设计正文已读，但该文显式说明部署术语/实现已演变，历史版本合同未锁定，v1.13 tag尝试失败。
-  event: Crossplane Compositions（2020—2023）
-  cutoff: 2020–2023中一次Composition输入输出契约快照待锁定。
+  status: sourced
+  reason: CLI取得v1.13.0归档Accepted设计；明确题目是该设计示例契约分析，不声称历史草案原样部署。
+  event: Crossplane Resource Composition Accepted 设计工件（v1.13.0归档）
+  cutoff: v1.13.0归档设计文档的Connection Details示例，替换底层字段前
   initial_facts:
   - id: F1
-    text: 设计目标是将应用需求映射到底层managed resources。
+    text: 复合资源公开一组连接详情构成契约。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: 面向使用者只暴露配置子集。
+    text: 底层资源也会暴露自己的连接secret键。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 原设计示例将底层admin-username映射为对外username连接字段。
+    text: 示例用name:username把底层admin-username映射到公开username。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: E2
-    text: 文首说明InfrastructureDefinition/ApplicationDefinition未按原样构建，后来采用CompositeResourceDefinition。
+    text: 契约要求每个连接详情恰由一项组成资源满足，不能天真合并可能同名的secrets。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   outcome:
     id: O1
-    text: ''
-    source_ids: []
-    availability: post_decision
-  interpretation:
-    text: 不能将Accepted文档全部示例当成实际发布API。
+    text: 该设计工件通过显式映射隔离底层字段命名；底层语义变化或所需详情无法提供时，纯重命名不能维持原契约。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - https://raw.githubusercontent.com/crossplane/crossplane/v1.13.0/design/design-doc-composition.md cache
-    miss；需可读tag文档或真实Composition/XRD示例。
+  - 归档页明确设计已演进；只评审示例中的连接契约，不宣称InfrastructureDefinition是v1.13可运行API。
   sources:
   - id: S1
-    url: https://github.com/crossplane/crossplane/blob/main/design/design-doc-composition.md
-    publisher: Crossplane / Nic Cope
+    url: https://raw.githubusercontent.com/crossplane/crossplane/v1.13.0/design/design-doc-composition.md
+    publisher: Crossplane / Nic Cope and maintainers
     published_at: null
     source_type: primary
     checked_at: '2026-10-25'
@@ -89,18 +89,40 @@ research:
     - F2
     - E1
     - E2
+    - O1
   attempts:
   - url: https://github.com/crossplane/crossplane/blob/main/design/design-doc-composition.md
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://raw.githubusercontent.com/crossplane/crossplane/v1.13.0/design/design-doc-composition.md
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    planning_only: true
-    anchor_request: 一版 Crossplane Composition 的一个输入输出契约
-    anchor_status: unverified_research_target
-    main_question: 底层云对象变化后，平台使用方哪些字段仍应稳定？
-    expected_output: 一个稳定接口边界与不可隐藏的条件
-    evidence_to_verify:
-    - 版本
-    - composition 示例
-    - 暴露字段与底层映射
-    out_of_scope: 不重新设计 DES-001 的完整资源 API
-  record_path: reports/research-engineering-a.md
+    original:
+      planning_only: true
+      anchor_request: 一版 Crossplane Composition 的一个输入输出契约
+      anchor_status: unverified_research_target
+      main_question: 底层云对象变化后，平台使用方哪些字段仍应稳定？
+      expected_output: 一个稳定接口边界与不可隐藏的条件
+      evidence_to_verify:
+      - 版本
+      - composition 示例
+      - 暴露字段与底层映射
+      out_of_scope: 不重新设计 DES-001 的完整资源 API
+    remediation_applied: true
+    scope_change: CLI取得v1.13.0归档Accepted设计；明确题目是该设计示例契约分析，不声称历史草案原样部署。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: blocked
+    reason: Crossplane Accepted设计正文已读，但该文显式说明部署术语/实现已演变，历史版本合同未锁定，v1.13 tag尝试失败。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 底层资源将admin-username改名后，如何保持公开username连接契约，并说明不能隐藏的边界？
+  expected_output: 沿官方Composition连接字段映射指出谁承担适配及一个语义不兼容条件
+  out_of_scope: 不把旧InfrastructureDefinition草案术语当v1.13部署API，不设计完整资源平台
+  reason: CLI取得v1.13.0归档Accepted设计；明确题目是该设计示例契约分析，不声称历史草案原样部署。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：底层资源将admin-username改名后，如何保持公开username连接契约，并说明不能隐藏的边界？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

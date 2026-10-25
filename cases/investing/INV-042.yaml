@@ -2,7 +2,7 @@ id: INV-042
 kind: historical
 domain: investing
 status: sourced
-scenario_title: Zoom 2013—2015 融资
+scenario_title: Zoom 2013 B轮：businesses与付费购买信号
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -38,8 +38,8 @@ planning:
 research:
   id: INV-042
   status: sourced
-  reason: Zoom2013同期公司融资稿有产品、企业采用与价格，适合选择企业采用反证。
-  event: Zoom 2013—2015 融资
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  event: Zoom 2013 B轮：businesses与付费购买信号
   cutoff: 2013-09-24 SeriesB公开材料，评估新进入窗口；不使用疫情后增长。
   initial_facts:
   - id: F1
@@ -93,19 +93,22 @@ research:
   attempts:
   - url: https://www.prnewswire.com/news-releases/zoom-video-communications-announces-record-customer-growth-and-series-b-funding-225021372.html
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
-  phase2_conditions:
-    revision_state: awaiting_source
-    policy_path: curriculum/planning-policy.yaml
-    distinctness_clusters: []
-    planned_exercise:
-      planning_only: true
-      anchor_request: 拟选 Zoom 2013 一轮早期融资，身份待核
-      anchor_status: unverified_research_target
-      main_question: 哪项企业采用证据最能反驳成熟竞争者足以满足需求？
-      expected_output: 一个优先验证项及拒绝条件
-      evidence_to_verify:
-      - 当轮产品
-      - 移动或会议体验
-      - 企业采购信号
-      out_of_scope: 不由后来赢家结果证明当时应下注
-  record_path: reports/research-investing-a.md
+  - 本轮复核初轮逐项保存的来源摘录、引用和未知；正式缩小问题范围，不新增没有依据的史实。
+  phase2_conditions: 本轮正式采用本条新问题与认知动作；原数量门槛仅存历史，不再要求未披露输入。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: sourced
+    reason: Zoom2013同期公司融资稿有产品、企业采用与价格，适合选择企业采用反证。
+    record_path: reports/research-investing-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 4500家businesses和300万参与者，哪种企业购买证据才能反驳成熟竞品已足够的判断？
+  expected_output: 一项采购验证和不能由使用总量推出的结论
+  out_of_scope: 不外推未披露cohort、边际成本、股本权利或因果贡献；不把公司披露或投资建议当成已实现投资回报。
+  reason: 本轮逐条复核原一手材料的事实、时点、证据和结果，正式以本条限定问题制作；不把公告/备忘录当成回报或唯一因果证明。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
+  report_path: reports/phase3-admission.md

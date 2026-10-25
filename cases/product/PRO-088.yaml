@@ -2,7 +2,7 @@ id: PRO-088
 kind: historical
 domain: product
 status: sourced
-scenario_title: Figma 浏览器协作编辑定位（2012—2016）
+scenario_title: Figma 2015-12-03 Preview 后继续投入浏览器协作
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -96,4 +96,20 @@ research:
   phase2_conditions:
   - 主问题限需求优先验证信号及拒绝条件；不复用融资或多人数据结构机制。
   - 2016 结局不得进入 2015 首轮。
-  record_path: reports/research-product-b.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+    record_path: reports/research-product-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 哪项需求证据最能支持继续投入浏览器协作？
+  expected_output: 一个优先验证信号及可拒绝条件
+  out_of_scope: 不复用融资论点或多人数据模型机制
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

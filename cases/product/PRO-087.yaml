@@ -1,9 +1,9 @@
 id: PRO-087
 kind: historical
 domain: product
-status: blocked
-scenario_title: Cloudflare Workers 定价演进（2017—2023）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Workers 2023 CPU计量：I/O等待的计费边界
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-087
@@ -48,9 +48,9 @@ planning:
     input_verification: not_started
 research:
   id: PRO-087
-  status: blocked
-  reason: 两版政策价格之外，同一可追溯请求和执行量尚未核齐。 尚未应用备用问题，原数量主线保持 blocked。
-  event: Workers 2023-09-28 CPU-time 新计价公告
+  status: sourced
+  reason: 正式采用计量边界备用题，取消无实测同负载/完整旧价表的账单计算；不把官方例子当客户实测。
+  event: Workers 2023 CPU计量：I/O等待的计费边界
   cutoff: 2023-09-28 公告后、2023-10-31 选择迁移前
   initial_facts:
   - id: I1
@@ -72,8 +72,9 @@ research:
     source_ids: *id001
     availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
+    text: 2023-09-28官方公告CPU-time新计量与opt-in安排；此交付不证明任何客户实际省钱。
+    source_ids:
+    - S1
   interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
   unknowns:
   - 未取得两版完整价格表和同一真实请求量、CPU 与 wall time 数据，主线账单对照无法完成。
@@ -89,19 +90,26 @@ research:
     - I2
     - E1
     - E2
+    - outcome
   attempts:
   - 打开并阅读定价公告正文与迁移范围；点击 old/new pricing 图均抓取失败。
   - 检索历史定价和正文 workload；未把示意用量或当前滚动价格替代历史真实负载。
-  phase2_conditions:
-  - quantitative 门槛未闭合；boundary-transfer 是规划允许但尚未正式应用的降级。
-  - 保留一次 2023 调整，不混用 2017—2023 多轮政策。
-  record_path: reports/research-product-b.md
-  scope_decision:
-    id: PRO-087
-    input_status: insufficient_this_round
-    reason: 两版政策价格之外，同一可追溯请求和执行量尚未核齐。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: blocked
-  source_assessment_reason: 已核实 CPU 计量调整及适用窗口，但两版价格和真实同负载输入不足，数量主线仍 blocked。
+  - 本轮复用并阅读初轮逐项记录的一手来源内容；按新问题与公开材料时点核对，不宣称新发现内部实验。
+  phase2_conditions: 正式使用本条新范围与认知动作，Phase2原题留作历史。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 两版政策价格之外，同一可追溯请求和执行量尚未核齐。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-product-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 把I/O等待占比较高的服务迁移时，CPU计量改变哪项成本暴露，为什么不能只凭wall time判断账单？
+  expected_output: 一条CPU/等待口径边界与迁移时仍需核对的输入
+  out_of_scope: 不推定未披露用户实验、留存因果、合同或完整历史版本；不把功能交付等同商业成功。
+  reason: 正式采用计量边界备用题，取消无实测同负载/完整旧价表的账单计算；不把官方例子当客户实测。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 复用已读来源并正式修订为材料可支撑的单题范围；缺失的内部数据不再是完成题目的必要输入。
+  report_path: reports/phase3-admission.md

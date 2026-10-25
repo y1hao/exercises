@@ -104,4 +104,20 @@ research:
     - 地域影响范围
     - 链路与应用观测时序
     out_of_scope: 不假定全球故障或预先确认拥塞根因
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: 2025-08-21原复盘直接给出地域边界、链路观测与恢复。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 哪项地域对照最能区分链路问题与应用自身故障？
+  expected_output: 两个假说与一项区分性观测
+  out_of_scope: 不假定全球故障或预先确认拥塞根因
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留Cloudflare 2025 年 8 月 AWS 互联拥塞的单一范围；不要求无逐包数据；容量图为近似估计，不当作精确链路测量。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：哪项地域对照最能区分链路问题与应用自身故障？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

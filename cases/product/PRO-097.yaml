@@ -2,7 +2,7 @@ id: PRO-097
 kind: historical
 domain: product
 status: sourced
-scenario_title: Figma 从设计师向组织扩散（2016—2022）
+scenario_title: Figma 2019-01-29 Organization 套餐与 Uber 全公司迁移
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -87,4 +87,20 @@ research:
   phase2_conditions:
   - 首轮把预算批准作为待验证项，不把使用者自述当预算持有人承诺。
   - 与 PRO-088 分开：只做组织采购与治理，不重复浏览器协作需求。
-  record_path: reports/research-product-b.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+    record_path: reports/research-product-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: Uber全公司迁移与90%设计使用，能证明预算批准了吗？
+  expected_output: 一个采购验证项；区分使用者与经济买家
+  out_of_scope: 不重复评论价值、多人光标或席位激励
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

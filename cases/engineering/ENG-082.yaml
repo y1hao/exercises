@@ -29,7 +29,7 @@ planning:
 research:
   id: ENG-082
   status: sourced
-  reason: 直接一手材料支持事件或版本行为；完整 Case QA 尚未执行。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
   event: 2025-06-12 Workers KV 依赖事故
   cutoff: 2025-06-12 故障响应早期；尚未披露根因
   initial_facts:
@@ -76,6 +76,23 @@ research:
     - outcome
   attempts:
   - 打开独立复盘，核查影响、依赖与恢复时间线。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 与其他 Cloudflare 事故分离；初始披露不得先给根因。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 直接一手材料支持事件或版本行为；完整 Case QA 尚未执行。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 底层存储依赖失效波及多个产品；画出依赖图并寻找可切断的级联路径。
+  expected_output: 围绕单一问题给出可由证据推翻的解释或选择及边界
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

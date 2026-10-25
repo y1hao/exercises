@@ -1,9 +1,9 @@
 id: PRO-025
 kind: historical
 domain: product
-status: blocked
-scenario_title: YouTube 从视频约会设想转型（2005）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: YouTube 2005：零上传之后放宽内容范围能检验什么
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-025
@@ -37,42 +37,49 @@ planning:
     out_of_scope: 不把后来的创始人口述当同期日志
 research:
   id: PRO-025
-  status: blocked
-  reason: 创始人回顾确认约会版本和放开上传，但缺同期用户行为与可靠时序；与预设的“用户上传别的内容引发转型”不一致。
-  event: YouTube 2005 约会版本转通用视频分享
-  cutoff: 2005 约会版本上线后一周（回忆中的窗口；不认定具体日）
+  status: sourced
+  reason: 以创始人有明确归属的事后口述重建2005年决策，不宣称找到了同期日志；修正“已有大量非约会上传”的错误触发。
+  event: YouTube 2005：零上传之后放宽内容范围能检验什么
+  cutoff: 2005年约会版本发布约一周后的转向节点；具体日期仅口述约数
   initial_facts:
   - id: F1
-    text: Steve Chen/Jawed Karim 在 Sequoia 访谈称第一版按约会场景随机展示视频并评分。
+    text: 陈士骏回忆首个版本约2005年5月推出，一周没有视频上传。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: Chen 回忆上线一周没有上传，而非先观察到大量非约会视频。
+    text: 卡里姆描述约会版本随机展示视频并让用户评分，不能自由选择内容。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: Chen 表示放开各种视频上传后也没有立即加速增长。
+    text: 零上传只观测到末端行为，没有触达或上传尝试分母，无法唯一定位需求问题。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   - id: E2
-    text: 回忆称约五月上线；不能把这一日期与四月首视频不加解释地拼成精确时间线。
+    text: 创始人回忆取消约会限制后也没有立即大幅增长；这条后验材料用于检验原诊断而非当作转向前已知事实。
     source_ids:
     - S1
     availability: post_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 仅有公开自报/文档描述；不把发布、相关性或后来的成功当成因果结论。
+    id: O1
+    text: 团队改为允许任何类型视频；创始人明确否认改版即刻带来巨大增长。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 原版发布日、同期上传数据与转型触发的直接记录
+  - 未取得2005年同期日志、流量或上传尝试数据；所有历史叙述标为创始人事后回忆。
   sources:
   - id: S1
     url: https://sequoiacap.com/podcast/crucible-moments-youtube
-    publisher: Sequoia / Steve Chen、Jawed Karim 回顾访谈
+    publisher: Sequoia / Steve Chen、Jawed Karim 口述
     published_at: null
     source_type: primary
     checked_at: '2026-10-25'
@@ -81,7 +88,29 @@ research:
     - F2
     - E1
     - E2
+    - O1
   attempts:
   - 阅读访谈 From Dating Site to Video Sharing Platform 与后续段落；官方 YouTube 周年文章检索只能确认注册和早期视频。
-  phase2_conditions: 不得使用“非约会上传已证明新用途”故事；需同期原始材料或明确批准修改训练证据口径。
-  record_path: reports/research-product.md
+  - url: https://sequoiacap.com/podcast/crucible-moments-youtube
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
+  phase2_conditions:
+    original: 不得使用“非约会上传已证明新用途”故事；需同期原始材料或明确批准修改训练证据口径。
+    remediation_applied: true
+    scope_change: 以创始人有明确归属的事后口述重建2005年决策，不宣称找到了同期日志；修正“已有大量非约会上传”的错误触发。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 创始人回顾确认约会版本和放开上传，但缺同期用户行为与可靠时序；与预设的“用户上传别的内容引发转型”不一致。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 在约会视频版本一周零上传的回忆材料中，“约会用途不吸引人”与“根本没有有效触达”都成立吗？说明放宽视频用途能排除哪一项、仍不能排除哪一项。
+  expected_output: 两个竞争解释和一次改版的识别边界。
+  out_of_scope: 只评估首轮改版的诊断力；不使用非约会上传已证明新用途的虚构故事。
+  reason: 以创始人有明确归属的事后口述重建2005年决策，不宣称找到了同期日志；修正“已有大量非约会上传”的错误触发。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 明确冻结单一工件/事件与问题；2条事前事实、2条有效证据、直接来源支持结果齐备。
+  report_path: reports/phase3-admission.md

@@ -3,7 +3,7 @@ kind: micro_design
 domain: engineering
 status: candidate
 scenario_title: 可恢复的异步 Workflow
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 合成题的范围、约束与可评价性已通过制作前准入；尚未制作完整 Brief 或通过 Case QA，不可训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: DES-003
@@ -27,3 +27,26 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-08
+active_scope:
+  decision: reframe
+  main_question: 工作流重启后应怎样恢复步骤并约束外部副作用？
+  expected_output: 一张步骤状态及确认边界图
+  out_of_scope: 不扩成完整产品/企业/平台设计；不保证全部目标无代价兼得；不预设唯一标准方案。
+  reason: 逐题明确一项输出、可满足或可证明不兼得的约束和有辨识力的变化；保留Phase2已收窄的合成边界。
+  record_path: curriculum/design-admission-2027.yaml
+  design_basis:
+    synthetic: true
+    assumptions:
+    - 合成练习；场景中的组织、用户、金额、规模和政策都是题设，不是已发生事实。
+    - 团队需要让用户提交最多十步的异步工作流；步骤会失败，执行者可随时重启，用户只需要查进度和重试。
+    feasibility_reason: 持久化状态与外部扣款无法自动原子化；允许不确定状态和人工核对，而不要求无外部配合的恰好一次。
+    discriminating_change: 其中一个步骤会向外部供应商发起不可安全重试的扣款。
+    evaluation_basis:
+    - 输出是否覆盖当前约束和责任边界
+    - 变化是否揭露原方案关键假设，而不是无关加难
+    - 能说明不满足条件时的失败、拒绝或恢复路径
+    acceptable_tradeoffs: 自动重试与人工对账路径均可合理
+phase4_admission:
+  state: eligible
+  reason: 单一20分钟任务、显式合成假设、可评价约束及非唯一方案均已核对；只准入制作，不是完整Brief或训练QA。
+  report_path: reports/phase3-admission.md

@@ -76,4 +76,20 @@ research:
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
   phase2_conditions: 1999订阅不得与2000无限方案混用；发布公告12月与后续财报称9月推出的差异保留，不虚构同一天。
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 1999同期公告给出确切订阅规则，需修正候选常见的无限租赁说法；只支持任务与收费机制，不证明留存效果。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 四次租赁加无到期日的套餐，会对低频和高频用户产生什么不同吸引力？
+  expected_output: 一项套餐选择，不能误称无限租赁
+  out_of_scope: 不以发布、用户总量或事后成功代替因果证据
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md

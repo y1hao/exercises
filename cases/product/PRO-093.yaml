@@ -1,9 +1,9 @@
 id: PRO-093
 kind: historical
 domain: product
-status: blocked
-scenario_title: Clubhouse 邀请码扩散（2020—2021）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Bluesky 2024取消邀请：增长控制与社区质量
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-093
@@ -26,30 +26,69 @@ planning:
   distinctness_clusters: []
 research:
   id: PRO-093
-  status: blocked
-  reason: 尝试直接访问官方材料均失败；搜索摘要不能替代原文，且缺同批邀请用户的长期关系行为证据。
-  event: Clubhouse 2021 opening-day 取消邀请候选
-  cutoff: 2021 年取消 waitlist 前；精确发布日期待直接材料确认
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 真实换题：Clubhouse原文不可读，采用Bluesky同期公开记录；邀请码不仅可能制造稀缺，也被用于管理增长。
+  event: Bluesky 2024取消邀请：增长控制与社区质量
+  cutoff: 2024-02-06开放公告后，评估后续增长与社区行为的假说。
+  initial_facts:
+  - id: F1
+    text: 2024-02-06 Bluesky宣布任何人可以注册，无需邀请码。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 团队解释此前一年用邀请控制增长，同时建设审核工具和custom feeds。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 当日公告已有超过300万人；这是注册规模描述，不是活跃或留存测量。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 开放与审核工具建设同时存在，无法仅凭总增长识别邀请码稀缺对关系质量的作用。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+    text: 平台实际宣布并开放无邀请注册；没有把注册数视为持久关系网络或审核效果。
+    source_ids:
+    - S1
+  interpretation: 产品交付或规则是可观察工件；对用户心理、采用与因果的解释属于待检验假说。
   unknowns:
-  - 官方全文被检索索引收录但实际 open 不可访问，未完成直接来源检查。
-  - 邀请对下载及长期关系网络的独立因果效果与留存分群未知。
+  - 内部决策、完整行为数据及反事实未知，不作为本题必需输入。
   sources:
   - id: S1
-    url: https://blog.clubhouse.com/opening-day/
-    publisher: Clubhouse
-    published_at: null
+    url: https://bsky.social/about/blog/02-06-2024-join-bluesky
+    publisher: Bluesky
+    published_at: '2024-02-06'
     source_type: primary
     checked_at: '2026-10-25'
-    supports: []
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
   attempts:
-  - 搜索官方 Opening Day，实际打开带/不带末尾斜杠均不可访问。
-  - 尝试官方 early beta Check 1/2/3 与 Android welcome 页面亦不可访问；不把搜索摘要全文当核查完成。
-  phase2_conditions:
-  - 保留邀请机制候选；需恢复原始材料和单一节点，不编造稀缺导致留存的结论。
-  record_path: reports/research-product-b.md
+  - 实际打开并阅读所列一手来源正文；只提取新范围所需事实，未把搜索摘要当作验证。
+  phase2_conditions: 正式采用新问题；保留原候选和旧规划以便追溯。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 尝试直接访问官方材料均失败；搜索摘要不能替代原文，且缺同批邀请用户的长期关系行为证据。
+    record_path: reports/research-product-b.md
+  remediation_decision: replace
+active_scope:
+  decision: replace
+  main_question: 取消邀请码后增长加快若伴随体验下降，怎样区分稀缺消失和审核容量压力？
+  expected_output: 两个竞争解释、一项分群观察及容量边界
+  out_of_scope: 不编造内部实验、未公开用户数或历史版本，不将发布方解释当独立测量。
+  reason: 真实换题：Clubhouse原文不可读，采用Bluesky同期公开记录；邀请码不仅可能制造稀缺，也被用于管理增长。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 单一产品节点、两项背景与两项证据及直接支持的交付/观察结果已核对；准入不等于ready。
+  report_path: reports/phase3-admission.md

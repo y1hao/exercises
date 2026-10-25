@@ -2,8 +2,8 @@ id: DES-026
 kind: micro_design
 domain: engineering
 status: candidate
-scenario_title: 可快速启动的远程开发环境
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+scenario_title: 远程 workspace 的中断恢复边界
+readiness_note: 合成题的范围、约束与可评价性已通过制作前准入；尚未制作完整 Brief 或通过 Case QA，不可训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: DES-026
@@ -39,3 +39,29 @@ planning:
     - 可以暂停计算并保留用户修改；保留期限和恢复目标需要方案明确声明。
     scoped_change: 任务结束后用户要求立即销毁 workspace，仍须明确哪些修改会随之丢失。
     out_of_scope: 不同时优化启动、设计缓存系统或制定计费模型。
+active_scope:
+  decision: reframe
+  main_question: 临时workspace中断后怎样恢复未提交修改并支持明确销毁？
+  expected_output: 一个修改保存/恢复/删除责任边界
+  out_of_scope: 不扩成完整产品/企业/平台设计；不保证全部目标无代价兼得；不预设唯一标准方案。
+  reason: 逐题明确一项输出、可满足或可证明不兼得的约束和有辨识力的变化；保留Phase2已收窄的合成边界。
+  record_path: curriculum/design-admission-2027.yaml
+  design_basis:
+    synthetic: true
+    assumptions:
+    - 合成练习；场景中的组织、用户、金额、规模和政策都是题设，不是已发生事实。
+    - 将首要问题改为中断恢复；基础镜像、计算配额和计价方式固定为外部给定条件。
+    - 只允许在同一团队的隔离存储内恢复 workspace 数据。
+    - 不共享凭据；仅把已存在的无凭据构建缓存当作输入，不设计缓存优化。
+    - 可以暂停计算并保留用户修改；保留期限和恢复目标需要方案明确声明。
+    feasibility_reason: 沿用Phase2合成工作区规则；保存与立即销毁需要明确作用对象，不承诺删除后恢复。
+    discriminating_change: 任务结束后用户要求立即销毁 workspace，仍须明确哪些修改会随之丢失。
+    evaluation_basis:
+    - 输出是否覆盖当前约束和责任边界
+    - 变化是否揭露原方案关键假设，而不是无关加难
+    - 能说明不满足条件时的失败、拒绝或恢复路径
+    acceptable_tradeoffs: 显式备份选择与销毁彻底性可取舍
+phase4_admission:
+  state: eligible
+  reason: 单一20分钟任务、显式合成假设、可评价约束及非唯一方案均已核对；只准入制作，不是完整Brief或训练QA。
+  report_path: reports/phase3-admission.md

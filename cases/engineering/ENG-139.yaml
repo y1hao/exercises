@@ -28,7 +28,7 @@ planning:
 research:
   id: ENG-139
   status: sourced
-  reason: 直接来源支持所选artifact或事件，完整Case QA未执行。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
   event: Cloudflare2022-06-21网络中断
   cutoff: 2022-06-21 06:27 UTC配置部署后
   initial_facts:
@@ -75,6 +75,23 @@ research:
     - outcome
   attempts:
   - 打开官方独立复盘并核对逐阶段部署和网络架构。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 与2026 BYOIP撤销区分；不能仅按地点数估算请求影响。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 直接来源支持所选artifact或事件，完整Case QA未执行。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 一次路由配置变更影响多个机房；依据流量路径识别 blast radius 与回滚优先级。
+  expected_output: 围绕单一问题给出可由证据推翻的解释或选择及边界
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

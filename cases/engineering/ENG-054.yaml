@@ -1,9 +1,9 @@
 id: ENG-054
 kind: historical
 domain: engineering
-status: blocked
-scenario_title: Google 2012 年闰秒 Linux 故障
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Cloudflare 2017 闰秒导致DNS负时长故障
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-054
@@ -26,49 +26,50 @@ planning:
   distinctness_clusters: []
 research:
   id: ENG-054
-  status: blocked
-  reason: 候选Google2012闰秒Linux高CPU事件身份未核实；Google官方时间文档称自2008已smear，不能混用其他公司2012事故。
-  event: Google 2012 年闰秒 Linux 故障
-  cutoff: 候选2012事故尚未识别。
+  status: sourced
+  reason: 原Google2012事故身份无法核实，正式替换为当事人2017-01-01独立事故；全年未发现另一闰秒槽位，ID与日期保留。
+  event: Cloudflare 2017 闰秒导致DNS负时长故障
+  cutoff: 2017-01-01 RRDNS部分CNAME失败已可见，读取代码并诊断根因前
   initial_facts:
   - id: F1
-    text: Google官方称自2008起用smear而非clock steps处理闰秒。
+    text: RRDNS会查询上游resolver来展开客户CNAME。
     source_ids:
     - S1
     availability: pre_decision
   - id: F2
-    text: 该说明同时指出smear实现后来曾从20小时变为24小时。
+    text: 其选择机制保存并平滑resolver响应时长。
     source_ids:
     - S1
     availability: pre_decision
   evidence:
   - id: E1
-    text: 当前推荐为noon-to-noon线性24小时smear。
+    text: 当时Go time.Now不保证单调，结束值可能早于start。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   - id: E2
-    text: 文档例子明确是假定的2022闰秒，不是真实事件。
+    text: 随机权重选择函数要求非负参数，负时长经过平滑仍可能传入。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   outcome:
     id: O1
-    text: ''
-    source_ids: []
-    availability: post_decision
-  interpretation:
-    text: 不能以全行业Linux闰秒问题自动归到Google。
+    text: Cloudflare归因于闰秒回拨使RTT及平滑权重变负，触发panic；补丁在时间回退时重置相关性能状态，避免负数进入选择器。
     source_ids:
     - S1
-    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 需要Google特定故障原复盘；否则进入有理由换题队列。
+  - 该复盘的因果归属为Cloudflare；不将DNS错误比例等同全网不可用。
   sources:
   - id: S1
-    url: https://developers.google.com/time/smear
-    publisher: Google Developers
-    published_at: null
+    url: https://blog.cloudflare.com/how-and-why-the-leap-second-affected-cloudflare-dns/
+    publisher: Cloudflare / John Graham-Cumming
+    published_at: '2017-01-01'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
@@ -76,9 +77,31 @@ research:
     - F2
     - E1
     - E2
+    - O1
   attempts:
   - url: https://developers.google.com/time/smear
     result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://blog.cloudflare.com/how-and-why-the-leap-second-affected-cloudflare-dns/
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
   phase2_conditions:
-    scope: 时间推进异常引发高 CPU 及服务退化；识别时钟假设与同步机制的关系。
-  record_path: reports/research-engineering-a.md
+    original:
+      scope: 时间推进异常引发高 CPU 及服务退化；识别时钟假设与同步机制的关系。
+    remediation_applied: true
+    scope_change: 原Google2012事故身份无法核实，正式替换为当事人2017-01-01独立事故；全年未发现另一闰秒槽位，ID与日期保留。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: blocked
+    reason: 候选Google2012闰秒Linux高CPU事件身份未核实；Google官方时间文档称自2008已smear，不能混用其他公司2012事故。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: replace
+active_scope:
+  decision: replace
+  main_question: 上游DNS明明几毫秒返回，为什么本地延迟权重仍可能触发服务异常？
+  expected_output: 重建墙钟回拨、负RTT、平滑与权重选择的因果链，并指出一条保护边界
+  out_of_scope: 不继续沿用未核实的Google2012故障，不混用2019后Go单调时钟语义
+  reason: 原Google2012事故身份无法核实，正式替换为当事人2017-01-01独立事故；全年未发现另一闰秒槽位，ID与日期保留。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：上游DNS明明几毫秒返回，为什么本地延迟权重仍可能触发服务异常？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

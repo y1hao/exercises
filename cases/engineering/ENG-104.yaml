@@ -39,7 +39,7 @@ planning:
 research:
   id: ENG-104
   status: sourced
-  reason: 一手直接材料可核查事件或发布行为，尚未Case QA。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
   event: Cloudflare 2025-11-18 Bot Management 故障
   cutoff: 2025-11-18 11:20 UTC 初始诊断
   initial_facts:
@@ -86,6 +86,23 @@ research:
     - outcome
   attempts:
   - 打开独立复盘，核查 query behaviour change 与代理依赖路径。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 严格区别 ENG155 12月 WAF 解析事故；根因不进入 opening。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 一手直接材料可核查事件或发布行为，尚未Case QA。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 一项配置数据变化可能通过哪条依赖路径影响请求？
+  expected_output: 一条待证实的传播链及最弱证据环节
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

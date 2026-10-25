@@ -2,7 +2,7 @@
 
 全年课程用于约 20 分钟的中文预测、诊断、决策与微设计练习。课程索引决定日期，Brief 保存事实或合成约束，Protocol 约束教练，新对话据此自适应互动。
 
-**Phase 1–3 已完成；目前 187 sourced、125 blocked、1 rejected，52 个微设计仍为 candidate，0 ready。** 313 个历史条目均已逐项尝试并记录理由。39 个数量主线中仅 2 个已核齐有边界的比较输入，其余 37 个未正式改题前保持 blocked。核源报告见 [source-verification.md](reports/source-verification.md)，完整进度见 [progress.md](reports/progress.md)。Protocol 仍是草稿，完整 Brief 和协议分别在 Phase 4、5 实施，均须另获阶段授权。
+**Phase 3 整改已完成，等待进入 Phase 4 的同意。** 初轮的125道blocked和1道rejected均已处理：116道修订范围、9道实际换题、1道补核后保留。当前313道历史题均为sourced，52道微设计为candidate；365题具备后续制作基础，0 ready。具体变更见 [phase3-revisions.md](reports/phase3-revisions.md)，检查结果见 [progress.md](reports/progress.md)。
 
 ## 本地运行
 
@@ -16,6 +16,7 @@ python3 -m venv .venv
 .venv/bin/python scripts/audit_curriculum.py
 .venv/bin/python scripts/revise_curriculum.py
 .venv/bin/python scripts/verify_sources.py
+.venv/bin/python scripts/phase3_admission.py
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/python -m compileall -q scripts tests
 git diff --check
@@ -49,7 +50,10 @@ git diff --check
 | `curriculum/planning-policy.yaml` | 用数规则、修订进度含义、替换目标与条件 |
 | `reports/phase2-revision-results.md` | 本轮修订总览、逐题问题和各复用簇的范围分工 |
 | `reports/research-*.md` | 逐项实际核源的维护输入：事实、证据、结果、来源和失败尝试 |
-| `curriculum/source-decisions-2027.yaml` | 39 条数量题的输入准入复核，缺主线输入则 blocked；未应用备用问题 |
+| `curriculum/source-decisions-2027.yaml` | 初轮39条数量题的历史复核快照；正式整改后的范围另见active_scope |
+| `reports/remediation-*.md` | 补源、范围修订和实际换题的逐题输入与来源 |
+| `curriculum/active-scopes-2027.yaml` / `reports/phase3-revisions.md` | 当前已采用范围与原题、动作的映射，保留日期和ID |
+| `reports/phase3-admission.md` / `.json` | 制作前检查结果；eligible不等于训练ready |
 | `reports/source-verification.md` / `.json` | Phase 3 逐项有效状态、理由、身份纠错及阻塞 |
 | `reports/progress.md` | 分阶段进度与验收结果 |
 
@@ -78,12 +82,12 @@ git diff --check
 
 ### 本轮范围修订怎样生效
 
-后续 Phase 3/4 应以各 Brief 的 `planning.planned_exercise` 为研究与制作范围；`candidate_material` 保存原文用于追溯，不再把其中多年综述直接扩成训练。该规划字段没有历史开场、证据池或真实结果，不能被 Consumer 当作 `opening`。
+本轮整改后，Phase 4 应以各 Brief 的 `active_scope` 为制作范围；`planning.planned_exercise` 保留为Phase 2历史快照；`candidate_material` 保存原文用于追溯，不再把其中多年综述直接扩成训练。该规划字段没有历史开场、证据池或真实结果，不能被 Consumer 当作 `opening`。
 
 - 164 条 `retained`：初审保留，仍须核源或设计 QA。
 - 191 条 `awaiting_source`：已明确一个拟研究节点、主要问题、输出、所需证据与排除范围；事件身份、版本和日期尚待核实。
 - 9 条 `revised`：合成设计的范围和假设已改写，尚未完成 Brief 或对话 QA。
-- 1 条 `awaiting_replacement`：Phase 2 的 ENG-157 替换目标与准入条件已确定；Phase 3 的备选事件仅是提案，尚未应用。
+- 1 条 `awaiting_replacement`：Phase 2 的 ENG-157 替换目标与准入条件已确定；初轮Phase 3的备选曾仅为提案；本轮已正式替换为Rust 1.52.1增量编译ICE回退，旧规划标签不变。
 
 以上计数和标签是 Phase 2 规划快照，不能代替当前核源状态。初审 revise/replace 标签保留为历史，不表示仍只有未处理备注。规划中的 anchor_request 仅是拟核查对象，不是已经确认的历史 as-of。修订脚本保留 Brief 的非 planning 字段；核源脚本另外同步 research/status/readiness_note，原始候选材料保留不改。
 
@@ -102,11 +106,11 @@ git diff --check
 
 ### 核源记录怎样生效
 
-`scripts/verify_sources.py` 默认只读核对 313 个历史条目的完整覆盖、来源与主张引用、事前信息边界及索引/Brief 同步。维护 `reports/research-*.md` 并逐条实际核源后，用 `--apply` 显式更新历史 Brief 的 `research`、`status`、就绪说明与索引状态，同时重建来源报告；它不访问网络，不生成开场、不换题、不改 focus，也不设置 ready。
+`scripts/verify_sources.py` 默认只读核对 313 个历史条目的完整覆盖、来源与主张引用、事前信息边界及索引/Brief 同步。维护 `reports/research-*.md` 并逐条实际核源后，用 `--apply` 显式更新历史 Brief 的 `research`、`status`、就绪说明与索引状态，同时重建来源报告；它不访问网络、不生成开场、不设置ready；正式整改通过active-scopes清单采用核源记录与focus，避免旧生成器恢复已取消范围。
 
 每项记录包含所选事件、决策边界、可知事实、按需证据、观察到的结果、解释、未知和真实尝试。`pre_decision/post_decision/unknown` 记录历史可知性；它与教练何时释放证据是两个字段，不能直接替代 Phase 4 的证据释放规则。后见回顾需保留局限；投资建议不能写成实际交割或已实现回报，设计工件不能写成未验证的生产事故。
 
-39 道数量题另经 `source-decisions-2027.yaml` 复核。主线输入未齐、备用问题未正式应用时保持 blocked，即使已经读到可信机制材料；原核源建议状态另存 `source_assessment_status`。该文件不自动迁移认知动作。历史标题中的身份纠错先记入 research.event；修改 canonical 标题、事件或动作须显式修订和映射。
+39 道数量题另经 `source-decisions-2027.yaml` 复核。主线输入未齐、备用问题未正式应用时保持 blocked，即使已经读到可信机制材料；原核源建议状态另存 `source_assessment_status`。该文件不自动迁移认知动作。本轮已用remediation记录正式修订并通过 `scripts/phase3_admission.py --apply` 同步标题、范围、动作及映射；当前保留27道有来源数值的数量题，其余改用明确的备用或修订问题。
 
 ### 从候选到可运行
 
@@ -131,6 +135,6 @@ git diff --check
 
 ## 阶段边界与发布
 
-每阶段完成后向用户汇报并等待同意，才能进入下一阶段。用户已授权先 commit、再进入 Phase 3；Phase 2 修订已本地提交为 `072cda3`，未 push。本轮结束于 Phase 3；Phase 4 完整 Brief 和 Phase 5 训练试验各自仍须获得阶段授权。Phase 2 结果多样性是候选叙事审核，不是已验证历史结果统计。
+每阶段完成后向用户汇报并等待同意，才能进入下一阶段。当前仍停在Phase 3，尚未制作完整Brief。用户已授权先 commit、再进入 Phase 3；Phase 2 修订已本地提交为 `072cda3`，未 push。本轮结束于 Phase 3；Phase 4 完整 Brief 和 Phase 5 训练试验各自仍须获得阶段授权。Phase 2 结果多样性是候选叙事审核，不是已验证历史结果统计。
 
 完整 Brief 将包含隐藏证据与结局；Consumer 只把事前 `opening` 放进 Starter Prompt。新训练对话必须能读取完整公开文件；读取失败应中止，不得编造事实。未来只有 commit/push 后，新增文件才能从公开 GitHub 读取。Phase 3 成果按用户要求保存为独立本地提交（提交号见 Git 历史）；未推送，未创建定时任务。

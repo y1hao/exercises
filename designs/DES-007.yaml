@@ -3,7 +3,7 @@ kind: micro_design
 domain: product
 status: candidate
 scenario_title: 开发者 API 的计费单位
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 合成题的范围、约束与可评价性已通过制作前准入；尚未制作完整 Brief 或通过 Case QA，不可训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: DES-007
@@ -26,3 +26,26 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+active_scope:
+  decision: reframe
+  main_question: 怎样定义API计费单位和可执行的预算上限？
+  expected_output: 一份计量/预算/超限服务契约
+  out_of_scope: 不扩成完整产品/企业/平台设计；不保证全部目标无代价兼得；不预设唯一标准方案。
+  reason: 逐题明确一项输出、可满足或可证明不兼得的约束和有辨识力的变化；保留Phase2已收窄的合成边界。
+  record_path: curriculum/design-admission-2027.yaml
+  design_basis:
+    synthetic: true
+    assumptions:
+    - 合成练习；场景中的组织、用户、金额、规模和政策都是题设，不是已发生事实。
+    - 一个向软件团队提供文档解析 API 的产品按请求量收费，但不同请求的大小和计算成本相差很大；部分客户无法预测账单。
+    feasibility_reason: 预算硬上限与无限服务不可兼得；允许预留、降级或协商，不能承诺免费无限计算。
+    discriminating_change: 最大的企业客户要求月度预算上限，达到上限后不能突然中断业务。
+    evaluation_basis:
+    - 输出是否覆盖当前约束和责任边界
+    - 变化是否揭露原方案关键假设，而不是无关加难
+    - 能说明不满足条件时的失败、拒绝或恢复路径
+    acceptable_tradeoffs: 成本可控与业务连续的协商方式可不同
+phase4_admission:
+  state: eligible
+  reason: 单一20分钟任务、显式合成假设、可评价约束及非唯一方案均已核对；只准入制作，不是完整Brief或训练QA。
+  report_path: reports/phase3-admission.md

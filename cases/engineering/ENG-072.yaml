@@ -2,7 +2,7 @@ id: ENG-072
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: LinkedIn Venice 多区域数据（2022）
+scenario_title: Venice 2022 跨区域最终一致性工件
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -38,8 +38,8 @@ planning:
 research:
   id: ENG-072
   status: sourced
-  reason: LinkedIn2022原开源说明直接声明eventual consistency及active-active复制，不擅自承诺精确延迟。
-  event: LinkedIn Venice 多区域数据（2022）
+  reason: 固定2022-09-26开源设计说明，不要求缺失的精确ACK时点或最大复制延迟。
+  event: Venice 2022 跨区域最终一致性工件
   cutoff: 2022设计快照，一地区write/ingest完成后、跨区可见性核验之前。
   initial_facts:
   - id: F1
@@ -103,4 +103,21 @@ research:
     - 写完成定义
     - 复制与读取可见性
     out_of_scope: 不擅自承诺强一致或精确复制延迟
-  record_path: reports/research-engineering-a.md
+    remediation_scope: 固定2022-09-26开源设计说明，不要求缺失的精确ACK时点或最大复制延迟。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: LinkedIn2022原开源说明直接声明eventual consistency及active-active复制，不擅自承诺精确延迟。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 只知道某地区摄入完成和系统采用跨区最终一致，能否推定另一区立即读到新值？
+  expected_output: 一个新鲜度边界预测和必要确认点
+  out_of_scope: 不擅自承诺强一致或精确复制延迟
+  reason: 固定2022-09-26开源设计说明，不要求缺失的精确ACK时点或最大复制延迟。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：只知道某地区摄入完成和系统采用跨区最终一致，能否推定另一区立即读到新值？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

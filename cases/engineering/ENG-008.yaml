@@ -2,7 +2,7 @@ id: ENG-008
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: Discord Go 垃圾回收瓶颈（2019）
+scenario_title: Discord Read States GC 尖峰复盘（2020公开）
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -38,8 +38,8 @@ planning:
 research:
   id: ENG-008
   status: sourced
-  reason: Discord 原文提供两分钟周期、缓存扫描与调参对照；需修正候选2019为2020公开复盘，服务历史日期未知。
-  event: Discord Go 垃圾回收瓶颈（2019）
+  reason: 将未核实2019事故日纠正为2020-02-04公开复盘；保留其周期抖动诊断工件，不推定具体生产发生日。
+  event: Discord Read States GC 尖峰复盘（2020公开）
   cutoff: Read States 服务出现周期性抖动、深入归因前；不声称2019精确事故日。
   initial_facts:
   - id: F1
@@ -103,4 +103,21 @@ research:
     - 暂停与分配观测
     - 延迟口径
     out_of_scope: 不把迁移 Rust 当作预定结论
-  record_path: reports/research-engineering-a.md
+    remediation_scope: 将未核实2019事故日纠正为2020-02-04公开复盘；保留其周期抖动诊断工件，不推定具体生产发生日。
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: Discord 原文提供两分钟周期、缓存扫描与调参对照；需修正候选2019为2020公开复盘，服务历史日期未知。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 下一项观测如何区分 GC 暂停与非 GC 的等待？
+  expected_output: 列出两个竞争解释并选择区分它们的一项观测
+  out_of_scope: 不把迁移 Rust 当作预定结论
+  reason: 将未核实2019事故日纠正为2020-02-04公开复盘；保留其周期抖动诊断工件，不推定具体生产发生日。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：下一项观测如何区分 GC 暂停与非 GC 的等待？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

@@ -1,9 +1,9 @@
 id: PRO-062
 kind: historical
 domain: product
-status: blocked
-scenario_title: Datadog 免费试用到企业监控（2010—2019）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Datadog 2019：免费用户与组织付费的证据缺口
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-062
@@ -37,20 +37,69 @@ planning:
     out_of_scope: 不压缩九年扩张为单一故事
 research:
   id: PRO-062
-  status: blocked
-  reason: 找到Datadog2019 S-1入口但未核具体试用转组织购买的角色和证据，不能用平台总增长替代。
-  event: Datadog 免费试用到企业监控（2010—2019）
-  cutoff: 具体试用采购节点未确定
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 取得实际S-1正文，保留产品证据任务，取消虚构的单客户历史交接。
+  event: Datadog 2019：免费用户与组织付费的证据缺口
+  cutoff: 2019-09-17 S-1/A公开后评估采用证据。
+  initial_facts:
+  - id: F1
+    text: 招股文件描述自助安装、免费试用及免费层。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 公司同时使用自助、inside sales和enterprise sales渠道。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 公司明确警告免费层用户可能不带来组织内购买和部署。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 其客户指标排除免费层/试用；2019年6月30日8846客户不是所有试用用户分母。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    text: 公司实际披露混合销售模式及付费客户口径；未给试用到企业购买的因果转化率。
+    source_ids:
+    - S1
+  interpretation: 产品交付或规则是可观察工件；对用户心理、采用与因果的解释属于待检验假说。
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
-  sources: []
+  - 内部决策、完整行为数据及反事实未知，不作为本题必需输入。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1561550/000119312519246194/d745413ds1a.htm
+    publisher: Datadog / SEC
+    published_at: '2019-09-17'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
   attempts:
-  - 检索Datadog官方IR/S-1；候选SEC URL不可读，官方IR索引只给文件元数据；未把搜索误返Fastly招股书当Datadog。
-  phase2_conditions: 不压缩九年扩张为单一故事
-  record_path: reports/research-product.md
+  - 实际打开并阅读所列一手来源正文；只提取新范围所需事实，未把搜索摘要当作验证。
+  phase2_conditions: 正式采用新问题；保留原候选和旧规划以便追溯。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 找到Datadog2019 S-1入口但未核具体试用转组织购买的角色和证据，不能用平台总增长替代。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 自助安装和免费使用之后，哪项组织行为最能支持付费采用，而不是把总客户增长当成转化率？
+  expected_output: 一条免费到组织采购的待验证链及优先证据
+  out_of_scope: 不编造内部实验、未公开用户数或历史版本，不将发布方解释当独立测量。
+  reason: 取得实际S-1正文，保留产品证据任务，取消虚构的单客户历史交接。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 单一产品节点、两项背景与两项证据及直接支持的交付/观察结果已核对；准入不等于ready。
+  report_path: reports/phase3-admission.md

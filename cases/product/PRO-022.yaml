@@ -1,9 +1,9 @@
 id: PRO-022
 kind: historical
 domain: product
-status: blocked
-scenario_title: Basecamp Hey 邮件产品发布（2020）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: HEY 2020：跨平台订阅与App Store首用冲突
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-022
@@ -37,51 +37,91 @@ planning:
     out_of_scope: 不评估整个邮箱市场或把争议当需求证明
 research:
   id: PRO-022
-  status: blocked
-  reason: 取得团队原始发布回顾，但发布价格和首版功能/替代边界尚未从同期一手资料完整核实。
-  event: Basecamp Hey 邮件产品发布（2020）
-  cutoff: 2020-06-15 上线前
+  status: sourced
+  reason: 原邮箱定位材料缺冻结历史版本；同一HEY发布事件改为2020-06-19及22日有具体公开工件的渠道/首用决策，保持约束决策动作。
+  event: HEY 2020：跨平台订阅与App Store首用冲突
+  cutoff: 2020-06-19 公开立场之后、1.0.3方案前；实际提交方案后置
   initial_facts:
   - id: F1
-    text: REWORK 团队访谈确认 2020-06-15 上线。
+    text: HEY提供Web、Mac、Windows、Linux、Android和iOS多平台服务，并已有统一账务支持体系。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   - id: F2
-    text: 团队称该产品经过两年开发。
+    text: CEO于6月19日公开强调试用延期、退款和特殊折扣由其团队直接帮助客户的服务承诺；这是公司立场而非独立政策裁决。
     source_ids:
     - S1
-    availability: unknown
+    availability: pre_decision
   evidence:
   - id: E1
-    text: 回顾报道上线后的客户支持与 iOS 审核摩擦。
+    text: 公司当时采用iOS仅登录、不提示外部开通入口的方式；苹果方面据6月22日公开信提出下载后不能使用的首用异议。
     source_ids:
-    - S1
+    - S2
     availability: post_decision
   - id: E2
-    text: 当前 HEY Way 已包括后续能力，不能当 2020 快照。
+    text: 公司要继续更新iOS应用，同时希望保持跨平台一致的付款和帮助渠道；把所有首用障碍交给网页版会留下空白体验。
     source_ids:
     - S1
-    availability: post_decision
+    - S2
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    id: O1
+    text: 6月22日公司提交1.0.3：应用内可申请14天随机临时免费邮箱，同时推进企业付款的HEY for Domains；这是提交方案，不宣称已获批准。
+    source_ids:
+    - S2
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
+  - 未取得苹果全部审核往来与1.0.3最终审核结果；不将CEO单方政策描述当中立法律结论。
   sources:
   - id: S1
-    url: https://37signals.com/podcast/two-weeks/
-    publisher: Basecamp / REWORK
-    published_at: '2020-07-28'
+    url: https://www.hey.com/apple/iap/
+    publisher: HEY / Jason Fried
+    published_at: '2020-06-19'
     source_type: primary
     checked_at: '2026-10-25'
     supports:
     - F1
     - F2
+    - E2
+  - id: S2
+    url: https://www.hey.com/apple/path/
+    publisher: HEY / Jason Fried
+    published_at: '2020-06-22'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
     - E1
     - E2
+    - O1
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
-  phase2_conditions: 不评估整个邮箱市场或把争议当需求证明
-  record_path: reports/research-product.md
+  - url: https://www.hey.com/apple/iap/
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
+  - url: https://www.hey.com/apple/path/
+    result: 实际打开并阅读6月22日公开信；严格区分1.0.2已发布与1.0.3仅提交审核。
+  phase2_conditions:
+    original: 不评估整个邮箱市场或把争议当需求证明
+    remediation_applied: true
+    scope_change: 原邮箱定位材料缺冻结历史版本；同一HEY发布事件改为2020-06-19及22日有具体公开工件的渠道/首用决策，保持约束决策动作。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 取得团队原始发布回顾，但发布价格和首版功能/替代边界尚未从同期一手资料完整核实。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 在继续提供统一账务帮助、同时让新下载iOS用户能实际试用的约束下，应优先设计什么最小首用入口？给一个兼顾渠道和服务承诺的方案，并指出不能承诺的审核结果。
+  expected_output: 一个首用范围方案与两条不可丢失的约束。
+  out_of_scope: 只看2020年6月冲突；不评判苹果规则合法性、不把媒体争议当需求证明。
+  reason: 原邮箱定位材料缺冻结历史版本；同一HEY发布事件改为2020-06-19及22日有具体公开工件的渠道/首用决策，保持约束决策动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 明确冻结单一工件/事件与问题；2条事前事实、2条有效证据、直接来源支持结果齐备。
+  report_path: reports/phase3-admission.md

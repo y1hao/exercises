@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from common import read_yaml  # noqa: E402
 from verify_sources import load_records, prepare, record_errors  # noqa: E402
+from phase3_admission import assess, prepare as prepare_remediation  # noqa: E402
 
 
 def fixture():
@@ -116,10 +117,13 @@ class PhaseThreeIntegrationTests(unittest.TestCase):
                 prepare(ROOT)
 
     def test_insufficient_quantitative_inputs_remain_blocked_without_fallback(self):
+        # Frozen first-pass decisions retain their original meaning after a
+        # separately recorded scope correction has actually been applied.
+        first_pass = load_records(ROOT, apply_remediation=False)
         decisions = read_yaml(ROOT / 'curriculum/source-decisions-2027.yaml')['entries']
         self.assertEqual(len(decisions), 39)
         for decision in decisions:
-            record = self.records[decision['id']]
+            record = first_pass[decision['id']]
             self.assertFalse(record['scope_decision']['fallback_applied'])
             if decision['input_status'] == 'insufficient_this_round':
                 self.assertEqual(record['status'], 'blocked')
@@ -127,12 +131,35 @@ class PhaseThreeIntegrationTests(unittest.TestCase):
             else:
                 self.assertEqual(record['status'], 'sourced')
 
-    def test_rejected_slot_retains_original_candidate_and_pending_proposal(self):
+    def test_rejected_slot_has_real_replacement_and_preserves_original(self):
         brief = read_yaml(ROOT / 'cases/engineering/ENG-157.yaml')
-        self.assertEqual(brief['status'], 'rejected')
-        self.assertIn('Blaze', brief['scenario_title'])
+        self.assertEqual(brief['status'], 'sourced')
+        self.assertIn('Rust', brief['scenario_title'])
+        self.assertIn('Blaze', brief['candidate_material']['historical_case'])
         self.assertEqual(brief['planning']['revision_state'], 'awaiting_replacement')
-        self.assertTrue(brief['research']['replacement_proposal'])
+        self.assertEqual(brief['research']['prior_assessment']['status'], 'rejected')
+        self.assertEqual(brief['active_scope']['decision'], 'replace')
+
+    def test_all_initial_failures_have_applied_scopes_and_direct_sources(self):
+        first_pass = load_records(ROOT, apply_remediation=False)
+        failures = {identifier for identifier, record in first_pass.items()
+                    if record['status'] in {'blocked', 'rejected'}}
+        self.assertEqual(len(failures), 126)
+        for identifier in failures:
+            with self.subTest(id=identifier):
+                entry = next(e for e in self.entries if e['id'] == identifier)
+                brief = read_yaml(ROOT / entry['brief_path'])
+                self.assertEqual(brief['status'], 'sourced')
+                self.assertTrue(brief['active_scope']['main_question'])
+                self.assertEqual(brief['research']['prior_assessment']['status'], first_pass[identifier]['status'])
+                self.assertEqual(record_errors(brief['research']), [])
+
+    def test_incomplete_remediation_cannot_be_activated(self):
+        index, resolutions, rows = assess(ROOT)
+        rows[0]['state'] = 'pending'
+        with patch('phase3_admission.assess', return_value=(index, resolutions, rows)):
+            with self.assertRaisesRegex(ValueError, 'Cannot activate'):
+                prepare_remediation(ROOT)
 
 
 if __name__ == '__main__':

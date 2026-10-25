@@ -1,9 +1,9 @@
 id: INV-044
 kind: historical
 domain: investing
-status: blocked
-scenario_title: DoorDash 2019—2020 IPO 前融资
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: DoorDash 2020披露：2019 GOV到毛利口径桥
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-044
@@ -47,9 +47,9 @@ planning:
     input_verification: not_started
 research:
   id: INV-044
-  status: blocked
-  reason: 公司总体口径不能替代可归属履约成本；本轮未核齐原数量输入。 尚未应用备用问题，原数量主线保持 blocked。
-  event: DoorDash 2020 IPO 前 S-1/A 中的 2019 年全年利润桥
+  status: sourced
+  reason: 原规划要求未披露的履约归属，现改为同份报表GOV到毛利的桥与不同利润口径；保留真实数字的数量校准。
+  event: DoorDash 2020披露：2019 GOV到毛利口径桥
   cutoff: 2020-11-30 S-1/A 已公开、IPO 定价之前；仅使用 2019 全年同窗口
   initial_facts:
   - id: I1
@@ -68,11 +68,12 @@ research:
   evidence:
   - id: E1
     text: 2019 毛利为 3.35 亿美元；Contribution Loss 为 2 亿，净亏损 6.67 亿，彼此不是同一利润指标。
-    source_ids: *id001
+    source_ids: &id002
+    - S1
     availability: pre_decision
   - id: E2
     text: adjusted cost of revenue 从 GAAP 成本再剔除股权薪酬及分摊管理费用；不能把该口径当全部履约成本。
-    source_ids: *id001
+    source_ids: *id002
     availability: pre_decision
   outcome:
     text: 同份披露同时显示正毛利、负贡献利润和净亏损，GOV 规模不能直接推出净盈利。
@@ -97,16 +98,43 @@ research:
     - outcome
   attempts:
   - 打开 S-1/A，核对 GOV 定义、Our Financial Model、全年成本表及毛利 reconciliation，区分收购子公司财务附注。
-  phase2_conditions:
-  - 沿用一个 2019 全年利润桥；若要求完整履约成本归属而缺子项，执行 boundary-transfer，讨论责任与成本口径。
-  record_path: reports/research-investing-b.md
-  scope_decision:
-    id: INV-044
-    input_status: insufficient_this_round
-    reason: 公司总体口径不能替代可归属履约成本；本轮未核齐原数量输入。
-    fallback_applied: false
-    effective_status: blocked
-    decision_path: curriculum/source-decisions-2027.yaml
-  source_assessment_status: blocked
-  source_assessment_reason: 来源支持同窗 GOV、收入和 GAAP 成本桥，但 pass-through/履约归属分项尚未完整取得；quantitative 主线门槛未闭合，boundary-transfer
-    仅为待应用规划降级。
+  - 本轮复核初轮逐项保存的来源摘录、引用和未知；正式缩小问题范围，不新增没有依据的史实。
+  phase2_conditions: 本轮正式采用本条新问题与认知动作；原数量门槛仅存历史，不再要求未披露输入。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 公司总体口径不能替代可归属履约成本；本轮未核齐原数量输入。 尚未应用备用问题，原数量主线保持 blocked。
+    record_path: reports/research-investing-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 用同份报表的收入、成本与折旧算毛利，为什么不能把GOV差额都称作履约成本？
+  expected_output: 一项8.85−5.23−0.27的复算及GOV/贡献利润的口径边界
+  out_of_scope: 不外推未披露cohort、边际成本、股本权利或因果贡献；不把公司披露或投资建议当成已实现投资回报。
+  reason: 原规划要求未披露的履约归属，现改为同份报表GOV到毛利的桥与不同利润口径；保留真实数字的数量校准。
+  record_path: reports/remediation-investing.md
+  quantitative_inputs:
+  - name: marketplace_GOV
+    value: 8
+    unit: USD billion
+    source_ids:
+    - S1
+  - name: revenue
+    value: 885
+    unit: USD million
+    source_ids:
+    - S1
+  - name: cost_ex_DA
+    value: 523
+    unit: USD million
+    source_ids:
+    - S1
+  - name: DA_in_cost
+    value: 27
+    unit: USD million
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 已逐项复核保存的直接来源事实和引用；现题限于来源可支持的条件、比较与结果，不要求缺失输入。
+  report_path: reports/phase3-admission.md

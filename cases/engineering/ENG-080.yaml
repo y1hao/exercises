@@ -2,7 +2,7 @@ id: ENG-080
 kind: historical
 domain: engineering
 status: sourced
-scenario_title: Google Bazel 构建系统公开（2015）
+scenario_title: Bazel 2015 Beta：已交付能力与未来缓存承诺
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -29,8 +29,8 @@ planning:
 research:
   id: ENG-080
   status: sourced
-  reason: 直接一手材料支持事件或版本行为；完整 Case QA 尚未执行。
-  event: 2015 Bazel Beta 公告
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  event: Bazel 2015 Beta：已交付能力与未来缓存承诺
   cutoff: 2015-09-09 Beta 发布前的构建系统选择
   initial_facts:
   - id: I1
@@ -76,6 +76,23 @@ research:
     - outcome
   attempts:
   - 核查 Beta 公告正文；猜测的 Hello World URL 读取失败。
+  - root本轮逐项阅读初轮保存的事前事实、证据、结果和引用，核对新问题是否超出材料；未新增未核事实。
   phase2_conditions:
   - 保留 ENG-080；区别本地增量与尚未交付的分布式缓存。
-  record_path: reports/research-engineering-b.md
+  record_path: reports/remediation-engineering-b.md
+  prior_assessment:
+    status: sourced
+    reason: 直接一手材料支持事件或版本行为；完整 Case QA 尚未执行。
+    record_path: reports/research-engineering-b.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: Beta公告中的哪些构建能力已交付，哪些缓存收益仍不能作为选型承诺？
+  expected_output: 一项交付/路线图区分及采用前提
+  out_of_scope: 不虚构真实请求日志、具体事务/负载、未披露成本或历史首发版本；仅在来源支持的机制、交付和故障边界内判断。
+  reason: 本轮逐项复核原直接来源事实、证据与结果；以当前明确问题为制作范围，排除未披露负载、成本或首发年份外推。
+  record_path: reports/remediation-engineering-b.md
+phase4_admission:
+  state: eligible
+  reason: 已复核2项可知事实、至少2项实质证据和来源支持的结果/工件契约；未知不影响当前限定问题。
+  report_path: reports/phase3-admission.md

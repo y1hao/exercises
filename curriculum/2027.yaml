@@ -40,7 +40,7 @@ entries:
   domain: engineering
   subdomain: developer-tooling-build
   focus: prediction-counterfactual
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-002.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -51,7 +51,7 @@ entries:
   domain: product
   subdomain: user-research-value
   focus: hypothesis-diagnosis
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-001.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -84,7 +84,7 @@ entries:
   domain: engineering
   subdomain: architecture-api
   focus: boundary-transfer
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-004.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -95,7 +95,7 @@ entries:
   domain: investing
   subdomain: unit-economics
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-002.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -117,7 +117,7 @@ entries:
   domain: engineering
   subdomain: runtime-concurrency
   focus: constrained-decision
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-005.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -138,8 +138,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: data-storage
-  focus: boundary-transfer
-  status: blocked
+  focus: hypothesis-diagnosis
+  status: sourced
   brief_path: cases/engineering/ENG-006.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -150,7 +150,7 @@ entries:
   domain: product
   subdomain: retention-workflow
   focus: hypothesis-diagnosis
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-004.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -161,7 +161,7 @@ entries:
   domain: engineering
   subdomain: security-isolation
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-007.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -281,8 +281,8 @@ entries:
   kind: historical
   domain: product
   subdomain: network-marketplaces
-  focus: quantitative-calibration
-  status: blocked
+  focus: evidence-selection
+  status: sourced
   brief_path: cases/product/PRO-007.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -304,7 +304,7 @@ entries:
   domain: product
   subdomain: b2b-adoption
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-008.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -381,7 +381,7 @@ entries:
   domain: product
   subdomain: ux-activation
   focus: hypothesis-diagnosis
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-010.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -402,8 +402,8 @@ entries:
   kind: historical
   domain: investing
   subdomain: funding-survival-exit
-  focus: constrained-decision
-  status: blocked
+  focus: prediction-counterfactual
+  status: sourced
   brief_path: cases/investing/INV-006.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -436,7 +436,7 @@ entries:
   domain: product
   subdomain: pricing-monetization
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-011.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -480,7 +480,7 @@ entries:
   domain: investing
   subdomain: founder-execution
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-007.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -513,7 +513,7 @@ entries:
   domain: product
   subdomain: distribution-growth
   focus: constrained-decision
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-013.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -523,8 +523,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: runtime-concurrency
-  focus: constrained-decision
-  status: blocked
+  focus: boundary-transfer
+  status: sourced
   brief_path: cases/engineering/ENG-021.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -535,7 +535,7 @@ entries:
   domain: product
   subdomain: strategy-pivot
   focus: constrained-decision
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-014.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -590,7 +590,7 @@ entries:
   domain: product
   subdomain: network-marketplaces
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-015.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -623,7 +623,7 @@ entries:
   domain: engineering
   subdomain: developer-tooling-build
   focus: hypothesis-diagnosis
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-025.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -634,7 +634,7 @@ entries:
   domain: investing
   subdomain: unit-economics
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-009.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -700,7 +700,7 @@ entries:
   domain: engineering
   subdomain: performance-cost
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-028.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -711,7 +711,7 @@ entries:
   domain: investing
   subdomain: pmf-traction
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-010.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -744,7 +744,7 @@ entries:
   domain: product
   subdomain: pricing-monetization
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-019.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -754,8 +754,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: data-storage
-  focus: causal-modeling
-  status: blocked
+  focus: boundary-transfer
+  status: sourced
   brief_path: cases/engineering/ENG-030.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -766,7 +766,7 @@ entries:
   domain: product
   subdomain: retention-workflow
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-020.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -788,7 +788,7 @@ entries:
   domain: investing
   subdomain: market-timing
   focus: constrained-decision
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-011.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -810,7 +810,7 @@ entries:
   domain: engineering
   subdomain: developer-tooling-build
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-032.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -843,7 +843,7 @@ entries:
   domain: product
   subdomain: strategy-pivot
   focus: constrained-decision
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-022.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -853,8 +853,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: security-isolation
-  focus: constrained-decision
-  status: blocked
+  focus: quantitative-calibration
+  status: sourced
   brief_path: cases/engineering/ENG-034.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -898,7 +898,7 @@ entries:
   domain: product
   subdomain: network-marketplaces
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-023.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -975,7 +975,7 @@ entries:
   domain: product
   subdomain: user-research-value
   focus: hypothesis-diagnosis
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-025.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -986,7 +986,7 @@ entries:
   domain: engineering
   subdomain: performance-cost
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-039.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1018,8 +1018,8 @@ entries:
   kind: historical
   domain: investing
   subdomain: valuation-terms
-  focus: prediction-counterfactual
-  status: blocked
+  focus: evidence-selection
+  status: sourced
   brief_path: cases/investing/INV-014.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1063,7 +1063,7 @@ entries:
   domain: engineering
   subdomain: architecture-api
   focus: constrained-decision
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-042.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1096,7 +1096,7 @@ entries:
   domain: investing
   subdomain: unit-economics
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-015.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1151,7 +1151,7 @@ entries:
   domain: product
   subdomain: strategy-pivot
   focus: constrained-decision
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-030.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -1162,7 +1162,7 @@ entries:
   domain: engineering
   subdomain: runtime-concurrency
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-046.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1205,8 +1205,8 @@ entries:
   kind: historical
   domain: product
   subdomain: network-marketplaces
-  focus: quantitative-calibration
-  status: blocked
+  focus: evidence-selection
+  status: sourced
   brief_path: cases/product/PRO-031.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1217,7 +1217,7 @@ entries:
   domain: engineering
   subdomain: data-storage
   focus: hypothesis-diagnosis
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-048.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1272,7 +1272,7 @@ entries:
   domain: engineering
   subdomain: performance-cost
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-050.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1283,7 +1283,7 @@ entries:
   domain: product
   subdomain: b2b-adoption
   focus: hypothesis-diagnosis
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-033.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1305,7 +1305,7 @@ entries:
   domain: product
   subdomain: ux-activation
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-034.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -1348,8 +1348,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: developer-tooling-build
-  focus: boundary-transfer
-  status: blocked
+  focus: constrained-decision
+  status: sourced
   brief_path: cases/engineering/ENG-053.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -1360,7 +1360,7 @@ entries:
   domain: product
   subdomain: pricing-monetization
   focus: prediction-counterfactual
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-035.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1371,7 +1371,7 @@ entries:
   domain: engineering
   subdomain: reliability-diagnosis
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-054.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -1404,7 +1404,7 @@ entries:
   domain: investing
   subdomain: founder-execution
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-019.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1425,8 +1425,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: architecture-api
-  focus: quantitative-calibration
-  status: blocked
+  focus: boundary-transfer
+  status: sourced
   brief_path: cases/engineering/ENG-056.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1436,8 +1436,8 @@ entries:
   kind: historical
   domain: product
   subdomain: distribution-growth
-  focus: quantitative-calibration
-  status: blocked
+  focus: evidence-selection
+  status: sourced
   brief_path: cases/product/PRO-037.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1470,7 +1470,7 @@ entries:
   domain: engineering
   subdomain: distributed-consistency
   focus: prediction-counterfactual
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-058.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1481,7 +1481,7 @@ entries:
   domain: investing
   subdomain: valuation-terms
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-020.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -1535,8 +1535,8 @@ entries:
   kind: historical
   domain: product
   subdomain: network-marketplaces
-  focus: quantitative-calibration
-  status: blocked
+  focus: constrained-decision
+  status: sourced
   brief_path: cases/product/PRO-040.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1558,7 +1558,7 @@ entries:
   domain: investing
   subdomain: unit-economics
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-021.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1580,7 +1580,7 @@ entries:
   domain: engineering
   subdomain: performance-cost
   focus: constrained-decision
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-062.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1591,7 +1591,7 @@ entries:
   domain: product
   subdomain: ux-activation
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-041.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1602,7 +1602,7 @@ entries:
   domain: engineering
   subdomain: runtime-concurrency
   focus: prediction-counterfactual
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-063.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -1624,7 +1624,7 @@ entries:
   domain: engineering
   subdomain: architecture-api
   focus: boundary-transfer
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-064.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1668,7 +1668,7 @@ entries:
   domain: product
   subdomain: b2b-adoption
   focus: boundary-transfer
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-043.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1690,7 +1690,7 @@ entries:
   domain: product
   subdomain: retention-workflow
   focus: hypothesis-diagnosis
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-044.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1745,7 +1745,7 @@ entries:
   domain: product
   subdomain: distribution-growth
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-045.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1756,7 +1756,7 @@ entries:
   domain: engineering
   subdomain: security-isolation
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-069.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -1811,7 +1811,7 @@ entries:
   domain: engineering
   subdomain: architecture-api
   focus: boundary-transfer
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-071.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1899,7 +1899,7 @@ entries:
   domain: product
   subdomain: ux-activation
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-049.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1909,8 +1909,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: data-storage
-  focus: quantitative-calibration
-  status: blocked
+  focus: prediction-counterfactual
+  status: sourced
   brief_path: cases/engineering/ENG-075.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1921,7 +1921,7 @@ entries:
   domain: product
   subdomain: pricing-monetization
   focus: constrained-decision
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-050.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -1943,7 +1943,7 @@ entries:
   domain: investing
   subdomain: valuation-terms
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-026.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2020,7 +2020,7 @@ entries:
   domain: investing
   subdomain: unit-economics
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-027.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2041,7 +2041,7 @@ entries:
   kind: historical
   domain: engineering
   subdomain: developer-tooling-build
-  focus: causal-modeling
+  focus: boundary-transfer
   status: sourced
   brief_path: cases/engineering/ENG-080.yaml
   protocol_path: protocols/historical.md
@@ -2129,8 +2129,8 @@ entries:
   kind: historical
   domain: product
   subdomain: ux-activation
-  focus: boundary-transfer
-  status: blocked
+  focus: quantitative-calibration
+  status: sourced
   brief_path: cases/product/PRO-055.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -2140,8 +2140,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: performance-cost
-  focus: quantitative-calibration
-  status: blocked
+  focus: constrained-decision
+  status: sourced
   brief_path: cases/engineering/ENG-084.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -2152,7 +2152,7 @@ entries:
   domain: product
   subdomain: pricing-monetization
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-056.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2162,7 +2162,7 @@ entries:
   kind: historical
   domain: engineering
   subdomain: distributed-consistency
-  focus: prediction-counterfactual
+  focus: hypothesis-diagnosis
   status: sourced
   brief_path: cases/engineering/ENG-085.yaml
   protocol_path: protocols/historical.md
@@ -2195,8 +2195,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: developer-tooling-build
-  focus: constrained-decision
-  status: blocked
+  focus: evidence-selection
+  status: sourced
   brief_path: cases/engineering/ENG-086.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2228,8 +2228,8 @@ entries:
   kind: historical
   domain: product
   subdomain: network-marketplaces
-  focus: quantitative-calibration
-  status: blocked
+  focus: prediction-counterfactual
+  status: sourced
   brief_path: cases/product/PRO-058.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2239,7 +2239,7 @@ entries:
   kind: historical
   domain: engineering
   subdomain: runtime-concurrency
-  focus: constrained-decision
+  focus: causal-modeling
   status: sourced
   brief_path: cases/engineering/ENG-088.yaml
   protocol_path: protocols/historical.md
@@ -2251,7 +2251,7 @@ entries:
   domain: investing
   subdomain: funding-survival-exit
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-030.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -2284,7 +2284,7 @@ entries:
   domain: product
   subdomain: user-research-value
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-059.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -2306,7 +2306,7 @@ entries:
   domain: product
   subdomain: retention-workflow
   focus: hypothesis-diagnosis
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-060.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2328,7 +2328,7 @@ entries:
   domain: investing
   subdomain: founder-execution
   focus: boundary-transfer
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-031.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2360,8 +2360,8 @@ entries:
   kind: historical
   domain: product
   subdomain: distribution-growth
-  focus: quantitative-calibration
-  status: blocked
+  focus: evidence-selection
+  status: sourced
   brief_path: cases/product/PRO-061.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2383,7 +2383,7 @@ entries:
   domain: product
   subdomain: b2b-adoption
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-062.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2405,7 +2405,7 @@ entries:
   domain: investing
   subdomain: valuation-terms
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-032.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -2449,7 +2449,7 @@ entries:
   domain: engineering
   subdomain: performance-cost
   focus: constrained-decision
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-096.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -2460,7 +2460,7 @@ entries:
   domain: product
   subdomain: pricing-monetization
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-064.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2482,7 +2482,7 @@ entries:
   domain: investing
   subdomain: unit-economics
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-033.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -2525,8 +2525,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: distributed-consistency
-  focus: prediction-counterfactual
-  status: blocked
+  focus: evidence-selection
+  status: sourced
   brief_path: cases/engineering/ENG-099.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2558,8 +2558,8 @@ entries:
   kind: historical
   domain: investing
   subdomain: pmf-traction
-  focus: quantitative-calibration
-  status: blocked
+  focus: hypothesis-diagnosis
+  status: sourced
   brief_path: cases/investing/INV-034.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2591,8 +2591,8 @@ entries:
   kind: historical
   domain: product
   subdomain: user-research-value
-  focus: evidence-selection
-  status: blocked
+  focus: prediction-counterfactual
+  status: sourced
   brief_path: cases/product/PRO-067.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -2669,7 +2669,7 @@ entries:
   domain: product
   subdomain: distribution-growth
   focus: prediction-counterfactual
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-069.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2691,7 +2691,7 @@ entries:
   domain: product
   subdomain: ux-activation
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-070.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2713,7 +2713,7 @@ entries:
   domain: investing
   subdomain: market-timing
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-036.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2757,7 +2757,7 @@ entries:
   domain: engineering
   subdomain: performance-cost
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-108.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -2768,7 +2768,7 @@ entries:
   domain: product
   subdomain: b2b-adoption
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-072.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2812,7 +2812,7 @@ entries:
   domain: engineering
   subdomain: data-storage
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-110.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2866,8 +2866,8 @@ entries:
   kind: historical
   domain: investing
   subdomain: unit-economics
-  focus: quantitative-calibration
-  status: blocked
+  focus: boundary-transfer
+  status: sourced
   brief_path: cases/investing/INV-038.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2900,7 +2900,7 @@ entries:
   domain: product
   subdomain: network-marketplaces
   focus: prediction-counterfactual
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-075.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2910,7 +2910,7 @@ entries:
   kind: historical
   domain: engineering
   subdomain: developer-tooling-build
-  focus: constrained-decision
+  focus: boundary-transfer
   status: sourced
   brief_path: cases/engineering/ENG-114.yaml
   protocol_path: protocols/historical.md
@@ -2922,7 +2922,7 @@ entries:
   domain: product
   subdomain: retention-workflow
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-076.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2977,7 +2977,7 @@ entries:
   domain: product
   subdomain: distribution-growth
   focus: evidence-selection
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-077.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -2988,7 +2988,7 @@ entries:
   domain: engineering
   subdomain: performance-cost
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-117.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3021,7 +3021,7 @@ entries:
   domain: investing
   subdomain: funding-survival-exit
   focus: constrained-decision
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-040.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -3064,8 +3064,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: distributed-consistency
-  focus: boundary-transfer
-  status: blocked
+  focus: hypothesis-diagnosis
+  status: sourced
   brief_path: cases/engineering/ENG-120.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3098,7 +3098,7 @@ entries:
   domain: investing
   subdomain: moat-competition
   focus: boundary-transfer
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-041.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3119,8 +3119,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: runtime-concurrency
-  focus: prediction-counterfactual
-  status: blocked
+  focus: causal-modeling
+  status: sourced
   brief_path: cases/engineering/ENG-122.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3131,7 +3131,7 @@ entries:
   domain: product
   subdomain: b2b-adoption
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-081.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3153,7 +3153,7 @@ entries:
   domain: product
   subdomain: strategy-pivot
   focus: prediction-counterfactual
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-082.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -3208,7 +3208,7 @@ entries:
   domain: product
   subdomain: network-marketplaces
   focus: boundary-transfer
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-083.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3218,8 +3218,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: distributed-consistency
-  focus: prediction-counterfactual
-  status: blocked
+  focus: hypothesis-diagnosis
+  status: sourced
   brief_path: cases/engineering/ENG-126.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -3252,7 +3252,7 @@ entries:
   domain: investing
   subdomain: valuation-terms
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-043.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -3273,8 +3273,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: data-storage
-  focus: quantitative-calibration
-  status: blocked
+  focus: prediction-counterfactual
+  status: sourced
   brief_path: cases/engineering/ENG-128.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3284,8 +3284,8 @@ entries:
   kind: historical
   domain: product
   subdomain: distribution-growth
-  focus: prediction-counterfactual
-  status: blocked
+  focus: quantitative-calibration
+  status: sourced
   brief_path: cases/product/PRO-085.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3307,7 +3307,7 @@ entries:
   domain: product
   subdomain: ux-activation
   focus: hypothesis-diagnosis
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-086.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3329,7 +3329,7 @@ entries:
   domain: investing
   subdomain: unit-economics
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-044.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3361,8 +3361,8 @@ entries:
   kind: historical
   domain: product
   subdomain: pricing-monetization
-  focus: quantitative-calibration
-  status: blocked
+  focus: boundary-transfer
+  status: sourced
   brief_path: cases/product/PRO-087.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3438,8 +3438,8 @@ entries:
   kind: historical
   domain: product
   subdomain: b2b-adoption
-  focus: constrained-decision
-  status: blocked
+  focus: evidence-selection
+  status: sourced
   brief_path: cases/product/PRO-089.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3504,8 +3504,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: runtime-concurrency
-  focus: quantitative-calibration
-  status: blocked
+  focus: prediction-counterfactual
+  status: sourced
   brief_path: cases/engineering/ENG-137.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3538,7 +3538,7 @@ entries:
   domain: product
   subdomain: retention-workflow
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-092.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3560,7 +3560,7 @@ entries:
   domain: investing
   subdomain: funding-survival-exit
   focus: prediction-counterfactual
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-047.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3582,7 +3582,7 @@ entries:
   domain: engineering
   subdomain: distributed-consistency
   focus: boundary-transfer
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-140.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3593,7 +3593,7 @@ entries:
   domain: product
   subdomain: distribution-growth
   focus: hypothesis-diagnosis
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-093.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -3615,7 +3615,7 @@ entries:
   domain: product
   subdomain: ux-activation
   focus: boundary-transfer
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-094.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3692,7 +3692,7 @@ entries:
   domain: product
   subdomain: user-research-value
   focus: causal-modeling
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-096.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -3702,7 +3702,7 @@ entries:
   kind: historical
   domain: engineering
   subdomain: runtime-concurrency
-  focus: hypothesis-diagnosis
+  focus: causal-modeling
   status: sourced
   brief_path: cases/engineering/ENG-145.yaml
   protocol_path: protocols/historical.md
@@ -3713,8 +3713,8 @@ entries:
   kind: historical
   domain: investing
   subdomain: market-timing
-  focus: quantitative-calibration
-  status: blocked
+  focus: evidence-selection
+  status: sourced
   brief_path: cases/investing/INV-049.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3769,7 +3769,7 @@ entries:
   domain: product
   subdomain: strategy-pivot
   focus: hypothesis-diagnosis
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-098.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3790,8 +3790,8 @@ entries:
   kind: historical
   domain: investing
   subdomain: valuation-terms
-  focus: constrained-decision
-  status: blocked
+  focus: quantitative-calibration
+  status: sourced
   brief_path: cases/investing/INV-050.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3834,8 +3834,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: performance-cost
-  focus: quantitative-calibration
-  status: blocked
+  focus: constrained-decision
+  status: sourced
   brief_path: cases/engineering/ENG-150.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -3846,7 +3846,7 @@ entries:
   domain: product
   subdomain: retention-workflow
   focus: boundary-transfer
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-100.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3868,7 +3868,7 @@ entries:
   domain: investing
   subdomain: unit-economics
   focus: quantitative-calibration
-  status: blocked
+  status: sourced
   brief_path: cases/investing/INV-051.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3978,7 +3978,7 @@ entries:
   domain: product
   subdomain: pricing-monetization
   focus: prediction-counterfactual
-  status: blocked
+  status: sourced
   brief_path: cases/product/PRO-103.yaml
   protocol_path: protocols/historical.md
   review_status: revise
@@ -3989,7 +3989,7 @@ entries:
   domain: engineering
   subdomain: distributed-consistency
   focus: prediction-counterfactual
-  status: blocked
+  status: sourced
   brief_path: cases/engineering/ENG-156.yaml
   protocol_path: protocols/historical.md
   review_status: accepted
@@ -4010,8 +4010,8 @@ entries:
   kind: historical
   domain: engineering
   subdomain: developer-tooling-build
-  focus: causal-modeling
-  status: rejected
+  focus: constrained-decision
+  status: sourced
   brief_path: cases/engineering/ENG-157.yaml
   protocol_path: protocols/historical.md
   review_status: replace

@@ -17,6 +17,7 @@ import yaml
 
 from common import ROOT, UniqueKeyLoader, local_path, read_yaml
 from audit_curriculum import table
+from remediation_data import active_resolutions, overlay_research, apply_current_scopes
 
 NOTES = (
     'reports/research-engineering-a.md', 'reports/research-engineering-b.md',
@@ -124,7 +125,7 @@ def record_errors(record):
     return errors
 
 
-def load_records(root):
+def load_records(root, apply_remediation=True):
     records = {}
     for relative in NOTES:
         path = local_path(root, relative)
@@ -144,7 +145,8 @@ def load_records(root):
     decisions = read_yaml(local_path(root, DECISIONS))['entries']
     by_id = {d['id']: d for d in decisions}
     index = read_yaml(local_path(root, 'curriculum/2027.yaml'))['entries']
-    quantitative = {e['id'] for e in index if e['focus'] == 'quantitative-calibration'}
+    planning = read_yaml(local_path(root, 'curriculum/planning-2027.yaml'))['entries']
+    quantitative = {e['id'] for e in planning if 'quantitative_plan' in e}
     if len(by_id) != len(decisions) or set(by_id) != quantitative:
         raise ValueError('Scope decisions must cover exactly all quantitative IDs')
     for identifier, decision in by_id.items():
@@ -165,7 +167,7 @@ def load_records(root):
             record['reason'] = decision['reason'] + ' 尚未应用备用问题，原数量主线保持 blocked。'
         elif record['status'] != 'sourced':
             raise ValueError(f'Sufficient quantitative inputs require a sourced assessment: {identifier}')
-    return records
+    return overlay_research(records, active_resolutions(root)) if apply_remediation else records
 
 
 def yaml_text(value):
@@ -175,7 +177,8 @@ def yaml_text(value):
 def prepare(root=ROOT):
     root = Path(root)
     records = load_records(root)
-    index = read_yaml(root / 'curriculum/2027.yaml')
+    index = apply_current_scopes(read_yaml(root / 'curriculum/2027.yaml'), root)
+    active = active_resolutions(root)
     history = {e['id']: e for e in index['entries'] if e['kind'] == 'historical'}
     if len(history) != 313 or set(records) != set(history):
         raise ValueError(f'Expected exactly all 313 historical IDs; missing={sorted(set(history)-set(records))}, extra={sorted(set(records)-set(history))}')
@@ -204,7 +207,9 @@ def prepare(root=ROOT):
     counts = Counter(r['status'] for r in rows)
     numerical = [records[e['id']]['scope_decision'] for e in history.values() if 'scope_decision' in records[e['id']]]
     totals = [[domain] + [sum(r['domain'] == domain and r['status'] == status for r in rows) for status in ('sourced', 'blocked', 'rejected')] for domain in ('engineering', 'product', 'investing')]
-    sufficient = sum(d['input_status'] == 'sufficient_for_scoped_comparison' for d in numerical)
+    if active:
+        numerical = [dict(id=r['id'], input_status='verified_scoped_inputs', reason=r['reason']) for r in active.values() if r['focus'] == 'quantitative-calibration']
+    sufficient = sum(d['input_status'] in {'sufficient_for_scoped_comparison', 'verified_scoped_inputs'} for d in numerical)
     report = [
         '# Phase 3 来源验证',
         '核查日期：2026-10-25。全部 313 个历史条目均已逐项尝试，状态与理由见下表和相应研究记录。52 个微设计仍是 candidate。没有 ready 条目，未进入 Phase 4。',
@@ -233,6 +238,17 @@ def prepare(root=ROOT):
         '## 逐项核查结果',
         table(['ID / Brief', '状态', '核实事件 / 决策边界', '理由 / 研究记录'], [[f"[{r['id']}](../{r['brief_path']})", r['status'], str(r['event']) + '；' + str(r['cutoff']), str(r['reason']) + f"（[记录](../{r['record_path']}#{r['id'].lower()})）"] for r in rows]),
     ]
+    if active:
+        report = [
+            '# Phase 3 来源验证（正式整改后）',
+            '初轮核源后按用户要求补源、正式改题与换题。全部365个日期已通过制作前准入；尚未进入Phase4，0 ready。原始输入、ID和日期保留；旧研究笔记与source-decisions是初轮历史记录。',
+            table(['领域', 'sourced', 'blocked', 'rejected'], totals),
+            '当前单题范围以各Brief的active_scope为准；planning仍为Phase2历史快照。正式改题、动作迁移和替换的逐条理由见 [phase3-revisions.md](phase3-revisions.md)，365题准入见 [phase3-admission.md](phase3-admission.md)。',
+            'sourced和制作前eligible均不表示训练ready；尚须Phase4完整材料、时点/剧透与Case QA以及Phase5协议验收。解释、公司自报和作者模型不能写成独立证实的因果或未披露历史事实。',
+            '原39个数量主线的不足已通过补源或显式修订处理；不继续要求已取消的隐藏cohort、成本或股权权利输入。下列为当前数量题及已核范围；未把合成负载回填历史主线。',
+            table(['ID', '输入状态', '范围理由'], [[d['id'], d['input_status'], d['reason']] for d in numerical]),
+            table(['ID / Brief', '状态', '核实事件 / 决策边界', '理由 / 研究记录'], [[f"[{r['id']}](../{r['brief_path']})", r['status'], str(r['event']) + '；' + str(r['cutoff']), str(r['reason']) + f"（[记录](../{r['record_path']}#{r['id'].lower()})）"] for r in rows]),
+        ]
     outputs[REPORT] = '\n\n'.join(report) + '\n'
     inventory = dict(phase=3, checked_at='2026-10-25', scope='manual_primary_source_research_not_ready_QA', counts=dict(counts), historical_total=313, micro_design_candidate=52, ready=0, quantitative_decisions=numerical, entries=rows)
     outputs[INVENTORY] = json.dumps(inventory, ensure_ascii=False, indent=2) + '\n'

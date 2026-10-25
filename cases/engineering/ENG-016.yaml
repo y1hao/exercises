@@ -103,4 +103,20 @@ research:
     - 一种查询
     - 误差需求
     out_of_scope: 不同时设计全球位置平台和全部空间查询
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: Uber 2018原文支持单一位置聚合需求及六角/层级取舍，采用定性选择不补误差数字。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 以定价聚合位置事件时，层级六角单元比邮编区域提供什么一致的分析边界，又不能保证什么精度？
+  expected_output: 一个索引选择及其不适用条件
+  out_of_scope: 不要求未知误差阈值，不计算无来源距离误差或设计全球位置平台
+  reason: 保留2018当事人设计材料；撤去原问题未提供的允许误差阈值，单问公开的聚合边界。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：以定价聚合位置事件时，层级六角单元比邮编区域提供什么一致的分析边界，又不能保证什么精度？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

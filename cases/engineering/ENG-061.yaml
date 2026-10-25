@@ -104,4 +104,20 @@ research:
     - 规则生效时序
     - 受影响请求范围
     out_of_scope: 不预先把保护误伤当作真实原因
-  record_path: reports/research-engineering-a.md
+  record_path: reports/remediation-engineering-a.md
+  prior_assessment:
+    status: sourced
+    reason: 2024-06-20复盘明确两个连续事件；只取第二个DDoS规则触发率限bug，避免混同首个拥塞。
+    record_path: reports/research-engineering-a.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 下一项什么观测能区分恶意流量、误伤与回源故障？
+  expected_output: 选择一项可同时区分三种解释的观测
+  out_of_scope: 不预先把保护误伤当作真实原因
+  reason: 已逐条复审原核源的初始事实、证据、结局与未知：保留Cloudflare 2024 年 6 月 DDoS 规则事故的单一范围；不要求所有错误率有各自分母，不能把回源5xx与本服务不可用混用。
+  record_path: reports/remediation-engineering-a.md
+phase4_admission:
+  state: eligible
+  reason: 该范围可直接用现有来源材料制作：下一项什么观测能区分恶意流量、误伤与回源故障？；结果已有原始来源，所列未知不作为完成主问题的必需输入。
+  report_path: reports/phase3-admission.md

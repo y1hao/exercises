@@ -1,9 +1,9 @@
 id: INV-006
 kind: historical
 domain: investing
-status: blocked
-scenario_title: Tesla 2008 融资危机
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Tesla 2010披露：2008借款与后续转换条件
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-006
@@ -37,29 +37,39 @@ planning:
     out_of_scope: 条款未知不算持仓收益或最优仓位
 research:
   id: INV-006
-  status: blocked
-  reason: 2010 S-1 可核实 2008 年融资与条款，但缺足够证据确定某个 2008 续资决策前可知的现金跑道和里程碑。
-  event: Tesla 2008 年 12 月可转换借款
-  cutoff: 拟为 2008 年 12 月追加资本决定前；精确决策日和当时可得材料未确认。
-  initial_facts: []
+  status: sourced
+  reason: 采用已读S-1披露的借款身份；不要求未公开2008现金跑道。
+  event: Tesla 2010披露：2008借款与后续转换条件
+  cutoff: 2010-01-29 S-1已公开后的条款风险评估；不是复演2008年12月融资前选择。
+  initial_facts:
+  - id: F1
+    text: 2010 S-1回溯单列2008年12月融资。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 该笔借款收到1450万美元，不能把2009新增借款算作2008可用现金。
+    source_ids:
+    - S1
+    availability: pre_decision
   evidence:
   - id: E1
-    text: S-1 回溯记载 2008 年 12 月新增借款收到 1450 万美元，并有以此后融资价格一定比例转换的安排。
+    text: 转换安排与此后融资价格的一定比例挂钩。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   - id: E2
-    text: S-1 把 2009 年追加借款和之后股权融资分开披露，不能合并成同一笔 2008 现金。
+    text: 另有2009追加借款及后续股权融资，时间、现金和转换不能合成一笔。
     source_ids:
     - S1
-    availability: post_decision
+    availability: pre_decision
   outcome:
-    text: 后来的 S-1 确认存在 2008 年 12 月借款及后续转换过程，但不证明每个投资者当时看到完整现金资料。
+    text: S-1记载借款及后续转换过程，未证明每位投资人事前掌握完整现金资料。
     source_ids:
     - S1
-  interpretation: 可作结果核实材料，尚不足以自包含地重建续资前决策。
+  interpretation: 来源披露、当事人解释与维护者推论区分；不以事后结果裁定唯一正确选择。
   unknowns:
-  - 当时现金跑道；具体续资前技术状态；投资者可见材料。
+  - 完整内部判断及反事实结果未知；不计算未披露的价格、成本或实现回报。
   sources:
   - id: S1
     url: https://ir.tesla.com/_flysystem/s3/sec/000119312510017054/ds1-gen_0.pdf
@@ -68,10 +78,28 @@ research:
     source_type: primary
     checked_at: '2026-10-25'
     supports:
+    - F1
+    - F2
     - E1
     - E2
     - outcome
   attempts:
-  - 读取官方 S-1 的 2008 convertible notes 段落；搜索同期融资公告与 2008 危机记录。
-  phase2_conditions: 不从后来回顾补造当时跑道，也不要求精确收益。
-  record_path: reports/research-investing.md
+  - 复用并逐项阅读初轮保存的一手材料摘录与引用，按本轮正式修订的问题和披露时点核对；未宣称重新获取完整合同。
+  phase2_conditions: 本轮正式修订单题范围；原候选和Phase2规划另保留，制作时使用本条新范围。
+  record_path: reports/remediation-investing.md
+  prior_assessment:
+    status: blocked
+    reason: 2010 S-1 可核实 2008 年融资与条款，但缺足够证据确定某个 2008 续资决策前可知的现金跑道和里程碑。
+    record_path: reports/research-investing.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 2008年12月借款的到账与未来融资价格挂钩转换，分别解决和留下什么风险？
+  expected_output: 一个现金到账—未来定价—稀释风险的条件链
+  out_of_scope: 不推定未披露交易条款、内部现金跑道、同cohort成本或因果贡献；公开披露时点不是原私募投资时点。
+  reason: 采用已读S-1披露的借款身份；不要求未公开2008现金跑道。
+  record_path: reports/remediation-investing.md
+phase4_admission:
+  state: eligible
+  reason: 明确单一节点与可回答的问题，至少2项事前事实、2项实质证据和直接支持的观察结果；准入不等于ready。
+  report_path: reports/phase3-admission.md

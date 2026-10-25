@@ -1,9 +1,9 @@
 id: PRO-055
 kind: historical
 domain: product
-status: blocked
-scenario_title: Twitter 初期字数约束（2006）
-readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
+status: sourced
+scenario_title: Twitter 2017：字符上限触顶率的分母比较
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-055
@@ -26,20 +26,91 @@ planning:
   distinctness_clusters: []
 research:
   id: PRO-055
-  status: blocked
-  reason: 2017官方字数实验页面读取404；未取得可读2006原始字符规则和SMS来源。
-  event: Twitter 初期字数约束（2006）
-  cutoff: 2006规则节点未核
-  initial_facts: []
-  evidence: []
+  status: sourced
+  reason: 原2006渠道边界缺可核首版机制；改为2017-09-26明确发布的语言组统计与280字符试验，增加真实数量动作。
+  event: Twitter 2017：字符上限触顶率的分母比较
+  cutoff: 2017-09-26 小范围扩字试验决策；试验结果不作先验
+  initial_facts:
+  - id: F1
+    text: 当时既有上限140字符，公司希望保留简短表达。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 公司明确比较不同语言并计划仅对日中韩之外受挤压语言试验280字符。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 已发送英语推文中9%长度为140字符，日语为0.4%；这是推文分母，不是独立用户或全部尝试输入分母。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 作者描述因压缩而删词甚至不发送的情形，但未给其比例；已发布文本的触顶率无法识别未发送内容或用户级放弃率。
+    source_ids:
+    - S1
+    availability: pre_decision
   outcome:
-    text: ''
-    source_ids: []
-  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+    id: O1
+    text: Twitter公布小范围280字符测试并承诺继续收集数据；不能把当日政策公告写成已证实的留存提升。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 这是来源所述机制/作者观察；维护者只据此推演有限条件，不宣称独立因果实验或全局收益。
+    source_ids:
+    - S1
+    attribution: 来源作者陈述与维护者范围判断分列
   unknowns:
-  - 内部决策材料、反事实与独立效果测量未公开
-  sources: []
+  - 没有用户级去重或未发布草稿分母；语言差异还受表达习惯和内容构成影响。
+  sources:
+  - id: S1
+    url: https://blog.x.com/en_us/topics/product/2017/Giving-you-more-characters-to-express-yourself
+    publisher: Twitter / Aliza Rosen、Ikuhiro Ihara
+    published_at: '2017-09-26'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
   attempts:
   - 检索Twitter/X原始字数历史；2017官方Giving-you-more-characters页面搜索可见但打开404，二手Jack引语未代替原文。
-  phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
-  record_path: reports/research-product.md
+  - url: https://blog.x.com/en_us/topics/product/2017/Giving-you-more-characters-to-express-yourself
+    result: 本轮实际打开并阅读正文，按新问题逐条复核；旧范围缺口通过显式修订消除，不声称找到了原来缺失的资料。
+  phase2_conditions:
+    original: 保留既定单一认知动作；结果仅最终揭晓。
+    remediation_applied: true
+    scope_change: 原2006渠道边界缺可核首版机制；改为2017-09-26明确发布的语言组统计与280字符试验，增加真实数量动作。
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: blocked
+    reason: 2017官方字数实验页面读取404；未取得可读2006原始字符规则和SMS来源。
+    record_path: reports/research-product.md
+  remediation_decision: reframe
+active_scope:
+  decision: reframe
+  main_question: 英语推文9%恰好140字符、日语0.4%，二者差多少百分点、倍数是多少？这些数能否说明英语用户因限制而放弃发布的概率是日语用户的22.5倍？
+  expected_output: 8.6个百分点与22.5倍的计算，以及推文分母和未发布内容的识别边界。
+  out_of_scope: 不推断用户留存、放弃率或2006 SMS渠道效果；不把语言组差异当随机实验。
+  reason: 原2006渠道边界缺可核首版机制；改为2017-09-26明确发布的语言组统计与280字符试验，增加真实数量动作。
+  record_path: reports/remediation-product.md
+  quantitative_inputs:
+  - name: 已发送英语推文140字符占比
+    value: 9
+    unit: '%'
+    source_ids:
+    - S1
+  - name: 已发送日语推文140字符占比
+    value: 0.4
+    unit: '%'
+    source_ids:
+    - S1
+phase4_admission:
+  state: eligible
+  reason: 明确冻结单一工件/事件与问题；2条事前事实、2条有效证据、直接来源支持结果齐备。
+  report_path: reports/phase3-admission.md

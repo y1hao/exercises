@@ -2,7 +2,7 @@ id: PRO-047
 kind: historical
 domain: product
 status: sourced
-scenario_title: Netflix 从 DVD 转向流媒体（2007）
+scenario_title: Netflix 2007-01-16 即时观看PC功能
 readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
@@ -76,4 +76,20 @@ research:
   attempts:
   - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
   phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
-  record_path: reports/research-product.md
+  record_path: reports/remediation-product.md
+  prior_assessment:
+    status: sourced
+    reason: 2007原始公告给出渐进流媒体策略、内容与技术限制，能判断蚕食与分发的取舍。
+    record_path: reports/research-product.md
+  remediation_decision: retain
+active_scope:
+  decision: retain
+  main_question: 是否把片库小、仅PC的即时观看作为DVD会员附加功能先推出？
+  expected_output: 一项渐进发布选择及技术/内容边界
+  out_of_scope: 不以发布、用户总量或事后成功代替因果证据
+  reason: 复核原直接来源素材；保留原节点与单一认知动作。
+  record_path: reports/remediation-product.md
+phase4_admission:
+  state: eligible
+  reason: 原研究已逐条核对直接来源；事实、证据及实际交付/观察结局齐全，问题只要求来源能支持的判断；尚非ready。
+  report_path: reports/phase3-admission.md
