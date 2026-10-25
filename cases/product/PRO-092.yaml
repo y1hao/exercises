@@ -1,9 +1,9 @@
 id: PRO-092
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Google Photos 无限高质量备份（2015）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-092
@@ -35,3 +35,52 @@ planning:
     - 上传与检索能力
     - 导出条件
     out_of_scope: 不提前引入后来收费或无限备份取消
+research:
+  id: PRO-092
+  status: blocked
+  reason: 备份到检索复用机制已核，但规划要求的同版导出和退出边界缺直接材料。
+  event: Google Photos 2015-05-28 自动备份任务
+  cutoff: 2015-05-28 上线后、用户选择自动备份前
+  initial_facts:
+  - id: I1
+    text: 推出的 standalone Photos 自动备份并同步，可在多设备访问。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 免费 unlimited high-quality 为压缩档，公告说明照片最高 16MP、视频 1080p；不能称无限原图。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 产品按人物、地点和事物自动分组并支持搜索，无需手动标签；可生成拼图、动画等复用内容。
+    source_ids: *id001
+    availability: pre_decision
+  - id: E2
+    text: 分享链接可让收件人不装 app 或登录就查看，并将内容保存到自己的图库。
+    source_ids: *id001
+    availability: pre_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - 2015 年该版批量导出、元数据完整性和退出条件未取得同期直接说明；现行 Takeout 不能倒推。
+  sources:
+  - id: S1
+    url: https://blog.google/products-and-platforms/products/photos/picture-this-fresh-approach-to-photos/
+    publisher: Google / Anil Sabharwal
+    published_at: '2015-05-28'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+  attempts:
+  - 打开首发公告核对套餐、自动上传、搜索和分享。
+  - 检索 2015 Google Photos Takeout / export，结果多为当前第三方迁移教程，未将其作为当时导出条件。
+  phase2_conditions:
+  - 在补足同期导出条件前保持 blocked；不提前引入后来收费或无限备份取消。
+  record_path: reports/research-product-b.md

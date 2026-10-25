@@ -1,9 +1,9 @@
 id: ENG-023
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: GitHub Actions pwn requests 风险（2020—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-023
@@ -35,3 +35,72 @@ planning:
     - token 权限
     - 公告中的触发条件
     out_of_scope: 不把风险类别假装成未核实的独立入侵事故
+research:
+  id: ENG-023
+  status: sourced
+  reason: GitHub Security Lab披露基于其报告过的实际workflow漏洞，具有可读危险例子。
+  event: GitHub Actions pwn requests 风险（2020—）
+  cutoff: 2021公开安全说明中的pull_request_target工作流，checkout不可信PR前。
+  initial_facts:
+  - id: F1
+    text: 外部PR代码是不可信输入。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: pull_request_target可运行于具有写token/Secrets的上下文。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 显式checkout并构建不可信PR可在特权runner执行其脚本。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 未在workflow中显式引用Secrets也不消除内存或磁盘中token风险。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 官方建议分离不可信构建和特权处理，或使用权限受限pull_request触发。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 这是公开漏洞模式工件，不冒充特定未具名入侵事故。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 生产仓库名称与实际被窃信息未给出；不补造。
+  sources:
+  - id: S1
+    url: https://securitylab.github.com/resources/github-actions-preventing-pwn-requests/
+    publisher: GitHub Security Lab / Jaroslav Lobačevski
+    published_at: '2021-08-03'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://securitylab.github.com/resources/github-actions-preventing-pwn-requests/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: 一次 pwn requests 风险的公开披露或公告窗口
+    anchor_status: unverified_research_target
+    main_question: 不可信 PR 的哪条执行路径会跨入高权限上下文？
+    expected_output: 画出一条数据到执行的信任跨越
+    evidence_to_verify:
+    - 当时工作流示例
+    - token 权限
+    - 公告中的触发条件
+    out_of_scope: 不把风险类别假装成未核实的独立入侵事故
+  record_path: reports/research-engineering-a.md

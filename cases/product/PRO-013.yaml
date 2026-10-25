@@ -1,9 +1,9 @@
 id: PRO-013
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Airbnb 早期 Craigslist 分发（2009—2010）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-013
@@ -35,3 +35,41 @@ planning:
     - 平台许可与控制范围
     - 流量转化口径
     out_of_scope: 没有一手材料就保留换题条件，不复述传闻
+research:
+  id: PRO-013
+  status: blocked
+  reason: 核查二手增长史后未找到可独立确认操作、许可和转化的一手记录；不能把流传的 Craigslist hack 当事实。
+  event: 候选 2009—2010 Craigslist 导流；具体日期及操作未确定
+  cutoff: 未确定，禁止将后来的叙述变成同期已知信息
+  initial_facts:
+  - id: F1
+    text: 2016 年 Boston Hospitality Review 文章叙述跨发房源及供应招募；它是作者整理，并非平台原始记录。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 文章没有给出同窗口曝光、转化和渠道许可的可核数据。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 仅有公开自报/文档描述；不把发布、相关性或后来的成功当成因果结论。
+  unknowns:
+  - 是否及何时部署候选操作、许可、真实转化、终止时间
+  sources:
+  - id: S1
+    url: https://www.bu.edu/bhr/2016/01/08/the-making-of-airbnb/
+    publisher: Boston Hospitality Review / Morgan Brown
+    published_at: '2016-01-08'
+    source_type: secondary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - E1
+  attempts:
+  - Airbnb 官方域与创始人采访检索；阅读 Boston Hospitality Review 正文；检索结果中的增长故事未当作一手证据。
+  phase2_conditions: 保持换题条件；不可据二手叙事自动晋级或替换。
+  record_path: reports/research-product.md

@@ -2,7 +2,7 @@
 
 已通读并记录 365 条候选的具体范围与处理意见：accepted 164、revise 200、replace 1。
 
-这是课程规划审核，未查询外部资料、未验证历史事实或结果；accepted 仅指保留选题。所有条目仍为 candidate，不可生成训练。
+这是课程规划审核，未查询外部资料、未验证历史事实或结果；accepted 仅指保留选题。Phase 2 结束时所有条目为 candidate；这是规划历史快照，当前核源状态见 source-verification.md。
 
 逐条意见以 `phase2-review-notes.tsv` 为维护输入，`curriculum-review.yaml` 为完整机器可读记录；分布、周内检查与聚类汇总见 `curriculum-audit.json`。原始输入、日期、ID 和候选素材全部保留。
 
@@ -162,7 +162,7 @@
 
 9 个设计题需要额外收窄或明确合成约束，涵盖基金储备、APM、远端环境、受监管服务、eval、审计、背压、硬件现金流和巨头竞争；名单见逐条记录。
 
-ENG-157 是唯一 replace 建议，尚未确定替代事件；日期和 ID 保持原状，状态仍为 candidate。ENG-011、INV-034、ENG-117 等在无法获得独立材料时可能进入后续替换队列，此处不提前认定事实错误。
+ENG-157 是唯一 replace 建议，尚未确定替代事件；日期和 ID 保持原状；本报告记录 Phase 2 建议，当前状态以索引及 Phase 3 报告为准。ENG-011、INV-034、ENG-117 等在无法获得独立材料时可能进入后续替换队列，此处不提前认定事实错误。
 
 初审校准 focus 和 review_status，映射见 `curriculum-revisions.md`；后续范围修订另以 revision_state 追踪，具体问题、证据要求、合成约束和数量题规则见 `phase2-revision-results.md` 及 `curriculum/planning-2027.yaml`。没有实际换题、改号、挪日期或升级训练状态。
 

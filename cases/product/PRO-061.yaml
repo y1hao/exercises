@@ -1,9 +1,9 @@
 id: PRO-061
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Robinhood Referral 免费股票（2015—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-061
@@ -45,3 +45,31 @@ planning:
       question: 先核验入金还是账户持续行为，才能区分奖励拉新和有效需求？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: PRO-061
+  status: blocked
+  reason: 申报入口存在但正文读取失败；奖励支出和有效持续账户尚未逐项核实。 尚未应用备用问题，原数量主线保持 blocked。
+  event: Robinhood Referral 免费股票（2015—）
+  cutoff: 2015—具体奖励轮次尚未锁定
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources: []
+  attempts:
+  - 尝试SEC robinhoods-1.htm正文超4MB；投资者优化PDF404；未用二手推广链接填具体历史奖励条款。
+  phase2_conditions: 缺同窗口有效账户与奖励支出，fallback evidence-selection仍需当轮规则核实。
+  record_path: reports/research-product.md
+  scope_decision:
+    id: PRO-061
+    input_status: insufficient_this_round
+    reason: 申报入口存在但正文读取失败；奖励支出和有效持续账户尚未逐项核实。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: blocked
+  source_assessment_reason: 定位2021原始S-1含奖励与funded定义，但HTML超上限、优化PDF404，尚无逐条正文核验。

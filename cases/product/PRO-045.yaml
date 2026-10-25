@@ -1,9 +1,9 @@
 id: PRO-045
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Pinterest Waitlist 邀请制（2010—2011）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-045
@@ -35,3 +35,22 @@ planning:
     - 受邀后任务
     - 回访或内容行为
     out_of_scope: 不以邀请数和排队长度直接证明 PMF
+research:
+  id: PRO-045
+  status: blocked
+  reason: 尚无2010—2011一轮邀请规则及受邀后行为的一手记录；后续开放注册报道不能替代。
+  event: Pinterest Waitlist 邀请制（2010—2011）
+  cutoff: 2010—2011 邀请窗口未定位
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources: []
+  attempts:
+  - 检索 Pinterest 官方archive/2012开放注册及早期创始人资料；结果以二手报道为主，未取得可读同期邀请规则和回访队列。
+  phase2_conditions: 不以邀请数和排队长度直接证明 PMF
+  record_path: reports/research-product.md

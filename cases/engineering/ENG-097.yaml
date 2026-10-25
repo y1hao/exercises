@@ -1,9 +1,9 @@
 id: ENG-097
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Google 2020 年身份验证故障
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-097
@@ -24,3 +24,56 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-097
+  status: sourced
+  reason: 一手材料直接支持 artifact 或事件行为；不是 ready。
+  event: Google 2020-12-14 身份服务事故
+  cutoff: 2020-12-14 错误出现后的诊断起点
+  initial_facts:
+  - id: I1
+    text: 多个需要 Google 身份的服务出现错误
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 已有网络数据平面配置仍能工作
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 旧配额系统把用量错误报告为零
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 配额下调阻止身份数据库写入并导致过期读取被拒绝
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 禁用配额执行后错误下降，多数服务恢复；少量服务恢复滞后。
+    source_ids:
+    - S1
+  interpretation: 机制推演须与来源中的观察和当事人归因分别标记。
+  unknowns:
+  - 未公开的实际决策过程和完整工作量未知。
+  sources:
+  - id: S1
+    url: https://status.cloud.google.com/incident/zall/20013
+    publisher: Google
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开官方状态事件，核对 RCA 和控制/数据平面影响。
+  phase2_conditions:
+  - 根因与恢复动作只作隐藏证据，按实际可见状态分轮披露。
+  record_path: reports/research-engineering-b.md

@@ -1,9 +1,9 @@
 id: ENG-123
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: OpenAPI 3.0 规格演进（2017）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-123
@@ -35,3 +35,56 @@ planning:
     - 接口变更
     - 生成与验证责任
     out_of_scope: 不计算无来源的人力节省
+research:
+  id: ENG-123
+  status: sourced
+  reason: 直接资料可证事件或artifact；完整Case QA尚未执行。
+  event: OpenAPI3.0.0正式规范
+  cutoff: 2017-07-26契约设计时
+  initial_facts:
+  - id: I1
+    text: 规范为HTTP API提供语言无关描述
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 消费方无需读实现源码即可了解接口能力
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 规范分别定义参数、requestBody和responses
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 规范的文档对象不自动实施服务端校验
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 3.0.0规范已发布，契约可支撑生成工具；一致执行仍需实现和验证。
+    source_ids:
+    - S1
+  interpretation: 与真实史实分开标注机制推断；示例不得变成虚构事故。
+  unknowns:
+  - 未公开工作量、内部决策过程或具体故障日志未知。
+  sources:
+  - id: S1
+    url: https://spec.openapis.org/oas/v3.0.0.html
+    publisher: OpenAPI Initiative / Linux Foundation
+    published_at: '2017-07-26'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开准确3.0.0版本规范，核对版本和接口对象。
+  phase2_conditions:
+  - 不把先写契约当作已证因果成功；固定一次接口变更，示例须标明。
+  record_path: reports/research-engineering-b.md

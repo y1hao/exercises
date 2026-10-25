@@ -1,9 +1,9 @@
 id: ENG-155
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Cloudflare 2025 年 12 月解析逻辑故障
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-155
@@ -37,3 +37,56 @@ planning:
     - 解析改动
     - 灰度覆盖和错误口径
     out_of_scope: 不复用 Bot Management 的根因或时间线
+research:
+  id: ENG-155
+  status: sourced
+  reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  event: Cloudflare2025-12-05 FL1/WAF解析改动事故
+  cutoff: 2025-12-05 08:47 UTC配置传播后
+  initial_facts:
+  - id: I1
+    text: 团队正调整请求体解析buffer以缓解React漏洞
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 有渐进软件部署与快速全局配置两条路径
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 第二项关闭WAF测试工具的全局变更触发FL1规则异常
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: skip路径缺少execute对象导致Lua nil访问
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 09:12回退后流量恢复；受影响需要旧FL1及Managed Ruleset组合。
+    source_ids:
+    - S1
+  interpretation: 已知观察、作者归因与维护者推论必须分开；不承诺未核出的数字。
+  unknowns:
+  - 未公开内部过程与全部版本细节未知。
+  sources:
+  - id: S1
+    url: https://blog.cloudflare.com/5-december-2025-outage/
+    publisher: Cloudflare
+    published_at: '2025-12-05'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开12月5日独立复盘，核查两步变更与具体Lua异常。
+  phase2_conditions:
+  - 与11月重复feature文件事故不同；灰度应覆盖配置路径与FL1/规则组合，不提供无来源检测率。
+  record_path: reports/research-engineering-b.md

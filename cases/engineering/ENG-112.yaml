@@ -1,9 +1,9 @@
 id: ENG-112
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Node.js libuv 事件循环（2009—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-112
@@ -36,3 +36,56 @@ planning:
     - 请求类型
     - 线程池与回调执行位置
     out_of_scope: 不把所有异步 IO 视为同一种执行路径
+research:
+  id: ENG-112
+  status: sourced
+  reason: 直接材料支持事件或artifact行为，完整训练未验收。
+  event: Node.js v10.24.1 libuv 线程池文档
+  cutoff: 固定v10.24.1 API快照，非2009首发时行为
+  initial_facts:
+  - id: I1
+    text: 异步文件API与部分crypto操作使用libuv线程池
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: dns.lookup也使用线程池
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 线程池默认4线程且大小固定
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 长任务会影响其他看似无关的池内API
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 官方文档明确池饱和可影响异步API延迟；不能将所有I/O都归为线程池。
+    source_ids:
+    - S1
+  interpretation: 来源描述与我们的推论分开；不能以当前文档倒推早年版本。
+  unknowns:
+  - 精确决策日及未公开观测未知。
+  sources:
+  - id: S1
+    url: https://nodejs.org/download/release/v10.24.1/docs/api/cli.html
+    publisher: Node.js
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开旧版官方文档 UV_THREADPOOL_SIZE 章节。
+  phase2_conditions:
+  - 需要进一步给最小请求类型与回调执行位置；不得编造线上指标。
+  record_path: reports/research-engineering-b.md

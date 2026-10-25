@@ -1,9 +1,9 @@
 id: INV-043
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Klarna 2021—2022 估值重定价
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-043
@@ -35,3 +35,99 @@ planning:
       question: 为什么缺少股权权利时，不能从融资估值比例推出旧股价值变化？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: INV-043
+  status: blocked
+  reason: 两轮 headline 估值可核，缺完整股本、每股价格和权利，不能推出旧股实际损失。 尚未应用备用问题，原数量主线保持 blocked。
+  event: Klarna 2021—2022 估值重定价
+  cutoff: 2021-06-10融资后、2022新融资宣布前；两轮比较材料只能在后续揭示。
+  initial_facts:
+  - id: F1
+    text: 2021公司宣布639m新equity融资。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 2021公告post-money为45.6bn，SoftBank Vision Fund2领投。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 2022-07-11公司公告800m融资、post-money6.7bn，并明确是common equity。
+    source_ids:
+    - S2
+    availability: post_decision
+  - id: E2
+    text: 2022公告希望随后让1000余小股东按pro-rata参与，不能当所有旧股已等比例参与。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    id: O1
+    text: headline post-money降幅可对比，但不等于每位旧股东实际经济损失比例；旧股持有数、增资与权利仍必要。
+    source_ids:
+    - S1
+    - S2
+    availability: post_decision
+  interpretation:
+    text: 2022管理层对市场环境归因需标为当事人解释；不能擅自编造新轮优先清算条款。
+    source_ids:
+    - S1
+    - S2
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 两轮完整cap table、每股价格、旧股参加增资情况与全部股权权利未公开。
+  - 采用备用题：为什么缺少股权权利时，不能从融资估值比例推出旧股价值变化。
+  sources:
+  - id: S1
+    url: https://news.cision.com/klarna-bank-ab--publ-/r/klarna-secures-additional-funding-as-consumers-demand-smarter-alternatives-to-shop--bank----pay,c3365020
+    publisher: Klarna / Cision
+    published_at: '2021-06-10'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - O1
+  - id: S2
+    url: https://s205.q4cdn.com/644747736/files/doc_news/Klarna-closes-major-financing-round-during-worst-stock-downturn-in-50-years-holding-2022.pdf
+    publisher: Klarna
+    published_at: '2022-07-11'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://news.cision.com/klarna-bank-ab--publ-/r/klarna-secures-additional-funding-as-consumers-demand-smarter-alternatives-to-shop--bank----pay,c3365020
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://s205.q4cdn.com/644747736/files/doc_news/Klarna-closes-major-financing-round-during-worst-stock-downturn-in-50-years-holding-2022.pdf
+    result: 已打开并读取融资金额、post-money、common equity与pro-rata段落
+  phase2_conditions:
+    revision_state: retained
+    policy_path: curriculum/planning-policy.yaml
+    distinctness_clusters: []
+    quantitative_plan:
+      mainline_measure: headline 估值与旧股经济价值差异
+      required_inputs:
+      - 两轮实际价格和股本
+      - 公开股权权利
+      - 稀释口径
+      missing_input_fallback:
+        focus: boundary-transfer
+        question: 为什么缺少股权权利时，不能从融资估值比例推出旧股价值变化？
+      fallback_applied: false
+      input_verification: not_started
+  record_path: reports/research-investing-a.md
+  scope_decision:
+    id: INV-043
+    input_status: insufficient_this_round
+    reason: 两轮 headline 估值可核，缺完整股本、每股价格和权利，不能推出旧股实际损失。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: sourced
+  source_assessment_reason: 两份同期公司融资公告核实45.6bn→6.7bn及2022common equity；缺股本/全权利，建议审议预设boundary-transfer
+    fallback。

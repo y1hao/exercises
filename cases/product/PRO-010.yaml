@@ -1,9 +1,9 @@
 id: PRO-010
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Duolingo 连续学习 Streak 早期设计（2010s）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-010
@@ -35,3 +35,53 @@ planning:
     - 参与分群
     - 学习结果口径
     out_of_scope: 不把签到或打开次数作为学习成效
+research:
+  id: PRO-010
+  status: blocked
+  reason: 2015 原始研究提供 streak 与继续使用的相关性，未定位改动前后或学习成效。
+  event: Duolingo 连续学习 Streak 早期设计（2010s）
+  cutoff: 2015-03-01 至 03-10 观察窗口（非确定的产品改动）
+  initial_facts:
+  - id: F1
+    text: 研究用连续两天的 streak 日志估计 D 到 D+1 的概率。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 观察窗口为 2015-03-01 至 03-10。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 研究发现 streak 从零到约二十天时继续概率提高。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 研究观察的是继续使用，不能据此推断能力提高或改动因果。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.csd.cmu.edu/sites/default/files/phd-thesis/CMU-CS-15-106.pdf
+    publisher: Brendan Meeder / CMU
+    published_at: '2015-05-04'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不把签到或打开次数作为学习成效
+  record_path: reports/research-product.md

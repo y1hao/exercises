@@ -1,9 +1,9 @@
 id: PRO-075
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Upwork Elance 与 oDesk 合并（2013—2015）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-075
@@ -35,3 +35,53 @@ planning:
     - 品类供需
     - 账户和迁移规则
     out_of_scope: 不评价两年全部整合或全部服务市场
+research:
+  id: PRO-075
+  status: blocked
+  reason: 2018 S-1回述2015迁移与客户损失，但缺公告窗口单一服务品类的供需和账户迁移规则，不能由总市场规模替代品类流动性。
+  event: Upwork Elance 与 oDesk 合并（2013—2015）
+  cutoff: 2015-05 Upwork重启、8月迁移前
+  initial_facts:
+  - id: F1
+    text: 2014两平台合并后，2015-05刷新oDesk为Upwork；来自2018回顾披露。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 2015-08开始让Elance客户、自由职业者和项目迁入Upwork。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 公司披露部分用户未迁移，短期拖累核心客户增长。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 公司称整合后市场更大、更有流动性；没有单品类比较数据。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1627475/000119312518267594/d575528ds1.htm
+    publisher: Upwork / SEC
+    published_at: '2018-09-06'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 实际阅读S-1迁移及核心客户章节；2015官方重启公告正文403，不将摘要当核实。
+  phase2_conditions: 不评价两年全部整合或全部服务市场
+  record_path: reports/research-product.md

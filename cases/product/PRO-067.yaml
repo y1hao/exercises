@@ -1,9 +1,9 @@
 id: PRO-067
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Twitch 从 Justin.tv 拆分（2011）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-067
@@ -24,3 +24,53 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: PRO-067
+  status: blocked
+  reason: 同期公告确认垂直产品与迁移流程，但未找到拆分前游戏内容相对其他类别的集中度或行为比较，不能验证识别高价值子群的关键前提。
+  event: Twitch 从 Justin.tv 拆分（2011）
+  cutoff: 2011-06-06公开beta发布
+  initial_facts:
+  - id: F1
+    text: Twitch复用Justin.tv直播基础设施，专注电竞。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: Justin.tv原游戏内容可在Twitch看，计划最终迁移并保留旧链接。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 6月22日opt-in保留观看量、关注者和VOD，并可让原频道自动跳转。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 公告称社区反馈参与开发；未给类别级需求对比。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://twitchtv.wordpress.com/2011/06/
+    publisher: TwitchTV官方博客
+    published_at: 2011-06
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
+  record_path: reports/research-product.md

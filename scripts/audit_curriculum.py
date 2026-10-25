@@ -239,7 +239,7 @@ def render_report(summary):
     sections = [
         "# Phase 2 全年课程审核\n",
         f"已通读并记录 365 条候选的具体范围与处理意见：accepted {actions.get('accepted', 0)}、revise {actions.get('revise', 0)}、replace {actions.get('replace', 0)}。",
-        "这是课程规划审核，未查询外部资料、未验证历史事实或结果；accepted 仅指保留选题。所有条目仍为 candidate，不可生成训练。",
+        "这是课程规划审核，未查询外部资料、未验证历史事实或结果；accepted 仅指保留选题。Phase 2 结束时所有条目为 candidate；这是规划历史快照，当前核源状态见 source-verification.md。",
         "逐条意见以 `phase2-review-notes.tsv` 为维护输入，`curriculum-review.yaml` 为完整机器可读记录；分布、周内检查与聚类汇总见 `curriculum-audit.json`。原始输入、日期、ID 和候选素材全部保留。\n",
         "## 领域和审核动作\n",
         table(["类型 / 领域", "数量", "accepted", "revise", "replace"],
@@ -282,7 +282,7 @@ def render_report(summary):
         "## 范围与后续动作\n",
         f"{actions.get('accepted', 0)} 条 accepted 保留其单一微观题意，仍需后续核源和完整 Brief。{actions.get('revise', 0)} 条 revise 已逐条指出应收窄的功能、时间、指标或假说；常见问题是多年综述、无数据精算、提前归因和多个主任务。",
         f"{design_revise} 个设计题需要额外收窄或明确合成约束，涵盖基金储备、APM、远端环境、受监管服务、eval、审计、背压、硬件现金流和巨头竞争；名单见逐条记录。",
-        "ENG-157 是唯一 replace 建议，尚未确定替代事件；日期和 ID 保持原状，状态仍为 candidate。ENG-011、INV-034、ENG-117 等在无法获得独立材料时可能进入后续替换队列，此处不提前认定事实错误。",
+        "ENG-157 是唯一 replace 建议，尚未确定替代事件；日期和 ID 保持原状；本报告记录 Phase 2 建议，当前状态以索引及 Phase 3 报告为准。ENG-011、INV-034、ENG-117 等在无法获得独立材料时可能进入后续替换队列，此处不提前认定事实错误。",
         "初审校准 focus 和 review_status，映射见 `curriculum-revisions.md`；后续范围修订另以 revision_state 追踪，具体问题、证据要求、合成约束和数量题规则见 `phase2-revision-results.md` 及 `curriculum/planning-2027.yaml`。没有实际换题、改号、挪日期或升级训练状态。",
         "当前修订进度：" + "、".join(f"{key} {value}" for key, value in summary["revision_progress"].items()) + "。原始 revise/replace 标签保留作为审核历史，不代表仍只有备注未落实。",
         "Phase 2 完成后停止，待用户同意再进入 Phase 3 来源验证；不提前制作 ready Brief、完整协议或声称训练对话验收通过。\n",
@@ -322,7 +322,7 @@ def main():
         for rel, expected in outputs.items():
             if not (args.root / rel).is_file() or (args.root / rel).read_text(encoding="utf-8") != expected:
                 raise SystemExit(f"Audit artifact is missing or stale: {rel}")
-    print(f"PASS: {summary['total']} individual reviews; {summary['review_status']}; no history verified.")
+    print(f"PASS: {summary['total']} individual reviews; {summary['review_status']}; Phase 2 planning snapshot, no external verification by this command.")
 
 
 if __name__ == "__main__":

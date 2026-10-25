@@ -1,9 +1,9 @@
 id: ENG-029
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Rust Ownership 与 Borrow Checker（2015）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-029
@@ -35,3 +35,72 @@ planning:
     - 最小示例
     - 线程共享约束
     out_of_scope: 不讲完整 ownership 教程或宣称消除所有并发错误
+research:
+  id: ENG-029
+  status: sourced
+  reason: 2015 Rust官方并发文章含实际共享/所有权示例和编译拒绝边界。
+  event: Rust Ownership 与 Borrow Checker（2015）
+  cutoff: 2015文章中的跨线程共享例子、编译判断前；沿用原文版本语法。
+  initial_facts:
+  - id: F1
+    text: 所有权由编译器静态检查。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 线程通信或共享数据需要满足相应所有权限制。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 文章展示channel转移消息所有权。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: Mutex将访问限制于锁保护，并解释编译器阻止错误共享的示例。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 同一所有权模型用于内存安全与避免数据竞争。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 不保证业务时序、死锁或所有逻辑竞态都消失。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - Phase4需逐字对照原文代码而非改成现代语法后假称2015。
+  sources:
+  - id: S1
+    url: https://blog.rust-lang.org/2015/04/10/Fearless-Concurrency/
+    publisher: Rust / Aaron Turon
+    published_at: '2015-04-10'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://blog.rust-lang.org/2015/04/10/Fearless-Concurrency/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: Rust 2015 候选版本的一段跨线程共享引用示例
+    anchor_status: unverified_research_target
+    main_question: 这段共享引用能否通过编译检查，检查的保证到哪里为止？
+    expected_output: 一个边界判断及不受保证的业务竞态例子
+    evidence_to_verify:
+    - 版本对应的引用规则
+    - 最小示例
+    - 线程共享约束
+    out_of_scope: 不讲完整 ownership 教程或宣称消除所有并发错误
+  record_path: reports/research-engineering-a.md

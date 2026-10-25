@@ -1,9 +1,9 @@
 id: INV-003
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: Fiverr 2011 Series A
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-003
@@ -36,3 +36,62 @@ planning:
     - 当时可见交易复用与履约质量
     - 取数能力
     out_of_scope: 不以后来上市数据代替当轮证据
+research:
+  id: INV-003
+  status: sourced
+  reason: 已读取 Bessemer 2011-01-10 原始投资建议正文；适合检查交易质量证据，不推断后续回报。
+  event: Fiverr 2011 年 Bessemer 投资建议
+  cutoff: 2011-01-10 投资建议窗口，以投资方当时记录为限。
+  initial_facts:
+  - id: F1
+    text: Fiverr 为低价服务交易市场，投资备忘录讨论早期消费互联网机会。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 投资者将低现金消耗与有时间继续试验视为判断条件。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 备忘录把自然增长和客户满意度列为投资论据，这属于投资者评估。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 公司 2012 年转载报道提及此前早期融资，但不是 2011 年可知材料或直接轮次证明。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    text: 原始文件提出投资建议；不能据此确认实际交割价格或实现回报。
+    source_ids:
+    - S1
+  interpretation: 低 burn 提供验证时间，是备忘录的论点，不等同于重复交易质量已被证明。
+  unknowns:
+  - 原候选所称 Series A 的交割细节；可公开复用的完整 cohort 数字。
+  sources:
+  - id: S1
+    url: https://www.bvp.com/memos/fiverr
+    publisher: Bessemer Venture Partners
+    published_at: '2011-01-10'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - outcome
+  - id: S2
+    url: https://www.fiverr.com/news/the-next-web
+    publisher: Fiverr转载The Next Web
+    published_at: '2012-05-03'
+    source_type: secondary
+    checked_at: '2026-10-25'
+    supports:
+    - E2
+  attempts:
+  - 打开 BVP 原始备忘录及公司转载新闻；不以转载当原始轮次合同。
+  phase2_conditions: 以备忘录证据选择为训练范围，不要求无依据的精确仓位。
+  record_path: reports/research-investing.md

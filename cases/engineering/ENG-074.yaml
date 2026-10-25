@@ -1,9 +1,9 @@
 id: ENG-074
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Google Borg 集群超售（2015）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-074
@@ -24,3 +24,63 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-074
+  status: sourced
+  reason: Borg2015原论文直接支持资源reservation、优先级与回收取舍。
+  event: Google Borg 集群超售（2015）
+  cutoff: 论文资源回收策略选择，在线任务尚未出现负载峰值时。
+  initial_facts:
+  - id: F1
+    text: 同一cell混合生产与batch等不同优先级任务。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 用户请求资源常高于当前实际使用。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: Borg依细粒度使用估计reservation，回收未用资源给能接受低质量资源的batch。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 高优先级任务可抢占低优先级；线上优先级带内限制相互抢占以防级联。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 提高利用率依赖估计、打包、优先级与允许回收，不能只看资源request总和。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 论文Figure12是一个cell观测，不是所有负载无OOM保证。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 不可据此虚构当前cell资源分布或保证任意超售比例。
+  sources:
+  - id: S1
+    url: https://research.google.com/pubs/archive/43438.pdf
+    publisher: Google / Verma et al.
+    published_at: '2015'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://research.google.com/pubs/archive/43438.pdf
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 混合在线与批处理工作负载时，评估资源预留、优先级和实际利用率。
+  record_path: reports/research-engineering-a.md

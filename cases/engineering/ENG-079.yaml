@@ -1,9 +1,9 @@
 id: ENG-079
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Kubernetes EndpointSlice 传播（2019—2021）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-079
@@ -35,3 +35,85 @@ planning:
     - 控制面确认语义
     - 数据面刷新路径
     out_of_scope: 不把多组件异步传播写成全局即时生效
+research:
+  id: ENG-079
+  status: sourced
+  reason: Kubernetesv1.21.0源码固定tag明确EndpointSlice pending/applied缓存及回调队列，支持非即时生效。
+  event: Kubernetes EndpointSlice 传播（2019—2021）
+  cutoff: v1.21.0某EndpointSlice变更已经进cache但proxier尚未应用时；限定iptables数据面。
+  initial_facts:
+  - id: F1
+    text: kube-proxy按service及slice跟踪endpoint。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 缓存区分已由proxier应用与pending的EndpointSlice。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: slice内endpoint移动需要按slice缓存，避免错误删除。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: iptables proxier的OnEndpointSliceDelete/Update先更新endpointsChanges，再触发Sync；syncRunner与syncProxyRules负责后续应用。
+    source_ids:
+    - S1
+    - S2
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 控制面更新与本地数据面应用之间可存在间隔；旧路径可在更新传播完成前继续存在。
+    source_ids:
+    - S1
+    - S2
+    availability: post_decision
+  interpretation:
+    text: 旧路径存在是从分阶段实现推导的可能性，不是某次真实生产请求已证明；不承诺最长传播时间。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 新请求路由与已有连接需区分；全局所有节点生效需要各节点观测，单次API ACK不足。
+  sources:
+  - id: S1
+    url: https://raw.githubusercontent.com/kubernetes/kubernetes/v1.21.0/pkg/proxy/endpointslicecache.go
+    publisher: Kubernetes project
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  - id: S2
+    url: https://raw.githubusercontent.com/kubernetes/kubernetes/v1.21.0/pkg/proxy/iptables/proxier.go
+    publisher: Kubernetes project
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E2
+    - O1
+  attempts:
+  - url: https://raw.githubusercontent.com/kubernetes/kubernetes/v1.21.0/pkg/proxy/endpointslicecache.go
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://raw.githubusercontent.com/kubernetes/kubernetes/v1.21.0/pkg/proxy/iptables/proxier.go
+    result: 已打开并读取v1.21.0回调、同步及conntrack清理注释
+  phase2_conditions:
+    planning_only: true
+    anchor_request: 一版 EndpointSlice 中的一次 endpoint 删除
+    anchor_status: unverified_research_target
+    main_question: 控制面确认删除后，一条旧请求路径是否还可能被使用？
+    expected_output: 一个传播时序与能证明生效的观察点
+    evidence_to_verify:
+    - 版本
+    - 控制面确认语义
+    - 数据面刷新路径
+    out_of_scope: 不把多组件异步传播写成全局即时生效
+  record_path: reports/research-engineering-a.md

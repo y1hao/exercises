@@ -1,9 +1,9 @@
 id: PRO-021
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: PayPal eBay 买卖双方扩散（1999—2002）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-021
@@ -35,3 +35,56 @@ planning:
     - 邀请机制
     - 实际参与方
     out_of_scope: 不以后来支付份额代替初期机制证据
+research:
+  id: PRO-021
+  status: sourced
+  reason: 2002 原始招股书有具体付款/收款流程、未注册收款人路径及拍卖使用比例。
+  event: PayPal 2001 在线拍卖支付扩散
+  cutoff: 2002-02-11 S-1/A披露后，依据公开支付流程判断渠道依赖；不回填2001事前
+  initial_facts:
+  - id: F1
+    text: 付款人输入收件人邮箱、金额和资金来源。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 商户可用 Web Accept 在自己网页收款；PayPal 与 eBay 无合同关系。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 截至 2001-09 的九个月，客户标识 68.3% 支付额来自网上拍卖，尤其 eBay。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: eBay 有竞争支付产品且可限制 PayPal 展示，是渠道依赖风险。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    text: 拍卖支付占多数，能够展示交易如何产生收付款邀请；不能直接证明某一方邀请的增量效应。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  - 若来源为事后回顾，仅确认其明确记载的当时已知观察或已实施规则；不把后续效果当作事前可知。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1103415/000091205702004798/a2060419zs-1a.htm
+    publisher: PayPal / SEC
+    published_at: '2002-02-11'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 冻结2002-02-11公开快照；2001支付统计当作已发生的证据，不作未来结果。若原题必须锚定2001则仍需同期材料。
+  record_path: reports/research-product.md

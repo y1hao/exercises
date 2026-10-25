@@ -1,9 +1,9 @@
 id: PRO-047
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Netflix 从 DVD 转向流媒体（2007）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-047
@@ -25,3 +25,55 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-13
+research:
+  id: PRO-047
+  status: sourced
+  reason: 2007原始公告给出渐进流媒体策略、内容与技术限制，能判断蚕食与分发的取舍。
+  event: Netflix 2007-01-16 即时观看PC功能
+  cutoff: 2007-01-16 公告已知、上线后采用未知
+  initial_facts:
+  - id: F1
+    text: DVD会员保留邮寄服务，新即时观看无需另加月费。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 首批约1000部/剧集，对比邮寄库超过70000标题，六个月分批开放。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 公告说明PC浏览器安装小程序后流式观看，避免完整下载等待。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: Hastings把内容与技术限制视为大众采用需数年的原因，属预期。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 流媒体作为DVD订阅附加功能推出；不是2007立即退出DVD。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://about.netflix.com/en/news/netflix-offers-subscribers-the-option-of-instantly-watching-movies-on-their
+    publisher: Netflix
+    published_at: '2007-01-16'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
+  record_path: reports/research-product.md

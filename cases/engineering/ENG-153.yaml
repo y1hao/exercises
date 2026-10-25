@@ -1,9 +1,9 @@
 id: ENG-153
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Erlang OTP Supervision（1990s—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-153
@@ -35,3 +35,56 @@ planning:
     - 监督策略
     - 进程状态与持久化前提
     out_of_scope: 不宣称重启可以替代全部防错
+research:
+  id: ENG-153
+  status: sourced
+  reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  event: Erlang/OTP22 supervisor重启策略
+  cutoff: OTP22固定文档一次子进程失败后
+  initial_facts:
+  - id: I1
+    text: supervisor对子进程指定restart策略
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: intensity和period限制重启强度
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: one_for_one只重启失败子进程
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: one_for_all会终止并重启同组子进程
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 监督树恢复进程运行能力；持久业务状态是否恢复不由该重启策略本身保证。
+    source_ids:
+    - S1
+  interpretation: 已知观察、作者归因与维护者推论必须分开；不承诺未核出的数字。
+  unknowns:
+  - 未公开内部过程与全部版本细节未知。
+  sources:
+  - id: S1
+    url: https://www.erlang.org/docs/22/design_principles/sup_princ.html
+    publisher: Erlang/OTP
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开OTP22官方监督行为文档，核查策略与强度。
+  phase2_conditions:
+  - 1990s—是开放区间，实际anchor为OTP22；不声称1990s已有所有当前选项。
+  record_path: reports/research-engineering-b.md

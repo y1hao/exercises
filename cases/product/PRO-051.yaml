@@ -1,9 +1,9 @@
 id: PRO-051
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: HashiCorp Terraform Enterprise（2014—2021）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-051
@@ -36,3 +36,55 @@ planning:
     - 治理责任
     - 购买角色材料
     out_of_scope: 不套用其他开源工具案例的功能清单
+research:
+  id: PRO-051
+  status: sourced
+  reason: 2017 GA直接比较OSS与Enterprise的工作区及治理功能，可测试自管替代条件。
+  event: Terraform Enterprise 2017-12-12 GA
+  cutoff: 2017-12-12 公告已知、组织试用/购买前
+  initial_facts:
+  - id: F1
+    text: OSS已有workspaces，便于个人和小团队管理多个state。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: Enterprise把工作区集中并增加权限、UI和history。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: Sentinel提供policy-as-code治理护栏。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 公司称beta覆盖100多个组织；未公开具体买方预算或净收益。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 协作治理版GA，可做采购证据选择；不得断言开源必然不能满足或直接套当下HCP命名。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.hashicorp.com/blog/hashicorp-terraform-enterprise-general-availability
+    publisher: HashiCorp / Maciej Skierkowski
+    published_at: '2017-12-12'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不套用其他开源工具案例的功能清单
+  record_path: reports/research-product.md

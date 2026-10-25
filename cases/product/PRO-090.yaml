@@ -1,9 +1,9 @@
 id: PRO-090
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Google Stadia 关闭（2022—2023）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-090
@@ -24,3 +24,55 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: PRO-090
+  status: sourced
+  reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+  event: Google 2022-09-29 宣布关闭 Stadia 消费服务
+  cutoff: 2022-09-29 宣布关闭前；准确内部决策日期未知
+  initial_facts:
+  - id: I1
+    text: Stadia 已作为消费者云游戏服务运营，用户持有通过服务购买的游戏库。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 相关交易包括 Google Store 购买的 Stadia 硬件和 Stadia Store 的游戏及附加内容。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 负责人称技术基础强但用户 traction 未达到预期；这是公司归因，未公布活跃/留存阈值。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 公告安排 2023-01-18 前继续游玩，并退还指定渠道硬件、游戏及附加内容购买款。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: Google 正式开始 winding down 消费者 Stadia，同时表示底层流媒体技术可用于公司其他业务；没有宣称技术不可用。
+    source_ids:
+    - S1
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - 产品采用不足的具体机制、财务阈值及技术体验对用户流失的独立贡献未知。
+  sources:
+  - id: S1
+    url: https://blog.google/products-and-platforms/products/stadia/message-on-stadia-streaming-strategy/
+    publisher: Google / Phil Harrison
+    published_at: '2022-09-29'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开官方关闭公告正文，核对 traction 归因、游戏可用期、退款范围与技术再利用描述。
+  phase2_conditions:
+  - 隐藏关闭结果；学员比较技术可行与商业采用假说，不直接把厂商归因当因果证明。
+  record_path: reports/research-product-b.md

@@ -1,9 +1,9 @@
 id: ENG-054
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Google 2012 年闰秒 Linux 故障
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-054
@@ -24,3 +24,61 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-054
+  status: blocked
+  reason: 候选Google2012闰秒Linux高CPU事件身份未核实；Google官方时间文档称自2008已smear，不能混用其他公司2012事故。
+  event: Google 2012 年闰秒 Linux 故障
+  cutoff: 候选2012事故尚未识别。
+  initial_facts:
+  - id: F1
+    text: Google官方称自2008起用smear而非clock steps处理闰秒。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 该说明同时指出smear实现后来曾从20小时变为24小时。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 当前推荐为noon-to-noon线性24小时smear。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 文档例子明确是假定的2022闰秒，不是真实事件。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 不能以全行业Linux闰秒问题自动归到Google。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 需要Google特定故障原复盘；否则进入有理由换题队列。
+  sources:
+  - id: S1
+    url: https://developers.google.com/time/smear
+    publisher: Google Developers
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://developers.google.com/time/smear
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 时间推进异常引发高 CPU 及服务退化；识别时钟假设与同步机制的关系。
+  record_path: reports/research-engineering-a.md

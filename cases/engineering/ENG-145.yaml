@@ -1,9 +1,9 @@
 id: ENG-145
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: C++11 std::atomic 内存序（2011）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-145
@@ -24,3 +24,56 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-145
+  status: sourced
+  reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  event: C++11内存序工作草案文本
+  cutoff: C++11语义由N3337镜像核对，草案发表于2012
+  initial_facts:
+  - id: I1
+    text: 标准提供relaxed、acquire与release等内存序
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: atomic访问的原子性与其他内存排序是不同保证
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: relaxed不提供跨操作排序
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 读到release sequence值的acquire与release同步
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 规范规定发布读取的同步条件，atomic标志本身不能替代正确的读值与同步关系。
+    source_ids:
+    - S1
+  interpretation: 已知观察、作者归因与维护者推论必须分开；不承诺未核出的数字。
+  unknowns:
+  - 未公开内部过程与全部版本细节未知。
+  sources:
+  - id: S1
+    url: https://timsong-cpp.github.io/cppwp/n3337/atomics.order
+    publisher: WG21 draft; Tim Song HTML transcription
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 2011 N3242 PDF过大不可读，HTML猜测失败；读取N3337逐段标准转录。
+  phase2_conditions:
+  - 明确2012工作草案用于核对C++11语义，不能当2011正式ISO版；Phase4用无数据竞争最小代码。
+  record_path: reports/research-engineering-b.md

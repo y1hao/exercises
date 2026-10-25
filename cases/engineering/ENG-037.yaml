@@ -1,9 +1,9 @@
 id: ENG-037
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Redis Sentinel 自动故障转移（2013）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-037
@@ -25,3 +25,63 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-05
+research:
+  id: ENG-037
+  status: sourced
+  reason: Redis Sentinel官方说明明确异步复制与分区旧主场景，可支撑定性预测。
+  event: Redis Sentinel 自动故障转移（2013）
+  cutoff: Sentinel规范中的分区与promote前；不声称现行参数在2013完全一致。
+  initial_facts:
+  - id: F1
+    text: Redis主从采用异步复制。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 故障转移会选择某个副本提升为新主。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 被确认写可能尚未到达被提升副本。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 隔离客户端仍写旧主时，分区修复后旧主数据被新主覆盖。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: Sentinel不保证所有已确认写在故障后保留；限制复制滞后可缩小风险但损失部分可用性。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 不是故障检测共识自身即可提供数据强一致。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 不提供无来源秒级丢失窗口或2013生产日志。
+  sources:
+  - id: S1
+    url: https://redis.io/docs/latest/operate/oss_and_stack/management/sentinel/
+    publisher: Redis project
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://redis.io/docs/latest/operate/oss_and_stack/management/sentinel/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 根据主从延迟和故障检测事件，预测 promote 后的数据丢失窗口和脑裂可能性。
+  record_path: reports/research-engineering-a.md

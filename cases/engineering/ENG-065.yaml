@@ -1,9 +1,9 @@
 id: ENG-065
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Google Megastore（2011）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-065
@@ -24,3 +24,63 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-065
+  status: sourced
+  reason: CIDR2011原论文经Google链接读到，entity group边界、两阶段提交和吞吐约束完整。
+  event: Google Megastore（2011）
+  cutoff: 2011论文选择entity group划分、一次跨组操作之前。
+  initial_facts:
+  - id: F1
+    text: 每个entity group提供可串行化ACID。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 组内提交日志经Paxos同步跨数据中心复制。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 组划得太细增加跨组操作，太大串行化无关写降低吞吐。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 跨组可用高延迟/争用的2PC，通常建议异步queue。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 应用应按自然访问边界分组，在局部事务与跨组成本间取舍。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 跨逻辑组异步不等于同一组物理副本异步。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 不将每组少量写入经验阈值外推所有现代数据库。
+  sources:
+  - id: S1
+    url: https://www.cidrdb.org/cidr2011/Papers/CIDR11_Paper32.pdf
+    publisher: Google / Baker et al.
+    published_at: '2011'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://www.cidrdb.org/cidr2011/Papers/CIDR11_Paper32.pdf
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 在 entity group 内外选择一致性边界，判断事务范围扩大对延迟和可用性的影响。
+  record_path: reports/research-engineering-a.md

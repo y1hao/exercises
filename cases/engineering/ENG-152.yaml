@@ -1,9 +1,9 @@
 id: ENG-152
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Elasticsearch 倒排索引（2010—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-152
@@ -35,3 +35,56 @@ planning:
     - 写入确认
     - refresh 与搜索路径
     out_of_scope: 不把索引机制叙述成未核实的历史事故
+research:
+  id: ENG-152
+  status: sourced
+  reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  event: Elasticsearch2.x近实时检索文档
+  cutoff: 2.x一次写入确认后搜索前
+  initial_facts:
+  - id: I1
+    text: 新文档先进入内存索引缓冲
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 段可先写入文件系统cache
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: refresh写出并打开新段使其可检索
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: refresh不等于fsync完整持久化commit
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 写入后不能立即搜索是近实时机制的正常结果；可手动refresh但有性能代价。
+    source_ids:
+    - S1
+  interpretation: 已知观察、作者归因与维护者推论必须分开；不承诺未核出的数字。
+  unknowns:
+  - 未公开内部过程与全部版本细节未知。
+  sources:
+  - id: S1
+    url: https://www.elastic.co/guide/en/elasticsearch/guide/2.x/near-real-time.html
+    publisher: Elastic
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 最初2.4reference路径失败，找到并读取官方2.x Definitive Guide。
+  phase2_conditions:
+  - 不要把2010首版行为与2.x混称；固定2.x且说明查询可见性与耐久性不同。
+  record_path: reports/research-engineering-b.md

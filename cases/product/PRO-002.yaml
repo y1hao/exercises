@@ -1,9 +1,9 @@
 id: PRO-002
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Pinterest Pin It 浏览器按钮（2010s）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-002
@@ -35,3 +35,55 @@ planning:
     - 前后操作步骤
     - 用户所需上下文
     out_of_scope: 不计算没有漏斗数据的激活提升
+research:
+  id: PRO-002
+  status: sourced
+  reason: 锁定 2015-04-02 按钮改进；官方说明路径和点击变化，足以作任务摩擦预测。
+  event: Pinterest 2015 Pin It 保存路径改进
+  cutoff: 2015-04-02 新版功能已介绍、行为效果尚未揭晓
+  initial_facts:
+  - id: F1
+    text: Pin It 用于收藏在外部网页发现的内容。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 新版包含 visual selector 和查找/创建 board 的操作。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 官方称新路径只需 couple of clicks、约为原先一半。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 官方提供浏览器按钮安装入口；不需要重新在 Pinterest 找原网页内容。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 改进版已发布，官方描述保存步骤缩短；无激活漏斗提升的可核因果值。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://newsroom-archive.pinterest.com/the-save-button-for-the-internet
+    publisher: Pinterest / Cesar I.
+    published_at: '2015-04-02'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不计算没有漏斗数据的激活提升
+  record_path: reports/research-product.md

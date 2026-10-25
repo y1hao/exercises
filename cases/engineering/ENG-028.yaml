@@ -1,9 +1,9 @@
 id: ENG-028
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Google Dapper 采样追踪（2010）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-028
@@ -46,3 +46,92 @@ planning:
       question: 应先核验采样独立性还是故障发生分布，才能判断诊断价值？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: ENG-028
+  status: blocked
+  reason: 有采样机制，缺特定故障频率与独立性，不能算漏采概率。 尚未应用备用问题，原数量主线保持 blocked。
+  event: Google Dapper 采样追踪（2010）
+  cutoff: 论文采样策略选择时；不预设未给的请求或故障频率。
+  initial_facts:
+  - id: F1
+    text: 分布式请求跨多个服务，完整追踪有开销。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 首版采用平均1/1024候选trace的统一采样。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 低流量工作负载可能漏重要事件，论文提出按单位时间目标trace数自适应采样。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 采集阶段依trace id统一采或弃整个trace。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 作者报告高吞吐服务低采样仍足以分析多数重要模式，低流量需调整。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 数量题仅能用已给采样率，稀有事件漏采精算需额外频率；改问还需收集何证据。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 缺具体故障频率/独立性，不计算伪精确漏采概率。
+  sources:
+  - id: S1
+    url: https://research.google.com/pubs/archive/36356.pdf
+    publisher: Google / Sigelman et al.
+    published_at: 2010-04
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://research.google.com/pubs/archive/36356.pdf
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: Dapper 2010 候选说明中的单一采样策略
+    anchor_status: unverified_research_target
+    main_question: 在有来源的请求量与采样口径下，稀有故障漏采风险如何变化？
+    expected_output: 一个漏采数量级判断及其适用假设
+    evidence_to_verify:
+    - 请求与故障频率
+    - 采样单位
+    - 来源支持的采样规则
+    out_of_scope: 不估整个追踪系统成本；缺输入则改证据选择
+    quantitative_plan:
+      mainline_measure: 稀有事件漏采数量级
+      required_inputs:
+      - 请求与故障频率
+      - 采样单位
+      - 同口径采样规则
+      missing_input_fallback:
+        focus: evidence-selection
+        question: 应先核验采样独立性还是故障发生分布，才能判断诊断价值？
+      fallback_applied: false
+      input_verification: partial_source_check_see_unknowns
+  record_path: reports/research-engineering-a.md
+  scope_decision:
+    id: ENG-028
+    input_status: insufficient_this_round
+    reason: 有采样机制，缺特定故障频率与独立性，不能算漏采概率。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: sourced
+  source_assessment_reason: Dapper2010原论文提供采样规则；缺特定故障频率，按规划回退到证据选择。

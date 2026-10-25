@@ -1,9 +1,9 @@
 id: PRO-049
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Superhuman 人工一对一 Onboarding（2017—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-049
@@ -46,3 +46,65 @@ planning:
       question: 下一项什么激活或留存证据才足以支持继续人工引导？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: PRO-049
+  status: blocked
+  reason: 有人工作业流程，缺可归属成本和同窗口激活收益，无法回本计算。 尚未应用备用问题，原数量主线保持 blocked。
+  event: Superhuman早期强制30分钟人工onboarding
+  cutoff: 早期已采用30分钟引导后，判断是否继续强制人工引导；确切年月未公开
+  initial_facts:
+  - id: F1
+    text: Gaurav Vohra回顾早期扩展阶段要求30分钟人工引导；第一批曾更长，不能把30分钟当最初首版。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 早期客户常已使用Gmail多年，需要迁移工作流并学习快捷键。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 负责人自报超过65%在引导后完全迁移邮件，约为直接进入产品者两倍。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 他明确比较很难控制自选择偏差；到场者与愿自助者不同。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 人工计划后来扩展并转部分自助；没有可当作同期因果留存提升的随机数据。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  - 若来源为事后回顾，仅确认其明确记载的当时已知观察或已实施规则；不把后续效果当作事前可知。
+  sources:
+  - id: S1
+    url: https://review.firstround.com/superhuman-onboarding-playbook/
+    publisher: Gaurav Vohra / First Round Review
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 量化所需同期成本、收入和因果激活不足；建议采用预设的evidence-selection备用问题（尚未改变focus），不把文章产能×月费的模型当实际利润。
+  record_path: reports/research-product.md
+  scope_decision:
+    id: PRO-049
+    input_status: insufficient_this_round
+    reason: 有人工作业流程，缺可归属成本和同窗口激活收益，无法回本计算。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: sourced
+  source_assessment_reason: 原负责人完整回顾提供30分钟流程、激活定义和明确自选择限制，可考虑计划中的证据选择备用问题，尚未修改focus。

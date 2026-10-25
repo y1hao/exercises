@@ -1,9 +1,9 @@
 id: ENG-002
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: BuildKit Docker 分层缓存（2018—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-002
@@ -35,3 +35,70 @@ planning:
     - 当时 Dockerfile 示例
     - 层输入与缓存键语义
     out_of_scope: 不同时估镜像体积或重写整个构建流程
+research:
+  id: ENG-002
+  status: blocked
+  reason: 已读 Docker 2019 多阶段构建教程，但尚未确认 2018 BuildKit 版本对应 Dockerfile 快照；不得将现行缓存规则回填。
+  event: BuildKit Docker 分层缓存（2018—）
+  cutoff: 未锁定 2018 版本；目前只确认 2019 官方教程。
+  initial_facts:
+  - id: F1
+    text: 教程将依赖获取和源码复制分成不同步骤。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 教程示例使用 Maven 和多阶段构建。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 改变步骤输入会使后续缓存失效。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: COPY --from 将构建产物复制到最终阶段。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 2019 教学工件足以支持一般题，但不是已验证的 2018 BuildKit 工件。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 2018 对应 BuildKit tag 与纯文本 Dockerfile。
+  - 若调整锚点到 2019，需记录候选范围修订。
+  sources:
+  - id: S1
+    url: https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/
+    publisher: Docker / Tibor Vass
+    published_at: '2019-07-02'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: BuildKit 2018 候选窗口的一份多阶段 Dockerfile，具体版本待核
+    anchor_status: unverified_research_target
+    main_question: 只修改依赖清单后，哪一层起需要重建？
+    expected_output: 标出缓存失效起点及一次可验证预测
+    evidence_to_verify:
+    - 当时 Dockerfile 示例
+    - 层输入与缓存键语义
+    out_of_scope: 不同时估镜像体积或重写整个构建流程
+  record_path: reports/research-engineering-a.md

@@ -1,9 +1,9 @@
 id: INV-040
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Quibi 2020 关闭
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-040
@@ -24,3 +24,64 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: INV-040
+  status: blocked
+  reason: Quibi创始人2020关闭原信已读，真实停止投入可核；数量校准所需现金、承诺支出及退出回收未公开。
+  event: Quibi 2020 关闭
+  cutoff: 2020-10-21wind-down决策之前，具体现金/承诺成本输入缺失。
+  initial_facts:
+  - id: F1
+    text: Quibi为mobile-first premium内容服务。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 创始人声明仍有部分现金runway并考虑过pivot等选项。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 公开信称已穷尽可选方案。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 团队宣布wind down并向股东返还现金，而非持续耗尽所有资金。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 穷尽选项及失败理由为管理层自述，不是独立证实每种pivot不可能。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 确切现金余额、内容合同不可取消承诺、员工结算和资产出售回收缺失。
+  - 不能把媒体估算数或1.75bn累计融资当关闭日现金余额。
+  sources:
+  - id: S1
+    url: https://quibi-hq.medium.com/an-open-letter-from-quibi-8af6b415377f
+    publisher: Quibi / Jeffrey Katzenberg and Meg Whitman
+    published_at: '2020-10-21'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://quibi-hq.medium.com/an-open-letter-from-quibi-8af6b415377f
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    revision_state: retained
+    policy_path: curriculum/planning-policy.yaml
+    distinctness_clusters: []
+  record_path: reports/research-investing-a.md

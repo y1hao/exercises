@@ -1,9 +1,9 @@
 id: INV-050
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Airbnb 2020 IPO 前融资
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-050
@@ -35,3 +35,67 @@ planning:
     - 公开条款
     - 当时复苏不确定性
     out_of_scope: 不借 IPO 价格兜底或混用两次交易
+research:
+  id: INV-050
+  status: blocked
+  reason: 融资身份与借款结果已核，但 4 月 6 日未修订签署合同及融资前现金预测不足，不能完成接受/等待的现金与条款选择。
+  event: Airbnb 2020-04-06 Silver Lake / Sixth Street 10 亿美元融资
+  cutoff: 2020-04-06 此笔融资同意前；后来的 4 月 first-lien 交易与 4 月 17 日修订均不并入首轮
+  initial_facts:
+  - id: I1
+    text: 当时疫情已影响全球旅行；公司融资公告承认严重旅行环境和恢复不确定性。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 融资拟引入 Silver Lake 和 Sixth Street，公告为 10 亿美元债务与股权证券组合。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 2020 年报确认 4 月存在两笔各 10 亿美元融资；second-lien 净到款 9.675 亿美元，first-lien 净到款 9.614 亿，不能混为同一笔。
+    source_ids:
+    - S2
+    availability: post_decision
+  - id: E2
+    text: 年报披露 second-lien 的浮息、PIK 选项、担保及 warrants；这些描述含后续修订，不能全部反推为 4 月 6 日原始条款。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    text: 该轮融资有同期公告，年报确认 second-lien 实际借款；融资成功不自动回答当时接受融资是否优于等待。
+    source_ids:
+    - S1
+    - S2
+  interpretation: 现金与条款的选择只能在同日可知信息下评估；后来的 IPO 定价不属于该决定的兜底。
+  unknowns:
+  - 未取得 4 月 6 日时点的完整现金预测与未修订签署合同，不能量算等待跑道。
+  - 4 月 17 日 warrants 修订须单独标时点，不能从 2021 年报回填为最初提议。
+  sources:
+  - id: S1
+    url: https://news.airbnb.com/silver-lake-sixth-street-partners-invest-1-billion-in-airbnb
+    publisher: Airbnb
+    published_at: '2020-04-06'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - outcome
+  - id: S2
+    url: https://www.sec.gov/Archives/edgar/data/1559720/000155972021000010/airbnb-10k.htm
+    publisher: Airbnb / SEC
+    published_at: '2021-02-26'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 阅读 4 月 6 日公告和 2020 年报 Loan Agreements / Term Loans，区分 first 与 second lien。
+  - S-1 过大、S-1/A 与 NYU 镜像抓取失败；年报指向的 4 月 17 日合同修订链接及 SECInfo 镜像抓取失败。
+  phase2_conditions:
+  - 真实融资身份已锁定，现金与初始合同仍是制作门槛；不足时保持 blocked，不给数值化接受/等待答案。
+  - 只用 4 月 6 日一次决定；后续融资、warrants 调整和 IPO 只可作为后置材料。
+  record_path: reports/research-investing-b.md

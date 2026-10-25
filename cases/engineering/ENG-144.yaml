@@ -1,9 +1,9 @@
 id: ENG-144
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: ClickHouse MergeTree（2016—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-144
@@ -35,3 +35,56 @@ planning:
     - 写入和查询模式
     - 排序与裁剪规则
     out_of_scope: 固定分区和保留策略，不同时优化全部表参数
+research:
+  id: ENG-144
+  status: sourced
+  reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  event: MergeTree排序键文档artifact
+  cutoff: 2026-10-25读取快照；非2016所有语法
+  initial_facts:
+  - id: I1
+    text: 数据由多个按键排序的part构成
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: ORDER BY指定排序键
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 稀疏索引有额外读取粒度
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 后台merge重组parts以改善存储
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 文档给出排序键与索引裁剪机制；单类查询可据此做选择而不是全表参数同时优化。
+    source_ids:
+    - S1
+  interpretation: 已知观察、作者归因与维护者推论必须分开；不承诺未核出的数字。
+  unknowns:
+  - 未公开内部过程与全部版本细节未知。
+  sources:
+  - id: S1
+    url: https://clickhouse.com/docs/reference/engines/table-engines/mergetree-family/mergetree
+    publisher: ClickHouse
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开官方文档核对ORDER BY、Data storage与sparse index。
+  phase2_conditions:
+  - Phase4锁定具体版本；排除当前projection、TTL等后加特性，不能回填2016。
+  record_path: reports/research-engineering-b.md

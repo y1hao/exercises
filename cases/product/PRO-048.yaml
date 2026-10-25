@@ -1,9 +1,9 @@
 id: PRO-048
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Steam Workshop 创作者市场（2011—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-048
@@ -35,3 +35,55 @@ planning:
     - 贡献与回报规则
     - 参与权限
     out_of_scope: 不混同 Workshop 与独立有偿市场
+research:
+  id: PRO-048
+  status: sourced
+  reason: 2011原始Valve公告明确提交/反馈机制与既有创作者收益，足以预测供给激励，避免前后因果错置。
+  event: Steam Workshop 2011-10-13 TF2提交中心上线
+  cutoff: 2011-10-13 新中心已说明、长期供给未知
+  initial_facts:
+  - id: F1
+    text: 中心允许上传、看状态和接收Valve反馈。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 社区可在同处查看、评论、给提交物评分。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 公告称此前一年Mann Co.Store创作者收益超过200万美元。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 这个金额发生在Workshop上线前，不能作为它带来收益的效果。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: Workshop上线，社区反馈与选择入口改善；未验证创作者长期持续供给率。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.teamfortress.com/post.php?id=6508
+    publisher: Valve / TF2 Team
+    published_at: '2011-10-13'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不混同 Workshop 与独立有偿市场
+  record_path: reports/research-product.md

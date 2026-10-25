@@ -25,6 +25,7 @@
 .venv/bin/python scripts/report_coverage.py --output reports/coverage.json
 .venv/bin/python scripts/audit_curriculum.py
 .venv/bin/python scripts/revise_curriculum.py
+.venv/bin/python scripts/verify_sources.py
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/python -m compileall -q scripts tests
 git diff --check
@@ -37,3 +38,7 @@ git diff --check
 - ENG-157 保留为待核源替换槽位；ENG-011、INV-034、ENG-117 的独立材料不满足条件时才进入替换队列，不为了调比例编造事件。
 - 涉及事实内容、证据或状态晋级时，额外逐条核实相关来源；结构校验不能替代来源验证、剧透检查或对话试验。仅结构改动应在报告中说明没有新增核源结论。
 - 更新 `reports/progress.md` 的准确状态数量、检查结果、阻塞和剩余工作；不以文件数量或模拟结果冒充完整验收。
+
+- Phase 3 维护输入为 `reports/research-*.md`，数量主线的有效状态复核为 `curriculum/source-decisions-2027.yaml`。核源后显式运行 `scripts/verify_sources.py --apply`，同步 research/status 和 source-verification 报告；默认离线只读检查，不能自动核实网络事实或设 ready。
+- Phase 2 的 planning/revision_state 是历史规划快照，不能用 input_verification:not_started 覆盖当前 research 结论。缺数量输入且备用动作尚未应用时保持 blocked；原核源建议状态可另存 source_assessment_status。
+- 研究中的 availability 只表示历史可知性；unknown/post_decision 不得进入 sourced 的初始事实。工程规范/设计工件须标明版本与机制快照，不能编造成生产事故。融资建议、宣布、交割和实现回报必须区分。

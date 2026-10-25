@@ -1,9 +1,9 @@
 id: PRO-034
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Spotify 早期即时播放体验（2008）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-034
@@ -24,3 +24,53 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: PRO-034
+  status: blocked
+  reason: 2010论文验证机制及延迟，但不能确认服务器/P2P/缓存组合全部属于2008同版；2008题初始信息仍不足，265ms不能回填。
+  event: Spotify 2008-10 欧洲流式播放上线；2010 性能观察
+  cutoff: 2008 上线、2010 实测前；265ms 不进入开场
+  initial_facts:
+  - id: F1
+    text: 论文说明自2008-10 在六个欧洲国家提供服务。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 播放器结合服务器、P2P 和本地缓存提供按需音乐。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 2010 作者实测中位播放延迟为265ms，包含缓存命中。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 该测量不是2008首日数据，也不测感知价值或留存反事实。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://kreitz.se/spotify-p2p10/
+    publisher: Gunnar Kreitz、Fredrik Niemelä / IEEE P2P'10
+    published_at: '2010-08-27'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
+  record_path: reports/research-product.md

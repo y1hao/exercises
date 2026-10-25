@@ -1,9 +1,9 @@
 id: ENG-093
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: GitHub Codespaces 发布（2021）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-093
@@ -24,3 +24,56 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-093
+  status: sourced
+  reason: 一手材料直接支持 artifact 或事件行为；不是 ready。
+  event: GitHub 团队 2021 迁移 Codespaces
+  cutoff: 2021 团队开发环境迁移前，具体决策日未知
+  initial_facts:
+  - id: I1
+    text: 此前大量开发基于 macOS 本地环境
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 本地环境偶发破坏需要重新构建
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 团队解耦 macOS 依赖并在 Linux 承载开发环境
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 预构建用于缩短新环境准备时间
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 团队报告多数 GitHub.com 开发迁到 Codespaces。
+    source_ids:
+    - S1
+  interpretation: 机制推演须与来源中的观察和当事人归因分别标记。
+  unknowns:
+  - 未公开的实际决策过程和完整工作量未知。
+  sources:
+  - id: S1
+    url: https://github.blog/engineering/infrastructure/githubs-engineering-team-moved-codespaces/
+    publisher: GitHub
+    published_at: '2021-08-11'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开迁移工程文章；页面标记 2022-12-19 更新。
+  phase2_conditions:
+  - 迁移结果为团队报告；不可声称没有网络依赖或推断所有仓库适用。
+  record_path: reports/research-engineering-b.md

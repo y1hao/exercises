@@ -1,9 +1,9 @@
 id: ENG-138
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Stripe Idempotency-Key API 设计（2017）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-138
@@ -37,3 +37,56 @@ planning:
     - key 生命周期
     - 结果复用规则
     out_of_scope: 不把文章年份直接当 API 首发年份
+research:
+  id: ENG-138
+  status: sourced
+  reason: 直接来源支持所选artifact或事件，完整Case QA未执行。
+  event: Stripe2017幂等API设计文章
+  cutoff: 2017-02-22契约快照
+  initial_facts:
+  - id: I1
+    text: 连接中断可能发生在服务端操作成功之后
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 客户端因此无法确定是否可安全重试
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 请求携带唯一幂等key
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 服务端可识别重复请求并返回原结果
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 文章解释安全重试契约，文章年不是API最初发布年。
+    source_ids:
+    - S1
+  interpretation: 只允许依据已核查材料推演；推断需明示，不能写成实测史实。
+  unknowns:
+  - 未公开的完整工作量、精确内部决策过程未知。
+  sources:
+  - id: S1
+    url: https://stripe.com/blog/idempotency
+    publisher: Stripe
+    published_at: '2017-02-22'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开2017原文核对模糊失败与Idempotency-Key流程。
+  phase2_conditions:
+  - 文章未核足key保留期；Phase4补当时文档，不把当前24小时策略倒推到2017。
+  record_path: reports/research-engineering-b.md

@@ -1,9 +1,9 @@
 id: PRO-098
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Meta Horizon Workrooms 方向调整（2021—2024）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-098
@@ -35,3 +35,60 @@ planning:
     - 设备和任务前提
     - 公开行为材料
     out_of_scope: 不编造“方向调整”或公司内部动机
+research:
+  id: PRO-098
+  status: blocked
+  reason: 确认 2021 beta 和具体设备流程；2024 改动仅取得行业报道，未取得原始改动说明或用户行为材料，不能推断失败原因。
+  event: Horizon Workrooms 2021 beta；候选 2024 精简改动待一手核实
+  cutoff: 候选 2024 改动之前；确切日未验证
+  initial_facts:
+  - id: F1
+    text: Meta 于 2021-08-19 发布 Quest 2 免费 Workrooms beta，允许 VR 与网页视频加入。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 原版提供白板、桌面/键盘追踪、屏幕共享；使用 VR 有设备及账号前提。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: Meta 把远程协作价值作为产品承诺，而非已测量收益。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 2024-05-30 UploadVR 报道删白板等并简化流程；为二手观察，不能当内部动机。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 仅有公开自报/文档描述；不把发布、相关性或后来的成功当成因果结论。
+  unknowns:
+  - 官方 2024 release note、任务失败率、设备影响与价值影响的分离
+  sources:
+  - id: S1
+    url: https://about.fb.com/news/2021/08/introducing-horizon-workrooms-remote-collaboration-reimagined/
+    publisher: Meta
+    published_at: '2021-08-19'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+  - id: S2
+    url: https://www.uploadvr.com/horizon-workrooms-overhaul/
+    publisher: UploadVR / David Heaney
+    published_at: '2024-05-30'
+    source_type: secondary
+    checked_at: '2026-10-25'
+    supports:
+    - E2
+  attempts:
+  - 阅读 Meta 发布正文和 UploadVR 更新报道；检索 Meta 2024 原始变更未得可核正文。
+  phase2_conditions: 候选“方向调整”不可当已证实失败归因；正式锁定决策需原始改动材料。
+  record_path: reports/research-product.md

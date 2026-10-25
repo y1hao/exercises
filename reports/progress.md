@@ -2,6 +2,55 @@
 
 更新日期：2026-10-25（Pacific/Auckland）。
 
+**Phase 1–3 已完成，本轮停在 Phase 3；等待用户同意后才进入 Phase 4。** 用户要求的 Phase 2 修订已先提交为本地 commit `072cda3`，随后开展来源验证。Phase 3 成果按用户本轮要求保存为独立本地提交（提交号见 Git 历史），未 push。用户再次指定 Phase 3，未授权进入 Phase 4；当前保留本阶段结果，等待明确后续方向。未创建或修改定时任务。
+
+## 当前真实状态
+
+| 类型 / 领域 | candidate | sourced | ready | blocked | rejected |
+|---|---:|---:|---:|---:|---:|
+| 工程历史 | 0 | 115 | 0 | 41 | 1 |
+| 产品历史 | 0 | 48 | 0 | 56 | 0 |
+| 创投历史 | 0 | 24 | 0 | 28 | 0 |
+| 工程微设计 | 22 | 0 | 0 | 0 | 0 |
+| 产品微设计 | 18 | 0 | 0 | 0 | 0 |
+| 创投微设计 | 12 | 0 | 0 | 0 | 0 |
+| 合计 | **52** | **187** | **0** | **125** | **1** |
+
+313 个历史条目均实际尝试并记录明确 sourced/blocked/rejected 理由；sourced 只表示已读到支持所选节点的可信直接材料，不表示完整 Brief 或对话 QA 通过。blocked 不表示资料不存在。52 个微设计尚未做 Phase 4 约束与评价 QA。
+
+## Phase 3 交付与关键发现
+
+- 7 份 `reports/research-*.md` 是逐条维护输入，包含事件、决策边界、事前事实、隐藏证据候选、实际结果/文档行为、归因、未知、来源元数据和失败尝试。已同步 313 个历史文件的 research/status/就绪说明与唯一索引；原始 candidate_material、日期、ID、路径、标题及 focus 保留。
+- `reports/source-verification.md` / `.json` 给出全部有效状态及理由；`scripts/verify_sources.py` 可只读复现，`--apply` 明确同步。离线脚本检查覆盖、引用、可知性与状态，不冒充在线事实核查、剧透检查或完整 Case QA。
+- `curriculum/source-decisions-2027.yaml` 对 39 条数量主线逐项复核：INV-001、INV-037 可作有边界的数量比较；37 条本轮未齐输入。即使机制来源可读，缺原题数字且未正式应用备用问题仍设 blocked；保留原核源建议状态以便追溯。Blue Apron 的累计 CPC 和贡献表 cohort 窗口不一致，不能拿公司平均值假装匹配 CAC。
+- ENG-011 已确认独立的 2024-03-26 事故，与 ENG-040 的 2023 供电事件分开。ENG-054 的 Google 闰秒归属、多个旧版本或产品发布日期仍有缺口；逐条记录，不编造节点。
+- INV-005 的 Yelp 2005 Series B 标签与同期 memo 不符；INV-010 核实到 2015 Figma A 轮/Preview，未证实拟选 2016 融资；PRO-025 等流行故事和官方/当事人记录存在时序或机制差异，均见具体笔记。
+- ENG-157 原 Blaze 候选 rejected，另记录已核到直接材料的 Rust 1.52 构建回退备选，但尚未换题。ENG-117 与 INV-034 仍缺 Phase 2 指定的独立优化/付费 cohort，保留 blocked 并待替换审议。
+- Phase 2 报告、planning 和 revision_state 明确为历史规划快照；当前来源状态见 status/research，不用旧的 not_started 覆盖本轮结论。未修改原计划或 Consumer 契约。
+
+## Phase 3 验收
+
+| 检查 | 结果 |
+|---|---|
+| 全年日期、配额、ID、路径和索引/Brief 状态 | PASS，365 日期保留，0 ready |
+| 313 条研究覆盖、来源引用及可知性结构 | PASS，无重复、遗漏或 unattempted；sourced 初始事实仅 pre_decision |
+| 39 条数量准入与未应用备用动作 | PASS，2 可有限比较、37 blocked，不自动补合成数据或改 focus |
+| Phase 2 初审、规划和 Phase 3 报告复现 | PASS，三个脚本默认只读检查通过 |
+| 单元 / 契约 / 规划 / 来源回归 | PASS，60 tests；包含未知引用、缺直接结果来源、事后信息、未尝试阻塞、缺数量输入、全量覆盖和同步保护 |
+| Python 编译、Git diff 与新增文本空白 | PASS |
+| 四份原始输入 SHA-256 | PASS，与 Phase 1 快照一致 |
+| 完整 Brief、剧透与真实对话 QA | 未执行，属于后续 Phase 4/5，不宣称可训练 |
+
+下一步须先由用户审阅本阶段结果，再决定如何处理 blocked/rejected 和是否进入 Phase 4。可补取原文/同期材料、正式采纳已预列的定性或证据备用题并同步映射，或审议替换；不能凭配额填空。Phase 4、5 均未启动。
+
+---
+
+以下为 Phase 2 修订完成时的历史快照。其中“当前”“尚未授权”“均 candidate”等时态仅描述当时，不代表上面的最新实施状态。
+
+# Phase 2 修订完成时的归档记录
+
+更新日期：2026-10-25（Pacific/Auckland）。
+
 **Phase 1、Phase 2 初审及本轮范围修订已完成，当前停在 Phase 2。** 用户先要求提交成果，再撤回进入 Phase 3 的指示，改为先落实 Phase 2 审核结果；本轮已按新授权直接修订。Phase 3 尚未进行外部核源，Phase 4/5 也未启动。
 
 ## 当前真实状态

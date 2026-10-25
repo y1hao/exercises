@@ -1,9 +1,9 @@
 id: PRO-056
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Slack 按活跃成员计费（2013—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-056
@@ -35,3 +35,53 @@ planning:
     - 信用规则
     - 管理员任务
     out_of_scope: 不把公平感当已观测数据或混用后续条款
+research:
+  id: PRO-056
+  status: blocked
+  reason: 2019 S-1证实fair billing credits，但尚无该版账单活跃定义与触发窗口，不能误用DAU定义。
+  event: Slack 按活跃成员计费（2013—）
+  cutoff: 候选单版billing规则未锁定
+  initial_facts:
+  - id: F1
+    text: S-1称部分付费客户按人数并月/季对账。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 未用满合同人数时可得信用额度抵后续账单，不是现金退款。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 风险因素称inactive用户带来fair billing credits。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: S-1的24小时创建/消费内容是DAU统计定义，未证实也是计费活跃定义。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1764925/000162828019006616/slacks-1a1.htm
+    publisher: Slack / SEC
+    published_at: '2019-05-13'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不把公平感当已观测数据或混用后续条款
+  record_path: reports/research-product.md

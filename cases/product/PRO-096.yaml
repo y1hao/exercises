@@ -1,9 +1,9 @@
 id: PRO-096
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Calendly 链接式预约（2013）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-096
@@ -25,3 +25,53 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-14
+research:
+  id: PRO-096
+  status: blocked
+  reason: 创办年份可核，但初版两边身份与预约流程缺同版证据；现有描述混合后续多年功能。
+  event: Calendly 2013 链接式预约初版候选
+  cutoff: 2013 初版上线时；精确功能版本未锁定
+  initial_facts: []
+  evidence:
+  - id: E1
+    text: Calendly 公司介绍确认 Tope Awotona 于 2013 创办，目的为减少预约来回邮件。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 开发参与方 Railsware 描述可分享 URL、invitee 只能见预约页而非后台；页面同时列出现代集成，其 timeline 从 2014-01 起。
+    source_ids:
+    - S2
+    availability: unknown
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - 2013 版 invitee 是否无需账户、具体可见可用时段及确认流程未取得同期材料。
+  - 当前无账户帮助文章和社区回复不能证明 2013 同样实现。
+  sources:
+  - id: S1
+    url: https://calendly.com/about
+    publisher: Calendly
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+  - id: S2
+    url: https://railsware.com/case-studies/calendly/
+    publisher: Railsware, development participant
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E2
+  attempts:
+  - 打开 Calendly 公司历史和 Railsware 参与方 case study，核对年份与现代功能混写。
+  - 打开 2025-09-11 社区无账户预约说明 https://community.calendly.com/asked-answered-79/do-invitees-need-to-login-to-book-through-calendly-4644，因非
+    2013 版本且作者身份不充分未作为历史直接证据。
+  phase2_conditions:
+  - 不得将当前可用性自动倒推 2013；补同期演示/页面或明确提出改锚建议后再制作。
+  - 不复用 Zoom 首次发起会议的传播预测。
+  record_path: reports/research-product-b.md

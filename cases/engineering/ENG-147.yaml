@@ -1,9 +1,9 @@
 id: ENG-147
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Facebook 2021 年 10 月全球中断
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-147
@@ -24,3 +24,56 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-147
+  status: sourced
+  reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  event: Facebook2021-10-04骨干网中断
+  cutoff: 2021-10-04网络维护命令执行后恢复决定
+  initial_facts:
+  - id: I1
+    text: 骨干连接数据中心与对外服务节点
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: DNS服务依据到数据中心的连通性发布BGP路由
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 审计工具缺陷未挡住断开骨干命令
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 骨干失效引发DNS撤路由及运维工具不可用
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 派工程师到现场恢复骨干，再分阶段恢复流量，避免同时恢复带来的负载冲击。
+    source_ids:
+    - S1
+  interpretation: 已知观察、作者归因与维护者推论必须分开；不承诺未核出的数字。
+  unknowns:
+  - 未公开内部过程与全部版本细节未知。
+  sources:
+  - id: S1
+    url: https://engineering.fb.com/2021/10/05/networking-traffic/outage-details/
+    publisher: Meta
+    published_at: '2021-10-05'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开当事工程团队详细复盘。
+  phase2_conditions:
+  - 初轮不透露命令根因；恢复路径与自身依赖是唯一决策范围。
+  record_path: reports/research-engineering-b.md

@@ -1,9 +1,9 @@
 id: ENG-084
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Netflix Open Connect CDN（2012）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-084
@@ -33,3 +33,65 @@ planning:
       question: 哪些负载条件下自建缓存不值得增加运维责任？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: ENG-084
+  status: blocked
+  reason: Open Connect 发布可核，缺同地区命中率及交付、部署完整成本。 尚未应用备用问题，原数量主线保持 blocked。
+  event: Netflix 2012 Open Connect 发布
+  cutoff: 2012-06-04 网络扩展决策；首批试点已存在
+  initial_facts:
+  - id: I1
+    text: 此前视频依赖商业 CDN 分发
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 视频规模和增长促使团队评估专用网络
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: Open Connect 可在 ISP 或互联网交换点交付
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 公告时约 5% 数据已通过该网络
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 专用 CDN 已投入服务，计划逐步承担多数分发。
+    source_ids:
+    - S1
+  interpretation: 以上观察与厂商/作者归因分开使用；可迁移机制属于后续维护者解释。
+  unknowns:
+  - 精确决策过程和未公开数据未知。
+  sources:
+  - id: S1
+    url: https://about.netflix.com/en/news/announcing-the-netflix-open-connect-network
+    publisher: Netflix
+    published_at: '2012-06-04'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并打开当日发布公告。
+  phase2_conditions:
+  - 没有同地区命中率和完整成本表；数量主线改用 planning 的 constrained-decision 备用问题。
+  record_path: reports/research-engineering-b.md
+  scope_decision:
+    id: ENG-084
+    input_status: insufficient_this_round
+    reason: Open Connect 发布可核，缺同地区命中率及交付、部署完整成本。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: sourced
+  source_assessment_reason: 直接一手材料支持事件或版本行为；完整 Case QA 尚未执行。

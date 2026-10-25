@@ -1,9 +1,9 @@
 id: ENG-042
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Kubernetes CRD 与 Aggregated API（2016—2018）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-042
@@ -35,3 +35,70 @@ planning:
     - 所需查询行为
     - 聚合 API 契约
     out_of_scope: 不泛列所有扩展方式优缺点
+research:
+  id: ENG-042
+  status: blocked
+  reason: 官方CRD/聚合API比较已读，但现行能力含后续webhook等特性，未锁定2016–2018同版本契约。
+  event: Kubernetes CRD 与 Aggregated API（2016—2018）
+  cutoff: 2016–2018内具体版本待核。
+  initial_facts:
+  - id: F1
+    text: CRD与聚合API是不同扩展机制。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 官方现行比较表区分自定义存储能力。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 聚合API可提供不同存储模式。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 现行CRD表列有webhook支持，不能直接当早期能力。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 需同版本比较，不以现行表直接判定早期不可满足。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 旧版本CRD schema/查询行为与需求快照。
+  sources:
+  - id: S1
+    url: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/
+    publisher: Kubernetes project
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: 一版 Kubernetes 扩展机制下的自定义查询需求
+    anchor_status: unverified_research_target
+    main_question: 该需求用 CRD 能否满足，还是必须扩展 API 服务？
+    expected_output: 一个选择及最小不可满足条件
+    evidence_to_verify:
+    - 同版本 CRD 能力
+    - 所需查询行为
+    - 聚合 API 契约
+    out_of_scope: 不泛列所有扩展方式优缺点
+  record_path: reports/research-engineering-a.md

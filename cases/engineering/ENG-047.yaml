@@ -1,9 +1,9 @@
 id: ENG-047
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Fastly 2021 年 6 月大面积故障
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-047
@@ -24,3 +24,63 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-047
+  status: sourced
+  reason: Fastly2021官方事故说明明确有效配置触发潜伏实现bug与恢复。
+  event: Fastly 2021 年 6 月大面积故障
+  cutoff: 2021-06-08客户配置变化后、定位触发条件之前。
+  initial_facts:
+  - id: F1
+    text: 边缘网络运行先前部署的软件。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 客户提交了一份有效配置。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 5月12日起的部署引入在特定配置/条件下触发的潜伏bug。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 停用触发配置后恢复，49分钟内95%网络正常。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    id: O1
+    text: 6月8日事件使85%网络返回错误，根因在底层软件bug而非配置无效。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 根因与规模为Fastly复盘，不能把合法配置视为用户过错。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 触发配置具体内容与软件bug代码未公开。
+  sources:
+  - id: S1
+    url: https://www.fastly.com/blog/summary-of-june-8-outage
+    publisher: Fastly / Nick Rockwell
+    published_at: '2021-06-08'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://www.fastly.com/blog/summary-of-june-8-outage
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 潜伏软件缺陷被客户配置触发；评估配置有效性与底层实现之间的责任边界。
+  record_path: reports/research-engineering-a.md

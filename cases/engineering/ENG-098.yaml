@@ -1,9 +1,9 @@
 id: ENG-098
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: runC 容器逃逸 CVE-2019-5736
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-098
@@ -24,3 +24,56 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-098
+  status: sourced
+  reason: 一手材料直接支持 artifact 或事件行为；不是 ready。
+  event: runc CVE-2019-5736 维护者通告
+  cutoff: 2019-02-11 通告发布时的升级决定
+  initial_facts:
+  - id: I1
+    text: 攻击者控制的容器镜像是风险输入之一
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 在已有容器内执行命令也可能触发相关路径
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 通告要求容器内 root 等条件
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 漏洞可覆写宿主 runc 二进制并取得宿主执行能力
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 维护者公布修复及受影响条件；不能把任意非特权容器都描述为可直接利用。
+    source_ids:
+    - S1
+  interpretation: 机制推演须与来源中的观察和当事人归因分别标记。
+  unknowns:
+  - 未公开的实际决策过程和完整工作量未知。
+  sources:
+  - id: S1
+    url: https://www.openwall.com/lists/oss-security/2019/02/11/2
+    publisher: runc maintainer Aleksa Sarai
+    published_at: '2019-02-11'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 初次误入较新 advisory 后按 CVE 找到维护者原始公开邮件。
+  phase2_conditions:
+  - 只保留 2019 CVE 链条；不要混入其他 runc FD 漏洞。
+  record_path: reports/research-engineering-b.md

@@ -1,9 +1,9 @@
 id: ENG-122
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Akka Actor 系统（2010s）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-122
@@ -35,3 +35,31 @@ planning:
     - 持久化确认
     - 重启及投递规则
     out_of_scope: 不合并不同模式的顺序与持久性保证
+research:
+  id: ENG-122
+  status: blocked
+  reason: 本轮未取得可读的指定旧版监督/持久化正文。
+  event: Akka actor重启状态候选
+  cutoff: 2010s版本语义待原文
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 与真实史实分开标注机制推断；示例不得变成虚构事故。
+  unknowns:
+  - 未公开工作量、内部决策过程或具体故障日志未知。
+  - 本轮未取得可读的指定旧版监督/持久化正文。
+  sources:
+  - id: S1
+    url: https://doc.akka.io/docs/akka/2.5/general/supervision.html
+    publisher: Akka
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 尝试官方2.5 actors、2.5/2.6 supervision及v2.5.32 GitHub文档路径均失败；不以常识填补。
+  phase2_conditions:
+  - 需要Classic或PersistentActor明确模式、确认点和投递规则；不能泛称重启恢复业务状态。
+  record_path: reports/research-engineering-b.md

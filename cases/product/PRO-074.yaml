@@ -1,9 +1,9 @@
 id: PRO-074
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Adobe 收购 Figma 失败（2022—2023）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-074
@@ -35,3 +35,62 @@ planning:
     - 产品重叠
     - 已知审查条件
     out_of_scope: 不先揭晓交易结果或把受阻归为产品失败
+research:
+  id: PRO-074
+  status: sourced
+  reason: 交易未决时监管方公开竞争分析与最终公司公告可相互对照；监管判断仍是初步结论，不作为已证产品失败。
+  event: Adobe 收购 Figma 失败（2022—2023）
+  cutoff: 2023-11-28 CMA初步发现公开后、最终交易结局前
+  initial_facts:
+  - id: F1
+    text: CMA称Adobe XD与Figma在产品设计软件竞争。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: CMA初步认为交易可能消除产品设计竞争，并影响图像编辑与插画创新；不是最终裁定。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 双方2023-12-18宣布终止交易。
+    source_ids:
+    - S2
+    availability: post_decision
+  - id: E2
+    text: 双方解释为无法明确取得欧盟与英国必要批准，同时声明不同意监管发现。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    text: 交易未完成；不能由此推论Figma产品失败或某项整合必然无价值。
+    source_ids:
+    - S2
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.gov.uk/government/news/adobe-figma-deal-could-harm-uk-digital-design-sector
+    publisher: UK CMA
+    published_at: '2023-11-28'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+  - id: S2
+    url: https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement
+    publisher: Adobe与Figma联合公告
+    published_at: '2023-12-18'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不先揭晓交易结果或把受阻归为产品失败
+  record_path: reports/research-product.md

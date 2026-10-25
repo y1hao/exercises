@@ -1,9 +1,9 @@
 id: ENG-125
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Cloudflare 2019 年 WAF 正则事故
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-125
@@ -25,3 +25,56 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-21
+research:
+  id: ENG-125
+  status: sourced
+  reason: 直接资料可证事件或artifact；完整Case QA尚未执行。
+  event: Cloudflare2019-07-02 WAF正则事故
+  cutoff: 2019-07-02 13:45 UTC初始报警
+  initial_facts:
+  - id: I1
+    text: 新WAF规则刚经全球发布
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 外部测试、502和CPU饱和报警相继出现
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: simulate模式仍会执行正则
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 规则性能测试未覆盖失控CPU，规则SOP允许直接全球发布
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 执行全球WAF终止后CPU与流量恢复，后续验证回退再启用WAF。
+    source_ids:
+    - S1
+  interpretation: 与真实史实分开标注机制推断；示例不得变成虚构事故。
+  unknowns:
+  - 未公开工作量、内部决策过程或具体故障日志未知。
+  sources:
+  - id: S1
+    url: https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/
+    publisher: Cloudflare
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开官方详细复盘并读取事件、测试缺口与恢复。
+  phase2_conditions:
+  - 不复用2025两起事故根因；单一主线是规则预验证与回退证据。
+  record_path: reports/research-engineering-b.md

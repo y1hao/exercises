@@ -1,9 +1,9 @@
 id: ENG-151
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: LastPass 2022 备份窃取
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-151
@@ -24,3 +24,56 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-151
+  status: sourced
+  reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  event: LastPass2022备份窃取公开更新
+  cutoff: 2022-12-22获知备份被复制后的风险判断
+  initial_facts:
+  - id: I1
+    text: 第三方云存储承载生产归档备份
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 备份同时包含未加密元数据和加密vault字段
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 攻击者取得云存储访问与解密相关密钥
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 通告警告离线猜测master password可能解密所窃vault
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 厂商确认备份与vault副本被复制；没有此来源可证全部密码已解密或全部用户安全。
+    source_ids:
+    - S1
+  interpretation: 已知观察、作者归因与维护者推论必须分开；不承诺未核出的数字。
+  unknowns:
+  - 未公开内部过程与全部版本细节未知。
+  sources:
+  - id: S1
+    url: https://blog.lastpass.com/posts/notice-of-recent-security-incident
+    publisher: LastPass
+    published_at: '2022-12-22'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开2022-12-22原始通告，核查备份范围与brute force边界。
+  phase2_conditions:
+  - zero knowledge宣传与已确认泄漏分开；不写无来源破解速度或统一PBKDF2设置。
+  record_path: reports/research-engineering-b.md

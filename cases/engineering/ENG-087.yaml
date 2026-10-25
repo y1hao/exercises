@@ -1,9 +1,9 @@
 id: ENG-087
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: React Server Components（2020—2023）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-087
@@ -35,3 +35,63 @@ planning:
     - 最小组件关系
     - 序列化与组合规则
     out_of_scope: 不混入后续缓存实现和全部 React 架构
+research:
+  id: ENG-087
+  status: sourced
+  reason: 直接一手材料支持事件或版本行为；完整 Case QA 尚未执行。
+  event: React Server Components RFC 0188
+  cutoff: RFC 修订文本的方案评估；不能声称全部语义来自 2020 首稿
+  initial_facts:
+  - id: I1
+    text: 服务器组件仅在服务器执行
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 客户端组件承载交互状态
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 服务器可读取后台数据并把 props 传给客户端
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: RFC 明确跨界 props 要可序列化
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: RFC 记录服务端与客户端可组合及其能力约束，2020 公告明确仍在研发。
+    source_ids:
+    - S1
+  interpretation: 以上观察与厂商/作者归因分开使用；可迁移机制属于后续维护者解释。
+  unknowns:
+  - 精确决策过程和未公开数据未知。
+  sources:
+  - id: S1
+    url: https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md
+    publisher: React
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  - id: S2
+    url: https://react.dev/blog/2020/12/21/data-fetching-with-react-server-components
+    publisher: React
+    published_at: '2020-12-21'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 打开 2020 公告和 RFC；注意 RFC 列明 use client 等后续变更。
+  phase2_conditions:
+  - 范围保持单次跨边界传递；Phase 4 固定 RFC commit，不能混用 2020 命名与新指令。
+  record_path: reports/research-engineering-b.md

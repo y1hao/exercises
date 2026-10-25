@@ -1,9 +1,9 @@
 id: ENG-006
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Figma Multiplayer 数据模型（2019—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-006
@@ -36,3 +36,70 @@ planning:
     - 持久化确认语义
     - 断联行为
     out_of_scope: 不设计完整多人同步算法
+research:
+  id: ENG-006
+  status: blocked
+  reason: Figma 2019 原文已读，但不提供文档同步到持久化确认的完整契约，不能完成规划中的确认点判断。
+  event: Figma Multiplayer 数据模型（2019—）
+  cutoff: 2019 已连接客户端收到对象更新后、持久化确认未知。
+  initial_facts:
+  - id: F1
+    text: 文档打开时下载副本，后续更新通过 WebSocket 同步。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: comments/users/teams 等存于 Postgres，采用另一个同步系统。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 断线重连会下载新副本、重新应用离线编辑。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 对象属性冲突由服务器最后收到的值决定。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 同步与持久化不可等同是维护者边界判断。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 文档持久化写入/ACK语义及失败窗口缺失。
+  sources:
+  - id: S1
+    url: https://www.figma.com/blog/how-figmas-multiplayer-technology-works/
+    publisher: Figma / Evan Wallace
+    published_at: '2019-10-16'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://www.figma.com/blog/how-figmas-multiplayer-technology-works/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: Figma 2019 候选说明中的一次并发对象更新
+    anchor_status: unverified_research_target
+    main_question: 一个编辑已同步到另一客户端，能否据此断言它已持久保存？
+    expected_output: 区分两个确认点并给出一个失败边界
+    evidence_to_verify:
+    - 对象更新传播说明
+    - 持久化确认语义
+    - 断联行为
+    out_of_scope: 不设计完整多人同步算法
+  record_path: reports/research-engineering-a.md

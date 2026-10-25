@@ -1,9 +1,9 @@
 id: INV-045
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: DoorDash 2013—2014 Seed/Series A
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-045
@@ -36,3 +36,67 @@ planning:
     - 不同城市需求和供给材料
     - 进入成本
     out_of_scope: 没有独立城市材料则只做证据选择
+research:
+  id: INV-045
+  status: sourced
+  reason: 已阅读直接来源，支持可辨识事件或原始文件及其披露结果；训练数据完整性与 Case QA 尚待完成。
+  event: DoorDash 2014 年 5 月 Sequoia 领投 A 轮
+  cutoff: 2014 年 A 轮投资决定之前；公开回顾只用于重建，不把后来的扩城成绩前置
+  initial_facts:
+  - id: I1
+    text: DoorDash 从 Palo Alto 本地餐馆配送切入；多边平台需要同时组织商户、顾客和配送供给。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 投资人当时关注当地业务能否向郊区外推；Sequoia 的回顾称 Palo Alto 已有 product-market fit，此为投资人判断。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: Sequoia 与创始人访谈明确说明 2014 年 5 月领投 A 轮。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 当事人回顾称扩张由 Palo Alto 到 East San Jose；未给可独立核查的城市获客、供给与进入成本分表。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    text: A 轮身份已由直接参与者确认；郊区扩张是其叙述的策略，不能据此证明任一新城都具备同样流动性。
+    source_ids:
+    - S1
+    - S2
+  interpretation: 本地成功外推所需反证属于维护者分析；不能把融资成功或后来的上市当作当时城市经济性的验证。
+  unknowns:
+  - 未取得不同城市在 A 轮前的独立 cohort、配送供给和市场进入成本材料。
+  - NFX 转录的内部 memo 有删节，所述贡献毛利明确是公司 claim；未以其替代未公开原表。
+  sources:
+  - id: S1
+    url: https://sequoiacap.com/podcast/crucible-moments-doordash
+    publisher: Sequoia / Tony Xu / Alfred Lin
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - outcome
+  - id: S2
+    url: https://sequoiacap.com/article/doordash-ipo-resilience-gets-results
+    publisher: Sequoia / Alfred Lin
+    published_at: '2020-12-09'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E2
+    - outcome
+  attempts:
+  - 阅读 Sequoia 全文回顾和访谈；打开其原始 A 轮 deck Dropbox 链接但返回空错误页。
+  - 阅读 https://podcast.nfx.com/episodes/doordash-memo/transcript；是外部转录且 cohort 图删节，未当完整原始尽调材料。
+  phase2_conditions:
+  - 真实轮次已确定为 2014 A；没有独立城市材料，规划要求待正式切换为 evidence-selection。
+  - 首轮不提供 2015 扩张规模、2020 上市或事后成功判断。
+  record_path: reports/research-investing-b.md

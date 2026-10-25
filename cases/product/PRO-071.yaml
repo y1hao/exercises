@@ -1,9 +1,9 @@
 id: PRO-071
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Netflix 从单次租赁转向订阅（1999）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-071
@@ -25,3 +25,55 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-13
+research:
+  id: PRO-071
+  status: sourced
+  reason: 1999同期公告给出确切订阅规则，需修正候选常见的无限租赁说法；只支持任务与收费机制，不证明留存效果。
+  event: Netflix 从单次租赁转向订阅（1999）
+  cutoff: 1999-12-16 Marquee公开发布后，评估收费摩擦前
+  initial_facts:
+  - id: F1
+    text: Marquee每月15.95美元含四次DVD租赁，无到期日与滞纳金。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 额外租赁每次3.98美元含运费，同时最多留四张；并非无限租赁。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 用户可预选片单，寄回DVD后自动寄下一张。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 可随时取消，并使用预付回邮信封。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 订阅与自动补片方案已发布；公告未给留存改善或相对按次方案实验。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://about.netflix.com/en/news/netflix-com-transforms-dvd-business-eliminating-late-fees-and-due-dates-from
+    publisher: Netflix
+    published_at: '1999-12-16'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 1999订阅不得与2000无限方案混用；发布公告12月与后续财报称9月推出的差异保留，不虚构同一天。
+  record_path: reports/research-product.md

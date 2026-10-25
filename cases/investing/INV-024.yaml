@@ -1,9 +1,9 @@
 id: INV-024
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: Mistral AI 2023 Seed
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-024
@@ -35,3 +35,62 @@ planning:
     - 当时产品状态
     - 客户验证机会
     out_of_scope: 不使用后来模型成绩或当前估值
+research:
+  id: INV-024
+  status: sourced
+  reason: 直接领投方同期文章支持资本与团队条件，后续同方记录可单独核对产品发布结果。
+  event: Mistral 2023 seed 后需求验证选择
+  cutoff: 2023-06-13 seed 公告后，模型发布前
+  initial_facts:
+  - id: F1
+    text: 领投方宣布种子融资超过 1.05 亿欧元。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 创始团队来自 Meta 与 Alphabet 等研究经历，目标为开放模型。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 同期论点强调欧洲及开放模型机会，属于投资人判断，不是已经验证的客户需求。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 研究团队经历不能单独证明企业愿意付费或切换。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    text: 2023-12-11 领投方后续公告记录 Mistral 7B、Mixtral 与 API 已发布及后续 A 轮；这不能提前用于 seed 判断，也不等于付费 PMF 已证实。
+    source_ids:
+    - S2
+  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+  unknowns:
+  - 付费客户、资本实际消耗和可存活期限未知。
+  sources:
+  - id: S1
+    url: https://lsvp.com/stories/meet-europes-next-great-generative-ai-startup-mistral-ai/
+    publisher: Lightspeed Venture Partners
+    published_at: '2023-06-13'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  - id: S2
+    url: https://lsvp.com/stories/building-with-mistral-why-we-doubled-down/
+    publisher: Lightspeed Venture Partners
+    published_at: '2023-12-11'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - outcome
+  attempts:
+  - 实际打开并阅读上述来源正文；按 Phase 2 单一范围筛选。
+  phase2_conditions: 只选择需求验证里程碑，不估未知现金 runway；后续产品成绩只能最终揭晓。
+  record_path: reports/research-investing.md

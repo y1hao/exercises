@@ -1,9 +1,9 @@
 id: PRO-032
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Dropbox 早期 Demo 视频（2007）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-032
@@ -25,3 +25,65 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-11
+research:
+  id: PRO-032
+  status: sourced
+  reason: 2007 原始 HN 反馈加创始人回顾确认 demo 的兴趣信号；明确与后一年 Digg 视频区分。
+  event: Dropbox 2007-04-04 HN 公开 demo
+  cutoff: 2007-04-04 demo 发布前，讨论和后续反馈隐藏
+  initial_facts:
+  - id: F1
+    text: Houston 以 YC application 项目分享本地文件夹后台同步 demo。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 产品尚未大规模开放，创始人收集潜在使用者兴趣。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: HN 讨论既有热情，也有安装权限、离线边界及信任质疑。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: Houston 在 Mixergy 明确两次视频：5,000 到75,000等候人数属于第二次 Digg 视频。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    text: 首视频获得具体需求反馈；2007 视频不能借用后一年等候人数，更不能等同留存。
+    source_ids:
+    - S1
+    - S2
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  - 若来源为事后回顾，仅确认其明确记载的当时已知观察或已实施规则；不把后续效果当作事前可知。
+  sources:
+  - id: S1
+    url: https://news.ycombinator.com/item?id=8863
+    publisher: Hacker News / dhouston
+    published_at: '2007-04-04'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - outcome
+  - id: S2
+    url: https://mixergy.com/interviews/drew-houston-dropbox-interview/
+    publisher: Mixergy / Drew Houston
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
+  record_path: reports/research-product.md

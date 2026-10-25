@@ -1,9 +1,9 @@
 id: INV-036
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Snowflake 2012—2014 早期融资
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-036
@@ -35,3 +35,75 @@ planning:
     - 当时产品
     - 既有数仓替代与采购任务
     out_of_scope: 不泛谈云转型或使用后来的市场规模
+research:
+  id: INV-036
+  status: blocked
+  reason: 2014原始融资公告确认SeriesB及累计26m，但所需客户采购任务/替代决策证据未取得；不能把厂商90%成本宣传当实测。
+  event: Snowflake 2012—2014 早期融资
+  cutoff: 2014 SeriesB融资决策前，具体可知客户材料未定；公告日不自动等于轮次关闭日。
+  initial_facts:
+  - id: F1
+    text: Snowflake公告其从隐身状态公开云原生Elastic Data Warehouse。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 公开宣称结合SQL数据仓库、big-data灵活性及云弹性。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 公告称最近SeriesB由Redpoint领投，Sutter Hill及Wing参与。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 26m是累计融资，不是据该源已证明这一轮单独26m。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 技术/成本优势为厂商宣传及投资人评价，非独立客户证据。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 没有同期客户采购、合同或替换工作负载证据。
+  - 产品链接点击失败，未引入2020招股书的后期客户作为2014事前信息。
+  sources:
+  - id: S1
+    url: https://www.globenewswire.com/news-release/2014/10/21/1186817/0/en/snowflake-raises-26m-in-funding-to-reinvent-the-data-warehouse.html
+    publisher: Snowflake Computing / Marketwired
+    published_at: '2014-10-21'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://www.globenewswire.com/news-release/2014/10/21/1186817/0/en/snowflake-raises-26m-in-funding-to-reinvent-the-data-warehouse.html
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    revision_state: awaiting_source
+    policy_path: curriculum/planning-policy.yaml
+    distinctness_clusters: []
+    planned_exercise:
+      planning_only: true
+      anchor_request: 拟选 Snowflake 2014 早期融资，身份待核
+      anchor_status: unverified_research_target
+      main_question: 哪项客户证据能区分新市场需求与单纯技术升级？
+      expected_output: 一个优先验证项及拒绝条件
+      evidence_to_verify:
+      - 真实轮次
+      - 当时产品
+      - 既有数仓替代与采购任务
+      out_of_scope: 不泛谈云转型或使用后来的市场规模
+  record_path: reports/research-investing-a.md

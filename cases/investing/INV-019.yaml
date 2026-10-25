@@ -1,9 +1,9 @@
 id: INV-019
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Stripe 2010—2011 Seed
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-019
@@ -35,3 +35,30 @@ planning:
     - 可用产品
     - 当时可知金融责任和团队证据
     out_of_scope: 不以创始人后来声望替代当时验证
+research:
+  id: INV-019
+  status: blocked
+  reason: 检索主要得到轮次数据库与二手报道，未找到足以支持同期金融责任、团队和实际轮次的直接材料。
+  event: Stripe 2011 种子融资尽调
+  cutoff: 2011 年候选种子轮；确切日与可知材料未核实
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+  unknowns:
+  - 早期轮次、产品上线时间、合规责任分配与运营证据均待核。
+  sources:
+  - id: S1
+    url: https://stripe.com/newsroom
+    publisher: Stripe
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 检索 site:stripe.com 2011 funding seed；未找到所需同期融资正文。
+  - 检索结果含 https://techcrunch.com/2011/03/28/stealth-payment-startup-stripe-paypal/ ，未把摘要当核验。
+  phase2_conditions: 不以创始人后来的名声替代当时证据。
+  record_path: reports/research-investing.md

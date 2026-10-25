@@ -1,9 +1,9 @@
 id: PRO-082
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Twitter 改为 X 的品牌重塑（2023）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-082
@@ -24,3 +24,53 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: PRO-082
+  status: blocked
+  reason: 已读同期报道及其原帖链接，但官方X博客与CEO原帖正文抓取失败，且没有品牌识别或广告信任行为测量；不足以核实计划要求的品牌结果。
+  event: Twitter 改为 X 的品牌重塑（2023）
+  cutoff: 2023-07品牌更名窗口
+  initial_facts:
+  - id: F1
+    text: 同期MacRumors观察网页版鸟标被临时X替代；这是次级现场报道。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 同日报道当时官方app仍叫Twitter，不能假定所有界面同步更名。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 报道链接CEO关于更名和综合应用愿景的推文。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 报道转述综合应用愿景并引用原帖；该转述不能证明广告客户信任的实际变化。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.macrumors.com/2023/07/24/TWITTER-REBRANDED-AS-X/
+    publisher: MacRumors / Tim Hardwick
+    published_at: '2023-07-24'
+    source_type: secondary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 实际阅读MacRumors正文；打开其CEO原帖链接失败；打开X年终官方博客失败。
+  phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
+  record_path: reports/research-product.md

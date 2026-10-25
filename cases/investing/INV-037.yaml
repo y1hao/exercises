@@ -1,9 +1,9 @@
 id: INV-037
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: Rivian 2021 IPO 估值
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-037
@@ -34,3 +34,97 @@ planning:
       question: 哪项产能或稀释证据最能推翻当前价格隐含的假设？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: INV-037
+  status: sourced
+  reason: 2021-11-01 S1/A提供事前价格区间、股本、产能、已交付量与capex；最终IPO另有原招股书支持。
+  event: Rivian 2021 IPO 估值
+  cutoff: 2021-11-01公开S1/A，最终IPO定价前；只用57–62美元预估区间，不能提前给78。
+  initial_facts:
+  - id: F1
+    text: 预估IPO每股57–62美元；当时假设基本发行后A+B股约861,995,652，不含部分期权/RSU等。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 截至10月31日生产180辆、交付156辆R1T，多数给员工。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F3
+    text: Normal厂宣称安装年产能150,000；计划至2023累计capex约8bn。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 安装产能与实际爬坡不同，S1预计2024年初才达当前安装产能年化速率。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 转换票据及Forever发行的股数随IPO价格变化；基本股数不能当完全稀释恒定股本。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 最终IPO实际每股78美元、发行153m股；该结果需以最终424B4独立来源在最后揭晓，不证明产能/内在价值合理。
+    source_ids:
+    - S2
+    availability: post_decision
+  interpretation:
+    text: 产能与capex为公司计划，不是已完成事实；估值情景不输出唯一目标价或持仓。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 基本市值可按同版价格和股数推导，但不能和最终版发行股数混用。
+  - 真实未来毛利与扩产成功概率未知，定量估值需声明模型边界；不能当合成历史事实。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1874178/000119312521315537/d157488ds1a.htm
+    publisher: Rivian / SEC EDGAR
+    published_at: '2021-11-01'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - F3
+    - E1
+    - E2
+  - id: S2
+    url: https://www.sec.gov/Archives/edgar/data/1874178/000119312521328239/d157488d424b4.htm
+    publisher: Rivian / SEC EDGAR
+    published_at: '2021-11-09'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - O1
+  attempts:
+  - url: https://www.sec.gov/Archives/edgar/data/1874178/000119312521315537/d157488ds1a.htm
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  - url: https://www.sec.gov/Archives/edgar/data/1874178/000119312521328239/d157488d424b4.htm
+    result: 已打开并读取最终定价与发行数，仅用于揭晓
+  phase2_conditions:
+    revision_state: retained
+    policy_path: curriculum/planning-policy.yaml
+    distinctness_clusters: []
+    quantitative_plan:
+      mainline_measure: 产能达成约束的价值范围
+      required_inputs:
+      - IPO 前价格、股本、产能与资本开支
+      - 可证公开假设
+      missing_input_fallback:
+        focus: evidence-selection
+        question: 哪项产能或稀释证据最能推翻当前价格隐含的假设？
+      fallback_applied: false
+      input_verification: not_started
+  record_path: reports/research-investing-a.md
+  scope_decision:
+    id: INV-037
+    input_status: sufficient_for_scoped_comparison
+    reason: S-1/A 含事前价格区间、股本、交付及资本开支；不得与最终版股数混算。
+    fallback_applied: false
+    decision_path: curriculum/source-decisions-2027.yaml

@@ -1,9 +1,9 @@
 id: INV-047
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Better.com 2021—2023 SPAC 延期
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-047
@@ -36,3 +36,51 @@ planning:
     - 现金跑道
     - 融资顺位
     out_of_scope: 缺合同转证据选择，不补造延期交易条款
+research:
+  id: INV-047
+  status: blocked
+  reason: 可确认有多笔 bridge/债务修改，但尚未闭合规划要求的最后一笔续命融资身份，且缺完整合同、股本及同时点跑道。
+  event: Better SPAC 延期期间融资：最后一笔续命融资身份尚未闭合
+  cutoff: 待定位最后一笔续命融资签署前；不能把 2021 bridge 与 2023 债务修改合成一次交易
+  initial_facts: []
+  evidence:
+  - id: E1
+    text: SEC 财务附注披露 2021 年 12 月发行 pre-closing bridge notes，零票息、不可现金偿还，2023-06-30 账面 7.5 亿美元。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 2023 年 2 月信用额度修改将债务分为有担保 AB 和无担保 C；后者还款节奏取决于后续融资承诺。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E3
+    text: 截至 2023-06-30 bridge 尚未转优先股，附注说明延长到期需同意、章程法律步骤等障碍。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 现有材料说明资本顺位与转换条件确实复杂；没有完整合同和确定决策时点，不能给旧股权精确稀释预测。
+  unknowns:
+  - 尚未证明规划所指最后一轮续命融资究竟是哪一笔。
+  - 未取得该笔完整签署合同、同日 cap table 与可支配现金跑道；不能将信用额度修改等同新增现金。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1835856/000162828023030682/exhibit991-super8xkbetterq2.htm
+    publisher: Better Holdco / SEC
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+    - E2
+    - E3
+  attempts:
+  - 搜索并打开 SEC 2023 二季度财务附注与对应 MD&A，逐段检查 bridge、2023 credit facility 及后续事项。
+  - 公司 2023 closing 新闻页返回 404；SEC 2023 年报 PDF 与 IR PDF 抓取失败，未用搜索摘要中的 closing 总融资额代替合同。
+  phase2_conditions:
+  - 保留 INV-047；先定位最后一笔真实交易及完整合同。
+  - 缺合同按规划转 evidence-selection；不补造稀释比例、清算优先权或退出价格。
+  record_path: reports/research-investing-b.md

@@ -1,9 +1,9 @@
 id: INV-007
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Theranos 2004—2015 融资
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-007
@@ -35,3 +35,43 @@ planning:
     - 当时可索取材料
     - 技术验证能力和权限
     out_of_scope: 不把后来调查事实提前交给投资者
+research:
+  id: INV-007
+  status: blocked
+  reason: 已读取 SEC 原始诉状，但它是事后指控材料；尚未确认指定轮次的事前材料与尽调权限。
+  event: Theranos 2013—2015 投资者陈述及 2018 SEC 指控
+  cutoff: 原计划要求某轮融资前；具体轮次与起始信息仍缺证。
+  initial_facts: []
+  evidence:
+  - id: E1
+    text: SEC 诉状称投资人收到技术、合同、监管与财务陈述。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 诉状区分公司宣称可处理的测试范围与监管方指控的实际能力；两者都不能预先当投资人已知。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 2018 年 SEC 提出证券欺诈指控；本诉状本身不是全部事实已经审判认定的证明。
+    source_ids:
+    - S1
+  interpretation: 指控可以支持需要核查的主张，不能由此编写全知视角的事前尽调。
+  unknowns:
+  - 所选投资轮次；当时可索取的技术结果；哪些陈述何时可知。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/files/litigation/complaints/2018/comp-pr2018-41-theranos-holmes.pdf
+    publisher: US SEC
+    published_at: '2018-03-14'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 读取 SEC 诉状及其投资者陈述段落；搜索同期投资节点。
+  phase2_conditions: 不将 2004—2015 合并为一次融资，也不将后来指控当开场真相。
+  record_path: reports/research-investing.md

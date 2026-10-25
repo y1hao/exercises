@@ -1,6 +1,6 @@
 # Phase 2 修订落实记录
 
-本轮把初审意见落实为生产端的候选训练范围。原审核结论 164 accepted / 200 revise / 1 replace 保留，另以 revision_state 记录落实进度；两者都不表示来源或训练验收。Phase 3 尚未开始。
+本轮把初审意见落实为生产端的候选训练范围。原审核结论 164 accepted / 200 revise / 1 replace 保留，另以 revision_state 记录落实进度；两者都不表示来源或训练验收。此为 Phase 2 规划快照；当前核源状态见 reports/source-verification.md。
 
 ## 落实进度
 
@@ -17,7 +17,7 @@
 
 `curriculum/planning-2027.yaml` 是本轮完整规划汇总，每个候选 Brief 的 `planning` 与之同步。后续 Phase 3/4 以 planned_exercise 规定的范围研究和制作题目，candidate_material 仅用于原始追溯；不能再直接按原始多年综述扩写。
 
-规划层不设置历史 as-of 日期、不填来源和真实结果；不生成 opening、evidence_pool 或完整评价协议。所有 365 条 status 均保持 candidate。需要改变训练状态、认知动作或实际换题时，应另行核实并记录映射。
+规划层不设置历史 as-of 日期、不填来源和真实结果；不生成 opening、evidence_pool 或完整评价协议。Phase 2 结束时所有 365 条 status 均为 candidate；当前训练状态以索引为准。需要改变训练状态、认知动作或实际换题时，应另行核实并记录映射。
 
 ## 39 条数量题的处理
 

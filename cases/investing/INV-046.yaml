@@ -1,9 +1,9 @@
 id: INV-046
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: FTX 2021—2022 风险融资
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-046
@@ -35,3 +35,65 @@ planning:
     - 资产托管边界
     - 治理权限
     out_of_scope: 不前置后来的调查事实或补造融资条款
+research:
+  id: INV-046
+  status: sourced
+  reason: 已阅读直接来源，支持可辨识事件或原始文件及其披露结果；训练数据完整性与 Case QA 尚待完成。
+  event: FTX 2021-07-20 公告的 9 亿美元 B 轮
+  cutoff: 2021 年 7 月该轮尽调/投资决定前；公开融资公告为同时期 issuer claim
+  initial_facts:
+  - id: I1
+    text: FTX 对外定位为加密资产交易所；其当轮公告将扩张和产品增长列为资金用途。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 公司宣布 B 轮 9 亿美元、180 亿美元估值；这验证公告身份，不能验证客户资产隔离或交易对手风险。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 司法部 2024 年通报：陪审团定罪后，Bankman-Fried 被判 25 年；案件涉及客户资金挪用和对投资人虚假陈述。
+    source_ids:
+    - S2
+    availability: post_decision
+  - id: E2
+    text: 通报指出客户资产安全、Alameda 无特殊待遇等表述与实际行为不符；这些是事后司法材料。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    text: 后续司法结果支持托管和关联方权限必须独立验证的训练方向；不得把这些后来事实放进 2021 年首轮。
+    source_ids:
+    - S2
+  interpretation: 停止尽调的门槛应由学员提出；本报告没有证明某位 2021 投资人收到或忽略了特定材料。
+  unknowns:
+  - 实际 data room、投资人索取和取得的托管对账、关联交易清单及权限审计未知。
+  - 2023 SEC complaint 的约 10 亿美元轮次描述与公司公告 9 亿口径不同，未擅自调和。
+  sources:
+  - id: S1
+    url: https://www.prnewswire.com/news-releases/ftx-trading-ltd-closes-900m-series-b-round-largest-raise-in-crypto-exchange-history-847881913.html
+    publisher: FTX via PR Newswire
+    published_at: '2021-07-20'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+  - id: S2
+    url: https://www.justice.gov/usao-sdny/pr/samuel-bankman-fried-sentenced-25-years-prison
+    publisher: US DOJ / SDNY
+    published_at: '2024-03-28'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 阅读公司融资公告与 DOJ 判刑通报正文。
+  - 打开 SEC Nishad Singh complaint https://www.sec.gov/files/litigation/complaints/2023/comp-pr2023-40.pdf，区分指控与判决。
+  phase2_conditions:
+  - 不编造当轮融资条款或 DD 文件；可索取材料只作为尽调要求，不冒充已存在的历史材料。
+  - 必须明确托管边界、关联方提款和权限验证；所有调查结论留隐藏证据。
+  record_path: reports/research-investing-b.md

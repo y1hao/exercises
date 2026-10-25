@@ -1,9 +1,9 @@
 id: ENG-134
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Gradle Configuration Cache（2020—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-134
@@ -36,3 +36,56 @@ planning:
     - 配置片段
     - 副作用与缓存输入边界
     out_of_scope: 不混同配置缓存和任务输出缓存
+research:
+  id: ENG-134
+  status: sourced
+  reason: 直接来源支持所选artifact或事件，完整Case QA未执行。
+  event: Gradle6.6 Configuration Cache
+  cutoff: 2020年6.6配置结果复用前
+  initial_facts:
+  - id: I1
+    text: 配置缓存保存任务图的状态
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 任务依赖的输入必须可重现
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 部分活JVM状态不能被序列化/重建
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 未声明系统属性读取与执行期Project访问会报缓存问题
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 6.6文档给出违规检测及失败示例，默认不静默接受不兼容缓存。
+    source_ids:
+    - S1
+  interpretation: 只允许依据已核查材料推演；推断需明示，不能写成实测史实。
+  unknowns:
+  - 未公开的完整工作量、精确内部决策过程未知。
+  sources:
+  - id: S1
+    url: https://docs.gradle.org/6.6/userguide/configuration_cache.html
+    publisher: Gradle
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开6.6发布说明和固定版本requirements章节。
+  phase2_conditions:
+  - 区别配置缓存与构建action输出缓存；只核验一次不适合复用的配置。
+  record_path: reports/research-engineering-b.md

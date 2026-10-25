@@ -1,9 +1,9 @@
 id: INV-008
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: Coinbase 2021 直接上市
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-008
@@ -24,3 +24,55 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: INV-008
+  status: sourced
+  reason: 上市前 S-1 完整可读，直接披露周期依赖及不同年度盈利，可支持竞争解释训练。
+  event: Coinbase 2021 直接上市前周期盈利判断
+  cutoff: 2021 年 S-1 公开之后、直接上市之前；不采用上市后价格。
+  initial_facts:
+  - id: F1
+    text: 公司交易费是主要净收入来源，2020 交易收入占净收入逾 96%。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 2020 总收入约 13 亿美元、净利约 3.223 亿美元，2019 为净亏损。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: S-1 明示增长随加密资产价格周期呈波浪变化。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 公司表示费用大体独立于净收入，因此交易活动下降时可能再次亏损。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    text: 已公开的 2019 与 2020 财务呈现亏损到盈利的变化，并非已观察到未来永久利润水平。
+    source_ids:
+    - S1
+  interpretation: 周期解释是公司披露且可讨论的机制，不等同于精确价格预测。
+  unknowns:
+  - 未来周期；个人可获得的进入价格；长期正常化利润。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1679788/000162828021003168/coinbaseglobalincs-1.htm
+    publisher: Coinbase via SEC
+    published_at: '2021-02-25'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 完整打开 S-1 并阅读周期、收入与费用段落。
+  phase2_conditions: 只诊断盈利可持续性的解释，不做没有进入价格的仓位精算。
+  record_path: reports/research-investing.md

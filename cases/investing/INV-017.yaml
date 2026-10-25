@@ -1,9 +1,9 @@
 id: INV-017
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: Twilio 2009 Seed
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-017
@@ -25,3 +25,55 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: INV-017
+  status: sourced
+  reason: 直接备忘录支持延长 runway 以等待进一步验证的决策节点。
+  event: Twilio 2009 seed 延长融资建议
+  cutoff: 2009-11-06 备忘录形成时
+  initial_facts:
+  - id: F1
+    text: Twilio 提供类似 Web API 的语音通信能力。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 公司寻求后续 A 轮，而潜在投资者仍要求新功能和大客户的验证。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 此前种子轮约 80 万美元。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 备忘录建议追加 12.5 万美元，用延长融资为产品和商业验证争取时间。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    text: 记录可确认的是追加投资建议；不将其等同确定完成的 A 轮或未来盈利。
+    source_ids:
+    - S1
+  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+  unknowns:
+  - 实际剩余现金、后续 A 轮成交条款与样本外客户未知。
+  sources:
+  - id: S1
+    url: https://www.bvp.com/memos/twilio
+    publisher: Bessemer Venture Partners
+    published_at: '2009-11-06'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 实际打开并阅读上述来源正文；按 Phase 2 单一范围筛选。
+  phase2_conditions: 保持种子期验证范围，不使用上市后成绩。
+  record_path: reports/research-investing.md

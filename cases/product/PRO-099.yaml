@@ -1,9 +1,9 @@
 id: PRO-099
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: eBay 买家与卖家信誉体系（1995—2000）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-099
@@ -36,3 +36,56 @@ planning:
     - 交易流程
     - 买卖角色权限
     out_of_scope: 不混入后续双向评价政策
+research:
+  id: PRO-099
+  status: sourced
+  reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+  event: eBay 1999 年报记录的交易后 Feedback Forum 规则
+  cutoff: 2000 年 1999 年报公开后，一次选择陌生交易对手前；不混入 1996 或后来卖家禁负评规则
+  initial_facts:
+  - id: I1
+    text: 买卖双方自行完成支付和交付；卖家可参考买家反馈决定付款方式及先款/先货。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 注册用户有反馈档案和净评分；该版限制为已完成交易伙伴留反馈，同一对账户对净分最多影响一分。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 公司禁止自有其他账户刷正评或多账户重复负评，足够负面的评分会导致暂停交易资格。
+    source_ids: *id001
+    availability: pre_decision
+  - id: E2
+    text: 年报称反馈降低陌生交易的匿名性和不确定性；这是公司机制解释，没有独立完成率实验。
+    source_ids: *id001
+    availability: pre_decision
+  outcome:
+    text: 该版公开规则把可见信誉与交易资格相连；不代表信誉保证付款履约或完全防止串谋。
+    source_ids:
+    - S1
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - 精确规则切换日期未在年报本段给出；本题锚定年报中的已生效版本，不称其为 1996 初版。
+  - 评分对完成率的独立因果增量未知。
+  sources:
+  - id: S1
+    url: https://www.annualreports.com/HostedData/AnnualReportArchive/e/NASDAQ_EBAY_1999.pdf
+    publisher: eBay annual report, mirrored by AnnualReports
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开公司 1999 年报 PDF，核对 Feedback Forum、交易履约和反滥用段落。
+  - 另读 eBay 1996 founder letter 与历史 feedback FAQ；其非交易评价规则不同，不与年报版合并。
+  phase2_conditions:
+  - 只讨论一个早期已生效规则版本；后续买卖权限变化不得混入。
+  - 不把公司“降低不确定性”归因升级为实测完成率提高。
+  record_path: reports/research-product-b.md

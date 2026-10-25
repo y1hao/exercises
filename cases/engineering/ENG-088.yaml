@@ -1,9 +1,9 @@
 id: ENG-088
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Linux io_uring（2019）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-088
@@ -35,3 +35,56 @@ planning:
     - 可比负载证据
     - 安全边界
     out_of_scope: 不以接口存在直接证明收益或充分安全
+research:
+  id: ENG-088
+  status: sourced
+  reason: 直接一手材料支持事件或版本行为；完整 Case QA 尚未执行。
+  event: Jens Axboe io_uring 接口设计论文
+  cutoff: 2019 接口设计比较；论文当前修订日期未显示
+  initial_facts:
+  - id: I1
+    text: 旧 aio 提交和完成处理存在复制与调用开销
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 小 I/O 对每次请求开销敏感
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: io_uring 采用共享 SQ 和 CQ
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 作者用内存序协调生产者与消费者
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 设计避免在提交与完成路径复制请求结构；不保证任意工作负载收益。
+    source_ids:
+    - S1
+  interpretation: 以上观察与厂商/作者归因分开使用；可迁移机制属于后续维护者解释。
+  unknowns:
+  - 精确决策过程和未公开数据未知。
+  sources:
+  - id: S1
+    url: https://kernel.dk/io_uring.pdf
+    publisher: Jens Axboe
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 读取作者 PDF 的设计目标与双 ring 章节。
+  phase2_conditions:
+  - 尚无本题同口径安全评估；Phase 4 不把性能收益当安全保证，不引用后续版本数据。
+  record_path: reports/research-engineering-b.md

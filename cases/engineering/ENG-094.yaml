@@ -1,9 +1,9 @@
 id: ENG-094
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: gRPC Streaming API 设计（2015）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-094
@@ -24,3 +24,56 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-094
+  status: sourced
+  reason: 一手材料直接支持 artifact 或事件行为；不是 ready。
+  event: gRPC 2015 设计原则
+  cutoff: 2015-09-08 API 选型
+  initial_facts:
+  - id: I1
+    text: 客户端与服务器的算力及网络能力可能不均衡
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 流式接口用于时序相关消息
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 流量控制用于限制缓冲和过快发送者
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 取消与 deadline 可沿调用链传播
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 2015 原则文档明确支持流、取消及标准状态码；不是业务恰好一次保证。
+    source_ids:
+    - S1
+  interpretation: 机制推演须与来源中的观察和当事人归因分别标记。
+  unknowns:
+  - 未公开的实际决策过程和完整工作量未知。
+  sources:
+  - id: S1
+    url: https://grpc.io/blog/principles/
+    publisher: Google / gRPC
+    published_at: '2015-09-08'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并打开当年设计原则与发布公告。
+  phase2_conditions:
+  - 真实 API artifact 可作边界推演，业务负载只能标为教学示例。
+  record_path: reports/research-engineering-b.md

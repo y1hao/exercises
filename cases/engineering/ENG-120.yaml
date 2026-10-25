@@ -1,9 +1,9 @@
 id: ENG-120
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: NATS JetStream 持久流（2020）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-120
@@ -36,3 +36,31 @@ planning:
     - ack 与重投递语义
     - 当时去重能力
     out_of_scope: 不提前加入后续版本功能
+research:
+  id: ENG-120
+  status: blocked
+  reason: 官方2.2发布说明可证持久流、至少一次及窗口去重，但不能据此认定是2020发布契约。
+  event: NATS JetStream2020候选
+  cutoff: 2020具体preview语义待核定
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 来源描述与我们的推论分开；不能以当前文档倒推早年版本。
+  unknowns:
+  - 精确决策日及未公开观测未知。
+  - 官方2.2发布说明可证持久流、至少一次及窗口去重，但不能据此认定是2020发布契约。
+  sources:
+  - id: S1
+    url: https://github.com/nats-io/nats.docs/blob/master/release_notes/whats_new_22.md
+    publisher: NATS
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 猜测JetStream发布URL失败；搜索到2.2正式发布资料和2019技术预览，打开官方2.2 release notes。
+  phase2_conditions:
+  - 需核定2020preview或显式改期映射；不把消息exactly once扩展为业务副作用一次。
+  record_path: reports/research-engineering-b.md

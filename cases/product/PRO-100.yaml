@@ -1,9 +1,9 @@
 id: PRO-100
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Shopify App Store（2009）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-100
@@ -35,3 +35,54 @@ planning:
     - 插件权限和数据
     - 收费或分发约定
     out_of_scope: 不把全部插件数量解释为留存因果
+research:
+  id: PRO-100
+  status: blocked
+  reason: 首发身份与单项插件用途已核，但规划需要的早期权限、数据及替代边界材料不足。
+  event: Shopify 2009-06-02 App Store 首发：BaseSync 商品同步需求
+  cutoff: 2009-06-02 首发后、商家选择 BaseSync 外部扩展前
+  initial_facts:
+  - id: I1
+    text: 首发清单列有 BaseSync，把商店商品同步到 Google Base；这是具体插件任务而非泛生态规模。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 首发宣布 app 可由开发者创建并出售，Shopify 管理 App Store 交易并向商家宣传新 app。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 公告解释用按需安装功能避免核心店铺软件过度臃肿；此为平台设计动机，未提供留存实验。
+    source_ids: *id001
+    availability: pre_decision
+  - id: E2
+    text: 首发还列出发票打印、评论和数字商品等 app，支持 API/App Store 实际发布的身份。
+    source_ids: *id001
+    availability: pre_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - 未取得 2009 BaseSync 的数据授权范围、撤销权限、数据可迁出条件和实际收费协议。
+  - 不能用当前 OAuth scopes/partner revenue share 倒推首发版。
+  sources:
+  - id: S1
+    url: https://www.shopify.com/news/shopify-launches-api-platform-and-app-store
+    publisher: Shopify
+    published_at: '2009-06-02'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+  attempts:
+  - 打开 2009 原始发布稿，核对 API beta、具体首发 app、交易管理与分发约定。
+  - 检索首发 app 历史，当前开发文档不能闭合 2009 插件数据/权限条件。
+  phase2_conditions:
+  - 保留单项 BaseSync 任务；补当时插件权限及退出数据前保持 blocked。
+  - 不得用全部插件数量或厂商动机直接推出留存因果。
+  record_path: reports/research-product-b.md

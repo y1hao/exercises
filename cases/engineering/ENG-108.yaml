@@ -1,9 +1,9 @@
 id: ENG-108
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Google Tail at Scale（2013）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-108
@@ -35,3 +35,40 @@ planning:
       question: 副本变慢相关而非独立时，hedging 的收益会怎样变化？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: ENG-108
+  status: blocked
+  reason: 只取得摘要，未读到完整尾延迟分布及额外请求工作量。 尚未应用备用问题，原数量主线保持 blocked。
+  event: The Tail at Scale 2013 论文
+  cutoff: 2013 paper snapshot 待取得正文
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 观察、当事人归因与维护者机制推断必须分开。
+  unknowns:
+  - 内部决策日和未公开指标未知。
+  - 官方摘要可读，但没有取得 hedged requests 的原文成本与实验分布。
+  sources:
+  - id: S1
+    url: https://research.google/pubs/the-tail-at-scale/
+    publisher: Google Research
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - Google 官方元数据页可读；archive/40801.pdf 失败；CACM下载与文章页返回403。
+  phase2_conditions:
+  - 数量题不补数字；待正文可用后按备用反事实问题处理相关慢副本。
+  record_path: reports/research-engineering-b.md
+  scope_decision:
+    id: ENG-108
+    input_status: insufficient_this_round
+    reason: 只取得摘要，未读到完整尾延迟分布及额外请求工作量。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: blocked
+  source_assessment_reason: 官方摘要可读，但没有取得 hedged requests 的原文成本与实验分布。

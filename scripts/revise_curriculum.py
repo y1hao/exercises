@@ -143,13 +143,13 @@ def prepare(root):
     states = Counter(r["revision_state"] for r in planning)
     report = [
         "# Phase 2 修订落实记录",
-        "本轮把初审意见落实为生产端的候选训练范围。原审核结论 164 accepted / 200 revise / 1 replace 保留，另以 revision_state 记录落实进度；两者都不表示来源或训练验收。Phase 3 尚未开始。",
+        "本轮把初审意见落实为生产端的候选训练范围。原审核结论 164 accepted / 200 revise / 1 replace 保留，另以 revision_state 记录落实进度；两者都不表示来源或训练验收。此为 Phase 2 规划快照；当前核源状态见 reports/source-verification.md。",
         "## 落实进度",
         table(["修订进度", "条数", "含义"], [[state, states[state], policy["revision_states"][state]] for state in REVISION_STATES]),
         "191 个历史修改项已各自明确一个拟研究节点、一个主要问题、一项输出、所需证据和排除范围；这些节点都是研究目标，日期、版本和事件身份未确认为事实。9 个设计修改项已明确合成前提和相关变化。ENG-157 只落实替换准入条件，未指定或声称找到真实替代事件。",
         "## 使用规则",
         "`curriculum/planning-2027.yaml` 是本轮完整规划汇总，每个候选 Brief 的 `planning` 与之同步。后续 Phase 3/4 以 planned_exercise 规定的范围研究和制作题目，candidate_material 仅用于原始追溯；不能再直接按原始多年综述扩写。",
-        "规划层不设置历史 as-of 日期、不填来源和真实结果；不生成 opening、evidence_pool 或完整评价协议。所有 365 条 status 均保持 candidate。需要改变训练状态、认知动作或实际换题时，应另行核实并记录映射。",
+        "规划层不设置历史 as-of 日期、不填来源和真实结果；不生成 opening、evidence_pool 或完整评价协议。Phase 2 结束时所有 365 条 status 均为 candidate；当前训练状态以索引为准。需要改变训练状态、认知动作或实际换题时，应另行核实并记录映射。",
         "## 39 条数量题的处理",
         "每题列出了所需输入、计算口径和缺数据时的具体替代问题。历史主线只用可追溯且事前可知的数字；允许透明的推导，不允许缺数字就补合成值。反事实合成数字必须明确切换且只属于附加练习。",
         "39 条仍保留原 quantitative-calibration 动作，fallback_applied 均为 false。只有核源证明输入不足后才手动采纳预设替代问题，并同步动作映射。",

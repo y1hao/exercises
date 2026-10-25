@@ -1,9 +1,9 @@
 id: PRO-025
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: YouTube 从视频约会设想转型（2005）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-025
@@ -35,3 +35,53 @@ planning:
     - 同期使用行为
     - 调整时序
     out_of_scope: 不把后来的创始人口述当同期日志
+research:
+  id: PRO-025
+  status: blocked
+  reason: 创始人回顾确认约会版本和放开上传，但缺同期用户行为与可靠时序；与预设的“用户上传别的内容引发转型”不一致。
+  event: YouTube 2005 约会版本转通用视频分享
+  cutoff: 2005 约会版本上线后一周（回忆中的窗口；不认定具体日）
+  initial_facts:
+  - id: F1
+    text: Steve Chen/Jawed Karim 在 Sequoia 访谈称第一版按约会场景随机展示视频并评分。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: Chen 回忆上线一周没有上传，而非先观察到大量非约会视频。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: Chen 表示放开各种视频上传后也没有立即加速增长。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 回忆称约五月上线；不能把这一日期与四月首视频不加解释地拼成精确时间线。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 仅有公开自报/文档描述；不把发布、相关性或后来的成功当成因果结论。
+  unknowns:
+  - 原版发布日、同期上传数据与转型触发的直接记录
+  sources:
+  - id: S1
+    url: https://sequoiacap.com/podcast/crucible-moments-youtube
+    publisher: Sequoia / Steve Chen、Jawed Karim 回顾访谈
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 阅读访谈 From Dating Site to Video Sharing Platform 与后续段落；官方 YouTube 周年文章检索只能确认注册和早期视频。
+  phase2_conditions: 不得使用“非约会上传已证明新用途”故事；需同期原始材料或明确批准修改训练证据口径。
+  record_path: reports/research-product.md

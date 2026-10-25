@@ -1,9 +1,9 @@
 id: ENG-135
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: npm event-stream 依赖劫持（2018）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-135
@@ -24,3 +24,56 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-135
+  status: sourced
+  reason: 直接来源支持所选artifact或事件，完整Case QA未执行。
+  event: npm event-stream2018依赖劫持
+  cutoff: 2018-11-26恶意包告警后的应对
+  initial_facts:
+  - id: I1
+    text: 新维护者给event-stream加入flatmap-stream依赖
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 恶意逻辑仅针对特定构建环境触发
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: npm移除flatmap-stream与event-stream3.3.6
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 发布构建过程会注入针对Copay的钱包恶意代码
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: npm接管包避免继续滥用；其公告引用Copay确认特定已发行版本受影响。
+    source_ids:
+    - S1
+  interpretation: 只允许依据已核查材料推演；推断需明示，不能写成实测史实。
+  unknowns:
+  - 未公开的完整工作量、精确内部决策过程未知。
+  sources:
+  - id: S1
+    url: https://blog.npmjs.org/post/180565383195/details-about-the-event-stream-incident
+    publisher: npm
+    published_at: '2018-11-27'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开npm官方技术分析全文。
+  phase2_conditions:
+  - 不推断所有安装者都泄露私钥；源中的Copay确认属明确转述。
+  record_path: reports/research-engineering-b.md

@@ -1,9 +1,9 @@
 id: PRO-088
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Figma 浏览器协作编辑定位（2012—2016）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-088
@@ -36,3 +36,64 @@ planning:
     - 设计协作任务
     - 同期需求材料
     out_of_scope: 不复用融资论点或多人数据模型机制
+research:
+  id: PRO-088
+  status: sourced
+  reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+  event: Figma 2015-12-03 Preview 后继续投入浏览器协作
+  cutoff: 2015-12-03 Preview 公开后、决定下一步协作需求验证前
+  initial_facts:
+  - id: I1
+    text: Preview 已提供链接分享、上下文反馈和共享品牌颜色；作者称曾内部 dogfood 18 个月并与 alpha 用户合作。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 设计师跨职能任务包括共享资产、改文案、给工程师标注；这是创始人对协作需求的判断，并非独立需求统计。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 2015 公告把 simultaneous multiplayer editing 与共享资产库列为 2016 计划，不能当当时已交付。
+    source_ids: *id001
+    availability: pre_decision
+  - id: E2
+    text: 2016-09-28 发布公告才确认实时多人编辑完成并向所有人开放注册。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    text: Preview 先交付分享与反馈；多人同时编辑于 2016 后续交付，二者必须分时点。
+    source_ids:
+    - S1
+    - S2
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - alpha 访谈原始记录、任务频率和付费意愿未知。
+  sources:
+  - id: S1
+    url: https://www.figma.com/blog/design-meet-the-internet/
+    publisher: Figma / Dylan Field
+    published_at: '2015-12-03'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - outcome
+  - id: S2
+    url: https://www.figma.com/blog/multiplayer-editing-in-figma/
+    publisher: Figma / Evan Wallace
+    published_at: '2016-09-28'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E2
+    - outcome
+  attempts:
+  - 打开 2015 Preview 及 2016 multiplayer 公告，逐段核对现有功能与未来计划。
+  phase2_conditions:
+  - 主问题限需求优先验证信号及拒绝条件；不复用融资或多人数据结构机制。
+  - 2016 结局不得进入 2015 首轮。
+  record_path: reports/research-product-b.md

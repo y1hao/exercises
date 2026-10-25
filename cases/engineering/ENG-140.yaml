@@ -1,9 +1,9 @@
 id: ENG-140
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Consul 多数据中心架构（2015）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-140
@@ -35,3 +35,31 @@ planning:
     - Raft 与 gossip 角色
     - 单次请求路径
     out_of_scope: 不把成员发现和数据共识当同一承诺
+research:
+  id: ENG-140
+  status: blocked
+  reason: 当前官方架构可证Raft角色，但尚无2015版本与单请求路径的原始材料。
+  event: Consul2015多数据中心架构候选
+  cutoff: 2015版本快照未取得
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 只允许依据已核查材料推演；推断需明示，不能写成实测史实。
+  unknowns:
+  - 未公开的完整工作量、精确内部决策过程未知。
+  - 当前官方架构可证Raft角色，但尚无2015版本与单请求路径的原始材料。
+  sources:
+  - id: S1
+    url: https://developer.hashicorp.com/consul/docs/architecture
+    publisher: HashiCorp
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 检索2015 WAN/Raft；尝试v0.6.0两种官方GitHub历史文档路径均Cache miss。
+  phase2_conditions:
+  - 不以当前WAN/LAN和新WAL后端倒推2015；需旧版文档确认跨DC写入边界。
+  record_path: reports/research-engineering-b.md

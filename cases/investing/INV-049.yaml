@@ -1,9 +1,9 @@
 id: INV-049
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Wix 2007—2008 Seed
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-049
@@ -47,3 +47,65 @@ planning:
       question: 什么客群或支付证据最能反驳把免费用户当市场规模？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: INV-049
+  status: blocked
+  reason: 网站总量或作者市场愿景不能等同可服务付费客群和支付意愿。 尚未应用备用问题，原数量主线保持 blocked。
+  event: Wix 2007-10-19 BVP 第二轮 seed 投资建议 memo
+  cutoff: 2007-10-19 memo 建议作出之前；memo 内估计和建议条款须标归属
+  initial_facts:
+  - id: I1
+    text: 原始 memo 署名 Adam Fisher，建议 BVP 投资 200 万美元第二轮 seed；这是建议文件而非签署交割证明。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 产品面向大众富媒体网页/组件创作，临近 closed beta；作者明确表示商业模式仍不确定。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: memo 把小企业网站列为目标用途，并讨论订阅、模板、广告等商业化选择；没有给出已观测的 Wix SMB 付费意愿。
+    source_ids: *id001
+    availability: pre_decision
+  - id: E2
+    text: memo 的网站数量和小企业数量是作者引用的市场断言；列举的 5.95 美元到数百美元月费是外部网站托管背景，不是 Wix 实测价格。
+    source_ids: *id001
+    availability: pre_decision
+  outcome:
+    text: 原始 memo 在承认商业模式不确定的同时推荐投资；能支持分析其论证缺口，不能凭其 TAM 断言形成独立市场验证。
+    source_ids:
+    - S1
+  interpretation: 维护者判断：富媒体创作用户、网站数与可付费 SMB 分母需要分离；不能把免费用户直接乘任意价格。
+  unknowns:
+  - 当时可服务的特定 SMB 分母、独立支付证据、转化率和服务边界不足。
+  - 本次未取得实际交割文件，memo 所载估值和所有权是提议条款。
+  sources:
+  - id: S1
+    url: https://www.bvp.com/memos/wix
+    publisher: Bessemer Venture Partners / Adam Fisher
+    published_at: '2007-10-19'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 阅读 BVP 原始 memo 的日期、deal、business model 与网站市场段落，区分推荐、估计和观察；网页重刊日期未知，published_at 使用原文日期。
+  phase2_conditions:
+  - 身份修正为 2007-10-19 第二轮 seed memo，不能写成泛 2008 seed。
+  - 数量输入不足，按规划应改为 evidence-selection，尚未修改 canonical focus；不得以 memo 市场断言冒充独立实测。
+  record_path: reports/research-investing-b.md
+  scope_decision:
+    id: INV-049
+    input_status: insufficient_this_round
+    reason: 网站总量或作者市场愿景不能等同可服务付费客群和支付意愿。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: blocked
+  source_assessment_reason: 原始 seed memo 已确认，但可服务 SMB 分母、独立支付证据和服务范围不足；quantitative 主线仍未满足，evidence-selection
+    尚未正式应用。

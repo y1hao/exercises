@@ -1,9 +1,9 @@
 id: INV-027
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: HelloFresh 2015—2017 融资
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-027
@@ -47,3 +47,38 @@ planning:
       question: 下一项哪种 cohort 证据能区分高频收入与可持续回本？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: INV-027
+  status: blocked
+  reason: 官方报表未提供已核实的同 cohort CAC、复购、贡献和损耗输入。 尚未应用备用问题，原数量主线保持 blocked。
+  event: HelloFresh 2017 资本窗口 cohort 回收
+  cutoff: 2017 上市窗口，精确截止日待核
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+  unknowns:
+  - 同 cohort CAC、订单贡献、损耗与回收窗口未齐。
+  sources:
+  - id: S1
+    url: https://ir.hellofreshgroup.com/media/document/75c35bcd-d012-41c4-ada3-a2955514dc16/assets/HelloFresh_FS_website_FINAL.pdf?disposition=inline
+    publisher: HelloFresh
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 打开官方 publications 页面并进入 2017 H1 财务报表；已确认 4 页报表可读，尚未取得所需 cohort 表。
+  phase2_conditions: 不能用 Blue Apron 或不同年份的数字填空。
+  record_path: reports/research-investing.md
+  scope_decision:
+    id: INV-027
+    input_status: insufficient_this_round
+    reason: 官方报表未提供已核实的同 cohort CAC、复购、贡献和损耗输入。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: blocked
+  source_assessment_reason: 官方 2017 中期财务报告可访问，但不足以取得拟选 cohort 的 CAC、复购、履约损耗和回收时序。

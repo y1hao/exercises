@@ -1,9 +1,9 @@
 id: PRO-015
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Etsy 手作卖家社区（2005—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-015
@@ -35,3 +35,53 @@ planning:
     - 供给约束
     - 交易闭环
     out_of_scope: 不把垂直社区本身当作护城河证明
+research:
+  id: PRO-015
+  status: blocked
+  reason: 2015 S-1 证实手作市场定位，未定位早期单一品类的供给约束和买方任务。
+  event: Etsy 手作卖家社区（2005—）
+  cutoff: 2005 起的特定品类决策未确定
+  initial_facts:
+  - id: F1
+    text: S-1 记载 Etsy 于 2005-06 在 Brooklyn 作为手作及 craft supplies 市场成立。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 2015 规则包含手作、vintage、craft supplies；不能回填初创全套规则。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: S-1 把独特商品和人与人的关系作为定位。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 全站 2014 GMS 不能证明早期单品类匹配优势。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1370637/000119312515077045/d806992ds1.htm
+    publisher: Etsy / SEC
+    published_at: '2015-03-04'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不把垂直社区本身当作护城河证明
+  record_path: reports/research-product.md

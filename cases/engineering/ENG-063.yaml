@@ -1,9 +1,9 @@
 id: ENG-063
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Rust async/await 稳定（2019）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-063
@@ -25,3 +25,61 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-06
+research:
+  id: ENG-063
+  status: blocked
+  reason: 2019 Rust稳定发布原文已读，足以证明lazy/poll；取消与资源释放的同版本语义未齐，保留原范围不自动缩成惰性常识题。
+  event: Rust async/await 稳定（2019）
+  cutoff: Rust1.39稳定的future创建/轮询模型；取消节点未锁定。
+  initial_facts:
+  - id: F1
+    text: async fn返回Future。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 单纯调用async fn不自动调度执行。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 文章例子通过await执行future。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: Rust使用poll模型，避免每个future都创建独立调度工作的开销。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 不能将drop自动等同远端操作回滚。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 取消时具体Future状态、Drop实现和资源释放来源。
+  sources:
+  - id: S1
+    url: https://blog.rust-lang.org/2019/11/07/Async-await-stable/
+    publisher: Rust / Niko Matsakis
+    published_at: '2019-11-07'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://blog.rust-lang.org/2019/11/07/Async-await-stable/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: Future 的惰性执行与任务轮询不同于线程时，预测取消与资源释放边界。
+  record_path: reports/research-engineering-a.md

@@ -1,9 +1,9 @@
 id: ENG-024
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Amazon Aurora 共享存储（2017）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-024
@@ -25,3 +25,63 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-024
+  status: sourced
+  reason: SIGMOD2017原论文经Amazon Science获取正文，支持日志/存储恢复契约。
+  event: Amazon Aurora 共享存储（2017）
+  cutoff: 论文设计快照、计算实例崩溃且共享存储仍有副本时。
+  initial_facts:
+  - id: F1
+    text: 实例生命周期与存储生命周期分离。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 每条数据在三个AZ各有两份副本。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 4/6写quorum与3/6读quorum用于副本恢复边界。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 计算节点推动redo到存储，恢复从存储确定可恢复日志界限。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 论文报告该架构支持快速崩溃恢复与无数据丢失的副本故障转移。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 性能/可用性结果属论文作者实验与设计保证，需保留故障假设。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 具体生产故障日志未公开，不编造恢复时长。
+  sources:
+  - id: S1
+    url: https://cdn.amazon.science/dc/2b/4ef2b89649f9a393d37d3e042f4e/amazon-aurora-design-considerations-for-high-throughput-cloud-native-relational-databases.pdf
+    publisher: Amazon / Verbitski et al.
+    published_at: '2017'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://cdn.amazon.science/dc/2b/4ef2b89649f9a393d37d3e042f4e/amazon-aurora-design-considerations-for-high-throughput-cloud-native-relational-databases.pdf
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 面对数据库实例故障与日志持久化，重建计算节点与分布式存储的恢复契约。
+  record_path: reports/research-engineering-a.md

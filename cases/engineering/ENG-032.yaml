@@ -1,9 +1,9 @@
 id: ENG-032
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Guix 构建隔离（2013）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-032
@@ -36,3 +36,38 @@ planning:
     - 可重建范围
     - 信任根说明
     out_of_scope: 不重复 Nix 未声明环境输入的诊断
+research:
+  id: ENG-032
+  status: blocked
+  reason: 尝试Guix2013官方引导文章不可达，未获得足够正文。
+  event: Guix 构建隔离（2013）
+  cutoff: 2013引导链设计候选，具体工件未读取。
+  initial_facts: []
+  evidence: []
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 不以重现hash推断引导链可信。
+    source_ids: []
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 尝试 https://guix.gnu.org/en/blog/2013/the-bootstrap-binaries/ 不可访问；需原始论文/存档引导说明。
+  sources: []
+  attempts:
+  - url: https://guix.gnu.org/en/blog/2013/the-bootstrap-binaries/
+    result: 不可访问，未取得正文
+  phase2_conditions:
+    planning_only: true
+    anchor_request: Guix 2013 候选引导链的一次可信性检查
+    anchor_status: unverified_research_target
+    main_question: 重建产物一致之后，还需要什么证据检验引导链可信？
+    expected_output: 一项检查及其仍不能证明的性质
+    evidence_to_verify:
+    - 引导依赖
+    - 可重建范围
+    - 信任根说明
+    out_of_scope: 不重复 Nix 未声明环境输入的诊断
+  record_path: reports/research-engineering-a.md

@@ -1,9 +1,9 @@
 id: ENG-040
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Cloudflare 2023 年 11 月控制面中断
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-040
@@ -26,3 +26,63 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - EV-02
+research:
+  id: ENG-040
+  status: sourced
+  reason: 2023-11独立官方复盘直接支持控制面/数据面故障域，与2024ENG011分开。
+  event: Cloudflare 2023 年 11 月控制面中断
+  cutoff: 2023-11-02控制面与analytics异常出现后、完整依赖梳理之前。
+  initial_facts:
+  - id: F1
+    text: 控制面包含客户网站/API与配置管理。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: analytics和日志服务也依赖Portland设施。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 供电问题导致关键设施不可用。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 网络/安全流量继续工作，但部分客户无法修改设置；DR恢复多数控制面早于全部服务恢复。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    id: O1
+    text: 事故至11月4日04:25UTC完成恢复，部分日志/数据集留缺口。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 持续服务与配置管理有不同故障域；不是所有数据都无损恢复。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 不把2024改善成效提前置入2023开场。
+  sources:
+  - id: S1
+    url: https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/
+    publisher: Cloudflare / Matthew Prince
+    published_at: '2023-11-04'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 数据中心供电故障令控制面不可用而部分数据面仍工作；判断故障域与依赖分层。
+  record_path: reports/research-engineering-a.md

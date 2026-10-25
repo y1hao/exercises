@@ -1,9 +1,9 @@
 id: PRO-054
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: GitHub Student Developer Pack（2014）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-054
@@ -24,3 +24,55 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: PRO-054
+  status: sourced
+  reason: 原始发布确认学生免费套装、成本定位与资格，能评估长期渠道。
+  event: GitHub Student Developer Pack 2014-10-07
+  cutoff: 2014-10-07 发布、未来职业转化未知
+  initial_facts:
+  - id: F1
+    text: 套装把合作伙伴开发工具免费提供学生。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 官方定位为降低真实工具成本并支持动手学习。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 公告列出Atom、云平台等工具，不能混用当下伙伴配额。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 发布前已有逾十万学生用免费GitHub；这是先前基线，非Pack效果。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 学生套装推出；未来付费与职业采用未在发布时证实。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://github.blog/developer-skills/career-growth/the-best-developer-tools-now-free-for-students/
+    publisher: GitHub / John Britton
+    published_at: '2014-10-07'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
+  record_path: reports/research-product.md

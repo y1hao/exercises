@@ -1,9 +1,9 @@
 id: ENG-130
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: YouTube 视频转码队列（2010s）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-130
@@ -35,3 +35,56 @@ planning:
     - 任务异质性
     - 延迟与预算目标
     out_of_scope: 不设计整个视频处理平台
+research:
+  id: ENG-130
+  status: sourced
+  reason: 直接资料可证事件或artifact；完整Case QA尚未执行。
+  event: YouTube2011 Hydra并行视频处理
+  cutoff: 2011提速设计；具体决策日未知
+  initial_facts:
+  - id: I1
+    text: 上传文件的尺寸、时长和分辨率在增加
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 用户等待视频可发布是优化目标
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 上传与处理可以重叠
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: Hydra把视频拆成小块并行处理再重组
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 工程师报告处理速度与短时间发布比例改善；没有披露完整调度成本或积压样本。
+    source_ids:
+    - S1
+  interpretation: 与真实史实分开标注机制推断；示例不得变成虚构事故。
+  unknowns:
+  - 未公开工作量、内部决策过程或具体故障日志未知。
+  sources:
+  - id: S1
+    url: https://blog.youtube/news-and-events/speed-thrills-tackling-youtube-video/
+    publisher: YouTube
+    published_at: '2011-02-14'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开当事工程师官方博客，核查Hydra与发布延迟。
+  phase2_conditions:
+  - 源支持降低等待的设计，若坚持具体队列优先级需补资料；不能编造预算或优先队列。
+  record_path: reports/research-engineering-b.md

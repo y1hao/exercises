@@ -1,9 +1,9 @@
 id: ENG-053
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Nx Affected Builds（2020—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-053
@@ -25,3 +25,61 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-02
+research:
+  id: ENG-053
+  status: blocked
+  reason: Nx现行v24 affected机制已经变化为task-based，无法直接用于原候选2020项目依赖图题。
+  event: Nx Affected Builds（2020—）
+  cutoff: 2020候选快照未锁定；本次已读v24页。
+  initial_facts:
+  - id: F1
+    text: 现行命令从Git变化文件识别工作。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 当前文档明确与Nx23及之前project-based affected不同。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 当前按任务inputs及下游输出依赖选择任务。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 忽略文件与lockfile规则也会改变集合。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 版本差异是具体阻塞；需历史project graph工件。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 2020版本文档、依赖图与一次改动集合。
+  sources:
+  - id: S1
+    url: https://nx.dev/docs/features/ci-features/affected
+    publisher: Nx
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://nx.dev/docs/features/ci-features/affected
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 在 Monorepo 中按依赖图选择受影响任务，分析图不完整时的漏构建风险。
+  record_path: reports/research-engineering-a.md

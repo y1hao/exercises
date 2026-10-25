@@ -1,9 +1,9 @@
 id: PRO-083
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: GitHub 开源贡献网络（2008—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-083
@@ -35,3 +35,60 @@ planning:
     - 贡献关系
     - 发现和复用路径
     out_of_scope: 不把开源人气或仓库数当护城河
+research:
+  id: PRO-083
+  status: blocked
+  reason: 2008协作功能与复用路径有同期原文，但未取得一次具体跨项目贡献关系闭环；功能存在不足以证明难迁移贡献网络。
+  event: GitHub 开源贡献网络（2008—）
+  cutoff: 2008-12 Fork Queue推出时
+  initial_facts:
+  - id: F1
+    text: 2008-02 PR可通知fork者拉取，或让其请求原作者拉取。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 2008-12 Fork Queue按用户列项目fork网络的commits。
+    source_ids:
+    - S2
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 可选提交cherry-pick到测试branch，报告成功/失败，并忽略不适用提交。
+    source_ids:
+    - S2
+    availability: post_decision
+  - id: E2
+    text: 官方建议本地fetch测试后再合并；网站操作不取代测试。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://github.blog/news-insights/the-library/oh-yeah-there-s-pull-requests-now/
+    publisher: GitHub / Chris Wanstrath
+    published_at: '2008-02-23'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+  - id: S2
+    url: https://github.blog/news-insights/the-library/the-fork-queue/
+    publisher: GitHub / Scott Chacon
+    published_at: '2008-12-16'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不把开源人气或仓库数当护城河
+  record_path: reports/research-product.md

@@ -1,9 +1,9 @@
 id: PRO-076
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Notion 数据库视图与关联（2018—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-076
@@ -35,3 +35,53 @@ planning:
     - 该任务对象关系
     - 上手路径
     out_of_scope: 不估没有数据的留存提升
+research:
+  id: PRO-076
+  status: blocked
+  reason: 当前帮助文档验证关系与上手路径，但未给历史版本日期，不能将当前默认单向/双向选项回填2018；单工作流仍缺可冻结的历史快照。
+  event: Notion 数据库视图与关联（2018—）
+  cutoff: 2018后某历史版本待核实
+  initial_facts:
+  - id: F1
+    text: 当前官方文档以客户表与购买物品表说明关系。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 当前关系属性让两个数据库的页面相连接。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 当前路径为新增属性、选Relation、选目标库并添加关系。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 当前默认单向，可切换对应双向关系；不代表早期同样默认。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.notion.com/help/relations-and-rollups
+    publisher: Notion
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不估没有数据的留存提升
+  record_path: reports/research-product.md

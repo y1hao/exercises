@@ -1,9 +1,9 @@
 id: PRO-024
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Sentry Developer Monitoring 商业化（2015—2021）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-024
@@ -35,3 +35,55 @@ planning:
     - 预算角色
     - 治理痛点的直接材料
     out_of_scope: 不总结六年商业化或照搬 SSO 万能答案
+research:
+  id: PRO-024
+  status: sourced
+  reason: 锁定 2017 Enterprise SAML 发布，直接列出管理员、身份治理和付费边界；实际采购收益未知。
+  event: Sentry 2017-12-05 Enterprise SAML SSO
+  cutoff: 2017-12-05 公布 Enterprise 身份集成功能时
+  initial_facts:
+  - id: F1
+    text: SAML 2.0 SSO 面向 Sentry Enterprise 组织。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 公告说明通过现有身份提供方进行成员管理。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 管理员可统一密码政策、访问记录、入职和撤销权限。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 公告给出配置步骤和 Enterprise 升级入口；不是已观察到的成交证据。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 治理能力被置于 Enterprise 套餐；可选择验证采购必要性的证据，不能宣称已识别真实预算持有人。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://blog.sentry.io/introducing-saml/
+    publisher: Sentry / Ryan Goldman
+    published_at: '2017-12-05'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不总结六年商业化或照搬 SSO 万能答案
+  record_path: reports/research-product.md

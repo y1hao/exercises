@@ -1,9 +1,9 @@
 id: PRO-033
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Snowflake Consumption Model（2014—2019）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-033
@@ -35,3 +35,22 @@ planning:
     - 同一客户用量路径
     - 预算约束
     out_of_scope: 不把消费增长无条件解释为 PMF
+research:
+  id: PRO-033
+  status: blocked
+  reason: 2020 S-1 正文超上限且没有 2014—2019 某客户的账单路径与预算，不能判断采用还是治理失效。
+  event: Snowflake Consumption Model（2014—2019）
+  cutoff: 指定客户用量窗口未确定
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources: []
+  attempts:
+  - 检索 Snowflake S-1 和消费模型；打开 SEC 原文件返回超4MB；后来的投资者演示不能替代早期客户路径。
+  phase2_conditions: 需真实客户同口径用量和预算证据；不凭公司收入上升归因。
+  record_path: reports/research-product.md

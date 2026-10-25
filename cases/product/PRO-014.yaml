@@ -1,9 +1,9 @@
 id: PRO-014
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Nintendo Wii 体感大众化战略（2006）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-014
@@ -24,3 +24,22 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: PRO-014
+  status: blocked
+  reason: 官方 Iwata Asks 主站 502，英国迁移 URL 只返回导航；尚未实际读到策略正文。
+  event: Nintendo Wii 体感大众化战略（2006）
+  cutoff: 2006 发布前策略点待核
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources: []
+  attempts:
+  - 检索 Iwata Asks Wii Hardware；原始 iwataasks.nintendo.com 返回 502；Nintendo UK Introduction 页面实际正文仅导航，未冒充读到访谈。
+  phase2_conditions: 需恢复官方访谈或可靠原始存档。
+  record_path: reports/research-product.md

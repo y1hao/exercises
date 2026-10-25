@@ -1,9 +1,9 @@
 id: ENG-114
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Gitpod 工作区快照（2020—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-114
@@ -35,3 +35,56 @@ planning:
     - 快照内容
     - 凭据与工作区隔离约定
     out_of_scope: 不设计全部远程开发计费和恢复系统
+research:
+  id: ENG-114
+  status: sourced
+  reason: 直接材料支持事件或artifact行为，完整训练未验收。
+  event: Gitpod Classic snapshot 分享规则
+  cutoff: 2026-10-25读取的Classic文档快照；不能倒推2020首发
+  initial_facts:
+  - id: I1
+    text: snapshot是工作区某时点状态
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 跟随snapshot链接会在跟随者账户开启新workspace
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 文档明确分享敏感信息需谨慎
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 怀疑凭据泄漏时建议旋转凭据
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: snapshot复用提供可复现场景，但不会自动清除分享内容中的敏感信息。
+    source_ids:
+    - S1
+  interpretation: 来源描述与我们的推论分开；不能以当前文档倒推早年版本。
+  unknowns:
+  - 精确决策日及未公开观测未知。
+  sources:
+  - id: S1
+    url: https://ona.com/docs/classic/user/configure/workspaces/collaboration
+    publisher: Gitpod / Ona
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索Gitpod snapshot；官方旧链接重定向至Ona Classic文档并读取。
+  phase2_conditions:
+  - 2020—开放区间内可保留Classic artifact，Phase4必须固定文档/源码版本和snapshot内容，不能断言2020凭据处理。
+  record_path: reports/research-engineering-b.md

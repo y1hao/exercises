@@ -1,9 +1,9 @@
 id: INV-051
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Dropbox 2015—2018 上市前投资
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-051
@@ -47,3 +47,65 @@ planning:
       question: 除自建存储成本外，哪项套餐或客户结构数据最能解释毛利变化？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: INV-051
+  status: blocked
+  reason: 申报总体毛利不能分解个人和团队业务的完整归属成本。 尚未应用备用问题，原数量主线保持 blocked。
+  event: Dropbox 2018-02-23 S-1：客户/套餐与公司毛利口径
+  cutoff: 2018-02-23 S-1 公开后、IPO 定价之前
+  initial_facts:
+  - id: I1
+    text: 2017 付费用户 1100 万，口径是付费许可证/用户，单人可能有多个账户；不是 1100 万企业合同。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 2017 ARPU 为 111.91 美元；公司将同比增加归因于较高价套餐组合，包括 Business Advanced，但未披露独立结构贡献。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 2016/2017 公司收入 8.448/11.068 亿美元，毛利率 54%/67%；这是汇总口径。
+    source_ids: *id001
+    availability: pre_decision
+  - id: E2
+    text: 公司说明 2017 成本下降含基础设施优化，仍没有个人/团队套餐收入及可归属成本分解。
+    source_ids: *id001
+    availability: pre_decision
+  outcome:
+    text: 公司毛利改善与较高价格套餐组合同时见于 S-1；不能从合并毛利表唯一解出套餐结构贡献。
+    source_ids:
+    - S1
+  interpretation: 训练应追问独立客户和套餐数据，不再次用 ENG-150 的存储成本数字作为答案。
+  unknowns:
+  - 个人与团队各自收入、合同折扣、活跃席位及相应服务成本未取得。
+  - 企业计划价格变化、客户规模与基础设施成本的交互贡献无法由汇总表识别。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1467623/000119312518055809/d451946ds1.htm
+    publisher: Dropbox / SEC
+    published_at: '2018-02-23'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 阅读首份 S-1，核对付费用户定义、ARPU、收入成本表及 2017 成本变动说明。
+  phase2_conditions:
+  - 按批准规划应降为 evidence-selection，尚未修改 canonical focus；量化拆分的缺口须显式保留。
+  - 与 ENG-150 区分：主问题限定个人/团队和套餐结构，不重复自建存储阈值。
+  record_path: reports/research-investing-b.md
+  scope_decision:
+    id: INV-051
+    input_status: insufficient_this_round
+    reason: 申报总体毛利不能分解个人和团队业务的完整归属成本。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: blocked
+  source_assessment_reason: S-1 已核，但个人/团队套餐收入和可归属成本未取得，无法量算独立结构贡献；quantitative 主线仍未满足，evidence-selection
+    尚未正式应用。

@@ -1,9 +1,9 @@
 id: ENG-036
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Linux CFS 调度器（2007）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-036
@@ -24,3 +24,63 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-036
+  status: sourced
+  reason: Linux原始CFS设计说明明确2.6.23及vruntime调度逻辑。
+  event: Linux CFS 调度器（2007）
+  cutoff: Linux2.6.23 CFS设计模型，runnable任务选取之前。
+  initial_facts:
+  - id: F1
+    text: 真实CPU一次只能运行有限任务，CFS用理想等分CPU作模型。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 每任务记录归一化虚拟运行时间。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 选择最小vruntime的可运行任务。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 时间排序红黑树维护任务，nice权重及唤醒规则影响细节。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 任务执行增加vruntime，使其他任务随后得到CPU机会。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 这是公平模型，不是所有任务响应时延相等。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 不混入后来的EEVDF；确切文档发布日期未知。
+  sources:
+  - id: S1
+    url: https://www.kernel.org/doc/Documentation/scheduler/sched-design-CFS.txt
+    publisher: Linux kernel / Ingo Molnar
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://www.kernel.org/doc/Documentation/scheduler/sched-design-CFS.txt
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 负载不均的 CPU 任务争用下，推导 vruntime 如何影响公平与延迟。
+  record_path: reports/research-engineering-a.md

@@ -1,9 +1,9 @@
 id: PRO-043
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Atlassian Jira 自助购买（2000s）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-043
@@ -35,3 +35,22 @@ planning:
     - 审批和安全要求
     - 组织条件
     out_of_scope: 不估无来源销售成本或评价全部销售策略
+research:
+  id: PRO-043
+  status: blocked
+  reason: 定位2015 F-1自助销售披露但原文超读取上限，且不能填补2000s具体审批/安全购买场景。
+  event: Atlassian Jira 自助购买（2000s）
+  cutoff: 2000s 某采购约束尚未锁定
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources: []
+  attempts:
+  - 检索 Atlassian 2015 F-1；尝试读取 SEC filename1.htm 返回超4MB；未把搜索摘要的97%网站成交当同期2000s情境。
+  phase2_conditions: 不估无来源销售成本或评价全部销售策略
+  record_path: reports/research-product.md

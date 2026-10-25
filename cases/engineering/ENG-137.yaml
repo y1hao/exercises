@@ -1,9 +1,9 @@
 id: ENG-137
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Linux epoll（2002）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-137
@@ -45,3 +45,40 @@ planning:
       question: 就绪连接占比变大时，通知机制的相对收益会怎样变化？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: ENG-137
+  status: blocked
+  reason: 缺 2002 接口快照及同口径连接数、就绪事件与性能测量。 尚未应用备用问题，原数量主线保持 blocked。
+  event: Linux epoll2002候选
+  cutoff: 2002接口与性能比较未核完整
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 只允许依据已核查材料推演；推断需明示，不能写成实测史实。
+  unknowns:
+  - 未公开的完整工作量、精确内部决策过程未知。
+  - 当前man page可读但没有本题所需2002版本与同口径连接/就绪性能材料。
+  sources:
+  - id: S1
+    url: https://man7.org/linux/man-pages/man7/epoll.7.html
+    publisher: Linux man-pages
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 读取man7手册；检索作者2001/2002 nio-improve原页并尝试打开，返回502；不据当前接口倒推旧版复杂度。
+  phase2_conditions:
+  - 数量题优先备用prediction-counterfactual；仍需原始接口成本说明，不编造benchmark。
+  record_path: reports/research-engineering-b.md
+  scope_decision:
+    id: ENG-137
+    input_status: insufficient_this_round
+    reason: 缺 2002 接口快照及同口径连接数、就绪事件与性能测量。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: blocked
+  source_assessment_reason: 当前man page可读但没有本题所需2002版本与同口径连接/就绪性能材料。

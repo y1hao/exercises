@@ -1,9 +1,9 @@
 id: INV-001
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: Arm 2023 IPO 估值
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-001
@@ -47,3 +47,75 @@ planning:
       question: 缺少哪项价格或股本信息会使投资判断最不可靠？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: INV-001
+  status: sourced
+  reason: 已读取官方 F-1、路演与定价公告，能区分价格区间、业务数据与最终发行价。
+  event: Arm 2023 IPO 定价前的业务和股本评估
+  cutoff: 2023-09-05 路演公告之后、9 月 13 日最终定价公告之前；最终价不得开场给出。
+  initial_facts:
+  - id: F1
+    text: 业务收入区分授权及其他收入与版税收入。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 路演给出每 ADS 47 至 51 美元区间，出售方是 SoftBank 全资主体。
+    source_ids:
+    - S2
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: F-1 披露截至 2023 年 6 月的已发行普通股为 1025234000 股，估值时须区分股本与出售数量。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: F-1 对 2023 年 6 月季度的版税收入减少与授权收入变化分别说明。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    text: 9 月 13 日公告最终每 ADS 定价 51 美元，初始出售 9550 万 ADS。
+    source_ids:
+    - S3
+  interpretation: 发行价是定价事实，不证明内在价值或事前决策最优。
+  unknowns:
+  - 未来增长、折现率与个人可获得的分配价格不能由发行公告确定。
+  sources:
+  - id: S1
+    url: https://investors.arm.com/static-files/7c8dbdc5-414a-4092-8ca3-69858726618e
+    publisher: Arm
+    published_at: '2023-08-21'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - E1
+    - E2
+  - id: S2
+    url: https://newsroom.arm.com/news/arm-announces-launch-of-ipo-roadshow
+    publisher: Arm
+    published_at: '2023-09-05'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F2
+  - id: S3
+    url: https://newsroom.arm.com/news/arm-announces-pricing-of-initial-public-offering
+    publisher: Arm
+    published_at: '2023-09-13'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - outcome
+  attempts:
+  - 官方 HTML 大文档读取失败，改用已打开的官方 PDF；另读取路演及定价正文。
+  phase2_conditions: 计算只使用公开价格、股本与已披露业务口径；不补造估值参数。
+  record_path: reports/research-investing.md
+  scope_decision:
+    id: INV-001
+    input_status: sufficient_for_scoped_comparison
+    reason: 已读取公开事前价格区间、股本和业务分项；只能做有明确口径的区间比较，不推定折现率。
+    fallback_applied: false
+    decision_path: curriculum/source-decisions-2027.yaml

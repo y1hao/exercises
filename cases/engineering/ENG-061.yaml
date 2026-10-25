@@ -1,9 +1,9 @@
 id: ENG-061
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Cloudflare 2024 年 6 月 DDoS 规则事故
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-061
@@ -36,3 +36,72 @@ planning:
     - 规则生效时序
     - 受影响请求范围
     out_of_scope: 不预先把保护误伤当作真实原因
+research:
+  id: ENG-061
+  status: sourced
+  reason: 2024-06-20复盘明确两个连续事件；只取第二个DDoS规则触发率限bug，避免混同首个拥塞。
+  event: Cloudflare 2024 年 6 月 DDoS 规则事故
+  cutoff: 2024-06-20 17:47后第二事件初期，观测异常、尚未知规则触发bug。
+  initial_facts:
+  - id: F1
+    text: 该日曾有先后两个事件，第二个发生于新DDoS规则逐步部署之后。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 请求错误与CPU、TTFB退化可作调查输入。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 规则通过cookie及rate limit组合触发legacy组件意外调用路径。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 请求进程进入无限循环；重启改善，关闭规则及修复Traffic Manager恢复服务。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    id: O1
+    text: 第二事件经滚动重启和禁用规则缓解，复盘未发现蓄意利用或入侵证据。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 并非普通误拦截；应允许流量/策略/源站三个假说再用观测区分。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 所有错误率有各自分母，不能把回源5xx与本服务不可用混用。
+  sources:
+  - id: S1
+    url: https://blog.cloudflare.com/cloudflare-incident-on-june-20-2024/
+    publisher: Cloudflare
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://blog.cloudflare.com/cloudflare-incident-on-june-20-2024/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: 2024 年 6 月 DDoS 规则候选，事件身份待核
+    anchor_status: unverified_research_target
+    main_question: 下一项什么观测能区分恶意流量、误伤与回源故障？
+    expected_output: 选择一项可同时区分三种解释的观测
+    evidence_to_verify:
+    - 独立复盘
+    - 规则生效时序
+    - 受影响请求范围
+    out_of_scope: 不预先把保护误伤当作真实原因
+  record_path: reports/research-engineering-a.md

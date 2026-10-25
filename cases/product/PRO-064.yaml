@@ -1,9 +1,9 @@
 id: PRO-064
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Spotify 广告免费与 Premium 并存（2008—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-064
@@ -46,3 +46,64 @@ planning:
       question: 免费覆盖何时不能转为可持续的付费经济性？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: PRO-064
+  status: blocked
+  reason: 分部经济性可核，缺可归属成本和同一转化口径来回答原数量问题。 尚未应用备用问题，原数量主线保持 blocked。
+  event: Spotify 2017广告免费与Premium经济性
+  cutoff: 2018-02-28 公开2017财报后、定性经济性判断前
+  initial_facts:
+  - id: F1
+    text: 广告免费与Premium两服务并行。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 公司称自2014-02追踪以来超过60%新增Premium来自广告免费服务；不是免费用户转化率。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 2017广告分部毛利率10%，2016为负12%，披露主要受授权协议影响。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 版权和流媒体交付成本随免费MAU增加；毛利未包含全部经营费用。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 广告分部2017由负毛利转正；不能推出每个免费用户可持续盈利。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1639920/000119312518063434/d494294df1.htm
+    publisher: Spotify / SEC
+    published_at: '2018-02-28'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 建议采用预设的boundary-transfer备用问题（尚未改变focus）；若后续恢复数量题，需匹配收入、用户期均分母及完整许可成本，不把60%当转化率。
+  record_path: reports/research-product.md
+  scope_decision:
+    id: PRO-064
+    input_status: insufficient_this_round
+    reason: 分部经济性可核，缺可归属成本和同一转化口径来回答原数量问题。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: sourced
+  source_assessment_reason: 2018 F-1有免费/付费双层及2015—17分部经济性，可做边界判断；无单cohort完全成本与转化反事实。

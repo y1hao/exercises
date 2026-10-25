@@ -1,9 +1,9 @@
 id: ENG-041
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Google Bigtable（2006）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-041
@@ -24,3 +24,63 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-041
+  status: sourced
+  reason: Bigtable2006原论文直接支持有序行键、tablet切分与局部热点推演。
+  event: Google Bigtable（2006）
+  cutoff: 论文设计模型，选择row key及tablet负载分布之前。
+  initial_facts:
+  - id: F1
+    text: 数据模型为稀疏多版本映射。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 行按row key字典序保存。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 连续行范围组成tablet，是分布与负载均衡单位。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 表增长会自动切分tablet；扫描相邻键可降低RPC数。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 有序局部性使范围扫描有效，但热键/热范围不能仅靠全局节点数消除。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 热点结论为依据分片单位的维护者推演，非论文报告的具体事故。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 不编造真实热键指标。
+  sources:
+  - id: S1
+    url: https://research.google.com/archive/bigtable-osdi06.pdf
+    publisher: Google / Chang et al.
+    published_at: '2006'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://research.google.com/archive/bigtable-osdi06.pdf
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 大规模稀疏宽表如何实现有序键扫描，分析 tablet 切分与单点热点。
+  record_path: reports/research-engineering-a.md

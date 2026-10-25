@@ -1,9 +1,9 @@
 id: ENG-101
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Uber Schemaless（2016）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-101
@@ -35,3 +35,56 @@ planning:
     - 访问路径
     - schema 演进责任
     out_of_scope: 不总结 Uber 整个存储技术栈
+research:
+  id: ENG-101
+  status: sourced
+  reason: 一手直接材料可核查事件或发布行为，尚未Case QA。
+  event: Uber Schemaless 2016 架构文章
+  cutoff: 2016 文档中的实体与访问路径选择
+  initial_facts:
+  - id: I1
+    text: 基本实体是以 row/column/ref key 定位的不可变 cell
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: cell 保存 JSON，系统不强制对象 schema
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 更新通过写更高 ref key 的新版本完成
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 二级索引是最终一致的
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: MySQL 作为底层存储，弱 schema 不消除应用的演进责任。
+    source_ids:
+    - S1
+  interpretation: 观察、当事人归因与维护者机制推断必须分开。
+  unknowns:
+  - 内部决策日和未公开指标未知。
+  sources:
+  - id: S1
+    url: https://www.uber.com/gb/en/blog/schemaless-part-two-architecture/
+    publisher: Uber
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开架构原文 cell、索引与工作节点章节。
+  phase2_conditions:
+  - 不把弱 schema 等同无数据契约；只比较一类字段变化。
+  record_path: reports/research-engineering-b.md

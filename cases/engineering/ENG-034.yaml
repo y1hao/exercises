@@ -1,9 +1,9 @@
 id: ENG-034
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Meltdown（2018）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-034
@@ -36,3 +36,70 @@ planning:
     - 缓解范围
     - 同口径性能观察
     out_of_scope: 不精算无来源成本或混用 Spectre 条件
+research:
+  id: ENG-034
+  status: blocked
+  reason: Meltdown原论文已读，攻击/隔离有直接证据；规划指定单一负载的同口径性能代价未取得。
+  event: Meltdown（2018）
+  cutoff: 2018缓解评估时，具体服务负载未锁定。
+  initial_facts:
+  - id: F1
+    text: 内核地址在架构上禁止用户访问。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 乱序执行可产生随后回滚指令的副作用。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 论文展示通过微架构通道观察内核信息。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: KAISER/KPTI通过减少用户地址空间内核映射缓解Meltdown，不能因此消除Spectre。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 攻击可行性不是任意业务负载的成本数据。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 同一负载开关隔离前后指标及服务安全/性能约束。
+  sources:
+  - id: S1
+    url: https://meltdownattack.com/meltdown.pdf
+    publisher: Lipp et al. / original researchers
+    published_at: '2018'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://meltdownattack.com/meltdown.pdf
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: Meltdown 2018 候选缓解决策中的一类负载
+    anchor_status: unverified_research_target
+    main_question: 对这类负载，是否接受所需隔离的性能代价？
+    expected_output: 一项缓解决定及边界负载
+    evidence_to_verify:
+    - 攻击前提
+    - 缓解范围
+    - 同口径性能观察
+    out_of_scope: 不精算无来源成本或混用 Spectre 条件
+  record_path: reports/research-engineering-a.md

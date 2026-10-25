@@ -1,9 +1,9 @@
 id: ENG-096
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Twitter 2012—2014 时间线扇出
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-096
@@ -24,3 +24,31 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-096
+  status: blocked
+  reason: 页面确认当事人演讲存在，但本轮未取得可核查明星账号混合扇出的正文。
+  event: Twitter 2013 Timelines at Scale 演讲
+  cutoff: 2012—2014 候选，待取得讲稿正文
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制推演须与来源中的观察和当事人归因分别标记。
+  unknowns:
+  - 未公开的实际决策过程和完整工作量未知。
+  - 页面确认当事人演讲存在，但本轮未取得可核查明星账号混合扇出的正文。
+  sources:
+  - id: S1
+    url: https://www.infoq.com/presentations/Twitter-Timeline-Scalability/
+    publisher: InfoQ / Raffi Krikorian
+    published_at: '2013-04-03'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 搜索演讲与幻灯片；打开 InfoQ 仅有视频播放器、概要和讲者信息；搜索到转述未当作验证。
+  phase2_conditions:
+  - 需取得当事人幻灯片/可核对讲稿，确认 fanout-on-read 具体历史边界。
+  record_path: reports/research-engineering-b.md

@@ -1,9 +1,9 @@
 id: ENG-141
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Tree-sitter 增量解析（2018）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-141
@@ -36,3 +36,56 @@ planning:
     - 编辑前后片段
     - 树复用与恢复规则
     out_of_scope: 不做没有字符或节点输入的性能精算
+research:
+  id: ENG-141
+  status: sourced
+  reason: 直接来源支持所选artifact或事件，完整Case QA未执行。
+  event: Atom1.32 Tree-sitter发布
+  cutoff: 2018-10-31局部编辑反馈判断
+  initial_facts:
+  - id: I1
+    text: 语法高亮和折叠依赖代码结构
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 整文件解析会延迟编辑反馈
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: Tree-sitter随编辑增量更新语法树
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: Atom1.32默认采用新解析体系
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 发布文记录增量解析带来的编辑功能；未提供本题精确节点或字符更新成本。
+    source_ids:
+    - S1
+  interpretation: 只允许依据已核查材料推演；推断需明示，不能写成实测史实。
+  unknowns:
+  - 未公开的完整工作量、精确内部决策过程未知。
+  sources:
+  - id: S1
+    url: https://github.blog/news-insights/product-news/atoms-new-parsing-system/
+    publisher: GitHub
+    published_at: '2018-10-31'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开2018官方文章并核对Speed与功能段落。
+  phase2_conditions:
+  - 主线应为更新范围预测；精确错误恢复和节点复用仍需固定版本代码，不使用虚构性能数。
+  record_path: reports/research-engineering-b.md

@@ -1,9 +1,9 @@
 id: PRO-086
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: TikTok For You 默认推荐流（2018—2020）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-086
@@ -35,3 +35,53 @@ planning:
     - 首轮可知输入
     - 分群或行为材料
     out_of_scope: 不以之后全站使用时长证明初期因果
+research:
+  id: PRO-086
+  status: blocked
+  reason: 2020官方解释验证无关注图的新用户输入和推荐流程，但未取得首轮分群/行为比较，不能用全站主要停留在For You替代冷启动假说证据。
+  event: TikTok For You 默认推荐流（2018—2020）
+  cutoff: 2020-06-18公开说明的产品快照
+  initial_facts:
+  - id: F1
+    text: 打开TikTok落入For You；新用户可选择宠物、旅行等兴趣类别。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 不选择类别时先给通用热门视频；首轮点赞、评论、重播开始个性化。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 完成较长视频比国家相同等弱信号权重更高，关注也能影响推荐。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 官方称For You是多数用户停留的地方；未给新用户关系图条件实验。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://newsroom.tiktok.com/how-tiktok-recommends-videos-for-you?lang=en
+    publisher: TikTok
+    published_at: '2020-06-18'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不以之后全站使用时长证明初期因果
+  record_path: reports/research-product.md

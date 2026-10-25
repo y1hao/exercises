@@ -1,9 +1,9 @@
 id: PRO-023
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: OpenTable 餐厅端库存系统（1998—2000）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-023
@@ -24,3 +24,53 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: PRO-023
+  status: blocked
+  reason: 2009 S-1 说明 ERB 与实时市场如何连接，但未确证 1998—2000 具体版本/先后决策。
+  event: OpenTable 餐厅端库存系统（1998—2000）
+  cutoff: 1998—2000 安装餐厅软件到开放市场的节点未锁定
+  initial_facts:
+  - id: F1
+    text: 2009 S-1 描述 ERB 替代纸质预订，支持现场运营。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 网站连接 ERB 可用库存，线上预约直接写入餐厅系统。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 餐厅收费包含安装、月费和每位线上就座客费用，食客免费。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 公司称逐家销售餐厅软件建立本地库存临界规模；此描述是 2009 版本。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1125914/000104746909000513/a2190140zs-1.htm
+    publisher: OpenTable / SEC
+    published_at: '2009-01-30'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
+  record_path: reports/research-product.md

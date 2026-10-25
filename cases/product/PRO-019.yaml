@@ -1,9 +1,9 @@
 id: PRO-019
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: AWS Lambda 按调用与执行时间计费（2014）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-019
@@ -45,3 +45,64 @@ planning:
       question: 按调用收费把哪种费用风险转给了客户？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: PRO-019
+  status: blocked
+  reason: 有发布时计价规则，但缺同一有来源工作负载的调用与执行时间。 尚未应用备用问题，原数量主线保持 blocked。
+  event: AWS Lambda 2014-11-13 Preview 计费
+  cutoff: 2014-11-13 公告已知、工作负载选择前
+  initial_facts:
+  - id: F1
+    text: Lambda 由事件触发代码，AWS 管理计算资源。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 按请求及执行计算时间计费，时间以 100ms 为单位。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 公告列出图片上传、应用活动等触发。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 自动弹性并未移除请求数、运行时间变化带来的账单风险。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 按用量的 Preview 服务推出；未取得同一真实工作负载，不能制作历史账单。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://aws.amazon.com/about-aws/whats-new/2014/11/13/introducing-aws-lambda/
+    publisher: AWS
+    published_at: '2014-11-13'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: quantitative_plan fallback 应显式切到 boundary-transfer：按调用收费把哪种费用风险转给客户；不得补负载或发明账单。
+  record_path: reports/research-product.md
+  scope_decision:
+    id: PRO-019
+    input_status: insufficient_this_round
+    reason: 有发布时计价规则，但缺同一有来源工作负载的调用与执行时间。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: sourced
+  source_assessment_reason: 2014 发布直接确认按请求与执行时间收费；负载数据未取得，建议采用预设的风险迁移备用问题，尚未修改focus或认定正式应用。

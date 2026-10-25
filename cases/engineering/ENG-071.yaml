@@ -1,9 +1,9 @@
 id: ENG-071
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Crossplane Compositions（2020—2023）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-071
@@ -36,3 +36,71 @@ planning:
     - composition 示例
     - 暴露字段与底层映射
     out_of_scope: 不重新设计 DES-001 的完整资源 API
+research:
+  id: ENG-071
+  status: blocked
+  reason: Crossplane Accepted设计正文已读，但该文显式说明部署术语/实现已演变，历史版本合同未锁定，v1.13 tag尝试失败。
+  event: Crossplane Compositions（2020—2023）
+  cutoff: 2020–2023中一次Composition输入输出契约快照待锁定。
+  initial_facts:
+  - id: F1
+    text: 设计目标是将应用需求映射到底层managed resources。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 面向使用者只暴露配置子集。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 原设计示例将底层admin-username映射为对外username连接字段。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 文首说明InfrastructureDefinition/ApplicationDefinition未按原样构建，后来采用CompositeResourceDefinition。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 不能将Accepted文档全部示例当成实际发布API。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - https://raw.githubusercontent.com/crossplane/crossplane/v1.13.0/design/design-doc-composition.md cache
+    miss；需可读tag文档或真实Composition/XRD示例。
+  sources:
+  - id: S1
+    url: https://github.com/crossplane/crossplane/blob/main/design/design-doc-composition.md
+    publisher: Crossplane / Nic Cope
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://github.com/crossplane/crossplane/blob/main/design/design-doc-composition.md
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: 一版 Crossplane Composition 的一个输入输出契约
+    anchor_status: unverified_research_target
+    main_question: 底层云对象变化后，平台使用方哪些字段仍应稳定？
+    expected_output: 一个稳定接口边界与不可隐藏的条件
+    evidence_to_verify:
+    - 版本
+    - composition 示例
+    - 暴露字段与底层映射
+    out_of_scope: 不重新设计 DES-001 的完整资源 API
+  record_path: reports/research-engineering-a.md

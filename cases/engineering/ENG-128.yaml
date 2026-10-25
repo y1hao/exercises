@@ -1,9 +1,9 @@
 id: ENG-128
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: TimescaleDB Hypertables（2017）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-128
@@ -45,3 +45,40 @@ planning:
       question: 查询窗口跨过更多 chunk 后，扫描路径会怎样变化？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: ENG-128
+  status: blocked
+  reason: 当前文档含后续架构，无法确认 2017 同窗口数据及版本。 尚未应用备用问题，原数量主线保持 blocked。
+  event: TimescaleDB2017 hypertables候选
+  cutoff: 2017快照待取得
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 与真实史实分开标注机制推断；示例不得变成虚构事故。
+  unknowns:
+  - 未公开工作量、内部决策过程或具体故障日志未知。
+  - 已找到官方架构说明但包含后续压缩和多节点内容，不能确认2017查询窗口的版本行为。
+  sources:
+  - id: S1
+    url: https://github.com/timescale/docs.timescale.com-content/blob/master/introduction/architecture.md
+    publisher: Timescale
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 检索2017架构、尝试原论文和TigerData重定向均失败；0.5.0 README路径读取失败；当前说明只作后续研究入口。
+  phase2_conditions:
+  - 数量题不得补数据；获得历史版本后使用prediction-counterfactual备用，需明确chunk规则。
+  record_path: reports/research-engineering-b.md
+  scope_decision:
+    id: ENG-128
+    input_status: insufficient_this_round
+    reason: 当前文档含后续架构，无法确认 2017 同窗口数据及版本。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: blocked
+  source_assessment_reason: 已找到官方架构说明但包含后续压缩和多节点内容，不能确认2017查询窗口的版本行为。

@@ -1,9 +1,9 @@
 id: ENG-126
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: TiDB Percolator 模型（2016）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-126
@@ -25,3 +25,31 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-05
+research:
+  id: ENG-126
+  status: blocked
+  reason: 官方深度文档可证primary/secondary锁恢复机制，但未证其内容在2016版本的具体状态。
+  event: TiDB2016 Percolator候选
+  cutoff: 2016具体版本尚未核定
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 与真实史实分开标注机制推断；示例不得变成虚构事故。
+  unknowns:
+  - 未公开工作量、内部决策过程或具体故障日志未知。
+  - 官方深度文档可证primary/secondary锁恢复机制，但未证其内容在2016版本的具体状态。
+  sources:
+  - id: S1
+    url: https://tikv.github.io/deep-dive-tikv/distributed-transaction/percolator.html
+    publisher: TiKV
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 打开TiKV Percolator文档读完整prewrite/commit/crash章节；2017 PingCAP历史文章读取失败。
+  phase2_conditions:
+  - 需定位2016代码/文档快照；不将当前或未标日期文档当作2016真实执行。
+  record_path: reports/research-engineering-b.md

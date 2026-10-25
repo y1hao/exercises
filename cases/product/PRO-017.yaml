@@ -1,9 +1,9 @@
 id: PRO-017
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Slack 从游戏内聊天转型（2012—2013）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-017
@@ -24,3 +24,56 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: PRO-017
+  status: sourced
+  reason: 创始人回顾提供内部工具对外试用和团队规模差异的直接观察，足以测试 dogfooding 迁移边界。
+  event: Slack 2013 预览前邀请外部团队试用
+  cutoff: 最初几个朋友团队已同意试用，尚未扩到Rdio更大团队；具体日未知
+  initial_facts:
+  - id: F1
+    text: Butterfield 回顾最初靠内部团队验证工具。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 团队向朋友公司请求试用，包含 Cozy、Rdio。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 他称初期邀请约六至十家公司。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: Rdio 从前端小组扩展到工程组及约 120 人，公司观察到大团队体验问题并修改产品。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 据创始人回顾，外部规模差异促使产品修改，2013-08 发布 preview；回顾不能证明所有企业均适用。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  - 若来源为事后回顾，仅确认其明确记载的当时已知观察或已实施规则；不把后续效果当作事前可知。
+  sources:
+  - id: S1
+    url: https://review.firstround.com/from-0-to-1b-slacks-founder-shares-their-epic-launch-strategy/
+    publisher: First Round Review / Stewart Butterfield 访谈
+    published_at: '2015-02-26'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
+  record_path: reports/research-product.md

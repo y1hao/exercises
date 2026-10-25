@@ -1,9 +1,9 @@
 id: INV-004
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: Shopify 2010 Series A
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-004
@@ -25,3 +25,55 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: INV-004
+  status: sourced
+  reason: 直接投资备忘录包含同期客户、MRR、现金和拟议条款，可支持尽调证据选择。
+  event: Shopify 2010 Series A 投资建议
+  cutoff: '2010-10-12'
+  initial_facts:
+  - id: F1
+    text: 备忘录描述面向 SMB 的信用卡自助 SaaS，通常无需长期合同。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 备忘录列出近万客户与每月 43.8 万美元 MRR，属于投资者当时材料。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 备忘录记录此前融资少、账上现金且无债，不能把 GMV 当公司收入。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 文中把 SMB 市场规模与营销扩张列为需判断的机会或风险。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    text: 文件建议按 2000 万美元投前估值投入 500 万并取得约 20% 完全稀释持股；这是建议条款而非实现收益。
+    source_ids:
+    - S1
+  interpretation: 网页的当代回顾引用与原 memo 正文应分层，不将后来的 Shopify 成功前置。
+  unknowns:
+  - 独立核验的长期投资收益；原始客户级 cohort。
+  sources:
+  - id: S1
+    url: https://www.bvp.com/memos/shopify
+    publisher: Bessemer Venture Partners
+    published_at: '2010-10-12'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开 BVP 原始 memo 正文并区分回顾引语。
+  phase2_conditions: 只做下一项尽调证据选择，不把拟议条款默认为最终交割。
+  record_path: reports/research-investing.md

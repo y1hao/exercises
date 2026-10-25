@@ -1,9 +1,9 @@
 id: PRO-089
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: GitLab 从开源到企业平台（2011—2021）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-089
@@ -36,3 +36,43 @@ planning:
     - 采购角色
     - 流程与功能约束
     out_of_scope: 不总结十年全部企业化路线
+research:
+  id: PRO-089
+  status: blocked
+  reason: 真实企业采用有直接材料，但采购节点时间和部署控制证据未闭合，不能支持规划要求的当时取舍。
+  event: GitLab / Goldman Sachs 企业采用候选，采购时点未闭合
+  cutoff: 待确认一次集团采购决定及日期；不以当前客户页替代历史合同
+  initial_facts: []
+  evidence:
+  - id: E1
+    text: GitLab 客户案例称 Goldman 从自建工具链评估 git-based 产品，认为 GitLab CI/CD 最符合需求。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 案例记载其使用代码、评审、构建、测试和部署完整生态，并引述企业管理层。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - 客户案例未明确采购日期、当时 SaaS/self-managed 选项、部署控制要求和预算审批链。
+  - 不能从金融行业身份推断必然自托管，或从现行 Premium 名称回填当时套餐。
+  sources:
+  - id: S1
+    url: https://about.gitlab.com/customers/goldman-sachs/
+    publisher: GitLab / Goldman Sachs quoted participants
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+    - E2
+  attempts:
+  - 检索集团采购/部署控制候选并打开 Goldman Sachs 客户案例全文，检查采购角色、评估过程和部署说明。
+  phase2_conditions:
+  - 仍需单次采购日期、部署约束及比较选项；不得扩写成十年企业化路线。
+  record_path: reports/research-product-b.md

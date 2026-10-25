@@ -1,9 +1,9 @@
 id: ENG-104
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Cloudflare 2025 年 11 月 Bot Management 故障
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-104
@@ -36,3 +36,56 @@ planning:
     - 数据生成与分发路径
     - 请求处理依赖
     out_of_scope: 开场不先给实际根因或套用其他规则事故
+research:
+  id: ENG-104
+  status: sourced
+  reason: 一手直接材料可核查事件或发布行为，尚未Case QA。
+  event: Cloudflare 2025-11-18 Bot Management 故障
+  cutoff: 2025-11-18 11:20 UTC 初始诊断
+  initial_facts:
+  - id: I1
+    text: 核心流量出现错误
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: Bot Management 特征文件被定期全网分发
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 元数据权限变化导致生成重复特征行
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 变大的文件触发 bots 模块错误并影响核心代理
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 团队停止异常文件分发、恢复已知良好文件，流量恢复；属于独立 11 月事件。
+    source_ids:
+    - S1
+  interpretation: 观察、当事人归因与维护者机制推断必须分开。
+  unknowns:
+  - 内部决策日和未公开指标未知。
+  sources:
+  - id: S1
+    url: https://blog.cloudflare.com/18-november-2025-outage/
+    publisher: Cloudflare
+    published_at: '2025-11-18'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开独立复盘，核查 query behaviour change 与代理依赖路径。
+  phase2_conditions:
+  - 严格区别 ENG155 12月 WAF 解析事故；根因不进入 opening。
+  record_path: reports/research-engineering-b.md

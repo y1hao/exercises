@@ -1,9 +1,9 @@
 id: ENG-048
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: SQLite Query Planner（2010s）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-048
@@ -36,3 +36,71 @@ planning:
     - 统计与计划输出
     - 版本
     out_of_scope: 不泛讲查询优化器或编造运行日志
+research:
+  id: ENG-048
+  status: blocked
+  reason: SQLite官方查询规划教程有SQL/索引及ANALYZE推理，但无版本化真实慢查询计划与统计快照。
+  event: SQLite Query Planner（2010s）
+  cutoff: 规划要求的同SQL实际计划变慢节点未取得。
+  initial_facts:
+  - id: F1
+    text: SQL描述结果，planner选择执行算法。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 可选索引影响访问路径。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 教程用fruit='Orange'说明个别值与平均选择性不同。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: ANALYZE统计使planner在多个索引间估计，未运行时选择可能任意。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 可保留题意，但需锁定可复现工件或改为规范例子并记录。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 版本、EXPLAIN计划输出、同数据分布及实际慢查询观测。
+  sources:
+  - id: S1
+    url: https://www.sqlite.org/queryplanner.html
+    publisher: SQLite project
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://www.sqlite.org/queryplanner.html
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: 一个 SQLite 查询计划和统计信息快照
+    anchor_status: unverified_research_target
+    main_question: 慢查询更可能来自缺索引还是基数估计偏差？
+    expected_output: 两个假说及一项区分实验
+    evidence_to_verify:
+    - 同一 SQL
+    - 索引定义
+    - 统计与计划输出
+    - 版本
+    out_of_scope: 不泛讲查询优化器或编造运行日志
+  record_path: reports/research-engineering-a.md

@@ -1,9 +1,9 @@
 id: ENG-014
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: RocksDB Universal Compaction（2013—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-014
@@ -24,3 +24,63 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-014
+  status: sourced
+  reason: RocksDB 官方 wiki 支持写/读/空间放大取舍；锚定2023修订工件而非虚称2013精确实现。
+  event: RocksDB Universal Compaction（2013—）
+  cutoff: 该已读 wiki 设计快照，选择 compaction 策略之前。
+  initial_facts:
+  - id: F1
+    text: Universal compaction 合并 sorted runs。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 设计目标是降低写放大。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 代价包括读放大与空间放大。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: major compaction 可暂时使 column family 的磁盘空间翻倍。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 策略以写放大收益交换读取及空间成本。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 来自实现者文档；例子参数不是生产测量。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 不将2013视为已经核实的具体首次上线日期。
+  sources:
+  - id: S1
+    url: https://github.com/facebook/rocksdb/wiki/Universal-Compaction
+    publisher: RocksDB project
+    published_at: '2023-06-29'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://github.com/facebook/rocksdb/wiki/Universal-Compaction
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 写密集系统选择 compaction 策略时，比较写放大、空间峰值与查询延迟。
+  record_path: reports/research-engineering-a.md

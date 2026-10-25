@@ -66,7 +66,7 @@ class CurriculumAuditTests(unittest.TestCase):
             if review["review_status"] == "replace":
                 entry = by_id[review["id"]]
                 brief = read_yaml(ROOT / entry["brief_path"])
-                self.assertEqual(entry["status"], "candidate")
+                self.assertEqual(brief["status"], entry["status"])
                 self.assertEqual(brief["scenario_title"], review["candidate_title"])
         self.assertEqual(self.summary["date_id_or_topic_replacements_applied"], 0)
 

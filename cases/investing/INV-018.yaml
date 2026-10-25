@@ -1,9 +1,9 @@
 id: INV-018
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: Toast 2015 Series B
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-018
@@ -36,3 +36,55 @@ planning:
     - 数据和支付迁移责任
     - 客户材料
     out_of_scope: 不使用后来的规模倒推当时防守性
+research:
+  id: INV-018
+  status: sourced
+  reason: 同期投资备忘录明确 Series B 身份和餐厅 POS/支付场景。
+  event: Toast 2015 首轮机构融资建议
+  cutoff: 2015-12-14 备忘录形成时
+  initial_facts:
+  - id: F1
+    text: 备忘录描述 2400 万美元首轮机构融资。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 云 POS 结合支付和餐厅运营能力，但其中一些功能仍在路线图中。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 餐厅运行时的系统可用性直接影响经营，不是普通可有可无工具。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 应区分已上线的模块与未来规划，避免用五年路线图证明当时已经形成完整绑定。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    text: Bessemer 的记录建议投入 1750 万美元取得约 14.3% 完全稀释权益；这是投资建议口径。
+    source_ids:
+    - S1
+  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+  unknowns:
+  - 客户迁移成本明细及失败迁移案例未知。
+  sources:
+  - id: S1
+    url: https://www.bvp.com/memos/toast
+    publisher: Bessemer Venture Partners
+    published_at: '2015-12-14'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 实际打开并阅读上述来源正文；按 Phase 2 单一范围筛选。
+  phase2_conditions: 讨论特定餐厅条件下的切换成本，不能由支付绑定推导唯一正确选择。
+  record_path: reports/research-investing.md

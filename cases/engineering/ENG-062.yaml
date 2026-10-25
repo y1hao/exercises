@@ -1,9 +1,9 @@
 id: ENG-062
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Netflix 自适应码率播放（2010s）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-062
@@ -35,3 +35,38 @@ planning:
     - 可知带宽观察
     - 缓冲状态和目标
     out_of_scope: 不设计整套流媒体算法或追求最高码率
+research:
+  id: ENG-062
+  status: blocked
+  reason: 尝试Netflix稳态码率文章不可达；单一带宽下降时的缓冲状态/设计版本未取得。
+  event: Netflix 自适应码率播放（2010s）
+  cutoff: 2010s具体自适应码率设计与播放节点待核。
+  initial_facts: []
+  evidence: []
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 不能编造缓冲秒数和码率曲线。
+    source_ids: []
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 尝试 https://netflixtechblog.com/a-steady-state-approach-to-rate-adaptation-1b05b3a806f7 不可访问；需作者论文或官方存档。
+  sources: []
+  attempts:
+  - url: https://netflixtechblog.com/a-steady-state-approach-to-rate-adaptation-1b05b3a806f7
+    result: 不可访问，未取得正文
+  phase2_conditions:
+    planning_only: true
+    anchor_request: 一份 Netflix 自适应码率设计中的一次带宽下降
+    anchor_status: unverified_research_target
+    main_question: 当前应降低画质还是维持码率等待缓冲？
+    expected_output: 一个播放决定及会改变决定的缓冲条件
+    evidence_to_verify:
+    - 设计版本
+    - 可知带宽观察
+    - 缓冲状态和目标
+    out_of_scope: 不设计整套流媒体算法或追求最高码率
+  record_path: reports/research-engineering-a.md

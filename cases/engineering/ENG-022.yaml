@@ -1,9 +1,9 @@
 id: ENG-022
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Google LSM-tree LevelDB（2011）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-022
@@ -24,3 +24,63 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-022
+  status: sourced
+  reason: LevelDB原实现说明含明确LSM路径与2011实验工件，可用机制预测。
+  event: Google LSM-tree LevelDB（2011）
+  cutoff: impl.md所述LSM实现模型，新增随机写入导致memtable轮换前；不把main视为2011精确tag。
+  initial_facts:
+  - id: F1
+    text: 更新进入log和memtable。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: memtable随后写成level0 sstable。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 超过level限额会将文件与下一层重叠文件合并。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: level0积累使读取必须合并更多文件，后台压缩可触发写入节流。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 顺序持久化与后台合并交换写、读与空间成本。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 说明中的IO数字包含作者假设，不当作真实磁盘观测。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 2011运行tag未知；不采用未经核实的默认值进行精算。
+  sources:
+  - id: S1
+    url: https://github.com/google/leveldb/blob/main/doc/impl.md
+    publisher: Google / LevelDB project
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://github.com/google/leveldb/blob/main/doc/impl.md
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 随机写密集场景使用 LSM 后，预测 compaction、读放大与空间放大的变化。
+  record_path: reports/research-engineering-a.md

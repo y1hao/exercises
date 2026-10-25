@@ -1,9 +1,9 @@
 id: INV-006
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Tesla 2008 融资危机
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-006
@@ -35,3 +35,43 @@ planning:
     - 经营里程碑
     - 已公开融资约束
     out_of_scope: 条款未知不算持仓收益或最优仓位
+research:
+  id: INV-006
+  status: blocked
+  reason: 2010 S-1 可核实 2008 年融资与条款，但缺足够证据确定某个 2008 续资决策前可知的现金跑道和里程碑。
+  event: Tesla 2008 年 12 月可转换借款
+  cutoff: 拟为 2008 年 12 月追加资本决定前；精确决策日和当时可得材料未确认。
+  initial_facts: []
+  evidence:
+  - id: E1
+    text: S-1 回溯记载 2008 年 12 月新增借款收到 1450 万美元，并有以此后融资价格一定比例转换的安排。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: S-1 把 2009 年追加借款和之后股权融资分开披露，不能合并成同一笔 2008 现金。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 后来的 S-1 确认存在 2008 年 12 月借款及后续转换过程，但不证明每个投资者当时看到完整现金资料。
+    source_ids:
+    - S1
+  interpretation: 可作结果核实材料，尚不足以自包含地重建续资前决策。
+  unknowns:
+  - 当时现金跑道；具体续资前技术状态；投资者可见材料。
+  sources:
+  - id: S1
+    url: https://ir.tesla.com/_flysystem/s3/sec/000119312510017054/ds1-gen_0.pdf
+    publisher: Tesla
+    published_at: '2010-01-29'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 读取官方 S-1 的 2008 convertible notes 段落；搜索同期融资公告与 2008 危机记录。
+  phase2_conditions: 不从后来回顾补造当时跑道，也不要求精确收益。
+  record_path: reports/research-investing.md

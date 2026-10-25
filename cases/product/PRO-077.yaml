@@ -1,9 +1,9 @@
 id: PRO-077
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Duolingo App Store 排名驱动（2010s）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-077
@@ -35,3 +35,53 @@ planning:
     - 曝光与行为时序
     - 排名变化口径
     out_of_scope: 不把标题中的排名归因当已证实原因
+research:
+  id: PRO-077
+  status: blocked
+  reason: 找到 2013 App of the Year 认可，但未找到具体排名驱动活动、时序及曝光行为数据。
+  event: 候选 Duolingo 2010s App Store 排名活动（未定位）；已确认 2013 获奖
+  cutoff: 活动未定位
+  initial_facts:
+  - id: F1
+    text: CMU 同期文章报道 Duolingo 获 Apple 2013 App of the Year。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 文章报告累计下载及月活；均非某次排名冲击的实验数据。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 文章引述创始人关于低收入学习者的需求。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 文章未提供获奖前后曝光、自然下载或留存序列。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 仅有公开自报/文档描述；不把发布、相关性或后来的成功当成因果结论。
+  unknowns:
+  - 实际活动、榜单口径、获奖与曝光先后、归因窗口
+  sources:
+  - id: S1
+    url: https://www.cmu.edu/homepage/society/2013/fall/app-of-the-year.shtml
+    publisher: Carnegie Mellon University
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 官方博客及同期 CMU 检索；阅读 CMU 正文；未用下载总量替代渠道归因。
+  phase2_conditions: 不把获奖故事替代计划中的可观察渠道活动。
+  record_path: reports/research-product.md

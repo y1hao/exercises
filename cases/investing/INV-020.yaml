@@ -1,9 +1,9 @@
 id: INV-020
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Nubank 2021 IPO 估值
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-020
@@ -35,3 +35,39 @@ planning:
       question: 下一项哪种风险或客户质量证据最可能推翻增长估值？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: INV-020
+  status: blocked
+  reason: 原文读取受限，IPO 股本和客户风险成本未逐项核实。 尚未应用备用问题，原数量主线保持 blocked。
+  event: Nubank 2021 IPO 估值
+  cutoff: 2021-12 IPO 定价前
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+  unknowns:
+  - 完整股本、价格与单位经济口径未核。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1691493/000119312521352703/d213207d424b1.htm
+    publisher: Nu Holdings via SEC
+    published_at: '2021-12-08'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 打开最终招股书得到 Content length is too large。
+  - 尝试 https://www.sec.gov/Archives/edgar/data/1691493/000119312521347503/d213207df1a.htm 亦未取得正文。
+  phase2_conditions: 保留数量要求门槛，不凭搜索摘要进行估值。
+  record_path: reports/research-investing.md
+  scope_decision:
+    id: INV-020
+    input_status: insufficient_this_round
+    reason: 原文读取受限，IPO 股本和客户风险成本未逐项核实。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: blocked
+  source_assessment_reason: 已尝试不同 SEC 招股书版本，但正文超过读取上限；核心股本和经营数字未逐项确认。

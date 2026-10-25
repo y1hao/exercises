@@ -1,9 +1,9 @@
 id: PRO-093
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Clubhouse 邀请码扩散（2020—2021）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-093
@@ -24,3 +24,32 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: PRO-093
+  status: blocked
+  reason: 尝试直接访问官方材料均失败；搜索摘要不能替代原文，且缺同批邀请用户的长期关系行为证据。
+  event: Clubhouse 2021 opening-day 取消邀请候选
+  cutoff: 2021 年取消 waitlist 前；精确发布日期待直接材料确认
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - 官方全文被检索索引收录但实际 open 不可访问，未完成直接来源检查。
+  - 邀请对下载及长期关系网络的独立因果效果与留存分群未知。
+  sources:
+  - id: S1
+    url: https://blog.clubhouse.com/opening-day/
+    publisher: Clubhouse
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 搜索官方 Opening Day，实际打开带/不带末尾斜杠均不可访问。
+  - 尝试官方 early beta Check 1/2/3 与 Android welcome 页面亦不可访问；不把搜索摘要全文当核查完成。
+  phase2_conditions:
+  - 保留邀请机制候选；需恢复原始材料和单一节点，不编造稀缺导致留存的结论。
+  record_path: reports/research-product-b.md

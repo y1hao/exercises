@@ -1,9 +1,9 @@
 id: ENG-066
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: VS Code Remote Development（2019）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-066
@@ -24,3 +24,63 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-066
+  status: sourced
+  reason: 2019 VS Code原发布说明明确本地UI/远端workspace扩展职责，可运行边界迁移问题。
+  event: VS Code Remote Development（2019）
+  cutoff: 2019 Remote Development预览，选择扩展安装/执行位置之前。
+  initial_facts:
+  - id: F1
+    text: 本地开发工具与远端开发服务共同工作。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 远端VM/容器拥有自己的语言与运行环境。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: UI extensions本地安装，不访问workspace文件。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: Workspace extensions远端运行以访问远端文件系统和工具；openExternal/clipboard应作用于本地。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 分离后IntelliSense、debug等可在远端工具环境运行，同时保留本地交互。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 原文是预览能力及设计说明，不将后续stable功能提前。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 个别扩展可能不兼容，不能声称全部无需改动。
+  sources:
+  - id: S1
+    url: https://code.visualstudio.com/blogs/2019/05/02/remote-development
+    publisher: Microsoft / VS Code team
+    published_at: '2019-05-02'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://code.visualstudio.com/blogs/2019/05/02/remote-development
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 编辑器 UI 与执行环境分离时，重建扩展在本地/远端运行的职责边界。
+  record_path: reports/research-engineering-a.md

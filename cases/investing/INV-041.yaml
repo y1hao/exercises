@@ -1,9 +1,9 @@
 id: INV-041
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Cloudflare 2014—2019 融资
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-041
@@ -35,3 +35,75 @@ planning:
     - 网络与客户口径
     - 价值捕获证据
     out_of_scope: 不混入后来六年的全部安全与开发者产品
+research:
+  id: INV-041
+  status: blocked
+  reason: 2015官方融资说明已读，但规划明确2014轮次决策边界；该文2015网络/产品指标不能回填2014。
+  event: Cloudflare 2014—2019 融资
+  cutoff: 拟选2014一轮融资，但关闭日及该时点业务指标未由一手材料锁定。
+  initial_facts:
+  - id: F1
+    text: 2015公告称新融110m来自Fidelity、Google、Microsoft、Baidu、Qualcomm及原投资者。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 该文对比2012融资时23城市网络与2015的62城市网络。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 2015文章称覆盖约4m Internet properties及近每月1trillion page views。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 作者称本轮无特殊控制、董事席位、经济待遇或信息权；这是公司自述，不等于完整交易合同。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 规模不是自动可防守的经济优势；不能引入后续Workers/现代安全产品。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 2014关闭原记录、同期免费/付费用户、单位成本与转化数据。
+  - 二手报道称2014年12月已关闭，但本笔记未将其升级为一手核实结论。
+  sources:
+  - id: S1
+    url: https://blog.cloudflare.com/why-we-raised-110m-from-fidelity-google-microsoft-baidu-and-qualcomm/
+    publisher: Cloudflare / Joshua Motta
+    published_at: '2015-09-22'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://blog.cloudflare.com/why-we-raised-110m-from-fidelity-google-microsoft-baidu-and-qualcomm/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    revision_state: awaiting_source
+    policy_path: curriculum/planning-policy.yaml
+    distinctness_clusters: []
+    planned_exercise:
+      planning_only: true
+      anchor_request: 拟选 Cloudflare 2014 一轮融资，身份待核
+      anchor_status: unverified_research_target
+      main_question: 免费流量与网络规模在哪种条件下才构成防守优势？
+      expected_output: 一个壁垒判断及失效条件
+      evidence_to_verify:
+      - 该轮业务范围
+      - 网络与客户口径
+      - 价值捕获证据
+      out_of_scope: 不混入后来六年的全部安全与开发者产品
+  record_path: reports/research-investing-a.md

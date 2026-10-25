@@ -1,9 +1,9 @@
 id: ENG-085
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: CockroachDB 分布式事务（2016—2020）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-085
@@ -36,3 +36,56 @@ planning:
     - 读写集合
     - 串行化与重试条件
     out_of_scope: 不跨版本拼接实现细节
+research:
+  id: ENG-085
+  status: sourced
+  reason: 直接一手材料支持事件或版本行为；完整 Case QA 尚未执行。
+  event: CockroachDB v20.1 串行化冲突与重试
+  cutoff: v20.1 事务重试判断；具体执行时间非历史事故
+  initial_facts:
+  - id: I1
+    text: v20.1 支持嵌套事务
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 并发读写同一数据可能产生串行化冲突
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 不能内部消解的冲突返回 SQLSTATE 40001
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 普通嵌套 savepoint 不等同于特殊事务重启协议
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 需要客户端重试的冲突存在；不能把嵌套回滚当作通用修复。
+    source_ids:
+    - S1
+  interpretation: 以上观察与厂商/作者归因分开使用；可迁移机制属于后续维护者解释。
+  unknowns:
+  - 精确决策过程和未公开数据未知。
+  sources:
+  - id: S1
+    url: https://www.cockroachlabs.com/blog/nested-transactions-in-cockroachdb-20-1/
+    publisher: Cockroach Labs
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开 v20.1 专文，核查冲突与限制说明。
+  phase2_conditions:
+  - Phase 4 必须明确读写集合为协议推演，不能假造真实事务日志。
+  record_path: reports/research-engineering-b.md

@@ -1,9 +1,9 @@
 id: ENG-011
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Cloudflare 2023—2024 年数据中心双重供电事故
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-011
@@ -37,3 +37,81 @@ planning:
     - 当时测试或处置记录
     out_of_scope: 不合并两年事故；找不到独立事件则申请换题
   source_identity_condition: 只研究拟选 2024 独立供电事件的冗余验证决策；不能证明与 ENG-040 独立就进入替换队列，优先补非 Cloudflare 故障机制。
+research:
+  id: ENG-011
+  status: sourced
+  reason: 已找到并阅读全文：2024-03-26为同设施独立供电事件，非2023复述；原候选将发布月份误作事故月份需纠正。
+  event: Cloudflare 2023—2024 年数据中心双重供电事故
+  cutoff: 2024-03-26 PDX01失联后，两个电源路径同时不可用但共同原因未定时；不把4月8日发布日写成事故日。
+  initial_facts:
+  - id: F1
+    text: 2023事件后团队已做跨设施HA及容量准备。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 2024-03-26 PDX01再次完全失电，primary与redundant电源路径均不可用。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: Cloudflare转述Flexential报告：四个switchboard据报同时失败；上下游电源设备仍正常。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 初步归因指向过低breaker coordination设置触发级联；何时设置未知。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E3
+    text: 2月已做cut test；此次大多数控制面约7分钟自动恢复，但部分服务仍需人工干预。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    id: O1
+    text: 2024事件验证了HA改进降低影响，仍暴露analytics等未完工作；不能声称零影响。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 供电细节是Cloudflare转述设施方初步判断；服务恢复为Cloudflare自报。与ENG040分别是2024冗余验证和2023控制面依赖诊断。
+    source_ids:
+    - S1
+    attribution: 当事人解释及维护者范围划分
+  unknowns:
+  - breaker设置何时建立和设施方完整调查未公开。
+  - 两个供电路径并不意味着独立故障域。
+  sources:
+  - id: S1
+    url: https://blog.cloudflare.com/major-data-center-power-failure-again-cloudflare-code-orange-tested/
+    publisher: Cloudflare / Matthew Prince, John Graham-Cumming, Jeremy Hartman
+    published_at: '2024-04-08'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - E3
+    - O1
+  attempts:
+  - url: https://blog.cloudflare.com/major-data-center-power-failure-again/
+    result: 旧推测slug不可达
+  - url: https://blog.cloudflare.com/major-data-center-power-failure-again-cloudflare-code-orange-tested/
+    result: 已打开阅读全文，确认独立事件与2023差异
+  phase2_conditions:
+    planning_only: true
+    anchor_request: 拟选 2024 独立供电事件；身份及与 2023 事件的差异待核
+    anchor_status: unverified_research_target
+    main_question: 两路电源还可能共享什么失效点，下一步应验证哪一处？
+    expected_output: 一项冗余验证决策及其共同原因假说
+    evidence_to_verify:
+    - 独立事件复盘
+    - 两路供电依赖
+    - 当时测试或处置记录
+    out_of_scope: 不合并两年事故；找不到独立事件则申请换题
+  record_path: reports/research-engineering-a.md

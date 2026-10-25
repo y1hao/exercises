@@ -1,9 +1,9 @@
 id: ENG-030
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Snowflake 分离存储和计算（2016）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-030
@@ -24,3 +24,32 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-030
+  status: blocked
+  reason: 尝试Snowflake2016官方PDF与ACM DOI均未取得正文，不凭标题核实架构细节。
+  event: Snowflake 分离存储和计算（2016）
+  cutoff: 2016论文设计快照待取。
+  initial_facts: []
+  evidence: []
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 不能从候选摘要宣称已验证虚拟仓库隔离。
+    source_ids: []
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 尝试 https://www.snowflake.com/wp-content/uploads/2016/06/Snowflake_SIGMOD.pdf 不可达；https://dl.acm.org/doi/pdf/10.1145/2882903.2903741
+    403。
+  sources: []
+  attempts:
+  - url: https://www.snowflake.com/wp-content/uploads/2016/06/Snowflake_SIGMOD.pdf
+    result: 不可达，未读到正文
+  - url: https://dl.acm.org/doi/pdf/10.1145/2882903.2903741
+    result: 403，未读到正文
+  phase2_conditions:
+    scope: 工作负载隔离和弹性扩容需求下，分析虚拟仓库如何改变资源竞争。
+  record_path: reports/research-engineering-a.md

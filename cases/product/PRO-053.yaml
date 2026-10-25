@@ -1,9 +1,9 @@
 id: PRO-053
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: WhatsApp 群聊上线（2011）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-053
@@ -24,3 +24,55 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: PRO-053
+  status: sourced
+  reason: 2011原始群聊发布有具体平台、人数和退出规则，足以作关系图扩展预测。
+  event: WhatsApp 2011-02-22 v2.6群聊
+  cutoff: 2011-02-22 功能公布、继续使用结果未知
+  initial_facts:
+  - id: F1
+    text: iPhone、BlackBerry、Android v2.6支持群聊，Symbian尚在开发。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 首版群聊上限五人。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 用户可删除对话退出。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 群聊提醒可单独设置，不能假设参与者没有退出或静音选择。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 群聊推出；公告不提供关系图和留存效应。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://blog.whatsapp.com/group-chat
+    publisher: WhatsApp Team
+    published_at: '2011-02-22'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
+  record_path: reports/research-product.md

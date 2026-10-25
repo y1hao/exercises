@@ -1,9 +1,9 @@
 id: ENG-058
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Kafka 复制协议（2012—2013）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-058
@@ -37,3 +37,49 @@ planning:
     - ISR 状态
     - 选举规则
     out_of_scope: 不混用后来默认值或回到通用 Raft 日志题
+research:
+  id: ENG-058
+  status: blocked
+  reason: 尝试Kafka0.8官方归档多种路径仅返回重定向页；取得0.8.0配置源码但选举/ACK全契约仍未读取。
+  event: Kafka 复制协议（2012—2013）
+  cutoff: 原候选2012–2013内0.8.0实现，完整版本规则待核。
+  initial_facts: []
+  evidence: []
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 不能把现代unclean election默认值回填早期。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 尝试 https://kafka.apache.org/081/documentation.html、https://kafka.apache.org/08/documentation.html
+    均为redirect内容。
+  - 仍需ISR状态机、leader选举和producer ack同版本实现。
+  sources:
+  - id: S1
+    url: https://raw.githubusercontent.com/apache/kafka/0.8.0/core/src/main/scala/kafka/server/KafkaConfig.scala
+    publisher: Apache Kafka
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - url: https://raw.githubusercontent.com/apache/kafka/0.8.0/core/src/main/scala/kafka/server/KafkaConfig.scala
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: 拟选 2012—2013 内的一版 Kafka 复制规则
+    anchor_status: unverified_research_target
+    main_question: 一个 broker 失效后，这条消息还能否被安全确认？
+    expected_output: 一条 ISR 与选举状态变化预测
+    evidence_to_verify:
+    - 版本
+    - ack 配置
+    - ISR 状态
+    - 选举规则
+    out_of_scope: 不混用后来默认值或回到通用 Raft 日志题
+  record_path: reports/research-engineering-a.md

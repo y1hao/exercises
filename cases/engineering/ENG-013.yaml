@@ -1,9 +1,9 @@
 id: ENG-013
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: JVM Double-Checked Locking 语义修订（2004）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-013
@@ -24,3 +24,63 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-013
+  status: sourced
+  reason: JSR133参与者2004FAQ含双检代码、失败机制与新volatile保证。
+  event: JVM Double-Checked Locking 语义修订（2004）
+  cutoff: Java新内存模型评估窗口，读取惰性单例字段前。
+  initial_facts:
+  - id: F1
+    text: 单例路径在同步外检查共享 instance。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 旧内存模型允许初始化写与引用发布重排。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 未正确同步可读到部分构造对象。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 新模型下 volatile instance 建立初始化与读取的 happens-before。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: FAQ说明Java1.5新volatile语义可修复该双检发布问题。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 仅语言内存模型保证；不据此声称所有懒加载代码正确。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - FAQ后修订删除过性能评价；不采用被划掉的性能结论。
+  sources:
+  - id: S1
+    url: https://www.cs.umd.edu/~pugh/java/memoryModel/jsr-133-faq.html
+    publisher: Jeremy Manson / Brian Goetz
+    published_at: 2004-02
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://www.cs.umd.edu/~pugh/java/memoryModel/jsr-133-faq.html
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 用 Java 内存模型重审惰性单例初始化，辨别排序与可见性保证。
+  record_path: reports/research-engineering-a.md

@@ -1,9 +1,9 @@
 id: PRO-035
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Dropbox Freemium 存储配额（2008—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-035
@@ -36,3 +36,53 @@ planning:
     - 用户存储任务
     - 付费边界
     out_of_scope: 不混入推荐奖励或后续团队套餐
+research:
+  id: PRO-035
+  status: blocked
+  reason: 创始人回述2008采用freemium，但2GB来自访谈时套餐讨论，缺2008准确边界与按任务升级证据；不得回填后来容量。
+  event: Dropbox 2008-09 发布 freemium 配额
+  cutoff: 2008 发布套餐已知、某使用任务升级判断前
+  initial_facts:
+  - id: F1
+    text: Houston 称2008公开发布时已用免费到一定容量、超额收费模式。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 访谈以免费2GB为当时容量边界讨论，非承诺全部后续套餐不变。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 创始人强调定价需预先考虑，给免费后收回会带来损失感。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 同篇承认想靠AB testing/分析校准，未给按任务的升级队列。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://mixergy.com/interviews/drew-houston-dropbox-interview/
+    publisher: Mixergy / Drew Houston
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不混入推荐奖励或后续团队套餐
+  record_path: reports/research-product.md

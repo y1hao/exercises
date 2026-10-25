@@ -10,7 +10,10 @@
     "micro_design/product": 18
   },
   "by_status": {
-    "candidate": 365
+    "blocked": 125,
+    "candidate": 52,
+    "rejected": 1,
+    "sourced": 187
   },
   "by_subdomain": {
     "engineering/agent-devtools": 2,

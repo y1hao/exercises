@@ -1,9 +1,9 @@
 id: INV-048
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: Palantir 2015—2020 资本评估
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-048
@@ -35,3 +35,54 @@ planning:
     - 客户交付与扩展口径
     - 标准产品材料
     out_of_scope: 不总结五年全部资本或把客户嵌入等同规模化
+research:
+  id: INV-048
+  status: sourced
+  reason: 已阅读直接来源，支持可辨识事件或原始文件及其披露结果；训练数据完整性与 Case QA 尚待完成。
+  event: Palantir 2020-09-21 S-1/A：Acquire / Expand / Scale 交付披露
+  cutoff: 2020-09-21 公开文件之后、直接上市交易之前
+  initial_facts:
+  - id: I1
+    text: 公司披露 Gotham 与 Foundry 两个平台，并以客户获取、扩张、规模阶段描述交付经济性。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: Acquire 客户年收入低于 10 万美元，常以低价或免费 pilot 开始；Scale 分类同时要求年收入超过 10 万且贡献毛利为正。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 2019 Scale 客户收入 5.657 亿美元、贡献毛利率 55%；相同客户 H1 2020 收入 2.963 亿、贡献毛利率 68%。
+    source_ids: *id001
+    availability: pre_decision
+  - id: E2
+    text: 2019 Acquire 客户收入 60 万美元、贡献亏损 6540 万；公司披露的是交付分群而非任意全体客户的平台复制率。
+    source_ids: *id001
+    availability: pre_decision
+  outcome:
+    text: 公开文件记录相同 Scale 客户的贡献毛利率变化；由于 Scale 本身按正毛利筛选，不能单独证明全平台已可规模化复制。
+    source_ids:
+    - S1
+  interpretation: “客户嵌入就是平台复制”和“客户只是咨询项目”均仍是假说；需部署工时、标准产品复用及后续扩张区别证据。
+  unknowns:
+  - 未取得每客户部署工时、工程人力、定制代码占比及可比较的标准化部署 cohort。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1321655/000119312520249544/d904406ds1a.htm
+    publisher: Palantir / SEC
+    published_at: '2020-09-21'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开 S-1/A，核对平台描述、阶段定义及同一 Scale 客户的 2019/H1 2020 披露。
+  phase2_conditions:
+  - 只保留 2020 上市前一个公开窗口和两项经营假说；不归纳此后五年资本或股价。
+  - 贡献毛利为公司定义的非 GAAP 口径，后续 Brief 必须完整说明成本边界。
+  record_path: reports/research-investing-b.md

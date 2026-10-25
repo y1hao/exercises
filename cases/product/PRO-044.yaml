@@ -1,9 +1,9 @@
 id: PRO-044
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Duolingo Leagues（2018）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-044
@@ -35,3 +35,53 @@ planning:
     - 榜单规则
     - 学习和参与口径
     out_of_scope: 不把候选年份认作已确认或用回访替代学习
+research:
+  id: PRO-044
+  status: blocked
+  reason: 官方回顾明确首次测试为 2018，年份不必武断改为 2019；但没有当轮分群、参与与学习结果，无法执行既定区分任务。
+  event: Duolingo 2018 Leaderboards 初测
+  cutoff: 2018 首次测试前；具体日未核实
+  initial_facts:
+  - id: F1
+    text: Duolingo 官方说明首次测试 Leaderboards 在 2018 年。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 官方说明早期为五个 leagues，与后来十个版本不同。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 后来的说明按相似习惯及时区匹配；这是当前描述，不可回填为 2018 规则。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 官方称竞争对许多学习者有效，但没有该试验样本、效应量或学习测量。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 仅有公开自报/文档描述；不把发布、相关性或后来的成功当成因果结论。
+  unknowns:
+  - 2018 实验规则、分组、回访分母、能力测量
+  sources:
+  - id: S1
+    url: https://blog.duolingo.com/duolingo-leagues-leaderboards/
+    publisher: Duolingo
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 阅读官方 leagues 说明全文；对照用户讨论但未以讨论作为发布日期依据。
+  phase2_conditions: 2018 是测试年；不可把后续完整规则或 XP 当学习能力。
+  record_path: reports/research-product.md

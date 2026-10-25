@@ -1,9 +1,9 @@
 id: PRO-101
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Canva Education 免费供给（2019）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-101
@@ -35,3 +35,66 @@ planning:
     - 课堂任务
     - 身份与后续使用路径
     out_of_scope: 不把学生人数计成未来付费收入
+research:
+  id: PRO-101
+  status: sourced
+  reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+  event: Canva for Education 2019 澳大利亚学校 beta：教师布置与批改课堂作品
+  cutoff: 2019 beta 发布后，教师决定是否采用课堂作品任务前；原媒体 PDF 精确日未知
+  initial_facts:
+  - id: I1
+    text: 教育 beta 为澳大利亚学校推出的免费产品，提供教师/学生共享工作空间、课堂模板和素材。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 公告列有 GSuite/Google Classroom 集成及学生向教师分享作品以评阅打分的流程。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 媒体包确认 beta 已推出并提供海报、worksheet、report 等任务模板；不是只宣布未来教育愿景。
+    source_ids: *id001
+    availability: pre_decision
+  - id: E2
+    text: 公司十周年时间线把 Education 上线归入 2019，可交叉确认年份，但属于 2023 回顾。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    text: 课堂任务有实际供给和评阅流程；该资料没有证明教育用户毕业后独立留存或付费转换。
+    source_ids:
+    - S1
+    - S2
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - 学生离开学校后的身份迁移、设计资产保留与独立用途 cohort 未取得。
+  - 学校/学生规模不能乘套餐价格当未来商业收入。
+  sources:
+  - id: S1
+    url: https://static-cse.canva.com/blob/148194/Canva-for-Education.pdf
+    publisher: Canva
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - outcome
+  - id: S2
+    url: https://www.canva.com/newsroom/news/canva-10-year-timeline/
+    publisher: Canva
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E2
+    - outcome
+  attempts:
+  - 打开四页官方教育媒体包，核对 Australian beta、免费内容、Classroom 集成及评阅流程。
+  - 打开官方十年时间线核对 2019 年份；未以当前教育资格和产品条件回填初版。
+  phase2_conditions:
+  - 主输出为迁移预测和不迁移反例，后续身份/资产路径缺口必须列为验证条件。
+  - 不要把免费学校账户计为未来付费需求。
+  record_path: reports/research-product-b.md

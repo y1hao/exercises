@@ -1,9 +1,9 @@
 id: ENG-099
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: FoundationDB 事务层（2013）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-099
@@ -36,3 +36,31 @@ planning:
     - read version
     - 读写冲突集合
     out_of_scope: 不同时展开所有事务层组件
+research:
+  id: ENG-099
+  status: blocked
+  reason: 当前 8.0 指南可证冲突集合语义，不能据此确认 2013 版本。
+  event: FoundationDB 2013 事务层候选
+  cutoff: 2013 版本未找到可读证据
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制推演须与来源中的观察和当事人归因分别标记。
+  unknowns:
+  - 未公开的实际决策过程和完整工作量未知。
+  - 当前 8.0 指南可证冲突集合语义，不能据此确认 2013 版本。
+  sources:
+  - id: S1
+    url: https://apple.github.io/foundationdb/developer-guide.html
+    publisher: FoundationDB
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 搜索 2013 事务资料并打开官方指南；看到当前 8.0 标记和 conflict ranges 部分。
+  phase2_conditions:
+  - 需要旧版文档或当年论文；未获授权前不擅改题名到 8.0。
+  record_path: reports/research-engineering-b.md

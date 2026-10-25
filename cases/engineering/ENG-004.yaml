@@ -1,9 +1,9 @@
 id: ENG-004
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Terraform Provider 协议演进（2016—2023）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-004
@@ -36,3 +36,70 @@ planning:
     - 协议升级约定
     - 错误处理说明
     out_of_scope: 不综述七年插件协议或设计新平台
+research:
+  id: ENG-004
+  status: blocked
+  reason: 官方现行状态升级说明已读，但未锁定 2016–2023 范围内的协议/Framework版本。
+  event: Terraform Provider 协议演进（2016—2023）
+  cutoff: 待选择有日期或 tag 的升级示例；现行 v1.18 文档不可当作早期快照。
+  initial_facts:
+  - id: F1
+    text: 状态记录资源 schema version。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: provider 声明当前 schema version。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: CLI 在规划前请求 provider 升级旧状态。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 没有相应升级实现时返回错误；响应错误保留旧状态。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 可支持边界概念，不能证明某个历史版本行为。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 历史版本快照和一次完整旧新状态示例。
+  sources:
+  - id: S1
+    url: https://developer.hashicorp.com/terraform/plugin/framework/resources/state-upgrade
+    publisher: HashiCorp
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://developer.hashicorp.com/terraform/plugin/framework/resources/state-upgrade
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: Terraform 一次 provider 状态升级的协议快照，版本待核
+    anchor_status: unverified_research_target
+    main_question: 旧状态交给新 provider 时，谁必须承担兼容转换？
+    expected_output: 画出一条状态升级责任边界并指出一个拒绝条件
+    evidence_to_verify:
+    - 旧新状态表示
+    - 协议升级约定
+    - 错误处理说明
+    out_of_scope: 不综述七年插件协议或设计新平台
+  record_path: reports/research-engineering-a.md

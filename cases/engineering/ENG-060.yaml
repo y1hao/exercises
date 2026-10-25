@@ -1,9 +1,9 @@
 id: ENG-060
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Heartbleed OpenSSL（2014）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-060
@@ -24,3 +24,63 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-060
+  status: sourced
+  reason: OpenSSL2014原公告直接确认heartbeat缺边界检查、泄漏能力及修复。
+  event: Heartbleed OpenSSL（2014）
+  cutoff: OpenSSL1.0.1f等受影响版本接收heartbeat时，结果在推演后揭晓。
+  initial_facts:
+  - id: F1
+    text: TLS heartbeat由对端输入。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 受影响版本为1.0.1及1.0.2beta系列指定版本。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 处理heartbeat缺少bounds check，可向已连接客户端或服务器泄漏内存。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 修复为1.0.1g，临时可禁用heartbeat后重编。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 公告确认每次可泄漏至多64k内存。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 读越界是已确认机制；不能虚构泄露了某个真实私钥。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 最小代码片段与具体报文长度还需对照补丁，公告不提供完整测试覆盖历史。
+  sources:
+  - id: S1
+    url: https://openssl-library.org/news/secadv/20140407.txt
+    publisher: OpenSSL
+    published_at: '2014-04-07'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://openssl-library.org/news/secadv/20140407.txt
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: TLS heartbeat 输入长度校验缺失导致内存泄漏；推演信任边界和测试覆盖盲点。
+  record_path: reports/research-engineering-a.md

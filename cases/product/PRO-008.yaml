@@ -1,9 +1,9 @@
 id: PRO-008
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Slack 早期企业内部扩散（2013—2015）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-008
@@ -35,3 +35,53 @@ planning:
     - 采用团队角色
     - 购买权与实际用量证据
     out_of_scope: 不概括三年全部企业扩散史
+research:
+  id: PRO-008
+  status: blocked
+  reason: 2019 S-1 支持免费转付费机制，但不能回填为 2013—2015 的具体采购节点及套餐。
+  event: Slack 早期企业内部扩散（2013—2015）
+  cutoff: 2013—2015 指定团队购买窗口未定位
+  initial_facts:
+  - id: F1
+    text: 2019 S-1 称组织常由 Free 计划开始。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: S-1 把搜索超过 10,000 条与 SSO 列为公司认为的付费原因。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 文件说明团队深度使用与集成后常升级。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 这是公司回顾/2019 定价，缺早期买方权限和预算材料。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1764925/000162828019006616/slacks-1a1.htm
+    publisher: Slack / SEC
+    published_at: '2019-05-13'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不概括三年全部企业扩散史
+  record_path: reports/research-product.md

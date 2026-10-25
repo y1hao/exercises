@@ -1,9 +1,9 @@
 id: PRO-095
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Apple App Store 订阅分成规则（2016）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-095
@@ -24,3 +24,66 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: PRO-095
+  status: sourced
+  reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+  event: Apple 2016-06-08 宣布订阅资格与一年后分成增强
+  cutoff: 2016-06-08 公告后、开发者决定是否设计长期订阅前
+  initial_facts:
+  - id: I1
+    text: 官方当日公告计划把自动续订订阅开放到所有 app 类别，包括游戏。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 公告将符合资格订阅满一年后的开发者收入提升列为新政策，并提供更灵活定价；不是所有一次性购买降抽成。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 当前官方规则说明首年 70%、累计一年付费服务后 85%，扣除适用税费；当前文档包含后来 Small Business 等例外，不能整页回填 2016。
+    source_ids:
+    - S2
+    availability: unknown
+  - id: E2
+    text: 2016 原公告仅在此页说明一年后提高收入，其详细原链接已失效，原版精确例外和累计规则未完整取得。
+    source_ids: *id001
+    availability: pre_decision
+  outcome:
+    text: 2016 官方公告确有按订阅持续时间改变开发者分配的设计；当前官方文档记录 70/85 这一行为，2016 精确细则仍需原版核对。
+    source_ids:
+    - S1
+    - S2
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - 尚缺 2016 原始完整条文，不能确认当前的恢复天数、group 计算及特殊项目例外均适用于当年。
+  - 留存是否因此改善没有因果试验，不能用政策意图冒充实际效果。
+  sources:
+  - id: S1
+    url: https://developer.apple.com/news/?id=06082016a
+    publisher: Apple
+    published_at: '2016-06-08'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E2
+    - outcome
+  - id: S2
+    url: https://developer.apple.com/app-store/subscriptions/
+    publisher: Apple
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+    - outcome
+  attempts:
+  - 打开 Apple 2016 Coming Soon 原公告与现行订阅文档；核对当前分配规则并标明版本差异。
+  - 原文 What’s New in Subscriptions 链接 404，尝试 WWDC2016 301 两版 URL 均不可访问；未以媒体摘要替代精确历史条文。
+  phase2_conditions:
+  - 可做一年后分成改变的定性反事实预测；涉及 2016 数值账单或例外前必须补原版规则。
+  - 不前置后来的 Small Business Program 或外链付费政策。
+  record_path: reports/research-product-b.md

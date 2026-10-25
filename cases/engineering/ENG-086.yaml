@@ -1,9 +1,9 @@
 id: ENG-086
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Google Piper 单体仓库（2016）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-086
@@ -35,3 +35,31 @@ planning:
     - 依赖变更约束
     - 发布权限
     out_of_scope: 不做单仓多仓的全面辩论
+research:
+  id: ENG-086
+  status: blocked
+  reason: 只核到论文题名、作者与 2016 发表信息，未读到支持变更治理的正文。
+  event: Google Piper 2016 论文
+  cutoff: 2016 论文；具体协作决策时点未核定
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 以上观察与厂商/作者归因分开使用；可迁移机制属于后续维护者解释。
+  unknowns:
+  - 精确决策过程和未公开数据未知。
+  - 只核到论文题名、作者与 2016 发表信息，未读到支持变更治理的正文。
+  sources:
+  - id: S1
+    url: https://research.google/pubs/why-google-stores-billions-of-lines-of-code-in-a-single-repository/
+    publisher: Google Research
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 官方论文页可读；ACM 下载链接与 archive/45424.pdf 均无法读取正文。
+  phase2_conditions:
+  - 仍需原论文正文中的协作路径和权限材料；元数据不足以判 sourced。
+  record_path: reports/research-engineering-b.md

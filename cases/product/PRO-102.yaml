@@ -1,9 +1,9 @@
 id: PRO-102
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Dropbox 文件夹同步交互（2008）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-102
@@ -25,3 +25,67 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-11
+research:
+  id: PRO-102
+  status: sourced
+  reason: 直接来源支持可识别的产品节点及其交付行为；仍未执行 Case QA。
+  event: Dropbox 2008-09-11 公测上线的桌面文件夹同步
+  cutoff: 2008-09-11 公开上线前，已有 beta 与桌面客户端；精确内部设计决定日期未知
+  initial_facts:
+  - id: I1
+    text: 创始人描述目标需求为忘带 USB、给自己发邮件和难以远程访问文件，而非抽象云存储容量。
+    source_ids:
+    - S2
+    availability: pre_decision
+  - id: I2
+    text: 产品已在 beta 中供人试用，准备在 Mac/Windows 外提供功能相同的 Linux 客户端。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 2008-09-11 公司宣布所有人可用，Linux 客户端同期发布，另有 iPhone 优化网页访问。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 创始人回顾将交互比作自动处理文件的 magic folder，并承认初期把备份/同步/分享都堆在定位中使人困惑。
+    source_ids:
+    - S2
+    availability: post_decision
+  outcome:
+    text: 产品实际公开交付跨桌面客户端的文件访问与同步；熟悉文件夹降低任务解释成本是可检验机制，尚非因果实验结论。
+    source_ids:
+    - S1
+    - S2
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - 本次未取得冻结的 2008 逐屏演示和首次成功同步率；不能把后来的 onboarding 指标回填。
+  - 同期 iPhone 是优化网页，不是后来原生 iOS app。
+  sources:
+  - id: S1
+    url: https://blog.dropbox.com/topics/company/dropbox-launches-to-the-public
+    publisher: Dropbox / Drew Houston
+    published_at: '2008-09-11'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I2
+    - E1
+    - outcome
+  - id: S2
+    url: https://mixergy.com/interviews/drew-houston-dropbox-interview/
+    publisher: Drew Houston interview / Mixergy
+    published_at: '2011-12-21'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - E2
+    - outcome
+  attempts:
+  - 打开同期公开上线稿及创始人完整访谈，核对客户端、平台和 magic-folder 叙述时点。
+  phase2_conditions:
+  - 锚定文件夹同步的激活机制，不复用邀请码传播或自建存储成本。
+  - 首轮不提供后来的等待名单或规模成果作为同步交互有效性的证明。
+  record_path: reports/research-product-b.md

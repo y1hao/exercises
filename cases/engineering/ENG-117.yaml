@@ -1,9 +1,9 @@
 id: ENG-117
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Meta ZippyDB SSD 成本优化（2010s）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-117
@@ -47,3 +47,40 @@ planning:
     fallback_applied: false
     input_verification: not_started
   source_identity_condition: 只接受可定位的单次 SSD 单位成本优化材料；只能找到泛介绍则进入替换队列。
+research:
+  id: ENG-117
+  status: blocked
+  reason: 未找到原规划单次 SSD 优化和同负载可归属成本。 尚未应用备用问题，原数量主线保持 blocked。
+  event: ZippyDB SSD单位成本优化候选
+  cutoff: 2010s具体优化未确认
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 来源描述与我们的推论分开；不能以当前文档倒推早年版本。
+  unknowns:
+  - 精确决策日及未公开观测未知。
+  - 已找到ZippyDB真实架构演进文章，但未找到本题所需独立SSD成本优化与同负载成本数据。
+  sources:
+  - id: S1
+    url: https://engineering.fb.com/2021/08/06/core-infra/zippydb/
+    publisher: Meta
+    published_at: '2021-08-06'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 分别检索ZippyDB+SSD+cost、Meta官方ZippyDB；打开2021原文，SSD未命中；2026新闻不作2010s证据。
+  phase2_conditions:
+  - 独立优化条件未满足；进入待替换审查，不以通用RocksDB/集中容量池文章冒充SSD优化。
+  record_path: reports/research-engineering-b.md
+  scope_decision:
+    id: ENG-117
+    input_status: insufficient_this_round
+    reason: 未找到原规划单次 SSD 优化和同负载可归属成本。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: blocked
+  source_assessment_reason: 已找到ZippyDB真实架构演进文章，但未找到本题所需独立SSD成本优化与同负载成本数据。

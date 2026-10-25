@@ -1,9 +1,9 @@
 id: ENG-156
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Kubernetes 控制器协调循环（2014—2016）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-156
@@ -25,3 +25,31 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-09
+research:
+  id: ENG-156
+  status: blocked
+  reason: 当前官方控制器开发约定可读，但未定位2014—2016版本artifact。
+  event: Kubernetes2014—2016控制器候选
+  cutoff: 历史版本循环语义待原始快照
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 已知观察、作者归因与维护者推论必须分开；不承诺未核出的数字。
+  unknowns:
+  - 未公开内部过程与全部版本细节未知。
+  - 当前官方控制器开发约定可读，但未定位2014—2016版本artifact。
+  sources:
+  - id: S1
+    url: https://github.com/kubernetes/community/blob/main/contributors/devel/sig-api-machinery/controllers.md
+    publisher: Kubernetes
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports: []
+  attempts:
+  - 尝试kubernetes v1.3.0旧设计路径失败；读取community当前文档，含较新队列API不宜倒推2016。
+  phase2_conditions:
+  - 需历史文档/源码commit证明reconcile与重试规则；保持原日期ID不以新教程冒充旧实现。
+  record_path: reports/research-engineering-b.md

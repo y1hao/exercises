@@ -1,9 +1,9 @@
 id: ENG-056
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: GitHub REST 到 GraphQL API v4（2016）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-056
@@ -46,3 +46,92 @@ planning:
       question: 声明式查询减少了哪种客户端工作，又把什么复杂性转给服务端？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: ENG-056
+  status: blocked
+  reason: 关系查询可核，REST 对应端点与分页未齐，不能比较精确请求数。 尚未应用备用问题，原数量主线保持 blocked。
+  event: GitHub REST 到 GraphQL API v4（2016）
+  cutoff: 2016 Early Access发布工件，客户端需获取用户前三仓库及计数；不采用2021后续成果。
+  initial_facts:
+  - id: F1
+    text: REST集成者报告需要多次调用才能组完整资源视图。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 目标示例是用户名、starred总数及前三仓库的多个计数。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 文章给出带repositories(first:3)的GraphQL查询及完整响应。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: GitHub解释schema类型、授权、分页、速率限制与backend batching仍由服务端实现。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 示例用一次请求返回目标数据；不能凭此推算所有REST端点的精确请求数。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 声明式查询移走客户端拼装复杂性，但增加服务端查询/授权/成本管理。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 当时REST分页对应端点未逐项取得；使用boundary-transfer备用问题，禁止编造REST调用数。
+  sources:
+  - id: S1
+    url: https://github.blog/developer-skills/github/the-github-graphql-api/
+    publisher: GitHub
+    published_at: '2016-09-14'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://github.blog/developer-skills/github/the-github-graphql-api/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: GitHub API v4 候选发布时的单一资源关系查询
+    anchor_status: unverified_research_target
+    main_question: 完成同一份客户端结果，REST 与 GraphQL 分别需要多少请求？
+    expected_output: 同结果口径的请求计数及一个服务端代价
+    evidence_to_verify:
+    - 当时 endpoint 或 schema
+    - 分页规则
+    - 请求示例
+    out_of_scope: 不凭 API 名称估算全面性能提升
+    quantitative_plan:
+      mainline_measure: 完成同一结果的请求次数
+      required_inputs:
+      - 同期 endpoint 和 schema
+      - 分页规则
+      - 同一目标结果
+      missing_input_fallback:
+        focus: boundary-transfer
+        question: 声明式查询减少了哪种客户端工作，又把什么复杂性转给服务端？
+      fallback_applied: false
+      input_verification: partial_source_check_see_unknowns
+  record_path: reports/research-engineering-a.md
+  scope_decision:
+    id: ENG-056
+    input_status: insufficient_this_round
+    reason: 关系查询可核，REST 对应端点与分页未齐，不能比较精确请求数。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: sourced
+  source_assessment_reason: 2016原发布文章有完整关系查询和单请求结果；REST对应分页/endpoint不齐，应用既定boundary-transfer fallback。

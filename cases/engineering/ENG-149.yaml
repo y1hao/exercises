@@ -1,9 +1,9 @@
 id: ENG-149
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: GitHub Actions 缓存服务设计（2019—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-149
@@ -36,3 +36,56 @@ planning:
     - key 范围
     - 读写权限及失效规则
     out_of_scope: 不重复 Docker 层缓存或泛设计 CI 平台
+research:
+  id: ENG-149
+  status: sourced
+  reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  event: GitHub Actions cache信任边界文档
+  cutoff: 2026-10-25文档快照；不是2019原始权限
+  initial_facts:
+  - id: I1
+    text: cache复用按key与restore-keys查找
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 作用域包含分支和PR merge ref
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: PR merge ref缓存不能由base分支或其他PR直接复用
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 低信任触发器默认分支缓存有额外写入限制
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 当前文档明确缓存范围及污染威胁；同key不能跨越作用域自动证明可信。
+    source_ids:
+    - S1
+  interpretation: 已知观察、作者归因与维护者推论必须分开；不承诺未核出的数字。
+  unknowns:
+  - 未公开内部过程与全部版本细节未知。
+  sources:
+  - id: S1
+    url: https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching
+    publisher: GitHub
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开官方cache文档access restrictions及低信任触发器段落。
+  phase2_conditions:
+  - Phase4必须锁服务策略时点；禁止将当前新增只读规则回填2019。
+  record_path: reports/research-engineering-b.md

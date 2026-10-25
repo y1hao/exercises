@@ -1,9 +1,9 @@
 id: ENG-021
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Python GIL 争论与 PEP 703（2023）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-021
@@ -35,3 +35,70 @@ planning:
     - 对象兼容约束
     - 同口径工作负载观测
     out_of_scope: 不引用后续落地成绩作为当时已知
+research:
+  id: ENG-021
+  status: blocked
+  reason: PEP703原文已读，但现行文本含后续Final/实现完成信息；2023修订快照与同口径工作负载待锁定。
+  event: Python GIL 争论与 PEP 703（2023）
+  cutoff: 2023提案评估时点；当前正文修订时点混合，不视为全为当时已知。
+  initial_facts:
+  - id: F1
+    text: 提案讨论可选无GIL构建。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 该提案必须处理CPython C-API兼容。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 无GIL构建的对象头变化影响ABI，扩展需重编。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 依赖GIL保护状态的C扩展需要显式锁。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 不引入Python3.13后续实际成绩作为2023证据。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 2023固定修订hash；工作负载和服务采用约束。
+  sources:
+  - id: S1
+    url: https://peps.python.org/pep-0703/
+    publisher: Python / Sam Gross
+    published_at: '2023-01-09'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://peps.python.org/pep-0703/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: PEP 703 的 2023 提案评估窗口，具体修订待核
+    anchor_status: unverified_research_target
+    main_question: 对一类 CPU 多线程负载，兼容代价是否足以推迟采用？
+    expected_output: 一个采用决定与一条改变决定的兼容证据
+    evidence_to_verify:
+    - 提案版本
+    - 对象兼容约束
+    - 同口径工作负载观测
+    out_of_scope: 不引用后续落地成绩作为当时已知
+  record_path: reports/research-engineering-a.md

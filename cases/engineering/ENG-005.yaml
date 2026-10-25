@@ -1,9 +1,9 @@
 id: ENG-005
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Java ZGC 上线（2018—2023）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-005
@@ -35,3 +35,38 @@ planning:
     - 同口径暂停与吞吐观测
     - 服务约束
     out_of_scope: 不混入分代 ZGC 或比较全部 JVM 回收器
+research:
+  id: ENG-005
+  status: blocked
+  reason: 尝试读取 JEP 333 两次返回 403；未读取原文，不以搜索摘要核源。
+  event: Java ZGC 上线（2018—2023）
+  cutoff: 2018 JDK11 候选；精确采用时点未核定。
+  initial_facts: []
+  evidence: []
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 不得填入暂停与吞吐数字。
+    source_ids: []
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - JEP 正文及同口径工作负载测量未取得。
+  sources: []
+  attempts:
+  - url: https://openjdk.org/jeps/333
+    result: 两次open均403，未读取原文
+  phase2_conditions:
+    planning_only: true
+    anchor_request: 拟选 2018 候选 ZGC 发布窗口，具体 JDK 与实现待核
+    anchor_status: unverified_research_target
+    main_question: 对有明确暂停目标的一类大堆服务，是否应试用这版 ZGC？
+    expected_output: 一项采用决定及能推翻它的工作负载条件
+    evidence_to_verify:
+    - 该版本 GC 机制
+    - 同口径暂停与吞吐观测
+    - 服务约束
+    out_of_scope: 不混入分代 ZGC 或比较全部 JVM 回收器
+  record_path: reports/research-engineering-a.md

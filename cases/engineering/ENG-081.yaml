@@ -1,9 +1,9 @@
 id: ENG-081
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: AWS Lambda Extensions API（2020）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-081
@@ -35,3 +35,56 @@ planning:
     - 扩展事件
     - 环境关闭边界
     out_of_scope: 不自由设计新 API 或混入后来能力
+research:
+  id: ENG-081
+  status: sourced
+  reason: 直接一手材料支持事件或版本行为；完整 Case QA 尚未执行。
+  event: Lambda Extensions 2020 预览生命周期
+  cutoff: 2020-10-08 API 预览使用时
+  initial_facts:
+  - id: I1
+    text: 函数运行在可复用的执行环境
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 扩展与函数共享执行环境资源
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: freeze 要等待 runtime 与所有扩展完成
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: SHUTDOWN 是独立生命周期事件
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 调用结束并不等于执行环境销毁；环境可冻结并复用。
+    source_ids:
+    - S1
+  interpretation: 以上观察与厂商/作者归因分开使用；可迁移机制属于后续维护者解释。
+  unknowns:
+  - 精确决策过程和未公开数据未知。
+  sources:
+  - id: S1
+    url: https://aws.amazon.com/blogs/compute/building-extensions-for-aws-lambda-in-preview/
+    publisher: AWS
+    published_at: '2020-10-08'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 搜索并阅读全文生命周期部分。
+  phase2_conditions:
+  - 仅使用生命周期规则；文章现有容器镜像补充不能自动倒推到预览日。
+  record_path: reports/research-engineering-b.md

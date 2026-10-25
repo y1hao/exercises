@@ -1,9 +1,9 @@
 id: INV-029
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: Coinbase 2012—2013 Seed/Series A
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-029
@@ -35,3 +35,55 @@ planning:
     - 当时可知监管边界
     - 运营和需求证据
     out_of_scope: 不拼接 seed 和 A 轮或精确量化无报价机会
+research:
+  id: INV-029
+  status: sourced
+  reason: 公司同期融资公告确认独立 A 轮和参与者，任务可限定下一项验证而非精确投资定价。
+  event: Coinbase 2013 Series A 之后的运营验证
+  cutoff: 2013-05-22 A 轮公告后，12 月 B 轮前
+  initial_facts:
+  - id: F1
+    text: 公司宣布取得 500 万美元 A 轮。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: USV 的 Fred Wilson 领投；另有 Ribbit、SV Angel 等参与。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 公司说明融资目标是改善购买限额、购买后交付速度和可用支付方式等痛点。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 公告正在招聘工程、设计、支持、compliance 与商务开发人员；不等同这些能力已经完备。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    text: 公司于 2013-05-22 宣布 A 轮完成；12 月融资是不同轮，不能合并当一笔交易。
+    source_ids:
+    - S1
+  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+  unknowns:
+  - 具体监管判断、银行通道责任和完整经营指标未知。
+  sources:
+  - id: S1
+    url: https://www.coinbase.com/en-au/blog/coinbase-raises-usd5m-in-series-a-funding
+    publisher: Coinbase
+    published_at: '2013-05-22'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 实际打开并阅读上述来源正文；按 Phase 2 单一范围筛选。
+  phase2_conditions: 只作条件式继续验证；监管与运营责任仍未知，不拼接不同轮次或精确量化仓位。
+  record_path: reports/research-investing.md

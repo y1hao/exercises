@@ -1,9 +1,9 @@
 id: ENG-072
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: LinkedIn Venice 多区域数据（2022）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-072
@@ -35,3 +35,72 @@ planning:
     - 写完成定义
     - 复制与读取可见性
     out_of_scope: 不擅自承诺强一致或精确复制延迟
+research:
+  id: ENG-072
+  status: sourced
+  reason: LinkedIn2022原开源说明直接声明eventual consistency及active-active复制，不擅自承诺精确延迟。
+  event: LinkedIn Venice 多区域数据（2022）
+  cutoff: 2022设计快照，一地区write/ingest完成后、跨区可见性核验之前。
+  initial_facts:
+  - id: F1
+    text: Venice服务批/流派生数据。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 该系统公开定位为eventually-consistent。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: nearline writes以active-active复制到各区，冲突采用确定性解决。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 行政操作各区异步执行；Da Vinci本地状态通过changelog更新并与服务端最终一致。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    id: O1
+    text: 跨区复制存在独立传播阶段，一地完成不能单独证明另一地立即可见。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 完成→立即跨区可见不成立是维护者从复制契约得出的有限推论。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 公开文未给精确写ACK定义或最大复制延迟；询问这些数据时必须答未知。
+  sources:
+  - id: S1
+    url: https://www.linkedin.com/blog/engineering/open-source/open-sourcing-venice-linkedin-s-derived-data-platform
+    publisher: LinkedIn / Félix GV
+    published_at: '2022-09-26'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://www.linkedin.com/blog/engineering/open-source/open-sourcing-venice-linkedin-s-derived-data-platform
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: Venice 2022 候选说明的一次区域复制读取
+    anchor_status: unverified_research_target
+    main_question: 写入在一区完成后，另一区的读取最多能推断什么？
+    expected_output: 一个新鲜度边界预测和必要确认点
+    evidence_to_verify:
+    - 设计快照
+    - 写完成定义
+    - 复制与读取可见性
+    out_of_scope: 不擅自承诺强一致或精确复制延迟
+  record_path: reports/research-engineering-a.md

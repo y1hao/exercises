@@ -1,9 +1,9 @@
 id: PRO-050
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Zoom 免费会议 40 分钟限制（2013—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-050
@@ -35,3 +35,53 @@ planning:
     - 实际使用任务
     - 升级触发
     out_of_scope: 不混入后来套餐或默认所有会议都超过时限
+research:
+  id: PRO-050
+  status: blocked
+  reason: 2019 S-1可核免费/付费并行与传播叙述，但可读正文未直接核实40分钟及同版付费时长；2020教育豁免也不能回填2019套餐。
+  event: Zoom 2019 Basic免费会议限制
+  cutoff: 2019-03-22 S-1公布套餐后；具体团队是否升级判断前
+  initial_facts:
+  - id: F1
+    text: S-1说明免费Basic用于体验核心会议能力，群组会议有限时。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 付费提供更长群组会议及管理能力；受邀者可参加他人会议。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 免费群组会议40分钟限制构成与任务时长相关的升级边界。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 公司把受邀参加会议作为产品触达其他用户的入口；未给这项限制独立实验。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1585521/000119312519083351/d642624ds1.htm
+    publisher: Zoom / SEC
+    published_at: '2019-03-22'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不混入后来套餐或默认所有会议都超过时限
+  record_path: reports/research-product.md

@@ -1,9 +1,9 @@
 id: INV-010
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Figma 2015—2016 融资
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-010
@@ -36,3 +36,38 @@ planning:
     - 可用产品
     - 设计师与预算角色材料
     out_of_scope: 不提前使用后来的多人协作成绩
+research:
+  id: INV-010
+  status: blocked
+  reason: 直接公司与投资人文章确认的是 2015 A 轮，不是拟选的 2016 融资；采购证据也不足。
+  event: Figma 2015 Series A 与 Preview（候选 2016 轮次待改）
+  cutoff: 2015-12-03 Preview 发布时，2016 多人功能前
+  initial_facts: []
+  evidence:
+  - id: E1
+    text: 2015 Preview 发布文章的 1800 万美元是累计融资口径，不能直接当单轮金额。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    text: 2015-12-03 宣布 Preview；2016 多人功能属于未来计划。
+    source_ids:
+    - S1
+  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+  unknowns:
+  - 2016 独立轮次、团队采购和预算角色未核实。
+  sources:
+  - id: S1
+    url: https://www.figma.com/blog/design-meet-the-internet/
+    publisher: Figma / Dylan Field
+    published_at: '2015-12-03'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+    - outcome
+  attempts:
+  - 打开 Figma 发布正文。
+  - 打开 https://greylock.com/blog/design-together/ ：2015-12-02 宣布 Greylock 领投 Series A，但未取得采购 cohort。
+  phase2_conditions: 建议显式修正为 2015 轮次，获得采购材料后再解除阻塞。
+  record_path: reports/research-investing.md

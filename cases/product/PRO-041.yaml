@@ -1,9 +1,9 @@
 id: PRO-041
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Grammarly 浏览器实时纠错（2015—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-041
@@ -35,3 +35,53 @@ planning:
     - 安装到反馈路径
     - 用户任务
     out_of_scope: 不总结全部写作产品或预设反馈必然有用
+research:
+  id: PRO-041
+  status: blocked
+  reason: 官方回顾确认2015免费扩展，但尚缺当时安装到首反馈操作快照，设计师原文无法读取。
+  event: Grammarly 浏览器实时纠错（2015—）
+  cutoff: 2015 扩展上线；具体版本日未知
+  initial_facts:
+  - id: F1
+    text: Grammarly 官方回顾把免费 Chrome 扩展发布置于2015。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 扩展和 freemium 转型同时扩大写作支持入口。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 官方称用户覆盖个人邮件、学生作文和专业写作。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 回顾未给首反馈步骤、安装漏斗或当时支持网站清单。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.grammarly.com/blog/company/grammarly-12-year-history/
+    publisher: Grammarly
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不总结全部写作产品或预设反馈必然有用
+  record_path: reports/research-product.md

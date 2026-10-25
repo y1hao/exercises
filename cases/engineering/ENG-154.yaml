@@ -1,9 +1,9 @@
 id: ENG-154
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: GitHub Actions 可复用工作流（2021）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-154
@@ -35,3 +35,56 @@ planning:
     - 版本固定能力
     - 跨仓变更责任
     out_of_scope: 不估算无来源的维护工时
+research:
+  id: ENG-154
+  status: sourced
+  reason: 已读直接来源支持事件或artifact，完整Case QA尚未执行。
+  event: GitHub2021可复用workflow GA
+  cutoff: 2021-11-29文档示例的跨仓版本治理
+  initial_facts:
+  - id: I1
+    text: 跨仓复制workflow会分散维护点
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 团队希望集中共用构建与部署步骤
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: jobs可用uses引用另一仓workflow并带@版本
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: workflow_call、inputs/outputs让调用者与被调用者交换数据
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 可复用workflow已GA并报告有大量仓库使用；不代表集中更新自动安全。
+    source_ids:
+    - S1
+  interpretation: 已知观察、作者归因与维护者推论必须分开；不承诺未核出的数字。
+  unknowns:
+  - 未公开内部过程与全部版本细节未知。
+  sources:
+  - id: S1
+    url: https://github.blog/news-insights/product-news/github-actions-reusable-workflows-is-generally-available/
+    publisher: GitHub
+    published_at: '2021-11-29'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开当年GA公告及具体跨仓uses@1示例。
+  phase2_conditions:
+  - 不估计维护工时；SHA固定能力还要当年规范证据，不把2022私库共享功能提前。
+  record_path: reports/research-engineering-b.md

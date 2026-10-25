@@ -1,9 +1,9 @@
 id: ENG-118
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Knight Capital 2012 年部署事故
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-118
@@ -24,3 +24,56 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-118
+  status: sourced
+  reason: 直接材料支持事件或artifact行为，完整训练未验收。
+  event: Knight Capital2012部署事故SEC调查
+  cutoff: 2012-08-01市场开盘前后的发布检查
+  initial_facts:
+  - id: I1
+    text: SMARS部署到8台服务器
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: I2
+    text: 旧Power Peg代码保留在一台未更新服务器
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E1
+    text: 新标志触发旧代码执行
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 组织没有充分部署复核与错误订单限额控制
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 错误交易形成巨大非预期头寸并造成约4.6亿美元损失。
+    source_ids:
+    - S1
+  interpretation: 来源描述与我们的推论分开；不能以当前文档倒推早年版本。
+  unknowns:
+  - 精确决策日及未公开观测未知。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/files/litigation/admin/2013/34-70694.pdf
+    publisher: U.S. SEC
+    published_at: '2013-10-16'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开SEC行政处罚原文，核查漏部署、控制缺陷与损失。
+  phase2_conditions:
+  - 不能将未部署节点信息当作所有操作者当时已知；初始材料只给发布流程观察。
+  record_path: reports/research-engineering-b.md

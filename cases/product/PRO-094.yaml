@@ -1,9 +1,9 @@
 id: PRO-094
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Zoom 一键加入会议设计（2013—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-094
@@ -36,3 +36,50 @@ planning:
     - 身份和安装要求
     - 会议任务
     out_of_scope: 不重复受邀者成为发起者的增长预测
+research:
+  id: PRO-094
+  status: blocked
+  reason: 有同期标题和流程说明，但尚缺完整同版安装、身份与设备约束，无法确认主线摩擦边界。
+  event: Zoom 2018/2020 邀请加入流程候选
+  cutoff: 待锁定一个设备、版本和受邀加入任务
+  initial_facts: []
+  evidence:
+  - id: E1
+    text: 2018-01-30 FAQ 列出浏览器输入 meeting ID、客户端和移动 app 等加入方式，但未完整说明该设备安装和身份条件。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 2020-12-16 入门文章写浏览器可不下载客户端加入；该网页现有内容未提供冻结版本证据。
+    source_ids:
+    - S2
+    availability: unknown
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - 2013 初版或拟选历史版中单一受邀设备的身份要求、浏览器限制、安装提示和主持人设置仍未全部闭合。
+  - 不能把当前 Zoom Events OTP 流程混入早期 Meetings。
+  sources:
+  - id: S1
+    url: https://www.zoom.com/en/blog/zoom-faqs-joining-meetings/
+    publisher: Zoom
+    published_at: '2018-01-30'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+  - id: S2
+    url: https://www.zoom.com/en/blog/getting-started-with-zoom-meetings/
+    publisher: Zoom
+    published_at: '2020-12-16'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E2
+  attempts:
+  - 打开两篇官方指南正文；检索到当前无账户加入和认证设置文档，但因版本不锁定未倒填历史。
+  phase2_conditions:
+  - 必须先锁定设备/版本/主持人设置；仅判断一次加入摩擦，不复用 PRO-085 的成为发起者传播预测。
+  record_path: reports/research-product-b.md

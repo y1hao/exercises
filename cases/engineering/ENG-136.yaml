@@ -1,9 +1,9 @@
 id: ENG-136
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Apache Druid 实时摄取（2011—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-136
@@ -35,3 +35,56 @@ planning:
     - 摄取与 segment 状态
     - 查询可见性
     out_of_scope: 不综述完整实时分析架构
+research:
+  id: ENG-136
+  status: sourced
+  reason: 直接来源支持所选artifact或事件，完整Case QA未执行。
+  event: Druid2014论文实时摄取与handoff
+  cutoff: 2014论文的单事件查询可见性
+  initial_facts:
+  - id: I1
+    text: 实时节点摄取事件流并维护可查询索引
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 历史节点服务不可变segment
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 事件在实时索引后即可查询
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: persist/merge/handoff转成列式不可变segment后再交接
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 论文描述查询不必等深存储与历史节点接管，但摄取不等同任意更新支持。
+    source_ids:
+    - S1
+  interpretation: 只允许依据已核查材料推演；推断需明示，不能写成实测史实。
+  unknowns:
+  - 未公开的完整工作量、精确内部决策过程未知。
+  sources:
+  - id: S1
+    url: https://people.csail.mit.edu/matei/courses/2015/6.S897/readings/druid.pdf
+    publisher: Metamarkets authors
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 初次猜测arxiv号是无关物理论文已排除；检索并读原作者SIGMOD论文镜像。
+  phase2_conditions:
+  - 采用2014 artifact，不捏造2011事故；聚合/更新能力的损失要按论文而非当前Druid推断。
+  record_path: reports/research-engineering-b.md

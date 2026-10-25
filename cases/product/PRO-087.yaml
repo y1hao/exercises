@@ -1,9 +1,9 @@
 id: PRO-087
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Cloudflare Workers 定价演进（2017—2023）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-087
@@ -46,3 +46,62 @@ planning:
       question: 计量单位改变后，开发者哪种成本直觉不再可靠？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: PRO-087
+  status: blocked
+  reason: 两版政策价格之外，同一可追溯请求和执行量尚未核齐。 尚未应用备用问题，原数量主线保持 blocked。
+  event: Workers 2023-09-28 CPU-time 新计价公告
+  cutoff: 2023-09-28 公告后、2023-10-31 选择迁移前
+  initial_facts:
+  - id: I1
+    text: 新方案按 CPU 时间而非等待 I/O 的 wall time 计计算量；适用 Workers 和 Pages Functions。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 公告允许 2023-10-31 起逐项目 opt in，新项目默认新价；Paid 与 Enterprise 合同迁移有不同时间规则。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 文章给出 100ms 总耗时、10ms CPU 的说明性例子，但未标为真实客户同负载测量，不能作为历史实测工作负载。
+    source_ids: *id001
+    availability: pre_decision
+  - id: E2
+    text: 旧 Bundled/Unbound 与新价表在嵌图中；正文没有完整可复算价格表。
+    source_ids: *id001
+    availability: pre_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 产品机制和可迁移判断属于维护者分析；厂商解释、用户叙述和实际观察须分别呈现。
+  unknowns:
+  - 未取得两版完整价格表和同一真实请求量、CPU 与 wall time 数据，主线账单对照无法完成。
+  sources:
+  - id: S1
+    url: https://blog.cloudflare.com/workers-pricing-scale-to-zero/
+    publisher: Cloudflare
+    published_at: '2023-09-28'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+  attempts:
+  - 打开并阅读定价公告正文与迁移范围；点击 old/new pricing 图均抓取失败。
+  - 检索历史定价和正文 workload；未把示意用量或当前滚动价格替代历史真实负载。
+  phase2_conditions:
+  - quantitative 门槛未闭合；boundary-transfer 是规划允许但尚未正式应用的降级。
+  - 保留一次 2023 调整，不混用 2017—2023 多轮政策。
+  record_path: reports/research-product-b.md
+  scope_decision:
+    id: PRO-087
+    input_status: insufficient_this_round
+    reason: 两版政策价格之外，同一可追溯请求和执行量尚未核齐。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: blocked
+  source_assessment_reason: 已核实 CPU 计量调整及适用窗口，但两版价格和真实同负载输入不足，数量主线仍 blocked。

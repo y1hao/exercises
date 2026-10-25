@@ -1,9 +1,9 @@
 id: ENG-051
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Log4Shell（2021）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-051
@@ -24,3 +24,63 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: ENG-051
+  status: sourced
+  reason: Apache原安全公告明确CVE-2021-44228输入控制、JNDI与LDAP执行条件。
+  event: Log4Shell（2021）
+  cutoff: 2021 Log4j2受影响版本处理不可信日志输入之前；修补结局在最终揭晓。
+  initial_facts:
+  - id: F1
+    text: log4j-core会处理日志消息及参数中的lookup。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 攻击者可能控制进入日志的字符串。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: CVE说明JNDI功能未约束攻击者控制的LDAP等端点。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 仅log4j-api而无core的应用不受该CVE影响。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    id: O1
+    text: 官方确认可导致从LDAP加载任意代码；初始2.15修复后另有不完整配置问题，不能把其当万能最终修复。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 漏洞能力是公告确认，不冒充某次具体受害者入侵结果。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 具体应用配置与JDK条件需在Brief固定，不能泛称所有Java日志皆可RCE。
+  sources:
+  - id: S1
+    url: https://logging.apache.org/security.html
+    publisher: Apache Logging Services
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://logging.apache.org/security.html
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 日志字符串最终触发 JNDI 远程查找；在数据到控制的路径上定位信任边界。
+  record_path: reports/research-engineering-a.md

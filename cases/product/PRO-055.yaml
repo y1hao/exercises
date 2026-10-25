@@ -1,9 +1,9 @@
 id: PRO-055
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Twitter 初期字数约束（2006）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-055
@@ -24,3 +24,22 @@ planning:
   revision_state: retained
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters: []
+research:
+  id: PRO-055
+  status: blocked
+  reason: 2017官方字数实验页面读取404；未取得可读2006原始字符规则和SMS来源。
+  event: Twitter 初期字数约束（2006）
+  cutoff: 2006规则节点未核
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources: []
+  attempts:
+  - 检索Twitter/X原始字数历史；2017官方Giving-you-more-characters页面搜索可见但打开404，二手Jack引语未代替原文。
+  phase2_conditions: 保留既定单一认知动作；结果仅最终揭晓。
+  record_path: reports/research-product.md

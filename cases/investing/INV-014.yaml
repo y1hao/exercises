@@ -1,9 +1,9 @@
 id: INV-014
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: Box 2014 延期 IPO 与融资
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-014
@@ -36,3 +36,37 @@ planning:
     - 公开条款
     - 现金需求
     out_of_scope: 条款缺失改证据选择，不补造优先权
+research:
+  id: INV-014
+  status: blocked
+  reason: 直接公告确认融资，但条款明确未披露；不足以预测旧股的合同稀释或顺位。
+  event: Box 2014 延期上市窗口融资
+  cutoff: 2014-07-07 融资公告后
+  initial_facts: []
+  evidence:
+  - id: E1
+    text: 公告披露 TPG Growth 与 Coatue 投资 1.5 亿美元，并安排 TPG 董事。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    text: 公司公告新增投资；公告并未披露优先权等交易条款。
+    source_ids:
+    - S1
+  interpretation: 只采用来源可支持的披露或当事人判断；不把融资建议当作已实现投资回报。
+  unknowns:
+  - 估值、清算顺位及完整股本变化未核实。
+  sources:
+  - id: S1
+    url: https://www.boxinvestorrelations.com/news-and-media/news/press-release-details/2014/Box-Announces-150-Million-Investment-from-TPG-Growth-and-Coatue/default.aspx
+    publisher: Box
+    published_at: '2014-07-07'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+    - outcome
+  attempts:
+  - 实际打开并阅读上述来源正文；按 Phase 2 单一范围筛选。
+  phase2_conditions: 维持 blocked；可审议改为交易条款证据选择，不虚构优先权。
+  record_path: reports/research-investing.md

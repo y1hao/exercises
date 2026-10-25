@@ -1,9 +1,9 @@
 id: ENG-043
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Spectre（2018）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-043
@@ -36,3 +36,72 @@ planning:
     - 可观察量
     - 缓解边界
     out_of_scope: 不估无数据成本或把漏洞与 Meltdown 混同
+research:
+  id: ENG-043
+  status: sourced
+  reason: Spectre原研究论文支持一条缓存观察路径与架构权限边界。
+  event: Spectre（2018）
+  cutoff: 原始披露的推测执行观察模型；固定变体并在预测前隐藏实际泄漏。
+  initial_facts:
+  - id: F1
+    text: CPU使用分支预测与推测执行。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 错误推测的架构计算结果会被丢弃。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 推测执行仍可能留下可测微架构副作用。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 论文实验证明可诱导受害者执行正常路径不会执行的操作，并经侧信道泄漏。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    id: O1
+    text: 架构层访问限制未完整覆盖微架构可观察状态。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 变体条件必须各自保留；KPTI防Meltdown不等同解决Spectre。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 不得混用不同变体触发前提或编造测量日志。
+  sources:
+  - id: S1
+    url: https://spectreattack.com/spectre.pdf
+    publisher: Kocher et al. / original researchers
+    published_at: '2018'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://spectreattack.com/spectre.pdf
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: Spectre 2018 候选披露中的一条观察路径
+    anchor_status: unverified_research_target
+    main_question: 架构层访问被拒绝后，为什么仍需检验可观察信息边界？
+    expected_output: 指出一项架构保证与它未覆盖的观察
+    evidence_to_verify:
+    - 该变体的触发前提
+    - 可观察量
+    - 缓解边界
+    out_of_scope: 不估无数据成本或把漏洞与 Meltdown 混同
+  record_path: reports/research-engineering-a.md

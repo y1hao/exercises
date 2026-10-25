@@ -1,9 +1,9 @@
 id: ENG-009
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Raft 论文（2014）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-009
@@ -25,3 +25,63 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - ME-04
+research:
+  id: ENG-009
+  status: sourced
+  reason: 2014 原论文给出选举限制、日志匹配及旧任期提交反例。
+  event: Raft 论文（2014）
+  cutoff: 论文 Figure 8 的某次领导者崩溃后、下一次选举前；使用论文原图状态。
+  initial_facts:
+  - id: F1
+    text: Raft 管理复制日志并区分任期。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 选举需要多数票。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: RequestVote 比较末条日志任期，再比较长度。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 旧任期条目不能仅靠副本计数直接提交。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: Figure 8 展示旧任期多数副本条目仍可覆写；当前任期多数提交后间接保护前序条目。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 算法结论，不编造成真实生产事故。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 需在 Phase4 对照原图逐项转录日志状态。
+  sources:
+  - id: S1
+    url: https://raft.github.io/raft.pdf
+    publisher: Stanford / Ongaro and Ousterhout
+    published_at: '2014'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://raft.github.io/raft.pdf
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    scope: 以领导者崩溃与日志冲突为场景，推演选举限制、日志匹配与安全性边界。
+  record_path: reports/research-engineering-a.md

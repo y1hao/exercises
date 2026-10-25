@@ -1,9 +1,9 @@
 id: ENG-025
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Nix 可重现构建（2004—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-025
@@ -36,3 +36,70 @@ planning:
     - 实际输入边界
     - 对应版本说明
     out_of_scope: 不讲完整包管理史或重新证明引导信任
+research:
+  id: ENG-025
+  status: blocked
+  reason: Nix创始人2006论文已读并发现明确非确定构建反例，但规划要求的一份derivation与一次实际非确定构建快照尚不齐。
+  event: Nix 可重现构建（2004—）
+  cutoff: 论文6.8节假设边界；尚未选定具体构建诊断时点。
+  initial_facts:
+  - id: F1
+    text: 存储路径由构建输入推导。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 纯函数模型假设构建由声明输入确定。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 可变网络资源是确定性反例，fetchurl使用预先指定hash检查。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 论文还讨论归档时间戳等环境因素。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 边界已核实，但不能编造两次构建输出或日志。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 具体derivation、版本与真实不同产物证据。
+  sources:
+  - id: S1
+    url: https://edolstra.github.io/pubs/phd-thesis.pdf
+    publisher: Eelco Dolstra
+    published_at: '2006-01-18'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://edolstra.github.io/pubs/phd-thesis.pdf
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: 一份 Nix derivation 及一次非确定构建的实现快照
+    anchor_status: unverified_research_target
+    main_question: 两次相同声明却得到不同产物，最先检查哪项隐含输入？
+    expected_output: 一个可证伪的环境输入假说
+    evidence_to_verify:
+    - derivation 内容
+    - 实际输入边界
+    - 对应版本说明
+    out_of_scope: 不讲完整包管理史或重新证明引导信任
+  record_path: reports/research-engineering-a.md

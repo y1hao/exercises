@@ -1,9 +1,9 @@
 id: PRO-080
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Superhuman PMF 调查（2017—2018）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-080
@@ -26,3 +26,55 @@ planning:
   policy_path: curriculum/planning-policy.yaml
   distinctness_clusters:
   - EV-03
+research:
+  id: PRO-080
+  status: sourced
+  reason: 创始人原文给出调查对象、问题、分群过程及后来问卷分数；足以做调查证据解读，不能据此证明因果 PMF。
+  event: Superhuman 2017—2018 PMF 调查与分群路线图
+  cutoff: 首次调查已回收、细分路线图尚待制定；具体日未知
+  initial_facts:
+  - id: F1
+    text: 调查邀请近两周至少使用两次的用户。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 最初 very disappointed 回答为 22%；它只描述抽样回应，不代表全市场。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 四问包括失去产品感受、受益人、主要价值与改进建议。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 创始人后来报告分群、聚焦速度及改进后问卷比例达到 58%。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 创始人报告后续调查达到 58%；未提供随机试验或独立因果识别。
+    source_ids:
+    - S1
+  interpretation: 仅有公开自报/文档描述；不把发布、相关性或后来的成功当成因果结论。
+  unknowns:
+  - 完整原始答卷、未回复偏差、同批样本可比性、留存与收入反事实
+  sources:
+  - id: S1
+    url: https://blog.superhuman.com/how-superhuman-built-an-engine-to-find-product-market-fit/
+    publisher: Superhuman / Rahul Vohra
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 阅读创始人文章调查方法、四步骤和结尾结果；仅把数值作为自报调查。
+  phase2_conditions: 与 INV-034 同源；本题限问卷分群和产品路线图，投资题需独立投资材料；58% 只在最终揭晓。
+  record_path: reports/research-product.md

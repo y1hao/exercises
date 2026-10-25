@@ -1,9 +1,9 @@
 id: ENG-080
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Google Bazel 构建系统公开（2015）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-080
@@ -26,3 +26,56 @@ planning:
   distinctness_clusters:
   - EV-01
   - ME-01
+research:
+  id: ENG-080
+  status: sourced
+  reason: 直接一手材料支持事件或版本行为；完整 Case QA 尚未执行。
+  event: 2015 Bazel Beta 公告
+  cutoff: 2015-09-09 Beta 发布前的构建系统选择
+  initial_facts:
+  - id: I1
+    text: Google 使用大型共享代码库并从源码构建
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 自动测试与多语言平台是设计背景
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: Beta 提供多语言构建测试及自定义规则 API
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 分布式缓存仍列于未来路线图
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: Bazel Beta 已公开；不可把路线图中的分布式缓存当成已交付。
+    source_ids:
+    - S1
+  interpretation: 以上观察与厂商/作者归因分开使用；可迁移机制属于后续维护者解释。
+  unknowns:
+  - 精确决策过程和未公开数据未知。
+  sources:
+  - id: S1
+    url: https://opensource.googleblog.com/2015/09/building-build-system-bazel-reaches-beta.html
+    publisher: Google
+    published_at: '2015-09-09'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 核查 Beta 公告正文；猜测的 Hello World URL 读取失败。
+  phase2_conditions:
+  - 保留 ENG-080；区别本地增量与尚未交付的分布式缓存。
+  record_path: reports/research-engineering-b.md

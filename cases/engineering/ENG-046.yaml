@@ -1,9 +1,9 @@
 id: ENG-046
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: .NET ThreadPool Hill Climbing（2000s—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-046
@@ -35,3 +35,70 @@ planning:
     - worker 与队列观测
     - 吞吐曲线口径
     out_of_scope: 不综述 ThreadPool 历史或只凭线程数下结论
+research:
+  id: ENG-046
+  status: blocked
+  reason: 已读.NET官方HillClimbing源码，但未锁定历史tag及一个实际worker调整的观测曲线。
+  event: .NET ThreadPool Hill Climbing（2000s—）
+  cutoff: 运行时与负载观测快照待定。
+  initial_facts:
+  - id: F1
+    text: 实现按完成数/采样时间计算吞吐。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: 实现保存线程数及吞吐样本。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 通过线程变化与吞吐变化的波形比较估计调整方向。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 噪声影响置信度与调整幅度。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 线程增加并非必然提升吞吐。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 历史tag、worker队列、同口径吞吐曲线缺失。
+  sources:
+  - id: S1
+    url: https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/Threading/PortableThreadPool.HillClimbing.cs
+    publisher: .NET / Microsoft
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/Threading/PortableThreadPool.HillClimbing.cs
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: 一个 .NET 实现快照下的 worker 注入调整
+    anchor_status: unverified_research_target
+    main_question: 下一项测量怎样区分线程不足与线程竞争？
+    expected_output: 一项观测选择及两种相反预测
+    evidence_to_verify:
+    - 运行时版本
+    - worker 与队列观测
+    - 吞吐曲线口径
+    out_of_scope: 不综述 ThreadPool 历史或只凭线程数下结论
+  record_path: reports/research-engineering-a.md

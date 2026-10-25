@@ -1,9 +1,9 @@
 id: INV-035
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: MongoDB 2015—2017 融资
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-035
@@ -36,3 +36,78 @@ planning:
     - 替代者
     - 客户付费材料
     out_of_scope: 不把后续许可变化当当时竞争前提
+research:
+  id: INV-035
+  status: sourced
+  reason: 2017-09-21 MongoDB S1直接记录AGPL、免费/付费转化、Atlas商业结果与云竞争；不用2018 SSPL或2019 DocumentDB倒灌。
+  event: MongoDB 2015—2017 融资
+  cutoff: 2017-09-21公开S1资本窗口，评估免费采用转付费能力；不声称当年云厂商均已提供同名托管MongoDB。
+  initial_facts:
+  - id: F1
+    text: Community Server按AGPL提供免费核心数据库。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: Atlas于2016-06推出，按消费使用每月收费。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: S1披露Atlas占FY2017收入1%、截至2017-07-31半年收入5%，1,900余客户。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 风险披露承认免费用户不一定转付费；竞争者包括传统数据库、非关系数据库与AWS/GCP/Azure。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    id: O1
+    text: 公司已通过Enterprise和Atlas捕获部分商业价值，但下载量及免费使用不等于付费价值归属。
+    source_ids:
+    - S1
+    availability: post_decision
+  interpretation:
+    text: 转化风险为公司披露；竞争反例应限当时可证明产品，不能把后来SSPL变化当预设。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - 精确免费用户分母未知，不能用下载次数当用户数算转化率。
+  - 本源列云竞争者但不证明2017具体同兼容托管替代，待ready时补具体产品。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1441816/000104746917006014/a2233365zs-1.htm
+    publisher: MongoDB / SEC EDGAR
+    published_at: '2017-09-21'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - O1
+  attempts:
+  - url: https://www.sec.gov/Archives/edgar/data/1441816/000104746917006014/a2233365zs-1.htm
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    revision_state: awaiting_source
+    policy_path: curriculum/planning-policy.yaml
+    distinctness_clusters:
+    - ME-16
+    planned_exercise:
+      planning_only: true
+      anchor_request: 拟选 MongoDB 2017 资本窗口
+      anchor_status: unverified_research_target
+      main_question: 开源采用在哪些条件下不能由公司捕获付费价值？
+      expected_output: 一个价值捕获边界及竞争反例
+      evidence_to_verify:
+      - 当时托管和部署规则
+      - 替代者
+      - 客户付费材料
+      out_of_scope: 不把后续许可变化当当时竞争前提
+  record_path: reports/research-investing-a.md

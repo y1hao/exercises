@@ -1,9 +1,9 @@
 id: ENG-131
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Bazel Starlark 扩展接口（2017—2020）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-131
@@ -35,3 +35,56 @@ planning:
     - 规则生命周期
     - 公开与内部 API 约束
     out_of_scope: 不重复构建输入或缓存命中的练习
+research:
+  id: ENG-131
+  status: sourced
+  reason: 直接资料可证事件或artifact；完整Case QA尚未执行。
+  event: Bazel3.7.0 Starlark扩展规则
+  cutoff: 3.7.0文档快照，属于2017—2020范围
+  initial_facts:
+  - id: I1
+    text: 规则把输入通过action转成输出
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 工具和标准库也应计入规则输入
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: Starlark规则位于bzl并由BUILD加载
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 规则有loading、analysis和execution阶段约束
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 公开扩展模型可实现原生未支持的工具；接口设计须满足阶段边界。
+    source_ids:
+    - S1
+  interpretation: 与真实史实分开标注机制推断；示例不得变成虚构事故。
+  unknowns:
+  - 未公开工作量、内部决策过程或具体故障日志未知。
+  sources:
+  - id: S1
+    url: https://docs.bazel.build/versions/3.7.0/skylark/rules.html
+    publisher: Bazel
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开固定3.7.0规则文档及2018语言规范分离公告。
+  phase2_conditions:
+  - 不能把可用内部实现自动当稳定API；Phase4围绕单项扩展责任。
+  record_path: reports/research-engineering-b.md

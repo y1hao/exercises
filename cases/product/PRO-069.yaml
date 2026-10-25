@@ -1,9 +1,9 @@
 id: PRO-069
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: TikTok 收购 Musical.ly（2017—2018）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-069
@@ -35,3 +35,53 @@ planning:
     - 创作者工具和身份迁移
     - 用户行为材料
     out_of_scope: 不同时评价收购价格、算法和全球扩张
+research:
+  id: PRO-069
+  status: blocked
+  reason: 整合公告验证身份、粉丝和内容自动迁移，但未取得迁移后创作者持续发布或流失行为材料；不能用自动升级等同预期创作者迁移。
+  event: TikTok 收购 Musical.ly（2017—2018）
+  cutoff: 2018-08-01整合公告；网页标注08-02
+  initial_facts:
+  - id: F1
+    text: 已有创作者账户、内容、粉丝将自动转到TikTok。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: Musical.ly用户更新应用会自动升级到TikTok。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 升级版同时有社区feed和For You。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 反应、手势滤镜等被列为即将推出功能，不能说整合当日已全部可用。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://newsroom.tiktok.com/musical-ly-and/?lang=en
+    publisher: TikTok
+    published_at: '2018-08-02'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不同时评价收购价格、算法和全球扩张
+  record_path: reports/research-product.md

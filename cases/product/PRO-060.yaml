@@ -1,9 +1,9 @@
 id: PRO-060
 kind: historical
 domain: product
-status: candidate
+status: blocked
 scenario_title: Todoist Recurring Tasks（2010s）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-060
@@ -35,3 +35,22 @@ planning:
     - 任务频率
     - 分群或干预材料
     out_of_scope: 不声称存在未核实的独立上线事件
+research:
+  id: PRO-060
+  status: blocked
+  reason: 未找到2010s单次recurring功能快照与分群/干预；当前帮助页读取失败，不能建立留存归因。
+  event: Todoist Recurring Tasks（2010s）
+  cutoff: 2010s版本未锁定
+  initial_facts: []
+  evidence: []
+  outcome:
+    text: ''
+    source_ids: []
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources: []
+  attempts:
+  - 检索Todoist recurring retention和2015版本；当前官方帮助页无法读取，搜索结果中的员工留任与用户留存无关。
+  phase2_conditions: 不声称存在未核实的独立上线事件
+  record_path: reports/research-product.md

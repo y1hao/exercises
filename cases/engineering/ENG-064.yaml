@@ -1,9 +1,9 @@
 id: ENG-064
 kind: historical
 domain: engineering
-status: candidate
+status: blocked
 scenario_title: Docker Image OCI 标准化（2015—2017）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-064
@@ -35,3 +35,70 @@ planning:
     - 镜像内容边界
     - 运行时前提
     out_of_scope: 不综述标准化历史或把格式兼容等同环境兼容
+research:
+  id: ENG-064
+  status: blocked
+  reason: 2017 OCI原发布公告已读；v1.0镜像规范正文尝试未取得，未完成格式保证与运行时前提的逐条核对。
+  event: Docker Image OCI 标准化（2015—2017）
+  cutoff: 2017 v1.0发布窗口；页面正文新闻稿日期另为7月19日，保留差异。
+  initial_facts:
+  - id: F1
+    text: OCI分别发布Runtime和Image Format规范。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: F2
+    text: Runtime规范处理生命周期，Image规范处理镜像格式。
+    source_ids:
+    - S1
+    availability: unknown
+  evidence:
+  - id: E1
+    text: 公告将二者描述为最小、开放标准及可移植性基础。
+    source_ids:
+    - S1
+    availability: unknown
+  - id: E2
+    text: 认证计划当时尚待推出，非公告即所有实现已通过认证。
+    source_ids:
+    - S1
+    availability: unknown
+  outcome:
+    id: O1
+    text: ''
+    source_ids: []
+    availability: post_decision
+  interpretation:
+    text: 运行兼容边界需规范正文，不能以营销可移植宣称覆盖环境差异。
+    source_ids:
+    - S1
+    attribution: 维护者对原始材料的范围判断；技术或事故因果归属于来源作者，不代表独立复现实验
+  unknowns:
+  - https://raw.githubusercontent.com/opencontainers/image-spec/v1.0.0/README.md读取cache miss；需版本化正文。
+  sources:
+  - id: S1
+    url: https://opencontainers.org/posts/announcements/2017-07-17-open-container-initiative-oci-releases-v1-0-of-container-standards/
+    publisher: Open Container Initiative
+    published_at: '2017-07-17'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+  attempts:
+  - url: https://opencontainers.org/posts/announcements/2017-07-17-open-container-initiative-oci-releases-v1-0-of-container-standards/
+    result: 已实际打开并读取正文；来源范围与缺口见 reason / unknowns
+  phase2_conditions:
+    planning_only: true
+    anchor_request: OCI 候选标准的一版镜像互操作契约
+    anchor_status: unverified_research_target
+    main_question: 镜像格式符合规范，是否就能推断应用在另一运行时正常工作？
+    expected_output: 一个格式保证与一个未保证行为
+    evidence_to_verify:
+    - 具体规范版本
+    - 镜像内容边界
+    - 运行时前提
+    out_of_scope: 不综述标准化历史或把格式兼容等同环境兼容
+  record_path: reports/research-engineering-a.md

@@ -1,9 +1,9 @@
 id: PRO-028
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Figma 评论与设计协作（2017—）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-028
@@ -36,3 +36,55 @@ planning:
     - 参与角色
     - 交接任务证据
     out_of_scope: 不把评论使用直接等同于组织采购或长期留存
+research:
+  id: PRO-028
+  status: sourced
+  reason: 在 2017— 的候选范围锁定 2021 评论重做，官方有用户研究反馈与交接功能的直接描述。
+  event: Figma 2021-11-16 评论重做
+  cutoff: 2021-11-16 改动已公布、效果未知
+  initial_facts:
+  - id: F1
+    text: 用户研究发现许多协作者难以发现评论，转用其他渠道。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 利益相关人常在一条评论塞多个问题，设计师难逐项回应。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 新版提高 viewer 评论侧栏可见性，并支持圈选区域评论。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 设计师可保持相关评论打开并编辑画布；这是可观察功能，不是已测交付提速。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 新评论功能分批向用户推出；等待时间和理解改善仍需测量。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://www.figma.com/blog/stay-in-the-flow-with-redesigned-comments/
+    publisher: Figma / Ryhan Hassan
+    published_at: '2021-11-16'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不把评论使用直接等同于组织采购或长期留存
+  record_path: reports/research-product.md

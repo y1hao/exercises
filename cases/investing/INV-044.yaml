@@ -1,9 +1,9 @@
 id: INV-044
 kind: historical
 domain: investing
-status: candidate
+status: blocked
 scenario_title: DoorDash 2019—2020 IPO 前融资
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已进行 Phase 3 核查但关键条件未满足，原因见 research；不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-044
@@ -45,3 +45,68 @@ planning:
       question: 交易额增长与净利润改善之间还隔着哪些责任和成本口径？
     fallback_applied: false
     input_verification: not_started
+research:
+  id: INV-044
+  status: blocked
+  reason: 公司总体口径不能替代可归属履约成本；本轮未核齐原数量输入。 尚未应用备用问题，原数量主线保持 blocked。
+  event: DoorDash 2020 IPO 前 S-1/A 中的 2019 年全年利润桥
+  cutoff: 2020-11-30 S-1/A 已公开、IPO 定价之前；仅使用 2019 全年同窗口
+  initial_facts:
+  - id: I1
+    text: 2019 Marketplace GOV 为 80 亿美元；GOV 包含税费、小费和平台费用，排除 Drive 订单金额。
+    source_ids: &id001
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: 披露的桥为 GOV 减 merchant/Dasher pass-through 及退款、credits、promotions 得收入；Drive 按单费用作为其他收入净入 pass-through。
+    source_ids: *id001
+    availability: pre_decision
+  - id: I3
+    text: 2019 收入 8.85 亿美元，cost of revenue（不含折旧摊销）5.23 亿，相关折旧摊销 0.27 亿；三项均为公司口径。
+    source_ids: *id001
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 2019 毛利为 3.35 亿美元；Contribution Loss 为 2 亿，净亏损 6.67 亿，彼此不是同一利润指标。
+    source_ids: *id001
+    availability: pre_decision
+  - id: E2
+    text: adjusted cost of revenue 从 GAAP 成本再剔除股权薪酬及分摊管理费用；不能把该口径当全部履约成本。
+    source_ids: *id001
+    availability: pre_decision
+  outcome:
+    text: 同份披露同时显示正毛利、负贡献利润和净亏损，GOV 规模不能直接推出净盈利。
+    source_ids:
+    - S1
+  interpretation: 利润桥边界可据披露展开；具体城市单量或骑手单次成本不能替换公司全年口径。
+  unknowns:
+  - GOV 到收入的净额桥不等于会计费用表；各 pass-through 子项的全年独立金额未在本次摘录取得。
+  sources:
+  - id: S1
+    url: https://www.sec.gov/Archives/edgar/data/1792789/000119312520304953/d752207ds1a.htm
+    publisher: DoorDash / SEC
+    published_at: '2020-11-30'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - I3
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开 S-1/A，核对 GOV 定义、Our Financial Model、全年成本表及毛利 reconciliation，区分收购子公司财务附注。
+  phase2_conditions:
+  - 沿用一个 2019 全年利润桥；若要求完整履约成本归属而缺子项，执行 boundary-transfer，讨论责任与成本口径。
+  record_path: reports/research-investing-b.md
+  scope_decision:
+    id: INV-044
+    input_status: insufficient_this_round
+    reason: 公司总体口径不能替代可归属履约成本；本轮未核齐原数量输入。
+    fallback_applied: false
+    effective_status: blocked
+    decision_path: curriculum/source-decisions-2027.yaml
+  source_assessment_status: blocked
+  source_assessment_reason: 来源支持同窗 GOV、收入和 GAAP 成本桥，但 pass-through/履约归属分项尚未完整取得；quantitative 主线门槛未闭合，boundary-transfer
+    仅为待应用规划降级。

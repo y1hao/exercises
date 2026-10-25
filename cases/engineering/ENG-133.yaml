@@ -1,9 +1,9 @@
 id: ENG-133
 kind: historical
 domain: engineering
-status: candidate
+status: sourced
 scenario_title: Cassandra 无主写入（2010—2015）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: ENG-133
@@ -37,3 +37,56 @@ planning:
     - 读写配置
     - 修复语义
     out_of_scope: 不将 hinted handoff 自动当作强一致
+research:
+  id: ENG-133
+  status: sourced
+  reason: 直接来源支持所选artifact或事件，完整Case QA未执行。
+  event: Cassandra2.1可调一致性规则
+  cutoff: 2.1文档快照；读请求发出前
+  initial_facts:
+  - id: I1
+    text: 每次I/O可选择一致性级别
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: I2
+    text: RF3的quorum为2个副本
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: ONE可能读到陈旧数据
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 读写quorum交集提供已成功写的可见性条件
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 官方旧版文档支持指定副本配置推演；不能将quorum自动当作并发线性化承诺。
+    source_ids:
+    - S1
+  interpretation: 只允许依据已核查材料推演；推断需明示，不能写成实测史实。
+  unknowns:
+  - 未公开的完整工作量、精确内部决策过程未知。
+  sources:
+  - id: S1
+    url: https://docs.datastax.com/en/cassandra-oss/2.1/cassandra/dml/dml_config_consistency_c.html
+    publisher: DataStax
+    published_at: null
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开DataStax Cassandra2.1归档，核对读写和quorum交集。
+  phase2_conditions:
+  - 版本落在2010—2015范围；Phase4需单独注明并发写与时间戳前提。
+  record_path: reports/research-engineering-b.md

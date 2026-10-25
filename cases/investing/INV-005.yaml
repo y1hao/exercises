@@ -1,9 +1,9 @@
 id: INV-005
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: Yelp 2005 Series B
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-005
@@ -36,3 +36,55 @@ planning:
     - 供给质量
     - 本地密度材料
     out_of_scope: 不以当前品牌和规模证明早期壁垒
+research:
+  id: INV-005
+  status: sourced
+  reason: 同期备忘录足以界定内容壁垒问题，同时发现原始 Series B 标签与直接记录冲突。
+  event: Yelp 2005 首次风险融资的投资建议，而非已确认 Series B
+  cutoff: '2005-10-03'
+  initial_facts:
+  - id: F1
+    text: 备忘录记载此前有 100 万美元天使融资，称本轮为首次 venture financing。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 产品允许查看商家评论及通过好友取得可信建议。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 文中将少量高贡献者与本地社区感列为增长解释，不是经对照试验证实的因果。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: E2
+    text: 搜索引擎流量与朋友网络是不同发现路径，不能把流量都归给网络外部性。
+    source_ids:
+    - S1
+    availability: pre_decision
+  outcome:
+    text: 原文件提出 1300 万美元投前、500 万美元投资机会，并称已同意 term sheet 条件；未提供已实现回报。
+    source_ids:
+    - S1
+  interpretation: 评论质量和可复制目录是合理竞争解释，作者的忠诚用户判断须标为当时评价。
+  unknowns:
+  - 独立交割证明与后续投资收益；评论网络的净因果作用。
+  sources:
+  - id: S1
+    url: https://www.bvp.com/memos/yelp
+    publisher: Bessemer Venture Partners
+    published_at: '2005-10-03'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 打开原始备忘录的 Summary、Product 与条款段落。
+  phase2_conditions: 原候选标题应记录轮次修正；原始输入与日期ID保留。
+  record_path: reports/research-investing.md

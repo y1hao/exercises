@@ -1,9 +1,9 @@
 id: INV-052
 kind: historical
 domain: investing
-status: candidate
+status: sourced
 scenario_title: GitLab 2015—2017 融资
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: INV-052
@@ -36,3 +36,68 @@ planning:
     - 当时企业功能
     - 社区与合同分群材料
     out_of_scope: 不以开源人气直接证明付费或照搬其他开发工具
+research:
+  id: INV-052
+  status: sourced
+  reason: 已阅读直接来源，支持可辨识事件或原始文件及其披露结果；训练数据完整性与 Case QA 尚待完成。
+  event: GitLab 2017-10-09 GV 领投 2000 万美元 C 轮
+  cutoff: 2017 C 轮投资决定前；使用此前已公布的企业套餐能力
+  initial_facts:
+  - id: I1
+    text: 2016-12-08 已发布 EE Premium，面向全球团队，包含高级支持、Geo、高可用和工作流控制等能力。
+    source_ids:
+    - S2
+    availability: pre_decision
+  - id: I2
+    text: Premium 公开价格 199 美元/用户/年；公司解释单独产品采购导致内部审批阻力，因此改为打包。价格和厂商解释不等于支付 cohort。
+    source_ids:
+    - S2
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: GitLab 2017-10-09 公告确认 GV 领投 2000 万美元 Series C。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: 公告的组织采用/开源使用规模是公司营销说法，未区分社区用户与签约付费企业。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 真实轮次及融资前企业套餐可确认；已有企业功能和标价仍不能单独证明企业付费 PMF。
+    source_ids:
+    - S1
+    - S2
+  interpretation: 优先尽调项可选择付费合同 cohort、续费/扩张与采购周期，具体优先级由学员论证。
+  unknowns:
+  - 未取得 2017 社区与付费企业分群、真实合同数、续费和扩张收入。
+  - GV 后来 IPO 回顾属于事后材料，不能将 2021 收入增长倒填成 2017 支付证据。
+  sources:
+  - id: S1
+    url: https://about.gitlab.com/press/releases/2017-10-09-gitlab-raises-c-round/
+    publisher: GitLab
+    published_at: '2017-10-09'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - E1
+    - E2
+    - outcome
+  - id: S2
+    url: https://about.gitlab.com/blog/announcing-gitlab-enterprise-edition-premium/
+    publisher: GitLab
+    published_at: '2016-12-08'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - I1
+    - I2
+    - outcome
+  attempts:
+  - 阅读 2017 C 轮新闻稿与 2016 Premium 公告全文，核对日期、价格和产品内容。
+  - 阅读 GV IPO 回顾 https://www.gv.com/news/gitlab-ipo，仅作事后身份交叉检查，不前置增长结果。
+  phase2_conditions:
+  - 锁定 2017 C 轮；主动作仍为一项优先尽调及无付费 PMF 的反例。
+  - 补齐合同分群前只做证据选择，不从开源人气推导付费需求。
+  record_path: reports/research-investing-b.md

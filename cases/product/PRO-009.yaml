@@ -1,9 +1,9 @@
 id: PRO-009
 kind: historical
 domain: product
-status: candidate
+status: sourced
 scenario_title: Netflix DVD 邮寄方案（1997—1999）
-readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+readiness_note: 已定位并阅读直接来源，研究素材见 research；完整 Brief 与 Case QA 尚未完成，不可用于训练。
 origin:
   file: curriculum_2027_complete.yaml
   id: PRO-009
@@ -36,3 +36,55 @@ planning:
     - 邮寄路径
     - 门店替代体验
     out_of_scope: 不提前使用后续订阅或流媒体结果
+research:
+  id: PRO-009
+  status: sourced
+  reason: 找到 1998 原始发布，明确按次计价、邮寄与选片路径，不借后续订阅结果。
+  event: Netflix 1998-04-14 DVD 邮寄租赁上线
+  cutoff: 1998-04-14 发布条件已知、采用结果未知
+  initial_facts:
+  - id: F1
+    text: 可在线选租或购买超过 900 DVD 标题。
+    source_ids:
+    - S1
+    availability: pre_decision
+  - id: F2
+    text: 一次在家租七天，首两部每部 4 美元，同单额外标题每部 3 美元。
+    source_ids:
+    - S1
+    availability: pre_decision
+  evidence:
+  - id: E1
+    text: 公告承诺当日发货、美国境内两至三天收到。
+    source_ids:
+    - S1
+    availability: post_decision
+  - id: E2
+    text: CEO 把广泛 DVD 选择与便利作为承诺；不是测量后的用户动机。
+    source_ids:
+    - S1
+    availability: post_decision
+  outcome:
+    text: 按次付费邮寄租赁正式开放；送达等待仍存在，不引入后续订阅或流媒体。
+    source_ids:
+    - S1
+  interpretation: 机制可作待检验预测；发布公告不证明采用、留存或因果效应。
+  unknowns:
+  - 内部决策材料、反事实与独立效果测量未公开
+  sources:
+  - id: S1
+    url: https://about.netflix.com/en/news/first-online-dvd-rental-store-opens
+    publisher: Netflix
+    published_at: '1998-04-14'
+    source_type: primary
+    checked_at: '2026-10-25'
+    supports:
+    - F1
+    - F2
+    - E1
+    - E2
+    - outcome
+  attempts:
+  - 检索并实际阅读所列来源正文；未把搜索摘要作为已验证材料。
+  phase2_conditions: 不提前使用后续订阅或流媒体结果
+  record_path: reports/research-product.md
