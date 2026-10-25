@@ -1,0 +1,24 @@
+id: DES-023
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 插件 SDK 的稳定扩展点
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-023
+candidate_material:
+  id: DES-023
+  date: '2027-06-06'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: api_sdk
+  primary_cognitive_move: extension_design
+  title: 插件 SDK 的稳定扩展点
+  scenario: 一个开发工具希望开放插件能力：插件可增加命令、读取项目结构并展示结果，但核心每两周迭代。
+  design_task: 设计最小插件契约及版本兼容策略，说明为何不直接暴露内部对象。
+  constraint_change: 社区要求插件可以执行构建过程的任意阶段钩子。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

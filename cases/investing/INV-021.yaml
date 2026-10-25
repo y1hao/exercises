@@ -1,0 +1,22 @@
+id: INV-021
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Spotify 2016—2018 上市前投资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-021
+candidate_material:
+  id: INV-021
+  date: '2027-05-22'
+  day: Saturday
+  track: investing
+  subdomain: unit_economics
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Spotify 2016—2018 上市前投资
+  case_brief: 订阅增长与音乐版权成本相互绑定，估算边际毛利和谈判力。
+  source_hint: Spotify F-1 2018
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries

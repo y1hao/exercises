@@ -1,0 +1,22 @@
+id: PRO-065
+kind: historical
+domain: product
+status: candidate
+scenario_title: Google Reader 关闭（2013）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-065
+candidate_material:
+  id: PRO-065
+  date: '2027-08-17'
+  day: Tuesday
+  track: product
+  subdomain: strategy_pivot
+  planned_cognitive_move: causal_mechanism
+  historical_case: Google Reader 关闭（2013）
+  case_brief: 拥有忠实用户但优先级下降的产品如何做取舍，分析价值对用户与公司的不同含义。
+  source_hint: Google Reader spring cleaning 2013 announcement
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

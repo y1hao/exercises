@@ -1,0 +1,23 @@
+id: INV-005
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Yelp 2005 Series B
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-005
+candidate_material:
+  id: INV-005
+  date: '2027-01-30'
+  day: Saturday
+  track: investing
+  subdomain: moat_competition
+  planned_cognitive_move: causal_mechanism
+  historical_case: Yelp 2005 Series B
+  case_brief: 本地商家评论形成内容壁垒还是可被复制的目录，判断供给质量和网络外部性。
+  source_hint: BVP original Yelp memo 2005
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics
+  example_source_url: https://www.bvp.com/memos/yelp

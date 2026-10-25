@@ -1,0 +1,22 @@
+id: INV-029
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Coinbase 2012—2013 Seed/Series A
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-029
+candidate_material:
+  id: INV-029
+  date: '2027-07-17'
+  day: Saturday
+  track: investing
+  subdomain: market_timing
+  planned_cognitive_move: causal_mechanism
+  historical_case: Coinbase 2012—2013 Seed/Series A
+  case_brief: 加密资产交易尚不成熟且监管未知时，如何定价市场机会与生存风险。
+  source_hint: Coinbase S-1 and 2013 fundraising reports
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

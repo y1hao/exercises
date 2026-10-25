@@ -1,0 +1,24 @@
+id: DES-044
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 跨团队事件契约的版本演进
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-044
+candidate_material:
+  id: DES-044
+  date: '2027-10-31'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: api_sdk
+  primary_cognitive_move: compatibility_migration
+  title: 跨团队事件契约的版本演进
+  scenario: 多个服务通过异步事件交换订单状态；发布节奏不同，新旧 consumer 会长期共存。
+  design_task: 设计事件契约与版本迁移策略，明确字段删除、语义改变和失败重试的边界。
+  constraint_change: 某个下游团队四个月内无法更新代码，却必须继续消费事件。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

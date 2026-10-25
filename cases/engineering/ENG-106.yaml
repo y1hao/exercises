@@ -1,0 +1,22 @@
+id: ENG-106
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Language Server Protocol（2016）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-106
+candidate_material:
+  id: ENG-106
+  date: '2027-09-03'
+  day: Friday
+  track: engineering
+  subdomain: developer_tooling_build
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Language Server Protocol（2016）
+  case_brief: 一套语言能力服务多个编辑器，评估标准化协议对创新与扩展能力的影响。
+  source_hint: LSP original announcement and specification
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

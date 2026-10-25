@@ -1,0 +1,24 @@
+id: DES-036
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: 协作产品的套餐边界
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-036
+candidate_material:
+  id: DES-036
+  date: '2027-09-05'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: pricing_packaging
+  primary_cognitive_move: segmentation_model
+  title: 协作产品的套餐边界
+  scenario: 一款在线协作白板拥有个人、自由职业团队和大型企业三类客户；若按座席收费，小团队会抵制邀请协作者。
+  design_task: 设计免费与付费套餐、计量单位及升级触发点，说明会导致什么用户激励。
+  constraint_change: 企业客户要求只对编辑者付费，但审阅者占总用户的九成。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

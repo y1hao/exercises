@@ -1,0 +1,22 @@
+id: ENG-069
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Capital One 云环境泄露（2019）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-069
+candidate_material:
+  id: ENG-069
+  date: '2027-06-09'
+  day: Wednesday
+  track: engineering
+  subdomain: security_isolation
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Capital One 云环境泄露（2019）
+  case_brief: 从 SSRF 到云凭据和对象存储访问，分析最小权限与网络过滤的边界。
+  source_hint: US DOJ Capital One data breach complaint
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

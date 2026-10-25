@@ -1,0 +1,24 @@
+id: DES-031
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: 探索型内容产品怎样衡量好推荐
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-031
+candidate_material:
+  id: DES-031
+  date: '2027-08-01'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: discovery_content
+  primary_cognitive_move: metric_selection
+  title: 探索型内容产品怎样衡量好推荐
+  scenario: 一款帮助用户发现当地兴趣活动的产品，推荐列表点击率不错，但用户实际报名和到场比例不高。
+  design_task: 设计排序目标、用户反馈和评价指标，避免只奖励易点击却不适合的活动。
+  constraint_change: 最受欢迎的活动名额有限，新用户总是被推荐已经满员的活动。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

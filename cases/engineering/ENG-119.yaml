@@ -1,0 +1,22 @@
+id: ENG-119
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Google F1 数据库（2013）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-119
+candidate_material:
+  id: ENG-119
+  date: '2027-10-04'
+  day: Monday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Google F1 数据库（2013）
+  case_brief: 应用既想跨数据中心一致又需要 SQL 时，评估 Spanner 上层查询与事务开销。
+  source_hint: 'F1: A Distributed SQL Database That Scales'
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

@@ -1,0 +1,22 @@
+id: ENG-107
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Equifax Apache Struts 漏洞（2017）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-107
+candidate_material:
+  id: ENG-107
+  date: '2027-09-06'
+  day: Monday
+  track: engineering
+  subdomain: security_isolation
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Equifax Apache Struts 漏洞（2017）
+  case_brief: 已知漏洞、补丁和资产清单脱节；判断组织层面的可利用窗口与防线优先级。
+  source_hint: US House Equifax breach report
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

@@ -1,0 +1,23 @@
+id: ENG-082
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Cloudflare 2025 年 6 月 Workers KV 故障
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-082
+candidate_material:
+  id: ENG-082
+  date: '2027-07-09'
+  day: Friday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Cloudflare 2025 年 6 月 Workers KV 故障
+  case_brief: 底层存储依赖失效波及多个产品；画出依赖图并寻找可切断的级联路径。
+  source_hint: Cloudflare service outage June 12 2025
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops
+  example_source_url: https://blog.cloudflare.com/cloudflare-service-outage-june-12-2025/

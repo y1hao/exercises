@@ -1,0 +1,22 @@
+id: ENG-012
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Google Protocol Buffers 兼容策略（2008—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-012
+candidate_material:
+  id: ENG-012
+  date: '2027-01-27'
+  day: Wednesday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Google Protocol Buffers 兼容策略（2008—）
+  case_brief: 客户端与服务器独立演进时，预测删除字段、改变编号、增加枚举值造成的兼容性风险。
+  source_hint: Protocol Buffers language guide updating a message type
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

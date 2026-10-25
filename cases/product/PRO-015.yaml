@@ -1,0 +1,22 @@
+id: PRO-015
+kind: historical
+domain: product
+status: candidate
+scenario_title: Etsy 手作卖家社区（2005—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-015
+candidate_material:
+  id: PRO-015
+  date: '2027-02-23'
+  day: Tuesday
+  track: product
+  subdomain: network_marketplaces
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Etsy 手作卖家社区（2005—）
+  case_brief: 垂直供给吸引特色买家，判断差异化选择对供需匹配的价值。
+  source_hint: Etsy IPO S-1
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: bottlenecks_constraints

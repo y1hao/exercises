@@ -1,0 +1,24 @@
+id: DES-032
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 减少内存占用而不破坏延迟
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-032
+candidate_material:
+  id: DES-032
+  date: '2027-08-08'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: runtime_performance
+  primary_cognitive_move: performance_model
+  title: 减少内存占用而不破坏延迟
+  scenario: 一个 Go 常驻服务处理突发请求，内存开销高；团队在缓存、对象生命周期和 GC 参数之间犹豫。
+  design_task: 定义最小性能模型、诊断实验与优化顺序；说明什么情况会让降低内存反而伤害尾延迟。
+  constraint_change: 服务部署在内存紧张的节点上，OOM 比平均延迟更影响可用性。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

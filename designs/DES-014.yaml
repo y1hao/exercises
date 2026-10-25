@@ -1,0 +1,24 @@
+id: DES-014
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 在线数据库 Schema 演进
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-014
+candidate_material:
+  id: DES-014
+  date: '2027-04-04'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: data_api_evolution
+  primary_cognitive_move: migration_protocol
+  title: 在线数据库 Schema 演进
+  scenario: 一个线上服务有持续流量，数据库表新增字段后需要逐步迁移历史数据，应用部署不能同时完成。
+  design_task: 设计兼容新旧应用版本的迁移阶段和可回滚边界；用一项不变量说明何时可以删除旧字段。
+  constraint_change: 迁移过程中出现一次回滚，部分新版本实例仍在写新字段。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

@@ -1,0 +1,22 @@
+id: PRO-070
+kind: historical
+domain: product
+status: candidate
+scenario_title: Figma 多人光标（2016—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-070
+candidate_material:
+  id: PRO-070
+  date: '2027-09-02'
+  day: Thursday
+  track: product
+  subdomain: ux_activation
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Figma 多人光标（2016—）
+  case_brief: 实时展示其他设计者位置，判断社交临场感是否减少协作沟通成本。
+  source_hint: Figma multiplayer product launch accounts
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

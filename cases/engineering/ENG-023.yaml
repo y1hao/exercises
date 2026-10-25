@@ -1,0 +1,22 @@
+id: ENG-023
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: GitHub Actions pwn requests 风险（2020—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-023
+candidate_material:
+  id: ENG-023
+  date: '2027-02-22'
+  day: Monday
+  track: engineering
+  subdomain: security_isolation
+  planned_cognitive_move: causal_mechanism
+  historical_case: GitHub Actions pwn requests 风险（2020—）
+  case_brief: Pull Request 工作流使用高权限 token 时，推演不可信代码如何影响仓库 Secrets。
+  source_hint: GitHub Security Lab pwn requests article
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: bottlenecks_constraints

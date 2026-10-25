@@ -1,0 +1,22 @@
+id: ENG-123
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: OpenAPI 3.0 规格演进（2017）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-123
+candidate_material:
+  id: ENG-123
+  date: '2027-10-13'
+  day: Wednesday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: quantitative_estimation
+  historical_case: OpenAPI 3.0 规格演进（2017）
+  case_brief: 跨团队 API 文档、客户端生成与验证的成本冲突，评估契约优先的收益与盲点。
+  source_hint: OpenAPI Initiative 3.0 release
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

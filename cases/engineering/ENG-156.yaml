@@ -1,0 +1,22 @@
+id: ENG-156
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Kubernetes 控制器协调循环（2014—2016）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-156
+candidate_material:
+  id: ENG-156
+  date: '2027-12-29'
+  day: Wednesday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Kubernetes 控制器协调循环（2014—2016）
+  case_brief: 研究 desired state 与 observed state 的偏差，推演重复 reconcile 的幂等和收敛条件。
+  source_hint: Kubernetes controllers documentation and design proposals
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

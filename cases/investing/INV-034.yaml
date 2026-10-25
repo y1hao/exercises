@@ -1,0 +1,22 @@
+id: INV-034
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Superhuman 2017—2019 融资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-034
+candidate_material:
+  id: INV-034
+  date: '2027-08-21'
+  day: Saturday
+  track: investing
+  subdomain: pmf_traction
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Superhuman 2017—2019 融资
+  case_brief: 在高价邮件客户端尚未大规模增长时，用分群 PMF 调查评估需求真实性。
+  source_hint: First Round Superhuman PMF essay and funding reports
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

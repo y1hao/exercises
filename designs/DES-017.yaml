@@ -1,0 +1,24 @@
+id: DES-017
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: 跨部门 B2B 产品的引导路径
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-017
+candidate_material:
+  id: DES-017
+  date: '2027-04-25'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: b2b_adoption
+  primary_cognitive_move: role_based_onboarding
+  title: 跨部门 B2B 产品的引导路径
+  scenario: 一个面向法务和销售的合同协作产品，销售希望立即发起审批，法务则要求规则和模板统一。
+  design_task: 设计首次导入团队的角色分工与最低启动流程，不要求一次性迁移全部历史合同。
+  constraint_change: 一线销售已经试用，但正式购买权在采购与合规团队。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

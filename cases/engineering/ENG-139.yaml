@@ -1,0 +1,23 @@
+id: ENG-139
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Cloudflare 2022 年 6 月网络中断
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-139
+candidate_material:
+  id: ENG-139
+  date: '2027-11-19'
+  day: Friday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Cloudflare 2022 年 6 月网络中断
+  case_brief: 一次路由配置变更影响多个机房；依据流量路径识别 blast radius 与回滚优先级。
+  source_hint: Cloudflare outage June 21 2022
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments
+  example_source_url: https://blog.cloudflare.com/cloudflare-outage-on-june-21-2022/

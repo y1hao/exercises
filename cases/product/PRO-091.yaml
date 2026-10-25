@@ -1,0 +1,22 @@
+id: PRO-091
+kind: historical
+domain: product
+status: candidate
+scenario_title: Substack 推荐网络上线（2022）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-091
+candidate_material:
+  id: PRO-091
+  date: '2027-11-16'
+  day: Tuesday
+  track: product
+  subdomain: network_marketplaces
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Substack 推荐网络上线（2022）
+  case_brief: 创作者之间互相推荐读者，判断内容平台从工具向网络转变的边界。
+  source_hint: Substack recommendations product launch
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

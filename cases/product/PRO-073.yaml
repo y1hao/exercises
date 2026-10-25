@@ -1,0 +1,22 @@
+id: PRO-073
+kind: historical
+domain: product
+status: candidate
+scenario_title: Pinterest 从 Tote 演化（2009—2010）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-073
+candidate_material:
+  id: PRO-073
+  date: '2027-09-14'
+  day: Tuesday
+  track: product
+  subdomain: user_research_value
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Pinterest 从 Tote 演化（2009—2010）
+  case_brief: 观察用户收藏而非购买行为，推断视觉收集是否比移动购物更有价值。
+  source_hint: BVP Pinterest 2011 investment memo
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

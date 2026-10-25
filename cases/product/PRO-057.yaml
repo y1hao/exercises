@@ -1,0 +1,22 @@
+id: PRO-057
+kind: historical
+domain: product
+status: candidate
+scenario_title: BlackBerry 从硬件转向软件服务（2016）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-057
+candidate_material:
+  id: PRO-057
+  date: '2027-07-20'
+  day: Tuesday
+  track: product
+  subdomain: strategy_pivot
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: BlackBerry 从硬件转向软件服务（2016）
+  case_brief: 手机竞争优势消退后，评估企业能力能否迁移到安全软件市场。
+  source_hint: BlackBerry device business transition history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

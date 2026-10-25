@@ -1,0 +1,23 @@
+id: INV-018
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Toast 2015 Series B
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-018
+candidate_material:
+  id: INV-018
+  date: '2027-05-01'
+  day: Saturday
+  track: investing
+  subdomain: moat_competition
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Toast 2015 Series B
+  case_brief: 餐饮 POS 与支付深度绑定，评估垂直工作流能否建立高切换成本。
+  source_hint: BVP original Toast memo 2015
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries
+  example_source_url: https://www.bvp.com/memos/toast

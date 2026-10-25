@@ -1,0 +1,22 @@
+id: ENG-127
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Buck2 引入 Dice 增量引擎（2023）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-127
+candidate_material:
+  id: ENG-127
+  date: '2027-10-22'
+  day: Friday
+  track: engineering
+  subdomain: developer_tooling_build
+  planned_cognitive_move: causal_mechanism
+  historical_case: Buck2 引入 Dice 增量引擎（2023）
+  case_brief: Meta 重写构建工具时，研究细粒度依赖追踪如何改变增量计算与正确性。
+  source_hint: Buck2 announcement and DICE papers
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

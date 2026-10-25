@@ -1,0 +1,22 @@
+id: ENG-074
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Google Borg 集群超售（2015）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-074
+candidate_material:
+  id: ENG-074
+  date: '2027-06-21'
+  day: Monday
+  track: engineering
+  subdomain: performance_cost
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Google Borg 集群超售（2015）
+  case_brief: 混合在线与批处理工作负载时，评估资源预留、优先级和实际利用率。
+  source_hint: Large-scale cluster management at Google with Borg
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

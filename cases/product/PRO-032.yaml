@@ -1,0 +1,22 @@
+id: PRO-032
+kind: historical
+domain: product
+status: candidate
+scenario_title: Dropbox 早期 Demo 视频（2007）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-032
+candidate_material:
+  id: PRO-032
+  date: '2027-04-22'
+  day: Thursday
+  track: product
+  subdomain: user_research_value
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Dropbox 早期 Demo 视频（2007）
+  case_brief: 产品未大规模可用时，公开视频获得需求信号；判断兴趣、注册与真实留存的差异。
+  source_hint: Drew Houston Dropbox demo and early traction interviews
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

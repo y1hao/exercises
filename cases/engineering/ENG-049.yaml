@@ -1,0 +1,22 @@
+id: ENG-049
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Kubernetes API 对象与控制器分离（2014—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-049
+candidate_material:
+  id: ENG-049
+  date: '2027-04-23'
+  day: Friday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: causal_mechanism
+  historical_case: Kubernetes API 对象与控制器分离（2014—）
+  case_brief: 从 Deployment、ReplicaSet、Pod 分层理解声明式 API 如何分配状态和所有权。
+  source_hint: Kubernetes API conventions and Deployment docs
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

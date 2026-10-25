@@ -1,0 +1,22 @@
+id: ENG-022
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Google LSM-tree LevelDB（2011）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-022
+candidate_material:
+  id: ENG-022
+  date: '2027-02-19'
+  day: Friday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Google LSM-tree LevelDB（2011）
+  case_brief: 随机写密集场景使用 LSM 后，预测 compaction、读放大与空间放大的变化。
+  source_hint: LevelDB implementation notes
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: bottlenecks_constraints

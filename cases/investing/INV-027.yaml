@@ -1,0 +1,22 @@
+id: INV-027
+kind: historical
+domain: investing
+status: candidate
+scenario_title: HelloFresh 2015—2017 融资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-027
+candidate_material:
+  id: INV-027
+  date: '2027-07-03'
+  day: Saturday
+  track: investing
+  subdomain: unit_economics
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: HelloFresh 2015—2017 融资
+  case_brief: 订阅餐盒物流和营销成本高，判断高频下单能否覆盖 CAC 与损耗。
+  source_hint: HelloFresh IPO prospectus
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

@@ -1,0 +1,22 @@
+id: ENG-089
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Rowhammer（2014）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-089
+candidate_material:
+  id: ENG-089
+  date: '2027-07-26'
+  day: Monday
+  track: engineering
+  subdomain: security_isolation
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Rowhammer（2014）
+  case_brief: 高频内存访问可扰动邻近位，识别软件访问权限与物理效应之间的边界。
+  source_hint: Rowhammer original 2014 paper
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

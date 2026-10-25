@@ -1,0 +1,22 @@
+id: INV-024
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Mistral AI 2023 Seed
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-024
+candidate_material:
+  id: INV-024
+  date: '2027-06-12'
+  day: Saturday
+  track: investing
+  subdomain: market_timing
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Mistral AI 2023 Seed
+  case_brief: 基础模型训练资本强度迅速上升时，评估欧洲开源/主权模型定位能否形成需求。
+  source_hint: Mistral AI 2023 strategic memo and seed announcements
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

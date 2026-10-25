@@ -1,0 +1,24 @@
+id: DES-024
+kind: micro_design
+domain: investing
+status: candidate
+scenario_title: 开源与托管服务的商业边界
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-024
+candidate_material:
+  id: DES-024
+  date: '2027-06-13'
+  day: Sunday
+  track: micro_design
+  domain: venture
+  subdomain: oss_business_model
+  primary_cognitive_move: monetization_model
+  title: 开源与托管服务的商业边界
+  scenario: 一个开源 Workflow Engine 已有活跃社区，却需要收入支持全职维护者；用户既有个人开发者也有企业。
+  design_task: 设计开源核心与付费服务的边界，并提出验证付费意愿的方法，避免破坏社区信任。
+  constraint_change: 一家大客户要求私有部署，并拒绝支付持续 SaaS 费用。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

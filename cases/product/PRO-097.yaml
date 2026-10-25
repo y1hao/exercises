@@ -1,0 +1,22 @@
+id: PRO-097
+kind: historical
+domain: product
+status: candidate
+scenario_title: Figma 从设计师向组织扩散（2016—2022）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-097
+candidate_material:
+  id: PRO-097
+  date: '2027-12-07'
+  day: Tuesday
+  track: product
+  subdomain: b2b_adoption
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Figma 从设计师向组织扩散（2016—2022）
+  case_brief: 产品协作吸引工程师和 PM，分析使用者与预算持有者不一致时的采购过程。
+  source_hint: Figma S-1 draft/Adobe acquisition materials
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

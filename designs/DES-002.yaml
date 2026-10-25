@@ -1,0 +1,24 @@
+id: DES-002
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: 移动端即时记录的第一分钟
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-002
+candidate_material:
+  id: DES-002
+  date: '2027-01-10'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: activation_ux
+  primary_cognitive_move: user_flow
+  title: 移动端即时记录的第一分钟
+  scenario: 一款面向繁忙家长的手机应用希望用户在想到事情时快速记录，但新用户第一次打开时还没有数据；只能做三个首屏步骤。
+  design_task: 设计首次使用路径与第一份可感知的价值；解释哪些信息延后收集，以及如何验证是否真的解决了问题。
+  constraint_change: 用户往往只有单手操作的十秒钟，并且会在离线时打开应用。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

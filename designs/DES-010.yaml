@@ -1,0 +1,24 @@
+id: DES-010
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: 一个不依赖每日打卡的留存机制
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-010
+candidate_material:
+  id: DES-010
+  date: '2027-03-07'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: retention_jobs
+  primary_cognitive_move: retention_design
+  title: 一个不依赖每日打卡的留存机制
+  scenario: 一款帮助用户比较家庭重大购买决策的应用一年可能只被使用两三次，传统 DAU/连续签到不适用。
+  design_task: 设计价值交付、回访触发点和衡量留存或复用的指标；不能靠人为推送制造使用频率。
+  constraint_change: 用户作出决策后通常不需要再打开应用半年。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

@@ -1,0 +1,22 @@
+id: ENG-157
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Google Blaze 构建缓存（2015）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-157
+candidate_material:
+  id: ENG-157
+  date: '2027-12-31'
+  day: Friday
+  track: engineering
+  subdomain: developer_tooling_build
+  planned_cognitive_move: causal_mechanism
+  historical_case: Google Blaze 构建缓存（2015）
+  case_brief: 将大型代码库的构建解释为纯函数组合，判断非确定性输入如何污染缓存。
+  source_hint: Bazel build encyclopedia and caching docs
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

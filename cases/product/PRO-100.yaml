@@ -1,0 +1,22 @@
+id: PRO-100
+kind: historical
+domain: product
+status: candidate
+scenario_title: Shopify App Store（2009）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-100
+candidate_material:
+  id: PRO-100
+  date: '2027-12-16'
+  day: Thursday
+  track: product
+  subdomain: retention_workflow
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Shopify App Store（2009）
+  case_brief: 商家日常运营与第三方插件绑定时，分析平台扩展性对留存的影响。
+  source_hint: Shopify App Store launch history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

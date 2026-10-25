@@ -1,0 +1,23 @@
+id: INV-003
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Fiverr 2011 Series A
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-003
+candidate_material:
+  id: INV-003
+  date: '2027-01-16'
+  day: Saturday
+  track: investing
+  subdomain: pmf_traction
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Fiverr 2011 Series A
+  case_brief: 低价标准化自由职业服务存在质量疑虑，判断交易重复和供需匹配是否可扩张。
+  source_hint: BVP original Fiverr memo 2011
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics
+  example_source_url: https://www.bvp.com/memos/fiverr

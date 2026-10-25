@@ -1,0 +1,24 @@
+id: DES-011
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: Coding Agent 的最小权限模型
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-011
+candidate_material:
+  id: DES-011
+  date: '2027-03-14'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: agent_devtools
+  primary_cognitive_move: security_boundary
+  title: Coding Agent 的最小权限模型
+  scenario: 企业要让 coding agent 自动修改代码、运行测试并创建 PR，但不允许其直接访问生产凭据。
+  design_task: 设计权限申请与执行边界：哪些操作默认允许、哪些需确认、哪些即使用户允许也不能做。
+  constraint_change: 测试命令通过脚本间接调用云账号，且脚本本身可能来自未经审查的 PR。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

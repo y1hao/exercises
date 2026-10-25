@@ -1,0 +1,24 @@
+id: DES-013
+kind: micro_design
+domain: investing
+status: candidate
+scenario_title: 双边服务市场的冷启动
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-013
+candidate_material:
+  id: DES-013
+  date: '2027-03-28'
+  day: Sunday
+  track: micro_design
+  domain: venture
+  subdomain: marketplace_liquidity
+  primary_cognitive_move: matching_mechanism
+  title: 双边服务市场的冷启动
+  scenario: 两人团队想连接独立维修技师与家庭用户；技师关心稳定订单，用户关心响应速度和可靠性。初期只能覆盖一个城区。
+  design_task: 设计最窄的供需切入策略及交易闭环，说明先获取哪一侧、怎样验证流动性。
+  constraint_change: 每周订单波动很大，优质技师不愿为了零星订单保持空闲。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

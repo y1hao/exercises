@@ -1,0 +1,24 @@
+id: DES-035
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: Agent Eval 作为日常开发工作流
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-035
+candidate_material:
+  id: DES-035
+  date: '2027-08-29'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: agent_devtools
+  primary_cognitive_move: evaluation_workflow
+  title: Agent Eval 作为日常开发工作流
+  scenario: 一家软件团队频繁修改 coding agent 的提示词和工具列表，却无法解释为什么某次调整让真实任务更差。
+  design_task: 设计最小的 eval 任务单元、回归门槛和失败分型流程，尽量避免维护庞大的人工基准。
+  constraint_change: 模型供应商版本更新，导致同一评测波动增加而平均分暂时提高。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

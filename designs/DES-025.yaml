@@ -1,0 +1,24 @@
+id: DES-025
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: 取消订阅也要维护长期信任
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-025
+candidate_material:
+  id: DES-025
+  date: '2027-06-20'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: retention_jobs
+  primary_cognitive_move: exit_experience
+  title: 取消订阅也要维护长期信任
+  scenario: 一款团队软件的用户频繁在项目结束后取消订阅，企业希望减少流失，却不想用暗黑模式阻止退出。
+  design_task: 设计取消、暂停、导出和回访机制，说明怎样判断问题是价值不足还是自然周期。
+  constraint_change: 财务希望提前锁定一年合同，但客户只在旺季使用。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

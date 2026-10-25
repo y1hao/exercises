@@ -1,0 +1,22 @@
+id: PRO-035
+kind: historical
+domain: product
+status: candidate
+scenario_title: Dropbox Freemium 存储配额（2008—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-035
+candidate_material:
+  id: PRO-035
+  date: '2027-05-04'
+  day: Tuesday
+  track: product
+  subdomain: pricing_monetization
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Dropbox Freemium 存储配额（2008—）
+  case_brief: 提供免费容量吸引用户，判断何时足以触发付费扩容。
+  source_hint: Dropbox early freemium and referral model
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries

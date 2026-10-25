@@ -1,0 +1,24 @@
+id: DES-046
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: Webhook 平台的交付保障
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-046
+candidate_material:
+  id: DES-046
+  date: '2027-11-14'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: workflow_control_plane
+  primary_cognitive_move: delivery_semantics
+  title: Webhook 平台的交付保障
+  scenario: 一款 SaaS 通过 webhook 向客户发送事件；客户 endpoint 经常超时、返回 5xx，且无法保证消息按顺序到达。
+  design_task: 设计事件 ID、重试、死信处理和可观测性的最小契约，并说明何时不应继续重试。
+  constraint_change: 同一客户有多个 endpoint，只有一个长期失败，且请求可能具有不可重复的业务副作用。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

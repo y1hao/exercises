@@ -1,0 +1,23 @@
+id: ENG-155
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Cloudflare 2025 年 12 月解析逻辑故障
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-155
+candidate_material:
+  id: ENG-155
+  date: '2027-12-27'
+  day: Monday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: value_of_information
+  historical_case: Cloudflare 2025 年 12 月解析逻辑故障
+  case_brief: 安全规则相关代码变更触发部分流量错误；设计灰度与故障隔离验证。
+  source_hint: Cloudflare outage December 5 2025
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer
+  example_source_url: https://blog.cloudflare.com/5-december-2025-outage/

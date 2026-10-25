@@ -1,0 +1,22 @@
+id: INV-031
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Atlassian 2002—2005 自举期
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-031
+candidate_material:
+  id: INV-031
+  date: '2027-07-31'
+  day: Saturday
+  track: investing
+  subdomain: founder_execution
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Atlassian 2002—2005 自举期
+  case_brief: 创始团队以低销售投入扩展软件工具，评估这种执行模式何时可行、何时成为限制。
+  source_hint: Atlassian S-1 and founders history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

@@ -1,0 +1,22 @@
+id: ENG-083
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Notion 数据库分片（2021）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-083
+candidate_material:
+  id: ENG-083
+  date: '2027-07-12'
+  day: Monday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Notion 数据库分片（2021）
+  case_brief: 工作区数量增长造成存储瓶颈时，评估分片策略与租户数据位置的选择。
+  source_hint: Notion engineering sharding Postgres
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

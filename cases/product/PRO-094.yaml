@@ -1,0 +1,22 @@
+id: PRO-094
+kind: historical
+domain: product
+status: candidate
+scenario_title: Zoom 一键加入会议设计（2013—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-094
+candidate_material:
+  id: PRO-094
+  date: '2027-11-25'
+  day: Thursday
+  track: product
+  subdomain: ux_activation
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Zoom 一键加入会议设计（2013—）
+  case_brief: 受邀者并非付费者，比较下载/注册要求对会议采用的阻力。
+  source_hint: Eric Yuan Zoom early product interviews
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

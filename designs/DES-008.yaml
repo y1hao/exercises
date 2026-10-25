@@ -1,0 +1,24 @@
+id: DES-008
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 至少一次任务执行的对外契约
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-008
+candidate_material:
+  id: DES-008
+  date: '2027-02-21'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: distributed_messaging
+  primary_cognitive_move: failure_semantics
+  title: 至少一次任务执行的对外契约
+  scenario: 平台向第三方 worker 分发后台任务，网络会中断，执行耗时未知；客户端希望任务不会静默丢失。
+  design_task: 设计接收、确认、超时、重投递的最小协议，并写出能保证和不能保证的性质。
+  constraint_change: worker 在完成真实业务操作后、发回确认前崩溃。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

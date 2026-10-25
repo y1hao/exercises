@@ -1,0 +1,22 @@
+id: ENG-137
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Linux epoll（2002）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-137
+candidate_material:
+  id: ENG-137
+  date: '2027-11-15'
+  day: Monday
+  track: engineering
+  subdomain: runtime_concurrency
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Linux epoll（2002）
+  case_brief: 高连接数下比较 select、poll、epoll 的事件通知成本以及 ET 模式漏读风险。
+  source_hint: epoll(7) manual page
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

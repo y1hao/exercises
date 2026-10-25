@@ -1,0 +1,22 @@
+id: PRO-078
+kind: historical
+domain: product
+status: candidate
+scenario_title: Instagram Stories 发布（2016）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-078
+candidate_material:
+  id: PRO-078
+  date: '2027-09-30'
+  day: Thursday
+  track: product
+  subdomain: ux_activation
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Instagram Stories 发布（2016）
+  case_brief: 在永久主页照片之外引入临时内容，预测用户创作频率及表达压力变化。
+  source_hint: Instagram Stories 2016 launch announcement
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

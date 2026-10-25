@@ -1,0 +1,22 @@
+id: PRO-064
+kind: historical
+domain: product
+status: candidate
+scenario_title: Spotify 广告免费与 Premium 并存（2008—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-064
+candidate_material:
+  id: PRO-064
+  date: '2027-08-12'
+  day: Thursday
+  track: product
+  subdomain: pricing_monetization
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Spotify 广告免费与 Premium 并存（2008—）
+  case_brief: 免费层扩大覆盖却有授权成本；分析转化率和广告收入如何支撑分层定价。
+  source_hint: Spotify IPO F-1 business model
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

@@ -1,0 +1,22 @@
+id: ENG-046
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: .NET ThreadPool Hill Climbing（2000s—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-046
+candidate_material:
+  id: ENG-046
+  date: '2027-04-16'
+  day: Friday
+  track: engineering
+  subdomain: runtime_concurrency
+  planned_cognitive_move: value_of_information
+  historical_case: .NET ThreadPool Hill Climbing（2000s—）
+  case_brief: 线程数增加导致吞吐下降或饥饿时，用测量而非直觉判断 worker 注入。
+  source_hint: .NET ThreadPool docs and performance investigation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

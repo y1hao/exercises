@@ -1,0 +1,24 @@
+id: DES-039
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 默认安全的审计事件模型
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-039
+candidate_material:
+  id: DES-039
+  date: '2027-09-26'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: security_audit
+  primary_cognitive_move: data_boundary
+  title: 默认安全的审计事件模型
+  scenario: 一个支持多租户管理操作的平台要保存审计日志，方便合规调查和客户自助查询，但部分操作包含敏感字段。
+  design_task: 设计最小审计事件结构、访问控制与保留策略，并说明它与普通应用日志的区别。
+  constraint_change: 客户要求能删除个人信息，合规团队又要求关键管理员操作不可抵赖。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

@@ -1,0 +1,22 @@
+id: ENG-144
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: ClickHouse MergeTree（2016—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-144
+candidate_material:
+  id: ENG-144
+  date: '2027-12-01'
+  day: Wednesday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: ClickHouse MergeTree（2016—）
+  case_brief: 面向分析的列式表需要高吞吐写入和查询，判断分区、排序键和后台 merge 的权衡。
+  source_hint: ClickHouse MergeTree docs
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

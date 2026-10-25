@@ -1,0 +1,22 @@
+id: PRO-017
+kind: historical
+domain: product
+status: candidate
+scenario_title: Slack 从游戏内聊天转型（2012—2013）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-017
+candidate_material:
+  id: PRO-017
+  date: '2027-03-02'
+  day: Tuesday
+  track: product
+  subdomain: user_research_value
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Slack 从游戏内聊天转型（2012—2013）
+  case_brief: Glitch 团队识别内部沟通工具的外部需求；判断内部 dogfooding 何时可迁移到市场。
+  source_hint: Stewart Butterfield Slack origin interviews
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

@@ -1,0 +1,23 @@
+id: ENG-026
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Cloudflare 2023 年 10 月 Workers KV 部署问题
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-026
+candidate_material:
+  id: ENG-026
+  date: '2027-03-01'
+  day: Monday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: causal_mechanism
+  historical_case: Cloudflare 2023 年 10 月 Workers KV 部署问题
+  case_brief: 新部署工具导致 KV 权限错误；如何通过状态码、部署时间与依赖图锁定问题。
+  source_hint: Cloudflare incident October 30 2023
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior
+  example_source_url: https://blog.cloudflare.com/cloudflare-incident-on-october-30-2023/

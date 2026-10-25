@@ -1,0 +1,22 @@
+id: PRO-104
+kind: historical
+domain: product
+status: candidate
+scenario_title: Canva 在线设计模板化（2013）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-104
+candidate_material:
+  id: PRO-104
+  date: '2027-12-30'
+  day: Thursday
+  track: product
+  subdomain: user_research_value
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Canva 在线设计模板化（2013）
+  case_brief: 非设计师完成海报等任务的复杂性高，判断模板、素材与可视化编辑哪部分创造主要价值。
+  source_hint: Canva founders early product interviews
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

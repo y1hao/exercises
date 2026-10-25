@@ -1,0 +1,13 @@
+id: DES-001
+kind: micro_design
+domain: engineering
+status: ready
+objective: 合成测试：检查设计题字段。
+opening: 合成测试：为一个任务设计最小流程。
+initial_constraints: [只有一位操作者。]
+perturbations:
+  - id: P1
+    change: 操作者可能中途离开。
+    tests: 是否保留可恢复的进度。
+evaluation_criteria: [满足初始约束，状态自洽。]
+boundaries: [纯合成测试，不声称存在唯一方案。]

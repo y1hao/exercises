@@ -1,0 +1,22 @@
+id: ENG-041
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Google Bigtable（2006）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-041
+candidate_material:
+  id: ENG-041
+  date: '2027-04-05'
+  day: Monday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: causal_mechanism
+  historical_case: Google Bigtable（2006）
+  case_brief: 大规模稀疏宽表如何实现有序键扫描，分析 tablet 切分与单点热点。
+  source_hint: 'Bigtable: A Distributed Storage System for Structured Data'
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

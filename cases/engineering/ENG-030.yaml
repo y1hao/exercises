@@ -1,0 +1,22 @@
+id: ENG-030
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Snowflake 分离存储和计算（2016）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-030
+candidate_material:
+  id: ENG-030
+  date: '2027-03-10'
+  day: Wednesday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Snowflake 分离存储和计算（2016）
+  case_brief: 工作负载隔离和弹性扩容需求下，分析虚拟仓库如何改变资源竞争。
+  source_hint: The Snowflake Elastic Data Warehouse (SIGMOD 2016)
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

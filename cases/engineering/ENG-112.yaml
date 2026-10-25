@@ -1,0 +1,22 @@
+id: ENG-112
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Node.js libuv 事件循环（2009—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-112
+candidate_material:
+  id: ENG-112
+  date: '2027-09-17'
+  day: Friday
+  track: engineering
+  subdomain: runtime_concurrency
+  planned_cognitive_move: value_of_information
+  historical_case: Node.js libuv 事件循环（2009—）
+  case_brief: 针对异步文件与网络请求，追踪 event loop、thread pool 与回调延迟的关系。
+  source_hint: Node.js event loop design documentation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

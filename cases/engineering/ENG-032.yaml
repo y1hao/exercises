@@ -1,0 +1,22 @@
+id: ENG-032
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Guix 构建隔离（2013）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-032
+candidate_material:
+  id: ENG-032
+  date: '2027-03-15'
+  day: Monday
+  track: engineering
+  subdomain: developer_tooling_build
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Guix 构建隔离（2013）
+  case_brief: 包管理工具通过隔离环境提供可重现性时，识别供应链信任和引导问题。
+  source_hint: GNU Guix paper and manual
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

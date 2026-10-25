@@ -1,0 +1,22 @@
+id: ENG-125
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Cloudflare 2019 年 WAF 正则事故
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-125
+candidate_material:
+  id: ENG-125
+  date: '2027-10-18'
+  day: Monday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: causal_mechanism
+  historical_case: Cloudflare 2019 年 WAF 正则事故
+  case_brief: 新规则使 CPU 使用急剧上升；区分部署、回滚与性能预验证机制。
+  source_hint: Cloudflare details of the Cloudflare outage July 2 2019
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

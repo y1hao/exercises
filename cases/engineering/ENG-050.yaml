@@ -1,0 +1,22 @@
+id: ENG-050
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: LinkedIn Kafka 日志存储（2011）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-050
+candidate_material:
+  id: ENG-050
+  date: '2027-04-26'
+  day: Monday
+  track: engineering
+  subdomain: performance_cost
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: LinkedIn Kafka 日志存储（2011）
+  case_brief: 事件摄取规模扩大时，判断顺序写、批处理和零拷贝怎样改变吞吐与延迟。
+  source_hint: Kafka a Distributed Messaging System for Log Processing
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

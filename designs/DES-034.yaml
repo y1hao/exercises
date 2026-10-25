@@ -1,0 +1,24 @@
+id: DES-034
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: 自动化产品如何保留用户控制权
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-034
+candidate_material:
+  id: DES-034
+  date: '2027-08-22'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: workflow_automation
+  primary_cognitive_move: human_in_loop
+  title: 自动化产品如何保留用户控制权
+  scenario: 一款面向运营人员的自动化工具能根据自然语言创建跨系统工作流；错误执行可能修改真实客户数据。
+  design_task: 设计从意图、预览、授权到执行反馈的交互闭环，明确可撤销与不可撤销操作。
+  constraint_change: 用户希望定时无人值守执行，而外部系统不支持事务回滚。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

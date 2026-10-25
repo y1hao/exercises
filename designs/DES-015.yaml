@@ -1,0 +1,24 @@
+id: DES-015
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: 记账产品的第一份有效反馈
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-015
+candidate_material:
+  id: DES-015
+  date: '2027-04-11'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: activation_ux
+  primary_cognitive_move: feedback_loop
+  title: 记账产品的第一份有效反馈
+  scenario: 一个个人现金流管理产品需要导入交易后才有价值，但用户对银行授权十分谨慎，手动录入又很烦。
+  design_task: 设计不依赖完整银行授权的首次价值体验，确定第一周真正需要验证的行为。
+  constraint_change: 部分用户现金收入占很大比例，银行交易记录并不完整。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

@@ -1,0 +1,22 @@
+id: ENG-065
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Google Megastore（2011）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-065
+candidate_material:
+  id: ENG-065
+  date: '2027-05-31'
+  day: Monday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Google Megastore（2011）
+  case_brief: 在 entity group 内外选择一致性边界，判断事务范围扩大对延迟和可用性的影响。
+  source_hint: 'Megastore: Providing Scalable, Highly Available Storage for Interactive Services'
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries

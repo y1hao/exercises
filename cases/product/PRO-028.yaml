@@ -1,0 +1,22 @@
+id: PRO-028
+kind: historical
+domain: product
+status: candidate
+scenario_title: Figma 评论与设计协作（2017—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-028
+candidate_material:
+  id: PRO-028
+  date: '2027-04-08'
+  day: Thursday
+  track: product
+  subdomain: retention_workflow
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Figma 评论与设计协作（2017—）
+  case_brief: 设计文件成为跨职能沟通媒介，判断非设计师加入如何增强产品粘性。
+  source_hint: Figma comments product release
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

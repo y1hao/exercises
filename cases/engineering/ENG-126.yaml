@@ -1,0 +1,22 @@
+id: ENG-126
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: TiDB Percolator 模型（2016）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-126
+candidate_material:
+  id: ENG-126
+  date: '2027-10-20'
+  day: Wednesday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: TiDB Percolator 模型（2016）
+  case_brief: 用 primary lock 与二阶段提交场景，判断跨 shard 事务何时会阻塞或需要清理锁。
+  source_hint: TiDB transaction model documentation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

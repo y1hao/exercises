@@ -1,0 +1,23 @@
+id: INV-049
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Wix 2007—2008 Seed
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-049
+candidate_material:
+  id: INV-049
+  date: '2027-12-04'
+  day: Saturday
+  track: investing
+  subdomain: market_timing
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Wix 2007—2008 Seed
+  case_brief: DIY 建站需求存在但免费服务普遍，判断 SMB 自服务网站市场的可支付规模。
+  source_hint: BVP original Wix seed memo
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer
+  example_source_url: https://www.bvp.com/memos/wix

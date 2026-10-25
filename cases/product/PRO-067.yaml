@@ -1,0 +1,22 @@
+id: PRO-067
+kind: historical
+domain: product
+status: candidate
+scenario_title: Twitch 从 Justin.tv 拆分（2011）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-067
+candidate_material:
+  id: PRO-067
+  date: '2027-08-24'
+  day: Tuesday
+  track: product
+  subdomain: user_research_value
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Twitch 从 Justin.tv 拆分（2011）
+  case_brief: 观察直播用户的游戏内容集中度，决定是否把垂直行为做成独立产品。
+  source_hint: Twitch and Justin.tv founder histories
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

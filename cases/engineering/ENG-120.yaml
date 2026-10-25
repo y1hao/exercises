@@ -1,0 +1,22 @@
+id: ENG-120
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: NATS JetStream 持久流（2020）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-120
+candidate_material:
+  id: ENG-120
+  date: '2027-10-06'
+  day: Wednesday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: NATS JetStream 持久流（2020）
+  case_brief: 以 consumer ack、重试和 stream replicas 为背景，区分至少一次投递与业务 exactly-once 效果。
+  source_hint: NATS JetStream design documentation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

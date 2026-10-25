@@ -1,0 +1,22 @@
+id: INV-042
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Zoom 2013—2015 融资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-042
+candidate_material:
+  id: INV-042
+  date: '2027-10-16'
+  day: Saturday
+  track: investing
+  subdomain: market_timing
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Zoom 2013—2015 融资
+  case_brief: 企业视频会议已有成熟巨头，判断移动网络与产品体验变化是否产生新进入窗口。
+  source_hint: Zoom S-1 and early investment histories
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

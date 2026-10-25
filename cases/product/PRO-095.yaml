@@ -1,0 +1,22 @@
+id: PRO-095
+kind: historical
+domain: product
+status: candidate
+scenario_title: Apple App Store 订阅分成规则（2016）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-095
+candidate_material:
+  id: PRO-095
+  date: '2027-11-30'
+  day: Tuesday
+  track: product
+  subdomain: pricing_monetization
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Apple App Store 订阅分成规则（2016）
+  case_brief: 长期订阅第二年分成变化，分析平台与开发者之间的激励分配。
+  source_hint: Apple 2016 subscription policy announcement
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

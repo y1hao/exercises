@@ -1,0 +1,22 @@
+id: PRO-099
+kind: historical
+domain: product
+status: candidate
+scenario_title: eBay 买家与卖家信誉体系（1995—2000）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-099
+candidate_material:
+  id: PRO-099
+  date: '2027-12-14'
+  day: Tuesday
+  track: product
+  subdomain: network_marketplaces
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: eBay 买家与卖家信誉体系（1995—2000）
+  case_brief: 陌生人交易缺乏信任，判断用户评价如何改变交易完成率。
+  source_hint: eBay original feedback forum history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

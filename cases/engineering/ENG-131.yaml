@@ -1,0 +1,22 @@
+id: ENG-131
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Bazel Starlark 扩展接口（2017—2020）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-131
+candidate_material:
+  id: ENG-131
+  date: '2027-11-01'
+  day: Monday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Bazel Starlark 扩展接口（2017—2020）
+  case_brief: 比较内建规则与用户可扩展构建规则，决定稳定性和自定义能力的分界。
+  source_hint: Bazel Starlark rules design docs
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

@@ -1,0 +1,22 @@
+id: PRO-055
+kind: historical
+domain: product
+status: candidate
+scenario_title: Twitter 初期字数约束（2006）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-055
+candidate_material:
+  id: PRO-055
+  date: '2027-07-13'
+  day: Tuesday
+  track: product
+  subdomain: ux_activation
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Twitter 初期字数约束（2006）
+  case_brief: SMS 时代的短消息约束成为产品交互模型；判断强约束对创作与传播的作用。
+  source_hint: Twitter early 140-character history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

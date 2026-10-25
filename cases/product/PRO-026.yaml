@@ -1,0 +1,22 @@
+id: PRO-026
+kind: historical
+domain: product
+status: candidate
+scenario_title: Apple iPhone 首代触控键盘（2007）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-026
+candidate_material:
+  id: PRO-026
+  date: '2027-04-01'
+  day: Thursday
+  track: product
+  subdomain: ux_activation
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Apple iPhone 首代触控键盘（2007）
+  case_brief: 放弃物理键盘，靠软件预测和触控反馈改善输入；评估创新体验与学习成本。
+  source_hint: Apple iPhone 2007 launch presentation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

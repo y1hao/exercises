@@ -1,0 +1,22 @@
+id: PRO-048
+kind: historical
+domain: product
+status: candidate
+scenario_title: Steam Workshop 创作者市场（2011—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-048
+candidate_material:
+  id: PRO-048
+  date: '2027-06-17'
+  day: Thursday
+  track: product
+  subdomain: network_marketplaces
+  planned_cognitive_move: causal_mechanism
+  historical_case: Steam Workshop 创作者市场（2011—）
+  case_brief: 用户内容创作与平台分成结合，分析供给激励如何形成内容生态。
+  source_hint: Valve Steam Workshop launch history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

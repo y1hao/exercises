@@ -1,0 +1,22 @@
+id: INV-041
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Cloudflare 2014—2019 融资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-041
+candidate_material:
+  id: INV-041
+  date: '2027-10-09'
+  day: Saturday
+  track: investing
+  subdomain: moat_competition
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Cloudflare 2014—2019 融资
+  case_brief: CDN、安全与边缘网络竞争激烈，判断网络规模、免费层与开发者生态的复合优势。
+  source_hint: Cloudflare S-1
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

@@ -1,0 +1,22 @@
+id: INV-006
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Tesla 2008 融资危机
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-006
+candidate_material:
+  id: INV-006
+  date: '2027-02-06'
+  day: Saturday
+  track: investing
+  subdomain: funding_survival_exit
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Tesla 2008 融资危机
+  case_brief: 产品尚未规模化、现金压力巨大时，分析追加资本与经营里程碑的决策。
+  source_hint: Tesla 2008 financing history SEC records
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: bottlenecks_constraints

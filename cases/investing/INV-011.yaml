@@ -1,0 +1,22 @@
+id: INV-011
+kind: historical
+domain: investing
+status: candidate
+scenario_title: SpaceX 2002—2008 早期资本
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-011
+candidate_material:
+  id: INV-011
+  date: '2027-03-13'
+  day: Saturday
+  track: investing
+  subdomain: market_timing
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: SpaceX 2002—2008 早期资本
+  case_brief: 商业航天成本结构与政府采购模式变化时，判断技术突破何时可能形成新市场。
+  source_hint: SpaceX early financing history and NASA COTS records
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

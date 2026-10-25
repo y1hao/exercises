@@ -1,0 +1,22 @@
+id: ENG-108
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Google Tail at Scale（2013）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-108
+candidate_material:
+  id: ENG-108
+  date: '2027-09-08'
+  day: Wednesday
+  track: engineering
+  subdomain: performance_cost
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Google Tail at Scale（2013）
+  case_brief: P99 延迟由少量慢副本主导时，分析 hedged requests、资源浪费和长尾改善。
+  source_hint: The Tail at Scale (CACM 2013)
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

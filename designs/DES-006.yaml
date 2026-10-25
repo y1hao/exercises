@@ -1,0 +1,24 @@
+id: DES-006
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 遥测 SDK 的默认安全性
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-006
+candidate_material:
+  id: DES-006
+  date: '2027-02-07'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: observability_data
+  primary_cognitive_move: interface_tradeoff
+  title: 遥测 SDK 的默认安全性
+  scenario: 公司要为不同语言的服务提供统一 tracing SDK，目标是让开发者几行代码即可接入，生产环境请求量相差一千倍。
+  design_task: 设计最小初始化与采样接口，并说明成本、性能、上下文传播分别由谁负责。
+  constraint_change: 一次合规审查要求禁止默认收集任何可能包含个人身份信息的 attribute。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

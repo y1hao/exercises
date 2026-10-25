@@ -1,0 +1,22 @@
+id: PRO-049
+kind: historical
+domain: product
+status: candidate
+scenario_title: Superhuman 人工一对一 Onboarding（2017—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-049
+candidate_material:
+  id: PRO-049
+  date: '2027-06-22'
+  day: Tuesday
+  track: product
+  subdomain: ux_activation
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Superhuman 人工一对一 Onboarding（2017—）
+  case_brief: 高价邮件客户端用人工培训提高使用成功率，计算人力投入与激活质量的取舍。
+  source_hint: First Round Review Superhuman onboarding
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

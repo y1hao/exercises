@@ -1,0 +1,22 @@
+id: ENG-033
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: AWS S3 2017 年 us-east-1 中断
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-033
+candidate_material:
+  id: ENG-033
+  date: '2027-03-17'
+  day: Wednesday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: causal_mechanism
+  historical_case: AWS S3 2017 年 us-east-1 中断
+  case_brief: 维护操作误影响存储子系统容量；从控制指令到跨服务后果重建故障传播。
+  source_hint: AWS S3 Service Disruption post-event summary Feb 2017
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

@@ -1,0 +1,22 @@
+id: INV-002
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Instacart 2020—2023 融资/上市
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-002
+candidate_material:
+  id: INV-002
+  date: '2027-01-09'
+  day: Saturday
+  track: investing
+  subdomain: unit_economics
+  planned_cognitive_move: causal_mechanism
+  historical_case: Instacart 2020—2023 融资/上市
+  case_brief: 在线生鲜订单客单价高但履约昂贵，估算广告业务与订单贡献利润的关系。
+  source_hint: Maplebear Instacart S-1
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

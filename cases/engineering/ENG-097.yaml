@@ -1,0 +1,22 @@
+id: ENG-097
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Google 2020 年身份验证故障
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-097
+candidate_material:
+  id: ENG-097
+  date: '2027-08-13'
+  day: Friday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Google 2020 年身份验证故障
+  case_brief: 共享身份服务资源问题导致多产品失效；寻找能区分控制面与业务服务的观测。
+  source_hint: Google Cloud 2020 authentication outage incident report
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

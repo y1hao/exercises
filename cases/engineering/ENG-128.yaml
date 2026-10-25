@@ -1,0 +1,22 @@
+id: ENG-128
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: TimescaleDB Hypertables（2017）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-128
+candidate_material:
+  id: ENG-128
+  date: '2027-10-25'
+  day: Monday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: quantitative_estimation
+  historical_case: TimescaleDB Hypertables（2017）
+  case_brief: 持续写入时间序列时，用 chunk、索引和保留策略分析查询性能与存储成本。
+  source_hint: TimescaleDB architecture and hypertables docs
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

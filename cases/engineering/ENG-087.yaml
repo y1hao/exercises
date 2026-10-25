@@ -1,0 +1,22 @@
+id: ENG-087
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: React Server Components（2020—2023）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-087
+candidate_material:
+  id: ENG-087
+  date: '2027-07-21'
+  day: Wednesday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: React Server Components（2020—2023）
+  case_brief: 划分客户端与服务端组件的职责，分析传输、缓存和组件组合的约束。
+  source_hint: React Server Components RFC
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

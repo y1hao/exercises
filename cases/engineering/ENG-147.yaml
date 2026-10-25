@@ -1,0 +1,22 @@
+id: ENG-147
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Facebook 2021 年 10 月全球中断
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-147
+candidate_material:
+  id: ENG-147
+  date: '2027-12-08'
+  day: Wednesday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Facebook 2021 年 10 月全球中断
+  case_brief: 骨干网配置使服务及运维访问受损；讨论恢复能力对自身依赖的风险。
+  source_hint: Meta Engineering more details about October 4 outage
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

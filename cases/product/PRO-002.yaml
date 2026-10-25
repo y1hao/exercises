@@ -1,0 +1,22 @@
+id: PRO-002
+kind: historical
+domain: product
+status: candidate
+scenario_title: Pinterest Pin It 浏览器按钮（2010s）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-002
+candidate_material:
+  id: PRO-002
+  date: '2027-01-07'
+  day: Thursday
+  track: product
+  subdomain: ux_activation
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Pinterest Pin It 浏览器按钮（2010s）
+  case_brief: 用户在浏览网页时随手收藏内容，比较流程内捕获与回到应用再搜索的激活成本。
+  source_hint: Pinterest original Pin It button product history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

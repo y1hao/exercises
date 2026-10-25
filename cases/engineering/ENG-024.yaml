@@ -1,0 +1,23 @@
+id: ENG-024
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Amazon Aurora 共享存储（2017）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-024
+candidate_material:
+  id: ENG-024
+  date: '2027-02-24'
+  day: Wednesday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: value_of_information
+  historical_case: Amazon Aurora 共享存储（2017）
+  case_brief: 面对数据库实例故障与日志持久化，重建计算节点与分布式存储的恢复契约。
+  source_hint: 'Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases
+    (SIGMOD 2017)'
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: bottlenecks_constraints

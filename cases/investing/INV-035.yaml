@@ -1,0 +1,22 @@
+id: INV-035
+kind: historical
+domain: investing
+status: candidate
+scenario_title: MongoDB 2015—2017 融资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-035
+candidate_material:
+  id: INV-035
+  date: '2027-08-28'
+  day: Saturday
+  track: investing
+  subdomain: moat_competition
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: MongoDB 2015—2017 融资
+  case_brief: 开源数据库流行但云厂商可提供托管替代，评估开源品牌与商业捕获能力。
+  source_hint: MongoDB S-1
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

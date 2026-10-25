@@ -1,0 +1,24 @@
+id: DES-020
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 高基数追踪数据怎样付得起
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-020
+candidate_material:
+  id: DES-020
+  date: '2027-05-16'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: observability_data
+  primary_cognitive_move: data_model_tradeoff
+  title: 高基数追踪数据怎样付得起
+  scenario: 一个 APM 产品需要按 trace、service、用户请求路径检索数据，但某些客户每秒产生数百万 spans，存储预算有限。
+  design_task: 选择最小可行的数据组织、采样或索引策略，并说明何种诊断查询会因这些取舍而失效。
+  constraint_change: 客户开始要求分析一天前极低频出现的异常调用链。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

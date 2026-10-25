@@ -1,0 +1,22 @@
+id: ENG-102
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Git LFS 的外置大文件模型（2015）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-102
+candidate_material:
+  id: ENG-102
+  date: '2027-08-25'
+  day: Wednesday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Git LFS 的外置大文件模型（2015）
+  case_brief: 当版本控制面对二进制文件膨胀时，推演指针对象和远端存储改变了什么契约。
+  source_hint: Git LFS project design/specification
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

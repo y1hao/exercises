@@ -1,0 +1,22 @@
+id: PRO-043
+kind: historical
+domain: product
+status: candidate
+scenario_title: Atlassian Jira 自助购买（2000s）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-043
+candidate_material:
+  id: PRO-043
+  date: '2027-06-01'
+  day: Tuesday
+  track: product
+  subdomain: b2b_adoption
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Atlassian Jira 自助购买（2000s）
+  case_brief: 较少高接触销售却进入团队流程，研究自助采用在何种组织规模失效。
+  source_hint: Atlassian F-1 and founder interviews
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

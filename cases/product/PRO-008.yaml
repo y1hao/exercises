@@ -1,0 +1,22 @@
+id: PRO-008
+kind: historical
+domain: product
+status: candidate
+scenario_title: Slack 早期企业内部扩散（2013—2015）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-008
+candidate_material:
+  id: PRO-008
+  date: '2027-01-28'
+  day: Thursday
+  track: product
+  subdomain: b2b_adoption
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Slack 早期企业内部扩散（2013—2015）
+  case_brief: 团队成员先自发采用，再扩展到公司采购；判断哪类用量信号可预测付费。
+  source_hint: Slack S-1 and founder interviews
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

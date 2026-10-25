@@ -1,0 +1,25 @@
+id: ENG-001
+kind: historical
+domain: engineering
+status: ready
+historical_as_of: '2000-01-01'
+objective: 合成测试：检查字段与引用。
+opening: 合成测试开场，不是真实事件。
+evidence_pool:
+  - id: E1
+    availability: on_request
+    fact: 合成测试证据。
+    source_ids: [S1]
+    release_trigger: 合成测试触发条件。
+resolution:
+  observed: 合成测试结果。
+  interpretation: 合成测试解释。
+  source_ids: [S1]
+  unknowns: []
+boundaries:
+  forbidden_assumptions: [不得把测试样本当作真实事件。]
+sources:
+  - id: S1
+    url: https://www.python.org/
+    publisher: TEST FIXTURE ONLY
+    supports: [E1, resolution.observed]

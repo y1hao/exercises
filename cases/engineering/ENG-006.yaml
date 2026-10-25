@@ -1,0 +1,22 @@
+id: ENG-006
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Figma Multiplayer 数据模型（2019—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-006
+candidate_material:
+  id: ENG-006
+  date: '2027-01-13'
+  day: Wednesday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Figma Multiplayer 数据模型（2019—）
+  case_brief: 多人编辑并发变更时，区分文档内对象同步与数据库持久化的职责。
+  source_hint: Figma engineering Multiplayer how it works
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

@@ -1,0 +1,22 @@
+id: PRO-024
+kind: historical
+domain: product
+status: candidate
+scenario_title: Sentry Developer Monitoring 商业化（2015—2021）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-024
+candidate_material:
+  id: PRO-024
+  date: '2027-03-25'
+  day: Thursday
+  track: product
+  subdomain: b2b_adoption
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Sentry Developer Monitoring 商业化（2015—2021）
+  case_brief: 错误监控工具由工程师自助安装，评估哪些企业管理功能决定规模化付费。
+  source_hint: Sentry pricing and enterprise history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

@@ -1,0 +1,22 @@
+id: PRO-027
+kind: historical
+domain: product
+status: candidate
+scenario_title: GitHub Private Repositories 免费开放（2019）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-027
+candidate_material:
+  id: PRO-027
+  date: '2027-04-06'
+  day: Tuesday
+  track: product
+  subdomain: pricing_monetization
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: GitHub Private Repositories 免费开放（2019）
+  case_brief: 从私有仓库付费转向更开放的免费层，判断开发者平台采用和收入结构。
+  source_hint: GitHub free private repositories 2019 announcement
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

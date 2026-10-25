@@ -1,0 +1,22 @@
+id: INV-014
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Box 2014 延期 IPO 与融资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-014
+candidate_material:
+  id: INV-014
+  date: '2027-04-03'
+  day: Saturday
+  track: investing
+  subdomain: valuation_terms
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Box 2014 延期 IPO 与融资
+  case_brief: 现金消耗高而估值较高时，判断延迟上市融资如何改变旧股东回报分布。
+  source_hint: Box S-1 and 2014 financing history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

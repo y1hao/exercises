@@ -1,0 +1,22 @@
+id: ENG-017
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Redis Cluster 槽位迁移（2015）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-017
+candidate_material:
+  id: ENG-017
+  date: '2027-02-08'
+  day: Monday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Redis Cluster 槽位迁移（2015）
+  case_brief: 迁移 hash slots 时如何处理重定向、并发写和暂时不一致，检验客户端模型。
+  source_hint: Redis Cluster specification
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: bottlenecks_constraints

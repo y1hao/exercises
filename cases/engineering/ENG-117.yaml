@@ -1,0 +1,22 @@
+id: ENG-117
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Meta ZippyDB SSD 成本优化（2010s）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-117
+candidate_material:
+  id: ENG-117
+  date: '2027-09-29'
+  day: Wednesday
+  track: engineering
+  subdomain: performance_cost
+  planned_cognitive_move: causal_mechanism
+  historical_case: Meta ZippyDB SSD 成本优化（2010s）
+  case_brief: 在线 KV 负载增长时，比较 SSD、内存缓存和请求路由对单位请求成本的影响。
+  source_hint: Meta Engineering ZippyDB
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

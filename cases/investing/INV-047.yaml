@@ -1,0 +1,22 @@
+id: INV-047
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Better.com 2021—2023 SPAC 延期
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-047
+candidate_material:
+  id: INV-047
+  date: '2027-11-20'
+  day: Saturday
+  track: investing
+  subdomain: funding_survival_exit
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Better.com 2021—2023 SPAC 延期
+  case_brief: 房地产周期与交易融资高度相关时，讨论续命融资与等待退出可能产生的稀释。
+  source_hint: Better Home & Finance merger filings
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

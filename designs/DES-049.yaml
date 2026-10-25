@@ -1,0 +1,24 @@
+id: DES-049
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 配额控制与账单系统的边界
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-049
+candidate_material:
+  id: DES-049
+  date: '2027-12-05'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: platform_cost
+  primary_cognitive_move: invariant_design
+  title: 配额控制与账单系统的边界
+  scenario: 一个多租户 API 平台按使用量收费，必须限制恶意或误用流量，但请求执行时间与成本不完全可预测。
+  design_task: 设计预留、扣费、超额和最终结算的最小状态模型；说明怎样处理重试和重复事件。
+  constraint_change: 客户希望共享团队预算，同时允许不同项目设独立软上限。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

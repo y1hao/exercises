@@ -1,0 +1,22 @@
+id: ENG-003
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Slack 2021 年 1 月服务中断
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-003
+candidate_material:
+  id: ENG-003
+  date: '2027-01-06'
+  day: Wednesday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: value_of_information
+  historical_case: Slack 2021 年 1 月服务中断
+  case_brief: 新年首个工作日请求增长伴随后台资源问题；在有限指标下排列调查优先级。
+  source_hint: Slack January 4 2021 incident postmortem
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

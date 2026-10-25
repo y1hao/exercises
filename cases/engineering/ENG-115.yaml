@@ -1,0 +1,22 @@
+id: ENG-115
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: XZ Utils 后门事件（2024）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-115
+candidate_material:
+  id: ENG-115
+  date: '2027-09-24'
+  day: Friday
+  track: engineering
+  subdomain: security_isolation
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: XZ Utils 后门事件（2024）
+  case_brief: 开源维护与构建脚本被渗透；从源码审查到发布工件判断可检测点。
+  source_hint: Openwall oss-security XZ backdoor 2024
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

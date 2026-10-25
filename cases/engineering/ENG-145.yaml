@@ -1,0 +1,22 @@
+id: ENG-145
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: C++11 std::atomic 内存序（2011）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-145
+candidate_material:
+  id: ENG-145
+  date: '2027-12-03'
+  day: Friday
+  track: engineering
+  subdomain: runtime_concurrency
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: C++11 std::atomic 内存序（2011）
+  case_brief: 在 lock-free 发布订阅场景中区分 relaxed、release/acquire 的最小正确约束。
+  source_hint: C++ memory model standard reference
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

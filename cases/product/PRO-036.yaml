@@ -1,0 +1,22 @@
+id: PRO-036
+kind: historical
+domain: product
+status: candidate
+scenario_title: Spotify Discover Weekly（2015）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-036
+candidate_material:
+  id: PRO-036
+  date: '2027-05-06'
+  day: Thursday
+  track: product
+  subdomain: retention_workflow
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Spotify Discover Weekly（2015）
+  case_brief: 每周定期个性化歌单塑造回访习惯，区分算法命中率与周期性价值。
+  source_hint: Spotify Discover Weekly launch 2015
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries

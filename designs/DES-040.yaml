@@ -1,0 +1,24 @@
+id: DES-040
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: B2B 客户要求功能时如何取舍
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-040
+candidate_material:
+  id: DES-040
+  date: '2027-10-03'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: roadmap_strategy
+  primary_cognitive_move: prioritization
+  title: B2B 客户要求功能时如何取舍
+  scenario: 一家 25 人 SaaS 公司服务大客户和中小团队，头部客户愿意签大单，但要求开发深度定制且会影响通用产品路线。
+  design_task: 设计需求判断与决策机制，说明什么条件下接受、拒绝或采用可扩展方式满足。
+  constraint_change: 销售已经提前向客户口头承诺了交付时间。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

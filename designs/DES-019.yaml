@@ -1,0 +1,24 @@
+id: DES-019
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: 有用而克制的通知系统
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-019
+candidate_material:
+  id: DES-019
+  date: '2027-05-09'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: trust_behavior
+  primary_cognitive_move: attention_tradeoff
+  title: 有用而克制的通知系统
+  scenario: 一款工作协作产品希望提醒用户真正需要回应的事项，但用户已经抱怨通知太多、无法区分紧急程度。
+  design_task: 设计通知优先级和默认规则，给出衡量信息价值而非点击率的方式。
+  constraint_change: 一个团队要求管理员强制全部成员开启所有提醒。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

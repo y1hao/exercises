@@ -1,0 +1,22 @@
+id: ENG-113
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: etcd Raft 故障恢复（2015—2018）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-113
+candidate_material:
+  id: ENG-113
+  date: '2027-09-20'
+  day: Monday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: etcd Raft 故障恢复（2015—2018）
+  case_brief: 模拟 quorum 丧失和成员替换，区分正常成员变更与灾难恢复中的一致性风险。
+  source_hint: 'etcd operations guide: disaster recovery and runtime reconfiguration'
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

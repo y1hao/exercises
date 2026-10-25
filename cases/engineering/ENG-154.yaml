@@ -1,0 +1,22 @@
+id: ENG-154
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: GitHub Actions 可复用工作流（2021）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-154
+candidate_material:
+  id: ENG-154
+  date: '2027-12-24'
+  day: Friday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: quantitative_estimation
+  historical_case: GitHub Actions 可复用工作流（2021）
+  case_brief: 大量仓库共享 CI 逻辑时，推演模板复制与可复用工作流的版本治理差异。
+  source_hint: GitHub reusable workflows docs and changelog
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

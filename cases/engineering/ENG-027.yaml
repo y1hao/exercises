@@ -1,0 +1,22 @@
+id: ENG-027
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: SQLite WAL 模式引入（2010）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-027
+candidate_material:
+  id: ENG-027
+  date: '2027-03-03'
+  day: Wednesday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: SQLite WAL 模式引入（2010）
+  case_brief: 读写并发需求改变时，评估 write-ahead log 相比 rollback journal 的可见性与恢复权衡。
+  source_hint: SQLite Write-Ahead Logging documentation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

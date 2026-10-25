@@ -1,0 +1,22 @@
+id: ENG-010
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Go Modules 引入（2018）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-010
+candidate_material:
+  id: ENG-010
+  date: '2027-01-22'
+  day: Friday
+  track: engineering
+  subdomain: developer_tooling_build
+  planned_cognitive_move: causal_mechanism
+  historical_case: Go Modules 引入（2018）
+  case_brief: 取代 GOPATH 版本管理时，分析 minimal version selection 如何影响依赖解析和兼容性。
+  source_hint: Go Modules reference and design
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

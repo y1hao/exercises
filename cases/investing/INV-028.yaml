@@ -1,0 +1,23 @@
+id: INV-028
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Twitch 2012 Series B
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-028
+candidate_material:
+  id: INV-028
+  date: '2027-07-10'
+  day: Saturday
+  track: investing
+  subdomain: pmf_traction
+  planned_cognitive_move: causal_mechanism
+  historical_case: Twitch 2012 Series B
+  case_brief: 游戏直播从 Justin.tv 分化，评估观看时长、内容供给与主播留存是否构成 PMF。
+  source_hint: BVP original Twitch memo 2012
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops
+  example_source_url: https://www.bvp.com/memos/twitch

@@ -1,0 +1,22 @@
+id: PRO-084
+kind: historical
+domain: product
+status: candidate
+scenario_title: Adobe Creative Cloud Libraries（2014—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-084
+candidate_material:
+  id: PRO-084
+  date: '2027-10-21'
+  day: Thursday
+  track: product
+  subdomain: retention_workflow
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Adobe Creative Cloud Libraries（2014—）
+  case_brief: 跨多个创作工具共享素材和样式，推断整套工作流集成如何改变续费动机。
+  source_hint: Adobe Creative Cloud Libraries launch
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

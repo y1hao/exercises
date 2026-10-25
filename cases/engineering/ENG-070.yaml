@@ -1,0 +1,22 @@
+id: ENG-070
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Go Scheduler G-M-P 模型（2012）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-070
+candidate_material:
+  id: ENG-070
+  date: '2027-06-11'
+  day: Friday
+  track: engineering
+  subdomain: runtime_concurrency
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Go Scheduler G-M-P 模型（2012）
+  case_brief: 大量 goroutine 阻塞与唤醒时，预测执行线程和 P 调度行为。
+  source_hint: Go scheduler design doc
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

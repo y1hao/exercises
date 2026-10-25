@@ -1,0 +1,22 @@
+id: ENG-038
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Go 1.21 Toolchain 管理（2023）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-038
+candidate_material:
+  id: ENG-038
+  date: '2027-03-29'
+  day: Monday
+  track: engineering
+  subdomain: developer_tooling_build
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Go 1.21 Toolchain 管理（2023）
+  case_brief: 语言版本与构建工具版本不一致时，比较自动下载工具链与固定环境的运维成本。
+  source_hint: Go toolchain management documentation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

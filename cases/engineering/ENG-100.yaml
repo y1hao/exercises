@@ -1,0 +1,22 @@
+id: ENG-100
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Microsoft TypeScript 增量构建（2018—2020）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-100
+candidate_material:
+  id: ENG-100
+  date: '2027-08-20'
+  day: Friday
+  track: engineering
+  subdomain: developer_tooling_build
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Microsoft TypeScript 增量构建（2018—2020）
+  case_brief: 类型依赖和项目引用增长后，判断增量编译应重新检查哪些模块。
+  source_hint: TypeScript project references / incremental build docs
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

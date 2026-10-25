@@ -1,0 +1,22 @@
+id: ENG-151
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: LastPass 2022 备份窃取
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-151
+candidate_material:
+  id: ENG-151
+  date: '2027-12-17'
+  day: Friday
+  track: engineering
+  subdomain: security_isolation
+  planned_cognitive_move: causal_mechanism
+  historical_case: LastPass 2022 备份窃取
+  case_brief: 凭据保护与加密备份被获取后，分析离线破解和密钥管理风险。
+  source_hint: LastPass 2022 security incident notices
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

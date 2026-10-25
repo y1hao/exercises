@@ -1,0 +1,22 @@
+id: PRO-050
+kind: historical
+domain: product
+status: candidate
+scenario_title: Zoom 免费会议 40 分钟限制（2013—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-050
+candidate_material:
+  id: PRO-050
+  date: '2027-06-24'
+  day: Thursday
+  track: product
+  subdomain: pricing_monetization
+  planned_cognitive_move: causal_mechanism
+  historical_case: Zoom 免费会议 40 分钟限制（2013—）
+  case_brief: 按时长划分免费与付费，在病毒传播和企业付费之间寻找界限。
+  source_hint: Zoom pricing history and IPO S-1
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

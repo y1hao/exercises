@@ -1,0 +1,22 @@
+id: PRO-069
+kind: historical
+domain: product
+status: candidate
+scenario_title: TikTok 收购 Musical.ly（2017—2018）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-069
+candidate_material:
+  id: PRO-069
+  date: '2027-08-31'
+  day: Tuesday
+  track: product
+  subdomain: distribution_growth
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: TikTok 收购 Musical.ly（2017—2018）
+  case_brief: 通过收购取得用户群和创作者网络，判断分发协同能否转化为产品整合。
+  source_hint: ByteDance Musical.ly acquisition history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

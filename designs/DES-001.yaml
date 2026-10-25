@@ -1,0 +1,24 @@
+id: DES-001
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 平台资源 API 的抽象边界
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-001
+candidate_material:
+  id: DES-001
+  date: '2027-01-03'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: api_sdk
+  primary_cognitive_move: boundary_design
+  title: 平台资源 API 的抽象边界
+  scenario: 一家拥有 80 个服务团队的公司准备提供自助申请数据库和消息队列的内部平台；底层云服务会更换，团队不应编写基础设施配置。
+  design_task: 设计一版面向应用开发者的最小资源 API：选定 2–3 个核心对象、声明哪些细节可见，并解释哪些能力明确不做。
+  constraint_change: 安全团队要求每次资源权限变更都可独立审核，而服务团队要求一次声明即可完成部署。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

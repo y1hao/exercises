@@ -1,0 +1,22 @@
+id: INV-013
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Airbnb 2009 Seed 生存融资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-013
+candidate_material:
+  id: INV-013
+  date: '2027-03-27'
+  day: Saturday
+  track: investing
+  subdomain: funding_survival_exit
+  planned_cognitive_move: value_of_information
+  historical_case: Airbnb 2009 Seed 生存融资
+  case_brief: 订房需求尚不稳定且资金吃紧时，判断短期收入试验与继续融资的选择。
+  source_hint: Airbnb founders cereal boxes history and early fundraising
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

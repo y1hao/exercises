@@ -1,0 +1,22 @@
+id: PRO-089
+kind: historical
+domain: product
+status: candidate
+scenario_title: GitLab 从开源到企业平台（2011—2021）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-089
+candidate_material:
+  id: PRO-089
+  date: '2027-11-09'
+  day: Tuesday
+  track: product
+  subdomain: b2b_adoption
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: GitLab 从开源到企业平台（2011—2021）
+  case_brief: 代码协作工具从个人团队使用向集团采购扩张，分析产品广度与部署选项。
+  source_hint: GitLab S-1
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

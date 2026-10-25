@@ -1,0 +1,22 @@
+id: PRO-019
+kind: historical
+domain: product
+status: candidate
+scenario_title: AWS Lambda 按调用与执行时间计费（2014）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-019
+candidate_material:
+  id: PRO-019
+  date: '2027-03-09'
+  day: Tuesday
+  track: product
+  subdomain: pricing_monetization
+  planned_cognitive_move: quantitative_estimation
+  historical_case: AWS Lambda 按调用与执行时间计费（2014）
+  case_brief: 无服务器按使用量计价，判断成本风险从运维端转移到了谁。
+  source_hint: AWS Lambda launch and pricing
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

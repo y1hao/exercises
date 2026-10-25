@@ -1,0 +1,22 @@
+id: INV-023
+kind: historical
+domain: investing
+status: candidate
+scenario_title: WeWork 2019 撤回 IPO 与救助
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-023
+candidate_material:
+  id: INV-023
+  date: '2027-06-05'
+  day: Saturday
+  track: investing
+  subdomain: funding_survival_exit
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: WeWork 2019 撤回 IPO 与救助
+  case_brief: 上市失败导致流动性危机，判断融资缺口、控制权和债权人保护的优先顺序。
+  source_hint: WeWork 2019 IPO withdrawal and SoftBank transaction
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

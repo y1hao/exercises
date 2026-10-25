@@ -1,0 +1,22 @@
+id: PRO-071
+kind: historical
+domain: product
+status: candidate
+scenario_title: Netflix 从单次租赁转向订阅（1999）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-071
+candidate_material:
+  id: PRO-071
+  date: '2027-09-07'
+  day: Tuesday
+  track: product
+  subdomain: pricing_monetization
+  planned_cognitive_move: value_of_information
+  historical_case: Netflix 从单次租赁转向订阅（1999）
+  case_brief: 无限租借订阅改变需求频率与库存周转；判断定价指标如何匹配真实用户价值。
+  source_hint: Netflix history subscription introduction
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

@@ -1,0 +1,22 @@
+id: PRO-006
+kind: historical
+domain: product
+status: candidate
+scenario_title: Nintendo Switch 混合主机（2017）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-006
+candidate_material:
+  id: PRO-006
+  date: '2027-01-21'
+  day: Thursday
+  track: product
+  subdomain: strategy_pivot
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Nintendo Switch 混合主机（2017）
+  case_brief: 吸取 Wii U 时期产品定位问题，比较便携与客厅体验结合的目标用户。
+  source_hint: Nintendo Switch launch and Iwata/Nintendo interviews
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

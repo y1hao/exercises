@@ -1,0 +1,22 @@
+id: ENG-044
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Facebook TAO（2013）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-044
+candidate_material:
+  id: ENG-044
+  date: '2027-04-12'
+  day: Monday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: causal_mechanism
+  historical_case: Facebook TAO（2013）
+  case_brief: 研究社交图读多写少场景中，缓存层与主存储的更新传播及一致性取舍。
+  source_hint: 'TAO: Facebook’s Distributed Data Store for the Social Graph (USENIX 2013)'
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

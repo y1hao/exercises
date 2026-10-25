@@ -1,0 +1,24 @@
+id: DES-003
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 可恢复的异步 Workflow
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-003
+candidate_material:
+  id: DES-003
+  date: '2027-01-17'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: workflow_control_plane
+  primary_cognitive_move: state_machine
+  title: 可恢复的异步 Workflow
+  scenario: 团队需要让用户提交最多十步的异步工作流；步骤会失败，执行者可随时重启，用户只需要查进度和重试。
+  design_task: 设计最少的状态、持久化边界与用户 API，并说明同一个步骤重复执行时的语义。
+  constraint_change: 其中一个步骤会向外部供应商发起不可安全重试的扣款。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

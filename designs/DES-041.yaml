@@ -1,0 +1,24 @@
+id: DES-041
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: Streaming Pipeline 的背压契约
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-041
+candidate_material:
+  id: DES-041
+  date: '2027-10-10'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: data_streaming
+  primary_cognitive_move: flow_control
+  title: Streaming Pipeline 的背压契约
+  scenario: 一个事件采集服务连接多个上游和慢速下游，消息大小变化很大；突发流量会耗尽内存，不能无限缓存。
+  design_task: 设计入口限流、缓冲和丢弃或重试语义，明确哪些数据不能丢。
+  constraint_change: 部分上游不支持重试，而下游可能持续不可用一天。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

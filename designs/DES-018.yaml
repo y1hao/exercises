@@ -1,0 +1,24 @@
+id: DES-018
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 渐进发布与紧急停止
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-018
+candidate_material:
+  id: DES-018
+  date: '2027-05-02'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: reliability_platform
+  primary_cognitive_move: rollback_design
+  title: 渐进发布与紧急停止
+  scenario: 一个平台服务每周有数十次部署，影响多个客户，团队希望自动逐步放量且能对部分租户止损。
+  design_task: 设计发布状态机、停止条件和回滚责任边界；明确哪些信号不能单独证明安全。
+  constraint_change: 新版本修改了持久数据格式，代码回滚不再意味着数据自动恢复。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

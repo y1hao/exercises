@@ -1,0 +1,22 @@
+id: ENG-037
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Redis Sentinel 自动故障转移（2013）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-037
+candidate_material:
+  id: ENG-037
+  date: '2027-03-26'
+  day: Friday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Redis Sentinel 自动故障转移（2013）
+  case_brief: 根据主从延迟和故障检测事件，预测 promote 后的数据丢失窗口和脑裂可能性。
+  source_hint: Redis Sentinel design and documentation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

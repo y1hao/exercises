@@ -1,0 +1,23 @@
+id: ENG-138
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Stripe Idempotency-Key API 设计（2017）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-138
+candidate_material:
+  id: ENG-138
+  date: '2027-11-17'
+  day: Wednesday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: causal_mechanism
+  historical_case: Stripe Idempotency-Key API 设计（2017）
+  case_brief: 支付请求超时但服务端可能成功；判断重试语义应该由哪一侧承担、如何设计稳定契约。
+  source_hint: Stripe Designing robust and predictable APIs with idempotency
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments
+  example_source_url: https://stripe.com/blog/idempotency

@@ -1,0 +1,22 @@
+id: PRO-022
+kind: historical
+domain: product
+status: candidate
+scenario_title: Basecamp Hey 邮件产品发布（2020）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-022
+candidate_material:
+  id: PRO-022
+  date: '2027-03-18'
+  day: Thursday
+  track: product
+  subdomain: strategy_pivot
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Basecamp Hey 邮件产品发布（2020）
+  case_brief: 以隐私和邮件工作流差异化进入成熟市场，判断反主流定位的可持续市场规模。
+  source_hint: HEY launch Basecamp 2020
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

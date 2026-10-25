@@ -1,0 +1,22 @@
+id: INV-026
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Roblox 2021 直接上市
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-026
+candidate_material:
+  id: INV-026
+  date: '2027-06-26'
+  day: Saturday
+  track: investing
+  subdomain: valuation_terms
+  planned_cognitive_move: value_of_information
+  historical_case: Roblox 2021 直接上市
+  case_brief: 虚拟经济平台使用 bookings 和收入递延指标，如何在直接上市时解释估值。
+  source_hint: Roblox S-1 and 2021 direct listing materials
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

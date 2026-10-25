@@ -1,0 +1,22 @@
+id: ENG-020
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Android Jetpack Compose（2021）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-020
+candidate_material:
+  id: ENG-020
+  date: '2027-02-15'
+  day: Monday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: causal_mechanism
+  historical_case: Android Jetpack Compose（2021）
+  case_brief: 从命令式 UI 转向声明式 UI，检查状态单向流动对组件边界的影响。
+  source_hint: Android Developers Jetpack Compose architecture
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: bottlenecks_constraints

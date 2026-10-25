@@ -1,0 +1,22 @@
+id: PRO-001
+kind: historical
+domain: product
+status: candidate
+scenario_title: Notion 早期产品重做（2015—2016）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-001
+candidate_material:
+  id: PRO-001
+  date: '2027-01-05'
+  day: Tuesday
+  track: product
+  subdomain: user_research_value
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Notion 早期产品重做（2015—2016）
+  case_brief: 通用生产力工具初版复杂，重做核心交互模型；判断用户需要的是可编程性还是易上手。
+  source_hint: Ivan Zhao Notion origin interviews
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

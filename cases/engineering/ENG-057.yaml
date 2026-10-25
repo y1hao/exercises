@@ -1,0 +1,22 @@
+id: ENG-057
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Amazon Redshift 列式分析（2012）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-057
+candidate_material:
+  id: ENG-057
+  date: '2027-05-12'
+  day: Wednesday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: causal_mechanism
+  historical_case: Amazon Redshift 列式分析（2012）
+  case_brief: 大量扫描与聚合请求时，判断压缩、排序键和数据分布对于性能的影响。
+  source_hint: Amazon Redshift system overview docs
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries

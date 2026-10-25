@@ -1,0 +1,22 @@
+id: PRO-077
+kind: historical
+domain: product
+status: candidate
+scenario_title: Duolingo App Store 排名驱动（2010s）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-077
+candidate_material:
+  id: PRO-077
+  date: '2027-09-28'
+  day: Tuesday
+  track: product
+  subdomain: distribution_growth
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Duolingo App Store 排名驱动（2010s）
+  case_brief: 免费工具早期移动分发依赖应用商店，辨别自然增长与渠道平台风险。
+  source_hint: Duolingo founder early mobile growth interviews
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

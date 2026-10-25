@@ -1,0 +1,24 @@
+id: DES-030
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 共享平台里的租户资源隔离
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-030
+candidate_material:
+  id: DES-030
+  date: '2027-07-25'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: security_multitenancy
+  primary_cognitive_move: isolation_tradeoff
+  title: 共享平台里的租户资源隔离
+  scenario: 一个多租户批处理服务同时服务小客户和头部客户；部分任务会占满 CPU 与队列，租户之间不应互相影响。
+  design_task: 设计最小调度与配额模型，并解释哪些隔离承诺能够成立，哪些需要独立资源池。
+  constraint_change: 一家头部客户要求保证延迟 SLA，同时希望允许短时突发超过常规配额。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

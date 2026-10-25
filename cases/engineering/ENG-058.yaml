@@ -1,0 +1,22 @@
+id: ENG-058
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Kafka 复制协议（2012—2013）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-058
+candidate_material:
+  id: ENG-058
+  date: '2027-05-14'
+  day: Friday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Kafka 复制协议（2012—2013）
+  case_brief: 研究 ISR 与 leader 选举规则，在 broker 故障下区分可用性与消息丢失风险。
+  source_hint: Kafka design documentation on replication
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries

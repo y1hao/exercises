@@ -1,0 +1,22 @@
+id: PRO-007
+kind: historical
+domain: product
+status: candidate
+scenario_title: Airbnb 房源与旅客匹配（2008—2011）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-007
+candidate_material:
+  id: PRO-007
+  date: '2027-01-26'
+  day: Tuesday
+  track: product
+  subdomain: network_marketplaces
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Airbnb 房源与旅客匹配（2008—2011）
+  case_brief: 交易双方数量增加未必产生流动性，分析地理位置与入住日期的匹配质量。
+  source_hint: Airbnb S-1 marketplace description
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

@@ -1,0 +1,22 @@
+id: PRO-102
+kind: historical
+domain: product
+status: candidate
+scenario_title: Dropbox 文件夹同步交互（2008）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-102
+candidate_material:
+  id: PRO-102
+  date: '2027-12-23'
+  day: Thursday
+  track: product
+  subdomain: ux_activation
+  planned_cognitive_move: causal_mechanism
+  historical_case: Dropbox 文件夹同步交互（2008）
+  case_brief: 无需显式上传下载的桌面文件夹设计，判断如何让用户快速感知同步价值。
+  source_hint: Dropbox product history and launch demo
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

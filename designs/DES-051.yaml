@@ -1,0 +1,24 @@
+id: DES-051
+kind: micro_design
+domain: investing
+status: candidate
+scenario_title: 巨头进入后小型平台如何选择位置
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-051
+candidate_material:
+  id: DES-051
+  date: '2027-12-19'
+  day: Sunday
+  track: micro_design
+  domain: venture
+  subdomain: competitive_positioning
+  primary_cognitive_move: strategic_options
+  title: 巨头进入后小型平台如何选择位置
+  scenario: 一家 15 人的 Developer Tooling 公司提供跨云调试能力，大型云厂商新上线相似功能且能免费捆绑销售。
+  design_task: 设计接下来两季的产品与分发选择，比较垂直聚焦、开放标准、集成合作和被收购四条路径。
+  constraint_change: 主要客户中有三成高度依赖这家大型云厂商的其他服务。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

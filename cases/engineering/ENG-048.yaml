@@ -1,0 +1,22 @@
+id: ENG-048
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: SQLite Query Planner（2010s）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-048
+candidate_material:
+  id: ENG-048
+  date: '2027-04-21'
+  day: Wednesday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: SQLite Query Planner（2010s）
+  case_brief: 同一 SQL 因索引组合不同而变慢，估计多列索引与统计信息的作用。
+  source_hint: SQLite Query Planner documentation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

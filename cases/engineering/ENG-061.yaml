@@ -1,0 +1,22 @@
+id: ENG-061
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Cloudflare 2024 年 6 月 DDoS 规则事故
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-061
+candidate_material:
+  id: ENG-061
+  date: '2027-05-21'
+  day: Friday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Cloudflare 2024 年 6 月 DDoS 规则事故
+  case_brief: 保护规则引入误伤和延迟；区分恶意流量、防护策略和回源问题。
+  source_hint: Cloudflare incident June 20 2024
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries

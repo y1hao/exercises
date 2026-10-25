@@ -1,0 +1,24 @@
+id: DES-009
+kind: micro_design
+domain: investing
+status: candidate
+scenario_title: 开源开发工具如何进入企业
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-009
+candidate_material:
+  id: DES-009
+  date: '2027-02-28'
+  day: Sunday
+  track: micro_design
+  domain: venture
+  subdomain: distribution_gtm
+  primary_cognitive_move: channel_design
+  title: 开源开发工具如何进入企业
+  scenario: 一款开源代码审查 CLI 获得大量个人开发者试用，但尚无付费客户，创始团队只有三人且无专职销售。
+  design_task: 设计从个人使用到企业付费的最短转化路径，明确付费理由与必须验证的采购假设。
+  constraint_change: 技术负责人喜欢产品，但安全部门禁止将源代码传到第三方服务器。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

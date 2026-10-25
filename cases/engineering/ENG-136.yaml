@@ -1,0 +1,22 @@
+id: ENG-136
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Apache Druid 实时摄取（2011—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-136
+candidate_material:
+  id: ENG-136
+  date: '2027-11-12'
+  day: Friday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Apache Druid 实时摄取（2011—）
+  case_brief: 日志分析场景既要求新鲜度又要求聚合性能，比较 segment 构建和查询路径。
+  source_hint: Apache Druid architecture docs
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

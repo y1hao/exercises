@@ -1,0 +1,23 @@
+id: INV-017
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Twilio 2009 Seed
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-017
+candidate_material:
+  id: INV-017
+  date: '2027-04-24'
+  day: Saturday
+  track: investing
+  subdomain: market_timing
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Twilio 2009 Seed
+  case_brief: 云通信 API 尚属新事物时，评估开发者自助集成是否足以重塑传统电信价值链。
+  source_hint: BVP original Twilio seed memo 2009
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis
+  example_source_url: https://www.bvp.com/memos/twilio

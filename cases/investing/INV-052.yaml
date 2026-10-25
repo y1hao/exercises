@@ -1,0 +1,22 @@
+id: INV-052
+kind: historical
+domain: investing
+status: candidate
+scenario_title: GitLab 2015—2017 融资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-052
+candidate_material:
+  id: INV-052
+  date: '2027-12-25'
+  day: Saturday
+  track: investing
+  subdomain: pmf_traction
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: GitLab 2015—2017 融资
+  case_brief: 开源 DevOps 工具早期用户规模很大时，区别免费社区活动与企业付费需求。
+  source_hint: GitLab S-1 historical operating metrics
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

@@ -1,0 +1,22 @@
+id: INV-037
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Rivian 2021 IPO 估值
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-037
+candidate_material:
+  id: INV-037
+  date: '2027-09-11'
+  day: Saturday
+  track: investing
+  subdomain: valuation_terms
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Rivian 2021 IPO 估值
+  case_brief: 汽车交付尚处早期且资本开支庞大，构建产能达成与股权估值的情景。
+  source_hint: Rivian 2021 S-1
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

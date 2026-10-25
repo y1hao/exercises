@@ -1,0 +1,22 @@
+id: ENG-099
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: FoundationDB 事务层（2013）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-099
+candidate_material:
+  id: ENG-099
+  date: '2027-08-18'
+  day: Wednesday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: value_of_information
+  historical_case: FoundationDB 事务层（2013）
+  case_brief: 分析 optimistic concurrency、read version 与 commit proxy，在高冲突下预测吞吐下降。
+  source_hint: FoundationDB paper (SIGMOD 2021)
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

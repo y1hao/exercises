@@ -1,0 +1,22 @@
+id: INV-036
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Snowflake 2012—2014 早期融资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-036
+candidate_material:
+  id: INV-036
+  date: '2027-09-04'
+  day: Saturday
+  track: investing
+  subdomain: market_timing
+  planned_cognitive_move: causal_mechanism
+  historical_case: Snowflake 2012—2014 早期融资
+  case_brief: 云数仓在传统数仓和 Hadoop 之间出现时，识别云原生弹性是否构成独立市场。
+  source_hint: Snowflake S-1 and founders early funding history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

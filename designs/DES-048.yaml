@@ -1,0 +1,24 @@
+id: DES-048
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: 从旧工具迁移到新 B2B 产品
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-048
+candidate_material:
+  id: DES-048
+  date: '2027-11-28'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: b2b_adoption
+  primary_cognitive_move: switching_cost
+  title: 从旧工具迁移到新 B2B 产品
+  scenario: 一款新项目协作软件功能并不比竞品全面，但对某个细分团队的工作流明显更合适；切换成本来自数据与组织习惯。
+  design_task: 设计一个可逐步采用的迁移路径，明确哪些信息必须导入，哪些行为可以暂时双轨运行。
+  constraint_change: 有一位关键协作者始终留在旧系统，导致重要决策信息仍然分散。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

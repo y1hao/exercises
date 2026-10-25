@@ -1,0 +1,22 @@
+id: ENG-034
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Meltdown（2018）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-034
+candidate_material:
+  id: ENG-034
+  date: '2027-03-19'
+  day: Friday
+  track: engineering
+  subdomain: security_isolation
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Meltdown（2018）
+  case_brief: 内核映射及乱序执行导致数据泄漏；比较 KPTI 隔离收益与成本。
+  source_hint: Meltdown 2018 original paper
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

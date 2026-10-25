@@ -1,0 +1,22 @@
+id: ENG-104
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Cloudflare 2025 年 11 月 Bot Management 故障
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-104
+candidate_material:
+  id: ENG-104
+  date: '2027-08-30'
+  day: Monday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: causal_mechanism
+  historical_case: Cloudflare 2025 年 11 月 Bot Management 故障
+  case_brief: 特征文件生成问题影响请求处理；追问为何数据配置变更能造成网络级连锁故障。
+  source_hint: Cloudflare outage November 18 2025
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

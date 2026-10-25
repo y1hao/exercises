@@ -1,0 +1,24 @@
+id: DES-012
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 增量 CI 的依赖判断
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-012
+candidate_material:
+  id: DES-012
+  date: '2027-03-21'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: build_tools
+  primary_cognitive_move: correctness_vs_speed
+  title: 增量 CI 的依赖判断
+  scenario: 一个 500 个 package 的 Monorepo 每次 PR 都跑全量测试，耗时 50 分钟；团队希望按代码变更选择测试。
+  design_task: 设计一种最低复杂度的受影响测试选择机制，说明保守回退条件和正确性评价方式。
+  constraint_change: 部分测试依赖运行时配置和外部服务，静态依赖图并不完整。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

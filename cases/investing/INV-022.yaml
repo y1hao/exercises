@@ -1,0 +1,23 @@
+id: INV-022
+kind: historical
+domain: investing
+status: candidate
+scenario_title: LinkedIn 2006 Series C
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-022
+candidate_material:
+  id: INV-022
+  date: '2027-05-29'
+  day: Saturday
+  track: investing
+  subdomain: pmf_traction
+  planned_cognitive_move: causal_mechanism
+  historical_case: LinkedIn 2006 Series C
+  case_brief: 专业人脉图已经增长时，判断网络密度与商业化路径是否足以支持继续投资。
+  source_hint: BVP original LinkedIn memo 2006
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries
+  example_source_url: https://www.bvp.com/memos/linkedin

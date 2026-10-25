@@ -1,0 +1,22 @@
+id: PRO-034
+kind: historical
+domain: product
+status: candidate
+scenario_title: Spotify 早期即时播放体验（2008）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-034
+candidate_material:
+  id: PRO-034
+  date: '2027-04-29'
+  day: Thursday
+  track: product
+  subdomain: ux_activation
+  planned_cognitive_move: causal_mechanism
+  historical_case: Spotify 早期即时播放体验（2008）
+  case_brief: 相比下载音乐的等待，流式播放快速启动如何影响感知价值。
+  source_hint: Spotify early engineering/product launch history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

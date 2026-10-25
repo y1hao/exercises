@@ -1,0 +1,22 @@
+id: ENG-062
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Netflix 自适应码率播放（2010s）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-062
+candidate_material:
+  id: ENG-062
+  date: '2027-05-24'
+  day: Monday
+  track: engineering
+  subdomain: performance_cost
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Netflix 自适应码率播放（2010s）
+  case_brief: 在网络带宽波动下选择画质与卡顿的权衡，判断优化目标为何不是最高码率。
+  source_hint: Netflix TechBlog adaptive streaming
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries

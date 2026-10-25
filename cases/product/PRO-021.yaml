@@ -1,0 +1,22 @@
+id: PRO-021
+kind: historical
+domain: product
+status: candidate
+scenario_title: PayPal eBay 买卖双方扩散（1999—2002）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-021
+candidate_material:
+  id: PRO-021
+  date: '2027-03-16'
+  day: Tuesday
+  track: product
+  subdomain: distribution_growth
+  planned_cognitive_move: value_of_information
+  historical_case: PayPal eBay 买卖双方扩散（1999—2002）
+  case_brief: 交易双方主动邀请支付工具，推断分发如何嵌入必要工作流。
+  source_hint: PayPal early growth history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

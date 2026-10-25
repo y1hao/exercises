@@ -1,0 +1,22 @@
+id: PRO-018
+kind: historical
+domain: product
+status: candidate
+scenario_title: Snapchat 阅后即焚机制（2011—2012）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-018
+candidate_material:
+  id: PRO-018
+  date: '2027-03-04'
+  day: Thursday
+  track: product
+  subdomain: ux_activation
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Snapchat 阅后即焚机制（2011—2012）
+  case_brief: 消息默认短暂存在改变发送心理，预测用户何时会增加非正式沟通。
+  source_hint: Snapchat founders product history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

@@ -1,0 +1,22 @@
+id: PRO-054
+kind: historical
+domain: product
+status: candidate
+scenario_title: GitHub Student Developer Pack（2014）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-054
+candidate_material:
+  id: PRO-054
+  date: '2027-07-08'
+  day: Thursday
+  track: product
+  subdomain: distribution_growth
+  planned_cognitive_move: value_of_information
+  historical_case: GitHub Student Developer Pack（2014）
+  case_brief: 通过学生生态进入开发者职业早期，判断长周期渠道投入的价值。
+  source_hint: GitHub Student Developer Pack launch
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

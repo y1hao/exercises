@@ -1,0 +1,24 @@
+id: DES-038
+kind: micro_design
+domain: investing
+status: candidate
+scenario_title: 投资尽调的最小信息集
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-038
+candidate_material:
+  id: DES-038
+  date: '2027-09-19'
+  day: Sunday
+  track: micro_design
+  domain: venture
+  subdomain: investment_diligence
+  primary_cognitive_move: value_of_information
+  title: 投资尽调的最小信息集
+  scenario: 你是小型早期基金的投资人，只有三天评估一款收入增长快、客户集中度高的 Developer Tool SaaS；完整数据室尚未开放。
+  design_task: 设计一份优先级明确的尽调清单与投资委员会记录模板，说明哪些证据会改变估值或拒投决定。
+  constraint_change: 创始人只能提供聚合 ARR，拒绝开放 cohort 和客户级合同信息。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

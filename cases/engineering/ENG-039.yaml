@@ -1,0 +1,22 @@
+id: ENG-039
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Cloudflare Pingora 替换 NGINX（2022—2024）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-039
+candidate_material:
+  id: ENG-039
+  date: '2027-03-31'
+  day: Wednesday
+  track: engineering
+  subdomain: performance_cost
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Cloudflare Pingora 替换 NGINX（2022—2024）
+  case_brief: 大流量代理为何迁移至 Rust 自研框架，估算连接复用与内存效率收益。
+  source_hint: Cloudflare blog Pingora proxy
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

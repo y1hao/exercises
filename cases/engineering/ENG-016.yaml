@@ -1,0 +1,22 @@
+id: ENG-016
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Uber H3 地理索引（2018）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-016
+candidate_material:
+  id: ENG-016
+  date: '2027-02-05'
+  day: Friday
+  track: engineering
+  subdomain: performance_cost
+  planned_cognitive_move: value_of_information
+  historical_case: Uber H3 地理索引（2018）
+  case_brief: 全球位置聚合需要一致网格时，权衡层级六角网格和地理精度。
+  source_hint: Uber Engineering H3 Hexagonal Hierarchical Spatial Index
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: bottlenecks_constraints

@@ -1,0 +1,22 @@
+id: ENG-091
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Vitess 分片治理（2010—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-091
+candidate_material:
+  id: ENG-091
+  date: '2027-07-30'
+  day: Friday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: causal_mechanism
+  historical_case: Vitess 分片治理（2010—）
+  case_brief: MySQL 单节点无法承载写入增长时，如何选择分片键并处理跨 shard 查询。
+  source_hint: Vitess architecture design docs
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

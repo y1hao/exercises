@@ -1,0 +1,22 @@
+id: ENG-114
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Gitpod 工作区快照（2020—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-114
+candidate_material:
+  id: ENG-114
+  date: '2027-09-22'
+  day: Wednesday
+  track: engineering
+  subdomain: developer_tooling_build
+  planned_cognitive_move: causal_mechanism
+  historical_case: Gitpod 工作区快照（2020—）
+  case_brief: 新 workspace 启动慢时，评估预构建与状态复用如何影响成本、隔离和新鲜度。
+  source_hint: Gitpod prebuilds documentation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

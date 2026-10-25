@@ -1,0 +1,22 @@
+id: PRO-090
+kind: historical
+domain: product
+status: candidate
+scenario_title: Google Stadia 关闭（2022—2023）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-090
+candidate_material:
+  id: PRO-090
+  date: '2027-11-11'
+  day: Thursday
+  track: product
+  subdomain: strategy_pivot
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Google Stadia 关闭（2022—2023）
+  case_brief: 云游戏技术可运行却缺少足够用户采用时，区分技术可行性与商业 PMF。
+  source_hint: Google Stadia winding down announcement
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

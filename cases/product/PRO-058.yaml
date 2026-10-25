@@ -1,0 +1,22 @@
+id: PRO-058
+kind: historical
+domain: product
+status: candidate
+scenario_title: Uber 城市级供需冷启动（2010—2012）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-058
+candidate_material:
+  id: PRO-058
+  date: '2027-07-22'
+  day: Thursday
+  track: product
+  subdomain: network_marketplaces
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Uber 城市级供需冷启动（2010—2012）
+  case_brief: 在新城市先拉司机还是乘客，预测等待时间、价格和供给密度的反馈。
+  source_hint: Uber S-1 marketplace history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

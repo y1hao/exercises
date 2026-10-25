@@ -1,0 +1,22 @@
+id: ENG-140
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Consul 多数据中心架构（2015）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-140
+candidate_material:
+  id: ENG-140
+  date: '2027-11-22'
+  day: Monday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Consul 多数据中心架构（2015）
+  case_brief: 比较单数据中心 Raft 与跨数据中心 WAN gossip 的角色边界，判断跨区写入的限制。
+  source_hint: Consul architecture documentation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

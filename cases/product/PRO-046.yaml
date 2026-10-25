@@ -1,0 +1,22 @@
+id: PRO-046
+kind: historical
+domain: product
+status: candidate
+scenario_title: Airbnb 早期纽约房源摄影（2009）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-046
+candidate_material:
+  id: PRO-046
+  date: '2027-06-10'
+  day: Thursday
+  track: product
+  subdomain: user_research_value
+  planned_cognitive_move: causal_mechanism
+  historical_case: Airbnb 早期纽约房源摄影（2009）
+  case_brief: 创始人发现房源展示影响预订意愿；判断关键用户障碍究竟是供应量还是信息可信度。
+  source_hint: Airbnb founder interviews on New York photography
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

@@ -1,0 +1,22 @@
+id: ENG-001
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Google Spanner（2012）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-001
+candidate_material:
+  id: ENG-001
+  date: '2027-01-01'
+  day: Friday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: causal_mechanism
+  historical_case: Google Spanner（2012）
+  case_brief: 面对跨地区事务与外部一致性需求，判断 TrueTime 的时钟不确定性如何影响提交等待。
+  source_hint: 'Spanner: Google’s Globally-Distributed Database (OSDI 2012)'
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

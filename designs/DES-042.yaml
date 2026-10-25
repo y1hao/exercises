@@ -1,0 +1,24 @@
+id: DES-042
+kind: micro_design
+domain: investing
+status: candidate
+scenario_title: 硬件加软件业务的现金流边界
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-042
+candidate_material:
+  id: DES-042
+  date: '2027-10-17'
+  day: Sunday
+  track: micro_design
+  domain: venture
+  subdomain: hardware_business_model
+  primary_cognitive_move: capital_structure
+  title: 硬件加软件业务的现金流边界
+  scenario: 初创公司向农场提供传感器硬件及订阅软件；客户希望先免费部署硬件，收入在数月后逐步实现。
+  design_task: 设计最小可持续的销售与融资方案，说明硬件库存、安装和坏账怎样影响扩张速度。
+  constraint_change: 大客户愿意签多年订阅，但要求公司先垫付全部设备和现场安装成本。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

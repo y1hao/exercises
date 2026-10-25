@@ -1,0 +1,22 @@
+id: ENG-129
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: JavaScript Promise 微任务队列（2015）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-129
+candidate_material:
+  id: ENG-129
+  date: '2027-10-27'
+  day: Wednesday
+  track: engineering
+  subdomain: runtime_concurrency
+  planned_cognitive_move: value_of_information
+  historical_case: JavaScript Promise 微任务队列（2015）
+  case_brief: 给定 Promise、timer 和同步任务交织，预测回调执行顺序及 starvation 条件。
+  source_hint: ECMAScript Promise Jobs spec
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

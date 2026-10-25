@@ -1,0 +1,22 @@
+id: PRO-088
+kind: historical
+domain: product
+status: candidate
+scenario_title: Figma 浏览器协作编辑定位（2012—2016）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-088
+candidate_material:
+  id: PRO-088
+  date: '2027-11-04'
+  day: Thursday
+  track: product
+  subdomain: user_research_value
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Figma 浏览器协作编辑定位（2012—2016）
+  case_brief: 当设计软件普遍是桌面单机时，判断多人协作是不是值得长期投入的核心工作。
+  source_hint: Dylan Field Figma founding and launch interviews
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

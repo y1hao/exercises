@@ -1,0 +1,22 @@
+id: ENG-141
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Tree-sitter 增量解析（2018）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-141
+candidate_material:
+  id: ENG-141
+  date: '2027-11-24'
+  day: Wednesday
+  track: engineering
+  subdomain: developer_tooling_build
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Tree-sitter 增量解析（2018）
+  case_brief: 编辑器实时反馈需要低延迟解析时，推演增量语法树更新和错误恢复。
+  source_hint: Tree-sitter documentation and paper
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

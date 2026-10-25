@@ -1,0 +1,23 @@
+id: ENG-132
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: GitHub 2018 年 10 月数据库故障
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-132
+candidate_material:
+  id: ENG-132
+  date: '2027-11-03'
+  day: Wednesday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: causal_mechanism
+  historical_case: GitHub 2018 年 10 月数据库故障
+  case_brief: 网络分区导致数据库复制与服务状态异常；在数据完整性与恢复速度间作取舍。
+  source_hint: GitHub October 21 2018 incident report
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments
+  example_source_url: https://github.blog/news-insights/company-news/october21-incident-report/

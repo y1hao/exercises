@@ -1,0 +1,22 @@
+id: INV-020
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Nubank 2021 IPO 估值
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-020
+candidate_material:
+  id: INV-020
+  date: '2027-05-15'
+  day: Saturday
+  track: investing
+  subdomain: valuation_terms
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Nubank 2021 IPO 估值
+  case_brief: 拉美数字银行用户增长强劲时，判断每客户经济性和信贷风险是否被价格反映。
+  source_hint: Nu Holdings 2021 F-1
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries

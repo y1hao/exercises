@@ -1,0 +1,22 @@
+id: INV-030
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Convoy 2023 关闭
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-030
+candidate_material:
+  id: INV-030
+  date: '2027-07-24'
+  day: Saturday
+  track: investing
+  subdomain: funding_survival_exit
+  planned_cognitive_move: causal_mechanism
+  historical_case: Convoy 2023 关闭
+  case_brief: 数字货运平台在融资环境收紧时无法继续经营，分析现金周期与资本市场依赖。
+  source_hint: Convoy 2023 shutdown memo and reporting
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

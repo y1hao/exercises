@@ -1,0 +1,22 @@
+id: ENG-095
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Java G1 GC 默认化（2017）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-095
+candidate_material:
+  id: ENG-095
+  date: '2027-08-09'
+  day: Monday
+  track: engineering
+  subdomain: runtime_concurrency
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Java G1 GC 默认化（2017）
+  case_brief: 在吞吐和暂停时间冲突下，解释区域化回收与预测暂停模型。
+  source_hint: JEP 248 Make G1 the Default Garbage Collector
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

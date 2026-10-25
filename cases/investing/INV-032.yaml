@@ -1,0 +1,22 @@
+id: INV-032
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Reddit 2024 IPO 定价
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-032
+candidate_material:
+  id: INV-032
+  date: '2027-08-07'
+  day: Saturday
+  track: investing
+  subdomain: valuation_terms
+  planned_cognitive_move: value_of_information
+  historical_case: Reddit 2024 IPO 定价
+  case_brief: 增长中的社区平台依赖广告和内容贡献时，依据招股书估值讨论商业化风险与定价。
+  source_hint: Reddit 2024 S-1 and final IPO prospectus
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

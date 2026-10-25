@@ -1,0 +1,22 @@
+id: ENG-007
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: SolarWinds Orion 供应链攻击（2020）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-007
+candidate_material:
+  id: ENG-007
+  date: '2027-01-15'
+  day: Friday
+  track: engineering
+  subdomain: security_isolation
+  planned_cognitive_move: causal_mechanism
+  historical_case: SolarWinds Orion 供应链攻击（2020）
+  case_brief: 可信构建产物成为攻击载体；设计发布链鉴别与横向传播防线。
+  source_hint: CISA SolarWinds compromise advisory
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

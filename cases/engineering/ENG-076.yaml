@@ -1,0 +1,22 @@
+id: ENG-076
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Atlassian 2022 年云服务恢复事故
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-076
+candidate_material:
+  id: ENG-076
+  date: '2027-06-25'
+  day: Friday
+  track: engineering
+  subdomain: reliability_diagnosis
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Atlassian 2022 年云服务恢复事故
+  case_brief: 维护脚本错误移除站点资源且恢复耗时；判断数据恢复与重新供应的不同边界。
+  source_hint: Atlassian April 2022 cloud outage post incident review
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

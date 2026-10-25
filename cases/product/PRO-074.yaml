@@ -1,0 +1,22 @@
+id: PRO-074
+kind: historical
+domain: product
+status: candidate
+scenario_title: Adobe 收购 Figma 失败（2022—2023）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-074
+candidate_material:
+  id: PRO-074
+  date: '2027-09-16'
+  day: Thursday
+  track: product
+  subdomain: strategy_pivot
+  planned_cognitive_move: causal_mechanism
+  historical_case: Adobe 收购 Figma 失败（2022—2023）
+  case_brief: 大型软件平台尝试收购新兴竞争者受阻，分析产品整合机会与监管/战略风险。
+  source_hint: Adobe Figma merger announcement and termination
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: competition_and_substitution

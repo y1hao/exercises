@@ -1,0 +1,22 @@
+id: ENG-075
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: PostgreSQL B-tree Deduplication（2020）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-075
+candidate_material:
+  id: ENG-075
+  date: '2027-06-23'
+  day: Wednesday
+  track: engineering
+  subdomain: data_storage
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: PostgreSQL B-tree Deduplication（2020）
+  case_brief: 高重复键索引膨胀时，判断去重对写放大与查询性能的作用。
+  source_hint: PostgreSQL 13 B-tree deduplication release
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

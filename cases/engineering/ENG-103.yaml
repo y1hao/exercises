@@ -1,0 +1,22 @@
+id: ENG-103
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Python asyncio 引入（2014）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-103
+candidate_material:
+  id: ENG-103
+  date: '2027-08-27'
+  day: Friday
+  track: engineering
+  subdomain: runtime_concurrency
+  planned_cognitive_move: value_of_information
+  historical_case: Python asyncio 引入（2014）
+  case_brief: IO 并发很多而线程上下文成本较高时，预测协作式调度在阻塞代码下的失败模式。
+  source_hint: PEP 3156 asyncio
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

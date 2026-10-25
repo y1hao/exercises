@@ -1,0 +1,24 @@
+id: DES-004
+kind: micro_design
+domain: investing
+status: candidate
+scenario_title: 从一个垂直行业切入的 SaaS
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-004
+candidate_material:
+  id: DES-004
+  date: '2027-01-24'
+  day: Sunday
+  track: micro_design
+  domain: venture
+  subdomain: wedge_market_entry
+  primary_cognitive_move: opportunity_design
+  title: 从一个垂直行业切入的 SaaS
+  scenario: 两名创始人懂软件，但没有行业销售网络；他们发现本地小型物业管理公司仍用邮件和表格协调维修，预算有限。
+  design_task: 定义一个可以在六周内验证的最小切入点，包括目标用户、付费者、首个工作流及第一条获客渠道。
+  constraint_change: 早期访谈发现付费者和每天操作软件的人不是同一类人。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

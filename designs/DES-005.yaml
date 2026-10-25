@@ -1,0 +1,24 @@
+id: DES-005
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: 团队日历的真正协作价值
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-005
+candidate_material:
+  id: DES-005
+  date: '2027-01-31'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: collaboration_adoption
+  primary_cognitive_move: product_mechanism
+  title: 团队日历的真正协作价值
+  scenario: 一个日程产品希望从个人用户扩展到 5–30 人团队，但团队已经使用成熟的日历工具，不愿整体迁移。
+  design_task: 设计一个无需团队全员迁移就能体现协作价值的功能和采用路径；明确关键行为及验证指标。
+  constraint_change: 核心用户可以邀请同事，但公司 IT 禁止外部工具读取企业日历。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

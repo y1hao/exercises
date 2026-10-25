@@ -1,0 +1,22 @@
+id: INV-044
+kind: historical
+domain: investing
+status: candidate
+scenario_title: DoorDash 2019—2020 IPO 前融资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-044
+candidate_material:
+  id: INV-044
+  date: '2027-10-30'
+  day: Saturday
+  track: investing
+  subdomain: unit_economics
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: DoorDash 2019—2020 IPO 前融资
+  case_brief: 配送交易价值、平台收入和履约成本差异很大，判断 margin 变化来自什么机制。
+  source_hint: DoorDash S-1
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

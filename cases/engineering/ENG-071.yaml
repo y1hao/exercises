@@ -1,0 +1,22 @@
+id: ENG-071
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Crossplane Compositions（2020—2023）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-071
+candidate_material:
+  id: ENG-071
+  date: '2027-06-14'
+  day: Monday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Crossplane Compositions（2020—2023）
+  case_brief: 内部平台暴露自助资源时，比较直接泄露云对象与提供稳定平台抽象。
+  source_hint: Crossplane Composition design docs
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

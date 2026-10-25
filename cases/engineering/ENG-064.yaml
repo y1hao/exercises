@@ -1,0 +1,22 @@
+id: ENG-064
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Docker Image OCI 标准化（2015—2017）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-064
+candidate_material:
+  id: ENG-064
+  date: '2027-05-28'
+  day: Friday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Docker Image OCI 标准化（2015—2017）
+  case_brief: 容器构建与运行时解耦时，判断镜像格式规范能解决什么互操作问题。
+  source_hint: OCI Image Specification history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries

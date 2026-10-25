@@ -1,0 +1,22 @@
+id: PRO-093
+kind: historical
+domain: product
+status: candidate
+scenario_title: Clubhouse 邀请码扩散（2020—2021）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-093
+candidate_material:
+  id: PRO-093
+  date: '2027-11-23'
+  day: Tuesday
+  track: product
+  subdomain: distribution_growth
+  planned_cognitive_move: causal_mechanism
+  historical_case: Clubhouse 邀请码扩散（2020—2021）
+  case_brief: 邀请稀缺推动下载后，如何区分短暂关注与持久关系网络。
+  source_hint: Clubhouse launch/growth interviews
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: signals_and_experiments

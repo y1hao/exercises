@@ -1,0 +1,22 @@
+id: ENG-031
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: MongoDB 副本集选主（2016—2020）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-031
+candidate_material:
+  id: ENG-031
+  date: '2027-03-12'
+  day: Friday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: causal_mechanism
+  historical_case: MongoDB 副本集选主（2016—2020）
+  case_brief: 从 majority write concern 和 rollback 机制判断 acknowledged 写入的持久性条件。
+  source_hint: MongoDB replication documentation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

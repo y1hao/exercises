@@ -1,0 +1,22 @@
+id: PRO-096
+kind: historical
+domain: product
+status: candidate
+scenario_title: Calendly 链接式预约（2013）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-096
+candidate_material:
+  id: PRO-096
+  date: '2027-12-02'
+  day: Thursday
+  track: product
+  subdomain: user_research_value
+  planned_cognitive_move: causal_mechanism
+  historical_case: Calendly 链接式预约（2013）
+  case_brief: 对方无需注册即可选时间，推断双边协调任务里最该消除哪方摩擦。
+  source_hint: Calendly founder interviews and original product
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

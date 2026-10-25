@@ -1,0 +1,24 @@
+id: DES-021
+kind: micro_design
+domain: investing
+status: candidate
+scenario_title: 缺少渠道优势时怎样验证付费
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-021
+candidate_material:
+  id: DES-021
+  date: '2027-05-23'
+  day: Sunday
+  track: micro_design
+  domain: venture
+  subdomain: validation_experiment
+  primary_cognitive_move: experiment_design
+  title: 缺少渠道优势时怎样验证付费
+  scenario: 创始人想做一款供独立会计师使用的 AI 文档整理工具，预算只够四周访谈与一个小原型。
+  design_task: 设计一组按信息价值排序的验证活动，明确什么证据足以继续、调整或停止开发。
+  constraint_change: 受访者普遍表示喜欢产品，但无人愿意预付或连接真实客户文件。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

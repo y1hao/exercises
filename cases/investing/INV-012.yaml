@@ -1,0 +1,23 @@
+id: INV-012
+kind: historical
+domain: investing
+status: candidate
+scenario_title: SendGrid 2011 Series B
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-012
+candidate_material:
+  id: INV-012
+  date: '2027-03-20'
+  day: Saturday
+  track: investing
+  subdomain: moat_competition
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: SendGrid 2011 Series B
+  case_brief: 邮件发送 API 市场既有供应商众多，分析投递信誉与开发者体验哪项更难复制。
+  source_hint: BVP original SendGrid memo 2011
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior
+  example_source_url: https://www.bvp.com/memos/sendgrid

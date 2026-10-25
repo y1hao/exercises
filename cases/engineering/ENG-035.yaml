@@ -1,0 +1,22 @@
+id: ENG-035
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: GraphQL 在 Facebook 的起源（2012—2015）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-035
+candidate_material:
+  id: ENG-035
+  date: '2027-03-22'
+  day: Monday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: GraphQL 在 Facebook 的起源（2012—2015）
+  case_brief: 移动端数据需求快速分化时，比较固定 REST endpoint 与客户端声明式查询的边界。
+  source_hint: GraphQL history official announcement
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

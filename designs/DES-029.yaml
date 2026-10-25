@@ -1,0 +1,24 @@
+id: DES-029
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: 多人编辑时的冲突可见性
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-029
+candidate_material:
+  id: DES-029
+  date: '2027-07-18'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: collaboration_ux
+  primary_cognitive_move: interaction_tradeoff
+  title: 多人编辑时的冲突可见性
+  scenario: 一个用于共同起草投标材料的产品允许多人异步编辑；用户需要知道哪些改动会覆盖他人工作，但又不想学习版本控制。
+  design_task: 设计冲突展示与合并交互的最小方案，说明用户何时需要主动决策。
+  constraint_change: 团队开始从不同设备离线编辑同一个重要段落。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

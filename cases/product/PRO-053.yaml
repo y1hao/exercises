@@ -1,0 +1,22 @@
+id: PRO-053
+kind: historical
+domain: product
+status: candidate
+scenario_title: WhatsApp 群聊上线（2011）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-053
+candidate_material:
+  id: PRO-053
+  date: '2027-07-06'
+  day: Tuesday
+  track: product
+  subdomain: retention_workflow
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: WhatsApp 群聊上线（2011）
+  case_brief: 一对一消息扩展为群体协作时，判断用户关系图怎样影响继续使用的概率。
+  source_hint: WhatsApp group chat product timeline
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

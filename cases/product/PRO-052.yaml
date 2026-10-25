@@ -1,0 +1,22 @@
+id: PRO-052
+kind: historical
+domain: product
+status: candidate
+scenario_title: Duolingo 免费语言学习定位（2011—2012）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-052
+candidate_material:
+  id: PRO-052
+  date: '2027-07-01'
+  day: Thursday
+  track: product
+  subdomain: user_research_value
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Duolingo 免费语言学习定位（2011—2012）
+  case_brief: 面对昂贵语言教育与大众用户，判断免费模式解决的真实障碍和潜在成本。
+  source_hint: Duolingo launch interviews Luis von Ahn
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

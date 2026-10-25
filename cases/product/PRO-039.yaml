@@ -1,0 +1,22 @@
+id: PRO-039
+kind: historical
+domain: product
+status: candidate
+scenario_title: Microsoft Teams 与 Slack 竞争（2017—2020）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-039
+candidate_material:
+  id: PRO-039
+  date: '2027-05-18'
+  day: Tuesday
+  track: product
+  subdomain: strategy_pivot
+  planned_cognitive_move: causal_mechanism
+  historical_case: Microsoft Teams 与 Slack 竞争（2017—2020）
+  case_brief: 既有 Office 分发如何改变新协作产品的采用难度，区分产品优势与渠道优势。
+  source_hint: Microsoft Teams launch and Slack competition filings
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries

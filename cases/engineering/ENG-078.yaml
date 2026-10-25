@@ -1,0 +1,22 @@
+id: ENG-078
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Go GC Concurrent Mark Sweep（2015）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-078
+candidate_material:
+  id: ENG-078
+  date: '2027-06-30'
+  day: Wednesday
+  track: engineering
+  subdomain: runtime_concurrency
+  planned_cognitive_move: causal_mechanism
+  historical_case: Go GC Concurrent Mark Sweep（2015）
+  case_brief: 从 stop-the-world 转向并发标记时，推理 write barrier 对暂停与吞吐的影响。
+  source_hint: Go GC guide and talks
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

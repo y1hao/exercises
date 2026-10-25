@@ -1,0 +1,22 @@
+id: ENG-056
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: GitHub REST 到 GraphQL API v4（2016）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-056
+candidate_material:
+  id: ENG-056
+  date: '2027-05-10'
+  day: Monday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: quantitative_estimation
+  historical_case: GitHub REST 到 GraphQL API v4（2016）
+  case_brief: 面对复杂资源关系和请求数量，判断引入 GraphQL 是否真正减轻客户端成本。
+  source_hint: GitHub GraphQL API announcement 2016
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries

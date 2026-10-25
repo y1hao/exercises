@@ -1,0 +1,22 @@
+id: ENG-036
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Linux CFS 调度器（2007）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-036
+candidate_material:
+  id: ENG-036
+  date: '2027-03-24'
+  day: Wednesday
+  track: engineering
+  subdomain: runtime_concurrency
+  planned_cognitive_move: causal_mechanism
+  historical_case: Linux CFS 调度器（2007）
+  case_brief: 负载不均的 CPU 任务争用下，推导 vruntime 如何影响公平与延迟。
+  source_hint: Linux kernel CFS scheduler docs
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: incentives_and_behavior

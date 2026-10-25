@@ -1,0 +1,22 @@
+id: INV-050
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Airbnb 2020 IPO 前融资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-050
+candidate_material:
+  id: INV-050
+  date: '2027-12-11'
+  day: Saturday
+  track: investing
+  subdomain: valuation_terms
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Airbnb 2020 IPO 前融资
+  case_brief: 疫情造成旅行收入骤降时，判断低价融资、债务条款与复苏情景的风险。
+  source_hint: Airbnb S-1 and 2020 debt financing announcements
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

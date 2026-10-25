@@ -1,0 +1,22 @@
+id: ENG-008
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Discord Go 垃圾回收瓶颈（2019）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-008
+candidate_material:
+  id: ENG-008
+  date: '2027-01-18'
+  day: Monday
+  track: engineering
+  subdomain: performance_cost
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Discord Go 垃圾回收瓶颈（2019）
+  case_brief: 服务响应出现周期性抖动时，用 GC 暂停与堆规模评估迁移到 Rust 的价值。
+  source_hint: Discord Engineering Why Discord is switching from Go to Rust
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

@@ -1,0 +1,22 @@
+id: ENG-098
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: runC 容器逃逸 CVE-2019-5736
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-098
+candidate_material:
+  id: ENG-098
+  date: '2027-08-16'
+  day: Monday
+  track: engineering
+  subdomain: security_isolation
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: runC 容器逃逸 CVE-2019-5736
+  case_brief: 恶意容器覆写运行时二进制的条件是什么；重建容器边界失败链。
+  source_hint: runC CVE-2019-5736 security advisory
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

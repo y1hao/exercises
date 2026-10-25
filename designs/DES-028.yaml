@@ -1,0 +1,24 @@
+id: DES-028
+kind: micro_design
+domain: investing
+status: candidate
+scenario_title: 受监管行业 AI 创业的可信起点
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-028
+candidate_material:
+  id: DES-028
+  date: '2027-07-11'
+  day: Sunday
+  track: micro_design
+  domain: venture
+  subdomain: regulated_enterprise_gtm
+  primary_cognitive_move: trust_boundary
+  title: 受监管行业 AI 创业的可信起点
+  scenario: 一个小团队要面向诊所行政人员提供 AI 表单处理服务；最初没有医疗机构销售经验，也不能承诺零错误。
+  design_task: 设计最小的可销售服务范围、人工审查边界与合规验证顺序。
+  constraint_change: 试点客户要求全自动写入正式病历系统，否则不愿付费。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

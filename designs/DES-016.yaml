@@ -1,0 +1,24 @@
+id: DES-016
+kind: micro_design
+domain: investing
+status: candidate
+scenario_title: 早期基金的后续投资储备
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-016
+candidate_material:
+  id: DES-016
+  date: '2027-04-18'
+  day: Sunday
+  track: micro_design
+  domain: venture
+  subdomain: portfolio_allocation
+  primary_cognitive_move: budget_tradeoff
+  title: 早期基金的后续投资储备
+  scenario: 一家规模 8000 万美元的早期基金，剩余可投资金 1800 万美元，已投企业中有三家分别处于高增长、高风险及融资困难状态。
+  design_task: 设计新投资与跟投之间的资本配置原则，明确什么情况下追加、放弃或暂缓投资，而不必精算最佳收益率。
+  constraint_change: 其中一家快速增长企业提出高估值跟投，但另一家核心持仓同时需要桥接融资。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

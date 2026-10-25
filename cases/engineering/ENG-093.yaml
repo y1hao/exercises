@@ -1,0 +1,22 @@
+id: ENG-093
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: GitHub Codespaces 发布（2021）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-093
+candidate_material:
+  id: ENG-093
+  date: '2027-08-04'
+  day: Wednesday
+  track: engineering
+  subdomain: developer_tooling_build
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: GitHub Codespaces 发布（2021）
+  case_brief: 从本地环境转向云端开发，判断开发环境可重现性与网络依赖的取舍。
+  source_hint: GitHub Codespaces GA announcement
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

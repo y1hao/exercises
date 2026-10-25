@@ -1,0 +1,24 @@
+id: DES-037
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 离线编辑与跨设备恢复
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-037
+candidate_material:
+  id: DES-037
+  date: '2027-09-12'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: distributed_sync
+  primary_cognitive_move: conflict_semantics
+  title: 离线编辑与跨设备恢复
+  scenario: 一个轻量笔记客户端需支持离线修改后自动同步；用户常用手机和笔记本，不想理解同步协议。
+  design_task: 设计对象版本、冲突发现与恢复体验，并说明哪些情况不能静默合并。
+  constraint_change: 两台设备在离线时同时删除与修改同一条笔记。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

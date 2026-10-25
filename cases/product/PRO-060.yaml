@@ -1,0 +1,22 @@
+id: PRO-060
+kind: historical
+domain: product
+status: candidate
+scenario_title: Todoist Recurring Tasks（2010s）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-060
+candidate_material:
+  id: PRO-060
+  date: '2027-07-29'
+  day: Thursday
+  track: product
+  subdomain: retention_workflow
+  planned_cognitive_move: hypothesis_discrimination
+  historical_case: Todoist Recurring Tasks（2010s）
+  case_brief: 重复任务和每日工作流结合时，分析频率、任务完成和留存的关系。
+  source_hint: Todoist recurring due dates product docs/history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

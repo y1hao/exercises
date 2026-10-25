@@ -1,0 +1,22 @@
+id: ENG-043
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Spectre（2018）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-043
+candidate_material:
+  id: ENG-043
+  date: '2027-04-09'
+  day: Friday
+  track: engineering
+  subdomain: security_isolation
+  planned_cognitive_move: quantitative_estimation
+  historical_case: Spectre（2018）
+  case_brief: CPU 推测执行让访问检查与微架构侧信道脱节；检验权限模型的隐含假设。
+  source_hint: Spectre 2018 original paper
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

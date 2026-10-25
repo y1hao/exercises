@@ -1,0 +1,24 @@
+id: DES-027
+kind: micro_design
+domain: engineering
+status: candidate
+scenario_title: 跨区域配置变更的生效语义
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-027
+candidate_material:
+  id: DES-027
+  date: '2027-07-04'
+  day: Sunday
+  track: micro_design
+  domain: engineering
+  subdomain: workflow_control_plane
+  primary_cognitive_move: convergence_invariant
+  title: 跨区域配置变更的生效语义
+  scenario: 一个多区域平台有数千个客户端读取动态配置，网络分区和节点离线经常发生，控制台仍要显示发布进度。
+  design_task: 设计发布版本、确认、生效与回滚的最小模型，说明何时可以声称“发布成功”。
+  constraint_change: 某个区域离线数小时，旧版本配置会造成安全风险。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

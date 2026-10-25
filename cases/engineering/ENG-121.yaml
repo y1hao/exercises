@@ -1,0 +1,22 @@
+id: ENG-121
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Pants v2 构建系统（2020—）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-121
+candidate_material:
+  id: ENG-121
+  date: '2027-10-08'
+  day: Friday
+  track: engineering
+  subdomain: developer_tooling_build
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Pants v2 构建系统（2020—）
+  case_brief: 从手写 BUILD 文件转为自动推导依赖，权衡开发便利与可预测性。
+  source_hint: Pants v2 design documentation
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

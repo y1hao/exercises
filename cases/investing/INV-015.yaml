@@ -1,0 +1,22 @@
+id: INV-015
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Uber 2015—2019 私募融资
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-015
+candidate_material:
+  id: INV-015
+  date: '2027-04-10'
+  day: Saturday
+  track: investing
+  subdomain: unit_economics
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Uber 2015—2019 私募融资
+  case_brief: 订单快速扩张却依赖补贴时，计算城市密度改善能否使贡献利润转正。
+  source_hint: Uber S-1 historical segment data
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: uncertainty_and_diagnosis

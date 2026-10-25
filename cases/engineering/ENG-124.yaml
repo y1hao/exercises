@@ -1,0 +1,22 @@
+id: ENG-124
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Kubernetes CVE-2019-11253
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-124
+candidate_material:
+  id: ENG-124
+  date: '2027-10-15'
+  day: Friday
+  track: engineering
+  subdomain: security_isolation
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Kubernetes CVE-2019-11253
+  case_brief: 通过 YAML/JSON 解码路径引发资源耗尽，分析 API 输入验证与控制面 DoS 风险。
+  source_hint: Kubernetes CVE-2019-11253 advisory
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: failure_and_resilience

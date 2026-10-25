@@ -1,0 +1,22 @@
+id: INV-001
+kind: historical
+domain: investing
+status: candidate
+scenario_title: Arm 2023 IPO 估值
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: INV-001
+candidate_material:
+  id: INV-001
+  date: '2027-01-02'
+  day: Saturday
+  track: investing
+  subdomain: valuation_terms
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Arm 2023 IPO 估值
+  case_brief: 高度依赖芯片授权和版税的商业模式，如何评估增长、客户集中与价格。
+  source_hint: Arm 2023 F-1
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: state_and_dynamics

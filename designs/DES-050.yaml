@@ -1,0 +1,24 @@
+id: DES-050
+kind: micro_design
+domain: product
+status: candidate
+scenario_title: AI 助手的隐私透明度
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: DES-050
+candidate_material:
+  id: DES-050
+  date: '2027-12-12'
+  day: Sunday
+  track: micro_design
+  domain: product
+  subdomain: trust_behavior
+  primary_cognitive_move: trust_interaction
+  title: AI 助手的隐私透明度
+  scenario: 一款会议 AI 助手可以在会后生成摘要与行动项，但参与者不一定同意录音，而且摘要可能泄露敏感信息。
+  design_task: 设计用户告知、同意、编辑、删除和分享的最小交互流程，并给出衡量信任的指标。
+  constraint_change: 会议主办人要求自动开始录音，但其中有外部访客。
+  status: candidate_needs_review
+  case_stage: curriculum_idea_not_ready
+  duration_minutes: 20

@@ -1,0 +1,22 @@
+id: ENG-079
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Kubernetes EndpointSlice 传播（2019—2021）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-079
+candidate_material:
+  id: ENG-079
+  date: '2027-07-02'
+  day: Friday
+  track: engineering
+  subdomain: distributed_consistency
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: Kubernetes EndpointSlice 传播（2019—2021）
+  case_brief: 面对服务 endpoint 快速变化，推演控制面事件与数据面生效之间的时序差。
+  source_hint: Kubernetes EndpointSlice KEP and docs
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: feedback_loops

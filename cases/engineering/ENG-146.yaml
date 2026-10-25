@@ -1,0 +1,22 @@
+id: ENG-146
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: React Hooks 发布（2019）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-146
+candidate_material:
+  id: ENG-146
+  date: '2027-12-06'
+  day: Monday
+  track: engineering
+  subdomain: architecture_api
+  planned_cognitive_move: counterfactual_prediction
+  historical_case: React Hooks 发布（2019）
+  case_brief: 组件复用逻辑从类生命周期转向函数闭包；预测新抽象可能暴露的状态错误。
+  source_hint: React Hooks announcement and RFC
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: synthesis_and_transfer

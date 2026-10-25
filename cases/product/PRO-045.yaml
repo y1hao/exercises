@@ -1,0 +1,22 @@
+id: PRO-045
+kind: historical
+domain: product
+status: candidate
+scenario_title: Pinterest Waitlist 邀请制（2010—2011）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-045
+candidate_material:
+  id: PRO-045
+  date: '2027-06-08'
+  day: Tuesday
+  track: product
+  subdomain: distribution_growth
+  planned_cognitive_move: value_of_information
+  historical_case: Pinterest Waitlist 邀请制（2010—2011）
+  case_brief: 从小范围爱好者社区向外扩散，分析邀请机制的稀缺感和真实使用价值。
+  source_hint: Pinterest founding growth history
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: growth_and_scale

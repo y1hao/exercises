@@ -1,0 +1,22 @@
+id: ENG-096
+kind: historical
+domain: engineering
+status: candidate
+scenario_title: Twitter 2012—2014 时间线扇出
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: ENG-096
+candidate_material:
+  id: ENG-096
+  date: '2027-08-11'
+  day: Wednesday
+  track: engineering
+  subdomain: performance_cost
+  planned_cognitive_move: decision_tradeoffs
+  historical_case: Twitter 2012—2014 时间线扇出
+  case_brief: 明星账号写入放大导致负载失衡时，比较 fanout-on-write 与 fanout-on-read。
+  source_hint: Twitter Engineering timeline architecture
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: optionality_and_irreversibility

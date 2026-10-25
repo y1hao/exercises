@@ -1,0 +1,22 @@
+id: PRO-038
+kind: historical
+domain: product
+status: candidate
+scenario_title: Instagram 从 Burbn 缩减功能（2010）
+readiness_note: 仅导入原始候选素材；尚未核源或通过 Case QA，不可用于训练。
+origin:
+  file: curriculum_2027_complete.yaml
+  id: PRO-038
+candidate_material:
+  id: PRO-038
+  date: '2027-05-13'
+  day: Thursday
+  track: product
+  subdomain: user_research_value
+  planned_cognitive_move: model_boundary_transfer
+  historical_case: Instagram 从 Burbn 缩减功能（2010）
+  case_brief: 移动社交应用早期功能复杂，团队聚焦照片分享；推断真正满足的高频用户任务。
+  source_hint: Kevin Systrom Instagram Burbn origin interviews
+  status: candidate_needs_verification
+  case_stage: curriculum_idea_not_case_brief
+  monthly_lens_optional: abstraction_and_boundaries
